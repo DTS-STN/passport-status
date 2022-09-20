@@ -11,7 +11,7 @@ export default function Layout(props) {
 
   return (
     <>
-      <MetaData language={props.locale} data={props.meta}></MetaData>
+      <MetaData data={t.meta}></MetaData>
 
       <Header
         language={props.locale}
@@ -20,7 +20,9 @@ export default function Layout(props) {
       ></Header>
 
       <main>
-        <div>{props.children}</div>
+        <div id="pageContent" className="container mx-auto px-6 mt-5 p-8">
+          {props.children}
+        </div>
       </main>
 
       <Footer
@@ -107,10 +109,6 @@ Layout.propTypes = {
    * Locale current language
    */
   locale: PropTypes.string,
-  /*
-   * Meta Tags
-   */
-  meta: PropTypes.object,
   /*
    * Title of the page
    */

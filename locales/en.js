@@ -1,5 +1,11 @@
 /* eslint import/no-anonymous-default-export: [2, {"allowObject": true}] */
 export default {
+  meta: {
+    title: 'Next Template - Home',
+    desc: 'English',
+    author: 'Service Canada',
+    keywords: '',
+  },
   // Language section
   languageSelection: 'Language selection',
   english: 'English',
@@ -31,7 +37,6 @@ export default {
   //
   // Footer
   //
-  reportProblem: 'Report a problem',
   dateModified: 'Date Modified: ',
   // Landscape Links
 

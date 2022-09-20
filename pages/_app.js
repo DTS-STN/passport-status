@@ -9,11 +9,7 @@ function MyApp({ Component, pageProps }) {
 
   /* istanbul ignore next */
   return (
-    <Layout
-      locale={pageProps.locale}
-      meta={pageProps.meta}
-      langToggleLink={pageProps.langToggleLink}
-    >
+    <Layout locale={pageProps.locale} langToggleLink={pageProps.langToggleLink}>
       <Component {...pageProps} />
     </Layout>
   )
