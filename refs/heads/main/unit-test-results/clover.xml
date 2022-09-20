@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1663694248193" clover="3.2.0">
-  <project timestamp="1663694248193" name="All files">
-    <metrics statements="42" coveredstatements="34" conditionals="40" coveredconditionals="30" methods="22" coveredmethods="17" elements="104" coveredelements="81" complexity="0" loc="42" ncloc="42" packages="3" files="13" classes="13"/>
+<coverage generated="1663694529128" clover="3.2.0">
+  <project timestamp="1663694529128" name="All files">
+    <metrics statements="28" coveredstatements="28" conditionals="34" coveredconditionals="31" methods="14" coveredmethods="14" elements="76" coveredelements="73" complexity="0" loc="28" ncloc="28" packages="3" files="12" classes="12"/>
     <package name="components">
-      <metrics statements="15" coveredstatements="15" conditionals="26" coveredconditionals="26" methods="7" coveredmethods="7"/>
+      <metrics statements="14" coveredstatements="14" conditionals="24" coveredconditionals="24" methods="7" coveredmethods="7"/>
       <file name="DateModified.js" path="/home/runner/work/passport-status/passport-status/components/DateModified.js">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="7" count="11" type="stmt"/>
@@ -13,9 +13,9 @@
       <file name="Footer.js" path="/home/runner/work/passport-status/passport-status/components/Footer.js">
         <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
         <line num="9" count="9" type="stmt"/>
-        <line num="27" count="66" type="stmt"/>
-        <line num="53" count="40" type="stmt"/>
-        <line num="88" count="3" type="stmt"/>
+        <line num="26" count="66" type="stmt"/>
+        <line num="52" count="40" type="stmt"/>
+        <line num="87" count="3" type="stmt"/>
       </file>
       <file name="Header.js" path="/home/runner/work/passport-status/passport-status/components/Header.js">
         <metrics statements="2" coveredstatements="2" conditionals="20" coveredconditionals="20" methods="1" coveredmethods="1"/>
@@ -26,61 +26,44 @@
         <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
         <line num="10" count="7" type="cond" truecount="2" falsecount="0"/>
         <line num="12" count="7" type="stmt"/>
-        <line num="101" count="2" type="stmt"/>
         <line num="105" count="2" type="stmt"/>
+        <line num="109" count="2" type="stmt"/>
       </file>
       <file name="MetaData.js" path="/home/runner/work/passport-status/passport-status/components/MetaData.js">
-        <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
-        <line num="5" count="9" type="cond" truecount="2" falsecount="0"/>
-        <line num="7" count="9" type="stmt"/>
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="5" count="9" type="stmt"/>
       </file>
     </package>
     <package name="pages">
-      <metrics statements="27" coveredstatements="19" conditionals="14" coveredconditionals="4" methods="15" coveredmethods="10"/>
+      <metrics statements="14" coveredstatements="14" conditionals="10" coveredconditionals="7" methods="7" coveredmethods="7"/>
       <file name="404.js" path="/home/runner/work/passport-status/passport-status/pages/404.js">
-        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="4" count="1" type="stmt"/>
-        <line num="59" count="1" type="stmt"/>
-        <line num="74" count="1" type="stmt"/>
       </file>
       <file name="_app.js" path="/home/runner/work/passport-status/passport-status/pages/_app.js">
-        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <metrics statements="5" coveredstatements="5" conditionals="4" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="10" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="11" count="1" type="stmt"/>
       </file>
       <file name="_error.js" path="/home/runner/work/passport-status/passport-status/pages/_error.js">
         <metrics statements="1" coveredstatements="1" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
         <line num="4" count="2" type="stmt"/>
       </file>
       <file name="home.js" path="/home/runner/work/passport-status/passport-status/pages/home.js">
-        <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
-        <line num="13" count="1" type="stmt"/>
-        <line num="14" count="1" type="stmt"/>
-        <line num="15" count="1" type="stmt"/>
-        <line num="16" count="1" type="stmt"/>
+        <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="2"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="15" count="1" type="cond" truecount="1" falsecount="1"/>
         <line num="17" count="1" type="stmt"/>
-        <line num="20" count="1" type="stmt"/>
-        <line num="32" count="1" type="stmt"/>
-        <line num="38" count="1" type="stmt"/>
-        <line num="53" count="1" type="stmt"/>
-        <line num="58" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
       </file>
       <file name="index.js" path="/home/runner/work/passport-status/passport-status/pages/index.js">
-        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
-        <line num="5" count="2" type="stmt"/>
-        <line num="81" count="2" type="stmt"/>
-        <line num="82" count="1" type="stmt"/>
-        <line num="89" count="1" type="stmt"/>
-        <line num="104" count="1" type="stmt"/>
-      </file>
-      <file name="serverSideExample.js" path="/home/runner/work/passport-status/passport-status/pages/serverSideExample.js">
-        <metrics statements="8" coveredstatements="0" conditionals="10" coveredconditionals="0" methods="5" coveredmethods="0"/>
-        <line num="4" count="0" type="stmt"/>
-        <line num="6" count="0" type="stmt"/>
-        <line num="7" count="0" type="stmt"/>
-        <line num="8" count="0" type="stmt"/>
-        <line num="10" count="0" type="stmt"/>
-        <line num="13" count="0" type="stmt"/>
-        <line num="60" count="0" type="stmt"/>
-        <line num="75" count="0" type="stmt"/>
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="82" count="2" type="stmt"/>
+        <line num="83" count="1" type="stmt"/>
       </file>
     </package>
     <package name="pages.api">
