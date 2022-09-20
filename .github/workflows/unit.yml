@@ -1,0 +1,39 @@
+name: Unit Tests
+
+on:
+  pull_request:
+
+jobs:
+  unit:
+    name: Jest Unit Test
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.x, 18.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+    steps:
+      - name: Checkout 🔔
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install
+        run: npm install
+        env:
+          CI: true
+
+      - name: Unit Tests 🧪
+        run: npm run test:coverage -- -u
+        env:
+          CI: true
+
+      - name: Deploy Coverage Report 🚀
+        #dependabot doesn't get write access
+        if: ${{ github.actor != 'dependabot[bot]' }}
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          target-folder: ${{ github.ref }}/coverage
+          folder: coverage

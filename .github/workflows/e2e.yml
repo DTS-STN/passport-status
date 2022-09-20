@@ -1,0 +1,61 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: End-To-End Tests
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:    
+  cypress:
+    name: Cypress E2E Test
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.x, 18.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+    steps:
+      - name: Checkout 🔔
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install
+        run: npm install
+        env:
+          CI: true
+
+      - name: Build
+        run: npm run build
+        env:
+          CI: true
+
+      - name: Cypress end-to-end 🧪
+        uses: cypress-io/github-action@v4
+        env:
+          CI: true
+          NODE_ENV: production
+        with:
+          install: false
+          start: npm run start
+          continue-on-error: true
+
+      - name: Merge test results into one
+        run: npm run report:merge
+
+      - name: Generate HTML report
+        run: npm run report:generate
+
+      - name: Deploy Coverage Report 🚀
+        #dependabot doesn't get write access
+        if: ${{ github.actor != 'dependabot[bot]' }}
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          target-folder: ${{ github.ref }}/e2e-report
+          folder: report

@@ -1,0 +1,20 @@
+environments:
+  dev:
+  int:
+  main:
+  sprint:
+  prod-blue:
+  prod-green:
+
+releases:
+# Single Tier Website
+  - name: {{ requiredEnv "PROJECT" }}-{{ requiredEnv "BRANCH" | lower }}
+    chart: ../helm/charts/{{ requiredEnv "PROJECT" }}
+    values:
+      - overrides/{{ requiredEnv "PROJECT" }}/{{ requiredEnv "PROJECT" }}.yaml.gotmpl
+    labels:
+        category: dts
+        app: {{ requiredEnv "PROJECT" }}
+        tier: frontend
+    namespace: {{ requiredEnv "PROJECT" }}
+    installed: true

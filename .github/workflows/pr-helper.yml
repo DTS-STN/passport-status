@@ -1,0 +1,30 @@
+name: Pull Request Helper
+
+on:
+  pull_request:
+
+jobs:
+  comment_pr:
+    name: Comment on PR
+    runs-on: ubuntu-latest
+    #dependabot doesn't get write access
+    if: ${{ github.actor != 'dependabot[bot]' }}
+    steps:
+      - name: Find Comment
+        uses: peter-evans/find-comment@v2
+        id: fc
+        with:
+          issue-number: ${{ github.event.pull_request.number }}
+          comment-author: 'github-actions[bot]'
+
+      - name: Add Comment
+        if: steps.fc.outputs.comment-id == 0
+        uses: peter-evans/create-or-update-comment@v2
+        with:
+          comment-id: ${{ steps.fc.outputs.comment-id }}
+          edit-mode: replace
+          issue-number: ${{ github.event.pull_request.number }}
+          body: |
+            [Integration Deployment :rocket: ](https://${{ github.event.pull_request.base.repo.name }}-dyna-${{ github.head_ref }}.bdm-dev.dts-stn.com) - [Check build status](https://teamcity.dts-stn.com/buildConfiguration/Dev_NextTemplate_Build_Dynamic?branch=${{ github.head_ref }}&buildTypeTab=overview&mode=builds)
+            [Jest Coverage Report ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/DTS-STN/${{ github.event.pull_request.base.repo.name }}/Unit%20Tests/${{ github.head_ref }}?label=Jest%20Test)](https://dts-stn.github.io/${{ github.event.pull_request.base.repo.name }}/${{ github.ref }}/coverage/lcov-report/) 
+            [Cypress Coverage Report ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/DTS-STN/${{ github.event.pull_request.base.repo.name }}/End-To-End%20Tests/${{ github.head_ref }}?label=E2E)](https://dts-stn.github.io/${{ github.event.pull_request.base.repo.name }}/${{ github.ref }}/e2e-report/) 
