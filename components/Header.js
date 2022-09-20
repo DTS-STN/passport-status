@@ -12,7 +12,7 @@ export default function Header(props) {
         <a
           id="skipToMainContent"
           className="bg-blue-800 text-white px-2 focus:outline-black-solid hover:bg-gray-dark"
-          href="#homeContent"
+          href="#mainContent"
           draggable="false"
         >
           {props.t.skipToMainContent}

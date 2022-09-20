@@ -9,7 +9,6 @@ export default function Footer(props) {
   return (
     <footer>
       <h2 className="sr-only">siteFooter</h2>
-      <div className="container mx-auto px-6 mt-5">{props.t.reportProblem}</div>
       <DateModified text={props.t.dateModified} />
       <div className="w-full">
         <div className="w-full h-auto bg-footer-parliament-image bg-no-repeat bg-right-bottom bg-[#173451]">

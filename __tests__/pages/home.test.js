@@ -7,23 +7,17 @@ import Home from '../../pages/home'
 import { getStaticProps } from '../../pages/home'
 
 import { useRouter } from 'next/router'
+import en from '../../locales/home/en'
 
 // mocks useRouter to be able to use component' router.asPath
 jest.mock('next/router', () => ({
   useRouter: jest.fn(),
 }))
 
-//
-jest.mock('../../lib/cms', () => ({
-  fetchContent: () => {
-    return {}
-  },
-}))
-
 describe('Home page', () => {
   const content = {
     header: 'header',
-    paragraph: 'paragraph',
+    description: 'paragraph',
   }
 
   beforeEach(() => {
@@ -44,23 +38,8 @@ describe('Home page', () => {
 
     expect(props).toEqual({
       props: {
-        content: {},
-        langToggleLink: '/fr/home',
+        content: en,
         locale: 'en',
-        meta: {
-          data_en: {
-            desc: 'English',
-            author: 'Service Canada',
-            keywords: '',
-            title: 'Next Template - Home',
-          },
-          data_fr: {
-            author: 'Service Canada',
-            desc: 'Français',
-            keywords: '',
-            title: 'Next Template - Accueil',
-          },
-        },
       },
     })
   })
