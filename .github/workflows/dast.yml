@@ -1,6 +1,6 @@
 name: Dynamic Application Security Tests
 
-on:
+on:  
   push:
     branches: [main]
 
@@ -19,17 +19,17 @@ jobs:
           CI: true
 
       - name: Docker Build
-        run: docker build -t next-template .
+        run: docker build -t passport-status .
         env:
           CI: true
 
       - name: Docker run
-        run: docker run -d -p 3000:3000 next-template
+        run: docker run -d -p 3000:3000 passport-status
         env:
           CI: true
 
       - name: OWASP ZAP FULL Scan
-        uses: zaproxy/action-full-scan@v0.3.0
+        uses: zaproxy/action-full-scan@v0.4.0
         with:
           target: "http://localhost:3000"
           fail_action: "false"

@@ -1,8 +1,6 @@
 name: Load Test
 
-on:   
-  schedule:
-    - cron: '59 23 * * *'
+on: workflow_dispatch  
   # https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#schedule
 
 jobs:

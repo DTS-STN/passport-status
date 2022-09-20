@@ -1,0 +1,146 @@
+name: Default Testing
+
+on: 
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  lint:
+    name: Lint Check
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout 🔔
+      uses: actions/checkout@v3
+
+    - name: Setup Node
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18.x
+      
+    - name: Install
+      run: npm install
+      env:
+        CI: true
+
+    - name: Linting
+      run: npm run lint
+
+  unit:  
+    name: Jest Unit Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🔔
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+
+      - name: Install
+        run: npm install
+        env:
+          CI: true
+
+      - name: Unit Tests 🧪
+        run: npm run test:coverage -- -u
+        env:
+          CI: true
+
+      - name: Store Results
+        uses: actions/upload-artifact@v3
+        with:
+          name: unit-test-results
+          path: coverage
+
+  e2e:
+    name: Cypress E2E Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🔔
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+
+      - name: Install
+        run: npm install
+        env:
+          CI: true
+
+      - name: Build
+        run: npm run build
+        env:
+          CI: true
+
+      - name: Cypress end-to-end 🧪
+        uses: cypress-io/github-action@v4
+        env:
+          CI: true
+          NODE_ENV: production
+        with:
+          install: false
+          start: npm run start
+
+      - name: Merge test results into one
+        run: npm run report:merge
+
+      - name: Generate HTML report
+        run: npm run report:generate
+
+      - name: Store Results
+        uses: actions/upload-artifact@v3
+        with:
+          name: e2e-test-report
+          path: report
+
+  codeql:
+    name: Code QL Analysis
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+
+    strategy:
+      fail-fast: false
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v2
+      with:
+        languages: 'javascript'
+
+    - name: Autobuild
+      uses: github/codeql-action/autobuild@v2
+
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v2
+
+  deploy_test_results:
+    name: Get and Deploy Artifacts
+    if: ${{ github.actor != 'dependabot[bot]' }}
+    needs: [unit, e2e]
+    runs-on: ubuntu-latest
+    #dependabot doesn't get write access
+    steps:
+    - uses: actions/checkout@v2
+
+    - uses: actions/download-artifact@v3
+      with:
+        path: test_results
+      env:
+        CI: true
+
+    - name: Deploy Report 🚀
+      uses: JamesIves/github-pages-deploy-action@v4
+      with:
+        target-folder: ${{ github.ref }}
+        folder: test_results

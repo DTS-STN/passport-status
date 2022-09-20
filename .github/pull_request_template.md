@@ -1,4 +1,4 @@
-## [DTSCI-XXX](https://jira-dev.bdm-dev.dts-stn.com/browse/DTSCI-XXX) (Jira Issue)
+## [ADO-XXX](https://dev.azure.com/DTS-STN/passport-status/_workitems/edit/xxx)
 
 ### Description
 

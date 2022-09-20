@@ -1,8 +1,5 @@
 environments:
-  dev:
-  int:
   main:
-  sprint:
   prod-blue:
   prod-green:
 
