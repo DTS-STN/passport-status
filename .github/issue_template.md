@@ -1,4 +1,4 @@
-## [DC-XXX](https://jira-dev.bdm-dev.dts-stn.com/browse/DC-XXX) (JIRA issue, if applicable)
+## [ADO-xxx](https://dev.azure.com/DTS-STN/passport-status/_workitems/edit/xxx)
 
 ### Description
 
