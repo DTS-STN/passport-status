@@ -1,11 +1,7 @@
-/**
- * @jest-environment jsdom
- */
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import Home from '../../pages/home'
 import { getStaticProps } from '../../pages/home'
-
 import { useRouter } from 'next/router'
 import en from '../../locales/home/en'
 
@@ -13,7 +9,7 @@ import en from '../../locales/home/en'
 jest.mock('next/router', () => ({
   useRouter: jest.fn(),
 }))
-jest.mock('../../components/InputTextFeild', () => () => {
+jest.mock('../../components/InputFeild', () => () => {
   return <mock-modal data-testid="test-modal" />
 })
 jest.mock('../../components/ActionButton', () => () => {
