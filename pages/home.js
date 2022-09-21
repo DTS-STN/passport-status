@@ -1,12 +1,21 @@
 import PropTypes from 'prop-types'
 import fr from '../locales/home/fr'
 import en from '../locales/home/en'
+import InputTextFeild from '../components/InputTextFeild'
 
 export default function Home(props) {
   return (
     <>
       <h1>{props.content.header}</h1>
       <p>{props.content.description}</p>
+
+      <InputTextFeild
+        id="ESRF"
+        name="FileNumber"
+        label={props.content.serfLabel}
+        required
+        textRequired={props.commonContent.required}
+      />
     </>
   )
 }
