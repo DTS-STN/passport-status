@@ -9,7 +9,7 @@ import en from '../../locales/home/en'
 jest.mock('next/router', () => ({
   useRouter: jest.fn(),
 }))
-jest.mock('../../components/InputTextFeild', () => () => {
+jest.mock('../../components/InputFeild', () => () => {
   return <mock-modal data-testid="test-modal" />
 })
 jest.mock('../../components/ActionButton', () => () => {

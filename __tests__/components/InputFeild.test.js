@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 import { axe, toHaveNoViolations } from 'jest-axe'
-import InputTextFeild from '../../components/InputTextFeild'
+import InputFeild from '../../components/InputFeild'
 
 expect.extend(toHaveNoViolations)
 
@@ -12,10 +12,8 @@ jest.mock('../../components/InputErrorMessage', () => () => {
   return <mock-modal data-testid="error-modal" />
 })
 
-describe('InputLabel', () => {
-  const { container } = render(
-    <InputTextFeild id="id" name="name" label="label" />
-  )
+describe('InputFeild', () => {
+  const { container } = render(<InputFeild id="id" name="name" label="label" />)
 
   it('renders', () => {
     const sut = screen.getByTestId('id')

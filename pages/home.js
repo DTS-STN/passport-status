@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import fr from '../locales/home/fr'
 import en from '../locales/home/en'
-import InputTextFeild from '../components/InputTextFeild'
+import InputFeild from '../components/InputFeild'
 import ActionButton from '../components/ActionButton'
 import { useState } from 'react'
 
@@ -44,7 +44,7 @@ export default function Home(props) {
       <p>{props.content.description}</p>
 
       <form onSubmit={handleSubmit} id="form-get-status">
-        <InputTextFeild
+        <InputFeild
           id="ESRF"
           name="FileNumber"
           label={props.content.esrf.label}
@@ -54,7 +54,7 @@ export default function Home(props) {
           onChange={setEsrf}
           errorMessage={esrfError}
         />
-        <InputTextFeild
+        <InputFeild
           id="givenName"
           name="givenName"
           label={props.content.givenName.label}
@@ -64,7 +64,7 @@ export default function Home(props) {
           onChange={setGivenName}
           errorMessage={givenNameError}
         />
-        <InputTextFeild
+        <InputFeild
           id="surname"
           name="surname"
           label={props.content.surname.label}
@@ -74,7 +74,7 @@ export default function Home(props) {
           onChange={setSurname}
           errorMessage={surnameError}
         />
-        <InputTextFeild
+        <InputFeild
           id="dob"
           name="birthDate"
           label={props.content.birthDate.label}

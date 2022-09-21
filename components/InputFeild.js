@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import InputErrorMessage from './InputErrorMessage'
 import InputLabel from './InputLabel'
 
-export default function InputTextFeild(props) {
+export default function InputFeild(props) {
   return (
     <div className="block mb-4" id={`input-${props.id}`} data-testid={props.id}>
       <InputLabel
@@ -30,11 +30,11 @@ export default function InputTextFeild(props) {
   )
 }
 
-InputTextFeild.defaultProps = {
+InputFeild.defaultProps = {
   type: 'text',
 }
 
-InputTextFeild.propTypes = {
+InputFeild.propTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
