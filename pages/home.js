@@ -4,6 +4,7 @@ import en from '../locales/home/en'
 import InputFeild from '../components/InputFeild'
 import ActionButton from '../components/ActionButton'
 import { useState } from 'react'
+import ErrorSummary from '../components/ErrorSummary'
 
 export default function Home(props) {
   const [esrf, setEsrf] = useState()
@@ -83,10 +84,9 @@ export default function Home(props) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ esrf, givenName, surname, birthDate }),
       })
-      if (response.ok) {
-        const result = await response.json()
-        setResponse(result)
-      }
+      const result = await response.json()
+      result.success = response.ok
+      setResponse(result)
     }
   }
 
@@ -97,12 +97,23 @@ export default function Home(props) {
 
       {!response ? null : (
         <div id="response">
-          <p>
-            {props.content.statusIs} <span>{response.status}</span>.
-          </p>
+          {response.success ? (
+            <p>
+              {props.content.statusIs} <span>{response.status}</span>.
+            </p>
+          ) : (
+            <p>{props.content.unableToFindStatus}</p>
+          )}
         </div>
       )}
 
+      {!errorSummary ? null : (
+        <ErrorSummary
+          id="error-summary-get-status"
+          summary={props.commonContent.foundErrors}
+          errors={errorSummary}
+        />
+      )}
       <form onSubmit={handleSubmit} id="form-get-status">
         <InputFeild
           id="esrf"
