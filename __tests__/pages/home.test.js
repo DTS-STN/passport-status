@@ -15,6 +15,9 @@ jest.mock('../../components/InputFeild', () => () => {
 jest.mock('../../components/ActionButton', () => () => {
   return <mock-modal data-testid="button-modal" />
 })
+jest.mock('../../components/ErrorSummary', () => () => {
+  return <mock-modal data-testid="errors-modal" />
+})
 
 describe('Home page', () => {
   en.heading = 'heading'
