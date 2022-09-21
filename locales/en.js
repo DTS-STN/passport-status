@@ -95,4 +95,7 @@ export default {
 
   //footer logo alt text
   footerCanadaCaAltText: 'Symbol of the Government of Canada',
+
+  //Common re-used words
+  required: '(required)',
 }

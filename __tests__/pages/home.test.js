@@ -13,11 +13,18 @@ import en from '../../locales/home/en'
 jest.mock('next/router', () => ({
   useRouter: jest.fn(),
 }))
+jest.mock('../../components/InputTextFeild', () => () => {
+  return <mock-modal data-testid="test-modal" />
+})
 
 describe('Home page', () => {
   const content = {
     header: 'header',
     description: 'paragraph',
+    serfLabel: 'serfLabel',
+  }
+  const commonContent = {
+    required: 'required',
   }
 
   beforeEach(() => {
@@ -28,7 +35,7 @@ describe('Home page', () => {
   })
 
   it('should render the page', () => {
-    render(<Home locale="en" content={content} />)
+    render(<Home locale="en" content={content} commonContent={commonContent} />)
     const heading = screen.getByRole('heading')
     expect(heading).toBeInTheDocument()
   })

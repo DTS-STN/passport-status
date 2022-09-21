@@ -4,7 +4,7 @@ import InputLabel from './InputLabel'
 
 export default function InputTextFeild(props) {
   return (
-    <div className="block bg-slate-200" data-testid={props.id}>
+    <div className="block mb-4" data-testid={props.id}>
       <InputLabel
         id={props.id}
         required={props.required}
@@ -13,7 +13,9 @@ export default function InputTextFeild(props) {
       />
       {props.error ? <InputErrorMessage message={props.errorMessage} /> : null}
       <input
-        className={`${props.error ? 'border-red-600' : 'border-black'}`}
+        className={`display-block h-9 py-1.5 px-3 border rounded ${
+          props.error ? 'border-red-600' : 'border-neutral-400'
+        } focus:outline-none focus:border-sky-500 focus:ring-sky-500`}
         id={props.id}
         name={props.name}
         type={props.type}
