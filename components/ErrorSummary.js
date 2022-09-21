@@ -7,7 +7,7 @@ export default function ErrorSummary(props) {
       <ul>
         {props.errors.map((error, index) => {
           return (
-            <li id={index}>
+            <li key={index}>
               <a href={`#${error.feildId}`}>{error.errorMessage}</a>
             </li>
           )
