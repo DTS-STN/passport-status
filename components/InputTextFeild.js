@@ -11,10 +11,12 @@ export default function InputTextFeild(props) {
         label={props.label}
         textRequired={props.textRequired}
       />
-      {props.error ? <InputErrorMessage message={props.errorMessage} /> : null}
+      {props.errorMessage ? (
+        <InputErrorMessage message={props.errorMessage} />
+      ) : null}
       <input
         className={`display-block h-9 py-1.5 px-3 border rounded ${
-          props.error ? 'border-red-600' : 'border-neutral-400'
+          props.errorMessage ? 'border-red-600' : 'border-neutral-400'
         } focus:outline-none focus:border-sky-500 focus:ring-sky-500`}
         id={props.id}
         name={props.name}
@@ -38,7 +40,6 @@ InputTextFeild.propTypes = {
   label: PropTypes.string.isRequired,
   required: PropTypes.bool,
   textRequired: PropTypes.string,
-  error: PropTypes.bool,
   errorMessage: PropTypes.string,
-  type: PropTypes.oneOf(['text', 'password']),
+  type: PropTypes.oneOf(['text', 'password', 'date']),
 }

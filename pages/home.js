@@ -8,15 +8,34 @@ import { useState } from 'react'
 export default function Home(props) {
   const [esrf, setEsrf] = useState('')
   const [esrfError, setEsrfError] = useState('')
+  const [givenName, setGivenName] = useState('')
+  const [givenNameError, setGivenNameError] = useState('')
+  const [surname, setSurname] = useState('')
+  const [surnameError, setSurnameError] = useState('')
+  const [birthDate, setBirthDate] = useState('')
+  const [birthDateError, setBirthDateError] = useState('')
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     //clear errors
     setEsrfError('')
+    setGivenNameError('')
+    setSurnameError('')
+    setBirthDateError('')
 
     //validate data
     if (!esrf) setEsrfError(props.content.esrf.error.required)
     else if (esrf.length != 8) setEsrfError(props.content.esrf.error.length)
+    if (!givenName) setGivenNameError(props.content.givenName.error.required)
+    if (!surname) setSurnameError(props.content.surname.error.required)
+    if (!birthDate) setBirthDateError(props.content.birthDate.error.required)
+    else {
+      const dob = new Date(birthDate)
+      if (isNaN(dob.getTime()))
+        setBirthDateError(props.content.birthDate.error.invalid)
+      else if (dob > new Date())
+        setBirthDateError(props.content.birthDate.error.current)
+    }
   }
 
   return (
@@ -33,8 +52,38 @@ export default function Home(props) {
           textRequired={props.commonContent.required}
           value={esrf}
           onChange={setEsrf}
-          error={esrfError ? true : false}
           errorMessage={esrfError}
+        />
+        <InputTextFeild
+          id="givenName"
+          name="givenName"
+          label={props.content.givenName.label}
+          required
+          textRequired={props.commonContent.required}
+          value={givenName}
+          onChange={setGivenName}
+          errorMessage={givenNameError}
+        />
+        <InputTextFeild
+          id="surname"
+          name="surname"
+          label={props.content.surname.label}
+          required
+          textRequired={props.commonContent.required}
+          value={surname}
+          onChange={setSurname}
+          errorMessage={surnameError}
+        />
+        <InputTextFeild
+          id="dob"
+          name="birthDate"
+          label={props.content.birthDate.label}
+          required
+          textRequired={props.commonContent.required}
+          value={birthDate}
+          onChange={setBirthDate}
+          errorMessage={birthDateError}
+          type="date"
         />
         <ActionButton
           type="submit"

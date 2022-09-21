@@ -9,5 +9,23 @@ export default {
       length: 'The File number must be 8 characters long',
     },
   },
+  givenName: {
+    label: 'Given Name',
+    error: {
+      required: 'The Given name is required',
+    },
+  },
+  surname: {
+    label: 'Surname',
+    error: {
+      required: 'The Surname is required',
+    },
+  },
+  birthDate: {
+    label: 'Date of birth',
+    error: {
+      required: 'The Date of birth is required',
+    },
+  },
   checkStatus: 'Check Status',
 }
