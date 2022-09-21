@@ -49,6 +49,7 @@
     "mochawesome": "^7.0.1",
     "mochawesome-merge": "^4.2.1",
     "mochawesome-report-generator": "^6.0.1",
+    "node-mocks-http": "^1.11.0",
     "postcss": "^8.4.5",
     "prettier": "^2.3.2",
     "react-test-renderer": "^17.0.2",
