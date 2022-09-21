@@ -43,7 +43,7 @@ export default function Home(props) {
       <h1>{props.content.header}</h1>
       <p>{props.content.description}</p>
 
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} id="form-get-status">
         <InputTextFeild
           id="ESRF"
           name="FileNumber"

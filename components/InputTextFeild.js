@@ -4,7 +4,7 @@ import InputLabel from './InputLabel'
 
 export default function InputTextFeild(props) {
   return (
-    <div className="block mb-4" data-testid={props.id}>
+    <div className="block mb-4" id={`input-${props.id}`} data-testid={props.id}>
       <InputLabel
         id={props.id}
         required={props.required}

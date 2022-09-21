@@ -1,4 +1,4 @@
-import { cleanup, fireEvent, render, screen } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import Home from '../../pages/home'
 import { getStaticProps } from '../../pages/home'
@@ -28,8 +28,6 @@ describe('Home page', () => {
       asPath: '/',
     }))
   })
-
-  afterEach(cleanup)
 
   it('should render the page', () => {
     render(<Home locale="en" content={en} commonContent={commonContent} />)
