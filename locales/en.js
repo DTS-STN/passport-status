@@ -98,4 +98,7 @@ export default {
 
   //Common re-used words
   required: '(required)',
+
+  //Error messaging
+  foundErrors: 'The following errors were found in the form:',
 }
