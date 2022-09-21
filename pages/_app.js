@@ -7,7 +7,7 @@ import fr from '../locales/fr'
 function MyApp({ Component, pageProps }) {
   let router = useRouter()
   router ??= {}
-  let langToggleLink
+  let langToggleLink = ''
 
   if (pageProps.locale === 'en') {
     pageProps.commonContent = en
