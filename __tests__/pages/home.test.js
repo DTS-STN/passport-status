@@ -16,13 +16,12 @@ jest.mock('next/router', () => ({
 jest.mock('../../components/InputTextFeild', () => () => {
   return <mock-modal data-testid="test-modal" />
 })
+jest.mock('../../components/ActionButton', () => () => {
+  return <mock-modal data-testid="button-modal" />
+})
 
 describe('Home page', () => {
-  const content = {
-    header: 'header',
-    description: 'paragraph',
-    serfLabel: 'serfLabel',
-  }
+  en.heading = 'heading'
   const commonContent = {
     required: 'required',
   }
@@ -35,7 +34,7 @@ describe('Home page', () => {
   })
 
   it('should render the page', () => {
-    render(<Home locale="en" content={content} commonContent={commonContent} />)
+    render(<Home locale="en" content={en} commonContent={commonContent} />)
     const heading = screen.getByRole('heading')
     expect(heading).toBeInTheDocument()
   })

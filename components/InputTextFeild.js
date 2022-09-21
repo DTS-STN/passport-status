@@ -19,6 +19,8 @@ export default function InputTextFeild(props) {
         id={props.id}
         name={props.name}
         type={props.type}
+        value={props.value}
+        onChange={(e) => props.onChange(e.currentTarget.value)}
         aria-required={props.required}
         aria-invalid={props.error}
       />

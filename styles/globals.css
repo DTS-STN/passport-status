@@ -16,3 +16,9 @@
     @apply focus-visible:ring-black;
   }
 }
+
+label.required::before {
+  content: '* ';
+  margin-left: -0.665em;
+  @apply text-red-600;
+}
