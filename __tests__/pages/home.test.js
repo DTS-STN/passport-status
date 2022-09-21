@@ -16,6 +16,9 @@ jest.mock('next/router', () => ({
 jest.mock('../../components/InputTextFeild', () => () => {
   return <mock-modal data-testid="test-modal" />
 })
+jest.mock('../../components/ActionButton', () => () => {
+  return <mock-modal data-testid="button-modal" />
+})
 
 describe('Home page', () => {
   en.heading = 'heading'

@@ -12,7 +12,7 @@ export default function Home(props) {
   const handleSubmit = async (e) => {
     e.preventDefault()
     //clear errors
-    await setEsrfError('')
+    setEsrfError('')
 
     //validate data
     if (!esrf) setEsrfError(props.content.esrf.error.required)
