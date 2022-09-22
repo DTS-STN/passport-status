@@ -31,4 +31,8 @@ export default {
   unableToFindStatus:
     'Nous ne sommes pas en mesure de déterminer le statut de votre demande pour le moment en utilisant ce service.',
   statusIs: 'Le dernier statut de votre candidature selon nos dossiers est :',
+  status: {
+    INPROGRESS: 'En cours',
+    MAILED: 'Envoyé par la poste',
+  },
 }

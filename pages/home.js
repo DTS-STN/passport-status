@@ -98,11 +98,14 @@ export default function Home(props) {
       {!response ? null : (
         <div id="response">
           {response.success ? (
-            <p className="text-2xl">
-              {props.content.statusIs} <strong>{response.status}</strong>.
+            <p className="border-l-6 border-accent-info mb-6 ml-2.5 pl-4 text-2xl">
+              {props.content.statusIs}{' '}
+              <strong>{props.content.status[response.status]}</strong>.
             </p>
           ) : (
-            <p>{props.content.unableToFindStatus}</p>
+            <p className="border-l-6 border-accent-warning mb-6 ml-2.5 pl-4 text-2xl">
+              {props.content.unableToFindStatus}
+            </p>
           )}
         </div>
       )}

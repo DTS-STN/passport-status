@@ -21,6 +21,8 @@ module.exports = {
         accent: {
           main: '#26374A',
           error: '#d3080c',
+          warning: '#ee7100',
+          info: '#269abc',
           slected: '#333',
         },
         red: {
