@@ -28,4 +28,8 @@ export default {
     },
   },
   checkStatus: 'Check Status',
+  status: {
+    INPROGRESS: 'En cours',
+    MAILED: 'Envoyé par la poste',
+  },
 }
