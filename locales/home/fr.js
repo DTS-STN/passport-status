@@ -1,31 +1,34 @@
 export default {
-  header: 'Passport Status Check',
+  header: 'Vérification du statut du passeport',
   description:
-    'Use this service with your ESRF to check the status of your passport application.',
+    'Utilisez ce service avec votre ESRF pour vérifier le statut de votre demande de passeport.',
   esrf: {
-    label: 'File number',
+    label: 'Numéro de dossier',
     error: {
-      required: 'The File number is required',
-      length: 'The File number must be 8 characters long',
+      required: 'Le numéro de dossier est obligatoire',
+      length: 'Le numéro de dossier doit comporter 8 caractères',
     },
   },
   givenName: {
-    label: 'Given Name',
+    label: 'Prénom',
     error: {
-      required: 'The Given name is required',
+      required: 'Le prénom est obligatoire',
     },
   },
   surname: {
-    label: 'Surname',
+    label: 'Nom de famille',
     error: {
-      required: 'The Surname is required',
+      required: 'Le nom de famille est obligatoire',
     },
   },
   birthDate: {
-    label: 'Date of birth',
+    label: 'Date de naissance',
     error: {
-      required: 'The Date of birth is required',
+      required: 'La date de naissance est obligatoire',
     },
   },
-  checkStatus: 'Check Status',
+  checkStatus: "Vérifier l'état",
+  unableToFindStatus:
+    'Nous ne sommes pas en mesure de déterminer le statut de votre demande pour le moment en utilisant ce service.',
+  statusIs: 'Le dernier statut de votre candidature selon nos dossiers est :',
 }

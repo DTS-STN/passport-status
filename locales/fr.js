@@ -55,4 +55,7 @@ export default {
 
   //Common re-used words
   required: '(obligatoire)',
+
+  //Error messaging
+  foundErrors: 'Les erreurs suivantes ont été trouvées dans le formulaire :',
 }
