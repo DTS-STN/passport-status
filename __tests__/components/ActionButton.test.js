@@ -16,7 +16,9 @@ describe('ActionButton', () => {
   it('sets primary style', () => {
     render(<ActionButton text="text" style="primary" />)
     const sut = screen.getByText('text')
-    expect(sut).toHaveClass('bg-blue-900 text-gray-100 hover:bg-blue-800')
+    expect(sut).toHaveClass(
+      'border-blue-deep bg-blue-dark text-basic-white hover:bg-blue-normal'
+    )
   })
 
   it('is meets a11y', async () => {

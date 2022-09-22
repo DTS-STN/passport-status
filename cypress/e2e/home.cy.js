@@ -25,10 +25,10 @@ describe('home page loads', () => {
 
   it('validates required feilds', () => {
     cy.get('#form-get-status > button').click()
-    cy.get('#input-esrf > div').should('contain.text', 'required')
-    cy.get('#input-givenName > div').should('contain.text', 'required')
-    cy.get('#input-surname > div').should('contain.text', 'required')
-    cy.get('#input-dob > div').should('contain.text', 'required')
+    cy.get('#input-esrf > span').should('contain.text', 'required')
+    cy.get('#input-givenName > span').should('contain.text', 'required')
+    cy.get('#input-surname > span').should('contain.text', 'required')
+    cy.get('#input-dob > span').should('contain.text', 'required')
   })
 
   it('Home page has no detectable a11y violations on load', () => {
