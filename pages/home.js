@@ -98,8 +98,8 @@ export default function Home(props) {
       {!response ? null : (
         <div id="response">
           {response.success ? (
-            <p>
-              {props.content.statusIs} <span>{response.status}</span>.
+            <p className="text-2xl">
+              {props.content.statusIs} <strong>{response.status}</strong>.
             </p>
           ) : (
             <p>{props.content.unableToFindStatus}</p>

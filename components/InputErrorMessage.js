@@ -1,7 +1,11 @@
 import PropTypes from 'prop-types'
 
 export default function InputErrorMessage(props) {
-  return <div className="text-red-600 font-bold">{props.message}</div>
+  return (
+    <span className="font-bold border-l-4 border-red-dark mb-1 px-2 bg-red-light inline-block">
+      {props.message}
+    </span>
+  )
 }
 
 InputErrorMessage.propTypes = {
