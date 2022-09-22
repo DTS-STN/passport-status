@@ -36,48 +36,9 @@ export default {
   dateModified: 'Date de modification : ',
   // Landscape Links
 
+  // Footnote Links
   footerContactUsURL: 'https://www.canada.ca/fr/contact.html',
   footerContactUs: 'Contactez-nous',
-
-  footerNewsURL: 'https://www.canada.ca/fr/nouvelles.html',
-  footerNews: 'Nouvelles',
-
-  footerPmURL: 'https://www.pm.gc.ca/fr',
-  footerPm: 'Premier ministre',
-
-  footerDepartmentAgenciesURL: 'https://www.canada.ca/fr/gouvernement/min.html',
-  footerDepartmentAgencies: 'Ministères et organismes',
-
-  footerTreatiesURL: 'https://www.canada.ca/fr/gouvernement/systeme/lois.html',
-  footerTreaties: 'Traités, lois et règlements',
-
-  footerHowGovWorksURL:
-    'https://www.canada.ca/fr/gouvernement/systeme/comment-gouvernement-fonctionne.html',
-  footerHowGovWorks: 'Comment le gouvernement fonctionne',
-
-  footerPublicServiceURL:
-    'https://www.canada.ca/fr/gouvernement/fonctionpublique.html',
-  footerPublicService: 'Service public et militaire',
-
-  footerGovReportingURL: 'https://www.canada.ca/fr/transparence/rapports.html',
-  footerGovReporting: "Rapports à l'échelle du gouvernement",
-
-  footerOpenGovURL: 'http://ouvert.canada.ca/',
-  footerOpenGov: 'Gouvernement ouvert',
-
-  aboutgovernmentLink: 'https://www.canada.ca/fr/gouvernement/systeme.html',
-  aboutgovernmentText: 'À propos du gouvernement',
-
-  // Footnote Links
-
-  footerSocialMediaURL: 'https://www.canada.ca/en/social.html',
-  footerSocialMedia: 'Médias sociaux',
-
-  footerMobileAppURL: 'https://www.canada.ca/en/mobile.html',
-  footerMobileApp: 'Applications mobiles',
-
-  footerAboutURL: 'https://www.canada.ca/en/government/about.html',
-  footerAbout: 'À propos de Canada.ca',
 
   footerTermsAndConditionURL:
     'https://www.canada.ca/en/transparency/terms.html',

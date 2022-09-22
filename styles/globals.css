@@ -47,14 +47,14 @@
     @apply mb-2.5
   }
 
-  a {
+  main > a {
     @apply text-link-default;
     @apply underline;
   }
-  a:hover, a:focus {
+  main > a:hover, a:focus {
     @apply text-link-slected;
   }
-  a:visited {
+  main > a:visited {
     @apply text-link-visited;
   }
 

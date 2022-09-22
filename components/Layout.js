@@ -35,16 +35,8 @@ export default function Layout(props) {
         t={t}
         links={[
           {
-            link: t.footerSocialMediaURL,
-            linkText: t.footerSocialMedia,
-          },
-          {
-            link: t.footerMobileAppURL,
-            linkText: t.footerMobileApp,
-          },
-          {
-            link: t.footerAboutURL,
-            linkText: t.footerAbout,
+            link: t.footerContactUsURL,
+            linkText: t.footerContactUs,
           },
           {
             link: t.footerTermsAndConditionURL,
@@ -53,44 +45,6 @@ export default function Layout(props) {
           {
             link: t.footerPrivacyURL,
             linkText: t.footerPrivacy,
-          },
-        ]}
-        footerBoxLinks={[
-          {
-            footerBoxlink: t.footerContactUsURL,
-            footerBoxLinkText: t.footerContactUs,
-          },
-          {
-            footerBoxlink: t.footerNewsURL,
-            footerBoxLinkText: t.footerNews,
-          },
-          {
-            footerBoxlink: t.footerPmURL,
-            footerBoxLinkText: t.footerPm,
-          },
-          {
-            footerBoxlink: t.footerDepartmentAgenciesURL,
-            footerBoxLinkText: t.footerDepartmentAgencies,
-          },
-          {
-            footerBoxlink: t.footerTreatiesURL,
-            footerBoxLinkText: t.footerTreaties,
-          },
-          {
-            footerBoxlink: t.footerHowGovWorksURL,
-            footerBoxLinkText: t.footerHowGovWorks,
-          },
-          {
-            footerBoxlink: t.footerPublicServiceURL,
-            footerBoxLinkText: t.footerPublicService,
-          },
-          {
-            footerBoxlink: t.footerGovReportingURL,
-            footerBoxLinkText: t.footerGovReporting,
-          },
-          {
-            footerBoxlink: t.footerOpenGovURL,
-            footerBoxLinkText: t.footerOpenGov,
           },
         ]}
       />
