@@ -19,6 +19,17 @@ jest.mock('next/link', () => ({
   ),
 }))
 
+//mock custom components
+jest.mock('../../components/MetaData', () => () => {
+  return <mock-modal data-testid="MetaData-modal" />
+})
+jest.mock('../../components/Header', () => () => {
+  return <mock-modal data-testid="Header-modal" />
+})
+jest.mock('../../components/Footer', () => () => {
+  return <mock-modal data-testid="Footer-modal" />
+})
+
 expect.extend(toHaveNoViolations)
 
 describe('Layout with default text', () => {
@@ -42,34 +53,9 @@ describe('Layout with default text', () => {
     asPath: '/',
   }))
 
-  it('Layout contains Symbol of GoC', () => {
-    render(<Layout locale="en" meta={meta} />)
-    expect(screen.getByAltText('Government of Canada')).toBeInTheDocument()
-  })
-
-  it('Layout contains "Skip to content" link', () => {
-    render(<Layout locale="fr" meta={meta} />)
-    expect(screen.getByText('Passer au contenu principal')).toBeInTheDocument()
-  })
-
-  it('Layout contains Language link', () => {
-    render(<Layout locale="en" meta={meta} />)
-    expect(screen.getByText('Français')).toBeInTheDocument()
-  })
-
   it('Layout contains a Main tag', () => {
     render(<Layout locale="en" meta={meta} />)
     expect(screen.getByRole('main')).toBeInTheDocument()
-  })
-
-  it('Layout contains footer with Prime Minister link', () => {
-    render(<Layout locale="en" meta={meta} />)
-    expect(screen.getByText('Prime Minister')).toBeInTheDocument()
-  })
-
-  it('Layout contains Canada Wordmark', () => {
-    render(<Layout locale="en" meta={meta} />)
-    expect(screen.getByAltText('symbol2')).toBeInTheDocument()
   })
 
   it('Layout contains no a11y violations', async () => {
