@@ -14,11 +14,53 @@
     @apply focus:outline-none;
     @apply focus-visible:ring-1;
     @apply focus-visible:ring-black;
+  }  
+  html {
+    @apply text-basic-gray;
+    @apply text-xl;
   }
-}
 
-label.required::before {
-  content: '* ';
-  margin-left: -0.665em;
-  @apply text-red-600;
+  h1, h2, h3, h4 {
+    @apply font-bold;
+  }
+  h3 {
+    @apply text-2xl;
+  }
+  h2 {
+    @apply text-3xl;
+  }
+  h1 {
+    @apply text-4xl;
+    @apply mt-4;
+    @apply pb-1;
+    @apply mb-1;
+  }
+  h1::after {
+    content: "";
+    display: block;
+    width: 70px;
+    @apply pb-2;
+    border-bottom: 0.18em solid #af3c43;
+  }
+
+  p {
+    @apply mb-2.5
+  }
+
+  main > a {
+    @apply text-link-default;
+    @apply underline;
+  }
+  main > a:hover, a:focus {
+    @apply text-link-slected;
+  }
+  main > a:visited {
+    @apply text-link-visited;
+  }
+
+  label.required::before {
+    content: '* ';
+    margin-left: -0.665em;
+    @apply text-accent-error;
+  }
 }

@@ -8,7 +8,9 @@ export default function InputLabel(props) {
     >
       {props.label}
       {props.required ? (
-        <strong className="text-red-600">&nbsp;{props.textRequired}</strong>
+        <strong className="text-accent-error">
+          &nbsp;{props.textRequired}
+        </strong>
       ) : null}
     </label>
   )

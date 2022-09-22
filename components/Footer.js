@@ -11,33 +11,7 @@ export default function Footer(props) {
       <h2 className="sr-only">siteFooter</h2>
       <DateModified text={props.t.dateModified} />
       <div className="w-full">
-        <div className="w-full h-auto bg-footer-parliament-image bg-no-repeat bg-right-bottom bg-[#173451]">
-          <div
-            className="py-7 container mx-auto px-6"
-            role="navigation"
-            aria-labelledby="footerNav1"
-          >
-            <h3 className="sr-only" id="footerNav1">
-              {props.footerNav1}
-            </h3>
-            <ul className="flex flex-col text-sm sm:grid sm:grid-cols-2 xl:grid xl:grid-cols-3 sm:gap-1">
-              {' '}
-              {props.footerBoxLinks.map((value, index) => {
-                return (
-                  <li
-                    key={index}
-                    className="text-white w-64 md:w-56 lg:w-80 my-2.5 hover:underline"
-                  >
-                    <a className="font-body" href={value.footerBoxlink}>
-                      {value.footerBoxLinkText}
-                    </a>
-                  </li>
-                )
-              })}
-            </ul>
-          </div>
-        </div>
-        <div className="w-full h-full pb-4">
+        <div className="w-full h-full pb-4 bg-gray-light">
           <div className="h-auto pt-5 container mx-auto px-6 flex flex-col xl:flex xl:flex-row md:justify-between">
             <div
               className="mt-3.5 xl:mt-5"
@@ -94,15 +68,6 @@ Footer.propTypes = {
    * Screenreader section indicator
    */
   footerNav2: PropTypes.string,
-  /**
-   * array of objects containing the link text and link
-   */
-  footerBoxLinks: PropTypes.arrayOf(
-    PropTypes.shape({
-      footerBoxlink: PropTypes.string.isRequired,
-      footerBoxLinkText: PropTypes.string.isRequired,
-    })
-  ),
   /**
    * array of objects containing the link text and link
    */

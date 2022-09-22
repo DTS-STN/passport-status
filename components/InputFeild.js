@@ -15,8 +15,8 @@ export default function InputFeild(props) {
         <InputErrorMessage message={props.errorMessage} />
       ) : null}
       <input
-        className={`display-block h-9 py-1.5 px-3 border rounded ${
-          props.errorMessage ? 'border-red-600' : 'border-neutral-400'
+        className={`block h-9 py-1.5 px-3 border rounded ${
+          props.errorMessage ? 'border-accent-error' : 'border-neutral-400'
         } focus:outline-none focus:border-sky-500 focus:ring-sky-500`}
         id={props.id}
         name={props.name}

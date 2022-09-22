@@ -5,11 +5,12 @@ export default function ActionButton(props) {
     'inline-block text-center align-middle rounded border py-2.5 px-3.5 '
   switch (props.style) {
     case 'primary':
-      classStyle += 'border-black bg-blue-900 text-gray-100 hover:bg-blue-800'
+      classStyle +=
+        'border-blue-deep bg-blue-dark text-basic-white hover:bg-blue-normal'
       break
     default:
       classStyle +=
-        'border-gray-300 bg-gray-100 text-indigo-900 hover:bg-gray-200'
+        'border-gray-default bg-gray-light text-blue-light hover:border-gray-deep hover:bg-gray-dark'
       break
   }
 
