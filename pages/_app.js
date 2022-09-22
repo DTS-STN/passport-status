@@ -10,9 +10,9 @@ function MyApp({ Component, pageProps }) {
   let langToggleLink = ''
 
   if (pageProps.locale === 'en') {
+    langToggleLink = '/fr'
     pageProps.commonContent = en
   } else {
-    langToggleLink = '/fr'
     pageProps.commonContent = fr
   }
   langToggleLink = langToggleLink + router.asPath

@@ -32,7 +32,7 @@ export default {
   },
   checkStatus: 'Check Status',
   unableToFindStatus:
-    'We are unable to determin the status of your application at this time using this service.',
+    'We are unable to determine the status of your application at this time using this service.',
   statusIs:
     'The latest status of your application according to our reccords is: ',
   status: {
