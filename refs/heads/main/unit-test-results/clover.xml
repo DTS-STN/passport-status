@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1663874567530" clover="3.2.0">
-  <project timestamp="1663874567530" name="All files">
-    <metrics statements="108" coveredstatements="65" conditionals="74" coveredconditionals="40" methods="24" coveredmethods="20" elements="206" coveredelements="125" complexity="0" loc="108" ncloc="108" packages="3" files="18" classes="18"/>
+<coverage generated="1663875498258" clover="3.2.0">
+  <project timestamp="1663875498258" name="All files">
+    <metrics statements="108" coveredstatements="65" conditionals="74" coveredconditionals="40" methods="24" coveredmethods="20" elements="206" coveredelements="125" complexity="0" loc="108" ncloc="108" packages="3" files="16" classes="16"/>
     <package name="components">
       <metrics statements="33" coveredstatements="32" conditionals="34" coveredconditionals="29" methods="13" coveredmethods="12"/>
       <file name="ActionButton.js" path="/home/runner/work/passport-status/passport-status/components/ActionButton.js">
@@ -165,12 +165,6 @@
         <line num="10" count="1" type="cond" truecount="1" falsecount="1"/>
         <line num="11" count="0" type="stmt"/>
         <line num="13" count="1" type="stmt"/>
-      </file>
-      <file name="envAPIExample.js" path="/home/runner/work/passport-status/passport-status/pages/api/envAPIExample.js">
-        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      </file>
-      <file name="metrics.js" path="/home/runner/work/passport-status/passport-status/pages/api/metrics.js">
-        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       </file>
     </package>
   </project>
