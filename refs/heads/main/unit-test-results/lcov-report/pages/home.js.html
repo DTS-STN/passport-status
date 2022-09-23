@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">27.27% </span>
+                <span class="strong">23.88% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>15/55</span>
+                <span class='fraction'>16/67</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">40% </span>
+                <span class="strong">33.33% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/5</span>
+                <span class='fraction'>2/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">27.77% </span>
+                <span class="strong">24.24% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>15/54</span>
+                <span class='fraction'>16/66</span>
             </div>
         
             
@@ -248,7 +248,27 @@
 <a name='L183'></a><a href='#L183'>183</a>
 <a name='L184'></a><a href='#L184'>184</a>
 <a name='L185'></a><a href='#L185'>185</a>
-<a name='L186'></a><a href='#L186'>186</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L186'></a><a href='#L186'>186</a>
+<a name='L187'></a><a href='#L187'>187</a>
+<a name='L188'></a><a href='#L188'>188</a>
+<a name='L189'></a><a href='#L189'>189</a>
+<a name='L190'></a><a href='#L190'>190</a>
+<a name='L191'></a><a href='#L191'>191</a>
+<a name='L192'></a><a href='#L192'>192</a>
+<a name='L193'></a><a href='#L193'>193</a>
+<a name='L194'></a><a href='#L194'>194</a>
+<a name='L195'></a><a href='#L195'>195</a>
+<a name='L196'></a><a href='#L196'>196</a>
+<a name='L197'></a><a href='#L197'>197</a>
+<a name='L198'></a><a href='#L198'>198</a>
+<a name='L199'></a><a href='#L199'>199</a>
+<a name='L200'></a><a href='#L200'>200</a>
+<a name='L201'></a><a href='#L201'>201</a>
+<a name='L202'></a><a href='#L202'>202</a>
+<a name='L203'></a><a href='#L203'>203</a>
+<a name='L204'></a><a href='#L204'>204</a>
+<a name='L205'></a><a href='#L205'>205</a>
+<a name='L206'></a><a href='#L206'>206</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -285,6 +305,21 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -341,6 +376,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -460,9 +500,24 @@ export default function Home(props) {
     }
   }
 &nbsp;
+  const handleReset = <span class="fstat-no" title="function not covered" >as</span>ync (e) =&gt; {
+<span class="cstat-no" title="statement not covered" >    e.preventDefault()</span>
+    //clear form data, errors &amp; results
+<span class="cstat-no" title="statement not covered" >    setErrorSummary()</span>
+<span class="cstat-no" title="statement not covered" >    setEsrfError()</span>
+<span class="cstat-no" title="statement not covered" >    setGivenNameError()</span>
+<span class="cstat-no" title="statement not covered" >    setSurnameError()</span>
+<span class="cstat-no" title="statement not covered" >    setBirthDateError()</span>
+<span class="cstat-no" title="statement not covered" >    setEsrf()</span>
+<span class="cstat-no" title="statement not covered" >    setGivenName()</span>
+<span class="cstat-no" title="statement not covered" >    setSurname()</span>
+<span class="cstat-no" title="statement not covered" >    setBirthDate()</span>
+<span class="cstat-no" title="statement not covered" >    setResponse()</span>
+  }
+&nbsp;
   const handleSubmit = <span class="fstat-no" title="function not covered" >as</span>ync (e) =&gt; {
 <span class="cstat-no" title="statement not covered" >    e.preventDefault()</span>
-    //clear erros &amp; results
+    //clear errors &amp; results
 <span class="cstat-no" title="statement not covered" >    setErrorSummary()</span>
 <span class="cstat-no" title="statement not covered" >    setEsrfError()</span>
 <span class="cstat-no" title="statement not covered" >    setGivenNameError()</span>
@@ -474,7 +529,7 @@ export default function Home(props) {
     //validate data
 <span class="cstat-no" title="statement not covered" >    if (!esrf) <span class="cstat-no" title="statement not covered" >errors.push(setError('esrf', props.content.esrf.error.required))</span></span>
     else <span class="cstat-no" title="statement not covered" >if (esrf.length != 8)</span>
-<span class="cstat-no" title="statement not covered" >      errors.concat(setError('esrf', props.content.esrf.error.length))</span>
+<span class="cstat-no" title="statement not covered" >      errors.push(setError('esrf', props.content.esrf.error.length))</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    if (!givenName)</span>
 <span class="cstat-no" title="statement not covered" >      errors.push(setError('givenName', props.content.givenName.error.required))</span>
@@ -527,79 +582,84 @@ export default function Home(props) {
 &nbsp;
   return (
     &lt;&gt;
-      &lt;h1&gt;{props.content.header}&lt;/h1&gt;
-      &lt;p&gt;{props.content.description}&lt;/p&gt;
-&nbsp;
-      {!response ? null : (
+      &lt;h1 className="mb-4"&gt;{props.content.header}&lt;/h1&gt;
+      {!response ? (
+        &lt;div&gt;
+          &lt;p&gt;{props.content.description}&lt;/p&gt;
+          {!errorSummary ? null : (
+<span class="branch-1 cbranch-no" title="branch not covered" >            &lt;ErrorSummary</span>
+              id="error-summary-get-status"
+              summary={props.commonContent.foundErrors}
+              errors={errorSummary}
+            /&gt;
+          )}
+          &lt;form onSubmit={handleSubmit} id="form-get-status"&gt;
+            &lt;InputFeild
+              id="esrf"
+              name="FileNumber"
+              label={props.content.esrf.label}
+              required
+              textRequired={props.commonContent.required}
+              value={esrf}
+              onChange={setEsrf}
+              errorMessage={esrfError}
+            /&gt;
+            &lt;InputFeild
+              id="givenName"
+              name="givenName"
+              label={props.content.givenName.label}
+              required
+              textRequired={props.commonContent.required}
+              value={givenName}
+              onChange={setGivenName}
+              errorMessage={givenNameError}
+            /&gt;
+            &lt;InputFeild
+              id="surname"
+              name="surname"
+              label={props.content.surname.label}
+              required
+              textRequired={props.commonContent.required}
+              value={surname}
+              onChange={setSurname}
+              errorMessage={surnameError}
+            /&gt;
+            &lt;InputFeild
+              id="dob"
+              name="birthDate"
+              label={props.content.birthDate.label}
+              required
+              textRequired={props.commonContent.required}
+              value={birthDate}
+              onChange={setBirthDate}
+              errorMessage={birthDateError}
+              type="date"
+            /&gt;
+            &lt;ActionButton
+              type="submit"
+              text={props.content.checkStatus}
+              style="primary"
+            /&gt;
+          &lt;/form&gt;
+        &lt;/div&gt;
+      ) : (
 <span class="branch-1 cbranch-no" title="branch not covered" >        &lt;div id="response"&gt;</span>
           {response.success ? (
-            &lt;p className="border-l-6 border-accent-info mb-6 ml-2.5 pl-4 text-2xl"&gt;
+            &lt;p className="mb-6 text-2xl"&gt;
               {props.content.statusIs}{' '}
               &lt;strong&gt;{props.content.status[response.status]}&lt;/strong&gt;.
             &lt;/p&gt;
           ) : (
-            &lt;p className="border-l-6 border-accent-warning mb-6 ml-2.5 pl-4 text-2xl"&gt;
-              {props.content.unableToFindStatus}
-            &lt;/p&gt;
+            &lt;p className=" mb-6 text-2xl"&gt;{props.content.unableToFindStatus}&lt;/p&gt;
           )}
+          &lt;p className="mb-6 text-2xl"&gt;{props.content.checkAgain}&lt;/p&gt;
+          &lt;ActionButton
+            onClick={handleReset}
+            text={props.content.resetForm}
+            style="primary"
+          /&gt;
         &lt;/div&gt;
       )}
-&nbsp;
-      {!errorSummary ? null : (
-<span class="branch-1 cbranch-no" title="branch not covered" >        &lt;ErrorSummary</span>
-          id="error-summary-get-status"
-          summary={props.commonContent.foundErrors}
-          errors={errorSummary}
-        /&gt;
-      )}
-      &lt;form onSubmit={handleSubmit} id="form-get-status"&gt;
-        &lt;InputFeild
-          id="esrf"
-          name="FileNumber"
-          label={props.content.esrf.label}
-          required
-          textRequired={props.commonContent.required}
-          value={esrf}
-          onChange={setEsrf}
-          errorMessage={esrfError}
-        /&gt;
-        &lt;InputFeild
-          id="givenName"
-          name="givenName"
-          label={props.content.givenName.label}
-          required
-          textRequired={props.commonContent.required}
-          value={givenName}
-          onChange={setGivenName}
-          errorMessage={givenNameError}
-        /&gt;
-        &lt;InputFeild
-          id="surname"
-          name="surname"
-          label={props.content.surname.label}
-          required
-          textRequired={props.commonContent.required}
-          value={surname}
-          onChange={setSurname}
-          errorMessage={surnameError}
-        /&gt;
-        &lt;InputFeild
-          id="dob"
-          name="birthDate"
-          label={props.content.birthDate.label}
-          required
-          textRequired={props.commonContent.required}
-          value={birthDate}
-          onChange={setBirthDate}
-          errorMessage={birthDateError}
-          type="date"
-        /&gt;
-        &lt;ActionButton
-          type="submit"
-          text={props.content.checkStatus}
-          style="primary"
-        /&gt;
-      &lt;/form&gt;
     &lt;/&gt;
   )
 }
@@ -625,7 +685,7 @@ Home.propTypes = {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Fri Sep 23 2022 13:57:08 GMT+0000 (Coordinated Universal Time)
+                at Fri Sep 23 2022 17:31:27 GMT+0000 (Coordinated Universal Time)
             </div>
         <script src="../prettify.js"></script>
         <script>
