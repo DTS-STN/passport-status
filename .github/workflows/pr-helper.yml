@@ -25,7 +25,7 @@ jobs:
           edit-mode: replace
           issue-number: ${{ github.event.pull_request.number }}
           body: |
-            [Integration Deployment :rocket: ](https://passport-status-d-${{ github.head_ref }}.dev-rhp.dts-stn.com) - [![Build Status](https://teamcity.dev.admin.dts-stn.com/app/rest/builds/buildType:id:passport_status_Dynamic,branch:name:${{ github.head_ref }}/statusIcon.svg)](https://teamcity.dev.admin.dts-stn.com/buildConfiguration/passport_status_dynamic?branch=${{ github.head_ref }}&buildTypeTab=overview&mode=builds)
+            [Integration Deployment :rocket: ](https://passport-status-d-${{ github.head_ref }}.dev-rhp.dts-stn.com) - [Build Status](https://teamcity.dev.admin.dts-stn.com/buildConfiguration/passport_status_dynamic?branch=${{ github.head_ref }}&buildTypeTab=overview&mode=builds)
             ![Default Tests Workflow Status](https://github.com/DTS-STN/${{ github.event.pull_request.base.repo.name }}/actions/workflows/default-tests.yml/badge.svg?branch=${{ github.head_ref }})
             [Jest Coverage Report](https://dts-stn.github.io/${{ github.event.pull_request.base.repo.name }}/${{ github.ref }}/unit-test-results/lcov-report/) 
             [Cypress Coverage Report](https://dts-stn.github.io/${{ github.event.pull_request.base.repo.name }}/${{ github.ref }}/e2e-test-report/) 
