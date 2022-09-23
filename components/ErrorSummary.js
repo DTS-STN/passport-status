@@ -6,7 +6,7 @@ export default function ErrorSummary(props) {
       id={props.id}
       className="border-l-6 border-accent-error mb-6 ml-2.5 pl-4"
     >
-      <h2 className="text-2xl pt-4 ml-4">{props.summary}</h2>
+      <h2 className="text-2xl pt-4">{props.summary}</h2>
       <ul className="list-disc pb-6 ml-4">
         {props.errors.map((error, index) => {
           return (

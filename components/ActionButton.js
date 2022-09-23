@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 
 export default function ActionButton(props) {
   let classStyle =
-    'inline-block text-center align-middle rounded border py-2.5 px-3.5 '
+    'inline-block text-center align-middle rounded border py-2.5 px-3.5 focus:ring-2 focus:ring-offset-2 '
   switch (props.style) {
     case 'primary':
       classStyle +=

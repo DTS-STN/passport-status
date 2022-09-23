@@ -34,9 +34,12 @@ export default {
   unableToFindStatus:
     'We are unable to determine the status of your application at this time using this service.',
   statusIs:
-    'The latest status of your application according to our reccords is: ',
+    'The latest status of your application according to our records is: ',
   status: {
     INPROGRESS: 'In Progress',
     MAILED: 'Mailed',
   },
+  checkAgain:
+    'To check the status of another application, click the button below:',
+  resetForm: 'Go Back',
 }

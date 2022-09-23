@@ -35,4 +35,7 @@ export default {
     INPROGRESS: 'En cours',
     MAILED: 'Envoyé par la poste',
   },
+  checkAgain:
+    "Pour vérifier l'état d'une autre demande, cliquez sur le bouton ci-dessous:",
+  resetForm: 'Retourner',
 }

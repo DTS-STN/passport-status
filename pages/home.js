@@ -25,9 +25,24 @@ export default function Home(props) {
     }
   }
 
+  const handleReset = async (e) => {
+    e.preventDefault()
+    //clear form data, errors & results
+    setErrorSummary()
+    setEsrfError()
+    setGivenNameError()
+    setSurnameError()
+    setBirthDateError()
+    setEsrf()
+    setGivenName()
+    setSurname()
+    setBirthDate()
+    setResponse()
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault()
-    //clear erros & results
+    //clear errors & results
     setErrorSummary()
     setEsrfError()
     setGivenNameError()
@@ -39,7 +54,7 @@ export default function Home(props) {
     //validate data
     if (!esrf) errors.push(setError('esrf', props.content.esrf.error.required))
     else if (esrf.length != 8)
-      errors.concat(setError('esrf', props.content.esrf.error.length))
+      errors.push(setError('esrf', props.content.esrf.error.length))
 
     if (!givenName)
       errors.push(setError('givenName', props.content.givenName.error.required))
@@ -92,79 +107,84 @@ export default function Home(props) {
 
   return (
     <>
-      <h1>{props.content.header}</h1>
-      <p>{props.content.description}</p>
-
-      {!response ? null : (
+      <h1 className="mb-4">{props.content.header}</h1>
+      {!response ? (
+        <div>
+          <p>{props.content.description}</p>
+          {!errorSummary ? null : (
+            <ErrorSummary
+              id="error-summary-get-status"
+              summary={props.commonContent.foundErrors}
+              errors={errorSummary}
+            />
+          )}
+          <form onSubmit={handleSubmit} id="form-get-status">
+            <InputFeild
+              id="esrf"
+              name="FileNumber"
+              label={props.content.esrf.label}
+              required
+              textRequired={props.commonContent.required}
+              value={esrf}
+              onChange={setEsrf}
+              errorMessage={esrfError}
+            />
+            <InputFeild
+              id="givenName"
+              name="givenName"
+              label={props.content.givenName.label}
+              required
+              textRequired={props.commonContent.required}
+              value={givenName}
+              onChange={setGivenName}
+              errorMessage={givenNameError}
+            />
+            <InputFeild
+              id="surname"
+              name="surname"
+              label={props.content.surname.label}
+              required
+              textRequired={props.commonContent.required}
+              value={surname}
+              onChange={setSurname}
+              errorMessage={surnameError}
+            />
+            <InputFeild
+              id="dob"
+              name="birthDate"
+              label={props.content.birthDate.label}
+              required
+              textRequired={props.commonContent.required}
+              value={birthDate}
+              onChange={setBirthDate}
+              errorMessage={birthDateError}
+              type="date"
+            />
+            <ActionButton
+              type="submit"
+              text={props.content.checkStatus}
+              style="primary"
+            />
+          </form>
+        </div>
+      ) : (
         <div id="response">
           {response.success ? (
-            <p className="border-l-6 border-accent-info mb-6 ml-2.5 pl-4 text-2xl">
+            <p className="mb-6 text-2xl">
               {props.content.statusIs}{' '}
               <strong>{props.content.status[response.status]}</strong>.
             </p>
           ) : (
-            <p className="border-l-6 border-accent-warning mb-6 ml-2.5 pl-4 text-2xl">
-              {props.content.unableToFindStatus}
-            </p>
+            <p className=" mb-6 text-2xl">{props.content.unableToFindStatus}</p>
           )}
+          <p className="mb-6 text-2xl">{props.content.checkAgain}</p>
+          <ActionButton
+            onClick={handleReset}
+            text={props.content.resetForm}
+            style="primary"
+          />
         </div>
       )}
-
-      {!errorSummary ? null : (
-        <ErrorSummary
-          id="error-summary-get-status"
-          summary={props.commonContent.foundErrors}
-          errors={errorSummary}
-        />
-      )}
-      <form onSubmit={handleSubmit} id="form-get-status">
-        <InputFeild
-          id="esrf"
-          name="FileNumber"
-          label={props.content.esrf.label}
-          required
-          textRequired={props.commonContent.required}
-          value={esrf}
-          onChange={setEsrf}
-          errorMessage={esrfError}
-        />
-        <InputFeild
-          id="givenName"
-          name="givenName"
-          label={props.content.givenName.label}
-          required
-          textRequired={props.commonContent.required}
-          value={givenName}
-          onChange={setGivenName}
-          errorMessage={givenNameError}
-        />
-        <InputFeild
-          id="surname"
-          name="surname"
-          label={props.content.surname.label}
-          required
-          textRequired={props.commonContent.required}
-          value={surname}
-          onChange={setSurname}
-          errorMessage={surnameError}
-        />
-        <InputFeild
-          id="dob"
-          name="birthDate"
-          label={props.content.birthDate.label}
-          required
-          textRequired={props.commonContent.required}
-          value={birthDate}
-          onChange={setBirthDate}
-          errorMessage={birthDateError}
-          type="date"
-        />
-        <ActionButton
-          type="submit"
-          text={props.content.checkStatus}
-          style="primary"
-        />
-      </form>
     </>
   )
 }
