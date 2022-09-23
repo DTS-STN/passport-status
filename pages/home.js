@@ -108,64 +108,65 @@ export default function Home(props) {
   return (
     <>
       <h1 className="mb-4">{props.content.header}</h1>
-      {!response ? <p>{props.content.description}</p> : undefined}
-
-      {!errorSummary ? null : (
-        <ErrorSummary
-          id="error-summary-get-status"
-          summary={props.commonContent.foundErrors}
-          errors={errorSummary}
-        />
-      )}
       {!response ? (
-        <form onSubmit={handleSubmit} id="form-get-status">
-          <InputFeild
-            id="esrf"
-            name="FileNumber"
-            label={props.content.esrf.label}
-            required
-            textRequired={props.commonContent.required}
-            value={esrf}
-            onChange={setEsrf}
-            errorMessage={esrfError}
-          />
-          <InputFeild
-            id="givenName"
-            name="givenName"
-            label={props.content.givenName.label}
-            required
-            textRequired={props.commonContent.required}
-            value={givenName}
-            onChange={setGivenName}
-            errorMessage={givenNameError}
-          />
-          <InputFeild
-            id="surname"
-            name="surname"
-            label={props.content.surname.label}
-            required
-            textRequired={props.commonContent.required}
-            value={surname}
-            onChange={setSurname}
-            errorMessage={surnameError}
-          />
-          <InputFeild
-            id="dob"
-            name="birthDate"
-            label={props.content.birthDate.label}
-            required
-            textRequired={props.commonContent.required}
-            value={birthDate}
-            onChange={setBirthDate}
-            errorMessage={birthDateError}
-            type="date"
-          />
-          <ActionButton
-            type="submit"
-            text={props.content.checkStatus}
-            style="primary"
-          />
-        </form>
+        <div>
+          <p>{props.content.description}</p>
+          {!errorSummary ? null : (
+            <ErrorSummary
+              id="error-summary-get-status"
+              summary={props.commonContent.foundErrors}
+              errors={errorSummary}
+            />
+          )}
+          <form onSubmit={handleSubmit} id="form-get-status">
+            <InputFeild
+              id="esrf"
+              name="FileNumber"
+              label={props.content.esrf.label}
+              required
+              textRequired={props.commonContent.required}
+              value={esrf}
+              onChange={setEsrf}
+              errorMessage={esrfError}
+            />
+            <InputFeild
+              id="givenName"
+              name="givenName"
+              label={props.content.givenName.label}
+              required
+              textRequired={props.commonContent.required}
+              value={givenName}
+              onChange={setGivenName}
+              errorMessage={givenNameError}
+            />
+            <InputFeild
+              id="surname"
+              name="surname"
+              label={props.content.surname.label}
+              required
+              textRequired={props.commonContent.required}
+              value={surname}
+              onChange={setSurname}
+              errorMessage={surnameError}
+            />
+            <InputFeild
+              id="dob"
+              name="birthDate"
+              label={props.content.birthDate.label}
+              required
+              textRequired={props.commonContent.required}
+              value={birthDate}
+              onChange={setBirthDate}
+              errorMessage={birthDateError}
+              type="date"
+            />
+            <ActionButton
+              type="submit"
+              text={props.content.checkStatus}
+              style="primary"
+            />
+          </form>
+        </div>
       ) : (
         <div id="response">
           {response.success ? (
@@ -176,10 +177,6 @@ export default function Home(props) {
           ) : (
             <p className=" mb-6 text-2xl">{props.content.unableToFindStatus}</p>
           )}
-        </div>
-      )}
-      {response ? (
-        <div>
           <p className="mb-6 text-2xl">{props.content.checkAgain}</p>
           <ActionButton
             onClick={handleReset}
@@ -187,7 +184,7 @@ export default function Home(props) {
             style="primary"
           />
         </div>
-      ) : undefined}
+      )}
     </>
   )
 }
