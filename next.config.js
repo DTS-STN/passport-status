@@ -1,3 +1,5 @@
+// @ts-check
+
 //formatting TC Date
 const builddate = process.env.BUILD_DATE
   ? process.env.BUILD_DATE.substring(0, 4) +
@@ -43,36 +45,28 @@ const securityHeaders = [
   },
 ]
 
-module.exports = {
+/**
+ * @type {import('next').NextConfig}
+ **/
+const nextConfig = {
   env: {
     NEXT_PUBLIC_BUILD_DATE: builddate,
-    LOGGING_LEVEL: process.env.LOGGING_LEVEL,
+    LOGGING_LEVEL: process.env.LOGGING_LEVEL ?? 'info',
   },
   reactStrictMode: true,
-  //
-  // i18n setup
-  //
   i18n: {
     locales: ['en', 'fr'],
     defaultLocale: 'en',
-    localeDetection: true,
   },
-  //
-  // rewrites setup
-  //
-  // async rewrites() {
-  //   return [
-  //     {
-  //       source: '/accueil',
-  //       destination: '/home',
-  //     },
-  //     // {
-  //     //   source: " french page name with/without route ",
-  //     //   destination: " 'english' page ",
-  //     // },
-  //   ]
-  // },
-  async headers() {
+  rewrites: async () => {
+    return [
+      {
+        source: '/accueil',
+        destination: '/home',
+      },
+    ]
+  },
+  headers: async () => {
     return [
       {
         source: '/:path*',
@@ -81,3 +75,5 @@ module.exports = {
     ]
   },
 }
+
+module.exports = nextConfig

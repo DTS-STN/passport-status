@@ -1,9 +1,21 @@
-import PropTypes from 'prop-types'
+import { FC, MouseEventHandler } from 'react'
 
-export default function ActionButton(props) {
+export interface ActionButtonProps {
+  onClick?: MouseEventHandler<HTMLButtonElement>
+  style?: 'default' | 'primary' | 'super' | 'danger'
+  text: string
+  type?: 'button' | 'submit' | 'reset'
+}
+
+const ActionButton: FC<ActionButtonProps> = ({
+  onClick,
+  style,
+  text,
+  type,
+}) => {
   let classStyle =
     'inline-block text-center align-middle rounded border py-2.5 px-3.5 focus:ring-2 focus:ring-offset-2 '
-  switch (props.style) {
+  switch (style) {
     case 'primary':
       classStyle +=
         'border-blue-deep bg-blue-dark text-basic-white hover:bg-blue-normal'
@@ -15,8 +27,8 @@ export default function ActionButton(props) {
   }
 
   return (
-    <button className={classStyle} onClick={props.onClick} type={props.type}>
-      {props.text}
+    <button className={classStyle} onClick={onClick} type={type}>
+      {text}
     </button>
   )
 }
@@ -26,9 +38,4 @@ ActionButton.defaultProps = {
   style: 'default',
 }
 
-ActionButton.propTypes = {
-  onClick: PropTypes.func,
-  type: PropTypes.oneOf(['button', 'submit', 'reset']),
-  text: PropTypes.string.isRequired,
-  style: PropTypes.oneOf(['default', 'primary', 'super', 'danger']),
-}
+export default ActionButton
