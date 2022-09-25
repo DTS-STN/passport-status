@@ -1,20 +1,19 @@
 import '../styles/globals.css'
 import Layout from '../components/Layout'
-import { useRouter } from 'next/router'
 import en from '../locales/en'
 import fr from '../locales/fr'
 
-function MyApp({ Component, pageProps }) {
-  let router = useRouter()
-  router ??= {}
+export default function MyApp({ Component, pageProps, router }) {
+  const { locale } = router
   let langToggleLink = ''
 
-  if (pageProps.locale === 'en') {
+  if (locale === 'en') {
     langToggleLink = '/fr'
     pageProps.commonContent = en
   } else {
     pageProps.commonContent = fr
   }
+
   langToggleLink = langToggleLink + router.asPath
 
   if (Component.getLayout) {
@@ -23,10 +22,8 @@ function MyApp({ Component, pageProps }) {
 
   /* istanbul ignore next */
   return (
-    <Layout locale={pageProps.locale} langToggleLink={langToggleLink}>
+    <Layout locale={locale} langToggleLink={langToggleLink}>
       <Component {...pageProps} />
     </Layout>
   )
 }
-
-export default MyApp

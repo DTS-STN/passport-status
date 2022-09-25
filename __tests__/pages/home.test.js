@@ -44,7 +44,6 @@ describe('Home page', () => {
     expect(props).toEqual({
       props: {
         content: en,
-        locale: 'en',
       },
     })
   })

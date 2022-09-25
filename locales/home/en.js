@@ -1,4 +1,4 @@
-export default {
+const homeEN = {
   header: 'Passport Status Check',
   description:
     'Use this service with your ESRF to check the status of your passport application.',
@@ -36,10 +36,14 @@ export default {
   statusIs:
     'The latest status of your application according to our records is: ',
   status: {
-    INPROGRESS: 'In Progress',
-    MAILED: 'Mailed',
+    ACCEPTED: 'Accepted',
+    PROCESSING: 'Progressing',
+    REJECTED: 'Rejected',
+    COMPLETED: 'Completed',
   },
   checkAgain:
     'To check the status of another application, click the button below:',
   resetForm: 'Go Back',
 }
+
+export default homeEN

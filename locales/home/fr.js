@@ -1,4 +1,4 @@
-export default {
+const homeFR = {
   header: 'Vérification du statut du passeport',
   description:
     'Utilisez ce service avec votre ESRF pour vérifier le statut de votre demande de passeport.',
@@ -25,6 +25,9 @@ export default {
     label: 'Date de naissance',
     error: {
       required: 'La date de naissance est obligatoire',
+      invalid:
+        'La date de naissance doit être une date valide au format (yyyy-MM-dd)',
+      current: 'La date de naissance doit être une date dans le passé',
     },
   },
   checkStatus: "Vérifier l'état",
@@ -32,10 +35,14 @@ export default {
     'Nous ne sommes pas en mesure de déterminer le statut de votre demande pour le moment en utilisant ce service.',
   statusIs: 'Le dernier statut de votre candidature selon nos dossiers est :',
   status: {
-    INPROGRESS: 'En cours',
-    MAILED: 'Envoyé par la poste',
+    ACCEPTED: 'Acceptée',
+    PROCESSING: 'En traitement',
+    REJECTED: 'Rejetée',
+    COMPLETED: 'Complétée',
   },
   checkAgain:
     "Pour vérifier l'état d'une autre demande, cliquez sur le bouton ci-dessous:",
   resetForm: 'Retourner',
 }
+
+export default homeFR
