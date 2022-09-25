@@ -2,18 +2,11 @@ import commonEn from '../locales/en'
 import commonFr from '../locales/fr'
 import en from '../locales/home/en'
 import fr from '../locales/home/fr'
-import InputFeild from '../components/InputField'
+import InputField from '../components/InputField'
 import ActionButton from '../components/ActionButton'
 import { FC, FormEventHandler, MouseEventHandler, useState } from 'react'
 import ErrorSummary from '../components/ErrorSummary'
 import { GetStaticProps } from 'next'
-
-export enum Status {
-  ACCEPTED = 'ACCEPTED',
-  PROCESSING = 'PROCESSING',
-  REJECTED = 'REJECTED',
-  COMPLETED = 'COMPLETED',
-}
 
 export interface Page {
   size: number
@@ -35,7 +28,7 @@ export interface PassportStatus {
   firstName?: string
   lastName?: string
   dateOfBirth?: string
-  status?: Status
+  status?: string
 }
 
 export type CommonContent = typeof commonEn | typeof commonFr
@@ -148,13 +141,26 @@ const Home: FC<HomeProps & { commonContent: CommonContent }> = ({
         body,
       })
       if (response.ok) setResponse((await response.json()) as PassportStatus)
-      if (response.status === 404) setResponse('not-found')
-      throw `Unhandled reponse status ${response.status} while searching foor passport status ${body}`
+      else if (response.status === 404) setResponse('not-found')
+      else
+        throw `Unhandled reponse status ${response.status} while searching foor passport status ${body}`
     }
   }
 
-  const getResponseStatusText = (status?: Status) =>
-    status ? content.status[status] : status
+  const getStatusText = (status?: string) => {
+    switch (status?.toUpperCase()) {
+      case 'ACCEPTED':
+        return content.status.ACCEPTED
+      case 'COMPLETED':
+        return content.status.COMPLETED
+      case 'PROCESSING':
+        return content.status.PROCESSING
+      case 'ACCEPTED':
+        return content.status.REJECTED
+      default:
+        return status
+    }
+  }
 
   return (
     <>
@@ -170,7 +176,7 @@ const Home: FC<HomeProps & { commonContent: CommonContent }> = ({
             />
           )}
           <form onSubmit={handleSubmit} id="form-get-status">
-            <InputFeild
+            <InputField
               id="esrf"
               name="FileNumber"
               label={content.esrf.label}
@@ -180,7 +186,7 @@ const Home: FC<HomeProps & { commonContent: CommonContent }> = ({
               onChange={(e) => setEsrf(e.currentTarget.value)}
               errorMessage={esrfError}
             />
-            <InputFeild
+            <InputField
               id="givenName"
               name="givenName"
               label={content.givenName.label}
@@ -190,7 +196,7 @@ const Home: FC<HomeProps & { commonContent: CommonContent }> = ({
               onChange={(e) => setGivenName(e.currentTarget.value)}
               errorMessage={givenNameError}
             />
-            <InputFeild
+            <InputField
               id="surname"
               name="surname"
               label={content.surname.label}
@@ -200,7 +206,7 @@ const Home: FC<HomeProps & { commonContent: CommonContent }> = ({
               onChange={(e) => setSurname(e.currentTarget.value)}
               errorMessage={surnameError}
             />
-            <InputFeild
+            <InputField
               id="dob"
               name="birthDate"
               label={content.birthDate.label}
@@ -223,7 +229,7 @@ const Home: FC<HomeProps & { commonContent: CommonContent }> = ({
           {response !== 'not-found' ? (
             <p className="mb-6 text-2xl">
               {content.statusIs}{' '}
-              <strong>{getResponseStatusText(response.status)}</strong>.
+              <strong>{getStatusText(response.status)}</strong>.
             </p>
           ) : (
             <p className=" mb-6 text-2xl">{content.unableToFindStatus}</p>
