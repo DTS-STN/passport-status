@@ -33,7 +33,7 @@ const homeFR = {
   checkStatus: "Vérifier l'état",
   unableToFindStatus:
     'Nous ne sommes pas en mesure de déterminer le statut de votre demande pour le moment en utilisant ce service.',
-  statusIs: 'Le dernier statut de votre candidature selon nos dossiers est :',
+  statusIs: 'Le dernier statut de votre candidature selon nos dossiers est : ',
   status: {
     ACCEPTED: 'Acceptée',
     PROCESSING: 'En traitement',

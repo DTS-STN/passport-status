@@ -155,7 +155,7 @@ const Home: FC<HomeProps & { commonContent: CommonContent }> = ({
         return content.status.COMPLETED
       case 'PROCESSING':
         return content.status.PROCESSING
-      case 'ACCEPTED':
+      case 'REJECTED':
         return content.status.REJECTED
       default:
         return status
