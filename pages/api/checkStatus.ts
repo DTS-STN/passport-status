@@ -81,8 +81,9 @@ export default async function handler(
     return res.status(405).send({ message: 'Invalid Request' })
   }
 
-  const passportStatusAPIBaseURI =
-    process.env.NEXT_PUBLIC_API_PASSPORT_STATUS_BASE_URI
+  // TODO Sebastien: Remove hardcoded API URI, only used for DEMO purposes
+  const passportStatusAPIBaseURI = process.env.NEXT_PUBLIC_API_PASSPORT_STATUS_BASE_URI
+    ?? "https://passport-status-main-api.dev-rhp.dts-stn.com"
 
   return passportStatusAPIBaseURI
     ? handlerWithAPI(req, res, passportStatusAPIBaseURI)
