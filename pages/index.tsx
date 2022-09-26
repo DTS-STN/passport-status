@@ -1,11 +1,14 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import MetaData from '../components/MetaData'
-import en from '../locales/en'
-export default function Index(props) {
+import useCommonLocale from '../locales/useCommonLocale'
+
+const Index = () => {
+  const commonLocale = useCommonLocale()
+
   return (
     <div role="main" className="container mx-auto px-6 my-5 bg-slate-300 p-12">
-      <MetaData data={en.meta}></MetaData>
+      <MetaData data={commonLocale.meta} />
       <div className="flex flex-col justify-center items-center m-auto">
         <div className="z-10 bg-white h-auto w-[18.75rem] xl:w-[31.25rem]">
           <h1 className="sr-only">service.canada.ca-digital-center</h1>
@@ -79,6 +82,4 @@ export default function Index(props) {
   )
 }
 
-Index.getLayout = function PageLayout(page) {
-  return <>{page}</>
-}
+export default Index

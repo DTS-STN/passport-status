@@ -4,15 +4,9 @@
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import App from '../../pages/_app'
-import Index from '../../pages/index'
 
-// mocks useRouter to be able to use component' router.asPath
-jest.mock('next/router', () => ({
-  useRouter: jest.fn(),
-}))
-
-describe('index page', () => {
-  const component = Index
+describe('custom `app`', () => {
+  const component = () => <h1>Mock Component</h1>
   const pageProps = {}
   const router = { locale: 'en' }
 
