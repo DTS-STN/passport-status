@@ -1,12 +1,15 @@
 import commonEn from '../locales/en'
 import commonFr from '../locales/fr'
-import en from '../locales/home/en'
-import fr from '../locales/home/fr'
 import InputField from '../components/InputField'
 import ActionButton from '../components/ActionButton'
 import { FC, FormEventHandler, MouseEventHandler, useState } from 'react'
-import ErrorSummary from '../components/ErrorSummary'
-import { GetStaticProps } from 'next'
+import ErrorSummary, {
+  ErrorSummaryItem,
+  getErrorSummaryItem,
+} from '../components/ErrorSummary'
+import useHomeLocale from '../locales/home/useHomeLocale'
+import useCommonLocale from '../locales/useCommonLocale'
+import Layout from '../components/Layout'
 
 export interface Page {
   size: number
@@ -33,19 +36,10 @@ export interface PassportStatus {
 
 export type CommonContent = typeof commonEn | typeof commonFr
 
-export interface HomeProps {
-  content: typeof fr | typeof en
-}
+const Home: FC = () => {
+  const commonLocale = useCommonLocale()
+  const homeLocale = useHomeLocale()
 
-export interface Error {
-  feildId: string
-  errorMessage: string
-}
-
-const Home: FC<HomeProps & { commonContent: CommonContent }> = ({
-  content,
-  commonContent,
-}) => {
   const [esrf, setEsrf] = useState<string | undefined>()
   const [esrfError, setEsrfError] = useState<string | undefined>()
   const [givenName, setGivenName] = useState<string | undefined>()
@@ -57,12 +51,7 @@ const Home: FC<HomeProps & { commonContent: CommonContent }> = ({
   const [response, setResponse] = useState<
     PassportStatus | 'not-found' | undefined
   >()
-  const [errorSummary, setErrorSummary] = useState<Error[]>([])
-
-  const getError = (id: string, msg: string): Error => ({
-    feildId: id,
-    errorMessage: msg,
-  })
+  const [errorSummary, setErrorSummary] = useState<ErrorSummaryItem[]>([])
 
   const handleReset: MouseEventHandler<HTMLButtonElement> = (e) => {
     e.preventDefault()
@@ -89,27 +78,38 @@ const Home: FC<HomeProps & { commonContent: CommonContent }> = ({
     setBirthDateError(undefined)
     setResponse(undefined)
 
-    const errors: Error[] = []
+    const errors: ErrorSummaryItem[] = []
 
     //validate data
-    if (!esrf) errors.push(getError('esrf', content.esrf.error.required))
+    if (!esrf)
+      errors.push(getErrorSummaryItem('esrf', homeLocale.esrf.error.required))
     else if (esrf.length != 8)
-      errors.push(getError('esrf', content.esrf.error.length))
+      errors.push(getErrorSummaryItem('esrf', homeLocale.esrf.error.length))
 
     if (!givenName)
-      errors.push(getError('givenName', content.givenName.error.required))
+      errors.push(
+        getErrorSummaryItem('givenName', homeLocale.givenName.error.required)
+      )
 
     if (!surname)
-      errors.push(getError('surname', content.surname.error.required))
+      errors.push(
+        getErrorSummaryItem('surname', homeLocale.surname.error.required)
+      )
 
     if (!birthDate)
-      errors.push(getError('dob', content.birthDate.error.required))
+      errors.push(
+        getErrorSummaryItem('dob', homeLocale.birthDate.error.required)
+      )
     else {
       const dob = new Date(birthDate)
       if (isNaN(dob.getTime()))
-        errors.push(getError('dob', content.birthDate.error.invalid))
+        errors.push(
+          getErrorSummaryItem('dob', homeLocale.birthDate.error.invalid)
+        )
       else if (dob > new Date())
-        errors.push(getError('dob', content.birthDate.error.current))
+        errors.push(
+          getErrorSummaryItem('dob', homeLocale.birthDate.error.current)
+        )
     }
 
     //check if form is valid
@@ -143,35 +143,37 @@ const Home: FC<HomeProps & { commonContent: CommonContent }> = ({
       if (response.ok) setResponse((await response.json()) as PassportStatus)
       else if (response.status === 404) setResponse('not-found')
       else
-        throw `Unhandled reponse status ${response.status} while searching foor passport status ${body}`
+        throw new Error(
+          `Unhandled reponse status ${response.status} while searching foor passport status ${body}`
+        )
     }
   }
 
   const getStatusText = (status?: string) => {
     switch (status?.toUpperCase()) {
       case 'ACCEPTED':
-        return content.status.ACCEPTED
+        return homeLocale.status.ACCEPTED
       case 'COMPLETED':
-        return content.status.COMPLETED
+        return homeLocale.status.COMPLETED
       case 'PROCESSING':
-        return content.status.PROCESSING
+        return homeLocale.status.PROCESSING
       case 'REJECTED':
-        return content.status.REJECTED
+        return homeLocale.status.REJECTED
       default:
         return status
     }
   }
 
   return (
-    <>
-      <h1 className="mb-4">{content.header}</h1>
+    <Layout>
+      <h1 className="mb-4">{homeLocale.header}</h1>
       {!response ? (
         <div>
-          <p>{content.description}</p>
+          <p>{homeLocale.description}</p>
           {errorSummary.length > 0 && (
             <ErrorSummary
               id="error-summary-get-status"
-              summary={commonContent.foundErrors}
+              summary={commonLocale.foundErrors}
               errors={errorSummary}
             />
           )}
@@ -179,9 +181,9 @@ const Home: FC<HomeProps & { commonContent: CommonContent }> = ({
             <InputField
               id="esrf"
               name="FileNumber"
-              label={content.esrf.label}
+              label={homeLocale.esrf.label}
               required
-              textRequired={commonContent.required}
+              textRequired={commonLocale.required}
               value={esrf}
               onChange={(e) => setEsrf(e.currentTarget.value)}
               errorMessage={esrfError}
@@ -189,9 +191,9 @@ const Home: FC<HomeProps & { commonContent: CommonContent }> = ({
             <InputField
               id="givenName"
               name="givenName"
-              label={content.givenName.label}
+              label={homeLocale.givenName.label}
               required
-              textRequired={commonContent.required}
+              textRequired={commonLocale.required}
               value={givenName}
               onChange={(e) => setGivenName(e.currentTarget.value)}
               errorMessage={givenNameError}
@@ -199,9 +201,9 @@ const Home: FC<HomeProps & { commonContent: CommonContent }> = ({
             <InputField
               id="surname"
               name="surname"
-              label={content.surname.label}
+              label={homeLocale.surname.label}
               required
-              textRequired={commonContent.required}
+              textRequired={commonLocale.required}
               value={surname}
               onChange={(e) => setSurname(e.currentTarget.value)}
               errorMessage={surnameError}
@@ -209,9 +211,9 @@ const Home: FC<HomeProps & { commonContent: CommonContent }> = ({
             <InputField
               id="dob"
               name="birthDate"
-              label={content.birthDate.label}
+              label={homeLocale.birthDate.label}
               required
-              textRequired={commonContent.required}
+              textRequired={commonLocale.required}
               value={birthDate}
               onChange={(e) => setBirthDate(e.currentTarget.value)}
               errorMessage={birthDateError}
@@ -219,7 +221,7 @@ const Home: FC<HomeProps & { commonContent: CommonContent }> = ({
             />
             <ActionButton
               type="submit"
-              text={content.checkStatus}
+              text={homeLocale.checkStatus}
               style="primary"
             />
           </form>
@@ -228,30 +230,22 @@ const Home: FC<HomeProps & { commonContent: CommonContent }> = ({
         <div id="response">
           {response !== 'not-found' ? (
             <p className="mb-6 text-2xl">
-              {content.statusIs}{' '}
+              {homeLocale.statusIs}{' '}
               <strong>{getStatusText(response.status)}</strong>.
             </p>
           ) : (
-            <p className=" mb-6 text-2xl">{content.unableToFindStatus}</p>
+            <p className=" mb-6 text-2xl">{homeLocale.unableToFindStatus}</p>
           )}
-          <p className="mb-6 text-2xl">{content.checkAgain}</p>
+          <p className="mb-6 text-2xl">{homeLocale.checkAgain}</p>
           <ActionButton
             onClick={handleReset}
-            text={content.resetForm}
+            text={homeLocale.resetForm}
             style="primary"
           />
         </div>
       )}
-    </>
+    </Layout>
   )
-}
-
-export const getStaticProps: GetStaticProps<HomeProps> = async ({ locale }) => {
-  return {
-    props: {
-      content: locale === 'fr' ? fr : en,
-    },
-  }
 }
 
 export default Home
