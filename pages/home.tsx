@@ -49,7 +49,7 @@ const Home: FC = () => {
   const [birthDate, setBirthDate] = useState<string | undefined>()
   const [birthDateError, setBirthDateError] = useState<string | undefined>()
   const [response, setResponse] = useState<
-    PassportStatus | 'not-found' | undefined
+    PassportStatus | 'not-found' | 'non-unique' | undefined
   >()
   const [errorSummary, setErrorSummary] = useState<ErrorSummaryItem[]>([])
 
@@ -142,6 +142,7 @@ const Home: FC = () => {
       })
       if (response.ok) setResponse((await response.json()) as PassportStatus)
       else if (response.status === 404) setResponse('not-found')
+      else if (response.status === 422) setResponse('non-unique')
       else
         throw new Error(
           `Unhandled reponse status ${response.status} while searching foor passport status ${body}`
@@ -228,13 +229,13 @@ const Home: FC = () => {
         </div>
       ) : (
         <div id="response">
-          {response !== 'not-found' ? (
+          {response === 'not-found' || response === 'non-unique' ? (
+            <p className=" mb-6 text-2xl">{homeLocale.unableToFindStatus}</p>
+          ) : (
             <p className="mb-6 text-2xl">
               {homeLocale.statusIs}{' '}
               <strong>{getStatusText(response.status)}</strong>.
             </p>
-          ) : (
-            <p className=" mb-6 text-2xl">{homeLocale.unableToFindStatus}</p>
           )}
           <p className="mb-6 text-2xl">{homeLocale.checkAgain}</p>
           <ActionButton
