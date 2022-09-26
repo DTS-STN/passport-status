@@ -45,7 +45,7 @@ export async function handlerWithAPI(
   passportStatusAPIBaseURI: string
 ) {
   if (!passportStatusAPIBaseURI) {
-    throw 'passportStatusAPIBaseURI must not be null or empty'
+    throw Error('passportStatusAPIBaseURI must not be null or empty')
   }
 
   const { esrf, givenName, surname, birthDate } = req.body as RequestData
@@ -83,8 +83,7 @@ export default async function handler(
 
   // TODO Sebastien: Remove hardcoded API URI, only used for DEMO purposes
   const passportStatusAPIBaseURI =
-    process.env.NEXT_PUBLIC_API_PASSPORT_STATUS_BASE_URI ??
-    'https://passport-status-main-api.dev-rhp.dts-stn.com'
+    process.env.NEXT_PUBLIC_API_PASSPORT_STATUS_BASE_URI
 
   return passportStatusAPIBaseURI
     ? handlerWithAPI(req, res, passportStatusAPIBaseURI)

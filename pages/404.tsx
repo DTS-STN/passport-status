@@ -1,15 +1,11 @@
 import Link from 'next/link'
 
-const Error = ({ statusCode }) => {
+const Custom404 = () => {
   return (
     <div className="grid md:grid-cols-2 sm:grid-cols-1 items-center justify-center overflow-visible md:h-96 sm:h-screen mx-2 my-2 px-20">
       <div className="error-404">
         <h1 className="text-2xl">{"We couldn't find that Web page"}</h1>
-        <h2>
-          {statusCode
-            ? `An error ${statusCode} occurred on server`
-            : 'An error occurred on client'}
-        </h2>
+        <h2>An error 404 occured on server</h2>
         <p>
           {
             "We're sorry you ended up here. Sometimes a page gets moved or deleted, but hopefully we can help you find what you're looking for. What next?"
@@ -33,11 +29,7 @@ const Error = ({ statusCode }) => {
       </div>
       <div className="error-404">
         <h1 className="text-2xl">Nous ne pouvons trouver cette page Web</h1>
-        <h2>
-          {statusCode
-            ? `Erreur ${statusCode}`
-            : 'Erreur produite sur le client'}
-        </h2>
+        <h2>Erreur 404</h2>
         <p>
           {
             "Nous sommes désolés que vous ayez abouti ici. Il arrive parfois qu'une page ait été déplacée ou supprimée. Heureusement, nous pouvons vous aider à trouver ce que vous cherchez. Que faire?"
@@ -62,9 +54,4 @@ const Error = ({ statusCode }) => {
   )
 }
 
-Error.getInitialProps = async ({ res, err }) => {
-  const statusCode = res?.statusCode ?? err?.statusCode ?? 404
-  return { statusCode }
-}
-
-export default Error
+export default Custom404
