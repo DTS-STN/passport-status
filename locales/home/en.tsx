@@ -37,7 +37,7 @@ const homeEN = {
     'The latest status of your application according to our records is: ',
   status: {
     ACCEPTED: 'Accepted',
-    PROCESSING: 'Progressing',
+    PROCESSING: 'Processing',
     REJECTED: 'Rejected',
     COMPLETED: 'Completed',
   },
