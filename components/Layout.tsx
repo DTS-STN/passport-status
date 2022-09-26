@@ -16,7 +16,7 @@ const Layout: FC<LayoutProps> = ({ children }) => {
   const langToggleLink = (locale === 'en' ? '/fr' : '') + asPath
 
   return (
-    <>
+    <div className="flex flex-col min-h-screen">
       <MetaData data={commonLocale.meta}></MetaData>
 
       <Header
@@ -28,7 +28,7 @@ const Layout: FC<LayoutProps> = ({ children }) => {
       <main
         role="main"
         id="mainContent"
-        className="container mx-auto px-6 mt-5 p-8"
+        className="container mx-auto px-6 mt-5 p-8 flex-1"
       >
         {children}
       </main>
@@ -53,7 +53,7 @@ const Layout: FC<LayoutProps> = ({ children }) => {
           },
         ]}
       />
-    </>
+    </div>
   )
 }
 
