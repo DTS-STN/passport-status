@@ -3,27 +3,19 @@ import Footer from './Footer'
 import MetaData from './MetaData'
 import useCommonLocale from '../locales/useCommonLocale'
 import { FC } from 'react'
-import { useRouter } from 'next/router'
 
 export interface LayoutProps {
   children?: React.ReactNode
 }
 
 const Layout: FC<LayoutProps> = ({ children }) => {
-  const { locale, asPath } = useRouter()
   const commonLocale = useCommonLocale()
-
-  const langToggleLink = (locale === 'en' ? '/fr' : '') + asPath
 
   return (
     <div className="flex flex-col min-h-screen">
       <MetaData data={commonLocale.meta}></MetaData>
 
-      <Header
-        language={locale}
-        t={commonLocale}
-        langToggleLink={langToggleLink}
-      ></Header>
+      <Header />
 
       <main
         role="main"

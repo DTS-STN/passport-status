@@ -21,13 +21,16 @@ jest.mock('next/link', () => ({
   ),
 }))
 
+const defaultRouterObj = {
+  pathname: '/',
+  asPath: '/',
+  locale: 'en',
+}
+
 expect.extend(toHaveNoViolations)
 
 describe('Header', () => {
-  useRouter.mockImplementation(() => ({
-    pathname: '/',
-    asPath: '/',
-  }))
+  useRouter.mockImplementation(() => defaultRouterObj)
 
   it('renders Header in English', () => {
     render(<Header language="en" t={en} />)
@@ -36,6 +39,7 @@ describe('Header', () => {
   })
 
   it('renders Header in French', () => {
+    useRouter.mockImplementation(() => ({ ...defaultRouterObj, locale: 'fr' }))
     render(<Header language="fr" t={fr} />)
     const HeaderLang = screen.getByText('English')
     expect(HeaderLang).toBeInTheDocument()
