@@ -38,7 +38,6 @@ const Layout: FC<LayoutProps> = ({ children }) => {
         footerLogoImage="/wmms-blk.svg"
         footerNav1="aboutGovernment"
         footerNav2="aboutThisSite"
-        t={commonLocale}
         links={[
           {
             link: commonLocale.footerContactUsURL,

@@ -1,28 +1,24 @@
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
+import '@testing-library/jest-dom'
 import { axe, toHaveNoViolations } from 'jest-axe'
 import Footer from '../../components/Footer'
-import en from '../../locales/en'
+import { useRouter } from 'next/router'
+
+jest.mock('next/router', () => ({
+  useRouter: jest.fn(),
+}))
 
 expect.extend(toHaveNoViolations)
 
 describe('Footer', () => {
+  useRouter.mockImplementation(() => ({}))
+
   it('renders Footer with links', () => {
     render(
       <Footer
         footerLogoAltText="testAltText"
         footerLogoImage="testImage"
-        t={en}
-        footerBoxLinks={[
-          {
-            footerBoxlink: 'footerContactUsURL',
-            footerBoxLinkText: 'footerContactUs',
-          },
-          {
-            footerBoxlink: 'footerNewsURL',
-            footerBoxLinkText: 'footerNews',
-          },
-        ]}
         links={[
           {
             link: 'https://some-link-1.com',
@@ -52,13 +48,6 @@ describe('Footer', () => {
       <Footer
         footerLogoAltText="testAltText"
         footerLogoImage="testImage"
-        t={en}
-        footerBoxLinks={[
-          {
-            footerBoxlink: 'footerContactUsURL',
-            footerBoxLinkText: 'footerContactUs',
-          },
-        ]}
         links={[
           {
             link: 'https://some-link-1.com',
