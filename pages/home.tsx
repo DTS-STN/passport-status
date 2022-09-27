@@ -61,10 +61,13 @@ const Home: FC = () => {
     setGivenNameError(undefined)
     setSurnameError(undefined)
     setBirthDateError(undefined)
-    setEsrf(undefined)
-    setGivenName(undefined)
-    setSurname(undefined)
-    setBirthDate(undefined)
+    //If response is 'not-found', form data will not be cleared so user can check for typos
+    if (response !== 'not-found') {
+      setEsrf(undefined)
+      setGivenName(undefined)
+      setSurname(undefined)
+      setBirthDate(undefined)
+    }
     setResponse(undefined)
   }
 
