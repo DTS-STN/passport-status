@@ -40,6 +40,55 @@ export default function Home(props) {
     setResponse()
   }
 
+  //fetches API
+  const fetchStatus = async () => {
+    const response = await fetch('/api/checkStatus', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ esrf, givenName, surname, birthDate }),
+    })
+    const result = await response.json()
+    result.success = response.ok
+    setResponse(result)
+  }
+
+  //checks ESRF error and returns appropriate error message
+  const getESRFError = () => {
+    if (!esrf) return props.content.esrf.error.required
+    else if (esrf.length != 8) return props.content.esrf.error.length
+    else return null
+  }
+
+  //checks DOB error and returns appropriate error message
+  const getDOBError = () => {
+    if (!birthDate) return props.content.birthDate.error.required
+    else {
+      const dob = new Date(birthDate)
+      if (isNaN(dob.getTime())) return props.content.birthDate.error.invalid
+      else if (dob > new Date()) return props.content.birthDate.error.current
+    }
+  }
+
+  //Pushes error to error array sets appropriate error message
+  const pushError = (errArr, err) => {
+    errArr.push(err)
+    switch (err.feildId) {
+      case 'esrf':
+        setEsrfError(err.errorMessage)
+        break
+      case 'givenName':
+        setGivenNameError(err.errorMessage)
+        break
+      case 'surname':
+        setSurnameError(err.errorMessage)
+        break
+      case 'dob':
+        setBirthDateError(err.errorMessage)
+        break
+    }
+    return errArr
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault()
     //clear errors & results
@@ -51,57 +100,32 @@ export default function Home(props) {
     setResponse()
     let errors = []
 
-    //validate data
-    if (!esrf) errors.push(setError('esrf', props.content.esrf.error.required))
-    else if (esrf.length != 8)
-      errors.push(setError('esrf', props.content.esrf.error.length))
-
-    if (!givenName)
-      errors.push(setError('givenName', props.content.givenName.error.required))
-
-    if (!surname)
-      errors.push(setError('surname', props.content.surname.error.required))
-
-    if (!birthDate)
-      errors.push(setError('dob', props.content.birthDate.error.required))
-    else {
-      const dob = new Date(birthDate)
-      if (isNaN(dob.getTime()))
-        errors.push(setError('dob', props.content.birthDate.error.invalid))
-      else if (dob > new Date())
-        errors.push(setError('dob', props.content.birthDate.error.current))
+    //Validate Form
+    if (getESRFError()) {
+      pushError(errors, setError('esrf', getESRFError()))
+    }
+    if (!givenName) {
+      pushError(
+        errors,
+        setError('givenName', props.content.givenName.error.required)
+      )
+    }
+    if (!surname) {
+      pushError(
+        errors,
+        setError('surname', props.content.surname.error.required)
+      )
+    }
+    if (getDOBError()) {
+      pushError(errors, setError('dob', getDOBError()))
     }
 
     //check if form is valid
     if (errors.length > 0) {
-      //set the errors
-      errors.forEach((error) => {
-        switch (error.feildId) {
-          case 'esrf':
-            setEsrfError(error.errorMessage)
-            break
-          case 'givenName':
-            setGivenNameError(error.errorMessage)
-            break
-          case 'surname':
-            setSurnameError(error.errorMessage)
-            break
-          case 'dob':
-            setBirthDateError(error.errorMessage)
-            break
-        }
-      })
       setErrorSummary(errors)
     } else {
       //make the request for status
-      const response = await fetch('/api/checkStatus', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ esrf, givenName, surname, birthDate }),
-      })
-      const result = await response.json()
-      result.success = response.ok
-      setResponse(result)
+      fetchStatus()
     }
   }
 
