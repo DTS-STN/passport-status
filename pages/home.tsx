@@ -10,6 +10,7 @@ import ErrorSummary, {
 import useHomeLocale from '../locales/home/useHomeLocale'
 import useCommonLocale from '../locales/useCommonLocale'
 import Layout from '../components/Layout'
+import { object } from 'prop-types'
 
 export interface Page {
   size: number
@@ -53,6 +54,8 @@ const Home: FC = () => {
   >()
   const [errorSummary, setErrorSummary] = useState<ErrorSummaryItem[]>([])
 
+  console.log(typeof response)
+
   const handleReset: MouseEventHandler<HTMLButtonElement> = (e) => {
     e.preventDefault()
     //clear form data, errors & results
@@ -61,8 +64,8 @@ const Home: FC = () => {
     setGivenNameError(undefined)
     setSurnameError(undefined)
     setBirthDateError(undefined)
-    //If response is 'not-found', form data will not be cleared so user can check for typos
-    if (response !== 'not-found') {
+    //response will only be an object with a successful fetch from the API, else form data will not be cleared so user can check for typos
+    if (typeof response === 'object') {
       setEsrf(undefined)
       setGivenName(undefined)
       setSurname(undefined)
