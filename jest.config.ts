@@ -1,4 +1,6 @@
-module.exports = {
+import type { Config } from 'jest'
+
+const config: Config = {
   modulePathIgnorePatterns: ['./cypress'],
   collectCoverageFrom: [
     'components/**/*.{js,jsx}',
@@ -36,3 +38,5 @@ module.exports = {
     '^.+\\.module\\.(css|sass|scss)$',
   ],
 }
+
+export default config
