@@ -35,14 +35,13 @@ const homeFR = {
     'Nous ne sommes pas en mesure de déterminer le statut de votre demande pour le moment en utilisant ce service.',
   statusIs: 'Le dernier statut de votre candidature selon nos dossiers est : ',
   status: {
-    ACCEPTED: 'Acceptée',
-    PROCESSING: 'En traitement',
+    APPROVED: 'Approuvé',
+    IN_EXAMINATION: 'En examen',
     REJECTED: 'Rejetée',
-    COMPLETED: 'Complétée',
   },
   checkAgain:
     "Pour vérifier l'état d'une autre demande, cliquez sur le bouton ci-dessous:",
-  resetForm: 'Retourner',
+  goBack: 'Retourner',
 }
 
 export default homeFR

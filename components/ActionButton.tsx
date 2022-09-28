@@ -1,6 +1,7 @@
 import { FC, MouseEventHandler } from 'react'
 
 export interface ActionButtonProps {
+  disabled?: boolean
   onClick?: MouseEventHandler<HTMLButtonElement>
   style?: 'default' | 'primary' | 'super' | 'danger'
   text: string
@@ -8,6 +9,7 @@ export interface ActionButtonProps {
 }
 
 const ActionButton: FC<ActionButtonProps> = ({
+  disabled,
   onClick,
   style,
   text,
@@ -27,7 +29,12 @@ const ActionButton: FC<ActionButtonProps> = ({
   }
 
   return (
-    <button className={classStyle} onClick={onClick} type={type}>
+    <button
+      className={classStyle}
+      onClick={onClick}
+      type={type}
+      disabled={disabled}
+    >
       {text}
     </button>
   )
