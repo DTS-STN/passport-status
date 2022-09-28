@@ -10,7 +10,6 @@ import ErrorSummary, {
 import useHomeLocale from '../locales/home/useHomeLocale'
 import useCommonLocale from '../locales/useCommonLocale'
 import Layout from '../components/Layout'
-import { object } from 'prop-types'
 
 export interface Page {
   size: number
@@ -53,8 +52,6 @@ const Home: FC = () => {
     PassportStatus | 'not-found' | 'non-unique' | undefined
   >()
   const [errorSummary, setErrorSummary] = useState<ErrorSummaryItem[]>([])
-
-  console.log(typeof response)
 
   const handleReset: MouseEventHandler<HTMLButtonElement> = (e) => {
     e.preventDefault()
