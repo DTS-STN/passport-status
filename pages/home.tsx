@@ -71,6 +71,30 @@ const Home: FC = () => {
     setResponse(undefined)
   }
 
+  //validate fields return proper error message
+  const getESRFError = (): string => {
+    if (!esrf) return homeLocale.esrf.error.required
+    else if (esrf.length != 8) return homeLocale.esrf.error.length
+    else return ''
+  }
+  const getDOBError = (): string => {
+    if (!birthDate) return homeLocale.birthDate.error.required
+    else {
+      const dob = new Date(birthDate)
+      if (isNaN(dob.getTime())) return homeLocale.birthDate.error.invalid
+      else if (dob > new Date()) return homeLocale.birthDate.error.current
+      else return ''
+    }
+  }
+  const getGivenError = (): string => {
+    if (!givenName) return homeLocale.givenName.error.required
+    else return ''
+  }
+  const getSurnameError = (): string => {
+    if (!surname) return homeLocale.surname.error.required
+    else return ''
+  }
+
   const handleSubmit: FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault()
     //clear errors & results
@@ -83,57 +107,31 @@ const Home: FC = () => {
 
     const errors: ErrorSummaryItem[] = []
 
-    //validate data
-    if (!esrf)
-      errors.push(getErrorSummaryItem('esrf', homeLocale.esrf.error.required))
-    else if (esrf.length != 8)
-      errors.push(getErrorSummaryItem('esrf', homeLocale.esrf.error.length))
-
-    if (!givenName)
-      errors.push(
-        getErrorSummaryItem('givenName', homeLocale.givenName.error.required)
-      )
-
-    if (!surname)
-      errors.push(
-        getErrorSummaryItem('surname', homeLocale.surname.error.required)
-      )
-
-    if (!birthDate)
-      errors.push(
-        getErrorSummaryItem('dob', homeLocale.birthDate.error.required)
-      )
-    else {
-      const dob = new Date(birthDate)
-      if (isNaN(dob.getTime()))
-        errors.push(
-          getErrorSummaryItem('dob', homeLocale.birthDate.error.invalid)
-        )
-      else if (dob > new Date())
-        errors.push(
-          getErrorSummaryItem('dob', homeLocale.birthDate.error.current)
-        )
+    //set errors if any occur
+    const esrfErrorMsg: string = getESRFError()
+    if (esrfErrorMsg !== '') {
+      errors.push(getErrorSummaryItem('esrf', esrfErrorMsg))
+      setEsrfError(esrfErrorMsg)
+    }
+    const givennameErrorMsg: string = getGivenError()
+    if (givennameErrorMsg) {
+      errors.push(getErrorSummaryItem('givenName', givennameErrorMsg))
+      setGivenNameError(givennameErrorMsg)
+    }
+    const surnameErrorMsg: string = getSurnameError()
+    if (surnameErrorMsg) {
+      errors.push(getErrorSummaryItem('surname', surnameErrorMsg))
+      setSurnameError(surnameErrorMsg)
+    }
+    const dobErrorMsg: string = getDOBError()
+    if (dobErrorMsg !== '') {
+      errors.push(getErrorSummaryItem('dob', dobErrorMsg))
+      setBirthDateError(dobErrorMsg)
     }
 
     //check if form is valid
     if (errors.length > 0) {
-      //set the errors
-      errors.forEach(({ feildId, errorMessage }) => {
-        switch (feildId) {
-          case 'esrf':
-            setEsrfError(errorMessage)
-            break
-          case 'givenName':
-            setGivenNameError(errorMessage)
-            break
-          case 'surname':
-            setSurnameError(errorMessage)
-            break
-          case 'dob':
-            setBirthDateError(errorMessage)
-            break
-        }
-      })
+      //set the errorsummary
       setErrorSummary(errors)
     } else {
       //make the request for status
