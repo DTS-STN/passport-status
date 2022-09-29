@@ -36,14 +36,13 @@ const homeEN = {
   statusIs:
     'The latest status of your application according to our records is: ',
   status: {
-    ACCEPTED: 'Accepted',
-    PROCESSING: 'Processing',
+    APPROVED: 'Approved',
+    IN_EXAMINATION: 'In examination',
     REJECTED: 'Rejected',
-    COMPLETED: 'Completed',
   },
   checkAgain:
     'To check the status of another application, click the button below:',
-  resetForm: 'Go Back',
+  goBack: 'Go Back',
 }
 
 export default homeEN

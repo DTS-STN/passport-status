@@ -1,5 +1,3 @@
-import commonEn from '../locales/en'
-import commonFr from '../locales/fr'
 import InputField from '../components/InputField'
 import ActionButton from '../components/ActionButton'
 import { FC, FormEventHandler, MouseEventHandler, useState } from 'react'
@@ -10,31 +8,9 @@ import ErrorSummary, {
 import useHomeLocale from '../locales/home/useHomeLocale'
 import useCommonLocale from '../locales/useCommonLocale'
 import Layout from '../components/Layout'
-
-export interface Page {
-  size: number
-  totalElements: number
-  totalPages: number
-  number: number
-}
-
-export interface PassportStatusesSearchResponse {
-  _embedded: {
-    passportStatuses: PassportStatus[]
-  }
-  page: Page
-}
-
-export interface PassportStatus {
-  id?: string
-  fileNumber?: string
-  firstName?: string
-  lastName?: string
-  dateOfBirth?: string
-  status?: string
-}
-
-export type CommonContent = typeof commonEn | typeof commonFr
+import Error from './_error'
+import { CheckStatusReponse, CheckStatusRequestBody } from './api/check-status'
+import { useCheckStatus } from '../hooks/api/useCheckStatus'
 
 const Home: FC = () => {
   const commonLocale = useCommonLocale()
@@ -48,10 +24,27 @@ const Home: FC = () => {
   const [surnameError, setSurnameError] = useState<string | undefined>()
   const [birthDate, setBirthDate] = useState<string | undefined>()
   const [birthDateError, setBirthDateError] = useState<string | undefined>()
-  const [response, setResponse] = useState<
-    PassportStatus | 'not-found' | 'non-unique' | undefined
-  >()
   const [errorSummary, setErrorSummary] = useState<ErrorSummaryItem[]>([])
+
+  const [checkStatusRequestBody, setCheckStatusRequestBody] = useState<
+    CheckStatusRequestBody | undefined
+  >()
+
+  const {
+    isLoading: isCheckStatusLoading,
+    error: checkStatusError,
+    data: checkStatusReponse,
+  } = useCheckStatus(
+    {
+      ...(checkStatusRequestBody ?? {
+        birthDate: '',
+        esrf: '',
+        givenName: '',
+        surname: '',
+      }),
+    },
+    { enabled: !!checkStatusRequestBody }
+  )
 
   const handleReset: MouseEventHandler<HTMLButtonElement> = (e) => {
     e.preventDefault()
@@ -61,14 +54,11 @@ const Home: FC = () => {
     setGivenNameError(undefined)
     setSurnameError(undefined)
     setBirthDateError(undefined)
-    //response will only be an object with a successful fetch from the API, else form data will not be cleared so user can check for typos
-    if (typeof response === 'object') {
-      setEsrf(undefined)
-      setGivenName(undefined)
-      setSurname(undefined)
-      setBirthDate(undefined)
-    }
-    setResponse(undefined)
+    setEsrf(undefined)
+    setGivenName(undefined)
+    setSurname(undefined)
+    setBirthDate(undefined)
+    setCheckStatusRequestBody(undefined)
   }
 
   //validate fields return proper error message
@@ -97,13 +87,14 @@ const Home: FC = () => {
 
   const handleSubmit: FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault()
+
     //clear errors & results
     setErrorSummary([])
     setEsrfError(undefined)
     setGivenNameError(undefined)
     setSurnameError(undefined)
     setBirthDateError(undefined)
-    setResponse(undefined)
+    setCheckStatusRequestBody(undefined)
 
     const errors: ErrorSummaryItem[] = []
 
@@ -133,32 +124,114 @@ const Home: FC = () => {
     if (errors.length > 0) {
       //set the errorsummary
       setErrorSummary(errors)
-    } else {
-      //make the request for status
-      const body = JSON.stringify({ esrf, givenName, surname, birthDate })
-      const response = await fetch('/api/checkStatus', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body,
+    } else if (esrf && givenName && surname && birthDate) {
+      setCheckStatusRequestBody({
+        birthDate,
+        esrf,
+        givenName,
+        surname,
       })
-      if (response.ok) setResponse((await response.json()) as PassportStatus)
-      else if (response.status === 404) setResponse('not-found')
-      else if (response.status === 422) setResponse('non-unique')
-      else
-        throw new Error(
-          `Unhandled reponse status ${response.status} while searching foor passport status ${body}`
-        )
     }
   }
 
+  return (
+    <Layout>
+      {checkStatusError ? (
+        <Error statusCode={checkStatusError.statusCode} />
+      ) : checkStatusReponse ? (
+        <PassportStatusInfo
+          checkStatusResponse={checkStatusReponse}
+          handleGoBackClick={handleReset}
+        />
+      ) : checkStatusReponse === null ? (
+        <PassportStatusUnavailable
+          handleGoBackClick={() => setCheckStatusRequestBody(undefined)}
+        />
+      ) : (
+        <>
+          <h1 className="mb-4">{homeLocale.header}</h1>
+          <div>
+            <p>{homeLocale.description}</p>
+            {errorSummary.length > 0 && (
+              <ErrorSummary
+                id="error-summary-get-status"
+                summary={commonLocale.foundErrors}
+                errors={errorSummary}
+              />
+            )}
+            <form onSubmit={handleSubmit} id="form-get-status">
+              <InputField
+                id="esrf"
+                name="FileNumber"
+                label={homeLocale.esrf.label}
+                required
+                textRequired={commonLocale.required}
+                value={esrf}
+                onChange={(e) => setEsrf(e.currentTarget.value)}
+                errorMessage={esrfError}
+              />
+              <InputField
+                id="givenName"
+                name="givenName"
+                label={homeLocale.givenName.label}
+                required
+                textRequired={commonLocale.required}
+                value={givenName}
+                onChange={(e) => setGivenName(e.currentTarget.value)}
+                errorMessage={givenNameError}
+              />
+              <InputField
+                id="surname"
+                name="surname"
+                label={homeLocale.surname.label}
+                required
+                textRequired={commonLocale.required}
+                value={surname}
+                onChange={(e) => setSurname(e.currentTarget.value)}
+                errorMessage={surnameError}
+              />
+              <InputField
+                id="dob"
+                name="birthDate"
+                label={homeLocale.birthDate.label}
+                required
+                textRequired={commonLocale.required}
+                value={birthDate}
+                onChange={(e) => setBirthDate(e.currentTarget.value)}
+                errorMessage={birthDateError}
+                type="date"
+              />
+              <ActionButton
+                disabled={isCheckStatusLoading}
+                type="submit"
+                text={homeLocale.checkStatus}
+                style="primary"
+              />
+            </form>
+          </div>
+        </>
+      )}
+    </Layout>
+  )
+}
+
+export interface PassportStatusInfoProps {
+  handleGoBackClick: MouseEventHandler<HTMLButtonElement>
+  checkStatusResponse: CheckStatusReponse
+}
+
+export const PassportStatusInfo: FC<PassportStatusInfoProps> = ({
+  checkStatusResponse,
+  handleGoBackClick,
+}) => {
+  const homeLocale = useHomeLocale()
+
   const getStatusText = (status?: string) => {
     switch (status?.toUpperCase()) {
-      case 'ACCEPTED':
-        return homeLocale.status.ACCEPTED
-      case 'COMPLETED':
-        return homeLocale.status.COMPLETED
-      case 'PROCESSING':
-        return homeLocale.status.PROCESSING
+      case 'IN_EXAMINATION':
+        return homeLocale.status.IN_EXAMINATION
+      case 'APPROVED':
+        return homeLocale.status.APPROVED
       case 'REJECTED':
         return homeLocale.status.REJECTED
       default:
@@ -167,86 +240,40 @@ const Home: FC = () => {
   }
 
   return (
-    <Layout>
-      <h1 className="mb-4">{homeLocale.header}</h1>
-      {!response ? (
-        <div>
-          <p>{homeLocale.description}</p>
-          {errorSummary.length > 0 && (
-            <ErrorSummary
-              id="error-summary-get-status"
-              summary={commonLocale.foundErrors}
-              errors={errorSummary}
-            />
-          )}
-          <form onSubmit={handleSubmit} id="form-get-status">
-            <InputField
-              id="esrf"
-              name="FileNumber"
-              label={homeLocale.esrf.label}
-              required
-              textRequired={commonLocale.required}
-              value={esrf}
-              onChange={(e) => setEsrf(e.currentTarget.value)}
-              errorMessage={esrfError}
-            />
-            <InputField
-              id="givenName"
-              name="givenName"
-              label={homeLocale.givenName.label}
-              required
-              textRequired={commonLocale.required}
-              value={givenName}
-              onChange={(e) => setGivenName(e.currentTarget.value)}
-              errorMessage={givenNameError}
-            />
-            <InputField
-              id="surname"
-              name="surname"
-              label={homeLocale.surname.label}
-              required
-              textRequired={commonLocale.required}
-              value={surname}
-              onChange={(e) => setSurname(e.currentTarget.value)}
-              errorMessage={surnameError}
-            />
-            <InputField
-              id="dob"
-              name="birthDate"
-              label={homeLocale.birthDate.label}
-              required
-              textRequired={commonLocale.required}
-              value={birthDate}
-              onChange={(e) => setBirthDate(e.currentTarget.value)}
-              errorMessage={birthDateError}
-              type="date"
-            />
-            <ActionButton
-              type="submit"
-              text={homeLocale.checkStatus}
-              style="primary"
-            />
-          </form>
-        </div>
-      ) : (
-        <div id="response">
-          {response === 'not-found' || response === 'non-unique' ? (
-            <p className=" mb-6 text-2xl">{homeLocale.unableToFindStatus}</p>
-          ) : (
-            <p className="mb-6 text-2xl">
-              {homeLocale.statusIs}{' '}
-              <strong>{getStatusText(response.status)}</strong>.
-            </p>
-          )}
-          <p className="mb-6 text-2xl">{homeLocale.checkAgain}</p>
-          <ActionButton
-            onClick={handleReset}
-            text={homeLocale.resetForm}
-            style="primary"
-          />
-        </div>
-      )}
-    </Layout>
+    <div id="response">
+      <p className="mb-6 text-2xl">
+        {homeLocale.statusIs}{' '}
+        <strong>{getStatusText(checkStatusResponse.status)}</strong>.
+      </p>
+      <p className="mb-6 text-2xl">{homeLocale.checkAgain}</p>
+      <ActionButton
+        onClick={handleGoBackClick}
+        text={homeLocale.goBack}
+        style="primary"
+      />
+    </div>
+  )
+}
+
+export interface PassportStatusUnavailableProps {
+  handleGoBackClick: MouseEventHandler<HTMLButtonElement>
+}
+
+export const PassportStatusUnavailable: FC<PassportStatusUnavailableProps> = ({
+  handleGoBackClick,
+}) => {
+  const homeLocale = useHomeLocale()
+
+  return (
+    <div id="response">
+      <p className=" mb-6 text-2xl">{homeLocale.unableToFindStatus}</p>
+      <p className="mb-6 text-2xl">{homeLocale.checkAgain}</p>
+      <ActionButton
+        onClick={handleGoBackClick}
+        text={homeLocale.goBack}
+        style="primary"
+      />
+    </div>
   )
 }
 

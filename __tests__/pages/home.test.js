@@ -2,6 +2,7 @@ import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import Home from '../../pages/home'
 import { useRouter } from 'next/router'
+import { useCheckStatus } from '../../hooks/api/useCheckStatus'
 
 // mocks useRouter to be able to use component' router.asPath
 jest.mock('next/router', () => ({
@@ -16,6 +17,7 @@ jest.mock('../../components/ActionButton', () => () => {
 jest.mock('../../components/ErrorSummary', () => () => {
   return <mock-modal data-testid="errors-modal" />
 })
+jest.mock('../../hooks/api/useCheckStatus')
 
 describe('Home page', () => {
   beforeEach(() => {
@@ -23,6 +25,7 @@ describe('Home page', () => {
       pathname: '/',
       asPath: '/',
     }))
+    useCheckStatus.mockImplementation(() => ({}))
   })
 
   it('should render the page', () => {

@@ -13,7 +13,15 @@ jest.mock('../../components/InputErrorMessage', () => () => {
 })
 
 describe('InputField', () => {
-  const { container } = render(<InputField id="id" name="name" label="label" />)
+  const { container } = render(
+    <InputField
+      id="id"
+      name="name"
+      label="label"
+      onChange={() => {}}
+      value=""
+    />
+  )
 
   it('renders', () => {
     const sut = screen.getByTestId('id')
