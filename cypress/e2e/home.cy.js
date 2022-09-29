@@ -28,7 +28,7 @@ describe('home page loads', () => {
     cy.get('#input-esrf > span').should('contain.text', 'required')
     cy.get('#input-givenName > span').should('contain.text', 'required')
     cy.get('#input-surname > span').should('contain.text', 'required')
-    cy.get('#input-dob > span').should('contain.text', 'required')
+    cy.get('#input-birthDate > span').should('contain.text', 'required')
   })
 
   it('Home page has no detectable a11y violations on load', () => {

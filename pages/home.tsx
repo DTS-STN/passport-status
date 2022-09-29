@@ -1,6 +1,6 @@
 import InputField from '../components/InputField'
 import ActionButton from '../components/ActionButton'
-import { FC, FormEventHandler, MouseEventHandler, useState } from 'react'
+import { FC, MouseEventHandler, useCallback, useMemo, useState } from 'react'
 import ErrorSummary, {
   ErrorSummaryItem,
   getErrorSummaryItem,
@@ -11,128 +11,78 @@ import Layout from '../components/Layout'
 import Error from './_error'
 import { CheckStatusReponse, CheckStatusRequestBody } from './api/check-status'
 import { useCheckStatus } from '../hooks/api/useCheckStatus'
+import { useFormik } from 'formik'
+import * as Yup from 'yup'
 
 const Home: FC = () => {
   const commonLocale = useCommonLocale()
   const homeLocale = useHomeLocale()
 
-  const [esrf, setEsrf] = useState<string | undefined>()
-  const [esrfError, setEsrfError] = useState<string | undefined>()
-  const [givenName, setGivenName] = useState<string | undefined>()
-  const [givenNameError, setGivenNameError] = useState<string | undefined>()
-  const [surname, setSurname] = useState<string | undefined>()
-  const [surnameError, setSurnameError] = useState<string | undefined>()
-  const [birthDate, setBirthDate] = useState<string | undefined>()
-  const [birthDateError, setBirthDateError] = useState<string | undefined>()
-  const [errorSummary, setErrorSummary] = useState<ErrorSummaryItem[]>([])
+  const [formSubmitted, setFormSubmitted] = useState(false)
 
-  const [checkStatusRequestBody, setCheckStatusRequestBody] = useState<
-    CheckStatusRequestBody | undefined
-  >()
+  const formik = useFormik<CheckStatusRequestBody>({
+    initialValues: {
+      birthDate: '',
+      esrf: '',
+      givenName: '',
+      surname: '',
+    },
+    validationSchema: Yup.object({
+      esrf: Yup.string()
+        .required(homeLocale.esrf.error.required)
+        .length(8, homeLocale.esrf.error.length),
+      givenName: Yup.string().required(homeLocale.givenName.error.required),
+      surname: Yup.string().required(homeLocale.surname.error.required),
+      birthDate: Yup.date()
+        .required(homeLocale.birthDate.error.required)
+        .max(new Date(), homeLocale.birthDate.error.current),
+    }),
+    validateOnBlur: false,
+    validateOnChange: false,
+    validateOnMount: false,
+    onReset: () => {
+      setFormSubmitted(false)
+      removeCheckStatusResponse()
+    },
+    onSubmit: (values) => {
+      setFormSubmitted(true)
+    },
+  })
 
   const {
     isLoading: isCheckStatusLoading,
     error: checkStatusError,
     data: checkStatusReponse,
-  } = useCheckStatus(
-    {
-      ...(checkStatusRequestBody ?? {
-        birthDate: '',
-        esrf: '',
-        givenName: '',
-        surname: '',
-      }),
+    remove: removeCheckStatusResponse,
+  } = useCheckStatus(formik.values, { enabled: formSubmitted })
+
+  const errorSummary = useMemo<ErrorSummaryItem[]>(() => {
+    return Object.keys(formik.errors)
+      .filter((key) => !!formik.errors[key as keyof typeof formik.errors])
+      .map((key) =>
+        getErrorSummaryItem(
+          key,
+          formik.errors[key as keyof typeof formik.errors] as string
+        )
+      )
+  }, [formik])
+
+  const handleReset: MouseEventHandler<HTMLButtonElement> = useCallback(
+    (e) => {
+      e.preventDefault()
+      formik.resetForm()
     },
-    { enabled: !!checkStatusRequestBody }
+    [formik]
   )
 
-  const handleReset: MouseEventHandler<HTMLButtonElement> = (e) => {
-    e.preventDefault()
-    //clear form data, errors & results
-    setErrorSummary([])
-    setEsrfError(undefined)
-    setGivenNameError(undefined)
-    setSurnameError(undefined)
-    setBirthDateError(undefined)
-    setEsrf(undefined)
-    setGivenName(undefined)
-    setSurname(undefined)
-    setBirthDate(undefined)
-    setCheckStatusRequestBody(undefined)
-  }
-
-  //validate fields return proper error message
-  const getESRFError = (): string => {
-    if (!esrf) return homeLocale.esrf.error.required
-    else if (esrf.length != 8) return homeLocale.esrf.error.length
-    else return ''
-  }
-  const getDOBError = (): string => {
-    if (!birthDate) return homeLocale.birthDate.error.required
-    else {
-      const dob = new Date(birthDate)
-      if (isNaN(dob.getTime())) return homeLocale.birthDate.error.invalid
-      else if (dob > new Date()) return homeLocale.birthDate.error.current
-      else return ''
-    }
-  }
-  const getGivenError = (): string => {
-    if (!givenName) return homeLocale.givenName.error.required
-    else return ''
-  }
-  const getSurnameError = (): string => {
-    if (!surname) return homeLocale.surname.error.required
-    else return ''
-  }
-
-  const handleSubmit: FormEventHandler<HTMLFormElement> = async (e) => {
-    e.preventDefault()
-
-    //clear errors & results
-    setErrorSummary([])
-    setEsrfError(undefined)
-    setGivenNameError(undefined)
-    setSurnameError(undefined)
-    setBirthDateError(undefined)
-    setCheckStatusRequestBody(undefined)
-
-    const errors: ErrorSummaryItem[] = []
-
-    //set errors if any occur
-    const esrfErrorMsg: string = getESRFError()
-    if (esrfErrorMsg !== '') {
-      errors.push(getErrorSummaryItem('esrf', esrfErrorMsg))
-      setEsrfError(esrfErrorMsg)
-    }
-    const givennameErrorMsg: string = getGivenError()
-    if (givennameErrorMsg) {
-      errors.push(getErrorSummaryItem('givenName', givennameErrorMsg))
-      setGivenNameError(givennameErrorMsg)
-    }
-    const surnameErrorMsg: string = getSurnameError()
-    if (surnameErrorMsg) {
-      errors.push(getErrorSummaryItem('surname', surnameErrorMsg))
-      setSurnameError(surnameErrorMsg)
-    }
-    const dobErrorMsg: string = getDOBError()
-    if (dobErrorMsg !== '') {
-      errors.push(getErrorSummaryItem('dob', dobErrorMsg))
-      setBirthDateError(dobErrorMsg)
-    }
-
-    //check if form is valid
-    if (errors.length > 0) {
-      //set the errorsummary
-      setErrorSummary(errors)
-    } else if (esrf && givenName && surname && birthDate) {
-      setCheckStatusRequestBody({
-        birthDate,
-        esrf,
-        givenName,
-        surname,
-      })
-    }
-  }
+  const handleGoBack: MouseEventHandler<HTMLButtonElement> = useCallback(
+    (e) => {
+      e.preventDefault()
+      setFormSubmitted(false)
+      removeCheckStatusResponse()
+    },
+    [removeCheckStatusResponse]
+  )
 
   return (
     <Layout>
@@ -144,9 +94,7 @@ const Home: FC = () => {
           handleGoBackClick={handleReset}
         />
       ) : checkStatusReponse === null ? (
-        <PassportStatusUnavailable
-          handleGoBackClick={() => setCheckStatusRequestBody(undefined)}
-        />
+        <PassportStatusUnavailable handleGoBackClick={handleGoBack} />
       ) : (
         <>
           <h1 className="mb-4">{homeLocale.header}</h1>
@@ -159,47 +107,47 @@ const Home: FC = () => {
                 errors={errorSummary}
               />
             )}
-            <form onSubmit={handleSubmit} id="form-get-status">
+            <form onSubmit={formik.handleSubmit} id="form-get-status">
               <InputField
                 id="esrf"
-                name="FileNumber"
+                name="esrf"
                 label={homeLocale.esrf.label}
-                required
+                onChange={formik.handleChange}
+                value={formik.values.esrf}
+                errorMessage={formik.errors.esrf}
                 textRequired={commonLocale.required}
-                value={esrf}
-                onChange={(e) => setEsrf(e.currentTarget.value)}
-                errorMessage={esrfError}
+                required
               />
               <InputField
                 id="givenName"
                 name="givenName"
                 label={homeLocale.givenName.label}
-                required
+                onChange={formik.handleChange}
+                value={formik.values.givenName}
+                errorMessage={formik.errors.givenName}
                 textRequired={commonLocale.required}
-                value={givenName}
-                onChange={(e) => setGivenName(e.currentTarget.value)}
-                errorMessage={givenNameError}
+                required
               />
               <InputField
                 id="surname"
                 name="surname"
                 label={homeLocale.surname.label}
-                required
+                onChange={formik.handleChange}
+                value={formik.values.surname}
+                errorMessage={formik.errors.surname}
                 textRequired={commonLocale.required}
-                value={surname}
-                onChange={(e) => setSurname(e.currentTarget.value)}
-                errorMessage={surnameError}
+                required
               />
               <InputField
-                id="dob"
+                id="birthDate"
                 name="birthDate"
-                label={homeLocale.birthDate.label}
-                required
-                textRequired={commonLocale.required}
-                value={birthDate}
-                onChange={(e) => setBirthDate(e.currentTarget.value)}
-                errorMessage={birthDateError}
                 type="date"
+                label={homeLocale.birthDate.label}
+                onChange={formik.handleChange}
+                value={formik.values.birthDate}
+                errorMessage={formik.errors.birthDate}
+                textRequired={commonLocale.required}
+                required
               />
               <ActionButton
                 disabled={isCheckStatusLoading}
