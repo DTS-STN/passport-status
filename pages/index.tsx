@@ -1,14 +1,21 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import MetaData from '../components/MetaData'
-import useCommonLocale from '../locales/useCommonLocale'
+import useTranslation from 'next-translate/useTranslation'
 
 const Index = () => {
-  const commonLocale = useCommonLocale()
+  const { t } = useTranslation()
 
   return (
     <div role="main" className="container mx-auto px-6 my-5 bg-slate-300 p-12">
-      <MetaData data={commonLocale.meta} />
+      <MetaData
+        data={{
+          author: t('common:meta.author'),
+          desc: t('common:meta.desc'),
+          keywords: t('common:meta.keywords'),
+          title: t('common:meta.title'),
+        }}
+      />
       <div className="flex flex-col justify-center items-center m-auto">
         <div className="z-10 bg-white h-auto w-[18.75rem] xl:w-[31.25rem]">
           <h1 className="sr-only">service.canada.ca-digital-center</h1>

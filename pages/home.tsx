@@ -13,8 +13,10 @@ import { CheckStatusReponse, CheckStatusRequestBody } from './api/check-status'
 import { useCheckStatus } from '../hooks/api/useCheckStatus'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
+import useTranslation from 'next-translate/useTranslation'
 
 const Home: FC = () => {
+  const { t } = useTranslation()
   const commonLocale = useCommonLocale()
   const homeLocale = useHomeLocale()
 
@@ -103,7 +105,7 @@ const Home: FC = () => {
             {errorSummary.length > 0 && (
               <ErrorSummary
                 id="error-summary-get-status"
-                summary={commonLocale.foundErrors}
+                summary={t('common:found-errors')}
                 errors={errorSummary}
               />
             )}

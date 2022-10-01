@@ -1,0 +1,41 @@
+{
+  "birth-date": {
+    "error": {
+      "current": "La date de naissance doit être une date dans le passé",
+      "invalid": "La date de naissance doit être une date valide au format (yyyy-MM-dd)",
+      "required": "La date de naissance est obligatoire"
+    },
+    "label": "Date de naissance"
+  },
+  "check-again": "Pour vérifier l'état d'une autre demande, cliquez sur le bouton ci-dessous:",
+  "check-status": "Vérifier l'état",
+  "description": "Utilisez ce service avec votre ESRF pour vérifier le statut de votre demande de passeport.",
+  "esrf": {
+    "error": {
+      "length": "Le numéro de dossier doit comporter 8 caractères",
+      "required": "Le numéro de dossier est obligatoire"
+    },
+    "label": "Numéro de dossier"
+  },
+  "given-name": {
+    "error": {
+      "required": "Le prénom est obligatoire"
+    },
+    "label": "Prénom"
+  },
+  "go-back": "Retourner",
+  "header": "Vérification du statut du passeport",
+  "status": {
+    "approved": "Approuvé",
+    "in-examination": "En examen",
+    "rejected": "Rejetée"
+  },
+  "status-is": "Le dernier statut de votre candidature selon nos dossiers est : ",
+  "surname": {
+    "error": {
+      "required": "Le nom de famille est obligatoire"
+    },
+    "label": "Nom de famille"
+  },
+  "unable-to-find-status": "Nous ne sommes pas en mesure de déterminer le statut de votre demande pour le moment en utilisant ce service."
+}
