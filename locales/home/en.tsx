@@ -1,3 +1,9 @@
+const status: { [key: string]: string } = {
+  ['APPROVED']: 'Approved',
+  ['IN_EXAMINATION']: 'In examination',
+  ['REJECTED']: 'Rejected',
+}
+
 const homeEN = {
   header: 'Passport Status Check',
   description:
@@ -35,11 +41,7 @@ const homeEN = {
     'We are unable to determine the status of your application at this time using this service.',
   statusIs:
     'The latest status of your application according to our records is: ',
-  status: {
-    APPROVED: 'Approved',
-    IN_EXAMINATION: 'In examination',
-    REJECTED: 'Rejected',
-  },
+  status: status,
   checkAgain:
     'To check the status of another application, click the button below:',
   goBack: 'Go Back',

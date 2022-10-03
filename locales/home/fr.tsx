@@ -1,3 +1,9 @@
+const status: { [key: string]: string } = {
+  ['APPROVED']: 'Approuvé',
+  ['IN_EXAMINATION']: 'En examen',
+  ['REJECTED']: 'Rejetée',
+}
+
 const homeFR = {
   header: 'Vérification du statut du passeport',
   description:
@@ -34,11 +40,7 @@ const homeFR = {
   unableToFindStatus:
     'Nous ne sommes pas en mesure de déterminer le statut de votre demande pour le moment en utilisant ce service.',
   statusIs: 'Le dernier statut de votre candidature selon nos dossiers est : ',
-  status: {
-    APPROVED: 'Approuvé',
-    IN_EXAMINATION: 'En examen',
-    REJECTED: 'Rejetée',
-  },
+  status: status,
   checkAgain:
     "Pour vérifier l'état d'une autre demande, cliquez sur le bouton ci-dessous:",
   goBack: 'Retourner',

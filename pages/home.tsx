@@ -174,24 +174,17 @@ export const PassportStatusInfo: FC<PassportStatusInfoProps> = ({
 }) => {
   const homeLocale = useHomeLocale()
 
-  const getStatusText = (status?: string) => {
-    switch (status?.toUpperCase()) {
-      case 'IN_EXAMINATION':
-        return homeLocale.status.IN_EXAMINATION
-      case 'APPROVED':
-        return homeLocale.status.APPROVED
-      case 'REJECTED':
-        return homeLocale.status.REJECTED
-      default:
-        return status
-    }
-  }
-
   return (
     <div id="response">
       <p className="mb-6 text-2xl">
         {homeLocale.statusIs}{' '}
-        <strong>{getStatusText(checkStatusResponse.status)}</strong>.
+        <strong>
+          {checkStatusResponse.status
+            ? homeLocale.status[checkStatusResponse.status.toUpperCase()] ??
+              checkStatusResponse.status
+            : null}
+        </strong>
+        .
       </p>
       <p className="mb-6 text-2xl">{homeLocale.checkAgain}</p>
       <ActionButton
