@@ -1,7 +1,7 @@
-const status: { [key: string]: string } = {
-  ['APPROVED']: 'Approuvé',
-  ['IN_EXAMINATION']: 'En examen',
-  ['REJECTED']: 'Rejetée',
+const status: Record<string, string> = {
+  APPROVED: 'Approuvé',
+  IN_EXAMINATION: 'En examen',
+  REJECTED: 'Rejetée',
 }
 
 const homeFR = {
