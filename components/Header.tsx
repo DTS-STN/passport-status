@@ -1,11 +1,11 @@
 import React, { FC } from 'react'
 import Link from 'next/link'
-import useCommonLocale from '../locales/useCommonLocale'
 import { useRouter } from 'next/router'
+import useTranslation from 'next-translate/useTranslation'
 
 const Header: FC = () => {
   const { locale, asPath } = useRouter()
-  const commonLocale = useCommonLocale()
+  const { t } = useTranslation('common')
 
   const langToggleLink = (locale === 'en' ? '/fr' : '') + asPath || '/'
 
@@ -13,7 +13,7 @@ const Header: FC = () => {
     <>
       <nav
         role="navigation"
-        aria-label={commonLocale.skipToMainContent}
+        aria-label={t('skip-to-main-content')}
         className="absolute w-px h-px -left-96 focus-within:w-screen focus-within:h-auto focus-within:top-4 focus-within:z-50 focus-within:flex focus-within:justify-center"
       >
         <a
@@ -22,14 +22,14 @@ const Header: FC = () => {
           href="#mainContent"
           draggable="false"
         >
-          {commonLocale.skipToMainContent}
+          {t('skip-to-main-content')}
         </a>
       </nav>
 
       <header>
         <div className="container mx-auto px-6 flex-col flex md:flex md:flex-row justify-between pt-6">
           <div className="flex flex-row justify-between items-center lg:mt-7">
-            <a href={commonLocale.gocLink}>
+            <a href={t('goc-link')}>
               <img
                 className="h-5 w-auto xs:h-6 sm:h-8 md:h-8 lg:h-7 xl:h-8 "
                 src={locale === 'en' ? '/sig-blk-en.svg' : '/sig-blk-fr.svg'}
@@ -83,19 +83,19 @@ const Header: FC = () => {
         <div className="mb-2 border-t pb-2 mt-4"></div>
 
         {/* <Menu
-          loginText={commonLocale.login}
+          loginText={t('login')}
           items={[
             {
               link: '/search',
-              text: commonLocale.serviceAndBenefits,
+              text: t('service-and-benefits'),
             },
             {
               link: '/',
-              text: commonLocale.tools,
+              text: t('tools'),
             },
             {
               link: '/',
-              text: commonLocale.contactUs,
+              text: t('contact-us'),
             },
           ]}
         /> */}

@@ -1,4 +1,5 @@
 // @ts-check
+const nextTranslate = require('next-translate')
 
 //formatting TC Date
 const builddate = process.env.BUILD_DATE
@@ -76,4 +77,4 @@ const nextConfig = {
   },
 }
 
-module.exports = nextConfig
+module.exports = nextTranslate(nextConfig)

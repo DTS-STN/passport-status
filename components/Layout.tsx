@@ -1,19 +1,26 @@
 import Header from './Header'
 import Footer from './Footer'
 import MetaData from './MetaData'
-import useCommonLocale from '../locales/useCommonLocale'
 import { FC } from 'react'
+import useTranslation from 'next-translate/useTranslation'
 
 export interface LayoutProps {
   children?: React.ReactNode
 }
 
 const Layout: FC<LayoutProps> = ({ children }) => {
-  const commonLocale = useCommonLocale()
+  const { t } = useTranslation('common')
 
   return (
     <div className="flex flex-col min-h-screen">
-      <MetaData data={commonLocale.meta}></MetaData>
+      <MetaData
+        data={{
+          author: t('meta.author'),
+          desc: t('meta.desc'),
+          keywords: t('meta.keywords'),
+          title: t('meta.title'),
+        }}
+      />
 
       <Header />
 
@@ -32,16 +39,16 @@ const Layout: FC<LayoutProps> = ({ children }) => {
         footerNav2="aboutThisSite"
         links={[
           {
-            link: commonLocale.footerContactUsURL,
-            linkText: commonLocale.footerContactUs,
+            link: t('footer.contact-us-url'),
+            linkText: t('footer.contact-us'),
           },
           {
-            link: commonLocale.footerTermsAndConditionURL,
-            linkText: commonLocale.footerTermsAndCondition,
+            link: t('footer.terms-and-condition-url'),
+            linkText: t('footer.terms-and-condition'),
           },
           {
-            link: commonLocale.footerPrivacyURL,
-            linkText: commonLocale.footerPrivacy,
+            link: t('footer.privacy-url'),
+            linkText: t('footer.privacy'),
           },
         ]}
       />

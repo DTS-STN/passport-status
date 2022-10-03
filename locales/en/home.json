@@ -1,0 +1,41 @@
+{
+  "birth-date": {
+    "error": {
+      "current": "The Date of birth must be a date in the past",
+      "invalid": "The Date of birth must be a valid date in the format of (dd/mm/yyyy)",
+      "required": "The Date of birth is required"
+    },
+    "label": "Date of birth"
+  },
+  "check-again": "To check the status of another application, click the button below:",
+  "check-status": "Check Status",
+  "description": "Use this service with your ESRF to check the status of your passport application.",
+  "esrf": {
+    "error": {
+      "length": "The File number must be 8 characters long",
+      "required": "The File number is required"
+    },
+    "label": "File number"
+  },
+  "given-name": {
+    "error": {
+      "required": "The Given name is required"
+    },
+    "label": "Given Name"
+  },
+  "go-back": "Go Back",
+  "header": "Passport Status Check",
+  "status": {
+    "APPROVED": "Approved",
+    "IN_EXAMINATION": "In examination",
+    "REJECTED": "Rejected"
+  },
+  "status-is": "The latest status of your application according to our records is: ",
+  "surname": {
+    "error": {
+      "required": "The Surname is required"
+    },
+    "label": "Surname"
+  },
+  "unable-to-find-status": "We are unable to determine the status of your application at this time using this service."
+}

@@ -1,0 +1,38 @@
+{
+  "contact-us": "Nous contacter",
+  "date-modified": "Date de modification\u00A0: ",
+  "english": "English",
+  "footer": {
+    "about-this-site": "À propos de ce site",
+    "canada-ca-alt-text": "Symbole du gouvernement du Canada",
+    "contact-us": "Contactez-nous",
+    "contact-us-url": "https://www.canada.ca/fr/contact.html",
+    "privacy": "Confidentialité",
+    "privacy-url": "https://www.canada.ca/en/transparency/privacy.html",
+    "terms-and-condition": "Avis",
+    "terms-and-condition-url": "https://www.canada.ca/en/transparency/terms.html"
+  },
+  "found-errors": "Les erreurs suivantes ont été trouvées dans le formulaire\u00A0: ",
+  "francais": "Français",
+  "goc": "Governement du Canada",
+  "goc-link": "https://www.canada.ca/fr.html",
+  "header-canada-ca-alt-text": "Symbole du gouvernement du Canada",
+  "language-selection": "Sélection de la langue",
+  "login": "Connexion",
+  "meta": {
+    "author": "Service Canada",
+    "desc": "Français",
+    "keywords": "",
+    "title": "Next Template - Accueil"
+  },
+  "required": "(obligatoire)",
+  "service-and-benefits": "Service et avantages",
+  "skip-to": {
+    "about-government": "Passer à « Au sujet du gouvernement »",
+    "main-content": "Passer au contenu principal"
+  },
+  "title": "accueil",
+  "tools": "Outils",
+  "top-of-page": "Haut de la page",
+  "welcome": "Bienvenue a"
+}
