@@ -77,5 +77,4 @@ const nextConfig = {
   },
 }
 
-module.exports = nextConfig
-//module.exports = nextTranslate(nextConfig)
+module.exports = nextTranslate(nextConfig)

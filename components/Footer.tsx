@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import useCommonLocale from '../locales/useCommonLocale'
+import useTranslation from 'next-translate/useTranslation'
 import DateModified from './DateModified'
 
 export interface FooterLink {
@@ -43,12 +43,11 @@ const Footer: FC<FooterProps> = ({
   footerNav1,
   footerNav2,
 }) => {
-  const commonLocale = useCommonLocale()
-
+  const { t } = useTranslation('common')
   return (
     <footer>
       <h2 className="sr-only">siteFooter</h2>
-      <DateModified text={commonLocale.dateModified} />
+      <DateModified text={t('date-modified')} />
       <div className="w-full">
         <div className="w-full h-full pb-4 bg-gray-light">
           <div className="h-auto pt-5 container mx-auto px-6 flex flex-col xl:flex xl:flex-row md:justify-between">

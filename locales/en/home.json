@@ -26,9 +26,9 @@
   "go-back": "Go Back",
   "header": "Passport Status Check",
   "status": {
-    "approved": "Approved",
-    "in-examination": "In examination",
-    "rejected": "Rejected"
+    "APPROVED": "Approved",
+    "IN_EXAMINATION": "In examination",
+    "REJECTED": "Rejected"
   },
   "status-is": "The latest status of your application according to our records is: ",
   "surname": {

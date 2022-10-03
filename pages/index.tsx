@@ -4,16 +4,16 @@ import MetaData from '../components/MetaData'
 import useTranslation from 'next-translate/useTranslation'
 
 const Index = () => {
-  const { t } = useTranslation()
+  const { t } = useTranslation('common')
 
   return (
     <div role="main" className="container mx-auto px-6 my-5 bg-slate-300 p-12">
       <MetaData
         data={{
-          author: t('common:meta.author'),
-          desc: t('common:meta.desc'),
-          keywords: t('common:meta.keywords'),
-          title: t('common:meta.title'),
+          author: t('meta.author'),
+          desc: t('meta.desc'),
+          keywords: t('meta.keywords'),
+          title: t('meta.title'),
         }}
       />
       <div className="flex flex-col justify-center items-center m-auto">

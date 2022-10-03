@@ -5,20 +5,16 @@ import ErrorSummary, {
   ErrorSummaryItem,
   getErrorSummaryItem,
 } from '../components/ErrorSummary'
-import useHomeLocale from '../locales/home/useHomeLocale'
-import useCommonLocale from '../locales/useCommonLocale'
 import Layout from '../components/Layout'
-import Error from './_error'
 import { CheckStatusReponse, CheckStatusRequestBody } from './api/check-status'
 import { useCheckStatus } from '../hooks/api/useCheckStatus'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import useTranslation from 'next-translate/useTranslation'
+import Error from 'next/error'
 
 const Home: FC = () => {
-  const { t } = useTranslation()
-  const commonLocale = useCommonLocale()
-  const homeLocale = useHomeLocale()
+  const { t } = useTranslation('home')
 
   const [formSubmitted, setFormSubmitted] = useState(false)
 
@@ -31,13 +27,13 @@ const Home: FC = () => {
     },
     validationSchema: Yup.object({
       esrf: Yup.string()
-        .required(homeLocale.esrf.error.required)
-        .length(8, homeLocale.esrf.error.length),
-      givenName: Yup.string().required(homeLocale.givenName.error.required),
-      surname: Yup.string().required(homeLocale.surname.error.required),
+        .required('esrf.error.required')
+        .length(8, 'esrf.error.length'),
+      givenName: Yup.string().required('given-name.error.required'),
+      surname: Yup.string().required('surname.error.required'),
       birthDate: Yup.date()
-        .required(homeLocale.birthDate.error.required)
-        .max(new Date(), homeLocale.birthDate.error.current),
+        .required('birth-date.error.required')
+        .max(new Date(), 'birth-date.error.current'),
     }),
     validateOnBlur: false,
     validateOnChange: false,
@@ -56,7 +52,9 @@ const Home: FC = () => {
     error: checkStatusError,
     data: checkStatusReponse,
     remove: removeCheckStatusResponse,
-  } = useCheckStatus(formik.values, { enabled: formSubmitted })
+  } = useCheckStatus(formik.values, {
+    enabled: formik.isValid && formSubmitted,
+  })
 
   const errorSummary = useMemo<ErrorSummaryItem[]>(() => {
     return Object.keys(formik.errors)
@@ -64,10 +62,10 @@ const Home: FC = () => {
       .map((key) =>
         getErrorSummaryItem(
           key,
-          formik.errors[key as keyof typeof formik.errors] as string
+          t(formik.errors[key as keyof typeof formik.errors] as string)
         )
       )
-  }, [formik])
+  }, [formik, t])
 
   const handleReset: MouseEventHandler<HTMLButtonElement> = useCallback(
     (e) => {
@@ -88,6 +86,7 @@ const Home: FC = () => {
 
   return (
     <Layout>
+      <h1 className="mb-4">{t('header')}</h1>
       {checkStatusError ? (
         <Error statusCode={checkStatusError.statusCode} />
       ) : checkStatusReponse ? (
@@ -99,9 +98,8 @@ const Home: FC = () => {
         <PassportStatusUnavailable handleGoBackClick={handleGoBack} />
       ) : (
         <>
-          <h1 className="mb-4">{homeLocale.header}</h1>
           <div>
-            <p>{homeLocale.description}</p>
+            <p>{t('description')}</p>
             {errorSummary.length > 0 && (
               <ErrorSummary
                 id="error-summary-get-status"
@@ -113,48 +111,52 @@ const Home: FC = () => {
               <InputField
                 id="esrf"
                 name="esrf"
-                label={homeLocale.esrf.label}
+                label={t('esrf.label')}
                 onChange={formik.handleChange}
                 value={formik.values.esrf}
-                errorMessage={formik.errors.esrf}
-                textRequired={commonLocale.required}
+                errorMessage={formik.errors.esrf && t(formik.errors.esrf)}
+                textRequired={t('common:required')}
                 required
               />
               <InputField
                 id="givenName"
                 name="givenName"
-                label={homeLocale.givenName.label}
+                label={t('given-name.label')}
                 onChange={formik.handleChange}
                 value={formik.values.givenName}
-                errorMessage={formik.errors.givenName}
-                textRequired={commonLocale.required}
+                errorMessage={
+                  formik.errors.givenName && t(formik.errors.givenName)
+                }
+                textRequired={t('common:required')}
                 required
               />
               <InputField
                 id="surname"
                 name="surname"
-                label={homeLocale.surname.label}
+                label={t('surname.label')}
                 onChange={formik.handleChange}
                 value={formik.values.surname}
-                errorMessage={formik.errors.surname}
-                textRequired={commonLocale.required}
+                errorMessage={formik.errors.surname && t(formik.errors.surname)}
+                textRequired={t('common:required')}
                 required
               />
               <InputField
                 id="birthDate"
                 name="birthDate"
                 type="date"
-                label={homeLocale.birthDate.label}
+                label={t('birth-date.label')}
                 onChange={formik.handleChange}
                 value={formik.values.birthDate}
-                errorMessage={formik.errors.birthDate}
-                textRequired={commonLocale.required}
+                errorMessage={
+                  formik.errors.birthDate && t(formik.errors.birthDate)
+                }
+                textRequired={t('common:required')}
                 required
               />
               <ActionButton
                 disabled={isCheckStatusLoading}
                 type="submit"
-                text={homeLocale.checkStatus}
+                text={t('check-status')}
                 style="primary"
               />
             </form>
@@ -174,31 +176,22 @@ export const PassportStatusInfo: FC<PassportStatusInfoProps> = ({
   checkStatusResponse,
   handleGoBackClick,
 }) => {
-  const homeLocale = useHomeLocale()
-
-  const getStatusText = (status?: string) => {
-    switch (status?.toUpperCase()) {
-      case 'IN_EXAMINATION':
-        return homeLocale.status.IN_EXAMINATION
-      case 'APPROVED':
-        return homeLocale.status.APPROVED
-      case 'REJECTED':
-        return homeLocale.status.REJECTED
-      default:
-        return status
-    }
-  }
-
+  const { t } = useTranslation('home')
   return (
     <div id="response">
       <p className="mb-6 text-2xl">
-        {homeLocale.statusIs}{' '}
-        <strong>{getStatusText(checkStatusResponse.status)}</strong>.
+        {t('status-is')}{' '}
+        <strong>
+          {t(`status.${checkStatusResponse.status}`, null, {
+            default: checkStatusResponse.status,
+          })}
+        </strong>
+        .
       </p>
-      <p className="mb-6 text-2xl">{homeLocale.checkAgain}</p>
+      <p className="mb-6 text-2xl">{t('check-again')}</p>
       <ActionButton
         onClick={handleGoBackClick}
-        text={homeLocale.goBack}
+        text={t('go-back')}
         style="primary"
       />
     </div>
@@ -212,15 +205,14 @@ export interface PassportStatusUnavailableProps {
 export const PassportStatusUnavailable: FC<PassportStatusUnavailableProps> = ({
   handleGoBackClick,
 }) => {
-  const homeLocale = useHomeLocale()
-
+  const { t } = useTranslation('home')
   return (
     <div id="response">
-      <p className=" mb-6 text-2xl">{homeLocale.unableToFindStatus}</p>
-      <p className="mb-6 text-2xl">{homeLocale.checkAgain}</p>
+      <p className=" mb-6 text-2xl">{t('unable-to-find-status')}</p>
+      <p className="mb-6 text-2xl">{t('check-again')}</p>
       <ActionButton
         onClick={handleGoBackClick}
-        text={homeLocale.goBack}
+        text={t('go-back')}
         style="primary"
       />
     </div>
