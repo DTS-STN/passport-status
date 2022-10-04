@@ -13,8 +13,8 @@ import * as Yup from 'yup'
 import useTranslation from 'next-translate/useTranslation'
 import StatusInfo from '../components/StatusInfo'
 
-const Home: FC = () => {
-  const { t } = useTranslation('home')
+const Status: FC = () => {
+  const { t } = useTranslation('status')
 
   const [formSubmitted, setFormSubmitted] = useState(false)
 
@@ -182,5 +182,4 @@ const Home: FC = () => {
     </Layout>
   )
 }
-
-export default Home
+export default Status

@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
-import Home from '../../pages/home'
+import Status from '../../pages/status'
 import { useRouter } from 'next/router'
 import { useCheckStatus } from '../../hooks/api/useCheckStatus'
 
@@ -29,7 +29,7 @@ describe('Home page', () => {
   })
 
   it('should render the page', () => {
-    render(<Home />)
+    render(<Status />)
     const heading = screen.getByRole('heading', { level: 1 })
     expect(heading).toBeInTheDocument()
   })
