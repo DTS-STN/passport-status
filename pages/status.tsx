@@ -6,12 +6,18 @@ import ErrorSummary, {
   getErrorSummaryItem,
 } from '../components/ErrorSummary'
 import Layout from '../components/Layout'
-import { CheckStatusReponse, CheckStatusRequestBody } from './api/check-status'
+import { CheckStatusRequestBody } from './api/check-status'
 import { useCheckStatus } from '../hooks/api/useCheckStatus'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import useTranslation from 'next-translate/useTranslation'
 import StatusInfo from '../components/StatusInfo'
+import { GetStaticProps } from 'next'
+import Router from 'next/router'
+
+export const getStaticProps: GetStaticProps = async () => ({
+  props: {},
+})
 
 const Status: FC = () => {
   const { t } = useTranslation('status')
@@ -67,13 +73,13 @@ const Status: FC = () => {
       )
   }, [formik, t])
 
-  const handleReset: MouseEventHandler<HTMLButtonElement> = useCallback(
-    (e) => {
-      e.preventDefault()
-      formik.resetForm()
-    },
-    [formik]
-  )
+  // const handleReset: MouseEventHandler<HTMLButtonElement> = useCallback(
+  //   (e) => {
+  //     e.preventDefault()
+  //     formik.resetForm()
+  //   },
+  //   [formik]
+  // )
 
   const handleGoBack: MouseEventHandler<HTMLButtonElement> = useCallback(
     (e) => {
@@ -93,14 +99,16 @@ const Status: FC = () => {
       {}
       {checkStatusReponse !== undefined ? (
         <StatusInfo
-          handleGoBackClick={handleGoBack}
-          goBackText={t('go-back')}
+          handleGoBackClick={
+            checkStatusReponse ? () => Router.push('/landing') : handleGoBack
+          }
+          goBackText={checkStatusReponse ? t('reset') : t('go-back')}
           goBackStyle="primary"
           checkAgainText={t('check-again')}
         >
           {checkStatusReponse ? (
             <p className="mb-6 text-2xl">
-              {t('status-is')}{' '}
+              {`${t('status-is')} `}
               <strong>
                 {t(`status.${checkStatusReponse.status}`, null, {
                   default: checkStatusReponse.status,
@@ -113,73 +121,65 @@ const Status: FC = () => {
           )}
         </StatusInfo>
       ) : (
-        <>
-          <div>
-            <p>{t('description')}</p>
-            {errorSummary.length > 0 && (
-              <ErrorSummary
-                id="error-summary-get-status"
-                summary={t('common:found-errors', {
-                  count: errorSummary.length,
-                })}
-                errors={errorSummary}
-              />
-            )}
-            <form onSubmit={formik.handleSubmit} id="form-get-status">
-              <InputField
-                id="esrf"
-                name="esrf"
-                label={t('esrf.label')}
-                onChange={formik.handleChange}
-                value={formik.values.esrf}
-                errorMessage={formik.errors.esrf && t(formik.errors.esrf)}
-                textRequired={t('common:required')}
-                required
-              />
-              <InputField
-                id="givenName"
-                name="givenName"
-                label={t('given-name.label')}
-                onChange={formik.handleChange}
-                value={formik.values.givenName}
-                errorMessage={
-                  formik.errors.givenName && t(formik.errors.givenName)
-                }
-                textRequired={t('common:required')}
-                required
-              />
-              <InputField
-                id="surname"
-                name="surname"
-                label={t('surname.label')}
-                onChange={formik.handleChange}
-                value={formik.values.surname}
-                errorMessage={formik.errors.surname && t(formik.errors.surname)}
-                textRequired={t('common:required')}
-                required
-              />
-              <InputField
-                id="birthDate"
-                name="birthDate"
-                type="date"
-                label={t('birth-date.label')}
-                onChange={formik.handleChange}
-                value={formik.values.birthDate}
-                errorMessage={
-                  formik.errors.birthDate && t(formik.errors.birthDate)
-                }
-                textRequired={t('common:required')}
-                required
-              />
-              <ActionButton
-                disabled={isCheckStatusLoading}
-                type="submit"
-                text={t('check-status')}
-                style="primary"
-              />
-            </form>
-          </div>
-        </>
+        <form onSubmit={formik.handleSubmit} id="form-get-status">
+          <p>{t('description')}</p>
+          {errorSummary.length > 0 && (
+            <ErrorSummary
+              id="error-summary-get-status"
+              summary={t('common:found-errors', {
+                count: errorSummary.length,
+              })}
+              errors={errorSummary}
+            />
+          )}
+          <InputField
+            id="esrf"
+            name="esrf"
+            label={t('esrf.label')}
+            onChange={formik.handleChange}
+            value={formik.values.esrf}
+            errorMessage={formik.errors.esrf && t(formik.errors.esrf)}
+            textRequired={t('common:required')}
+            required
+          />
+          <InputField
+            id="givenName"
+            name="givenName"
+            label={t('given-name.label')}
+            onChange={formik.handleChange}
+            value={formik.values.givenName}
+            errorMessage={formik.errors.givenName && t(formik.errors.givenName)}
+            textRequired={t('common:required')}
+            required
+          />
+          <InputField
+            id="surname"
+            name="surname"
+            label={t('surname.label')}
+            onChange={formik.handleChange}
+            value={formik.values.surname}
+            errorMessage={formik.errors.surname && t(formik.errors.surname)}
+            textRequired={t('common:required')}
+            required
+          />
+          <InputField
+            id="birthDate"
+            name="birthDate"
+            type="date"
+            label={t('birth-date.label')}
+            onChange={formik.handleChange}
+            value={formik.values.birthDate}
+            errorMessage={formik.errors.birthDate && t(formik.errors.birthDate)}
+            textRequired={t('common:required')}
+            required
+          />
+          <ActionButton
+            disabled={isCheckStatusLoading}
+            type="submit"
+            text={t('check-status')}
+            style="primary"
+          />
+        </form>
       )}
     </Layout>
   )
