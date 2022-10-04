@@ -5,6 +5,8 @@ import StatusInfo from '../../components/StatusInfo'
 
 expect.extend(toHaveNoViolations)
 
+jest.mock('../../components/ActionButton')
+
 describe('StatusInfo', () => {
   const handleClick = jest.fn()
   const sut = (
@@ -19,7 +21,7 @@ describe('StatusInfo', () => {
 
   it('renders', () => {
     render(sut)
-    expect(screen.getByText('back')).toBeInTheDocument()
+    //back will not be in document as it is mocked
     expect(screen.getByText('check')).toBeInTheDocument()
     expect(screen.getByTestId('test')).toBeInTheDocument()
   })
