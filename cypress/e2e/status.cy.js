@@ -23,14 +23,6 @@ describe('home page loads', () => {
 
   })
 
-  it('validates required feilds', () => {
-    cy.get('#form-get-status > button').click()
-    cy.get('#input-esrf > span').should('contain.text', 'required')
-    cy.get('#input-givenName > span').should('contain.text', 'required')
-    cy.get('#input-surname > span').should('contain.text', 'required')
-    cy.get('#input-birthDate > span').should('contain.text', 'required')
-  })
-
   it('Status page has no detectable a11y violations on load', () => {
     cy.checkA11y()
   })
@@ -39,7 +31,6 @@ describe('home page loads', () => {
 describe('ESRF field validation', ()=>{
   beforeEach(() => {
     cy.visit('/status')
-    cy.injectAxe();
   })
 
   it('validates valid ESRF',()=>{
@@ -63,7 +54,6 @@ describe('ESRF field validation', ()=>{
 describe('givenName field validation', ()=>{
   beforeEach(() => {
     cy.visit('/status')
-    cy.injectAxe();
   })
 
   it('validates valid givenName',()=>{
@@ -81,7 +71,6 @@ describe('givenName field validation', ()=>{
 describe('surname field validation', ()=>{
   beforeEach(() => {
     cy.visit('/status')
-    cy.injectAxe();
   })
 
   it('validates valid surname',()=>{
@@ -100,7 +89,6 @@ describe('surname field validation', ()=>{
 describe('Date of Birth field validation', ()=>{
   beforeEach(() => {
     cy.visit('/status')
-    cy.injectAxe();
   })
 
   it('validates valid birthdate',()=>{
