@@ -10,10 +10,11 @@ const Index = () => {
     <div role="main" className="container mx-auto px-6 my-5 bg-slate-300 p-12">
       <MetaData
         data={{
-          author: t('meta.author'),
-          desc: t('meta.desc'),
-          keywords: t('meta.keywords'),
-          title: t('meta.title'),
+          author: 'Service Canada',
+          desc: "Index page - Page d'index",
+          keywords: '',
+          title:
+            'Passport Application Status Checker (PASC) - Vérificateur du Statut de mon application pour un passport (VSAP)',
         }}
       />
       <div className="flex flex-col justify-center items-center m-auto">
@@ -32,7 +33,7 @@ const Index = () => {
           </div>
           <div className="flex w-max container py-11 mx-auto font-display">
             <div className="grid grid-cols-2 gap-2 xl:gap-6">
-              <Link href="/landing">
+              <Link href="/en/landing">
                 <a
                   className="font-display rounded focus:ring-1 focus:ring-black focus:ring-offset-2 py-2 px-10 whitespace-pre bg-[#173451] text-white text-center border border-[#173451] active:bg-[#21303F] hover:bg-#245C81 grid place-items-center"
                   // onClick={props.onClick}
