@@ -12,7 +12,10 @@
     "terms-and-condition": "Avis",
     "terms-and-condition-url": "https://www.canada.ca/en/transparency/terms.html"
   },
-  "found-errors": "Les erreurs suivantes ont été trouvées dans le formulaire\u00A0: ",
+  "found-errors": {
+    "one": "L'erreur suivante a été trouvée dans le formulaire\u00A0: ",
+    "other": "Les {{count}} erreurs suivantes ont été trouvées dans le formulaire\u00A0: "
+  },
   "francais": "Français",
   "goc": "Governement du Canada",
   "goc-link": "https://www.canada.ca/fr.html",

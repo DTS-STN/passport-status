@@ -119,7 +119,9 @@ const Status: FC = () => {
             {errorSummary.length > 0 && (
               <ErrorSummary
                 id="error-summary-get-status"
-                summary={t('common:found-errors')}
+                summary={t('common:found-errors', {
+                  count: errorSummary.length,
+                })}
                 errors={errorSummary}
               />
             )}
