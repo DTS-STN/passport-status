@@ -1,7 +1,0 @@
-{
-  "header": "Passport Status Check",
-  "description": "In order to better serve you, please select the option below that best suits you",
-  "intakeForm": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/check-passport-travel-document-application.html",
-  "withESRF": "I have my file number (ESRF)",
-  "withoutESRF": "I don't have my file number (ESRF)"
-}

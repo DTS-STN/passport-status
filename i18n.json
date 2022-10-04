@@ -3,7 +3,6 @@
   "defaultLocale": "en",
   "pages": {
     "*": ["common"],
-    "/home": ["home"],
     "/status": ["status"]
   }
 }
