@@ -11,7 +11,7 @@ import { useCheckStatus } from '../hooks/api/useCheckStatus'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import useTranslation from 'next-translate/useTranslation'
-import Error from 'next/error'
+import StatusInfo from '../components/StatusInfo'
 
 const Status: FC = () => {
   const { t } = useTranslation('status')
@@ -84,18 +84,34 @@ const Status: FC = () => {
     [removeCheckStatusResponse]
   )
 
+  //if the api failed, fail hard to show error page
+  if (checkStatusError) throw new Error(checkStatusError.message)
+
   return (
     <Layout>
       <h1 className="mb-4">{t('header')}</h1>
-      {checkStatusError ? (
-        <Error statusCode={checkStatusError.statusCode} />
-      ) : checkStatusReponse ? (
-        <PassportStatusInfo
-          checkStatusResponse={checkStatusReponse}
-          handleGoBackClick={handleReset}
-        />
-      ) : checkStatusReponse === null ? (
-        <PassportStatusUnavailable handleGoBackClick={handleGoBack} />
+      {}
+      {checkStatusReponse !== undefined ? (
+        <StatusInfo
+          handleGoBackClick={handleGoBack}
+          goBackText={t('go-back')}
+          goBackStyle="primary"
+          checkAgainText={t('check-again')}
+        >
+          {checkStatusReponse ? (
+            <p className="mb-6 text-2xl">
+              {t('status-is')}{' '}
+              <strong>
+                {t(`status.${checkStatusReponse.status}`, null, {
+                  default: checkStatusReponse.status,
+                })}
+              </strong>
+              .
+            </p>
+          ) : (
+            <p className=" mb-6 text-2xl">{t('unable-to-find-status')}</p>
+          )}
+        </StatusInfo>
       ) : (
         <>
           <div>
