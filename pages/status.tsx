@@ -11,7 +11,7 @@ import { useCheckStatus } from '../hooks/api/useCheckStatus'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import useTranslation from 'next-translate/useTranslation'
-import Error from 'next/error'
+import StatusInfo from '../components/StatusInfo'
 
 const Status: FC = () => {
   const { t } = useTranslation('status')
@@ -84,18 +84,34 @@ const Status: FC = () => {
     [removeCheckStatusResponse]
   )
 
+  //if the api failed, fail hard to show error page
+  if (checkStatusError) throw new Error(checkStatusError.message)
+
   return (
     <Layout>
       <h1 className="mb-4">{t('header')}</h1>
-      {checkStatusError ? (
-        <Error statusCode={checkStatusError.statusCode} />
-      ) : checkStatusReponse ? (
-        <PassportStatusInfo
-          checkStatusResponse={checkStatusReponse}
-          handleGoBackClick={handleReset}
-        />
-      ) : checkStatusReponse === null ? (
-        <PassportStatusUnavailable handleGoBackClick={handleGoBack} />
+      {}
+      {checkStatusReponse !== undefined ? (
+        <StatusInfo
+          handleGoBackClick={handleGoBack}
+          goBackText={t('go-back')}
+          goBackStyle="primary"
+          checkAgainText={t('check-again')}
+        >
+          {checkStatusReponse ? (
+            <p className="mb-6 text-2xl">
+              {t('status-is')}{' '}
+              <strong>
+                {t(`status.${checkStatusReponse.status}`, null, {
+                  default: checkStatusReponse.status,
+                })}
+              </strong>
+              .
+            </p>
+          ) : (
+            <p className=" mb-6 text-2xl">{t('unable-to-find-status')}</p>
+          )}
+        </StatusInfo>
       ) : (
         <>
           <div>
@@ -166,57 +182,4 @@ const Status: FC = () => {
     </Layout>
   )
 }
-
-export interface PassportStatusInfoProps {
-  handleGoBackClick: MouseEventHandler<HTMLButtonElement>
-  checkStatusResponse: CheckStatusReponse
-}
-
-export const PassportStatusInfo: FC<PassportStatusInfoProps> = ({
-  checkStatusResponse,
-  handleGoBackClick,
-}) => {
-  const { t } = useTranslation('status')
-  return (
-    <div id="response">
-      <p className="mb-6 text-2xl">
-        {t('status-is')}{' '}
-        <strong>
-          {t(`status.${checkStatusResponse.status}`, null, {
-            default: checkStatusResponse.status,
-          })}
-        </strong>
-        .
-      </p>
-      <p className="mb-6 text-2xl">{t('check-again')}</p>
-      <ActionButton
-        onClick={handleGoBackClick}
-        text={t('go-back')}
-        style="primary"
-      />
-    </div>
-  )
-}
-
-export interface PassportStatusUnavailableProps {
-  handleGoBackClick: MouseEventHandler<HTMLButtonElement>
-}
-
-export const PassportStatusUnavailable: FC<PassportStatusUnavailableProps> = ({
-  handleGoBackClick,
-}) => {
-  const { t } = useTranslation('status')
-  return (
-    <div id="response">
-      <p className=" mb-6 text-2xl">{t('unable-to-find-status')}</p>
-      <p className="mb-6 text-2xl">{t('check-again')}</p>
-      <ActionButton
-        onClick={handleGoBackClick}
-        text={t('go-back')}
-        style="primary"
-      />
-    </div>
-  )
-}
-
 export default Status
