@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { FC, MouseEventHandler } from 'react'
 
 export interface ActionButtonProps {
@@ -6,6 +7,7 @@ export interface ActionButtonProps {
   style?: 'default' | 'primary' | 'super' | 'danger'
   text: string
   type?: 'button' | 'submit' | 'reset'
+  href?: string
 }
 
 const ActionButton: FC<ActionButtonProps> = ({
@@ -14,6 +16,7 @@ const ActionButton: FC<ActionButtonProps> = ({
   style,
   text,
   type,
+  href,
 }) => {
   let classStyle =
     'inline-block text-center align-middle rounded border py-2.5 px-3.5 focus:ring-2 focus:ring-offset-2 '
@@ -28,7 +31,11 @@ const ActionButton: FC<ActionButtonProps> = ({
       break
   }
 
-  return (
+  return href ? (
+    <Link href={href}>
+      <a className={classStyle}>{text}</a>
+    </Link>
+  ) : (
     <button
       className={classStyle}
       onClick={onClick}

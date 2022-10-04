@@ -13,7 +13,7 @@ const Header: FC = () => {
     <>
       <nav
         role="navigation"
-        aria-label={t('skip-to-main-content')}
+        aria-label={t('skip-to.main-content')}
         className="absolute w-px h-px -left-96 focus-within:w-screen focus-within:h-auto focus-within:top-4 focus-within:z-50 focus-within:flex focus-within:justify-center"
       >
         <a
@@ -22,7 +22,7 @@ const Header: FC = () => {
           href="#mainContent"
           draggable="false"
         >
-          {t('skip-to-main-content')}
+          {t('skip-to.main-content')}
         </a>
       </nav>
 
