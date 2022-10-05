@@ -1,11 +1,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import MetaData from '../components/MetaData'
-import useTranslation from 'next-translate/useTranslation'
 
 const Index = () => {
-  const { t } = useTranslation('common')
-
   return (
     <div role="main" className="container mx-auto px-6 my-5 bg-slate-300 p-12">
       <MetaData
