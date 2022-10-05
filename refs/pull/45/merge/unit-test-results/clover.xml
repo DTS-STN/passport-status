@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1664997657530" clover="3.2.0">
-  <project timestamp="1664997657530" name="All files">
-    <metrics statements="124" coveredstatements="82" conditionals="98" coveredconditionals="53" methods="39" coveredmethods="25" elements="261" coveredelements="160" complexity="0" loc="124" ncloc="124" packages="4" files="22" classes="22"/>
+<coverage generated="1664998615539" clover="3.2.0">
+  <project timestamp="1664998615540" name="All files">
+    <metrics statements="124" coveredstatements="82" conditionals="96" coveredconditionals="51" methods="39" coveredmethods="25" elements="259" coveredelements="158" complexity="0" loc="124" ncloc="124" packages="4" files="22" classes="22"/>
     <package name="components">
-      <metrics statements="42" coveredstatements="41" conditionals="36" coveredconditionals="30" methods="15" coveredmethods="14"/>
+      <metrics statements="42" coveredstatements="41" conditionals="34" coveredconditionals="28" methods="15" coveredmethods="14"/>
       <file name="ActionButton.tsx" path="/home/runner/work/passport-status/passport-status/components/ActionButton.tsx">
-        <metrics statements="9" coveredstatements="9" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
-        <line num="12" count="2" type="stmt"/>
-        <line num="21" count="3" type="stmt"/>
-        <line num="22" count="3" type="cond" truecount="2" falsecount="0"/>
+        <metrics statements="9" coveredstatements="9" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="19" count="3" type="stmt"/>
+        <line num="20" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="22" count="2" type="stmt"/>
         <line num="24" count="2" type="stmt"/>
-        <line num="26" count="2" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
         <line num="28" count="1" type="stmt"/>
-        <line num="30" count="1" type="stmt"/>
-        <line num="33" count="3" type="cond" truecount="2" falsecount="0"/>
-        <line num="49" count="2" type="stmt"/>
+        <line num="31" count="3" type="stmt"/>
+        <line num="43" count="2" type="stmt"/>
       </file>
       <file name="DateModified.tsx" path="/home/runner/work/passport-status/passport-status/components/DateModified.tsx">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
