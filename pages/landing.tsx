@@ -1,8 +1,8 @@
-import ActionButton from '../components/ActionButton'
+import LinkButton from '../components/LinkButton'
 import { FC } from 'react'
 import Layout from '../components/Layout'
 import useTranslation from 'next-translate/useTranslation'
-import Router from 'next/router'
+import Link from 'next/link'
 
 const Home: FC = () => {
   const { t } = useTranslation('landing')
@@ -11,20 +11,16 @@ const Home: FC = () => {
     <Layout>
       <h1 className="mb-4">{t('header')}</h1>
       <h2 className="my-14">{t('description')}</h2>
-      <div className="grid grid-flow-row auto-rows-auto place-items-center text-xl gap-4">
-        <div className="text-center">
-          <ActionButton
-            href={t('intakeForm')}
-            style="primary"
-            text={t('withoutESRF')}
-          />
+      <div className="flex-container text-xl gap-4">
+        <div id="withoutESRF">
+          <Link href={t('intakeForm')} passHref>
+            <LinkButton text={t('withoutESRF')}></LinkButton>
+          </Link>
         </div>
-        <div className="text-center">
-          <ActionButton
-            style="primary"
-            onClick={() => Router.push('/status')}
-            text={t('withESRF')}
-          />
+        <div id="withESRF">
+          <Link href={'/status'} passHref>
+            <LinkButton text={t('withESRF')}></LinkButton>
+          </Link>
         </div>
       </div>
     </Layout>

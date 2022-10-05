@@ -63,4 +63,12 @@
     margin-left: -0.665em;
     @apply text-accent-error;
   }
+
+  .flex-container{
+    display:flex;
+    justify-content: center; 
+    align-items:center;
+    align-content:center;
+    flex-flow: row wrap; 
+  }
 }

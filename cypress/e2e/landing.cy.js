@@ -9,11 +9,11 @@ describe('landing page loads', () => {
     })
 
     it('should display the button for no ESRF',()=>{
-        cy.contains(`I don't have my file number (ESRF)`).should('be.visible')
+        cy.get(`#withoutESRF`).should('be.visible')
     })
 
     it('should display the button for has ESRF',()=>{
-        cy.contains(`I have my file number (ESRF)`).should('be.visible')
+        cy.get(`#withESRF`).should('be.visible')
     })
   
     it('App has no detectable a11y violations on load', () => {
@@ -25,7 +25,7 @@ describe('user has ESRF number',()=>{
 
     it('should redirect to the form',()=>{
         cy.visit('/landing')
-        cy.contains(`I have my file number (ESRF)`).click()
+        cy.get('#withESRF').click()
         cy.url().should('contain','/status')
     })
 
