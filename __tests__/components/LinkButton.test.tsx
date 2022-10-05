@@ -9,8 +9,9 @@ describe('LinkButton', () => {
   const sut = <LinkButton href={'/'} text="text" />
 
   it('renders', () => {
-    const sut = screen.getByText('text')
-    expect(sut).toBeInTheDocument()
+    render(sut)
+    const screenText = screen.getByText('text')
+    expect(screenText).toBeInTheDocument()
   })
 
   it('is meets a11y', async () => {
