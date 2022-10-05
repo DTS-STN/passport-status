@@ -18,9 +18,11 @@ RUN npm run build
 FROM node:18.10-alpine3.15 AS production
 ENV NODE_ENV=production
 WORKDIR /app
+COPY --from=build /build/i18n.json ./
 COPY --from=build /build/next.config.js ./
 COPY --from=build /build/package*.json ./
 COPY --from=build /build/.next ./.next
+COPY --from=build /build/pages ./pages
 COPY --from=build /build/public ./public
 COPY --from=build /build/tracing.js ./
 RUN VERSION_NEXT=`node -p -e "require('./package.json').dependencies.next"`&& npm install --no-package-lock --no-save next@"$VERSION_NEXT"

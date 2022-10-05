@@ -19,7 +19,7 @@ jest.mock('../../components/ErrorSummary', () => () => {
 })
 jest.mock('../../hooks/api/useCheckStatus')
 
-describe('Check status page page', () => {
+describe('Check status page', () => {
   beforeEach(() => {
     useRouter.mockImplementation(() => ({
       pathname: '/',

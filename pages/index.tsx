@@ -1,19 +1,17 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import MetaData from '../components/MetaData'
-import useTranslation from 'next-translate/useTranslation'
+import defaultTranslations from '../utils/defaultTranslations.json'
 
 const Index = () => {
-  const { t } = useTranslation('common')
-
   return (
     <div role="main" className="container mx-auto px-6 my-5 bg-slate-300 p-12">
       <MetaData
         data={{
-          author: t('meta.author'),
-          desc: t('meta.desc'),
-          keywords: t('meta.keywords'),
-          title: t('meta.title'),
+          author: defaultTranslations.meta.author,
+          desc: defaultTranslations.meta.desc,
+          keywords: defaultTranslations.meta.keywords,
+          title: defaultTranslations.meta.title,
         }}
       />
       <div className="flex flex-col justify-center items-center m-auto">
@@ -32,7 +30,7 @@ const Index = () => {
           </div>
           <div className="flex w-max container py-11 mx-auto font-display">
             <div className="grid grid-cols-2 gap-2 xl:gap-6">
-              <Link href="/landing">
+              <Link href="/en/landing">
                 <a
                   className="font-display rounded focus:ring-1 focus:ring-black focus:ring-offset-2 py-2 px-10 whitespace-pre bg-[#173451] text-white text-center border border-[#173451] active:bg-[#21303F] hover:bg-#245C81 grid place-items-center"
                   // onClick={props.onClick}

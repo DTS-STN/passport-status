@@ -24,6 +24,7 @@
     "label": "Prénom"
   },
   "go-back": "Retourner",
+  "reset": "Redémarrer",
   "header": "Vérification du statut du passeport",
   "status": {
     "APPROVED": "Approuvée",
