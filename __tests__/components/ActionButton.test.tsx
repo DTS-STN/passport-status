@@ -22,13 +22,7 @@ describe('ActionButton', () => {
   })
 
   it('renders properly as an anchor tag using Next/Link', () => {
-    render(
-      <ActionButton
-        text="text"
-        style="primary"
-        href="https://www.someurl.com"
-      />
-    )
+    render(<ActionButton text="text" style="primary" />)
     const sut = screen.getByText('text')
     expect(sut).toBeInTheDocument()
   })
