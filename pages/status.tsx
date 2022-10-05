@@ -92,28 +92,31 @@ const Status: FC = () => {
   return (
     <Layout>
       <h1 className="mb-4">{t('header')}</h1>
-      {checkStatusReponse !== undefined ? (
+      {checkStatusReponse ? (
         <StatusInfo
-          handleGoBackClick={
-            checkStatusReponse ? () => Router.push('/landing') : handleGoBack
-          }
-          goBackText={checkStatusReponse ? t('reset') : t('go-back')}
+          handleGoBackClick={() => Router.push('/landing')}
+          goBackText={t('reset')}
           goBackStyle="primary"
           checkAgainText={t('check-again')}
         >
-          {checkStatusReponse ? (
-            <p className="mb-6 text-2xl">
-              {`${t('status-is')} `}
-              <strong>
-                {t(`status.${checkStatusReponse.status}`, null, {
-                  default: checkStatusReponse.status,
-                })}
-              </strong>
-              .
-            </p>
-          ) : (
-            <p className=" mb-6 text-2xl">{t('unable-to-find-status')}</p>
-          )}
+          <p className="mb-6 text-2xl">
+            {`${t('status-is')} `}
+            <strong>
+              {t(`status.${checkStatusReponse.status}`, null, {
+                default: checkStatusReponse.status,
+              })}
+            </strong>
+            .
+          </p>
+        </StatusInfo>
+      ) : checkStatusReponse === null ? (
+        <StatusInfo
+          handleGoBackClick={handleGoBack}
+          goBackText={t('go-back')}
+          goBackStyle="primary"
+          checkAgainText={t('check-again')}
+        >
+          <p className=" mb-6 text-2xl">{t('unable-to-find-status')}</p>
         </StatusInfo>
       ) : (
         <form onSubmit={formik.handleSubmit} id="form-get-status">
