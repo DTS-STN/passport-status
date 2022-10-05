@@ -21,18 +21,6 @@ describe('ActionButton', () => {
     )
   })
 
-  it('renders properly as an anchor tag using Next/Link', () => {
-    render(
-      <ActionButton
-        text="text"
-        style="primary"
-        href="https://www.someurl.com"
-      />
-    )
-    const sut = screen.getByText('text')
-    expect(sut).toBeInTheDocument()
-  })
-
   it('is meets a11y', async () => {
     const results = await axe(container)
     expect(results).toHaveNoViolations()
