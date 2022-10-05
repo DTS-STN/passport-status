@@ -15,10 +15,6 @@ import StatusInfo from '../components/StatusInfo'
 import { GetStaticProps } from 'next'
 import Router from 'next/router'
 
-export const getStaticProps: GetStaticProps = async () => ({
-  props: {},
-})
-
 const Status: FC = () => {
   const { t } = useTranslation('status')
 
@@ -183,4 +179,9 @@ const Status: FC = () => {
     </Layout>
   )
 }
+
+export const getStaticProps: GetStaticProps = async () => ({
+  props: {},
+})
+
 export default Status
