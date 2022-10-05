@@ -31,9 +31,4 @@ const LinkButton: FC<LinkButton> = ({ href, text }) => {
   )
 }
 
-LinkButton.defaultProps = {
-  href: '/',
-  text: 'N/A',
-}
-
 export default LinkButton

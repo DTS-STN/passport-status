@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import { FC, MouseEventHandler } from 'react'
 
 export interface ActionButtonProps {
@@ -32,9 +31,9 @@ const ActionButton: FC<ActionButtonProps> = ({
   }
 
   return href ? (
-    <Link href={href}>
-      <a className={classStyle}>{text}</a>
-    </Link>
+    <a href={href} className={classStyle}>
+      {text}
+    </a>
   ) : (
     <button
       className={classStyle}
