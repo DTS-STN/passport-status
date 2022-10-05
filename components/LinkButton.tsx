@@ -1,15 +1,16 @@
 import { FC } from 'react'
+import Link from 'next/link'
 
 export interface LinkButton {
-  href?: string
+  href: string
   text: string
 }
 
 const LinkButton: FC<LinkButton> = ({ href, text }) => {
   return (
-    <a
-      href={href}
-      className={`
+    <Link href={href} passHref>
+      <a
+        className={`
         border-blue-deep
         bg-blue-dark 
         text-basic-white 
@@ -23,9 +24,10 @@ const LinkButton: FC<LinkButton> = ({ href, text }) => {
         px-3.5 
         focus:ring-2 
         focus:ring-offset-2 `}
-    >
-      {text}
-    </a>
+      >
+        {text}
+      </a>
+    </Link>
   )
 }
 

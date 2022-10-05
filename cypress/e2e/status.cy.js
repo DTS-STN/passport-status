@@ -41,13 +41,13 @@ describe('ESRF field validation', ()=>{
 
   it('validates empty ESRF error',()=>{
     cy.get('#form-get-status > button').click()
-    cy.get('#input-esrf > span').should('contain.text', 'required')
+    cy.get('#input-esrf > span').should('exist')
   })
 
   it('validates invalid length for ESRF', ()=>{
     cy.get('#esrf').type('1234')
     cy.get('#form-get-status > button').click()
-    cy.get('#input-esrf > span').should('contain.text','The File number must be 8 characters long')
+    cy.get('#input-esrf > span').should('exist')
   })
 })
 
@@ -64,7 +64,7 @@ describe('givenName field validation', ()=>{
 
   it('validates empty givenName error',()=>{
     cy.get('#form-get-status > button').click()
-    cy.get('#input-givenName > span').should('contain.text', 'required')
+    cy.get('#input-givenName > span').should('exist')
   })
 })
 
@@ -81,7 +81,7 @@ describe('surname field validation', ()=>{
 
   it('validates empty surname error',()=>{
     cy.get('#form-get-status > button').click()
-    cy.get('#input-surname > span').should('contain.text', 'required')
+    cy.get('#input-surname > span').should('exist')
   })
 })
 
@@ -99,12 +99,14 @@ describe('Date of Birth field validation', ()=>{
 
   it('validates empty givenName error',()=>{
     cy.get('#form-get-status > button').click()
-    cy.get('#input-birthDate > span').should('contain.text', 'required')
+    cy.get('#input-birthDate > span').should('exist')
   })
 
   it('validates Date of Birth in the future',()=>{
-    cy.get('#birthDate').type('2077-12-08')
+    const yearPlus1 = new Date(new Date().getFullYear()+1,1,1)
+    const testDate = [yearPlus1.getFullYear(),'01','01'].join('-')
+    cy.get('#birthDate').type(testDate)
     cy.get('#form-get-status > button').click()
-    cy.get('#input-birthDate > span').should('contain.text', 'The Date of birth must be a date in the past')
+    cy.get('#input-birthDate > span').should('exist')
   })
 })

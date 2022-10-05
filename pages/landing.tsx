@@ -11,16 +11,15 @@ const Home: FC = () => {
     <Layout>
       <h1 className="mb-4">{t('header')}</h1>
       <h2 className="my-14">{t('description')}</h2>
-      <div className="flex-container text-xl gap-4">
+      <div className="flex justify-center flex-wrap text-xl gap-4">
         <div id="withoutESRF">
-          <Link href={t('intakeForm')} passHref>
-            <LinkButton text={t('withoutESRF')}></LinkButton>
-          </Link>
+          <LinkButton
+            href={t('intakeForm')}
+            text={t('withoutESRF')}
+          ></LinkButton>
         </div>
         <div id="withESRF">
-          <Link href={'/status'} passHref>
-            <LinkButton text={t('withESRF')}></LinkButton>
-          </Link>
+          <LinkButton href={'/status'} text={t('withESRF')}></LinkButton>
         </div>
       </div>
     </Layout>
