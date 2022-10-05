@@ -3,7 +3,7 @@ import { ApiError } from 'next/dist/server/api-utils'
 import {
   PassportStatus,
   PassportStatuses,
-} from '../../common/passport-status-api-types'
+} from '../../lib/passport-status-api-types'
 import passportStatusesMock from '../../__mocks__/passportStatusesMock'
 
 export interface CheckStatusRequestBody {
