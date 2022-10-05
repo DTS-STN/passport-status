@@ -3,8 +3,9 @@ import type { Config } from 'jest'
 const config: Config = {
   modulePathIgnorePatterns: ['./cypress'],
   collectCoverageFrom: [
-    'components/**/*.{js,jsx}',
-    'pages/**/*.{js,jsx}',
+    'components/**/*.{js,jsx,ts,tsx}',
+    'lib/**/*.{js,jsx,ts,tsx}',
+    'pages/**/*.{js,jsx,ts,tsx}',
     '!**/node_modules/**',
   ],
   moduleNameMapper: {
