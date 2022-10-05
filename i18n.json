@@ -1,6 +1,7 @@
 {
-  "locales": ["en", "fr"],
-  "defaultLocale": "en",
+  "locales": ["default", "en", "fr"],
+  "defaultLocale": "default",
+  "localeDetection": false,
   "pages": {
     "*": ["common"],
     "/landing": ["landing"],
