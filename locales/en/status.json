@@ -24,6 +24,7 @@
     "label": "Given Name"
   },
   "go-back": "Go Back",
+  "reset": "Restart",
   "header": "Passport Status Check",
   "status": {
     "APPROVED": "Approved",
