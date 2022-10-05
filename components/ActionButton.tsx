@@ -6,7 +6,6 @@ export interface ActionButtonProps {
   style?: 'default' | 'primary' | 'super' | 'danger'
   text: string
   type?: 'button' | 'submit' | 'reset'
-  href?: string
 }
 
 const ActionButton: FC<ActionButtonProps> = ({
@@ -15,7 +14,6 @@ const ActionButton: FC<ActionButtonProps> = ({
   style,
   text,
   type,
-  href,
 }) => {
   let classStyle =
     'inline-block text-center align-middle rounded border py-2.5 px-3.5 focus:ring-2 focus:ring-offset-2 '
@@ -30,11 +28,7 @@ const ActionButton: FC<ActionButtonProps> = ({
       break
   }
 
-  return href ? (
-    <a href={href} className={classStyle}>
-      {text}
-    </a>
-  ) : (
+  return (
     <button
       className={classStyle}
       onClick={onClick}
