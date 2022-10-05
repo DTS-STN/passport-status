@@ -96,7 +96,6 @@ const Status: FC = () => {
   return (
     <Layout>
       <h1 className="mb-4">{t('header')}</h1>
-      {}
       {checkStatusReponse !== undefined ? (
         <StatusInfo
           handleGoBackClick={
