@@ -1,17 +1,17 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import MetaData from '../components/MetaData'
+import defaultTranslations from '../utils/defaultTranslations.json'
 
 const Index = () => {
   return (
     <div role="main" className="container mx-auto px-6 my-5 bg-slate-300 p-12">
       <MetaData
         data={{
-          author: 'Service Canada',
-          desc: "Index page - Page d'index",
-          keywords: '',
-          title:
-            'Passport Application Status Checker (PASC) - Vérificateur du Statut de mon application pour un passport (VSAP)',
+          author: defaultTranslations.meta.author,
+          desc: defaultTranslations.meta.desc,
+          keywords: defaultTranslations.meta.keywords,
+          title: defaultTranslations.meta.title,
         }}
       />
       <div className="flex flex-col justify-center items-center m-auto">
