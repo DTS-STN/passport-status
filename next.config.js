@@ -59,14 +59,14 @@ const nextConfig = {
     locales: ['en', 'fr'],
     defaultLocale: 'en',
   },
-  rewrites: async () => {
-    return [
-      {
-        source: '/accueil',
-        destination: '/home',
-      },
-    ]
-  },
+  // rewrites: async () => {
+  //   return [
+  //     {
+  //       source: '/accueil',
+  //       destination: '/home',
+  //     },
+  //   ]
+  // },
   headers: async () => {
     return [
       {
