@@ -16,16 +16,6 @@ import ErrorSummary, {
 } from '../components/ErrorSummary'
 import StatusInfo from '../components/StatusInfo'
 
-const PageWrapper: FC<{ children: JSX.Element }> = ({ children }) => {
-  const { t } = useTranslation('status')
-  return (
-    <Layout>
-      <h1 className="mb-4">{t('header')}</h1>
-      {children}
-    </Layout>
-  )
-}
-
 const Status: FC = () => {
   const { t } = useTranslation('status')
 
@@ -100,9 +90,10 @@ const Status: FC = () => {
   //if the api failed, fail hard to show error page
   if (checkStatusError) throw checkStatusError
 
-  if (checkStatusReponse) {
-    return (
-      <PageWrapper>
+  return (
+    <Layout>
+      <h1 className="mb-4">{t('header')}</h1>
+      {checkStatusReponse ? (
         <StatusInfo
           handleGoBackClick={() => Router.push('/landing')}
           goBackText={t('reset')}
@@ -119,13 +110,7 @@ const Status: FC = () => {
             .
           </p>
         </StatusInfo>
-      </PageWrapper>
-    )
-  }
-
-  if (checkStatusReponse === null) {
-    return (
-      <PageWrapper>
+      ) : checkStatusReponse === null ? (
         <StatusInfo
           handleGoBackClick={handleGoBack}
           goBackText={t('go-back')}
@@ -134,72 +119,68 @@ const Status: FC = () => {
         >
           <p className=" mb-6 text-2xl">{t('unable-to-find-status')}</p>
         </StatusInfo>
-      </PageWrapper>
-    )
-  }
-
-  return (
-    <PageWrapper>
-      <form onSubmit={formik.handleSubmit} id="form-get-status">
-        <p>{t('description')}</p>
-        {errorSummary.length > 0 && (
-          <ErrorSummary
-            id="error-summary-get-status"
-            summary={t('common:found-errors', {
-              count: errorSummary.length,
-            })}
-            errors={errorSummary}
+      ) : (
+        <form onSubmit={formik.handleSubmit} id="form-get-status">
+          <p>{t('description')}</p>
+          {errorSummary.length > 0 && (
+            <ErrorSummary
+              id="error-summary-get-status"
+              summary={t('common:found-errors', {
+                count: errorSummary.length,
+              })}
+              errors={errorSummary}
+            />
+          )}
+          <InputField
+            id="esrf"
+            name="esrf"
+            label={t('esrf.label')}
+            onChange={formik.handleChange}
+            value={formik.values.esrf}
+            errorMessage={formik.errors.esrf && t(formik.errors.esrf)}
+            textRequired={t('common:required')}
+            required
           />
-        )}
-        <InputField
-          id="esrf"
-          name="esrf"
-          label={t('esrf.label')}
-          onChange={formik.handleChange}
-          value={formik.values.esrf}
-          errorMessage={formik.errors.esrf && t(formik.errors.esrf)}
-          textRequired={t('common:required')}
-          required
-        />
-        <InputField
-          id="givenName"
-          name="givenName"
-          label={t('given-name.label')}
-          onChange={formik.handleChange}
-          value={formik.values.givenName}
-          errorMessage={formik.errors.givenName && t(formik.errors.givenName)}
-          textRequired={t('common:required')}
-          required
-        />
-        <InputField
-          id="surname"
-          name="surname"
-          label={t('surname.label')}
-          onChange={formik.handleChange}
-          value={formik.values.surname}
-          errorMessage={formik.errors.surname && t(formik.errors.surname)}
-          textRequired={t('common:required')}
-          required
-        />
-        <InputField
-          id="birthDate"
-          name="birthDate"
-          type="date"
-          label={t('birth-date.label')}
-          onChange={formik.handleChange}
-          value={formik.values.birthDate}
-          errorMessage={formik.errors.birthDate && t(formik.errors.birthDate)}
-          textRequired={t('common:required')}
-          required
-        />
-        <ActionButton
-          disabled={isCheckStatusLoading}
-          type="submit"
-          text={t('check-status')}
-          style="primary"
-        />
-      </form>
-    </PageWrapper>
+          <InputField
+            id="givenName"
+            name="givenName"
+            label={t('given-name.label')}
+            onChange={formik.handleChange}
+            value={formik.values.givenName}
+            errorMessage={formik.errors.givenName && t(formik.errors.givenName)}
+            textRequired={t('common:required')}
+            required
+          />
+          <InputField
+            id="surname"
+            name="surname"
+            label={t('surname.label')}
+            onChange={formik.handleChange}
+            value={formik.values.surname}
+            errorMessage={formik.errors.surname && t(formik.errors.surname)}
+            textRequired={t('common:required')}
+            required
+          />
+          <InputField
+            id="birthDate"
+            name="birthDate"
+            type="date"
+            label={t('birth-date.label')}
+            onChange={formik.handleChange}
+            value={formik.values.birthDate}
+            errorMessage={formik.errors.birthDate && t(formik.errors.birthDate)}
+            textRequired={t('common:required')}
+            required
+          />
+          <ActionButton
+            disabled={isCheckStatusLoading}
+            type="submit"
+            text={t('check-status')}
+            style="primary"
+          />
+        </form>
+      )}
+    </Layout>
   )
 }
 
