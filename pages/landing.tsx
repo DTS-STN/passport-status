@@ -1,8 +1,9 @@
-import LinkButton from '../components/LinkButton'
 import { FC } from 'react'
+import { GetStaticProps } from 'next'
+import { useTranslation } from 'next-i18next'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Layout from '../components/Layout'
-import useTranslation from 'next-translate/useTranslation'
-import Link from 'next/link'
+import LinkButton from '../components/LinkButton'
 
 const Home: FC = () => {
   const { t } = useTranslation('landing')
@@ -25,5 +26,14 @@ const Home: FC = () => {
     </Layout>
   )
 }
+
+export const getStaticProps: GetStaticProps = async ({ locale }) => ({
+  props: {
+    ...(await serverSideTranslations(locale ?? 'default', [
+      'common',
+      'landing',
+    ])),
+  },
+})
 
 export default Home

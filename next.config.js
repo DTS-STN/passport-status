@@ -1,5 +1,5 @@
 // @ts-check
-const nextTranslate = require('next-translate')
+const { i18n } = require('./next-i18next.config')
 
 //formatting TC Date
 const builddate = process.env.BUILD_DATE
@@ -56,17 +56,9 @@ const nextConfig = {
   },
   reactStrictMode: true,
   i18n: {
-    locales: ['en', 'fr'],
-    defaultLocale: 'en',
+    localeDetection: false,
+    ...i18n,
   },
-  // rewrites: async () => {
-  //   return [
-  //     {
-  //       source: '/accueil',
-  //       destination: '/home',
-  //     },
-  //   ]
-  // },
   headers: async () => {
     return [
       {
@@ -77,4 +69,4 @@ const nextConfig = {
   },
 }
 
-module.exports = nextTranslate(nextConfig)
+module.exports = nextConfig

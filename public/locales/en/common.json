@@ -12,10 +12,8 @@
     "terms-and-condition": "Terms and conditions",
     "terms-and-condition-url": "https://www.canada.ca/en/transparency/terms.html"
   },
-  "found-errors": {
-    "one": "The following error was found in the form:",
-    "other": "The following {{count}} errors were found in the form:"
-  },
+  "found-errors_one": "The following error was found in the form:",
+  "found-errors_other": "The following {{count}} errors were found in the form:",
   "francais": "Français",
   "goc": "Government of Canada",
   "goc-link": "https://www.canada.ca/en.html",
