@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1665073103460" clover="3.2.0">
-  <project timestamp="1665073103460" name="All files">
+<coverage generated="1665077615280" clover="3.2.0">
+  <project timestamp="1665077615280" name="All files">
     <metrics statements="126" coveredstatements="84" conditionals="100" coveredconditionals="51" methods="40" coveredmethods="25" elements="266" coveredelements="160" complexity="0" loc="126" ncloc="126" packages="4" files="22" classes="22"/>
     <package name="components">
       <metrics statements="42" coveredstatements="41" conditionals="34" coveredconditionals="28" methods="15" coveredmethods="14"/>
@@ -70,8 +70,8 @@
       </file>
       <file name="LinkButton.tsx" path="/home/runner/work/passport-status/passport-status/components/LinkButton.tsx">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="9" count="2" type="stmt"/>
-        <line num="10" count="4" type="stmt"/>
+        <line num="11" count="3" type="stmt"/>
+        <line num="12" count="6" type="stmt"/>
       </file>
       <file name="MetaData.tsx" path="/home/runner/work/passport-status/passport-status/components/MetaData.tsx">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
@@ -135,8 +135,8 @@
       </file>
       <file name="index.tsx" path="/home/runner/work/passport-status/passport-status/pages/index.tsx">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="6" count="1" type="stmt"/>
         <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
       </file>
       <file name="landing.tsx" path="/home/runner/work/passport-status/passport-status/pages/landing.tsx">
         <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="1"/>
