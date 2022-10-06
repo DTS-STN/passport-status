@@ -1,19 +1,20 @@
+import { FC, MouseEventHandler, useCallback, useMemo, useState } from 'react'
+import { GetStaticProps } from 'next'
+import Router from 'next/router'
+import { useTranslation } from 'next-i18next'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import { useFormik } from 'formik'
+import * as Yup from 'yup'
+import { CheckStatusRequestBody } from './api/check-status'
+import { useCheckStatus } from '../hooks/api/useCheckStatus'
+import Layout from '../components/Layout'
 import InputField from '../components/InputField'
 import ActionButton from '../components/ActionButton'
-import { FC, MouseEventHandler, useCallback, useMemo, useState } from 'react'
 import ErrorSummary, {
   ErrorSummaryItem,
   getErrorSummaryItem,
 } from '../components/ErrorSummary'
-import Layout from '../components/Layout'
-import { CheckStatusRequestBody } from './api/check-status'
-import { useCheckStatus } from '../hooks/api/useCheckStatus'
-import { useFormik } from 'formik'
-import * as Yup from 'yup'
-import useTranslation from 'next-translate/useTranslation'
 import StatusInfo from '../components/StatusInfo'
-import { GetStaticProps } from 'next'
-import Router from 'next/router'
 
 const Status: FC = () => {
   const { t } = useTranslation('status')
@@ -102,8 +103,8 @@ const Status: FC = () => {
           <p className="mb-6 text-2xl">
             {`${t('status-is')} `}
             <strong>
-              {t(`status.${checkStatusReponse.status}`, null, {
-                default: checkStatusReponse.status,
+              {t(`status.${checkStatusReponse.status}`, {
+                defaultValue: checkStatusReponse.status,
               })}
             </strong>
             .
@@ -183,8 +184,13 @@ const Status: FC = () => {
   )
 }
 
-export const getStaticProps: GetStaticProps = async () => ({
-  props: {},
+export const getStaticProps: GetStaticProps = async ({ locale }) => ({
+  props: {
+    ...(await serverSideTranslations(locale ?? 'default', [
+      'common',
+      'status',
+    ])),
+  },
 })
 
 export default Status

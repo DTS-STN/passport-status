@@ -2,7 +2,7 @@ import Header from './Header'
 import Footer from './Footer'
 import MetaData from './MetaData'
 import { FC } from 'react'
-import useTranslation from 'next-translate/useTranslation'
+import { useTranslation } from 'next-i18next'
 
 export interface LayoutProps {
   children?: React.ReactNode
