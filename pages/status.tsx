@@ -80,6 +80,14 @@ const Status: FC = () => {
       )
   }, [formik, t])
 
+  // const handleReset: MouseEventHandler<HTMLButtonElement> = useCallback(
+  //   (e) => {
+  //     e.preventDefault()
+  //     formik.resetForm()
+  //   },
+  //   [formik]
+  // )
+
   const handleGoBack: MouseEventHandler<HTMLButtonElement> = useCallback(
     (e) => {
       e.preventDefault()
