@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import LinkButton from '../components/LinkButton'
 import MetaData from '../components/MetaData'
 import defaultTranslations from '../utils/defaultTranslations.json'
 
@@ -30,30 +31,18 @@ const Index = () => {
           </div>
           <div className="flex w-max container py-11 mx-auto font-display">
             <div className="grid grid-cols-2 gap-2 xl:gap-6">
-              <Link href="/en/landing">
-                <a
-                  className="font-display rounded focus:ring-1 focus:ring-black focus:ring-offset-2 py-2 px-10 whitespace-pre bg-[#173451] text-white text-center border border-[#173451] active:bg-[#21303F] hover:bg-#245C81 grid place-items-center"
-                  // onClick={props.onClick}
-                  role="button"
-                  draggable="false"
-                  lang="en"
-                  id="english-button"
-                >
-                  English
-                </a>
-              </Link>
-              <Link href="/fr/landing">
-                <a
-                  className="font-display rounded focus:ring-1 focus:ring-black focus:ring-offset-2 py-2 px-10 whitespace-pre bg-[#173451] text-white text-center border border-[#173451] active:bg-[#21303F] hover:bg-#245C81 grid place-items-center"
-                  // onClick={props.onClick}
-                  role="button"
-                  draggable="false"
-                  lang="fr"
-                  id="french-button"
-                >
-                  Français
-                </a>
-              </Link>
+              <LinkButton
+                href="/en/landing"
+                text="English"
+                id="english-button"
+                lang="en"
+              />
+              <LinkButton
+                href="/fr/landing"
+                text="Français"
+                id="french-button"
+                lang="fr"
+              />
             </div>
           </div>
         </div>

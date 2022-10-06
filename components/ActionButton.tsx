@@ -16,11 +16,11 @@ const ActionButton: FC<ActionButtonProps> = ({
   type,
 }) => {
   let classStyle =
-    'inline-block text-center align-middle rounded border py-2.5 px-3.5 focus:ring-2 focus:ring-offset-2 '
+    'inline-block text-center align-middle rounded border py-2 px-10 focus:ring-1 focus:ring-offset-2 focus:ring-black focus:text-basic-white '
   switch (style) {
     case 'primary':
       classStyle +=
-        'border-blue-deep bg-blue-dark text-basic-white hover:bg-blue-normal'
+        'border-blue-dark bg-blue-dark text-basic-white focus:bg-blue-normal hover:bg-blue-normal active:bg-blue-active'
       break
     default:
       classStyle +=

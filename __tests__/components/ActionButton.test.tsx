@@ -17,7 +17,7 @@ describe('ActionButton', () => {
     render(<ActionButton text="text" style="primary" />)
     const sut = screen.getByText('text')
     expect(sut).toHaveClass(
-      'border-blue-deep bg-blue-dark text-basic-white hover:bg-blue-normal'
+      'inline-block text-center align-middle rounded border py-2 px-10 focus:ring-1 focus:ring-offset-2 focus:ring-black focus:text-basic-white border-blue-dark bg-blue-dark text-basic-white focus:bg-blue-normal hover:bg-blue-normal active:bg-blue-active'
     )
   })
 
