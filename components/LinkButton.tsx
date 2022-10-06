@@ -32,7 +32,7 @@ const LinkButton: FC<LinkButton> = ({ href, text, id, lang }) => {
         focus:ring-black 
         focus:text-basic-white
         focus:bg-blue-normal
-        active:bg-[#16446c]`}
+        active:bg-blue-active`}
       >
         {text}
       </a>
