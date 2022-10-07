@@ -1,9 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 import { axe, toHaveNoViolations } from 'jest-axe'
-
 import Layout from '../../components/Layout'
-import { useRouter } from 'next/router'
 
 // mocks useRouter to be able to use component' router.asPath
 jest.mock('next/router', () => ({
@@ -20,31 +18,22 @@ jest.mock('next/link', () => ({
 }))
 
 //mock custom components
-jest.mock('../../components/MetaData', () => () => {
-  return <mock-modal data-testid="MetaData-modal" />
-})
-jest.mock('../../components/Header', () => () => {
-  return <mock-modal data-testid="Header-modal" />
-})
-jest.mock('../../components/Footer', () => () => {
-  return <mock-modal data-testid="Footer-modal" />
-})
+jest.mock('../../components/MetaData')
+jest.mock('../../components/Header')
+jest.mock('../../components/Footer')
 
 expect.extend(toHaveNoViolations)
 
 describe('Layout with default text', () => {
-  useRouter.mockImplementation(() => ({
-    pathname: '/',
-    asPath: '/',
-  }))
+  const sut = <Layout meta={{}} header={{}} footer={{ links: {} }} />
 
   it('Layout contains a Main tag', () => {
-    render(<Layout />)
+    render(sut)
     expect(screen.getByRole('main')).toBeInTheDocument()
   })
 
   it('Layout contains no a11y violations', async () => {
-    const { container } = render(<Layout />)
+    const { container } = render(sut)
     const results = await axe(container)
     expect(results).toHaveNoViolations()
   })

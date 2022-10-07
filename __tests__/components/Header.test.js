@@ -44,7 +44,7 @@ describe('Header', () => {
   })
 
   it('has no a11y violations', async () => {
-    const { container } = render(<Header />)
+    const { container } = render(<Header skipToMainText="skiptext" />)
     const results = await axe(container)
     expect(results).toHaveNoViolations()
   })
