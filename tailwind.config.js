@@ -17,6 +17,7 @@ module.exports = {
         basic: {
           gray: '#333',
           white: '#fff',
+          darkgray: '#444',
         },
         accent: {
           main: '#26374A',
@@ -48,6 +49,9 @@ module.exports = {
           default: '#dcdee1',
           dark: '#cfd1d5',
           deep: '#bbbfc5',
+        },
+        orange: {
+          dark: '#e59700',
         },
       },
       backgroundImage: () => ({

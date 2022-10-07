@@ -21,7 +21,7 @@ export default function Header(props: HeaderProps) {
       >
         <a
           id="skipToMainContent"
-          className="bg-blue-800 text-white px-2 focus:outline-black-solid hover:bg-gray-dark"
+          className="bg-blue-dark border border-blue-dark text-white px-2 focus:text-white focus:ring-2 focus:ring-offset-2 focus:ring-orange-dark hover:bg-basic-darkgray font-body font-bold focus:ring-inset "
           href="#mainContent"
           draggable="false"
         >
