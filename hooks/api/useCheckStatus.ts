@@ -4,7 +4,11 @@ import {
   CheckStatusReponse,
   CheckStatusRequestBody,
 } from '../../pages/api/check-status'
-import { checkStatusQueryKey, checkStatusUri } from './types'
+import {
+  checkStatusQueryKey,
+  checkStatusUri,
+  passportStatusQueryKey,
+} from './types'
 
 export const fetchCheckStatus = async (
   request: CheckStatusRequestBody,
@@ -33,7 +37,7 @@ export const useCheckStatus = (
     ApiError,
     CheckStatusReponse | null
   >(
-    [checkStatusQueryKey, requestBody],
+    [passportStatusQueryKey, checkStatusQueryKey, requestBody],
     ({ signal }) => fetchCheckStatus(requestBody, { signal }),
     { cacheTime: Infinity, staleTime: Infinity, ...(queryOptions ?? {}) }
   )

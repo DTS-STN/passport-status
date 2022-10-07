@@ -50,14 +50,25 @@ const Status: FC = () => {
     },
   })
 
+  const useCheckStatusEnabled = formik.isValid && formSubmitted
   const {
     isLoading: isCheckStatusLoading,
     error: checkStatusError,
     data: checkStatusReponse,
     remove: removeCheckStatusResponse,
-  } = useCheckStatus(formik.values, {
-    enabled: formik.isValid && formSubmitted,
-  })
+  } = useCheckStatus(
+    useCheckStatusEnabled
+      ? formik.values
+      : {
+          birthDate: '',
+          esrf: '',
+          givenName: '',
+          surname: '',
+        },
+    {
+      enabled: useCheckStatusEnabled,
+    }
+  )
 
   const errorSummary = useMemo<ErrorSummaryItem[]>(() => {
     return Object.keys(formik.errors)
