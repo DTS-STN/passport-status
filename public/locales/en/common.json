@@ -1,22 +1,27 @@
 {
   "contact-us": "Contact us",
-  "date-modified": "Date Modified: ",
   "english": "English",
   "footer": {
+    "dateModifiedText": "Date Modified: ",
     "about-this-site": "About this Site",
     "canada-ca-alt-text": "Symbol of the Government of Canada",
-    "contact-us": "Contact information",
-    "contact-us-url": "https://www.canada.ca/en/contact.html",
-    "privacy": "Privacy",
-    "privacy-url": "https://www.canada.ca/en/transparency/privacy.html",
-    "terms-and-condition": "Terms and conditions",
-    "terms-and-condition-url": "https://www.canada.ca/en/transparency/terms.html"
+    "links": {
+      "contactUs": "Contact information",
+      "contactUsURL": "https://www.canada.ca/en/contact.html",
+      "privacy": "Privacy",
+      "privacyURL": "https://www.canada.ca/en/transparency/privacy.html",
+      "termsAndCondition": "Terms and conditions",
+      "termsAndConditionURL": "https://www.canada.ca/en/transparency/terms.html"
+    }
   },
   "found-errors_one": "The following error was found in the form:",
   "found-errors_other": "The following {{count}} errors were found in the form:",
   "francais": "Français",
   "goc": "Government of Canada",
-  "goc-link": "https://www.canada.ca/en.html",
+  "header": {
+    "gocLink": "https://www.canada.ca/en.html",
+    "skipToMain": "Skip to main content"
+  },
   "header-canada-ca-alt-text": "Symbol of the Government of Canada",
   "language-selection": "Language selection",
   "login": "Login",
@@ -29,8 +34,7 @@
   "required": "(required)",
   "service-and-benefits": "Service and Benefits",
   "skip-to": {
-    "about-government": "Skip to 'About government'",
-    "main-content": "Skip to main content"
+    "about-government": "Skip to 'About government'"
   },
   "title": "home",
   "tools": "Tools",

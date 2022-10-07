@@ -1,11 +1,14 @@
 import React, { FC } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { useTranslation } from 'next-i18next'
 
-const Header: FC = () => {
+export interface HeaderProps {
+  skipToMainText: string
+  gocLink: string
+}
+
+export default function Header(props: HeaderProps) {
   const { locale, asPath } = useRouter()
-  const { t } = useTranslation('common')
 
   const langToggleLink = (locale === 'en' ? '/fr' : '') + asPath || '/'
 
@@ -13,7 +16,7 @@ const Header: FC = () => {
     <>
       <nav
         role="navigation"
-        aria-label={t('skip-to.main-content')}
+        aria-label={props.skipToMainText}
         className="absolute w-px h-px -left-96 focus-within:w-screen focus-within:h-auto focus-within:top-4 focus-within:z-50 focus-within:flex focus-within:justify-center"
       >
         <a
@@ -22,14 +25,14 @@ const Header: FC = () => {
           href="#mainContent"
           draggable="false"
         >
-          {t('skip-to.main-content')}
+          {props.skipToMainText}
         </a>
       </nav>
 
       <header>
         <div className="container mx-auto px-6 flex-col flex md:flex md:flex-row justify-between pt-6">
           <div className="flex flex-row justify-between items-center lg:mt-7">
-            <a href={t('goc-link')}>
+            <a href={props.gocLink}>
               <img
                 className="h-5 w-auto xs:h-6 sm:h-8 md:h-8 lg:h-7 xl:h-8 "
                 src={locale === 'en' ? '/sig-blk-en.svg' : '/sig-blk-fr.svg'}
@@ -110,5 +113,3 @@ const Header: FC = () => {
     </>
   )
 }
-
-export default Header
