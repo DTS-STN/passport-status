@@ -1,30 +1,20 @@
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
+import { axe, toHaveNoViolations } from 'jest-axe'
 import Status from '../../pages/status'
-import { useRouter } from 'next/router'
 import { useCheckStatus } from '../../hooks/api/useCheckStatus'
 
-// mocks useRouter to be able to use component' router.asPath
-jest.mock('next/router', () => ({
-  useRouter: jest.fn(),
-}))
-jest.mock('../../components/InputField', () => () => {
-  return <mock-modal data-testid="test-modal" />
-})
-jest.mock('../../components/ActionButton', () => () => {
-  return <mock-modal data-testid="button-modal" />
-})
-jest.mock('../../components/ErrorSummary', () => () => {
-  return <mock-modal data-testid="errors-modal" />
-})
+expect.extend(toHaveNoViolations)
+
+jest.mock('../../components/Layout', () => 'Layout')
+jest.mock('../../components/StatusInfo')
+jest.mock('../../components/ErrorSummary')
+jest.mock('../../components/InputField')
+jest.mock('../../components/ActionButton')
 jest.mock('../../hooks/api/useCheckStatus')
 
 describe('Check status page', () => {
   beforeEach(() => {
-    useRouter.mockImplementation(() => ({
-      pathname: '/',
-      asPath: '/',
-    }))
     useCheckStatus.mockImplementation(() => ({}))
   })
 
@@ -32,5 +22,11 @@ describe('Check status page', () => {
     render(<Status />)
     const heading = screen.getByRole('heading', { level: 1 })
     expect(heading).toBeInTheDocument()
+  })
+
+  it('should be accessable', async () => {
+    const { container } = render(<Status />)
+    const results = await axe(container)
+    expect(results).toHaveNoViolations()
   })
 })

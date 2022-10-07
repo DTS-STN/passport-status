@@ -91,7 +91,11 @@ const Status: FC = () => {
   if (checkStatusError) throw new Error(checkStatusError.message)
 
   return (
-    <Layout>
+    <Layout
+      meta={t('common:meta', { returnObjects: true })}
+      header={t('common:header', { returnObjects: true })}
+      footer={t('common:footer', { returnObjects: true })}
+    >
       <h1 className="mb-4">{t('header')}</h1>
       {checkStatusReponse ? (
         <StatusInfo

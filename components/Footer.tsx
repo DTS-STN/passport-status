@@ -31,23 +31,24 @@ export interface FooterProps {
    * array of objects containing the link text and link
    */
   links: FooterLink[]
+  dateModifiedText: string
 }
 
 /**
  * footer element for all pages
  */
-const Footer: FC<FooterProps> = ({
+export default function Footer({
   footerLogoAltText,
   footerLogoImage,
   links,
   footerNav1,
   footerNav2,
-}) => {
-  const { t } = useTranslation('common')
+  dateModifiedText,
+}: FooterProps) {
   return (
     <footer>
       <h2 className="sr-only">siteFooter</h2>
-      <DateModified text={t('date-modified')} />
+      <DateModified text={dateModifiedText} />
       <div className="w-full">
         <div className="w-full h-full pb-4 bg-gray-light">
           <div className="h-auto pt-5 container mx-auto px-6 flex flex-col xl:flex xl:flex-row md:justify-between">
@@ -93,5 +94,3 @@ const Footer: FC<FooterProps> = ({
     </footer>
   )
 }
-
-export default Footer
