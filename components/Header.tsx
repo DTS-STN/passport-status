@@ -10,7 +10,9 @@ export interface HeaderProps {
 export default function Header(props: HeaderProps) {
   const { locale, asPath } = useRouter()
 
-  const langToggleLink = (locale === 'en' ? '/fr' : '') + asPath || '/'
+  const langSelectorLocale = locale === 'en' ? 'fr' : 'en'
+  const langSelectorAbbreviation = langSelectorLocale === 'fr' ? 'FR' : 'EN'
+  const langSelectorText = langSelectorLocale === 'fr' ? 'Français' : 'English'
 
   return (
     <>
@@ -45,38 +47,27 @@ export default function Header(props: HeaderProps) {
             </a>
 
             {/* Language selector for small screens */}
-            <Link
-              key={locale}
-              href={langToggleLink}
-              locale={locale === 'en' ? 'fr' : 'en'}
-            >
+            <Link href={asPath} locale={langSelectorLocale} replace>
               <a
-                className="block md:hidden md:text-sm ml-6 pb-2 sm:ml-16 underline font-body font-bold text-[#284162]  text-base hover:text-[#0535d2]"
-                // onClick={() => setLanguage(language)}
-                lang={locale === 'en' ? 'fr' : 'en'}
+                className={`block md:hidden md:text-sm ml-6 pb-2 sm:ml-16 underline decoration-dotted cursor-help font-body font-bold text-[#284162] text-base hover:text-[#0535d2]`}
+                lang={langSelectorLocale}
               >
-                {locale === 'en' ? 'FR' : 'EN'}
+                <abbr title={langSelectorText}>{langSelectorAbbreviation}</abbr>
               </a>
             </Link>
           </div>
 
           <div className="flex-col flex">
             {/* Language selector for mid to larger screens */}
-            <Link
-              key={locale}
-              href={langToggleLink}
-              locale={locale === 'en' ? 'fr' : 'en'}
-            >
+            <Link href={asPath} locale={langSelectorLocale} replace>
               <a
-                className="md:block hidden pb-0 lg:pb-4 self-end underline font-body text-[#284162] hover:text-[#0535d2] "
+                className="md:block hidden pb-0 lg:pb-4 self-end underline font-body text-[#284162] hover:text-[#0535d2]"
                 data-cy="toggle-language-link"
-                // onClick={() => setLanguage(language)}
-                lang={locale === 'en' ? 'fr' : 'en'}
+                lang={langSelectorLocale}
               >
-                {locale === 'en' ? 'Français' : 'English'}
+                {langSelectorText}
               </a>
             </Link>
-
             {/* Placeholder for SearchBar in case is back in ver 4??? */}
             {/* <SearchBar /> */}
           </div>
