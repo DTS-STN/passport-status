@@ -25,14 +25,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>3/3</span>
+                <span class='fraction'>5/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">95% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>19/20</span>
+                <span class='fraction'>10/10</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>3/3</span>
+                <span class='fraction'>5/5</span>
             </div>
         
             
@@ -169,16 +169,7 @@
 <a name='L104'></a><a href='#L104'>104</a>
 <a name='L105'></a><a href='#L105'>105</a>
 <a name='L106'></a><a href='#L106'>106</a>
-<a name='L107'></a><a href='#L107'>107</a>
-<a name='L108'></a><a href='#L108'>108</a>
-<a name='L109'></a><a href='#L109'>109</a>
-<a name='L110'></a><a href='#L110'>110</a>
-<a name='L111'></a><a href='#L111'>111</a>
-<a name='L112'></a><a href='#L112'>112</a>
-<a name='L113'></a><a href='#L113'>113</a>
-<a name='L114'></a><a href='#L114'>114</a>
-<a name='L115'></a><a href='#L115'>115</a>
-<a name='L116'></a><a href='#L116'>116</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L107'></a><a href='#L107'>107</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -191,19 +182,10 @@
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -305,7 +287,9 @@ export interface HeaderProps {
 export default function Header(props: HeaderProps) {
   const { locale, asPath } = useRouter()
 &nbsp;
-  const langToggleLink = (locale === 'en' ? '/fr' : '') + asPath || <span class="branch-1 cbranch-no" title="branch not covered" >'/'</span>
+  const langSelectorLocale = locale === 'en' ? 'fr' : 'en'
+  const langSelectorAbbreviation = langSelectorLocale === 'fr' ? 'FR' : 'EN'
+  const langSelectorText = langSelectorLocale === 'fr' ? 'Français' : 'English'
 &nbsp;
   return (
     &lt;&gt;
@@ -340,38 +324,27 @@ export default function Header(props: HeaderProps) {
             &lt;/a&gt;
 &nbsp;
             {/* Language selector for small screens */}
-            &lt;Link
-              key={locale}
-              href={langToggleLink}
-              locale={locale === 'en' ? 'fr' : 'en'}
-            &gt;
+            &lt;Link href={asPath} locale={langSelectorLocale} replace&gt;
               &lt;a
-                className="block md:hidden md:text-sm ml-6 pb-2 sm:ml-16 underline font-body font-bold text-[#284162]  text-base hover:text-[#0535d2]"
-                // onClick={() =&gt; setLanguage(language)}
-                lang={locale === 'en' ? 'fr' : 'en'}
+                className={`block md:hidden md:text-sm ml-6 pb-2 sm:ml-16 underline decoration-dotted cursor-help font-body font-bold text-[#284162] text-base hover:text-[#0535d2]`}
+                lang={langSelectorLocale}
               &gt;
-                {locale === 'en' ? 'FR' : 'EN'}
+                &lt;abbr title={langSelectorText}&gt;{langSelectorAbbreviation}&lt;/abbr&gt;
               &lt;/a&gt;
             &lt;/Link&gt;
           &lt;/div&gt;
 &nbsp;
           &lt;div className="flex-col flex"&gt;
             {/* Language selector for mid to larger screens */}
-            &lt;Link
-              key={locale}
-              href={langToggleLink}
-              locale={locale === 'en' ? 'fr' : 'en'}
-            &gt;
+            &lt;Link href={asPath} locale={langSelectorLocale} replace&gt;
               &lt;a
-                className="md:block hidden pb-0 lg:pb-4 self-end underline font-body text-[#284162] hover:text-[#0535d2] "
+                className="md:block hidden pb-0 lg:pb-4 self-end underline font-body text-[#284162] hover:text-[#0535d2]"
                 data-cy="toggle-language-link"
-                // onClick={() =&gt; setLanguage(language)}
-                lang={locale === 'en' ? 'fr' : 'en'}
+                lang={langSelectorLocale}
               &gt;
-                {locale === 'en' ? 'Français' : 'English'}
+                {langSelectorText}
               &lt;/a&gt;
             &lt;/Link&gt;
-&nbsp;
             {/* Placeholder for SearchBar in case is back in ver 4??? */}
             {/* &lt;SearchBar /&gt; */}
           &lt;/div&gt;
@@ -415,7 +388,7 @@ export default function Header(props: HeaderProps) {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-10-07T19:04:45.360Z
+                at 2022-10-08T14:58:39.637Z
             </div>
         <script src="../prettify.js"></script>
         <script>
