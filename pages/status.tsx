@@ -1,4 +1,4 @@
-import { FC, MouseEventHandler, useCallback, useMemo, useState } from 'react'
+import { FC, MouseEventHandler, useCallback, useMemo } from 'react'
 import { GetStaticProps } from 'next'
 import Router from 'next/router'
 import { useTranslation } from 'next-i18next'
@@ -16,18 +16,18 @@ import ErrorSummary, {
 } from '../components/ErrorSummary'
 import StatusInfo from '../components/StatusInfo'
 
+const initialValues: CheckStatusRequestBody = {
+  birthDate: '',
+  esrf: '',
+  givenName: '',
+  surname: '',
+}
+
 const Status: FC = () => {
   const { t } = useTranslation('status')
 
-  const [formSubmitted, setFormSubmitted] = useState(false)
-
   const formik = useFormik<CheckStatusRequestBody>({
-    initialValues: {
-      birthDate: '',
-      esrf: '',
-      givenName: '',
-      surname: '',
-    },
+    initialValues,
     validationSchema: Yup.object({
       esrf: Yup.string()
         .required('esrf.error.required')
@@ -41,12 +41,12 @@ const Status: FC = () => {
     validateOnBlur: false,
     validateOnChange: false,
     validateOnMount: false,
-    onReset: () => {
-      setFormSubmitted(false)
+    onReset: (_, formikHelper) => {
+      formikHelper.setStatus(undefined)
       removeCheckStatusResponse()
     },
-    onSubmit: (values) => {
-      setFormSubmitted(true)
+    onSubmit: async (_, formikHelper) => {
+      formikHelper.setStatus('submitted')
     },
   })
 
@@ -55,9 +55,12 @@ const Status: FC = () => {
     error: checkStatusError,
     data: checkStatusReponse,
     remove: removeCheckStatusResponse,
-  } = useCheckStatus(formik.values, {
-    enabled: formik.isValid && formSubmitted,
-  })
+  } = useCheckStatus(
+    formik.status === 'submitted' ? formik.values : initialValues,
+    {
+      enabled: formik.status === 'submitted',
+    }
+  )
 
   const errorSummary = useMemo<ErrorSummaryItem[]>(() => {
     return Object.keys(formik.errors)
@@ -81,10 +84,10 @@ const Status: FC = () => {
   const handleGoBack: MouseEventHandler<HTMLButtonElement> = useCallback(
     (e) => {
       e.preventDefault()
-      setFormSubmitted(false)
+      formik.setStatus(undefined)
       removeCheckStatusResponse()
     },
-    [removeCheckStatusResponse]
+    [formik, removeCheckStatusResponse]
   )
 
   //if the api failed, fail hard to show error page
