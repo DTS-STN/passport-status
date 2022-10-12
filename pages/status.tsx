@@ -14,12 +14,28 @@ import ErrorSummary, {
   ErrorSummaryItem,
   getErrorSummaryItem,
 } from '../components/ErrorSummary'
+import LinkSummary, { LinkSummaryItem } from '../components/LinkSummary'
 import StatusInfo from '../components/StatusInfo'
 
 const Status: FC = () => {
   const { t } = useTranslation('status')
 
   const [formSubmitted, setFormSubmitted] = useState(false)
+
+  const noMatchHref: LinkSummaryItem[] = [
+    {
+      href: 'https://ircc.canada.ca/english/passport/map/map.asp',
+      text: t('no-match-status-links.near-you'),
+    },
+    {
+      href: 'https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/contact-passport-program.html',
+      text: t('no-match-status-links.contact-program'),
+    },
+    {
+      href: 'https://eservices.canada.ca/en/reservation/',
+      text: t('no-match-status-links.appointment'),
+    },
+  ]
 
   const formik = useFormik<CheckStatusRequestBody>({
     initialValues: {
@@ -115,14 +131,20 @@ const Status: FC = () => {
           </p>
         </StatusInfo>
       ) : checkStatusReponse === null ? (
-        <StatusInfo
-          handleGoBackClick={handleGoBack}
-          goBackText={t('go-back')}
-          goBackStyle="primary"
-          checkAgainText={t('check-again')}
-        >
-          <p className=" mb-6 text-2xl">{t('unable-to-find-status')}</p>
-        </StatusInfo>
+        <>
+          <LinkSummary
+            id={'noMatchLinkSummary'}
+            links={noMatchHref}
+          ></LinkSummary>
+          <StatusInfo
+            handleGoBackClick={handleGoBack}
+            goBackText={t('go-back')}
+            goBackStyle="primary"
+            checkAgainText={t('check-again')}
+          >
+            <p className=" mb-6 text-2xl">{t('unable-to-find-status')}</p>
+          </StatusInfo>
+        </>
       ) : (
         <form onSubmit={formik.handleSubmit} id="form-get-status">
           <p>{t('description')}</p>
