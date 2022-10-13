@@ -7,7 +7,6 @@ export interface EmailEsrfRequestBody {
   firstName: string
   lastName: string
 }
-export interface EmailEsrfResponse {}
 
 export default async function handler(
   req: NextApiRequest,
