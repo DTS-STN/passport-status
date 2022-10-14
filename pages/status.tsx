@@ -14,6 +14,7 @@ import ErrorSummary, {
   ErrorSummaryItem,
   getErrorSummaryItem,
 } from '../components/ErrorSummary'
+import LinkSummary, { LinkSummaryItem } from '../components/LinkSummary'
 import StatusInfo from '../components/StatusInfo'
 
 const initialValues: CheckStatusRequestBody = {
@@ -25,6 +26,10 @@ const initialValues: CheckStatusRequestBody = {
 
 const Status: FC = () => {
   const { t } = useTranslation('status')
+
+  const lsItems = t<string, LinkSummaryItem[]>('no-match-status-links', {
+    returnObjects: true,
+  })
 
   const formik = useFormik<CheckStatusRequestBody>({
     initialValues,
@@ -118,14 +123,20 @@ const Status: FC = () => {
           </p>
         </StatusInfo>
       ) : checkStatusReponse === null ? (
-        <StatusInfo
-          handleGoBackClick={handleGoBack}
-          goBackText={t('go-back')}
-          goBackStyle="primary"
-          checkAgainText={t('check-again')}
-        >
-          <p className=" mb-6 text-2xl">{t('unable-to-find-status')}</p>
-        </StatusInfo>
+        <>
+          <StatusInfo
+            handleGoBackClick={handleGoBack}
+            goBackText={t('go-back')}
+            goBackStyle="primary"
+            checkAgainText={t('check-again')}
+          >
+            <p className=" mb-6 text-2xl">{t('unable-to-find-status')}</p>
+          </StatusInfo>
+          <LinkSummary
+            title={t('no-match-title')}
+            links={lsItems}
+          ></LinkSummary>
+        </>
       ) : (
         <form onSubmit={formik.handleSubmit} id="form-get-status">
           <p>{t('description')}</p>

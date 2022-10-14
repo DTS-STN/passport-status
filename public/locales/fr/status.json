@@ -38,5 +38,20 @@
     },
     "label": "Nom de famille"
   },
-  "unable-to-find-status": "Nous ne sommes pas en mesure de déterminer le statut de votre demande pour le moment en utilisant ce service."
+  "unable-to-find-status": "Nous ne sommes pas en mesure de déterminer le statut de votre demande pour le moment en utilisant ce service.",
+  "no-match-title": "D'autres façons d'obtenir votre statut.",
+  "no-match-status-links": [
+    {
+      "text": "Communiquez avec le Programme de passeport",
+      "href": "https://ircc.canada.ca/francais/passeport/map/carte.asp"
+    },
+    {
+      "text": "Trouvez un emplacement de service de passeport près de chez vous",
+      "href": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens/communiquer-programme-passeport.html"
+    },
+    {
+      "text": "Prise de rendez-vous",
+      "href": "https://eservices.canada.ca/fr/reservation/"
+    }
+  ]
 }
