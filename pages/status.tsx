@@ -129,7 +129,7 @@ const Status: FC = () => {
           <p className=" mb-6 text-2xl">{t('unable-to-find-status')}</p>
         </StatusInfo>
       ) : (
-        <form onSubmit={formik.handleSubmit} id="form-get-status">
+        <form onSubmit={formik.handleSubmit}>
           <p>{t('description')}</p>
           {errorSummary.length > 0 && (
             <ErrorSummary
@@ -182,7 +182,7 @@ const Status: FC = () => {
             required
           />
           <div className="flex flex-wrap">
-            <div className="py-1 pr-2">
+            <div id="form-get-status" className="py-1 pr-2">
               <ActionButton
                 disabled={isCheckStatusLoading}
                 type="submit"
