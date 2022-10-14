@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for components/StatusInfo.tsx</title>
+    <title>Code coverage report for pages/email.tsx</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">components</a> StatusInfo.tsx</h1>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">pages</a> email.tsx</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">75% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>3/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>0/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>1/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -93,11 +93,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -110,31 +106,35 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { MouseEventHandler } from 'react'
-import ActionButton from './ActionButton'
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { GetStaticProps } from 'next'
+import { useTranslation } from 'next-i18next'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import Layout from '../components/Layout'
 &nbsp;
-export interface StatusInfoProps {
-  handleGoBackClick: MouseEventHandler&lt;HTMLButtonElement&gt;
-  goBackText: string
-  goBackStyle?: 'default' | 'primary' | 'super' | 'danger'
-  checkAgainText: string
-  children: JSX.Element
-}
+export default function Email() {
+  const { t } = useTranslation('email')
 &nbsp;
-export default function StatusInfo(props: StatusInfoProps) {
   return (
-    &lt;div id="response"&gt;
-      {props.children}
-      &lt;p className="mb-6"&gt;{props.checkAgainText}&lt;/p&gt;
-      &lt;ActionButton
-        onClick={props.handleGoBackClick}
-        text={props.goBackText}
-        style={props.goBackStyle}
-      /&gt;
-    &lt;/div&gt;
+    &lt;Layout
+      meta={t('common:meta', { returnObjects: true })}
+      header={t('common:header', { returnObjects: true })}
+      footer={t('common:footer', { returnObjects: true })}
+    &gt;
+      &lt;h1 className="mb-4"&gt;{t('header')}&lt;/h1&gt;
+    &lt;/Layout&gt;
   )
 }
+&nbsp;
+export const getStaticProps: GetStaticProps = <span class="fstat-no" title="function not covered" >as</span>ync ({ locale }) =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
+  props: {
+    ...(await serverSideTranslations(locale ?? 'default', ['common', 'email'])),
+  },
+})
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
