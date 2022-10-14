@@ -27,20 +27,14 @@ const initialValues: CheckStatusRequestBody = {
 const Status: FC = () => {
   const { t } = useTranslation('status')
 
-  const noMatchHref: LinkSummaryItem[] = [
-    {
-      href: 'https://ircc.canada.ca/english/passport/map/map.asp',
-      text: t('no-match-status-links.near-you'),
-    },
-    {
-      href: 'https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/contact-passport-program.html',
-      text: t('no-match-status-links.contact-program'),
-    },
-    {
-      href: 'https://eservices.canada.ca/en/reservation/',
-      text: t('no-match-status-links.appointment'),
-    },
-  ]
+  const getLinkSummaryItems: any = () => {
+    const LSI: any = t('no-match-status-links', { returnObjects: true })
+    const noMatchHref: LinkSummaryItem[] = []
+    for (const keys in LSI) {
+      noMatchHref.push(LSI[keys] as LinkSummaryItem)
+    }
+    return noMatchHref
+  }
 
   const formik = useFormik<CheckStatusRequestBody>({
     initialValues,
@@ -135,10 +129,6 @@ const Status: FC = () => {
         </StatusInfo>
       ) : checkStatusReponse === null ? (
         <>
-          <LinkSummary
-            id={'noMatchLinkSummary'}
-            links={noMatchHref}
-          ></LinkSummary>
           <StatusInfo
             handleGoBackClick={handleGoBack}
             goBackText={t('go-back')}
@@ -147,6 +137,10 @@ const Status: FC = () => {
           >
             <p className=" mb-6 text-2xl">{t('unable-to-find-status')}</p>
           </StatusInfo>
+          <LinkSummary
+            title={t('no-match-title')}
+            links={getLinkSummaryItems()}
+          ></LinkSummary>
         </>
       ) : (
         <form onSubmit={formik.handleSubmit} id="form-get-status">

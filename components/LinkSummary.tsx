@@ -7,14 +7,15 @@ export interface LinkSummaryItem {
 }
 
 export interface LinkSummaryProps {
-  id: string
+  title?: string
   links: LinkSummaryItem[]
 }
 
-const LinkSummary: FC<LinkSummaryProps> = ({ id, links }) => {
+const LinkSummary: FC<LinkSummaryProps> = ({ title, links }) => {
   return (
-    <section id={id}>
-      <ul className="list-none pb-6 ml-4">
+    <section className="mt-5">
+      <p>{title}</p>
+      <ul className="list-disc pb-6 ml-4">
         {links.map(({ href, text }, index) => (
           <li key={index} className="text-link-default">
             <Link href={href}>{text}</Link>

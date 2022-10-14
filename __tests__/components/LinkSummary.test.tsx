@@ -12,7 +12,7 @@ const noMatchHref: LinkSummaryItem[] = [
 ]
 
 describe('LinkSummary', () => {
-  const sut = <LinkSummary id={'testId'} links={noMatchHref} />
+  const sut = <LinkSummary links={noMatchHref} />
 
   it('renders', () => {
     render(sut)
