@@ -39,5 +39,11 @@
   "title": "home",
   "tools": "Tools",
   "top-of-page": "Top of Page",
-  "welcome": "Welcome to"
+  "welcome": "Welcome to",
+  "error-messages": {
+    "required": "is required",
+    "in-past": "must be in the past",
+    "valid-format": "must be in a valid format of {{format}}",
+    "meet-length": "must be {{length}} characters long"
+  }
 }

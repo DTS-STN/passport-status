@@ -39,5 +39,11 @@
   "title": "accueil",
   "tools": "Outils",
   "top-of-page": "Haut de la page",
-  "welcome": "Bienvenue a"
+  "welcome": "Bienvenue a",
+  "error-messages": {
+    "required": "est obligatoire",
+    "in-past": "doit être dans le passé",
+    "valid-format": "doit être valide au format de {{format}}",
+    "meet-length": "doit comporter {{length}} caractères"
+  }
 }
