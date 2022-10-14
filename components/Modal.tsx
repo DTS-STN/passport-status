@@ -3,7 +3,7 @@ import ActionButton from './ActionButton'
 import { ActionButtonProps } from './ActionButton'
 import { FocusOn } from 'react-focus-on'
 
-export interface CancelModalProps {
+export interface ModalProps {
   buttonText: string
   description: string
   isOpen: boolean
@@ -11,7 +11,7 @@ export interface CancelModalProps {
   buttons: ActionButtonProps[]
 }
 
-const CancelModal: FC<CancelModalProps> = ({
+const Modal: FC<ModalProps> = ({
   buttonText,
   description,
   buttons,
@@ -53,4 +53,4 @@ const CancelModal: FC<CancelModalProps> = ({
   )
 }
 
-export default CancelModal
+export default Modal
