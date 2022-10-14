@@ -21,7 +21,7 @@ const Modal: FC<ModalProps> = ({
   return (
     <>
       <ActionButton text={buttonText} onClick={onClick} />
-      {isOpen ? (
+      {isOpen && (
         <FocusOn autoFocus={false}>
           <div
             className="fixed top-0 left-0 w-screen h-full flex justify-center items-center"
@@ -30,24 +30,13 @@ const Modal: FC<ModalProps> = ({
             <div className="p-4 bg-white border-2 border-black">
               <p className="font-body">{description}</p>
               <div className="flex space-x-2 mx-4">
-                {buttons.map((button) => {
-                  return (
-                    <div key={button.text}>
-                      <ActionButton
-                        text={button.text}
-                        onClick={button.onClick}
-                        style={button.style}
-                        type={button.type}
-                      />
-                    </div>
-                  )
-                })}
+                {buttons.map((buttonProps) => (
+                  <ActionButton key={buttonProps.text} {...buttonProps} />
+                ))}
               </div>
             </div>
           </div>
         </FocusOn>
-      ) : (
-        ''
       )}
     </>
   )
