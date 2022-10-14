@@ -1,9 +1,9 @@
 {
   "birth-date": {
     "error": {
-      "current": "The Date of birth must be a date in the past",
-      "invalid": "The Date of birth must be a valid date in the format of (dd/mm/yyyy)",
-      "required": "The Date of birth is required"
+      "current": "The $t(birth-date.label) $t(common:error-messages.in-past)",
+      "invalid": "The $t(birth-date.label) $t(common:error-messages.valid-format, { \"format\": \"dd/mm/yyyy\" })",
+      "required": "The $t(birth-date.label) $t(common:error-messages.required)"
     },
     "label": "Date of birth"
   },
@@ -12,14 +12,14 @@
   "description": "Use this service with your ESRF to check the status of your passport application.",
   "esrf": {
     "error": {
-      "length": "The File number must be 8 characters long",
-      "required": "The File number is required"
+      "length": "The $t(esrf.label) $t(common:error-messages.meet-length, {\"length\": 8})",
+      "required": "The $t(esrf.label) $t(common:error-messages.required)"
     },
     "label": "File number"
   },
   "given-name": {
     "error": {
-      "required": "The Given name is required"
+      "required": "The $t(given-name.label) $t(common:error-messages.required)"
     },
     "label": "Given Name"
   },
@@ -34,7 +34,7 @@
   "status-is": "The latest status of your application according to our records is: ",
   "surname": {
     "error": {
-      "required": "The Surname is required"
+      "required": "The $t(surname.label) $t(common:error-messages.required)"
     },
     "label": "Surname"
   },
