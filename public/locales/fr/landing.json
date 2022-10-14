@@ -1,7 +1,6 @@
 {
   "header": "Vérification du statut du passeport",
   "description": "Afin de mieux vous servir, veuillez sélectionner l'option ci-dessous qui vous convient le mieux.",
-  "intakeForm": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens/verifier-demande-passeports-documents-voyage.html",
   "withESRF": "J'ai mon numéro de dossier (ESRF)",
   "withoutESRF": "Je n'ai pas mon numéro de dossier (ESRF)"
 }
