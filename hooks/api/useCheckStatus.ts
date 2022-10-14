@@ -35,7 +35,7 @@ export const useCheckStatus = (
   >(
     [checkStatusQueryKey, requestBody],
     ({ signal }) => fetchCheckStatus(requestBody, { signal }),
-    { cacheTime: Infinity, staleTime: Infinity, ...(queryOptions ?? {}) }
+    { ...(queryOptions ?? {}) }
   )
 
   // fix isLoading with disabled: false
