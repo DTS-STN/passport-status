@@ -27,14 +27,9 @@ const initialValues: CheckStatusRequestBody = {
 const Status: FC = () => {
   const { t } = useTranslation('status')
 
-  const getLinkSummaryItems: any = () => {
-    const LSI: any = t('no-match-status-links', { returnObjects: true })
-    const noMatchHref: LinkSummaryItem[] = []
-    for (const keys in LSI) {
-      noMatchHref.push(LSI[keys] as LinkSummaryItem)
-    }
-    return noMatchHref
-  }
+  const lsItems = t<string, LinkSummaryItem[]>('no-match-status-links', {
+    returnObjects: true,
+  })
 
   const formik = useFormik<CheckStatusRequestBody>({
     initialValues,
@@ -139,7 +134,7 @@ const Status: FC = () => {
           </StatusInfo>
           <LinkSummary
             title={t('no-match-title')}
-            links={getLinkSummaryItems()}
+            links={lsItems}
           ></LinkSummary>
         </>
       ) : (

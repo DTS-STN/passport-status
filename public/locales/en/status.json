@@ -40,18 +40,18 @@
   },
   "unable-to-find-status": "We are unable to determine the status of your application at this time using this service.",
   "no-match-title": "Other ways to get your status.",
-  "no-match-status-links": {
-    "contact": {
+  "no-match-status-links": [
+    {
       "text": "Contact the Passport Program",
       "href": "https://ircc.canada.ca/english/passport/map/map.asp"
     },
-    "find": {
+    {
       "text": "Find a passport service location near you",
       "href": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/contact-passport-program.html"
     },
-    "appt": {
+    {
       "text": "Appointment booking",
       "href": "https://eservices.canada.ca/en/reservation/"
     }
-  }
+  ]
 }
