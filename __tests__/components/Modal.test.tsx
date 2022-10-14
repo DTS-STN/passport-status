@@ -1,13 +1,13 @@
 import { render, screen } from '@testing-library/react'
 import { axe, toHaveNoViolations } from 'jest-axe'
 import '@testing-library/jest-dom/extend-expect'
-import CancelModal from '../../components/CancelModal'
+import Modal from '../../components/Modal'
 
 expect.extend(toHaveNoViolations)
 
-describe('CancelModal', () => {
+describe('Modal', () => {
   const { container } = render(
-    <CancelModal
+    <Modal
       buttonText="Some text"
       description="Some description"
       isOpen={false}

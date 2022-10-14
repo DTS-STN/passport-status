@@ -15,7 +15,7 @@ import ErrorSummary, {
   getErrorSummaryItem,
 } from '../components/ErrorSummary'
 import StatusInfo from '../components/StatusInfo'
-import CancelModal from '../components/CancelModal'
+import Modal from '../components/Modal'
 
 const initialValues: CheckStatusRequestBody = {
   birthDate: '',
@@ -191,7 +191,7 @@ const Status: FC = () => {
               />
             </div>
             <div className="py-1">
-              <CancelModal
+              <Modal
                 buttonText={t('cancel-modal.cancel-button')}
                 description={t('cancel-modal.description')}
                 isOpen={modalOpen}

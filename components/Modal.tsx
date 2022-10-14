@@ -20,7 +20,7 @@ const CancelModal: FC<CancelModalProps> = ({
 }) => {
   return (
     <>
-      <ActionButton text={buttonText} onClick={onClick} style="primary" />
+      <ActionButton text={buttonText} onClick={onClick} />
       {isOpen ? (
         <FocusOn autoFocus={false}>
           <div
