@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">52.17% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>11/22</span>
+                <span class='fraction'>12/23</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">55% </span>
+                <span class="strong">57.14% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>11/20</span>
+                <span class='fraction'>12/21</span>
             </div>
         
             
@@ -266,7 +266,19 @@
 <a name='L201'></a><a href='#L201'>201</a>
 <a name='L202'></a><a href='#L202'>202</a>
 <a name='L203'></a><a href='#L203'>203</a>
-<a name='L204'></a><a href='#L204'>204</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L204'></a><a href='#L204'>204</a>
+<a name='L205'></a><a href='#L205'>205</a>
+<a name='L206'></a><a href='#L206'>206</a>
+<a name='L207'></a><a href='#L207'>207</a>
+<a name='L208'></a><a href='#L208'>208</a>
+<a name='L209'></a><a href='#L209'>209</a>
+<a name='L210'></a><a href='#L210'>210</a>
+<a name='L211'></a><a href='#L211'>211</a>
+<a name='L212'></a><a href='#L212'>212</a>
+<a name='L213'></a><a href='#L213'>213</a>
+<a name='L214'></a><a href='#L214'>214</a>
+<a name='L215'></a><a href='#L215'>215</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -298,6 +310,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -371,6 +387,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -485,6 +507,7 @@ import ErrorSummary, {
   ErrorSummaryItem,
   getErrorSummaryItem,
 } from '../components/ErrorSummary'
+import LinkSummary, { LinkSummaryItem } from '../components/LinkSummary'
 import StatusInfo from '../components/StatusInfo'
 &nbsp;
 const initialValues: CheckStatusRequestBody = {
@@ -496,6 +519,10 @@ const initialValues: CheckStatusRequestBody = {
 &nbsp;
 const Status: FC = () =&gt; {
   const { t } = useTranslation('status')
+&nbsp;
+  const lsItems = t&lt;string, LinkSummaryItem[]&gt;('no-match-status-links', {
+    returnObjects: true,
+  })
 &nbsp;
   const formik = useFormik&lt;CheckStatusRequestBody&gt;({
     initialValues,
@@ -589,14 +616,20 @@ const Status: FC = () =&gt; {
           &lt;/p&gt;
         &lt;/StatusInfo&gt;
       ) : checkStatusReponse === null ? (
-<span class="branch-0 cbranch-no" title="branch not covered" >        &lt;StatusInfo</span>
-          handleGoBackClick={handleGoBack}
-          goBackText={t('go-back')}
-          goBackStyle="primary"
-          checkAgainText={t('check-again')}
-        &gt;
-          &lt;p className=" mb-6 text-2xl"&gt;{t('unable-to-find-status')}&lt;/p&gt;
-        &lt;/StatusInfo&gt;
+<span class="branch-0 cbranch-no" title="branch not covered" >        &lt;&gt;</span>
+          &lt;StatusInfo
+            handleGoBackClick={handleGoBack}
+            goBackText={t('go-back')}
+            goBackStyle="primary"
+            checkAgainText={t('check-again')}
+          &gt;
+            &lt;p className=" mb-6 text-2xl"&gt;{t('unable-to-find-status')}&lt;/p&gt;
+          &lt;/StatusInfo&gt;
+          &lt;LinkSummary
+            title={t('no-match-title')}
+            links={lsItems}
+          &gt;&lt;/LinkSummary&gt;
+        &lt;/&gt;
       ) : (
         &lt;form onSubmit={formik.handleSubmit} id="form-get-status"&gt;
           &lt;p&gt;{t('description')}&lt;/p&gt;
@@ -679,7 +712,7 @@ export default Status
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-10-14T17:38:08.013Z
+                at 2022-10-14T18:26:23.135Z
             </div>
         <script src="../prettify.js"></script>
         <script>
