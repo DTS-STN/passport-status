@@ -1,4 +1,4 @@
-import { FC, MouseEventHandler, useCallback, useMemo } from 'react'
+import { FC, MouseEventHandler, useCallback, useMemo, useState } from 'react'
 import { GetStaticProps } from 'next'
 import Router from 'next/router'
 import { useTranslation } from 'next-i18next'
@@ -15,6 +15,7 @@ import ErrorSummary, {
   getErrorSummaryItem,
 } from '../components/ErrorSummary'
 import StatusInfo from '../components/StatusInfo'
+import CancelModal from '../components/CancelModal'
 
 const initialValues: CheckStatusRequestBody = {
   birthDate: '',
@@ -25,6 +26,7 @@ const initialValues: CheckStatusRequestBody = {
 
 const Status: FC = () => {
   const { t } = useTranslation('status')
+  const [modalOpen, setModalOpen] = useState(false)
 
   const formik = useFormik<CheckStatusRequestBody>({
     initialValues,
@@ -120,7 +122,7 @@ const Status: FC = () => {
       ) : checkStatusReponse === null ? (
         <StatusInfo
           handleGoBackClick={handleGoBack}
-          goBackText={t('go-back')}
+          goBackText={t('previous')}
           goBackStyle="primary"
           checkAgainText={t('check-again')}
         >
@@ -179,12 +181,38 @@ const Status: FC = () => {
             textRequired={t('common:required')}
             required
           />
-          <ActionButton
-            disabled={isCheckStatusLoading}
-            type="submit"
-            text={t('check-status')}
-            style="primary"
-          />
+          <div className="flex flex-wrap">
+            <div className="py-1 pr-2">
+              <ActionButton
+                disabled={isCheckStatusLoading}
+                type="submit"
+                text={t('check-status')}
+                style="primary"
+              />
+            </div>
+            <div className="py-1">
+              <CancelModal
+                buttonText={t('cancel-modal.cancel-button')}
+                description={t('cancel-modal.description')}
+                isOpen={modalOpen}
+                onClick={() => setModalOpen(!modalOpen)}
+                buttons={[
+                  {
+                    text: t('cancel-modal.yes-button'),
+                    onClick: () => Router.push('/landing'),
+                    style: 'primary',
+                    type: 'button',
+                  },
+                  {
+                    text: t('cancel-modal.no-button'),
+                    onClick: () => setModalOpen(!modalOpen),
+                    style: 'primary',
+                    type: 'button',
+                  },
+                ]}
+              />
+            </div>
+          </div>
         </form>
       )}
     </Layout>

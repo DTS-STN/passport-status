@@ -23,7 +23,7 @@
     },
     "label": "Prénom"
   },
-  "go-back": "Retourner",
+  "previous": "Précédent",
   "reset": "Redémarrer",
   "header": "Vérification du statut du passeport",
   "status": {
@@ -38,5 +38,11 @@
     },
     "label": "Nom de famille"
   },
-  "unable-to-find-status": "Nous ne sommes pas en mesure de déterminer le statut de votre demande pour le moment en utilisant ce service."
+  "unable-to-find-status": "Nous ne sommes pas en mesure de déterminer le statut de votre demande pour le moment en utilisant ce service.",
+  "cancel-modal": {
+    "cancel-button": "Annuler",
+    "yes-button": "Oui",
+    "no-button": "Non",
+    "description": "Tu es sûr que tu veux y retourner ?"
+  }
 }
