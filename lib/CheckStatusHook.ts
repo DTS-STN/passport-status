@@ -3,14 +3,13 @@ import { ApiError } from 'next/dist/server/api-utils'
 import {
   CheckStatusReponse,
   CheckStatusRequestBody,
-} from '../../pages/api/check-status'
-import { checkStatusQueryKey, checkStatusUri } from './types'
+} from '../pages/api/check-status'
 
 export const fetchCheckStatus = async (
   request: CheckStatusRequestBody,
   init?: RequestInit
 ): Promise<CheckStatusReponse | null> => {
-  const response = await fetch(checkStatusUri, {
+  const response = await fetch('/api/check-status', {
     ...init,
     method: 'POST',
     body: JSON.stringify(request),
@@ -33,7 +32,7 @@ export const useCheckStatus = (
     ApiError,
     CheckStatusReponse | null
   >(
-    [checkStatusQueryKey, requestBody],
+    ['ps:api:check-status', requestBody],
     ({ signal }) => fetchCheckStatus(requestBody, { signal }),
     { ...(queryOptions ?? {}) }
   )

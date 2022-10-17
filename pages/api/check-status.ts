@@ -1,9 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 import { ApiError } from 'next/dist/server/api-utils'
-import {
-  PassportStatus,
-  PassportStatuses,
-} from '../../lib/passport-status-api-types'
 import passportStatusesMock from '../../__mocks__/passportStatusesMock'
 
 export interface CheckStatusRequestBody {
@@ -22,26 +18,6 @@ export interface CheckStatusReponse {
 }
 
 /**
- * Map passport status object returned by the API to the client
- * filter external API fields
- * @param param0 Passport status object returned by the API
- * @returns Frontend check status object
- */
-export const mapToCheckStatusReponse = ({
-  dateOfBirth,
-  fileNumber,
-  firstName,
-  lastName,
-  status,
-}: PassportStatus): CheckStatusReponse => ({
-  dateOfBirth,
-  fileNumber,
-  firstName,
-  lastName,
-  status,
-})
-
-/**
  * Fetch passport status from mock API data
  * @param param0 Check status request body object
  * @returns Passport status API mock object
@@ -52,7 +28,7 @@ export const fetchPassportStatusMOCK = async ({
   esrf,
   givenName,
   surname,
-}: CheckStatusRequestBody): Promise<PassportStatus> => {
+}: CheckStatusRequestBody): Promise<CheckStatusReponse> => {
   const { passportStatuses } = passportStatusesMock._embedded
 
   const passportStatus = passportStatuses.find(
@@ -83,7 +59,7 @@ export const fetchPassportStatusMOCK = async ({
 export const fetchPassportStatusAPI = async (
   passportStatusAPIBaseURI: string,
   { birthDate, esrf, givenName, surname }: CheckStatusRequestBody
-): Promise<PassportStatus> => {
+): Promise<CheckStatusReponse> => {
   if (!passportStatusAPIBaseURI) {
     throw Error('passportStatusAPIBaseURI must not be null or empty')
   }
@@ -94,7 +70,7 @@ export const fetchPassportStatusAPI = async (
   )
 
   if (response.ok) {
-    const passportStatusesResponse = (await response.json()) as PassportStatuses
+    const passportStatusesResponse = await response.json() //) as CheckStatusReponse[]
     const { passportStatuses } = passportStatusesResponse._embedded
     if (passportStatuses.length > 0) return passportStatuses[0]
     throw new ApiError(404, 'Passport Status Not Found')
@@ -122,7 +98,7 @@ export default async function handler(
     const response = passportStatusApiBaseUri
       ? await fetchPassportStatusAPI(passportStatusApiBaseUri, body)
       : await fetchPassportStatusMOCK(body)
-    return res.status(200).json(mapToCheckStatusReponse(response))
+    return res.status(200).json(response)
   } catch (error) {
     if ((error as Error).constructor.name === 'ApiError') {
       const apiError = error as ApiError
