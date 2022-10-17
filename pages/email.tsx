@@ -5,7 +5,7 @@ import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Layout from '../components/Layout'
 import { EmailEsrfRequestBody } from './api/email-esrf'
-import { EmailEsrf } from '../lib/emailEsrfHook'
+import { EmailEsrf } from '../lib/EmailEsrfHook'
 import { useMemo } from 'react'
 import ErrorSummary, {
   ErrorSummaryItem,
