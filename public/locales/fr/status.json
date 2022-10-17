@@ -45,7 +45,8 @@
     "no-button": "Non",
     "description": "Tu es sûr que tu veux y retourner ?"
   },
-  "other-ways-to-status": "D'autres façons d'obtenir votre statut.",
+  "other-ways-to-status": "Contactez-nous",
+  "no-match-title": "D'autres façons d'obtenir votre statut.",
   "no-match-status-links": [
     {
       "text": "Communiquez avec le Programme de passeport",
