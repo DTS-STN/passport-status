@@ -120,7 +120,7 @@ const Status: FC = () => {
               >
                 <p className="mb-6 text-2xl">
                   {`${t('status-is')} `}
-                  <strong>
+                  <strong id="response-status">
                     {t(`status.${checkStatusReponse.status}`, {
                       defaultValue: checkStatusReponse.status,
                     })}
