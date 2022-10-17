@@ -3,7 +3,6 @@
 describe('email page loads', () => {
     beforeEach(() => {
       cy.visit('/email')
-      cy.injectAxe();
     })
   
     it('displays the status page', () => {
@@ -24,6 +23,7 @@ describe('email page loads', () => {
     })
   
     it('Status page has no detectable a11y violations on load', () => {
+      cy.injectAxe();
       cy.checkA11y()
     })
 })

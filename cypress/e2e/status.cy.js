@@ -3,7 +3,6 @@
 describe('status page loads', () => {
   beforeEach(() => {
     cy.visit('/status')
-    cy.injectAxe();
   })
 
   it('displays the status page', () => {
@@ -24,6 +23,7 @@ describe('status page loads', () => {
   })
 
   it('Status page has no detectable a11y violations on load', () => {
+    cy.injectAxe();
     cy.checkA11y()
   })
 })
@@ -122,7 +122,8 @@ describe('responses', ()=>{
     cy.get('#response-status').should('exist')
   })
 
-  it('is acessable', ()=>{
+  it('loads result is acessable', ()=>{
+    cy.injectAxe();
     cy.checkA11y()
   })
 
@@ -136,7 +137,8 @@ describe('responses', ()=>{
     cy.get('#reponse-no-result').should('exist')
   })
 
-  it('is acessable', ()=>{
+  it('no result is acessable', ()=>{
+    cy.injectAxe();
     cy.checkA11y()
   })
 })
