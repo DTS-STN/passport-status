@@ -1,3 +1,32 @@
 {
-  "header": "Obtenir mon numéro de dossier (ESRF)"
+  "header": "Obtenir mon numéro de dossier (ESRF)",
+  "description": "Veuillez saisir les champs obligatoires suivants, tels qu'ils figurent sur votre formulaire de demande de passeport, pour que votre numéro de dossier (ESRF) soit envoyé par e-mail au dossier.",
+  "email": {
+    "label": "Email",
+    "error": {
+      "required": "Le $t(email.label) $t(common:error-messages.required)",
+      "valid": "Le $t(email.label) $t(common:error-messages.valid)"
+    }
+  },
+  "firstName": {
+    "error": {
+      "required": "Le $t(firstName.label) $t(common:error-messages.required)"
+    },
+    "label": "Prénom"
+  },
+  "lastName": {
+    "error": {
+      "required": "Le $t(lastName.label) $t(common:error-messages.required)"
+    },
+    "label": "Nom de famille"
+  },
+  "dateOfBirth": {
+    "error": {
+      "current": "La $t(dateOfBirth.label) $t(common:error-messages.in-past)",
+      "invalid": "La $t(dateOfBirth.label) $t(common:error-messages.valid-format, { \"format\": \"dd/mm/yyyy\" })",
+      "required": "La $t(dateOfBirth.label) $t(common:error-messages.required)"
+    },
+    "label": "Date de naissance"
+  },
+  "email-esrf": "Envoyer mon numéro de dossier (ESRF)"
 }
