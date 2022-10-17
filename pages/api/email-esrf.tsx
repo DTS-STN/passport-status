@@ -1,13 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 import logger from '../../lib/logger'
 
-export interface EmailEsrfRequestBody {
-  dateOfBirth: string
-  email: string
-  firstName: string
-  lastName: string
-}
-
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
@@ -18,7 +11,7 @@ export default async function handler(
   try {
     const response = await (process.env.PASSPORT_STATUS_API_BASE_URI
       ? EmailEsrfApi(req.body)
-      : EmailEsrfMock(res))
+      : EmailEsrfMock(req.body))
     return res.status(response.status).send(response.statusText)
   } catch (error) {
     logger.error(error)
@@ -33,6 +26,10 @@ function EmailEsrfApi(rqBody: any): Promise<Response> {
   )
 }
 
-function EmailEsrfMock(res: NextApiResponse): Promise<Response> {
-  return new Promise<Response>(() => res.status(202).send('Email sent'))
+function EmailEsrfMock(_rqBody: any): Promise<Response> {
+  //unless there is an error in the network communication or bad data format,
+  //we expect the response to always be a 202 to protect the users data
+  return new Promise<Response>(
+    () => new Response(null, { status: 200, statusText: 'Email sent if found' })
+  )
 }

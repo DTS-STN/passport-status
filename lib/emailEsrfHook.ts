@@ -1,8 +1,14 @@
-import { useQuery } from '@tanstack/react-query'
-import { EmailEsrfRequestBody } from '../pages/api/email-esrf'
+import { useMutation } from '@tanstack/react-query'
+
+export interface EmailEsrfRequestBody {
+  dateOfBirth: string
+  email: string
+  firstName: string
+  lastName: string
+}
 
 export function EmailEsrf(requestBody: EmailEsrfRequestBody) {
-  const query = useQuery(
+  const query = useMutation(
     ['ps:api:email-esrf', requestBody],
     async () =>
       await fetch('/api/email-esrf', {
