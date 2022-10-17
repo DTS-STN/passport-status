@@ -45,6 +45,7 @@
     "no-button": "No",
     "description": "Are you sure you want to go back?"
   },
+  "other-ways-to-status": "Contact us",
   "no-match-title": "Other ways to get your status.",
   "no-match-status-links": [
     {
