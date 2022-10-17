@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1665779076537" clover="3.2.0">
-  <project timestamp="1665779076537" name="All files">
-    <metrics statements="141" coveredstatements="93" conditionals="94" coveredconditionals="42" methods="50" coveredmethods="30" elements="285" coveredelements="165" complexity="0" loc="141" ncloc="141" packages="4" files="25" classes="25"/>
+<coverage generated="1666014345360" clover="3.2.0">
+  <project timestamp="1666014345360" name="All files">
+    <metrics statements="152" coveredstatements="93" conditionals="98" coveredconditionals="42" methods="56" coveredmethods="30" elements="306" coveredelements="165" complexity="0" loc="152" ncloc="152" packages="4" files="27" classes="27"/>
     <package name="components">
       <metrics statements="44" coveredstatements="42" conditionals="26" coveredconditionals="20" methods="19" coveredmethods="17"/>
       <file name="ActionButton.tsx" path="/home/runner/work/passport-status/passport-status/components/ActionButton.tsx">
@@ -92,7 +92,12 @@
       </file>
     </package>
     <package name="lib">
-      <metrics statements="14" coveredstatements="0" conditionals="11" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <metrics statements="16" coveredstatements="0" conditionals="11" coveredconditionals="0" methods="4" coveredmethods="0"/>
+      <file name="emailEsrfHook.ts" path="/home/runner/work/passport-status/passport-status/lib/emailEsrfHook.ts">
+        <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+      </file>
       <file name="logger.js" path="/home/runner/work/passport-status/passport-status/lib/logger.js">
         <metrics statements="14" coveredstatements="0" conditionals="11" coveredconditionals="0" methods="2" coveredmethods="0"/>
         <line num="1" count="0" type="stmt"/>
@@ -194,7 +199,7 @@
       </file>
     </package>
     <package name="pages.api">
-      <metrics statements="31" coveredstatements="18" conditionals="22" coveredconditionals="9" methods="5" coveredmethods="4"/>
+      <metrics statements="40" coveredstatements="18" conditionals="26" coveredconditionals="9" methods="9" coveredmethods="4"/>
       <file name="check-status.ts" path="/home/runner/work/passport-status/passport-status/pages/api/check-status.ts">
         <metrics statements="31" coveredstatements="18" conditionals="22" coveredconditionals="9" methods="5" coveredmethods="4"/>
         <line num="30" count="1" type="stmt"/>
@@ -228,6 +233,18 @@
         <line num="128" count="1" type="stmt"/>
         <line num="129" count="1" type="stmt"/>
         <line num="131" count="0" type="stmt"/>
+      </file>
+      <file name="email-esrf.tsx" path="/home/runner/work/passport-status/passport-status/pages/api/email-esrf.tsx">
+        <metrics statements="9" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="4" coveredmethods="0"/>
+        <line num="15" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="19" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
       </file>
     </package>
   </project>
