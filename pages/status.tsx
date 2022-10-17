@@ -110,22 +110,28 @@ const Status: FC = () => {
       {(() => {
         if (checkStatusReponse) {
           return (
-            <StatusInfo
-              handleGoBackClick={() => Router.push('/landing')}
-              goBackText={t('reset')}
-              goBackStyle="primary"
-              checkAgainText={t('check-again')}
-            >
-              <p className="mb-6 text-2xl">
-                {`${t('status-is')} `}
-                <strong>
-                  {t(`status.${checkStatusReponse.status}`, {
-                    defaultValue: checkStatusReponse.status,
-                  })}
-                </strong>
-                .
-              </p>
-            </StatusInfo>
+            <>
+              <StatusInfo
+                handleGoBackClick={() => Router.push('/landing')}
+                goBackText={t('reset')}
+                goBackStyle="primary"
+                checkAgainText={t('check-again')}
+              >
+                <p className="mb-6 text-2xl">
+                  {`${t('status-is')} `}
+                  <strong>
+                    {t(`status.${checkStatusReponse.status}`, {
+                      defaultValue: checkStatusReponse.status,
+                    })}
+                  </strong>
+                  .
+                </p>
+              </StatusInfo>
+              <LinkSummary
+                title={t('other-ways-to-status')}
+                links={lsItems}
+              ></LinkSummary>
+            </>
           )
         }
 
