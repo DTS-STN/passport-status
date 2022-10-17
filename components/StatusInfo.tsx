@@ -2,6 +2,7 @@ import { MouseEventHandler } from 'react'
 import ActionButton from './ActionButton'
 
 export interface StatusInfoProps {
+  id: string
   handleGoBackClick: MouseEventHandler<HTMLButtonElement>
   goBackText: string
   goBackStyle?: 'default' | 'primary' | 'super' | 'danger'
@@ -11,7 +12,7 @@ export interface StatusInfoProps {
 
 export default function StatusInfo(props: StatusInfoProps) {
   return (
-    <div id="response">
+    <div id={props.id}>
       {props.children}
       <p className="mb-6">{props.checkAgainText}</p>
       <ActionButton

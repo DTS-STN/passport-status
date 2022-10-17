@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-describe('home page loads', () => {
+describe('status page loads', () => {
   beforeEach(() => {
     cy.visit('/status')
     cy.injectAxe();
@@ -97,7 +97,7 @@ describe('Date of Birth field validation', ()=>{
     cy.get('#input-birthDate > span').should('not.exist')
   })
 
-  it('validates empty givenName error',()=>{
+  it('validates empty birthdate error',()=>{
     cy.get('#button-get-status > button').click()
     cy.get('#input-birthDate > span').should('exist')
   })
@@ -108,5 +108,35 @@ describe('Date of Birth field validation', ()=>{
     cy.get('#birthDate').type(testDate)
     cy.get('#button-get-status > button').click()
     cy.get('#input-birthDate > span').should('exist')
+  })
+})
+
+describe('responses', ()=>{
+  it('loads result', ()=>{
+    cy.visit('/status')
+    cy.get('#esrf').type('35934S87')
+    cy.get('#givenName').type('Clara')
+    cy.get('#surname').type('Renard')
+    cy.get('#birthDate').type('1982-12-08')
+    cy.get('#button-get-status > button').click()
+    cy.get('#response-status').should('exist')
+  })
+
+  it('is acessable', ()=>{
+    cy.checkA11y()
+  })
+
+  it('loads no result', ()=>{
+    cy.visit('/status')
+    cy.get('#esrf').type('12345678')
+    cy.get('#givenName').type('John')
+    cy.get('#surname').type('Doe')
+    cy.get('#birthDate').type('1990-12-01')
+    cy.get('#button-get-status > button').click()
+    cy.get('#reponse-no-result').should('exist')
+  })
+
+  it('is acessable', ()=>{
+    cy.checkA11y()
   })
 })

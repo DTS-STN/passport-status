@@ -111,6 +111,7 @@ const Status: FC = () => {
         if (checkStatusReponse) {
           return (
             <StatusInfo
+              id="reponse-result"
               handleGoBackClick={() => Router.push('/landing')}
               goBackText={t('reset')}
               goBackStyle="primary"
@@ -118,7 +119,7 @@ const Status: FC = () => {
             >
               <p className="mb-6 text-2xl">
                 {`${t('status-is')} `}
-                <strong>
+                <strong id="response-status">
                   {t(`status.${checkStatusReponse.status}`, {
                     defaultValue: checkStatusReponse.status,
                   })}
@@ -133,6 +134,7 @@ const Status: FC = () => {
           return (
             <>
               <StatusInfo
+                id="reponse-no-result"
                 handleGoBackClick={handleGoBack}
                 goBackText={t('go-back')}
                 goBackStyle="primary"
