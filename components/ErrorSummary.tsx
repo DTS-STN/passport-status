@@ -1,3 +1,5 @@
+import { FormikErrors } from 'formik'
+import { TFunction } from 'next-i18next'
 import PropTypes from 'prop-types'
 import { FC } from 'react'
 
@@ -19,6 +21,17 @@ export const getErrorSummaryItem = (
   feildId,
   errorMessage,
 })
+
+export function GetErrorSummary<T>(formErrors: FormikErrors<T>, t: TFunction) {
+  return Object.keys(formErrors)
+    .filter((key) => !!formErrors[key as keyof typeof formErrors])
+    .map((key) =>
+      getErrorSummaryItem(
+        key,
+        t(formErrors[key as keyof typeof formErrors] as string)
+      )
+    )
+}
 
 const ErrorSummary: FC<ErrorSummaryProps> = ({ id, errors, summary }) => {
   return (
