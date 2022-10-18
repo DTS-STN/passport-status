@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">54.83% </span>
+                <span class="strong">56.25% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>17/31</span>
+                <span class='fraction'>18/32</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">55.17% </span>
+                <span class="strong">54.83% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>16/29</span>
+                <span class='fraction'>17/31</span>
             </div>
         
             
@@ -167,20 +167,7 @@
 <a name='L102'></a><a href='#L102'>102</a>
 <a name='L103'></a><a href='#L103'>103</a>
 <a name='L104'></a><a href='#L104'>104</a>
-<a name='L105'></a><a href='#L105'>105</a>
-<a name='L106'></a><a href='#L106'>106</a>
-<a name='L107'></a><a href='#L107'>107</a>
-<a name='L108'></a><a href='#L108'>108</a>
-<a name='L109'></a><a href='#L109'>109</a>
-<a name='L110'></a><a href='#L110'>110</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L105'></a><a href='#L105'>105</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -244,6 +231,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -274,6 +263,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -283,22 +273,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { NextApiRequest, NextApiResponse } from 'next'
 import { ApiError } from 'next/dist/server/api-utils'
+import logger from '../../lib/logger'
 import passportStatusesMock from '../../__mocks__/passportStatusesMock'
-&nbsp;
-export interface CheckStatusRequestBody {
-  birthDate: string
-  esrf: string
-  givenName: string
-  surname: string
-}
-&nbsp;
-export interface CheckStatusReponse {
-  dateOfBirth?: string
-  fileNumber?: string
-  firstName?: string
-  lastName?: string
-  status?: string
-}
+import {
+  PassportStatusesSearchResult,
+  CheckStatusReponse,
+  MapToCheckStatusReponse,
+  CheckStatusRequestBody,
+} from '../../lib/StatusTypes'
 &nbsp;
 /**
  * Fetch passport status from mock API data
@@ -353,9 +335,11 @@ export const fetchPassportStatusAPI = <span class="fstat-no" title="function not
   )
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  if (response.ok) {</span>
-    const passportStatusesResponse = <span class="cstat-no" title="statement not covered" >await response.json() </span>//) as CheckStatusReponse[]
+    const passportStatusesResponse =
+<span class="cstat-no" title="statement not covered" >      (await response.json()) as PassportStatusesSearchResult</span>
     const { passportStatuses } = <span class="cstat-no" title="statement not covered" >passportStatusesResponse._embedded</span>
-<span class="cstat-no" title="statement not covered" >    if (passportStatuses.length &gt; 0) <span class="cstat-no" title="statement not covered" >return passportStatuses[0]</span></span>
+<span class="cstat-no" title="statement not covered" >    if (passportStatuses.length &gt; 0)</span>
+<span class="cstat-no" title="statement not covered" >      return MapToCheckStatusReponse(passportStatuses[0])</span>
 <span class="cstat-no" title="statement not covered" >    throw new ApiError(404, 'Passport Status Not Found')</span>
   }
 &nbsp;
@@ -383,6 +367,7 @@ export default async function handler(
       : await fetchPassportStatusMOCK(body)
     return res.status(200).json(response)
   } catch (error) {
+    logger.error(error)
     <span class="missing-if-branch" title="else path not taken" >E</span>if ((error as Error).constructor.name === 'ApiError') {
       const apiError = error as ApiError
       return res.status(apiError.statusCode).send(apiError.message)
@@ -397,7 +382,7 @@ export default async function handler(
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-10-17T18:55:32.247Z
+                at 2022-10-18T13:58:48.450Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
