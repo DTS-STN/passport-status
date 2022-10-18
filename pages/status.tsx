@@ -142,7 +142,7 @@ const Status: FC = () => {
               <StatusInfo
                 id="reponse-no-result"
                 handleGoBackClick={handleGoBack}
-                goBackText={t('go-back')}
+                goBackText={t('previous')}
                 goBackStyle="primary"
                 checkAgainText={t('check-again')}
               >

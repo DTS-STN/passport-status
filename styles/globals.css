@@ -52,7 +52,7 @@
     @apply underline;
   }
   main > a:hover, a:focus {
-    @apply text-link-slected;
+    @apply text-link-selected;
   }
   main > a:visited {
     @apply text-link-visited;
