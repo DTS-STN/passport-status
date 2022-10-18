@@ -1,9 +1,6 @@
 import { useQuery, UseQueryOptions } from '@tanstack/react-query'
 import { ApiError } from 'next/dist/server/api-utils'
-import {
-  CheckStatusReponse,
-  CheckStatusRequestBody,
-} from '../pages/api/check-status'
+import { CheckStatusReponse, CheckStatusRequestBody } from './StatusTypes'
 
 export const fetchCheckStatus = async (
   request: CheckStatusRequestBody,

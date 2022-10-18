@@ -1,21 +1,13 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 import { ApiError } from 'next/dist/server/api-utils'
+import logger from '../../lib/logger'
 import passportStatusesMock from '../../__mocks__/passportStatusesMock'
-
-export interface CheckStatusRequestBody {
-  birthDate: string
-  esrf: string
-  givenName: string
-  surname: string
-}
-
-export interface CheckStatusReponse {
-  dateOfBirth?: string
-  fileNumber?: string
-  firstName?: string
-  lastName?: string
-  status?: string
-}
+import {
+  PassportStatusesSearchResult,
+  CheckStatusReponse,
+  MapToCheckStatusReponse,
+  CheckStatusRequestBody,
+} from '../../lib/StatusTypes'
 
 /**
  * Fetch passport status from mock API data
@@ -70,9 +62,11 @@ export const fetchPassportStatusAPI = async (
   )
 
   if (response.ok) {
-    const passportStatusesResponse = await response.json() //) as CheckStatusReponse[]
+    const passportStatusesResponse =
+      (await response.json()) as PassportStatusesSearchResult
     const { passportStatuses } = passportStatusesResponse._embedded
-    if (passportStatuses.length > 0) return passportStatuses[0]
+    if (passportStatuses.length > 0)
+      return MapToCheckStatusReponse(passportStatuses[0])
     throw new ApiError(404, 'Passport Status Not Found')
   }
 
@@ -100,6 +94,7 @@ export default async function handler(
       : await fetchPassportStatusMOCK(body)
     return res.status(200).json(response)
   } catch (error) {
+    logger.error(error)
     if ((error as Error).constructor.name === 'ApiError') {
       const apiError = error as ApiError
       return res.status(apiError.statusCode).send(apiError.message)
