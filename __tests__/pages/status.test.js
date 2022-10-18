@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import { axe, toHaveNoViolations } from 'jest-axe'
 import Status from '../../pages/status'
-import { useCheckStatus } from '../../hooks/api/useCheckStatus'
+import { useCheckStatus } from '../../lib/CheckStatusHook'
 
 expect.extend(toHaveNoViolations)
 
@@ -11,7 +11,7 @@ jest.mock('../../components/StatusInfo')
 jest.mock('../../components/ErrorSummary')
 jest.mock('../../components/InputField')
 jest.mock('../../components/ActionButton')
-jest.mock('../../hooks/api/useCheckStatus')
+jest.mock('../../lib/CheckStatusHook')
 
 describe('Check status page', () => {
   beforeEach(() => {

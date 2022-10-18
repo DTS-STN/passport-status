@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import LinkButton from '../components/LinkButton'
 import MetaData from '../components/MetaData'
-import defaultTranslations from '../utils/defaultTranslations.json'
+import defaultTranslations from '../public/locales/defaultTranslations.json'
 
 const Index = () => {
   return (
