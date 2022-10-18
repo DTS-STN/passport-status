@@ -11,6 +11,7 @@ describe('StatusInfo', () => {
   const handleClick = jest.fn()
   const sut = (
     <StatusInfo
+      id="status-info"
       handleGoBackClick={handleClick}
       goBackText="back"
       checkAgainText="check"
