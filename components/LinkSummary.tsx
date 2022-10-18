@@ -17,7 +17,10 @@ const LinkSummary: FC<LinkSummaryProps> = ({ title, links }) => {
       <p>{title}</p>
       <ul className="list-disc pb-6 ml-4">
         {links.map(({ href, text }, index) => (
-          <li key={index} className="text-link-default">
+          <li
+            key={index}
+            className="text-link-default hover:text-link-selected focus:text-link-selected"
+          >
             <Link href={href}>{text}</Link>
           </li>
         ))}

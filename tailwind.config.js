@@ -24,7 +24,7 @@ module.exports = {
           error: '#d3080c',
           warning: '#ee7100',
           info: '#269abc',
-          slected: '#333',
+          selected: '#333',
         },
         red: {
           light: '#f3e9e8',
@@ -32,7 +32,7 @@ module.exports = {
         },
         link: {
           default: '#2b4380',
-          slected: '#0535d2',
+          selected: '#0535d2',
           visited: '#7834bc',
         },
         blue: {
