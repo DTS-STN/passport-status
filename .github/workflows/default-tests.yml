@@ -27,6 +27,9 @@ jobs:
     - name: Linting
       run: npm run lint
 
+    - name: TypeScript Validation
+      run: npm run tsc:validate
+
   unit:  
     name: Jest Unit Test
     runs-on: ubuntu-latest
