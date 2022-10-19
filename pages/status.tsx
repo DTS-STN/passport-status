@@ -238,7 +238,7 @@ const Status: FC = () => {
                     {
                       text: t('cancel-modal.no-button'),
                       onClick: () => setModalOpen(!modalOpen),
-                      style: 'primary',
+                      style: 'default',
                       type: 'button',
                     },
                   ]}
