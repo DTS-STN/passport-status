@@ -1,4 +1,4 @@
-export interface CheckStatusRequestBody {
+export interface CheckStatusRequest {
   birthDate: string
   esrf: string
   givenName: string

@@ -5,7 +5,7 @@ import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
-import { CheckStatusRequestBody } from '../lib/StatusTypes'
+import { CheckStatusRequest } from '../lib/StatusTypes'
 import { useCheckStatus } from '../lib/CheckStatusHook'
 import Layout from '../components/Layout'
 import InputField from '../components/InputField'
@@ -18,7 +18,7 @@ import LinkSummary, { LinkSummaryItem } from '../components/LinkSummary'
 import StatusInfo from '../components/StatusInfo'
 import Modal from '../components/Modal'
 
-const initialValues: CheckStatusRequestBody = {
+const initialValues: CheckStatusRequest = {
   birthDate: '',
   esrf: '',
   givenName: '',
@@ -33,7 +33,7 @@ const Status: FC = () => {
     returnObjects: true,
   })
 
-  const formik = useFormik<CheckStatusRequestBody>({
+  const formik = useFormik<CheckStatusRequest>({
     initialValues,
     validationSchema: Yup.object({
       esrf: Yup.string()
