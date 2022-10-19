@@ -4,8 +4,7 @@ import { GetStaticProps } from 'next'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Layout from '../components/Layout'
-import { EmailEsrfRequestBody } from './api/email-esrf'
-import { EmailEsrf } from '../lib/EmailEsrfHook'
+import { EmailEsrfRequestBody, EmailEsrf } from '../lib/EmailEsrfHook'
 import { useMemo } from 'react'
 import ErrorSummary, {
   ErrorSummaryItem,
@@ -45,7 +44,7 @@ export default function Email() {
     },
   })
 
-  const { isLoading, error, data, remove } = EmailEsrf(
+  const { isLoading, error, data } = EmailEsrf(
     formik.status === submittedKey ? formik.values : formik.initialValues
   )
 
