@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1666113570820" clover="3.2.0">
-  <project timestamp="1666113570820" name="All files">
-    <metrics statements="173" coveredstatements="107" conditionals="118" coveredconditionals="49" methods="64" coveredmethods="32" elements="355" coveredelements="188" complexity="0" loc="173" ncloc="173" packages="4" files="28" classes="28"/>
+<coverage generated="1666205038475" clover="3.2.0">
+  <project timestamp="1666205038475" name="All files">
+    <metrics statements="174" coveredstatements="107" conditionals="118" coveredconditionals="49" methods="64" coveredmethods="32" elements="356" coveredelements="188" complexity="0" loc="174" ncloc="174" packages="4" files="28" classes="28"/>
     <package name="components">
       <metrics statements="47" coveredstatements="42" conditionals="26" coveredconditionals="20" methods="22" coveredmethods="17"/>
       <file name="ActionButton.tsx" path="/home/runner/work/passport-status/passport-status/components/ActionButton.tsx">
@@ -110,9 +110,9 @@
       </file>
       <file name="EmailEsrfHook.ts" path="/home/runner/work/passport-status/passport-status/lib/EmailEsrfHook.ts">
         <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
-        <line num="5" count="0" type="stmt"/>
-        <line num="8" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
         <line num="14" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
       </file>
       <file name="StatusTypes.ts" path="/home/runner/work/passport-status/passport-status/lib/StatusTypes.ts">
         <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
@@ -165,16 +165,16 @@
       </file>
       <file name="email.tsx" path="/home/runner/work/passport-status/passport-status/pages/email.tsx">
         <metrics statements="10" coveredstatements="9" conditionals="14" coveredconditionals="6" methods="4" coveredmethods="2"/>
-        <line num="18" count="3" type="stmt"/>
-        <line num="20" count="2" type="stmt"/>
-        <line num="26" count="2" type="stmt"/>
-        <line num="28" count="2" type="stmt"/>
-        <line num="44" count="0" type="stmt"/>
-        <line num="48" count="2" type="stmt"/>
+        <line num="17" count="3" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="25" count="2" type="stmt"/>
+        <line num="27" count="2" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="47" count="2" type="stmt"/>
+        <line num="51" count="2" type="stmt"/>
         <line num="52" count="2" type="stmt"/>
-        <line num="53" count="2" type="stmt"/>
-        <line num="57" count="2" type="stmt"/>
-        <line num="130" count="1" type="stmt"/>
+        <line num="56" count="2" type="stmt"/>
+        <line num="129" count="1" type="stmt"/>
       </file>
       <file name="index.tsx" path="/home/runner/work/passport-status/passport-status/pages/index.tsx">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
@@ -223,7 +223,7 @@
       </file>
     </package>
     <package name="pages.api">
-      <metrics statements="40" coveredstatements="17" conditionals="26" coveredconditionals="9" methods="8" coveredmethods="3"/>
+      <metrics statements="41" coveredstatements="17" conditionals="26" coveredconditionals="9" methods="8" coveredmethods="3"/>
       <file name="check-status.ts" path="/home/runner/work/passport-status/passport-status/pages/api/check-status.ts">
         <metrics statements="31" coveredstatements="17" conditionals="22" coveredconditionals="9" methods="4" coveredmethods="3"/>
         <line num="18" count="1" type="stmt"/>
@@ -259,16 +259,17 @@
         <line num="102" count="0" type="stmt"/>
       </file>
       <file name="email-esrf.tsx" path="/home/runner/work/passport-status/passport-status/pages/api/email-esrf.tsx">
-        <metrics statements="9" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="4" coveredmethods="0"/>
-        <line num="15" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="16" count="0" type="stmt"/>
+        <metrics statements="10" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="4" coveredmethods="0"/>
+        <line num="8" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="12" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
         <line num="18" count="0" type="stmt"/>
-        <line num="19" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="22" count="0" type="stmt"/>
-        <line num="24" count="0" type="stmt"/>
-        <line num="25" count="0" type="stmt"/>
-        <line num="30" count="0" type="stmt"/>
-        <line num="37" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
       </file>
     </package>
   </project>
