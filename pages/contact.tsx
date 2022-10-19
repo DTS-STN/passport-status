@@ -21,18 +21,21 @@ const Contact: FC = () => {
           <LinkButton
             href={t('links.contact.link')}
             text={t('links.contact.text')}
+            external
           ></LinkButton>
         </div>
         <div id="findServiceLocation">
           <LinkButton
             href={t('links.findServiceLocation.link')}
             text={t('links.findServiceLocation.text')}
+            external
           ></LinkButton>
         </div>
         <div id="bookAppointment">
           <LinkButton
             href={t('links.bookAppointment.link')}
             text={t('links.bookAppointment.text')}
+            external
           ></LinkButton>
         </div>
       </div>
