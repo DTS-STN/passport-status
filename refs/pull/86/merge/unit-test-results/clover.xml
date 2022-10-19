@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1666209610088" clover="3.2.0">
-  <project timestamp="1666209610089" name="All files">
-    <metrics statements="178" coveredstatements="111" conditionals="120" coveredconditionals="49" methods="66" coveredmethods="33" elements="364" coveredelements="193" complexity="0" loc="178" ncloc="178" packages="4" files="29" classes="29"/>
+<coverage generated="1666211667539" clover="3.2.0">
+  <project timestamp="1666211667540" name="All files">
+    <metrics statements="178" coveredstatements="111" conditionals="124" coveredconditionals="51" methods="66" coveredmethods="33" elements="368" coveredelements="195" complexity="0" loc="178" ncloc="178" packages="4" files="29" classes="29"/>
     <package name="components">
-      <metrics statements="47" coveredstatements="42" conditionals="26" coveredconditionals="20" methods="22" coveredmethods="17"/>
+      <metrics statements="47" coveredstatements="42" conditionals="30" coveredconditionals="22" methods="22" coveredmethods="17"/>
       <file name="ActionButton.tsx" path="/home/runner/work/passport-status/passport-status/components/ActionButton.tsx">
         <metrics statements="9" coveredstatements="9" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
         <line num="11" count="5" type="stmt"/>
@@ -68,9 +68,9 @@
         <line num="18" count="2" type="stmt"/>
       </file>
       <file name="LinkButton.tsx" path="/home/runner/work/passport-status/passport-status/components/LinkButton.tsx">
-        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="11" count="4" type="stmt"/>
+        <metrics statements="2" coveredstatements="2" conditionals="4" coveredconditionals="2" methods="1" coveredmethods="1"/>
         <line num="12" count="4" type="stmt"/>
+        <line num="19" count="4" type="stmt"/>
       </file>
       <file name="LinkSummary.tsx" path="/home/runner/work/passport-status/passport-status/components/LinkSummary.tsx">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
@@ -168,7 +168,7 @@
         <line num="8" count="1" type="stmt"/>
         <line num="9" count="3" type="stmt"/>
         <line num="11" count="2" type="stmt"/>
-        <line num="43" count="1" type="stmt"/>
+        <line num="46" count="1" type="stmt"/>
       </file>
       <file name="email.tsx" path="/home/runner/work/passport-status/passport-status/pages/email.tsx">
         <metrics statements="10" coveredstatements="9" conditionals="14" coveredconditionals="6" methods="4" coveredmethods="2"/>
