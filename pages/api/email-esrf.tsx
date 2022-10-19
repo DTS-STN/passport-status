@@ -1,6 +1,13 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 import logger from '../../lib/logger'
 
+export interface EmailEsrfRequestBody {
+  dateOfBirth: string
+  email: string
+  firstName: string
+  lastName: string
+}
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse

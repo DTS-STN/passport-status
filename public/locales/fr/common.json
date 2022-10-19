@@ -47,6 +47,7 @@
     "valid-format": "doit être valide au format de {{format}}",
     "meet-length": "doit comporter {{length}} caractères"
   },
+  "contact-program": "Contacter les services des passeports",
   "program-links": [
     {
       "text": "Communiquez avec le Programme de passeport",
