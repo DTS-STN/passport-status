@@ -1,4 +1,4 @@
-FROM node:18.10-alpine3.15 AS base
+FROM node:18.11-alpine3.15 AS base
 WORKDIR /base
 COPY package*.json ./
 RUN npm ci
@@ -15,7 +15,7 @@ WORKDIR /build
 COPY --from=base /base ./
 RUN npm run build
 
-FROM node:18.10-alpine3.15 AS production
+FROM node:18.11-alpine3.15 AS production
 ENV NODE_ENV=production
 WORKDIR /app
 COPY --from=build /build/next-i18next.config.js ./
@@ -27,5 +27,7 @@ COPY --from=build /build/tracing.js ./
 RUN VERSION_NEXT=`node -p -e "require('./package.json').dependencies.next"`&& npm install --no-package-lock --no-save next@"$VERSION_NEXT"
 
 # Runtime envs -- will default to build args if no env values are specified at docker run
+ARG PASSPORT_STATUS_API_BASE_URI
+ENV PASSPORT_STATUS_API_BASE_URI=$PASSPORT_STATUS_API_BASE_URI
 
 CMD npm run start

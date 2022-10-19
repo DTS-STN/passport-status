@@ -22,11 +22,17 @@ describe('landing page loads', () => {
 })
 
 describe('user has ESRF number',()=>{
-
     it('should redirect to the form',()=>{
         cy.visit('/landing')
-        cy.get('#withESRF').click()
-        cy.url().should('contain','/status')
+        cy.get('#withoutESRF').click()
+        cy.url().should('contain','/email')
     })
+})
 
+describe('user does not have ESRF number',()=>{
+  it('should redirect to the form',()=>{
+      cy.visit('/landing')
+      cy.get('#withESRF').click()
+      cy.url().should('contain','/status')
+  })
 })

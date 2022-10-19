@@ -16,4 +16,9 @@ export function EmailEsrf(requestBody: EmailEsrfRequestBody) {
         body: JSON.stringify(requestBody),
       })
   )
+
+  return {
+    ...query,
+    isLoading: query.isLoading,
+  }
 }
