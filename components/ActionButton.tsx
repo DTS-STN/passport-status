@@ -24,7 +24,7 @@ const ActionButton: FC<ActionButtonProps> = ({
       break
     default:
       classStyle +=
-        'border-gray-dark bg-gray-normal text-blue-light hover:border-gray-deep hover:bg-gray-dark focus:text-blue-light focus:bg-gray-dark shadow-sm'
+        'border-gray-dark bg-gray-normal text-blue-light hover:bg-gray-dark hover:border-l-gray-deep hover:border-t-gray-deep focus:text-blue-light focus:bg-gray-dark shadow-sm border-r-gray-500 border-b-gray-500'
       break
   }
 
