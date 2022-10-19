@@ -82,7 +82,8 @@ export default async function handler(
   res: NextApiResponse<CheckStatusReponse | string>
 ) {
   if (req.method !== 'GET') {
-    return res.status(405).send(`Invalid request method ${req.method}`)
+    res.status(405).send(`Invalid request method ${req.method}`)
+    return
   }
 
   const { searchParams } = new URL(req.url ?? '', `http://${req.headers.host}`)
@@ -101,13 +102,15 @@ export default async function handler(
           checkStatusRequest
         )
       : await fetchPassportStatusMOCK(checkStatusRequest)
-    return res.status(200).json(response)
+    res.status(200).json(response)
   } catch (error) {
-    logger.error(error)
     if ((error as Error).constructor.name === 'ApiError') {
       const apiError = error as ApiError
-      return res.status(apiError.statusCode).send(apiError.message)
+      res.status(apiError.statusCode).send(apiError.message)
+      return
     }
+
+    logger.error(error)
     throw error
   }
 }
