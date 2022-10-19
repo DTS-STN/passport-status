@@ -20,11 +20,11 @@ const ActionButton: FC<ActionButtonProps> = ({
   switch (style) {
     case 'primary':
       classStyle +=
-        'border-blue-dark bg-blue-dark text-basic-white focus:bg-blue-normal hover:bg-blue-normal active:bg-blue-active'
+        'border-blue-dark bg-blue-dark text-basic-white focus:bg-blue-normal hover:bg-blue-normal active:bg-blue-active shadow-sm'
       break
     default:
       classStyle +=
-        'border-gray-default bg-gray-light text-blue-light hover:border-gray-deep hover:bg-gray-dark'
+        'border-gray-dark bg-gray-normal text-blue-light hover:border-gray-deep hover:bg-gray-dark focus:text-blue-light focus:bg-gray-dark shadow-sm'
       break
   }
 
