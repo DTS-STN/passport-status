@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">56.25% </span>
+                <span class="strong">56.75% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>18/32</span>
+                <span class='fraction'>21/37</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">40.9% </span>
+                <span class="strong">43.75% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>9/22</span>
+                <span class='fraction'>14/32</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">54.83% </span>
+                <span class="strong">55.55% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>17/31</span>
+                <span class='fraction'>20/36</span>
             </div>
         
             
@@ -167,7 +167,20 @@
 <a name='L102'></a><a href='#L102'>102</a>
 <a name='L103'></a><a href='#L103'>103</a>
 <a name='L104'></a><a href='#L104'>104</a>
-<a name='L105'></a><a href='#L105'>105</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L105'></a><a href='#L105'>105</a>
+<a name='L106'></a><a href='#L106'>106</a>
+<a name='L107'></a><a href='#L107'>107</a>
+<a name='L108'></a><a href='#L108'>108</a>
+<a name='L109'></a><a href='#L109'>109</a>
+<a name='L110'></a><a href='#L110'>110</a>
+<a name='L111'></a><a href='#L111'>111</a>
+<a name='L112'></a><a href='#L112'>112</a>
+<a name='L113'></a><a href='#L113'>113</a>
+<a name='L114'></a><a href='#L114'>114</a>
+<a name='L115'></a><a href='#L115'>115</a>
+<a name='L116'></a><a href='#L116'>116</a>
+<a name='L117'></a><a href='#L117'>117</a>
+<a name='L118'></a><a href='#L118'>118</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -187,9 +200,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
@@ -225,6 +236,8 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -252,21 +265,34 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -279,21 +305,19 @@ import {
   PassportStatusesSearchResult,
   CheckStatusReponse,
   MapToCheckStatusReponse,
-  CheckStatusRequestBody,
+  CheckStatusRequest,
 } from '../../lib/StatusTypes'
 &nbsp;
 /**
  * Fetch passport status from mock API data
- * @param param0 Check status request body object
+ * @param checkStatusRequest Check status request object
  * @returns Passport status API mock object
  * @throw ApiError intance
  */
-export const fetchPassportStatusMOCK = async ({
-  birthDate,
-  esrf,
-  givenName,
-  surname,
-}: CheckStatusRequestBody): Promise&lt;CheckStatusReponse&gt; =&gt; {
+export const fetchPassportStatusMOCK = async (
+  checkStatusRequest: CheckStatusRequest
+): Promise&lt;CheckStatusReponse&gt; =&gt; {
+  const { birthDate, esrf, givenName, surname } = checkStatusRequest
   const { passportStatuses } = passportStatusesMock._embedded
 &nbsp;
   const passportStatus = passportStatuses.find(
@@ -317,17 +341,19 @@ export const fetchPassportStatusMOCK = async ({
 /**
  * Fetch passport status from passport status API
  * @param passportStatusAPIBaseURI Passport status API base URI
- * @param param1 Check status request body object
+ * @param checkStatusRequest Check status request object
  * @returns Passport status API object
  * @throw ApiError intance
  */
 export const fetchPassportStatusAPI = <span class="fstat-no" title="function not covered" >as</span>ync (
   passportStatusAPIBaseURI: string,
-  { birthDate, esrf, givenName, surname }: CheckStatusRequestBody
+  checkStatusRequest: CheckStatusRequest
 ): Promise&lt;CheckStatusReponse&gt; =&gt; {
 <span class="cstat-no" title="statement not covered" >  if (!passportStatusAPIBaseURI) {</span>
 <span class="cstat-no" title="statement not covered" >    throw Error('passportStatusAPIBaseURI must not be null or empty')</span>
   }
+&nbsp;
+  const { birthDate, esrf, givenName, surname } = <span class="cstat-no" title="statement not covered" >checkStatusRequest</span>
 &nbsp;
   // passport statuses api _search endpoint
   const response = <span class="cstat-no" title="statement not covered" >await fetch(</span>
@@ -354,24 +380,37 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse&lt;CheckStatusReponse | string&gt;
 ) {
-  <span class="missing-if-branch" title="if path not taken" >I</span>if (req.method !== 'POST') {
-<span class="cstat-no" title="statement not covered" >    return res.status(405).send(`Invalid request method ${req.method}`)</span>
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (req.method !== 'GET') {
+<span class="cstat-no" title="statement not covered" >    res.status(405).send(`Invalid request method ${req.method}`)</span>
+<span class="cstat-no" title="statement not covered" >    return</span>
   }
 &nbsp;
-  const body = JSON.parse(req.body) as CheckStatusRequestBody
+  const { searchParams } = new URL(req.url ?? <span class="branch-1 cbranch-no" title="branch not covered" >'',</span> `http://${req.headers.host}`)
+  const checkStatusRequest: CheckStatusRequest = {
+    birthDate: searchParams.get('birthDate') ?? <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
+    esrf: searchParams.get('esrf') ?? <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
+    givenName: searchParams.get('givenName') ?? <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
+    surname: searchParams.get('surname') ?? <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
+  }
 &nbsp;
   try {
     const passportStatusApiBaseUri = process.env.PASSPORT_STATUS_API_BASE_URI
     const response = passportStatusApiBaseUri
-      ? <span class="branch-0 cbranch-no" title="branch not covered" >await fetchPassportStatusAPI(passportStatusApiBaseUri, body)</span>
-      : await fetchPassportStatusMOCK(body)
-    return res.status(200).json(response)
+      ? <span class="branch-0 cbranch-no" title="branch not covered" >await fetchPassportStatusAPI(</span>
+          passportStatusApiBaseUri,
+          checkStatusRequest
+        )
+      : await fetchPassportStatusMOCK(checkStatusRequest)
+    res.status(200).json(response)
   } catch (error) {
     logger.error(error)
+&nbsp;
     <span class="missing-if-branch" title="else path not taken" >E</span>if ((error as Error).constructor.name === 'ApiError') {
       const apiError = error as ApiError
-      return res.status(apiError.statusCode).send(apiError.message)
+      res.status(apiError.statusCode).send(apiError.message)
+      return
     }
+&nbsp;
 <span class="cstat-no" title="statement not covered" >    throw error</span>
   }
 }
@@ -382,7 +421,7 @@ export default async function handler(
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-10-19T20:34:27.551Z
+                at 2022-10-20T15:08:18.597Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
