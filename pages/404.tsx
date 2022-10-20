@@ -14,7 +14,7 @@ const Custom404 = () => {
         <ul>
           <li>
             Return to the{' '}
-            <Link href="/">
+            <Link href="/" locale="default">
               <a className="text-cyan-600 underline">home page</a>
             </Link>
             ;
