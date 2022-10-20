@@ -46,5 +46,22 @@
     "valid": "must be valid",
     "valid-format": "must be in a valid format of {{format}}",
     "meet-length": "must be {{length}} characters long"
-  }
+  },
+  "program-links": [
+    {
+      "text": "Contact the Passport Program",
+      "href": "https://ircc.canada.ca/english/passport/map/map.asp",
+      "external": true
+    },
+    {
+      "text": "Find a passport service location near you",
+      "href": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/contact-passport-program.html",
+      "external": true
+    },
+    {
+      "text": "Appointment booking",
+      "href": "https://eservices.canada.ca/en/reservation/",
+      "external": true
+    }
+  ]
 }

@@ -29,10 +29,6 @@ const Status: FC = () => {
   const { t } = useTranslation('status')
   const [modalOpen, setModalOpen] = useState(false)
 
-  const lsItems = t<string, LinkSummaryItem[]>('no-match-status-links', {
-    returnObjects: true,
-  })
-
   const formik = useFormik<CheckStatusRequest>({
     initialValues,
     validationSchema: Yup.object({
@@ -130,7 +126,9 @@ const Status: FC = () => {
               </StatusInfo>
               <LinkSummary
                 title={t('other-ways-to-status')}
-                links={lsItems}
+                links={t<string, LinkSummaryItem[]>('common:program-links', {
+                  returnObjects: true,
+                })}
               ></LinkSummary>
             </>
           )
@@ -150,7 +148,9 @@ const Status: FC = () => {
               </StatusInfo>
               <LinkSummary
                 title={t('no-match-title')}
-                links={lsItems}
+                links={t<string, LinkSummaryItem[]>('common:program-links', {
+                  returnObjects: true,
+                })}
               ></LinkSummary>
             </>
           )
