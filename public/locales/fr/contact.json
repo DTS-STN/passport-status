@@ -1,18 +1,4 @@
 {
   "header": "Contactez-nous",
-  "description": "Vous n'avez pas trouvé ce que vous cherchiez ? Contactez-nous en utilisant le lien ci-dessous ou consultez nos autres services",
-  "links": {
-    "contact": {
-      "text": "Communiquer avec le Programme de passeport",
-      "link": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens/communiquer-programme-passeport.html"
-    },
-    "findServiceLocation": {
-      "text": "Trouvez un point de service de passeport près de chez vous",
-      "link": "https://ircc.canada.ca/francais/passeport/map/carte.asp"
-    },
-    "bookAppointment": {
-      "text": "Prise de rendez-vous",
-      "link": "https://eservices.canada.ca/fr/reservation/"
-    }
-  }
+  "description": "Vous n'avez pas trouvé ce que vous cherchiez ? Contactez-nous en utilisant le lien ci-dessous ou consultez nos autres services"
 }

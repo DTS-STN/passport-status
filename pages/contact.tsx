@@ -3,7 +3,7 @@ import { GetStaticProps } from 'next'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Layout from '../components/Layout'
-import LinkButton from '../components/LinkButton'
+import LinkSummary, { LinkSummaryItem } from '../components/LinkSummary'
 
 const Contact: FC = () => {
   const { t } = useTranslation('contact')
@@ -16,28 +16,12 @@ const Contact: FC = () => {
     >
       <h1 className="mb-4">{t('header')}</h1>
       <h2 className="my-14">{t('description')}</h2>
-      <div className="space-y-4 text-xl">
-        <div id="contactUs">
-          <LinkButton
-            href={t('links.contact.link')}
-            text={t('links.contact.text')}
-            external
-          ></LinkButton>
-        </div>
-        <div id="findServiceLocation">
-          <LinkButton
-            href={t('links.findServiceLocation.link')}
-            text={t('links.findServiceLocation.text')}
-            external
-          ></LinkButton>
-        </div>
-        <div id="bookAppointment">
-          <LinkButton
-            href={t('links.bookAppointment.link')}
-            text={t('links.bookAppointment.text')}
-            external
-          ></LinkButton>
-        </div>
+      <div id="contactLinks" className="text-2xl">
+        <LinkSummary
+          links={t<string, LinkSummaryItem[]>('common:program-links', {
+            returnObjects: true,
+          })}
+        />
       </div>
     </Layout>
   )

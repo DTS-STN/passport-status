@@ -46,5 +46,22 @@
     "valid": "doit être valide",
     "valid-format": "doit être valide au format de {{format}}",
     "meet-length": "doit comporter {{length}} caractères"
-  }
+  },
+  "program-links": [
+    {
+      "text": "Communiquez avec le Programme de passeport",
+      "href": "https://ircc.canada.ca/francais/passeport/map/carte.asp",
+      "external": true
+    },
+    {
+      "text": "Trouvez un emplacement de service de passeport près de chez vous",
+      "href": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens/communiquer-programme-passeport.html",
+      "external": true
+    },
+    {
+      "text": "Prise de rendez-vous",
+      "href": "https://eservices.canada.ca/fr/reservation/",
+      "external": true
+    }
+  ]
 }

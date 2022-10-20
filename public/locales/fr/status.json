@@ -46,19 +46,5 @@
     "description": "Tu es sûr que tu veux y retourner ?"
   },
   "other-ways-to-status": "Contactez-nous",
-  "no-match-title": "D'autres façons d'obtenir votre statut.",
-  "no-match-status-links": [
-    {
-      "text": "Communiquez avec le Programme de passeport",
-      "href": "https://ircc.canada.ca/francais/passeport/map/carte.asp"
-    },
-    {
-      "text": "Trouvez un emplacement de service de passeport près de chez vous",
-      "href": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens/communiquer-programme-passeport.html"
-    },
-    {
-      "text": "Prise de rendez-vous",
-      "href": "https://eservices.canada.ca/fr/reservation/"
-    }
-  ]
+  "no-match-title": "D'autres façons d'obtenir votre statut:"
 }

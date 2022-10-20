@@ -9,7 +9,7 @@ import { axe, toHaveNoViolations } from 'jest-axe'
 expect.extend(toHaveNoViolations)
 
 jest.mock('../../components/Layout', () => 'Layout')
-jest.mock('../../components/LinkButton')
+jest.mock('../../components/LinkSummary')
 
 describe('Contact page', () => {
   it('should render the page', () => {

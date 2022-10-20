@@ -1,18 +1,4 @@
 {
   "header": "Contact Us",
-  "description": "Didn't find what you were looking for? Get in touch with us using the link below or see our other services",
-  "links": {
-    "contact": {
-      "text": "Contact the Passport Program",
-      "link": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/contact-passport-program.html"
-    },
-    "findServiceLocation": {
-      "text": "Find a passport service location near you",
-      "link": "https://ircc.canada.ca/english/passport/map/map.asp"
-    },
-    "bookAppointment": {
-      "text": "Appointment booking",
-      "link": "https://eservices.canada.ca/en/reservation/"
-    }
-  }
+  "description": "Didn't find what you were looking for? Get in touch with us using the link below or see our other services"
 }

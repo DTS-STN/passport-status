@@ -8,16 +8,24 @@ describe('contact page loads', () => {
       cy.url().should("contains", "/contact");
     })
 
-    it('should display the button that links to the Contact the Passport Program page',()=>{
-        cy.get(`#contactUs`).should('be.visible')
+  
+    it('displays the language link to change to French', () => {
+      cy.url().should("contains", "/contact");
+      cy.get('[data-cy=toggle-language-link]').should('contain.text', 'Français');
+  
+    })
+  
+    it('displays the language link to change to English', () => {
+      cy.get('[data-cy=toggle-language-link]').click()
+      cy.url().should("contains", "/fr/contact");
+      cy.get('[data-cy=toggle-language-link]').should('contain.text', 'English');
+  
     })
 
-    it('should display the button that links to the Passport service map resource',()=>{
-        cy.get(`#findServiceLocation`).should('be.visible')
-    })
-
-    it('should display the button that links to appointment booking resource',()=>{
-        cy.get(`#bookAppointment`).should('be.visible')
+    it('should display a list of links',()=>{
+        cy.get(`#contactLinks`).contains("Contact the Passport Program")
+        cy.get(`#contactLinks`).contains("Find a passport service location near you")
+        cy.get(`#contactLinks`).contains("Appointment booking")
     })
   
     it('App has no detectable a11y violations on load', () => {
