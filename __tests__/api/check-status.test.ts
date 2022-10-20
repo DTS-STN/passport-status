@@ -4,25 +4,15 @@ import { CheckStatusRequest } from '../../lib/StatusTypes'
 import { NextApiRequest, NextApiResponse } from 'next'
 
 /**
- * NextApiRequest and node-mocks-http createRequest types union
+ * NextApiRequest, NextApiResponse and node-mocks-http createResponse, createResponse types union
  * @see: https://github.com/howardabrams/node-mocks-http/issues/255#issuecomment-1136674043
  */
-export type ApiRequest = NextApiRequest & ReturnType<typeof createRequest>
+type ApiRequest = NextApiRequest & ReturnType<typeof createRequest>
+type ApiResponse = NextApiResponse & ReturnType<typeof createResponse>
 
-/**
- * NextApiResponse and node-mocks-http createResponse types union
- * @see: https://github.com/howardabrams/node-mocks-http/issues/255#issuecomment-1136674043
- */
-export type ApiResponse = NextApiResponse & ReturnType<typeof createResponse>
-
-const getUrl = (checkStatusRequest: CheckStatusRequest) => {
-  const query = Object.keys(checkStatusRequest)
-    .map(
-      (key) => `${key}=${checkStatusRequest[key as keyof CheckStatusRequest]}`
-    )
-    .join('&')
-  return 'api/check-status?' + query
-}
+const getUrl = (checkStatusRequest: CheckStatusRequest) =>
+  'api/check-status?' +
+  new URLSearchParams({ ...checkStatusRequest }).toString()
 
 describe('api/check-status', () => {
   it('returns a result', async () => {

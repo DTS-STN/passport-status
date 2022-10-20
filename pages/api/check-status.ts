@@ -104,13 +104,14 @@ export default async function handler(
       : await fetchPassportStatusMOCK(checkStatusRequest)
     res.status(200).json(response)
   } catch (error) {
+    logger.error(error)
+
     if ((error as Error).constructor.name === 'ApiError') {
       const apiError = error as ApiError
       res.status(apiError.statusCode).send(apiError.message)
       return
     }
 
-    logger.error(error)
     throw error
   }
 }

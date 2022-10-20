@@ -6,11 +6,7 @@ export const fetchCheckStatus = async (
   checkStatusRequest: CheckStatusRequest,
   init?: RequestInit
 ): Promise<CheckStatusReponse | null> => {
-  const query = Object.keys(checkStatusRequest)
-    .map(
-      (key) => `${key}=${checkStatusRequest[key as keyof CheckStatusRequest]}`
-    )
-    .join('&')
+  const query = new URLSearchParams({ ...checkStatusRequest }).toString()
   const response = await fetch('/api/check-status?' + query, init)
   if (response.ok) return response.json()
   if (response.status === 404) return null
