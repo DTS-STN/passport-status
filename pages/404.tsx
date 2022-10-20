@@ -38,7 +38,7 @@ const Custom404 = () => {
         <ul>
           <li>
             Retournez à la{' '}
-            <Link href="/">
+            <Link href="/" locale="default">
               <a className="text-cyan-600 underline">page {"d'accueil;"}</a>
             </Link>
           </li>
