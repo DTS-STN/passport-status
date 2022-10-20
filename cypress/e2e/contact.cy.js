@@ -22,10 +22,8 @@ describe('contact page loads', () => {
   
     })
 
-    it('should display a list of links',()=>{
-        cy.get(`#contactLinks`).contains("Contact the Passport Program")
-        cy.get(`#contactLinks`).contains("Find a passport service location near you")
-        cy.get(`#contactLinks`).contains("Appointment booking")
+    it('has a list containing anchor tags',()=>{
+        cy.get(`#contactLinks > section > ul li:first > a`)
     })
   
     it('App has no detectable a11y violations on load', () => {
