@@ -1,23 +1,20 @@
 import { useQuery, UseQueryOptions } from '@tanstack/react-query'
 import { ApiError } from 'next/dist/server/api-utils'
-import { CheckStatusReponse, CheckStatusRequestBody } from './StatusTypes'
+import { CheckStatusReponse, CheckStatusRequest } from './StatusTypes'
 
 export const fetchCheckStatus = async (
-  request: CheckStatusRequestBody,
+  checkStatusRequest: CheckStatusRequest,
   init?: RequestInit
 ): Promise<CheckStatusReponse | null> => {
-  const response = await fetch('/api/check-status', {
-    ...init,
-    method: 'POST',
-    body: JSON.stringify(request),
-  })
+  const query = new URLSearchParams({ ...checkStatusRequest }).toString()
+  const response = await fetch('/api/check-status?' + query, init)
   if (response.ok) return response.json()
   if (response.status === 404) return null
   throw new ApiError(response.status, response.statusText)
 }
 
 export const useCheckStatus = (
-  requestBody: CheckStatusRequestBody,
+  checkStatusRequest: CheckStatusRequest,
   queryOptions?: UseQueryOptions<
     CheckStatusReponse | null,
     ApiError,
@@ -29,8 +26,8 @@ export const useCheckStatus = (
     ApiError,
     CheckStatusReponse | null
   >(
-    ['ps:api:check-status', requestBody],
-    ({ signal }) => fetchCheckStatus(requestBody, { signal }),
+    ['ps:api:check-status', checkStatusRequest],
+    ({ signal }) => fetchCheckStatus(checkStatusRequest, { signal }),
     { ...(queryOptions ?? {}) }
   )
 

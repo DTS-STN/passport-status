@@ -6,21 +6,19 @@ import {
   PassportStatusesSearchResult,
   CheckStatusReponse,
   MapToCheckStatusReponse,
-  CheckStatusRequestBody,
+  CheckStatusRequest,
 } from '../../lib/StatusTypes'
 
 /**
  * Fetch passport status from mock API data
- * @param param0 Check status request body object
+ * @param checkStatusRequest Check status request object
  * @returns Passport status API mock object
  * @throw ApiError intance
  */
-export const fetchPassportStatusMOCK = async ({
-  birthDate,
-  esrf,
-  givenName,
-  surname,
-}: CheckStatusRequestBody): Promise<CheckStatusReponse> => {
+export const fetchPassportStatusMOCK = async (
+  checkStatusRequest: CheckStatusRequest
+): Promise<CheckStatusReponse> => {
+  const { birthDate, esrf, givenName, surname } = checkStatusRequest
   const { passportStatuses } = passportStatusesMock._embedded
 
   const passportStatus = passportStatuses.find(
@@ -44,17 +42,19 @@ export const fetchPassportStatusMOCK = async ({
 /**
  * Fetch passport status from passport status API
  * @param passportStatusAPIBaseURI Passport status API base URI
- * @param param1 Check status request body object
+ * @param checkStatusRequest Check status request object
  * @returns Passport status API object
  * @throw ApiError intance
  */
 export const fetchPassportStatusAPI = async (
   passportStatusAPIBaseURI: string,
-  { birthDate, esrf, givenName, surname }: CheckStatusRequestBody
+  checkStatusRequest: CheckStatusRequest
 ): Promise<CheckStatusReponse> => {
   if (!passportStatusAPIBaseURI) {
     throw Error('passportStatusAPIBaseURI must not be null or empty')
   }
+
+  const { birthDate, esrf, givenName, surname } = checkStatusRequest
 
   // passport statuses api _search endpoint
   const response = await fetch(
@@ -81,24 +81,37 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<CheckStatusReponse | string>
 ) {
-  if (req.method !== 'POST') {
-    return res.status(405).send(`Invalid request method ${req.method}`)
+  if (req.method !== 'GET') {
+    res.status(405).send(`Invalid request method ${req.method}`)
+    return
   }
 
-  const body = JSON.parse(req.body) as CheckStatusRequestBody
+  const { searchParams } = new URL(req.url ?? '', `http://${req.headers.host}`)
+  const checkStatusRequest: CheckStatusRequest = {
+    birthDate: searchParams.get('birthDate') ?? '',
+    esrf: searchParams.get('esrf') ?? '',
+    givenName: searchParams.get('givenName') ?? '',
+    surname: searchParams.get('surname') ?? '',
+  }
 
   try {
     const passportStatusApiBaseUri = process.env.PASSPORT_STATUS_API_BASE_URI
     const response = passportStatusApiBaseUri
-      ? await fetchPassportStatusAPI(passportStatusApiBaseUri, body)
-      : await fetchPassportStatusMOCK(body)
-    return res.status(200).json(response)
+      ? await fetchPassportStatusAPI(
+          passportStatusApiBaseUri,
+          checkStatusRequest
+        )
+      : await fetchPassportStatusMOCK(checkStatusRequest)
+    res.status(200).json(response)
   } catch (error) {
     logger.error(error)
+
     if ((error as Error).constructor.name === 'ApiError') {
       const apiError = error as ApiError
-      return res.status(apiError.statusCode).send(apiError.message)
+      res.status(apiError.statusCode).send(apiError.message)
+      return
     }
+
     throw error
   }
 }
