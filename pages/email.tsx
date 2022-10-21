@@ -12,31 +12,25 @@ import ErrorSummary, {
 } from '../components/ErrorSummary'
 import InputField from '../components/InputField'
 import ActionButton from '../components/ActionButton'
-import { useMutation } from '@tanstack/react-query'
 import LinkSummary, { LinkSummaryItem } from '../components/LinkSummary'
-import * as ErrorPage from './_error'
+import useEmailEsrf from '../lib/useEmailEsrf'
+
+const initialValues: EmailEsrfRequestBody = {
+  dateOfBirth: '',
+  email: '',
+  firstName: '',
+  lastName: '',
+}
 
 export default function Email() {
   const { t } = useTranslation('email')
 
-  const initialValues: EmailEsrfRequestBody = {
-    dateOfBirth: '',
-    email: '',
-    firstName: '',
-    lastName: '',
-  }
-
-  const fetchEmailEsrf = async (
-    body: EmailEsrfRequestBody
-  ): Promise<Response> => {
-    const response = await fetch('/api/email-esrf', {
-      method: 'POST',
-      body: JSON.stringify(body),
-    })
-    if (response.ok) return response
-    throw new Error(response.statusText)
-  }
-  const mutation = useMutation(() => fetchEmailEsrf(formik.values))
+  const {
+    isLoading: isEmailEsrfLoading,
+    isSuccess: isEmailEsrfSuccess,
+    error: emailEsrfError,
+    mutate: emailEsrf,
+  } = useEmailEsrf()
 
   const formik = useFormik<EmailEsrfRequestBody>({
     initialValues,
@@ -53,9 +47,7 @@ export default function Email() {
     validateOnBlur: false,
     validateOnChange: false,
     validateOnMount: false,
-    onSubmit: async (_, formikHelper) => {
-      mutation.mutate()
-    },
+    onSubmit: (values) => emailEsrf(values),
   })
 
   const errorSummary = useMemo<ErrorSummaryItem[]>(
@@ -63,7 +55,7 @@ export default function Email() {
     [formik, t]
   )
 
-  if (mutation.isError) return <ErrorPage.default statusCode={undefined} />
+  if (emailEsrfError) throw emailEsrfError
 
   return (
     <Layout
@@ -73,7 +65,7 @@ export default function Email() {
     >
       <h1 className="mb-4">{t('header')}</h1>
 
-      {mutation.isSuccess ? (
+      {isEmailEsrfSuccess ? (
         <>
           <p className="mb-6 text-2xl">{t('email-sent-confirmation')}</p>
           <LinkSummary
@@ -139,7 +131,7 @@ export default function Email() {
             required
           />
           <ActionButton
-            disabled={mutation.isLoading}
+            disabled={isEmailEsrfLoading}
             type="submit"
             text={t('email-esrf')}
             style="primary"
