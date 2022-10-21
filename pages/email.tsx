@@ -4,7 +4,7 @@ import { GetStaticProps } from 'next'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Layout from '../components/Layout'
-import { EmailEsrfRequestBody, EmailEsrf } from '../lib/EmailEsrfHook'
+import { EmailEsrfRequestBody } from './api/email-esrf'
 import { useMemo } from 'react'
 import ErrorSummary, {
   ErrorSummaryItem,
@@ -12,17 +12,25 @@ import ErrorSummary, {
 } from '../components/ErrorSummary'
 import InputField from '../components/InputField'
 import ActionButton from '../components/ActionButton'
+import LinkSummary, { LinkSummaryItem } from '../components/LinkSummary'
+import useEmailEsrf from '../lib/useEmailEsrf'
+
+const initialValues: EmailEsrfRequestBody = {
+  dateOfBirth: '',
+  email: '',
+  firstName: '',
+  lastName: '',
+}
 
 export default function Email() {
   const { t } = useTranslation('email')
 
-  const initialValues: EmailEsrfRequestBody = {
-    dateOfBirth: '',
-    email: '',
-    firstName: '',
-    lastName: '',
-  }
-  const submittedKey = 'submitted'
+  const {
+    isLoading: isEmailEsrfLoading,
+    isSuccess: isEmailEsrfSuccess,
+    error: emailEsrfError,
+    mutate: emailEsrf,
+  } = useEmailEsrf()
 
   const formik = useFormik<EmailEsrfRequestBody>({
     initialValues,
@@ -39,19 +47,15 @@ export default function Email() {
     validateOnBlur: false,
     validateOnChange: false,
     validateOnMount: false,
-    onSubmit: async (_, formikHelper) => {
-      formikHelper.setStatus(submittedKey)
-    },
+    onSubmit: (values) => emailEsrf(values),
   })
-
-  const { isLoading, error, data } = EmailEsrf(
-    formik.status === submittedKey ? formik.values : formik.initialValues
-  )
 
   const errorSummary = useMemo<ErrorSummaryItem[]>(
     () => GetErrorSummary(formik.errors, t),
     [formik, t]
   )
+
+  if (emailEsrfError) throw emailEsrfError
 
   return (
     <Layout
@@ -61,67 +65,79 @@ export default function Email() {
     >
       <h1 className="mb-4">{t('header')}</h1>
 
-      <form onSubmit={formik.handleSubmit} id="form-email-esrf">
-        <p>{t('description')}</p>
-        {errorSummary.length > 0 && (
-          <ErrorSummary
-            id="error-summary-email-esrf"
-            summary={t('common:found-errors', {
-              count: errorSummary.length,
+      {isEmailEsrfSuccess ? (
+        <>
+          <p className="mb-6 text-2xl">{t('email-sent-confirmation')}</p>
+          <LinkSummary
+            title={t('common:contact-program')}
+            links={t<string, LinkSummaryItem[]>('common:program-links', {
+              returnObjects: true,
             })}
-            errors={errorSummary}
           />
-        )}
-        <InputField
-          id="email"
-          name="email"
-          label={t('email.label')}
-          onChange={formik.handleChange}
-          value={formik.values.email}
-          errorMessage={formik.errors.email && t(formik.errors.email)}
-          textRequired={t('common:required')}
-          required
-        />
-        <InputField
-          id="firstName"
-          name="firstName"
-          label={t('firstName.label')}
-          onChange={formik.handleChange}
-          value={formik.values.firstName}
-          errorMessage={formik.errors.firstName && t(formik.errors.firstName)}
-          textRequired={t('common:required')}
-          required
-        />
-        <InputField
-          id="lastName"
-          name="lastName"
-          label={t('lastName.label')}
-          onChange={formik.handleChange}
-          value={formik.values.lastName}
-          errorMessage={formik.errors.lastName && t(formik.errors.lastName)}
-          textRequired={t('common:required')}
-          required
-        />
-        <InputField
-          id="dateOfBirth"
-          name="dateOfBirth"
-          type="date"
-          label={t('dateOfBirth.label')}
-          onChange={formik.handleChange}
-          value={formik.values.dateOfBirth}
-          errorMessage={
-            formik.errors.dateOfBirth && t(formik.errors.dateOfBirth)
-          }
-          textRequired={t('common:required')}
-          required
-        />
-        <ActionButton
-          disabled={isLoading}
-          type="submit"
-          text={t('email-esrf')}
-          style="primary"
-        />
-      </form>
+        </>
+      ) : (
+        <form onSubmit={formik.handleSubmit} id="form-email-esrf">
+          <p>{t('description')}</p>
+          {errorSummary.length > 0 && (
+            <ErrorSummary
+              id="error-summary-email-esrf"
+              summary={t('common:found-errors', {
+                count: errorSummary.length,
+              })}
+              errors={errorSummary}
+            />
+          )}
+          <InputField
+            id="email"
+            name="email"
+            label={t('email.label')}
+            onChange={formik.handleChange}
+            value={formik.values.email}
+            errorMessage={formik.errors.email && t(formik.errors.email)}
+            textRequired={t('common:required')}
+            required
+          />
+          <InputField
+            id="firstName"
+            name="firstName"
+            label={t('firstName.label')}
+            onChange={formik.handleChange}
+            value={formik.values.firstName}
+            errorMessage={formik.errors.firstName && t(formik.errors.firstName)}
+            textRequired={t('common:required')}
+            required
+          />
+          <InputField
+            id="lastName"
+            name="lastName"
+            label={t('lastName.label')}
+            onChange={formik.handleChange}
+            value={formik.values.lastName}
+            errorMessage={formik.errors.lastName && t(formik.errors.lastName)}
+            textRequired={t('common:required')}
+            required
+          />
+          <InputField
+            id="dateOfBirth"
+            name="dateOfBirth"
+            type="date"
+            label={t('dateOfBirth.label')}
+            onChange={formik.handleChange}
+            value={formik.values.dateOfBirth}
+            errorMessage={
+              formik.errors.dateOfBirth && t(formik.errors.dateOfBirth)
+            }
+            textRequired={t('common:required')}
+            required
+          />
+          <ActionButton
+            disabled={isEmailEsrfLoading}
+            type="submit"
+            text={t('email-esrf')}
+            style="primary"
+          />
+        </form>
+      )}
     </Layout>
   )
 }

@@ -28,5 +28,6 @@
     },
     "label": "Date de naissance"
   },
-  "email-esrf": "Envoyer mon numéro de dossier (ESRF)"
+  "email-esrf": "Envoyer mon numéro de dossier (ESRF)",
+  "email-sent-confirmation": "Un e-mail a été envoyé s'il y avait une correspondance dans nos dossiers avec le numéro de dossier (ESRF)"
 }

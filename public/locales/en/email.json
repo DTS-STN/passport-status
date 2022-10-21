@@ -28,5 +28,6 @@
     },
     "label": "Date of birth"
   },
-  "email-esrf": "Email my File number (ESRF)"
+  "email-esrf": "Email my File number (ESRF)",
+  "email-sent-confirmation": "An email has been sent if there was a match in our records with the File number (ESRF)"
 }

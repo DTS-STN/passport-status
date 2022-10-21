@@ -2,20 +2,22 @@ import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import { axe, toHaveNoViolations } from 'jest-axe'
 import Email from '../../pages/email'
-import { EmailEsrf } from '../../lib/EmailEsrfHook'
 import { GetErrorSummary } from '../../components/ErrorSummary'
+import { useMutation } from '@tanstack/react-query'
 
 expect.extend(toHaveNoViolations)
 
 jest.mock('../../components/Layout', () => 'Layout')
-jest.mock('../../lib/EmailEsrfHook')
 jest.mock('../../components/ErrorSummary')
 jest.mock('../../components/InputField')
 jest.mock('../../components/ActionButton')
+jest.mock('@tanstack/react-query')
 
 describe('Check status page', () => {
   beforeEach(() => {
-    EmailEsrf.mockImplementation(() => ({}))
+    useMutation.mockImplementation(() => {
+      return { isError: false }
+    })
     GetErrorSummary.mockImplementation(() => [])
   })
 

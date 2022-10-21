@@ -47,6 +47,7 @@
     "valid-format": "must be in a valid format of {{format}}",
     "meet-length": "must be {{length}} characters long"
   },
+  "contact-program": "Contact Passport services",
   "program-links": [
     {
       "text": "Contact the Passport Program",
