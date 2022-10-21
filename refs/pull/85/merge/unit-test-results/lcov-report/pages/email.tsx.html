@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">55.55% </span>
+                <span class="strong">75% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>10/18</span>
+                <span class='fraction'>9/12</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">38.88% </span>
+                <span class="strong">43.75% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>7/18</span>
+                <span class='fraction'>7/16</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">33.33% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/6</span>
+                <span class='fraction'>2/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">71.42% </span>
+                <span class="strong">90% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>10/14</span>
+                <span class='fraction'>9/10</span>
             </div>
         
             
@@ -212,15 +212,7 @@
 <a name='L147'></a><a href='#L147'>147</a>
 <a name='L148'></a><a href='#L148'>148</a>
 <a name='L149'></a><a href='#L149'>149</a>
-<a name='L150'></a><a href='#L150'>150</a>
-<a name='L151'></a><a href='#L151'>151</a>
-<a name='L152'></a><a href='#L152'>152</a>
-<a name='L153'></a><a href='#L153'>153</a>
-<a name='L154'></a><a href='#L154'>154</a>
-<a name='L155'></a><a href='#L155'>155</a>
-<a name='L156'></a><a href='#L156'>156</a>
-<a name='L157'></a><a href='#L157'>157</a>
-<a name='L158'></a><a href='#L158'>158</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L150'></a><a href='#L150'>150</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -232,6 +224,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -241,22 +239,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -275,9 +261,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
@@ -390,32 +374,26 @@ import ErrorSummary, {
 } from '../components/ErrorSummary'
 import InputField from '../components/InputField'
 import ActionButton from '../components/ActionButton'
-import { useMutation } from '@tanstack/react-query'
 import LinkSummary, { LinkSummaryItem } from '../components/LinkSummary'
-import * as ErrorPage from './_error'
 import { EmailEsrfRequestBody } from './api/email-esrf'
+import useEmailEsrf from '../lib/useEmailEsrf'
+&nbsp;
+const initialValues: EmailEsrfRequestBody = {
+  dateOfBirth: '',
+  email: '',
+  firstName: '',
+  lastName: '',
+}
 &nbsp;
 export default function Email() {
   const { t } = useTranslation('email')
 &nbsp;
-  const initialValues: EmailEsrfRequestBody = {
-    dateOfBirth: '',
-    email: '',
-    firstName: '',
-    lastName: '',
-  }
-&nbsp;
-  const fetchEmailEsrf = <span class="fstat-no" title="function not covered" >as</span>ync (
-    body: EmailEsrfRequestBody
-  ): Promise&lt;Response&gt; =&gt; {
-    const response = <span class="cstat-no" title="statement not covered" >await fetch('/api/email-esrf', {</span>
-      method: 'POST',
-      body: JSON.stringify(body),
-    })
-<span class="cstat-no" title="statement not covered" >    if (response.ok) <span class="cstat-no" title="statement not covered" >return response</span></span>
-<span class="cstat-no" title="statement not covered" >    throw new Error(response.statusText)</span>
-  }
-  const mutation = useMutation(<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >fetchEmailEsrf(formik.values))</span>
+  const {
+    isLoading: isEmailEsrfLoading,
+    isSuccess: isEmailEsrfSuccess,
+    error: emailEsrfError,
+    mutate: emailEsrf,
+  } = useEmailEsrf()
 &nbsp;
   const formik = useFormik&lt;EmailEsrfRequestBody&gt;({
     initialValues,
@@ -432,9 +410,7 @@ export default function Email() {
     validateOnBlur: false,
     validateOnChange: false,
     validateOnMount: false,
-    onSubmit: <span class="fstat-no" title="function not covered" >as</span>ync (_, formikHelper) =&gt; {
-<span class="cstat-no" title="statement not covered" >      mutation.mutate()</span>
-    },
+    onSubmit: <span class="fstat-no" title="function not covered" >(v</span>alues) =&gt; <span class="cstat-no" title="statement not covered" >emailEsrf(values),</span>
   })
 &nbsp;
   const errorSummary = useMemo&lt;ErrorSummaryItem[]&gt;(
@@ -442,7 +418,7 @@ export default function Email() {
     [formik, t]
   )
 &nbsp;
-  <span class="missing-if-branch" title="if path not taken" >I</span>if (mutation.isError) <span class="cstat-no" title="statement not covered" >return &lt;ErrorPage.default statusCode={undefined} /&gt;</span>
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (emailEsrfError) <span class="cstat-no" title="statement not covered" >throw emailEsrfError</span>
 &nbsp;
   return (
     &lt;Layout
@@ -452,7 +428,7 @@ export default function Email() {
     &gt;
       &lt;h1 className="mb-4"&gt;{t('header')}&lt;/h1&gt;
 &nbsp;
-      {mutation.isSuccess ? (
+      {isEmailEsrfSuccess ? (
 <span class="branch-0 cbranch-no" title="branch not covered" >        &lt;&gt;</span>
           &lt;p className="mb-6 text-2xl"&gt;{t('email-sent-confirmation')}&lt;/p&gt;
           &lt;LinkSummary
@@ -518,7 +494,7 @@ export default function Email() {
             required
           /&gt;
           &lt;ActionButton
-            disabled={mutation.isLoading}
+            disabled={isEmailEsrfLoading}
             type="submit"
             text={t('email-esrf')}
             style="primary"
@@ -541,7 +517,7 @@ export const getStaticProps: GetStaticProps = <span class="fstat-no" title="func
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-10-20T19:28:20.006Z
+                at 2022-10-21T12:56:34.272Z
             </div>
         <script src="../prettify.js"></script>
         <script>
