@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for lib/EmailEsrfHook.ts</title>
+    <title>Code coverage report for lib/useEmailEsrf.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">lib</a> EmailEsrfHook.ts</h1>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">lib</a> useEmailEsrf.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">40% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/3</span>
-            </div>
-        
-            
-            <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
-                <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>2/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
-                <span class="quiet">Functions</span>
+                <span class="quiet">Branches</span>
                 <span class='fraction'>0/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">50% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>1/2</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">40% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/3</span>
+                <span class='fraction'>2/5</span>
             </div>
         
             
@@ -86,10 +86,15 @@
 <a name='L21'></a><a href='#L21'>21</a>
 <a name='L22'></a><a href='#L22'>22</a>
 <a name='L23'></a><a href='#L23'>23</a>
-<a name='L24'></a><a href='#L24'>24</a>
-<a name='L25'></a><a href='#L25'>25</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L24'></a><a href='#L24'>24</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -98,43 +103,35 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useMutation } from '@tanstack/react-query'
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useMutation, UseMutationOptions } from '@tanstack/react-query'
+import { ApiError } from 'next/dist/server/api-utils'
+import { EmailEsrfRequestBody } from '../pages/api/email-esrf'
 &nbsp;
-export interface EmailEsrfRequestBody {
-  dateOfBirth: string
-  email: string
-  firstName: string
-  lastName: string
+const useEmailEsrf = (
+  options?: UseMutationOptions&lt;void, ApiError, EmailEsrfRequestBody&gt;
+) =&gt; {
+  return useMutation&lt;void, ApiError, EmailEsrfRequestBody&gt;(<span class="fstat-no" title="function not covered" >as</span>ync (body) =&gt; {
+    const response = <span class="cstat-no" title="statement not covered" >await fetch('/api/email-esrf', {</span>
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(body),
+    })
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    if (!response.ok) {</span>
+<span class="cstat-no" title="statement not covered" >      throw new ApiError(response.status, response.statusText)</span>
+    }
+  }, options)
 }
 &nbsp;
-export function <span class="fstat-no" title="function not covered" >EmailEsrf(</span>requestBody: EmailEsrfRequestBody) {
-  const query = <span class="cstat-no" title="statement not covered" >useMutation(</span>
-    ['ps:api:email-esrf', requestBody],
-<span class="fstat-no" title="function not covered" >    as</span>ync () =&gt;
-<span class="cstat-no" title="statement not covered" >      await fetch('/api/email-esrf', {</span>
-        method: 'POST',
-        body: JSON.stringify(requestBody),
-      })
-  )
-&nbsp;
-<span class="cstat-no" title="statement not covered" >  return {</span>
-    ...query,
-    isLoading: query.isLoading,
-  }
-}
+export default useEmailEsrf
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -142,7 +139,7 @@ export function <span class="fstat-no" title="function not covered" >EmailEsrf(<
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-10-21T12:29:11.300Z
+                at 2022-10-21T14:24:41.268Z
             </div>
         <script src="../prettify.js"></script>
         <script>
