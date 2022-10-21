@@ -22,10 +22,10 @@ describe('landing page loads', () => {
 })
 
 describe('user has ESRF number',()=>{
-    it('should redirect to the form',()=>{
+    it('should redirect to the consent page',()=>{
         cy.visit('/landing')
         cy.get('#withoutESRF').click()
-        cy.url().should('contain','/email')
+        cy.url().should('contain','/consent')
     })
 })
 

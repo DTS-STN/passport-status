@@ -1,0 +1,6 @@
+{
+  "header": "Email Consent",
+  "description": "We respect your privacy. On the following page, upon filling out the form, your file number (ESRF) will be sent to the email on file. In order to continue, please indicate below if you consent to us sending you an email",
+  "yesButton": "Yes, I wish to receive an email",
+  "noButton": "No, I do not wish to receive an email"
+}
