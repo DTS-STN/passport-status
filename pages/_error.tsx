@@ -2,7 +2,7 @@ import { NextPage } from 'next'
 import Link from 'next/link'
 
 export interface ErrorProps {
-  statusCode: number
+  statusCode: number | undefined
 }
 
 const Error: NextPage<ErrorProps> = ({ statusCode }) => {

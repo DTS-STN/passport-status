@@ -29,6 +29,10 @@ const Status: FC = () => {
   const { t } = useTranslation('status')
   const [modalOpen, setModalOpen] = useState(false)
 
+  const lsItems = t<string, LinkSummaryItem[]>('common:program-links', {
+    returnObjects: true,
+  })
+
   const formik = useFormik<CheckStatusRequest>({
     initialValues,
     validationSchema: Yup.object({
@@ -44,12 +48,12 @@ const Status: FC = () => {
     validateOnBlur: false,
     validateOnChange: false,
     validateOnMount: false,
-    onReset: (_, formikHelper) => {
-      formikHelper.setStatus(undefined)
+    onReset: (_, { setStatus }) => {
+      setStatus(undefined)
       removeCheckStatusResponse()
     },
-    onSubmit: async (_, formikHelper) => {
-      formikHelper.setStatus('submitted')
+    onSubmit: (_, { setStatus }) => {
+      setStatus('submitted')
     },
   })
 
@@ -125,10 +129,8 @@ const Status: FC = () => {
                 </p>
               </StatusInfo>
               <LinkSummary
-                title={t('other-ways-to-status')}
-                links={t<string, LinkSummaryItem[]>('common:program-links', {
-                  returnObjects: true,
-                })}
+                title={t('common:contact-program')}
+                links={lsItems}
               ></LinkSummary>
             </>
           )
