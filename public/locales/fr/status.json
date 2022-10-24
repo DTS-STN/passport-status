@@ -27,9 +27,9 @@
   "reset": "Redémarrer",
   "header": "Vérification du statut du passeport",
   "status": {
-    "APPROVED": "Approuvée",
-    "IN_EXAMINATION": "En examen",
-    "REJECTED": "Rejetée"
+    "1": "Approuvée",
+    "2": "En examen",
+    "3": "Rejetée"
   },
   "status-is": "Le dernier statut de votre candidature selon nos dossiers est : ",
   "surname": {

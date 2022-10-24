@@ -1,0 +1,446 @@
+{
+  "_embedded": {
+    "GetCertificateApplicationResponse": [
+      {
+        "id": "a41b7157-91fa-3f15-960c-0fc32a5bbc43",
+        "CertificateApplication": {
+          "CertificateApplicationApplicant": {
+            "BirthDate": {
+              "Date": "1991-01-07"
+            },
+            "PersonName": {
+              "PersonGivenName": ["Maxence"],
+              "PersonSurName": "Fourniér"
+            },
+            "PersonContactInformation": {
+              "ContactEmailID": "maxence.fournier@example.com"
+            }
+          },
+          "CertificateApplicationIdentification": [
+            {
+              "IdentificationCategoryText": "Application Register SID",
+              "IdentificationID": "2062a731-c3ca-3d53-8e35-c52c326d264e"
+            },
+            {
+              "IdentificationCategoryText": "File Number",
+              "IdentificationID": "000672BC"
+            }
+          ],
+          "CertificateApplicationStatus": {
+            "StatusCode": "2"
+          }
+        },
+        "createdBy": "Passport Status API",
+        "createdDate": "2022-10-24T10:48:00.596207Z",
+        "lastModifiedBy": "Passport Status API",
+        "lastModifiedDate": "2022-10-24T10:48:00.596207Z",
+        "_links": {
+          "search": {
+            "href": "https://passport-status-api.dev.dev-rhp.dts-stn.com/api/v1/passport-statuses/_search?dateOfBirth=1991-01-07&fileNumber=000672BC&firstName=Maxence&lastName=Fourni%C3%A9r&unique=true"
+          },
+          "self": {
+            "href": "https://passport-status-api.dev.dev-rhp.dts-stn.com/api/v1/passport-statuses/a41b7157-91fa-3f15-960c-0fc32a5bbc43"
+          }
+        }
+      },
+      {
+        "id": "a61aafc8-d694-39da-962c-0042158f6805",
+        "CertificateApplication": {
+          "CertificateApplicationApplicant": {
+            "BirthDate": {
+              "Date": "1997-05-31"
+            },
+            "PersonName": {
+              "PersonGivenName": ["Nicolas"],
+              "PersonSurName": "Rey"
+            },
+            "PersonContactInformation": {
+              "ContactEmailID": "nicolas.rey@example.com"
+            }
+          },
+          "CertificateApplicationIdentification": [
+            {
+              "IdentificationCategoryText": "Application Register SID",
+              "IdentificationID": "69d87aef-cb55-38d9-96a9-690fdb0a2de0"
+            },
+            {
+              "IdentificationCategoryText": "File Number",
+              "IdentificationID": "000D57CE"
+            }
+          ],
+          "CertificateApplicationStatus": {
+            "StatusCode": "1"
+          }
+        },
+        "createdBy": "Passport Status API",
+        "createdDate": "2022-10-24T10:48:00.634528Z",
+        "lastModifiedBy": "Passport Status API",
+        "lastModifiedDate": "2022-10-24T10:48:00.634528Z",
+        "_links": {
+          "search": {
+            "href": "https://passport-status-api.dev.dev-rhp.dts-stn.com/api/v1/passport-statuses/_search?dateOfBirth=1997-05-31&fileNumber=000D57CE&firstName=Nicolas&lastName=Rey&unique=true"
+          },
+          "self": {
+            "href": "https://passport-status-api.dev.dev-rhp.dts-stn.com/api/v1/passport-statuses/a61aafc8-d694-39da-962c-0042158f6805"
+          }
+        }
+      },
+      {
+        "id": "965e55d6-6976-3bb5-ba9b-d6acdeca489b",
+        "CertificateApplication": {
+          "CertificateApplicationApplicant": {
+            "BirthDate": {
+              "Date": "2001-06-29"
+            },
+            "PersonName": {
+              "PersonGivenName": ["Gabriel"],
+              "PersonSurName": "Dubois"
+            },
+            "PersonContactInformation": {
+              "ContactEmailID": "gabriel.dubois@example.com"
+            }
+          },
+          "CertificateApplicationIdentification": [
+            {
+              "IdentificationCategoryText": "Application Register SID",
+              "IdentificationID": "d422a14e-b050-30fe-8937-565f8aab36c2"
+            },
+            {
+              "IdentificationCategoryText": "File Number",
+              "IdentificationID": "00195035"
+            }
+          ],
+          "CertificateApplicationStatus": {
+            "StatusCode": "2"
+          }
+        },
+        "createdBy": "Passport Status API",
+        "createdDate": "2022-10-24T10:48:01.026587Z",
+        "lastModifiedBy": "Passport Status API",
+        "lastModifiedDate": "2022-10-24T10:48:01.026587Z",
+        "_links": {
+          "search": {
+            "href": "https://passport-status-api.dev.dev-rhp.dts-stn.com/api/v1/passport-statuses/_search?dateOfBirth=2001-06-29&fileNumber=00195035&firstName=Gabriel&lastName=Dubois&unique=true"
+          },
+          "self": {
+            "href": "https://passport-status-api.dev.dev-rhp.dts-stn.com/api/v1/passport-statuses/965e55d6-6976-3bb5-ba9b-d6acdeca489b"
+          }
+        }
+      },
+      {
+        "id": "2467a29f-b68a-32a5-bfcb-7e051f223746",
+        "CertificateApplication": {
+          "CertificateApplicationApplicant": {
+            "BirthDate": {
+              "Date": "1994-05-23"
+            },
+            "PersonName": {
+              "PersonGivenName": ["Noa"],
+              "PersonSurName": "Pétit"
+            },
+            "PersonContactInformation": {
+              "ContactEmailID": "noa.petit@example.com"
+            }
+          },
+          "CertificateApplicationIdentification": [
+            {
+              "IdentificationCategoryText": "Application Register SID",
+              "IdentificationID": "7420d0e6-3cf6-375d-be14-d5aa559df775"
+            },
+            {
+              "IdentificationCategoryText": "File Number",
+              "IdentificationID": "001EA743"
+            }
+          ],
+          "CertificateApplicationStatus": {
+            "StatusCode": "2"
+          }
+        },
+        "createdBy": "Passport Status API",
+        "createdDate": "2022-10-24T10:48:00.835690Z",
+        "lastModifiedBy": "Passport Status API",
+        "lastModifiedDate": "2022-10-24T10:48:00.835690Z",
+        "_links": {
+          "search": {
+            "href": "https://passport-status-api.dev.dev-rhp.dts-stn.com/api/v1/passport-statuses/_search?dateOfBirth=1994-05-23&fileNumber=001EA743&firstName=Noa&lastName=P%C3%A9tit&unique=true"
+          },
+          "self": {
+            "href": "https://passport-status-api.dev.dev-rhp.dts-stn.com/api/v1/passport-statuses/2467a29f-b68a-32a5-bfcb-7e051f223746"
+          }
+        }
+      },
+      {
+        "id": "6f240bfa-2ff0-317e-be85-b6fc943643d3",
+        "CertificateApplication": {
+          "CertificateApplicationApplicant": {
+            "BirthDate": {
+              "Date": "1971-01-20"
+            },
+            "PersonName": {
+              "PersonGivenName": ["Romain"],
+              "PersonSurName": "Marchal"
+            },
+            "PersonContactInformation": {
+              "ContactEmailID": "romain.marchal@example.com"
+            }
+          },
+          "CertificateApplicationIdentification": [
+            {
+              "IdentificationCategoryText": "Application Register SID",
+              "IdentificationID": "0bc5070b-81f5-3eb3-acaa-4fe218f67043"
+            },
+            {
+              "IdentificationCategoryText": "File Number",
+              "IdentificationID": "0020ABBA"
+            }
+          ],
+          "CertificateApplicationStatus": {
+            "StatusCode": "2"
+          }
+        },
+        "createdBy": "Passport Status API",
+        "createdDate": "2022-10-24T10:47:59.826807Z",
+        "lastModifiedBy": "Passport Status API",
+        "lastModifiedDate": "2022-10-24T10:47:59.826807Z",
+        "_links": {
+          "search": {
+            "href": "https://passport-status-api.dev.dev-rhp.dts-stn.com/api/v1/passport-statuses/_search?dateOfBirth=1971-01-20&fileNumber=0020ABBA&firstName=Romain&lastName=Marchal&unique=true"
+          },
+          "self": {
+            "href": "https://passport-status-api.dev.dev-rhp.dts-stn.com/api/v1/passport-statuses/6f240bfa-2ff0-317e-be85-b6fc943643d3"
+          }
+        }
+      },
+      {
+        "id": "6b14493c-3a5b-322a-837d-eab71dd193f2",
+        "CertificateApplication": {
+          "CertificateApplicationApplicant": {
+            "BirthDate": {
+              "Date": "1978-12-15"
+            },
+            "PersonName": {
+              "PersonGivenName": ["Mathis"],
+              "PersonSurName": "Marchal"
+            },
+            "PersonContactInformation": {
+              "ContactEmailID": "mathis.marchal@example.com"
+            }
+          },
+          "CertificateApplicationIdentification": [
+            {
+              "IdentificationCategoryText": "Application Register SID",
+              "IdentificationID": "135aa204-075b-38c0-9eff-eb30d36a3fe4"
+            },
+            {
+              "IdentificationCategoryText": "File Number",
+              "IdentificationID": "00222850"
+            }
+          ],
+          "CertificateApplicationStatus": {
+            "StatusCode": "3"
+          }
+        },
+        "createdBy": "Passport Status API",
+        "createdDate": "2022-10-24T10:48:00.657098Z",
+        "lastModifiedBy": "Passport Status API",
+        "lastModifiedDate": "2022-10-24T10:48:00.657098Z",
+        "_links": {
+          "search": {
+            "href": "https://passport-status-api.dev.dev-rhp.dts-stn.com/api/v1/passport-statuses/_search?dateOfBirth=1978-12-15&fileNumber=00222850&firstName=Mathis&lastName=Marchal&unique=true"
+          },
+          "self": {
+            "href": "https://passport-status-api.dev.dev-rhp.dts-stn.com/api/v1/passport-statuses/6b14493c-3a5b-322a-837d-eab71dd193f2"
+          }
+        }
+      },
+      {
+        "id": "b393f472-14f2-3f39-af93-81c5830d384b",
+        "CertificateApplication": {
+          "CertificateApplicationApplicant": {
+            "BirthDate": {
+              "Date": "1997-07-01"
+            },
+            "PersonName": {
+              "PersonGivenName": ["Zoe"],
+              "PersonSurName": "Gautiér"
+            },
+            "PersonContactInformation": {
+              "ContactEmailID": "zoe.gautier@example.com"
+            }
+          },
+          "CertificateApplicationIdentification": [
+            {
+              "IdentificationCategoryText": "Application Register SID",
+              "IdentificationID": "51a3ba6a-7c23-37e7-9416-d5505879c505"
+            },
+            {
+              "IdentificationCategoryText": "File Number",
+              "IdentificationID": "002B7518"
+            }
+          ],
+          "CertificateApplicationStatus": {
+            "StatusCode": "2"
+          }
+        },
+        "createdBy": "Passport Status API",
+        "createdDate": "2022-10-24T10:48:00.574878Z",
+        "lastModifiedBy": "Passport Status API",
+        "lastModifiedDate": "2022-10-24T10:48:00.574878Z",
+        "_links": {
+          "search": {
+            "href": "https://passport-status-api.dev.dev-rhp.dts-stn.com/api/v1/passport-statuses/_search?dateOfBirth=1997-07-01&fileNumber=002B7518&firstName=Zoe&lastName=Gauti%C3%A9r&unique=true"
+          },
+          "self": {
+            "href": "https://passport-status-api.dev.dev-rhp.dts-stn.com/api/v1/passport-statuses/b393f472-14f2-3f39-af93-81c5830d384b"
+          }
+        }
+      },
+      {
+        "id": "b45bba28-9547-3aa9-85af-e45c7a923e0a",
+        "CertificateApplication": {
+          "CertificateApplicationApplicant": {
+            "BirthDate": {
+              "Date": "1972-07-29"
+            },
+            "PersonName": {
+              "PersonGivenName": ["Yanis"],
+              "PersonSurName": "Piérre"
+            },
+            "PersonContactInformation": {
+              "ContactEmailID": "yanis.pierre@example.com"
+            }
+          },
+          "CertificateApplicationIdentification": [
+            {
+              "IdentificationCategoryText": "Application Register SID",
+              "IdentificationID": "c1596601-1493-37dd-8584-d7e6e02f4bce"
+            },
+            {
+              "IdentificationCategoryText": "File Number",
+              "IdentificationID": "002D85ED"
+            }
+          ],
+          "CertificateApplicationStatus": {
+            "StatusCode": "1"
+          }
+        },
+        "createdBy": "Passport Status API",
+        "createdDate": "2022-10-24T10:48:00.007857Z",
+        "lastModifiedBy": "Passport Status API",
+        "lastModifiedDate": "2022-10-24T10:48:00.007857Z",
+        "_links": {
+          "search": {
+            "href": "https://passport-status-api.dev.dev-rhp.dts-stn.com/api/v1/passport-statuses/_search?dateOfBirth=1972-07-29&fileNumber=002D85ED&firstName=Yanis&lastName=Pi%C3%A9rre&unique=true"
+          },
+          "self": {
+            "href": "https://passport-status-api.dev.dev-rhp.dts-stn.com/api/v1/passport-statuses/b45bba28-9547-3aa9-85af-e45c7a923e0a"
+          }
+        }
+      },
+      {
+        "id": "17abdb4d-1421-3266-81f5-0f670ed78ff0",
+        "CertificateApplication": {
+          "CertificateApplicationApplicant": {
+            "BirthDate": {
+              "Date": "2004-10-20"
+            },
+            "PersonName": {
+              "PersonGivenName": ["Noah"],
+              "PersonSurName": "Bénoit"
+            },
+            "PersonContactInformation": {
+              "ContactEmailID": "noah.benoit@example.com"
+            }
+          },
+          "CertificateApplicationIdentification": [
+            {
+              "IdentificationCategoryText": "Application Register SID",
+              "IdentificationID": "addebfb4-a961-3a9e-8bb6-0d275b7396c9"
+            },
+            {
+              "IdentificationCategoryText": "File Number",
+              "IdentificationID": "0037B283"
+            }
+          ],
+          "CertificateApplicationStatus": {
+            "StatusCode": "1"
+          }
+        },
+        "createdBy": "Passport Status API",
+        "createdDate": "2022-10-24T10:48:01.021528Z",
+        "lastModifiedBy": "Passport Status API",
+        "lastModifiedDate": "2022-10-24T10:48:01.021528Z",
+        "_links": {
+          "search": {
+            "href": "https://passport-status-api.dev.dev-rhp.dts-stn.com/api/v1/passport-statuses/_search?dateOfBirth=2004-10-20&fileNumber=0037B283&firstName=Noah&lastName=B%C3%A9noit&unique=true"
+          },
+          "self": {
+            "href": "https://passport-status-api.dev.dev-rhp.dts-stn.com/api/v1/passport-statuses/17abdb4d-1421-3266-81f5-0f670ed78ff0"
+          }
+        }
+      },
+      {
+        "id": "70c7a2c1-8127-3eaa-b300-ec6f3215b492",
+        "CertificateApplication": {
+          "CertificateApplicationApplicant": {
+            "BirthDate": {
+              "Date": "1970-08-31"
+            },
+            "PersonName": {
+              "PersonGivenName": ["Antoine"],
+              "PersonSurName": "Rodriguéz"
+            },
+            "PersonContactInformation": {
+              "ContactEmailID": "antoine.rodriguez@example.com"
+            }
+          },
+          "CertificateApplicationIdentification": [
+            {
+              "IdentificationCategoryText": "Application Register SID",
+              "IdentificationID": "6ee124f2-2022-3df6-82df-a7b0a8c70cac"
+            },
+            {
+              "IdentificationCategoryText": "File Number",
+              "IdentificationID": "0040FF5D"
+            }
+          ],
+          "CertificateApplicationStatus": {
+            "StatusCode": "3"
+          }
+        },
+        "createdBy": "Passport Status API",
+        "createdDate": "2022-10-24T10:48:00.535452Z",
+        "lastModifiedBy": "Passport Status API",
+        "lastModifiedDate": "2022-10-24T10:48:00.535452Z",
+        "_links": {
+          "search": {
+            "href": "https://passport-status-api.dev.dev-rhp.dts-stn.com/api/v1/passport-statuses/_search?dateOfBirth=1970-08-31&fileNumber=0040FF5D&firstName=Antoine&lastName=Rodrigu%C3%A9z&unique=true"
+          },
+          "self": {
+            "href": "https://passport-status-api.dev.dev-rhp.dts-stn.com/api/v1/passport-statuses/70c7a2c1-8127-3eaa-b300-ec6f3215b492"
+          }
+        }
+      }
+    ]
+  },
+  "_links": {
+    "first": {
+      "href": "https://passport-status-api.dev.dev-rhp.dts-stn.com/api/v1/passport-statuses?page=1&size=10&sort=fileNumber,asc"
+    },
+    "self": {
+      "href": "https://passport-status-api.dev.dev-rhp.dts-stn.com/api/v1/passport-statuses?page=1&size=10&sort=fileNumber,asc"
+    },
+    "next": {
+      "href": "https://passport-status-api.dev.dev-rhp.dts-stn.com/api/v1/passport-statuses?page=2&size=10&sort=fileNumber,asc"
+    },
+    "last": {
+      "href": "https://passport-status-api.dev.dev-rhp.dts-stn.com/api/v1/passport-statuses?page=1001&size=10&sort=fileNumber,asc"
+    }
+  },
+  "page": {
+    "size": 10,
+    "totalElements": 10008,
+    "totalPages": 1001,
+    "number": 1
+  }
+}
