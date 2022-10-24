@@ -1,11 +1,11 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 import { ApiError } from 'next/dist/server/api-utils'
 import logger from '../../lib/logger'
-import passportStatusesMock from '../../__mocks__/passportStatusesMock'
+import passportStatusesMock from '../../__mocks__/passportStatusesMock.json'
 import {
   PassportStatusesSearchResult,
   CheckStatusReponse,
-  MapToCheckStatusReponse,
+  mapToCheckStatusReponse,
   CheckStatusRequest,
 } from '../../lib/StatusTypes'
 
@@ -19,23 +19,38 @@ export const fetchPassportStatusMOCK = async (
   checkStatusRequest: CheckStatusRequest
 ): Promise<CheckStatusReponse> => {
   const { birthDate, esrf, givenName, surname } = checkStatusRequest
-  const { passportStatuses } = passportStatusesMock._embedded
+  const { GetCertificateApplicationResponse } = passportStatusesMock._embedded
 
-  const passportStatus = passportStatuses.find(
-    (passportStatus) =>
-      esrf?.localeCompare(passportStatus.fileNumber, 'en', {
-        sensitivity: 'base',
-      }) === 0 &&
-      givenName?.localeCompare(passportStatus.firstName, 'en', {
-        sensitivity: 'base',
-      }) === 0 &&
-      surname?.localeCompare(passportStatus.lastName, 'en', {
-        sensitivity: 'base',
-      }) === 0 &&
-      birthDate === passportStatus.dateOfBirth
+  /**
+   * Compare to strings with case insensitive and accent insensitive
+   */
+  const compareCIAndAI = (value1: string, value2: string): boolean =>
+    value1.localeCompare(value2, 'en', { sensitivity: 'base' }) === 0
+
+  const applicationResponse = GetCertificateApplicationResponse.find(
+    ({ CertificateApplication }) =>
+      compareCIAndAI(
+        esrf,
+        CertificateApplication.CertificateApplicationIdentification.find(
+          ({ IdentificationCategoryText }) =>
+            IdentificationCategoryText === 'File Number'
+        )?.IdentificationID ?? ''
+      ) &&
+      compareCIAndAI(
+        givenName,
+        CertificateApplication.CertificateApplicationApplicant.PersonName
+          .PersonGivenName[0]
+      ) &&
+      compareCIAndAI(
+        surname,
+        CertificateApplication.CertificateApplicationApplicant.PersonName
+          .PersonSurName
+      ) &&
+      birthDate ===
+        CertificateApplication.CertificateApplicationApplicant.BirthDate.Date
   )
 
-  if (passportStatus) return passportStatus
+  if (applicationResponse) return mapToCheckStatusReponse(applicationResponse)
   throw new ApiError(404, 'Passport Status Not Found')
 }
 
@@ -64,9 +79,13 @@ export const fetchPassportStatusAPI = async (
   if (response.ok) {
     const passportStatusesResponse =
       (await response.json()) as PassportStatusesSearchResult
-    const { passportStatuses } = passportStatusesResponse._embedded
-    if (passportStatuses.length > 0)
-      return MapToCheckStatusReponse(passportStatuses[0])
+    const { GetCertificateApplicationResponse } =
+      passportStatusesResponse._embedded
+
+    if (GetCertificateApplicationResponse.length > 0) {
+      return mapToCheckStatusReponse(GetCertificateApplicationResponse[0])
+    }
+
     throw new ApiError(404, 'Passport Status Not Found')
   }
 
@@ -112,6 +131,6 @@ export default async function handler(
       return
     }
 
-    throw error
+    res.status(500).send('Something went wrong.')
   }
 }

@@ -27,9 +27,9 @@
   "reset": "Restart",
   "header": "Passport Status Check",
   "status": {
-    "APPROVED": "Approved",
-    "IN_EXAMINATION": "In examination",
-    "REJECTED": "Rejected"
+    "1": "Approved",
+    "2": "In examination",
+    "3": "Rejected"
   },
   "status-is": "The latest status of your application according to our records is: ",
   "surname": {
