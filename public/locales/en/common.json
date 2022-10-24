@@ -64,5 +64,11 @@
       "href": "https://eservices.canada.ca/en/reservation/",
       "external": true
     }
-  ]
+  ],
+  "cancel-modal": {
+    "cancel-button": "Cancel",
+    "yes-button": "Yes",
+    "no-button": "No",
+    "description": "Are you sure you want to go back?"
+  }
 }

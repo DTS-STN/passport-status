@@ -24,8 +24,8 @@ const LinkSummary: FC<LinkSummaryProps> = ({ title, links }) => {
           >
             <Link href={href} passHref>
               <a
-                target={external ? '_blank' : ''}
-                rel={external ? 'noopener noreferrer' : ''}
+                target={external ? '_blank' : undefined}
+                rel={external ? 'noopener noreferrer' : undefined}
               >
                 {text}
               </a>

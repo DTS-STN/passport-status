@@ -1,17 +1,19 @@
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import { GetStaticProps } from 'next'
+import Router from 'next/router'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Layout from '../components/Layout'
 import { EmailEsrfRequestBody } from './api/email-esrf'
-import { useMemo } from 'react'
+import { useMemo, useState } from 'react'
 import ErrorSummary, {
   ErrorSummaryItem,
   GetErrorSummary,
 } from '../components/ErrorSummary'
 import InputField from '../components/InputField'
 import ActionButton from '../components/ActionButton'
+import Modal from '../components/Modal'
 import LinkSummary, { LinkSummaryItem } from '../components/LinkSummary'
 import useEmailEsrf from '../lib/useEmailEsrf'
 
@@ -24,6 +26,7 @@ const initialValues: EmailEsrfRequestBody = {
 
 export default function Email() {
   const { t } = useTranslation('email')
+  const [modalOpen, setModalOpen] = useState(false)
 
   const {
     isLoading: isEmailEsrfLoading,
@@ -130,12 +133,38 @@ export default function Email() {
             textRequired={t('common:required')}
             required
           />
-          <ActionButton
-            disabled={isEmailEsrfLoading}
-            type="submit"
-            text={t('email-esrf')}
-            style="primary"
-          />
+          <div className="flex flex-wrap">
+            <div className="py-1 pr-2">
+              <ActionButton
+                disabled={isEmailEsrfLoading}
+                type="submit"
+                text={t('email-esrf')}
+                style="primary"
+              />
+            </div>
+            <div className="py-1">
+              <Modal
+                buttonText={t('common:cancel-modal.cancel-button')}
+                description={t('common:cancel-modal.description')}
+                isOpen={modalOpen}
+                onClick={() => setModalOpen(!modalOpen)}
+                buttons={[
+                  {
+                    text: t('common:cancel-modal.yes-button'),
+                    onClick: () => Router.push('/landing'),
+                    style: 'primary',
+                    type: 'button',
+                  },
+                  {
+                    text: t('common:cancel-modal.no-button'),
+                    onClick: () => setModalOpen(!modalOpen),
+                    style: 'default',
+                    type: 'button',
+                  },
+                ]}
+              />
+            </div>
+          </div>
         </form>
       )}
     </Layout>

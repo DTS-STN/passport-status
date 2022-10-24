@@ -39,12 +39,6 @@
     "label": "Surname"
   },
   "unable-to-find-status": "We are unable to determine the status of your application at this time using this service.",
-  "cancel-modal": {
-    "cancel-button": "Cancel",
-    "yes-button": "Yes",
-    "no-button": "No",
-    "description": "Are you sure you want to go back?"
-  },
   "other-ways-to-status": "Contact us",
   "no-match-title": "Other ways to get your status:"
 }

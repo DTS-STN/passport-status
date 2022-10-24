@@ -1,6 +1,6 @@
 {
   "header": "Vérification du statut du passeport",
   "description": "Afin de mieux vous servir, veuillez sélectionner l'option ci-dessous qui vous convient le mieux.",
-  "withESRF": "J'ai mon numéro de dossier (ESRF)",
-  "withoutESRF": "Je n'ai pas mon numéro de dossier (ESRF)"
+  "with-esrf": "J'ai mon numéro de dossier (ESRF)",
+  "without-esrf": "Je n'ai pas mon numéro de dossier (ESRF)"
 }

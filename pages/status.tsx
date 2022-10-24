@@ -226,19 +226,19 @@ const Status: FC = () => {
               </div>
               <div className="py-1">
                 <Modal
-                  buttonText={t('cancel-modal.cancel-button')}
-                  description={t('cancel-modal.description')}
+                  buttonText={t('common:cancel-modal.cancel-button')}
+                  description={t('common:cancel-modal.description')}
                   isOpen={modalOpen}
                   onClick={() => setModalOpen(!modalOpen)}
                   buttons={[
                     {
-                      text: t('cancel-modal.yes-button'),
+                      text: t('common:cancel-modal.yes-button'),
                       onClick: () => Router.push('/landing'),
                       style: 'primary',
                       type: 'button',
                     },
                     {
-                      text: t('cancel-modal.no-button'),
+                      text: t('common:cancel-modal.no-button'),
                       onClick: () => setModalOpen(!modalOpen),
                       style: 'default',
                       type: 'button',
