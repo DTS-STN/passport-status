@@ -17,11 +17,11 @@ const Landing: FC = () => {
       <h1 className="mb-4">{t('header')}</h1>
       <h2 className="my-14">{t('description')}</h2>
       <div className="flex justify-center flex-wrap text-xl gap-4">
-        <div id="withoutESRF">
-          <LinkButton href="/consent" text={t('withoutESRF')}></LinkButton>
+        <div id="without-esrf">
+          <LinkButton href="/consent" text={t('without-esrf')}></LinkButton>
         </div>
-        <div id="withESRF">
-          <LinkButton href="/status" text={t('withESRF')}></LinkButton>
+        <div id="with-esrf">
+          <LinkButton href="/status" text={t('with-esrf')}></LinkButton>
         </div>
       </div>
     </Layout>

@@ -9,11 +9,11 @@ describe('consent page loads', () => {
     })
 
     it('should display the button for agreeing to give consent',()=>{
-        cy.get(`#yesButton`).should('be.visible')
+        cy.get(`#yes-button`).should('be.visible')
     })
 
     it('should display the button for not giving consent',()=>{
-        cy.get(`#noButton`).should('be.visible')
+        cy.get(`#no-button`).should('be.visible')
     })
   
     it('App has no detectable a11y violations on load', () => {
@@ -24,7 +24,7 @@ describe('consent page loads', () => {
 describe('user gives consent',()=>{
     it('should redirect to the email page',()=>{
         cy.visit('/consent')
-        cy.get('#yesButton').click()
+        cy.get('#yes-button').click()
         cy.url().should('contain','/email')
     })
 })
@@ -32,7 +32,7 @@ describe('user gives consent',()=>{
 describe('user does not give consent',()=>{
   it('should redirect to the contact page',()=>{
       cy.visit('/consent')
-      cy.get('#noButton').click()
+      cy.get('#no-button').click()
       cy.url().should('contain','/contact')
   })
 })

@@ -1,6 +1,6 @@
 import { FC, useState } from 'react'
 import { GetStaticProps } from 'next'
-import Router from 'next/router'
+import router from 'next/router'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Layout from '../components/Layout'
@@ -19,7 +19,7 @@ const Contact: FC = () => {
     >
       <h1 className="mb-4">{t('header')}</h1>
       <h2 className="my-14">{t('description')}</h2>
-      <div id="contactLinks" className="text-2xl">
+      <div id="contact-links" className="text-2xl">
         <LinkSummary
           links={t<string, LinkSummaryItem[]>('common:program-links', {
             returnObjects: true,
@@ -28,22 +28,19 @@ const Contact: FC = () => {
       </div>
       <div className="py-2">
         <Modal
-          buttonText={t('backToHome')}
+          buttonText={t('back-to-home')}
           description={t('common:cancel-modal.description')}
           isOpen={modalOpen}
           onClick={() => setModalOpen(!modalOpen)}
           buttons={[
             {
               text: t('common:cancel-modal.yes-button'),
-              onClick: () => Router.push('/landing'),
+              onClick: () => router.push('/landing'),
               style: 'primary',
-              type: 'button',
             },
             {
               text: t('common:cancel-modal.no-button'),
               onClick: () => setModalOpen(!modalOpen),
-              style: 'default',
-              type: 'button',
             },
           ]}
         />

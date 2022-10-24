@@ -9,11 +9,11 @@ describe('landing page loads', () => {
     })
 
     it('should display the button for no ESRF',()=>{
-        cy.get(`#withoutESRF`).should('be.visible')
+        cy.get(`#without-esrf`).should('be.visible')
     })
 
     it('should display the button for has ESRF',()=>{
-        cy.get(`#withESRF`).should('be.visible')
+        cy.get(`#with-esrf`).should('be.visible')
     })
   
     it('App has no detectable a11y violations on load', () => {
@@ -24,7 +24,7 @@ describe('landing page loads', () => {
 describe('user has ESRF number',()=>{
     it('should redirect to the consent page',()=>{
         cy.visit('/landing')
-        cy.get('#withoutESRF').click()
+        cy.get('#without-esrf').click()
         cy.url().should('contain','/consent')
     })
 })
@@ -32,7 +32,7 @@ describe('user has ESRF number',()=>{
 describe('user does not have ESRF number',()=>{
   it('should redirect to the form',()=>{
       cy.visit('/landing')
-      cy.get('#withESRF').click()
+      cy.get('#with-esrf').click()
       cy.url().should('contain','/status')
   })
 })

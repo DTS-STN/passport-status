@@ -23,7 +23,7 @@ describe('contact page loads', () => {
     })
 
     it('has a list containing anchor tags',()=>{
-        cy.get(`#contactLinks > section > ul li:first > a`)
+        cy.get(`#contact-links > section > ul li:first > a`)
     })
   
     it('App has no detectable a11y violations on load', () => {

@@ -17,11 +17,11 @@ const Consent: FC = () => {
       <h1 className="mb-4">{t('header')}</h1>
       <h2 className="my-14">{t('description')}</h2>
       <div className="flex justify-center flex-wrap text-xl gap-4">
-        <div id="yesButton">
-          <LinkButton text={t('yesButton')} href="/email" />
+        <div id="yes-button">
+          <LinkButton text={t('yes-button')} href="/email" />
         </div>
-        <div id="noButton">
-          <LinkButton text={t('noButton')} href="/contact" />
+        <div id="no-button">
+          <LinkButton text={t('no-button')} href="/contact" />
         </div>
       </div>
     </Layout>
