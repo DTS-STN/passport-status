@@ -114,10 +114,10 @@ describe('Date of Birth field validation', ()=>{
 describe('responses', ()=>{
   it('loads result', ()=>{
     cy.visit('/status')
-    cy.get('#esrf').type('35934S87')
-    cy.get('#givenName').type('Clara')
-    cy.get('#surname').type('Renard')
-    cy.get('#birthDate').type('1982-12-08')
+    cy.get('#esrf').type('002D85ED')
+    cy.get('#givenName').type('Yanis')
+    cy.get('#surname').type('Piérre')
+    cy.get('#birthDate').type('1972-07-29')
     cy.get('#button-get-status > button').click()
     cy.get('#response-status').should('exist')
   })

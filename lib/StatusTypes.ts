@@ -11,12 +11,21 @@ export interface CheckStatusReponse {
 
 export interface PassportStatusesSearchResult {
   _embedded: {
-    passportStatuses: PassportStatusResult[]
+    GetCertificateApplicationResponse: PassportStatusesGetCertificateApplicationResponse[]
   }
 }
 
-export interface PassportStatusResult {
-  status: string
+export interface PassportStatusesGetCertificateApplicationResponse {
+  id: string
+  CertificateApplication: PassportStatusesCertificateApplication
+}
+
+export interface PassportStatusesCertificateApplication {
+  CertificateApplicationStatus: PassportStatusesCertificateApplicationStatus
+}
+
+export interface PassportStatusesCertificateApplicationStatus {
+  StatusCode: string
 }
 
 /**
@@ -25,10 +34,10 @@ export interface PassportStatusResult {
  * @param param0 Passport status object returned by the API
  * @returns Frontend check status object
  */
-export function MapToCheckStatusReponse({
-  status,
-}: PassportStatusResult): CheckStatusReponse {
-  return {
-    status,
-  }
-}
+export const mapToCheckStatusReponse = (
+  getCertificateApplicationResponse: PassportStatusesGetCertificateApplicationResponse
+): CheckStatusReponse => ({
+  status:
+    getCertificateApplicationResponse.CertificateApplication
+      .CertificateApplicationStatus.StatusCode,
+})
