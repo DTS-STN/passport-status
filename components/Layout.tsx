@@ -1,3 +1,4 @@
+import { FC } from 'react'
 import Header from './Header'
 import Footer from './Footer'
 import MetaData from './MetaData'
@@ -9,12 +10,7 @@ export interface LayoutProps {
   footer: any
 }
 
-export default function Layout({
-  children,
-  meta,
-  header,
-  footer,
-}: LayoutProps) {
+const Layout: FC<LayoutProps> = ({ children, meta, header, footer }) => {
   return (
     <div className="flex flex-col min-h-screen">
       <MetaData
@@ -60,3 +56,5 @@ export default function Layout({
     </div>
   )
 }
+
+export default Layout

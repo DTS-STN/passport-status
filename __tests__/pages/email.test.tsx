@@ -2,25 +2,37 @@ import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import { axe, toHaveNoViolations } from 'jest-axe'
 import Email from '../../pages/email'
-import { GetErrorSummary } from '../../components/ErrorSummary'
-import { useMutation } from '@tanstack/react-query'
 
 expect.extend(toHaveNoViolations)
 
-jest.mock('../../components/Layout', () => 'Layout')
+jest.mock('../../components/Layout')
 jest.mock('../../components/ErrorSummary')
 jest.mock('../../components/InputField')
 jest.mock('../../components/ActionButton')
-jest.mock('@tanstack/react-query')
+
+jest.mock('next-i18next', () => ({
+  // this mock makes sure any components using the translate hook can use it without a warning being shown
+  useTranslation: () => ({
+    t: (str: string) => str,
+  }),
+}))
+
+jest.mock('../../lib/useEmailEsrf', () => {
+  return jest.fn(() => ({
+    isLoading: false,
+    isSuccess: false,
+    error: undefined,
+    mutate: jest.fn(),
+  }))
+})
+
+jest.mock('../../components/ErrorSummary', () => {
+  return {
+    GetErrorSummary: () => [],
+  }
+})
 
 describe('Check status page', () => {
-  beforeEach(() => {
-    useMutation.mockImplementation(() => {
-      return { isError: false }
-    })
-    GetErrorSummary.mockImplementation(() => [])
-  })
-
   it('should render the page', () => {
     render(<Email />)
     const heading = screen.getByRole('heading', { level: 1 })
