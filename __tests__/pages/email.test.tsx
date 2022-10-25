@@ -6,16 +6,8 @@ import Email from '../../pages/email'
 expect.extend(toHaveNoViolations)
 
 jest.mock('../../components/Layout')
-jest.mock('../../components/ErrorSummary')
 jest.mock('../../components/InputField')
 jest.mock('../../components/ActionButton')
-
-jest.mock('next-i18next', () => ({
-  // this mock makes sure any components using the translate hook can use it without a warning being shown
-  useTranslation: () => ({
-    t: (str: string) => str,
-  }),
-}))
 
 jest.mock('../../lib/useEmailEsrf', () => {
   return jest.fn(() => ({
@@ -26,11 +18,10 @@ jest.mock('../../lib/useEmailEsrf', () => {
   }))
 })
 
-jest.mock('../../components/ErrorSummary', () => {
-  return {
-    GetErrorSummary: () => [],
-  }
-})
+jest.mock('../../components/ErrorSummary', () => ({
+  GetErrorSummary: () => [],
+  default: jest.fn(),
+}))
 
 describe('Check status page', () => {
   it('should render the page', () => {

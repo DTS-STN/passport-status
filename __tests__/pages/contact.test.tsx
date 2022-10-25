@@ -11,13 +11,6 @@ expect.extend(toHaveNoViolations)
 jest.mock('../../components/Layout')
 jest.mock('../../components/LinkSummary')
 
-jest.mock('next-i18next', () => ({
-  // this mock makes sure any components using the translate hook can use it without a warning being shown
-  useTranslation: () => ({
-    t: (str: string) => str,
-  }),
-}))
-
 describe('Contact page', () => {
   it('should render the page', () => {
     render(<Contact />)
