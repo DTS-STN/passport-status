@@ -3,23 +3,23 @@
  */
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
-import Contact from '../../pages/contact'
+import Landing from '../../pages/landing'
 import { axe, toHaveNoViolations } from 'jest-axe'
 
 expect.extend(toHaveNoViolations)
 
-jest.mock('../../components/Layout', () => 'Layout')
-jest.mock('../../components/LinkSummary')
+jest.mock('../../components/Layout')
+jest.mock('../../components/LinkButton')
 
-describe('Contact page', () => {
+describe('landing page', () => {
   it('should render the page', () => {
-    render(<Contact />)
+    render(<Landing />)
     const heading = screen.getByRole('heading', { level: 1 })
     expect(heading).toBeInTheDocument()
   })
 
   it('should be accessable', async () => {
-    const { container } = render(<Contact />)
+    const { container } = render(<Landing />)
     const results = await axe(container)
     expect(results).toHaveNoViolations()
   })

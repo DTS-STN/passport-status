@@ -1,31 +1,37 @@
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import { axe, toHaveNoViolations } from 'jest-axe'
-import Status from '../../pages/status'
-import { useCheckStatus } from '../../lib/CheckStatusHook'
+import Email from '../../pages/email'
 
 expect.extend(toHaveNoViolations)
 
-jest.mock('../../components/Layout', () => 'Layout')
-jest.mock('../../components/StatusInfo')
-jest.mock('../../components/ErrorSummary')
+jest.mock('../../components/Layout')
 jest.mock('../../components/InputField')
 jest.mock('../../components/ActionButton')
-jest.mock('../../lib/CheckStatusHook')
+
+jest.mock('../../lib/useEmailEsrf', () => {
+  return jest.fn(() => ({
+    isLoading: false,
+    isSuccess: false,
+    error: undefined,
+    mutate: jest.fn(),
+  }))
+})
+
+jest.mock('../../components/ErrorSummary', () => ({
+  GetErrorSummary: () => [],
+  default: jest.fn(),
+}))
 
 describe('Check status page', () => {
-  beforeEach(() => {
-    useCheckStatus.mockImplementation(() => ({}))
-  })
-
   it('should render the page', () => {
-    render(<Status />)
+    render(<Email />)
     const heading = screen.getByRole('heading', { level: 1 })
     expect(heading).toBeInTheDocument()
   })
 
   it('should be accessable', async () => {
-    const { container } = render(<Status />)
+    const { container } = render(<Email />)
     const results = await axe(container)
     expect(results).toHaveNoViolations()
   })
