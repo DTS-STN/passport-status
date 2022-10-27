@@ -20,7 +20,7 @@ const Privacy: FC = () => {
       <h1 className="mb-4">{t('header')}</h1>
       <div className="ml-auto mr-auto p-3">
         {!agree && (
-          <span id="terms">
+          <div id="terms">
             <h2 className="my-14">{t('terms-text')}</h2>
             <div
               id="termsBtnGrp"
@@ -37,11 +37,11 @@ const Privacy: FC = () => {
                 onClick={() => Router.push('/contact')}
               />
             </div>
-          </span>
+          </div>
         )}
 
         {agree && (
-          <span id="privacy">
+          <div id="privacy">
             <h2 className="my-14">{t('privacy-text')}</h2>
             <div
               id="privacyBtnGrp"
@@ -58,7 +58,7 @@ const Privacy: FC = () => {
                 style="primary"
               />
             </div>
-          </span>
+          </div>
         )}
       </div>
     </Layout>
