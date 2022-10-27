@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1666892695812" clover="3.2.0">
-  <project timestamp="1666892695812" name="All files">
+<coverage generated="1666892930498" clover="3.2.0">
+  <project timestamp="1666892930498" name="All files">
     <metrics statements="224" coveredstatements="124" conditionals="158" coveredconditionals="60" methods="80" coveredmethods="37" elements="462" coveredelements="221" complexity="0" loc="224" ncloc="224" packages="4" files="31" classes="31"/>
     <package name="components">
       <metrics statements="48" coveredstatements="43" conditionals="34" coveredconditionals="24" methods="22" coveredmethods="17"/>
@@ -20,7 +20,7 @@
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="14" count="3" type="stmt"/>
         <line num="15" count="4" type="stmt"/>
-        <line num="23" count="3" type="stmt"/>
+        <line num="25" count="3" type="stmt"/>
       </file>
       <file name="ErrorSummary.tsx" path="/home/runner/work/passport-status/passport-status/components/ErrorSummary.tsx">
         <metrics statements="9" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="2"/>
