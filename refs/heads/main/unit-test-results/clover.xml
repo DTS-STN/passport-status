@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1666710180696" clover="3.2.0">
-  <project timestamp="1666710180696" name="All files">
-    <metrics statements="214" coveredstatements="124" conditionals="152" coveredconditionals="60" methods="75" coveredmethods="37" elements="441" coveredelements="221" complexity="0" loc="214" ncloc="214" packages="4" files="30" classes="30"/>
+<coverage generated="1666873915616" clover="3.2.0">
+  <project timestamp="1666873915616" name="All files">
+    <metrics statements="216" coveredstatements="124" conditionals="152" coveredconditionals="60" methods="75" coveredmethods="37" elements="443" coveredelements="221" complexity="0" loc="216" ncloc="216" packages="4" files="30" classes="30"/>
     <package name="components">
       <metrics statements="48" coveredstatements="43" conditionals="34" coveredconditionals="24" methods="22" coveredmethods="17"/>
       <file name="ActionButton.tsx" path="/home/runner/work/passport-status/passport-status/components/ActionButton.tsx">
@@ -250,7 +250,7 @@
       </file>
     </package>
     <package name="pages.api">
-      <metrics statements="60" coveredstatements="23" conditionals="44" coveredconditionals="15" methods="9" coveredmethods="5"/>
+      <metrics statements="62" coveredstatements="23" conditionals="44" coveredconditionals="15" methods="9" coveredmethods="5"/>
       <file name="check-status.ts" path="/home/runner/work/passport-status/passport-status/pages/api/check-status.ts">
         <metrics statements="39" coveredstatements="23" conditionals="34" coveredconditionals="15" methods="6" coveredmethods="5"/>
         <line num="18" count="1" type="stmt"/>
@@ -293,8 +293,8 @@
         <line num="131" count="1" type="stmt"/>
         <line num="134" count="0" type="stmt"/>
       </file>
-      <file name="email-esrf.tsx" path="/home/runner/work/passport-status/passport-status/pages/api/email-esrf.tsx">
-        <metrics statements="21" coveredstatements="0" conditionals="10" coveredconditionals="0" methods="3" coveredmethods="0"/>
+      <file name="email-esrf.ts" path="/home/runner/work/passport-status/passport-status/pages/api/email-esrf.ts">
+        <metrics statements="23" coveredstatements="0" conditionals="10" coveredconditionals="0" methods="3" coveredmethods="0"/>
         <line num="16" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="17" count="0" type="stmt"/>
         <line num="18" count="0" type="stmt"/>
@@ -302,20 +302,22 @@
         <line num="22" count="0" type="stmt"/>
         <line num="23" count="0" type="stmt"/>
         <line num="26" count="0" type="stmt"/>
-        <line num="27" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="31" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="32" count="0" type="stmt"/>
-        <line num="35" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="29" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="33" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="34" count="0" type="stmt"/>
         <line num="37" count="0" type="stmt"/>
-        <line num="39" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="40" count="0" type="stmt"/>
-        <line num="41" count="0" type="stmt"/>
+        <line num="39" count="0" type="stmt"/>
+        <line num="41" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="42" count="0" type="stmt"/>
-        <line num="45" count="0" type="stmt"/>
-        <line num="49" count="0" type="stmt"/>
-        <line num="50" count="0" type="stmt"/>
-        <line num="62" count="0" type="stmt"/>
-        <line num="65" count="0" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="47" count="0" type="stmt"/>
+        <line num="51" count="0" type="stmt"/>
+        <line num="52" count="0" type="stmt"/>
+        <line num="67" count="0" type="stmt"/>
+        <line num="79" count="0" type="stmt"/>
+        <line num="82" count="0" type="stmt"/>
       </file>
     </package>
   </project>
