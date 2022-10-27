@@ -19,7 +19,7 @@ import StatusInfo from '../components/StatusInfo'
 import Modal from '../components/Modal'
 
 const initialValues: CheckStatusRequest = {
-  birthDate: '',
+  dateOfBirth: '',
   esrf: '',
   givenName: '',
   surname: '',
@@ -36,14 +36,14 @@ const Status: FC = () => {
   const formik = useFormik<CheckStatusRequest>({
     initialValues,
     validationSchema: Yup.object({
+      dateOfBirth: Yup.date()
+        .required('date-of-birth.error.required')
+        .max(new Date(), 'date-of-birth.error.current'),
       esrf: Yup.string()
         .required('esrf.error.required')
         .length(8, 'esrf.error.length'),
       givenName: Yup.string().required('given-name.error.required'),
       surname: Yup.string().required('surname.error.required'),
-      birthDate: Yup.date()
-        .required('birth-date.error.required')
-        .max(new Date(), 'birth-date.error.current'),
     }),
     validateOnBlur: false,
     validateOnChange: false,
@@ -79,14 +79,6 @@ const Status: FC = () => {
         )
       )
   }, [formik, t])
-
-  // const handleReset: MouseEventHandler<HTMLButtonElement> = useCallback(
-  //   (e) => {
-  //     e.preventDefault()
-  //     formik.resetForm()
-  //   },
-  //   [formik]
-  // )
 
   const handleGoBack: MouseEventHandler<HTMLButtonElement> = useCallback(
     (e) => {
@@ -203,14 +195,14 @@ const Status: FC = () => {
               required
             />
             <InputField
-              id="birthDate"
-              name="birthDate"
+              id="dateOfBirth"
+              name="dateOfBirth"
               type="date"
-              label={t('birth-date.label')}
+              label={t('date-of-birth.label')}
               onChange={formik.handleChange}
-              value={formik.values.birthDate}
+              value={formik.values.dateOfBirth}
               errorMessage={
-                formik.errors.birthDate && t(formik.errors.birthDate)
+                formik.errors.dateOfBirth && t(formik.errors.dateOfBirth)
               }
               textRequired={t('common:required')}
               required

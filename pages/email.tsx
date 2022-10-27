@@ -20,8 +20,8 @@ import useEmailEsrf from '../lib/useEmailEsrf'
 const initialValues: EmailEsrfRequestBody = {
   dateOfBirth: '',
   email: '',
-  firstName: '',
-  lastName: '',
+  givenName: '',
+  surname: '',
 }
 
 export default function Email() {
@@ -38,14 +38,14 @@ export default function Email() {
   const formik = useFormik<EmailEsrfRequestBody>({
     initialValues,
     validationSchema: Yup.object({
-      firstName: Yup.string().required('firstName.error.required'),
-      lastName: Yup.string().required('lastName.error.required'),
       dateOfBirth: Yup.date()
-        .required('dateOfBirth.error.required')
+        .required('date-of-birth.error.required')
         .max(new Date(), 'dateOfBirth.error.current'),
       email: Yup.string()
         .required('email.error.required')
         .email('email.error.valid'),
+      givenName: Yup.string().required('given-name.error.required'),
+      surname: Yup.string().required('surname.error.required'),
     }),
     validateOnBlur: false,
     validateOnChange: false,
@@ -101,22 +101,22 @@ export default function Email() {
             required
           />
           <InputField
-            id="firstName"
-            name="firstName"
-            label={t('firstName.label')}
+            id="givenName"
+            name="givenName"
+            label={t('given-name.label')}
             onChange={formik.handleChange}
-            value={formik.values.firstName}
-            errorMessage={formik.errors.firstName && t(formik.errors.firstName)}
+            value={formik.values.givenName}
+            errorMessage={formik.errors.givenName && t(formik.errors.givenName)}
             textRequired={t('common:required')}
             required
           />
           <InputField
-            id="lastName"
-            name="lastName"
-            label={t('lastName.label')}
+            id="surname"
+            name="surname"
+            label={t('surname.label')}
             onChange={formik.handleChange}
-            value={formik.values.lastName}
-            errorMessage={formik.errors.lastName && t(formik.errors.lastName)}
+            value={formik.values.surname}
+            errorMessage={formik.errors.surname && t(formik.errors.surname)}
             textRequired={t('common:required')}
             required
           />
@@ -124,7 +124,7 @@ export default function Email() {
             id="dateOfBirth"
             name="dateOfBirth"
             type="date"
-            label={t('dateOfBirth.label')}
+            label={t('date-of-birth.label')}
             onChange={formik.handleChange}
             value={formik.values.dateOfBirth}
             errorMessage={

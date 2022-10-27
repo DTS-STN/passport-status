@@ -6,7 +6,10 @@ import defaultTranslations from '../public/locales/defaultTranslations.json'
 
 const Index = () => {
   return (
-    <div role="main" className="container mx-auto px-6 my-5 bg-slate-300 p-12">
+    <div
+      role="main"
+      className="flex bg-splash-page bg-cover bg-center h-screen"
+    >
       <MetaData
         data={{
           author: defaultTranslations.meta.author,
@@ -17,7 +20,7 @@ const Index = () => {
       />
       <div className="flex flex-col justify-center items-center m-auto">
         <div className="z-10 bg-white h-auto w-[18.75rem] xl:w-[31.25rem]">
-          <h1 className="sr-only">service.canada.ca-digital-center</h1>
+          <h1 className="sr-only">service.canada.ca-passport-status-checker</h1>
 
           <div className="h-auto w-64 mx-auto pt-6 xl:w-2/3 xl:mx-0 xl:px-6">
             <Image
