@@ -91,23 +91,23 @@ describe('Date of Birth field validation', ()=>{
     cy.visit('/status')
   })
 
-  it('validates valid birthdate',()=>{
-    cy.get('#birthDate').type('1982-12-08')
+  it('validates valid dateOfBirth',()=>{
+    cy.get('#dateOfBirth').type('1982-12-08')
     cy.get('#button-get-status > button').click()
-    cy.get('#input-birthDate > span').should('not.exist')
+    cy.get('#input-dateOfBirth > span').should('not.exist')
   })
 
-  it('validates empty birthdate error',()=>{
+  it('validates empty dateOfBirth error',()=>{
     cy.get('#button-get-status > button').click()
-    cy.get('#input-birthDate > span').should('exist')
+    cy.get('#input-dateOfBirth > span').should('exist')
   })
 
   it('validates Date of Birth in the future',()=>{
     const yearPlus1 = new Date(new Date().getFullYear()+1,1,1)
     const testDate = [yearPlus1.getFullYear(),'01','01'].join('-')
-    cy.get('#birthDate').type(testDate)
+    cy.get('#dateOfBirth').type(testDate)
     cy.get('#button-get-status > button').click()
-    cy.get('#input-birthDate > span').should('exist')
+    cy.get('#input-dateOfBirth > span').should('exist')
   })
 })
 
@@ -117,7 +117,7 @@ describe('responses', ()=>{
     cy.get('#esrf').type('002D85ED')
     cy.get('#givenName').type('Yanis')
     cy.get('#surname').type('Piérre')
-    cy.get('#birthDate').type('1972-07-29')
+    cy.get('#dateOfBirth').type('1972-07-29')
     cy.get('#button-get-status > button').click()
     cy.get('#response-status').should('exist')
   })
@@ -132,7 +132,7 @@ describe('responses', ()=>{
     cy.get('#esrf').type('12345678')
     cy.get('#givenName').type('John')
     cy.get('#surname').type('Doe')
-    cy.get('#birthDate').type('1990-12-01')
+    cy.get('#dateOfBirth').type('1990-12-01')
     cy.get('#button-get-status > button').click()
     cy.get('#reponse-no-result').should('exist')
   })

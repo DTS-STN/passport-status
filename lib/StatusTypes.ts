@@ -1,5 +1,5 @@
 export interface CheckStatusRequest {
-  birthDate: string
+  dateOfBirth: string
   esrf: string
   givenName: string
   surname: string
