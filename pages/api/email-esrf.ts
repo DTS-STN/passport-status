@@ -5,8 +5,8 @@ import logger from '../../lib/logger'
 export interface EmailEsrfRequestBody {
   dateOfBirth: string
   email: string
-  firstName: string
-  lastName: string
+  givenName: string
+  surname: string
 }
 
 export default async function handler(
@@ -23,9 +23,11 @@ export default async function handler(
     return
   }
 
+  const body = req.body as EmailEsrfRequestBody
+
   try {
     const response = await (process.env.PASSPORT_STATUS_API_BASE_URI
-      ? emailEsrfApi(req.body)
+      ? emailEsrfApi(body)
       : emailEsrfMock())
 
     if (!response.ok) {
@@ -46,9 +48,24 @@ export default async function handler(
   }
 }
 
-const emailEsrfApi = (body: any) => {
+const emailEsrfApi = (emailEsrfRequestBody: EmailEsrfRequestBody) => {
+  const body = {
+    Client: {
+      BirthDate: {
+        Date: emailEsrfRequestBody.dateOfBirth,
+      },
+      PersonContactInformation: {
+        ContactEmailID: emailEsrfRequestBody.email,
+      },
+      PersonName: {
+        PersonGivenName: [emailEsrfRequestBody.givenName],
+        PersonSurName: emailEsrfRequestBody.surname,
+      },
+    },
+  }
+
   return fetch(
-    `${process.env.PASSPORT_STATUS_API_BASE_URI}/api/v1/electronic-service-requests`,
+    `${process.env.PASSPORT_STATUS_API_BASE_URI}/api/v1/esrf-requests`,
     {
       method: 'POST',
       headers: {

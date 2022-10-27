@@ -8,23 +8,23 @@
       "valid": "Le $t(email.label) $t(common:error-messages.valid)"
     }
   },
-  "firstName": {
+  "given-name": {
     "error": {
-      "required": "Le $t(firstName.label) $t(common:error-messages.required)"
+      "required": "Le $t(given-name.label) $t(common:error-messages.required)"
     },
     "label": "Prénom"
   },
-  "lastName": {
+  "surname": {
     "error": {
-      "required": "Le $t(lastName.label) $t(common:error-messages.required)"
+      "required": "Le $t(surname.label) $t(common:error-messages.required)"
     },
     "label": "Nom de famille"
   },
-  "dateOfBirth": {
+  "date-of-birth": {
     "error": {
-      "current": "La $t(dateOfBirth.label) $t(common:error-messages.in-past)",
-      "invalid": "La $t(dateOfBirth.label) $t(common:error-messages.valid-format, { \"format\": \"dd/mm/yyyy\" })",
-      "required": "La $t(dateOfBirth.label) $t(common:error-messages.required)"
+      "current": "La $t(date-of-birth.label) $t(common:error-messages.in-past)",
+      "invalid": "La $t(date-of-birth.label) $t(common:error-messages.valid-format, { \"format\": \"dd/mm/yyyy\" })",
+      "required": "La $t(date-of-birth.label) $t(common:error-messages.required)"
     },
     "label": "Date de naissance"
   },
