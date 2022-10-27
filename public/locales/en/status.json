@@ -1,9 +1,9 @@
 {
-  "birth-date": {
+  "date-of-birth": {
     "error": {
-      "current": "The $t(birth-date.label) $t(common:error-messages.in-past)",
-      "invalid": "The $t(birth-date.label) $t(common:error-messages.valid-format, { \"format\": \"dd/mm/yyyy\" })",
-      "required": "The $t(birth-date.label) $t(common:error-messages.required)"
+      "current": "The $t(date-of-birth.label) $t(common:error-messages.in-past)",
+      "invalid": "The $t(date-of-birth.label) $t(common:error-messages.valid-format, { \"format\": \"dd/mm/yyyy\" })",
+      "required": "The $t(date-of-birth.label) $t(common:error-messages.required)"
     },
     "label": "Date of birth"
   },

@@ -18,7 +18,7 @@ import {
 export const fetchPassportStatusMOCK = async (
   checkStatusRequest: CheckStatusRequest
 ): Promise<CheckStatusReponse> => {
-  const { birthDate, esrf, givenName, surname } = checkStatusRequest
+  const { dateOfBirth, esrf, givenName, surname } = checkStatusRequest
   const { GetCertificateApplicationResponse } = passportStatusesMock._embedded
 
   /**
@@ -28,26 +28,28 @@ export const fetchPassportStatusMOCK = async (
     value1.localeCompare(value2, 'en', { sensitivity: 'base' }) === 0
 
   const applicationResponse = GetCertificateApplicationResponse.find(
-    ({ CertificateApplication }) =>
+    ({
+      CertificateApplication: {
+        CertificateApplicationApplicant,
+        CertificateApplicationIdentification,
+      },
+    }) =>
       compareCIAndAI(
         esrf,
-        CertificateApplication.CertificateApplicationIdentification.find(
+        CertificateApplicationIdentification.find(
           ({ IdentificationCategoryText }) =>
             IdentificationCategoryText === 'File Number'
         )?.IdentificationID ?? ''
       ) &&
       compareCIAndAI(
         givenName,
-        CertificateApplication.CertificateApplicationApplicant.PersonName
-          .PersonGivenName[0]
+        CertificateApplicationApplicant.PersonName.PersonGivenName[0]
       ) &&
       compareCIAndAI(
         surname,
-        CertificateApplication.CertificateApplicationApplicant.PersonName
-          .PersonSurName
+        CertificateApplicationApplicant.PersonName.PersonSurName
       ) &&
-      birthDate ===
-        CertificateApplication.CertificateApplicationApplicant.BirthDate.Date
+      dateOfBirth === CertificateApplicationApplicant.BirthDate.Date
   )
 
   if (applicationResponse) return mapToCheckStatusReponse(applicationResponse)
@@ -69,11 +71,11 @@ export const fetchPassportStatusAPI = async (
     throw Error('passportStatusAPIBaseURI must not be null or empty')
   }
 
-  const { birthDate, esrf, givenName, surname } = checkStatusRequest
+  const { dateOfBirth, esrf, givenName, surname } = checkStatusRequest
 
   // passport statuses api _search endpoint
   const response = await fetch(
-    `${passportStatusAPIBaseURI}/api/v1/passport-statuses/_search?dateOfBirth=${birthDate}&fileNumber=${esrf}&firstName=${givenName}&lastName=${surname}`
+    `${passportStatusAPIBaseURI}/api/v1/passport-statuses/_search?dateOfBirth=${dateOfBirth}&fileNumber=${esrf}&firstName=${givenName}&lastName=${surname}`
   )
 
   if (response.ok) {
@@ -107,7 +109,7 @@ export default async function handler(
 
   const { searchParams } = new URL(req.url ?? '', `http://${req.headers.host}`)
   const checkStatusRequest: CheckStatusRequest = {
-    birthDate: searchParams.get('birthDate') ?? '',
+    dateOfBirth: searchParams.get('dateOfBirth') ?? '',
     esrf: searchParams.get('esrf') ?? '',
     givenName: searchParams.get('givenName') ?? '',
     surname: searchParams.get('surname') ?? '',
