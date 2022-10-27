@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1666898598112" clover="3.2.0">
-  <project timestamp="1666898598112" name="All files">
+<coverage generated="1666902710608" clover="3.2.0">
+  <project timestamp="1666902710608" name="All files">
     <metrics statements="224" coveredstatements="124" conditionals="158" coveredconditionals="60" methods="80" coveredmethods="37" elements="462" coveredelements="221" complexity="0" loc="224" ncloc="224" packages="4" files="31" classes="31"/>
     <package name="components">
       <metrics statements="48" coveredstatements="43" conditionals="34" coveredconditionals="24" methods="22" coveredmethods="17"/>
@@ -164,9 +164,9 @@
         <metrics statements="5" coveredstatements="3" conditionals="7" coveredconditionals="4" methods="2" coveredmethods="1"/>
         <line num="8" count="1" type="stmt"/>
         <line num="9" count="2" type="stmt"/>
-        <line num="72" count="1" type="stmt"/>
-        <line num="73" count="0" type="cond" truecount="0" falsecount="3"/>
-        <line num="74" count="0" type="stmt"/>
+        <line num="79" count="1" type="stmt"/>
+        <line num="80" count="0" type="cond" truecount="0" falsecount="3"/>
+        <line num="81" count="0" type="stmt"/>
       </file>
       <file name="consent.tsx" path="/home/runner/work/passport-status/passport-status/pages/consent.tsx">
         <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="1"/>

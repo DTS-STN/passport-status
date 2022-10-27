@@ -122,10 +122,26 @@
 <a name='L57'></a><a href='#L57'>57</a>
 <a name='L58'></a><a href='#L58'>58</a>
 <a name='L59'></a><a href='#L59'>59</a>
-<a name='L60'></a><a href='#L60'>60</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -185,16 +201,17 @@
 &nbsp;
 const Custom404 = () =&gt; {
   return (
-    &lt;div className="min-h-screen"&gt;
-      &lt;section className="grid lg:grid-cols-3 sm:grid-cols-1 mx-6 xxs:mx-4 xs:px-0 md:px-0 lg:container lg:mx-auto xl:px-12 lg:px-6 pb-44"&gt;
-        &lt;div className="h-auto xxl:w-400px lg:w-96 xl:h-400px lg:h-500px mb-8 lg:mb-0 col-span-2"&gt;
-          &lt;h1 className="text-2xl"&gt;{"We couldn't find that Web page"}&lt;/h1&gt;
+    &lt;div className="container mx-auto"&gt;
+      &lt;section className="grid grid-cols-1 lg:grid-cols-2 mx-4 lg:mx-6 gap-4 lg:gap-8"&gt;
+        &lt;div&gt;
+          &lt;h1 className="text-2xl"&gt;We couldn&amp;#39;t find that Web page&lt;/h1&gt;
           &lt;h2&gt;An error 404 occured on server&lt;/h2&gt;
           &lt;p&gt;
-            {
-              "We're sorry you ended up here. Sometimes a page gets moved or deleted, but hopefully we can help you find what you're looking for. What next?"
-            }
+            We&amp;#39;re sorry you ended up here. Sometimes a page gets moved or
+            deleted, but hopefully we can help you find what you&amp;#39;re looking
+            for. What next?
           &lt;/p&gt;
+&nbsp;
           &lt;ul&gt;
             &lt;li&gt;
               Return to the{' '}
@@ -204,33 +221,40 @@ const Custom404 = () =&gt; {
               ;
             &lt;/li&gt;
             &lt;li&gt;
-              &lt;Link href="https://www.canada.ca/en/contact.html"&gt;
-                &lt;a className="text-cyan-600 underline"&gt;Contact us&lt;/a&gt;
-              &lt;/Link&gt;
-              {" and we'll help you out."}
+              &lt;a
+                href="https://www.canada.ca/en/contact.html"
+                className="text-cyan-600 underline"
+              &gt;
+                Contact us
+              &lt;/a&gt;
+              &amp;nbsp; and we&amp;#39;ll help you out
             &lt;/li&gt;
           &lt;/ul&gt;
         &lt;/div&gt;
-        &lt;div className="h-auto xxl:w-400px lg:w-96 xl:h-400px lg:h-500px mb-8 lg:mb-0"&gt;
+        &lt;div&gt;
           &lt;h1 className="text-2xl"&gt;Nous ne pouvons trouver cette page Web&lt;/h1&gt;
           &lt;h2&gt;Erreur 404&lt;/h2&gt;
           &lt;p&gt;
-            {
-              "Nous sommes désolés que vous ayez abouti ici. Il arrive parfois qu'une page ait été déplacée ou supprimée. Heureusement, nous pouvons vous aider à trouver ce que vous cherchez. Que faire?"
-            }
+            Nous sommes désolés que vous ayez abouti ici. Il arrive parfois
+            qu&amp;#39;une page ait été déplacée ou supprimée. Heureusement, nous
+            pouvons vous aider à trouver ce que vous cherchez. Que faire?
           &lt;/p&gt;
           &lt;ul&gt;
             &lt;li&gt;
               Retournez à la{' '}
               &lt;Link href="/" locale="default"&gt;
-                &lt;a className="text-cyan-600 underline"&gt;page {"d'accueil;"}&lt;/a&gt;
+                &lt;a className="text-cyan-600 underline"&gt;page d&amp;#39;accueil&lt;/a&gt;
               &lt;/Link&gt;
+              ;
             &lt;/li&gt;
             &lt;li&gt;
-              &lt;Link href="https://www.canada.ca/en/contact.html"&gt;
-                &lt;a className="text-cyan-600 underline"&gt;Communiquez avec nous&lt;/a&gt;
-              &lt;/Link&gt;
-              {" pour obtenir de l'aide."}
+              &lt;a
+                href="https://www.canada.ca/fr/contact.html"
+                className="text-cyan-600 underline"
+              &gt;
+                Communiquez avec nous
+              &lt;/a&gt;
+              &amp;nbsp;pour obtenir de l&amp;#39;aide.
             &lt;/li&gt;
           &lt;/ul&gt;
         &lt;/div&gt;
@@ -247,7 +271,7 @@ export default Custom404
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-10-27T19:23:18.125Z
+                at 2022-10-27T20:31:50.620Z
             </div>
         <script src="../prettify.js"></script>
         <script>
