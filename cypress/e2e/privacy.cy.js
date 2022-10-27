@@ -22,7 +22,7 @@ describe('User agrees to the term',()=>{
     it('hide the terms and display the privacy',()=>{
         cy.visit('/privacy')
         cy.get('#termsBtnGrp button').first().click()
-        cy.get('#terms').should('be.visible')
+        cy.get('#privacy').should('be.visible')
     })
 })
 
@@ -30,7 +30,7 @@ describe('User agree to terms and privay',()=>{
   it('should redirect to the consent page',()=>{
         cy.visit('/privacy')
         cy.get('#termsBtnGrp button').first().click()
-        cy.get('#privacyBtnGrp button').first().click()
+        cy.get('#privacyBtnGrp a').first().click()
         cy.url().should('contain','/consent')
   })
 })

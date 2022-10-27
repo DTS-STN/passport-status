@@ -18,38 +18,48 @@ const Privacy: FC = () => {
       footer={t('common:footer', { returnObjects: true })}
     >
       <h1 className="mb-4">{t('header')}</h1>
-      <div className="max-w-4xl overflow-hidden ml-auto mr-auto p-3">
-        <span id="terms" style={{ display: !agree ? 'block' : 'none' }}>
-          <p>{t('terms-text')}</p>
-          <div
-            id="termsBtnGrp"
-            className="flex flex-wrap justify-end space-x-2"
-          >
-            <ActionButton
-              text={t('agree')}
-              style="primary"
-              onClick={() => setAgree(true)}
-            />
-            <ActionButton
-              text={t('disagree')}
-              onClick={() => Router.push('/contact')}
-            />
-          </div>
-        </span>
-        <span id="privacy" style={{ display: agree ? 'block' : 'none' }}>
-          <p>{t('privacy-text')}</p>
-          <div
-            id="privacyBtnGrp"
-            className="flex flex-wrap justify-end space-x-2"
-          >
-            <LinkButton
-              id="goToConsent"
-              href="/consent"
-              text={t('continue')}
-            ></LinkButton>
-            <ActionButton text={t('back')} onClick={() => setAgree(false)} />
-          </div>
-        </span>
+      <div className="ml-auto mr-auto p-3">
+        {!agree && (
+          <span id="terms">
+            <h2 className="my-14">{t('terms-text')}</h2>
+            <div
+              id="termsBtnGrp"
+              className="flex flex-wrap justify-center space-x-2"
+            >
+              <ActionButton
+                text={t('agree')}
+                style="primary"
+                onClick={() => setAgree(true)}
+              />
+              <ActionButton
+                text={t('disagree')}
+                style="primary"
+                onClick={() => Router.push('/contact')}
+              />
+            </div>
+          </span>
+        )}
+
+        {agree && (
+          <span id="privacy">
+            <h2 className="my-14">{t('privacy-text')}</h2>
+            <div
+              id="privacyBtnGrp"
+              className="flex flex-wrap justify-center space-x-2"
+            >
+              <LinkButton
+                id="goToConsent"
+                href="/consent"
+                text={t('continue')}
+              />
+              <ActionButton
+                text={t('back')}
+                onClick={() => setAgree(false)}
+                style="primary"
+              />
+            </div>
+          </span>
+        )}
       </div>
     </Layout>
   )
