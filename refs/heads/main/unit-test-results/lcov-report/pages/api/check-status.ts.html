@@ -199,7 +199,9 @@
 <a name='L134'></a><a href='#L134'>134</a>
 <a name='L135'></a><a href='#L135'>135</a>
 <a name='L136'></a><a href='#L136'>136</a>
-<a name='L137'></a><a href='#L137'>137</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L137'></a><a href='#L137'>137</a>
+<a name='L138'></a><a href='#L138'>138</a>
+<a name='L139'></a><a href='#L139'>139</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -230,14 +232,16 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">36x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -355,7 +359,7 @@ import {
 export const fetchPassportStatusMOCK = async (
   checkStatusRequest: CheckStatusRequest
 ): Promise&lt;CheckStatusReponse&gt; =&gt; {
-  const { birthDate, esrf, givenName, surname } = checkStatusRequest
+  const { dateOfBirth, esrf, givenName, surname } = checkStatusRequest
   const { GetCertificateApplicationResponse } = passportStatusesMock._embedded
 &nbsp;
   /**
@@ -365,26 +369,28 @@ export const fetchPassportStatusMOCK = async (
     value1.localeCompare(value2, 'en', { sensitivity: 'base' }) === 0
 &nbsp;
   const applicationResponse = GetCertificateApplicationResponse.find(
-    ({ CertificateApplication }) =&gt;
+    ({
+      CertificateApplication: {
+        CertificateApplicationApplicant,
+        CertificateApplicationIdentification,
+      },
+    }) =&gt;
       compareCIAndAI(
         esrf,
-        CertificateApplication.CertificateApplicationIdentification.find(
+        CertificateApplicationIdentification.find(
           ({ IdentificationCategoryText }) =&gt;
             IdentificationCategoryText === 'File Number'
         )?.IdentificationID ?? <span class="branch-1 cbranch-no" title="branch not covered" >''</span>
       ) &amp;&amp;
       compareCIAndAI(
         givenName,
-        CertificateApplication.CertificateApplicationApplicant.PersonName
-          .PersonGivenName[0]
+        CertificateApplicationApplicant.PersonName.PersonGivenName[0]
       ) &amp;&amp;
       compareCIAndAI(
         surname,
-        CertificateApplication.CertificateApplicationApplicant.PersonName
-          .PersonSurName
+        CertificateApplicationApplicant.PersonName.PersonSurName
       ) &amp;&amp;
-      birthDate ===
-        CertificateApplication.CertificateApplicationApplicant.BirthDate.Date
+      dateOfBirth === CertificateApplicationApplicant.BirthDate.Date
   )
 &nbsp;
   if (applicationResponse) return mapToCheckStatusReponse(applicationResponse)
@@ -406,11 +412,11 @@ export const fetchPassportStatusAPI = <span class="fstat-no" title="function not
 <span class="cstat-no" title="statement not covered" >    throw Error('passportStatusAPIBaseURI must not be null or empty')</span>
   }
 &nbsp;
-  const { birthDate, esrf, givenName, surname } = <span class="cstat-no" title="statement not covered" >checkStatusRequest</span>
+  const { dateOfBirth, esrf, givenName, surname } = <span class="cstat-no" title="statement not covered" >checkStatusRequest</span>
 &nbsp;
   // passport statuses api _search endpoint
   const response = <span class="cstat-no" title="statement not covered" >await fetch(</span>
-    `${passportStatusAPIBaseURI}/api/v1/passport-statuses/_search?dateOfBirth=${birthDate}&amp;fileNumber=${esrf}&amp;firstName=${givenName}&amp;lastName=${surname}`
+    `${passportStatusAPIBaseURI}/api/v1/passport-statuses/_search?dateOfBirth=${dateOfBirth}&amp;fileNumber=${esrf}&amp;firstName=${givenName}&amp;lastName=${surname}`
   )
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  if (response.ok) {</span>
@@ -444,7 +450,7 @@ export default async function handler(
 &nbsp;
   const { searchParams } = new URL(req.url ?? <span class="branch-1 cbranch-no" title="branch not covered" >'',</span> `http://${req.headers.host}`)
   const checkStatusRequest: CheckStatusRequest = {
-    birthDate: searchParams.get('birthDate') ?? <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
+    dateOfBirth: searchParams.get('dateOfBirth') ?? <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
     esrf: searchParams.get('esrf') ?? <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
     givenName: searchParams.get('givenName') ?? <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
     surname: searchParams.get('surname') ?? <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
@@ -478,7 +484,7 @@ export default async function handler(
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-10-27T12:31:55.629Z
+                at 2022-10-27T12:34:03.011Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
