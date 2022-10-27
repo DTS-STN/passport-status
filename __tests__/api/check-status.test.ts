@@ -20,7 +20,7 @@ describe('api/check-status', () => {
       esrf: '002D85ED',
       givenName: 'Yanis',
       surname: 'Piérre',
-      birthDate: '1972-07-29',
+      dateOfBirth: '1972-07-29',
     })
 
     const { req, res } = createMocks<ApiRequest, ApiResponse>({ url })
@@ -33,7 +33,7 @@ describe('api/check-status', () => {
       esrf: '',
       givenName: '',
       surname: '',
-      birthDate: '',
+      dateOfBirth: '',
     })
     const { req, res } = createMocks<ApiRequest, ApiResponse>({ url })
     await handler(req, res)
