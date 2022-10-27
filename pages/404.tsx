@@ -28,7 +28,7 @@ const Custom404 = () => {
               >
                 Contact us
               </a>
-              &nbsp; and we&#39;ll help you out
+              &nbsp;and we&#39;ll help you out
             </li>
           </ul>
         </div>
