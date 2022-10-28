@@ -21,15 +21,15 @@ describe('landing page loads', () => {
     })
 })
 
-describe('user has ESRF number',()=>{
-    it('should redirect to the consent page',()=>{
+describe('user does not ESRF number',()=>{
+    it('should redirect to the privacy page',()=>{
         cy.visit('/landing')
         cy.get('#without-esrf').click()
-        cy.url().should('contain','/consent')
+        cy.url().should('contain','/privacy')
     })
 })
 
-describe('user does not have ESRF number',()=>{
+describe('user does have ESRF number',()=>{
   it('should redirect to the form',()=>{
       cy.visit('/landing')
       cy.get('#with-esrf').click()
