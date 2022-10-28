@@ -138,7 +138,16 @@
 <a name='L73'></a><a href='#L73'>73</a>
 <a name='L74'></a><a href='#L74'>74</a>
 <a name='L75'></a><a href='#L75'>75</a>
-<a name='L76'></a><a href='#L76'>76</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -147,6 +156,15 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -222,62 +240,71 @@ export interface ErrorProps {
 &nbsp;
 const Error: NextPage&lt;ErrorProps&gt; = ({ statusCode }) =&gt; {
   return (
-    &lt;div className="grid md:grid-cols-2 sm:grid-cols-1 items-center justify-center overflow-visible md:h-96 sm:h-screen mx-2 my-2 px-20"&gt;
-      &lt;div className="error-404"&gt;
-        &lt;h1 className="text-2xl"&gt;{"We couldn't find that Web page"}&lt;/h1&gt;
-        &lt;h2&gt;
-          {statusCode
-            ? `An error ${statusCode} occurred on server`
-            : 'An error occurred on client'}
-        &lt;/h2&gt;
-        &lt;p&gt;
-          {
-            "We're sorry you ended up here. Sometimes a page gets moved or deleted, but hopefully we can help you find what you're looking for. What next?"
-          }
-        &lt;/p&gt;
-        &lt;ul&gt;
-          &lt;li&gt;
-            Return to the{' '}
-            &lt;Link href="/"&gt;
-              &lt;a className="text-cyan-600 underline"&gt;home page&lt;/a&gt;
-            &lt;/Link&gt;
-            ;
-          &lt;/li&gt;
-          &lt;li&gt;
-            &lt;Link href="https://www.canada.ca/en/contact.html"&gt;
-              &lt;a className="text-cyan-600 underline"&gt;Contact us&lt;/a&gt;
-            &lt;/Link&gt;
-            {" and we'll help you out."}
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/div&gt;
-      &lt;div className="error-404"&gt;
-        &lt;h1 className="text-2xl"&gt;Nous ne pouvons trouver cette page Web&lt;/h1&gt;
-        &lt;h2&gt;
-          {statusCode
-            ? `Erreur ${statusCode}`
-            : 'Erreur produite sur le client'}
-        &lt;/h2&gt;
-        &lt;p&gt;
-          {
-            "Nous sommes désolés que vous ayez abouti ici. Il arrive parfois qu'une page ait été déplacée ou supprimée. Heureusement, nous pouvons vous aider à trouver ce que vous cherchez. Que faire?"
-          }
-        &lt;/p&gt;
-        &lt;ul&gt;
-          &lt;li&gt;
-            Retournez à la{' '}
-            &lt;Link href="/"&gt;
-              &lt;a className="text-cyan-600 underline"&gt;page {"d'accueil;"}&lt;/a&gt;
-            &lt;/Link&gt;
-          &lt;/li&gt;
-          &lt;li&gt;
-            &lt;Link href="https://www.canada.ca/en/contact.html"&gt;
-              &lt;a className="text-cyan-600 underline"&gt;Communiquez avec nous&lt;/a&gt;
-            &lt;/Link&gt;
-            {" pour obtenir de l'aide."}
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/div&gt;
+    &lt;div className="container mx-auto"&gt;
+      &lt;section className="grid grid-cols-1 lg:grid-cols-2 mx-4 lg:mx-6 gap-4 lg:gap-8"&gt;
+        &lt;div&gt;
+          &lt;h1 className="text-2xl"&gt;We couldn&amp;#39;t find that Web page&lt;/h1&gt;
+          &lt;h2&gt;
+            {statusCode
+              ? `An error ${statusCode} occurred on server`
+              : 'An error occurred on client'}
+          &lt;/h2&gt;
+          &lt;p&gt;
+            We&amp;#39;re sorry you ended up here. Sometimes a page gets moved or
+            deleted, but hopefully we can help you find what you&amp;#39;re looking
+            for. What next?
+          &lt;/p&gt;
+          &lt;ul&gt;
+            &lt;li&gt;
+              Return to the{' '}
+              &lt;Link href="/"&gt;
+                &lt;a className="text-cyan-600 underline"&gt;home page&lt;/a&gt;
+              &lt;/Link&gt;
+              ;
+            &lt;/li&gt;
+            &lt;li&gt;
+              &lt;a
+                href="https://www.canada.ca/en/contact.html"
+                className="text-cyan-600 underline"
+              &gt;
+                Contact us
+              &lt;/a&gt;
+              &amp;nbsp;and we&amp;#39;ll help you out
+            &lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+          &lt;h1 className="text-2xl"&gt;Nous ne pouvons trouver cette page Web&lt;/h1&gt;
+          &lt;h2&gt;
+            {statusCode
+              ? `Erreur ${statusCode}`
+              : 'Erreur produite sur le client'}
+          &lt;/h2&gt;
+          &lt;p&gt;
+            Nous sommes désolés que vous ayez abouti ici. Il arrive parfois
+            qu&amp;#39;une page ait été déplacée ou supprimée. Heureusement, nous
+            pouvons vous aider à trouver ce que vous cherchez. Que faire?
+          &lt;/p&gt;
+          &lt;ul&gt;
+            &lt;li&gt;
+              Retournez à la{' '}
+              &lt;Link href="/"&gt;
+                &lt;a className="text-cyan-600 underline"&gt;page d&amp;#39;accueil&lt;/a&gt;
+              &lt;/Link&gt;
+              ;
+            &lt;/li&gt;
+            &lt;li&gt;
+              &lt;a
+                href="https://www.canada.ca/fr/contact.html"
+                className="text-cyan-600 underline"
+              &gt;
+                Communiquez avec nous
+              &lt;/a&gt;
+              &amp;nbsp;pour obtenir de l&amp;#39;aide.
+            &lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/div&gt;
+      &lt;/section&gt;
     &lt;/div&gt;
   )
 }
@@ -295,7 +322,7 @@ export default Error
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-10-28T11:10:44.976Z
+                at 2022-10-28T13:23:26.692Z
             </div>
         <script src="../prettify.js"></script>
         <script>
