@@ -13,16 +13,18 @@ export interface DateModifiedProps {
  */
 const DateModified: FC<DateModifiedProps> = ({ id, text }) => {
   return (
-    <dl id={id} className="container mx-auto pl-6">
-      <dt className="inline">{text}</dt>
-      <dd className="inline">{process.env.NEXT_PUBLIC_BUILD_DATE}</dd>
-    </dl>
+    <time>
+      <dl id={id} className="container mx-auto pl-6">
+        <dt className="inline">{text}</dt>
+        <dd className="inline">{process.env.NEXT_PUBLIC_BUILD_DATE}</dd>
+      </dl>
+    </time>
   )
 }
 
 DateModified.defaultProps = {
   id: 'date-modified',
-  text: 'Date Modified:',
+  text: 'Date Modified: ',
 }
 
 export default DateModified
