@@ -2,7 +2,7 @@
   "contact-us": "Nous contacter",
   "english": "English",
   "footer": {
-    "date-modified": "Date de modification\u00A0: ",
+    "dateModifiedText": "Date de modification\u00A0: ",
     "about-this-site": "À propos de ce site",
     "canada-ca-alt-text": "Symbole du gouvernement du Canada",
     "links": {
