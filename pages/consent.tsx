@@ -4,6 +4,8 @@ import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Layout from '../components/Layout'
 import LinkButton from '../components/LinkButton'
+import ActionButton from '../components/ActionButton'
+import router from 'next/router'
 
 const Consent: FC = () => {
   const { t } = useTranslation('consent')
@@ -18,7 +20,14 @@ const Consent: FC = () => {
       <h2 className="my-14">{t('description')}</h2>
       <div className="flex justify-center flex-wrap text-xl gap-4">
         <div id="yes-button">
-          <LinkButton text={t('yes-button')} href="/email" />
+          <ActionButton
+            text={t('yes-button')}
+            onClick={() => {
+              window.sessionStorage.setItem('agreedToTerms', 'true')
+              router.push('/email')
+            }}
+            style="primary"
+          />
         </div>
         <div id="no-button">
           <LinkButton text={t('no-button')} href="/contact" />

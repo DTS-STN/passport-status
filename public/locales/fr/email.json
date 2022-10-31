@@ -29,5 +29,10 @@
     "label": "Date de naissance"
   },
   "email-esrf": "Envoyer mon numéro de dossier (ESRF)",
-  "email-sent-confirmation": "Un e-mail a été envoyé s'il y avait une correspondance dans nos dossiers avec le numéro de dossier (ESRF)"
+  "email-sent-confirmation": "Un e-mail a été envoyé s'il y avait une correspondance dans nos dossiers avec le numéro de dossier (ESRF)",
+  "page-unauth": {
+    "header": "Page non-autorisée",
+    "desc": "Veuillez accepter les conditions de confidentialité et d'e-mail et donner votre consentement avant de recevoir votre numéro de dossier (ESRF).",
+    "button": "Conditions de confidentialité et d'e-mail"
+  }
 }
