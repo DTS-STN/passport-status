@@ -194,7 +194,7 @@ export default function Email() {
             <>
               <h1>{t('page-unauth.header')}</h1>
               <div>
-                <h3 className="my-14">{t('page-unauth.desc')}</h3>
+                <h2 className="my-14">{t('page-unauth.desc')}</h2>
                 <LinkButton href="/privacy" text={t('page-unauth.button')} />
               </div>
             </>
