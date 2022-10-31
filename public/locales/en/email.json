@@ -29,5 +29,10 @@
     "label": "Date of birth"
   },
   "email-esrf": "Email my file number (ESRF)",
-  "email-sent-confirmation": "An email has been sent if there was a match in our records with the file number (ESRF)."
+  "email-sent-confirmation": "An email has been sent if there was a match in our records with the file number (ESRF).",
+  "page-unauth": {
+    "header": "Page Unauthorized",
+    "desc": "Please accept the Privacy and Email terms as well as give your consent before getting your file number (ESRF)",
+    "button": "Privacy and Email terms"
+  }
 }

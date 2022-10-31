@@ -29,5 +29,10 @@
     "label": "Date de naissance"
   },
   "email-esrf": "Envoyer mon numéro de dossier (FEDS)",
-  "email-sent-confirmation": "Un courriel a été envoyé s'il y avait une correspondance dans nos dossiers avec le numéro de dossier (FEDS)."
+  "email-sent-confirmation": "Un courriel a été envoyé s'il y avait une correspondance dans nos dossiers avec le numéro de dossier (FEDS).",
+  "page-unauth": {
+    "header": "Page non-autorisée",
+    "desc": "Veuillez accepter les conditions de confidentialité et de courriel et donner votre consentement avant de recevoir votre numéro de dossier (FEDS).",
+    "button": "Conditions de confidentialité et de courriel"
+  }
 }
