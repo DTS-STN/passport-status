@@ -72,10 +72,16 @@ export const fetchPassportStatusAPI = async (
   }
 
   const { dateOfBirth, esrf, givenName, surname } = checkStatusRequest
+  const query = new URLSearchParams({
+    dateOfBirth,
+    fileNumber: esrf,
+    givenName,
+    surname,
+  }).toString()
 
   // passport statuses api _search endpoint
   const response = await fetch(
-    `${passportStatusAPIBaseURI}/api/v1/passport-statuses/_search?dateOfBirth=${dateOfBirth}&fileNumber=${esrf}&firstName=${givenName}&lastName=${surname}`
+    `${passportStatusAPIBaseURI}/api/v1/passport-statuses/_search?${query}`
   )
 
   if (response.ok) {

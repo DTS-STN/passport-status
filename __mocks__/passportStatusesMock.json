@@ -36,7 +36,7 @@
         "lastModifiedDate": "2022-10-24T10:48:00.596207Z",
         "_links": {
           "search": {
-            "href": "https://passport-status-api.dev.dev-rhp.dts-stn.com/api/v1/passport-statuses/_search?dateOfBirth=1991-01-07&fileNumber=000672BC&firstName=Maxence&lastName=Fourni%C3%A9r&unique=true"
+            "href": "https://passport-status-api.dev.dev-rhp.dts-stn.com/api/v1/passport-statuses/_search?dateOfBirth=1991-01-07&fileNumber=000672BC&givenName=Maxence&surname=Fourni%C3%A9r&unique=true"
           },
           "self": {
             "href": "https://passport-status-api.dev.dev-rhp.dts-stn.com/api/v1/passport-statuses/a41b7157-91fa-3f15-960c-0fc32a5bbc43"
@@ -78,7 +78,7 @@
         "lastModifiedDate": "2022-10-24T10:48:00.634528Z",
         "_links": {
           "search": {
-            "href": "https://passport-status-api.dev.dev-rhp.dts-stn.com/api/v1/passport-statuses/_search?dateOfBirth=1997-05-31&fileNumber=000D57CE&firstName=Nicolas&lastName=Rey&unique=true"
+            "href": "https://passport-status-api.dev.dev-rhp.dts-stn.com/api/v1/passport-statuses/_search?dateOfBirth=1997-05-31&fileNumber=000D57CE&givenName=Nicolas&surname=Rey&unique=true"
           },
           "self": {
             "href": "https://passport-status-api.dev.dev-rhp.dts-stn.com/api/v1/passport-statuses/a61aafc8-d694-39da-962c-0042158f6805"
@@ -120,7 +120,7 @@
         "lastModifiedDate": "2022-10-24T10:48:01.026587Z",
         "_links": {
           "search": {
-            "href": "https://passport-status-api.dev.dev-rhp.dts-stn.com/api/v1/passport-statuses/_search?dateOfBirth=2001-06-29&fileNumber=00195035&firstName=Gabriel&lastName=Dubois&unique=true"
+            "href": "https://passport-status-api.dev.dev-rhp.dts-stn.com/api/v1/passport-statuses/_search?dateOfBirth=2001-06-29&fileNumber=00195035&givenName=Gabriel&surname=Dubois&unique=true"
           },
           "self": {
             "href": "https://passport-status-api.dev.dev-rhp.dts-stn.com/api/v1/passport-statuses/965e55d6-6976-3bb5-ba9b-d6acdeca489b"
@@ -162,7 +162,7 @@
         "lastModifiedDate": "2022-10-24T10:48:00.835690Z",
         "_links": {
           "search": {
-            "href": "https://passport-status-api.dev.dev-rhp.dts-stn.com/api/v1/passport-statuses/_search?dateOfBirth=1994-05-23&fileNumber=001EA743&firstName=Noa&lastName=P%C3%A9tit&unique=true"
+            "href": "https://passport-status-api.dev.dev-rhp.dts-stn.com/api/v1/passport-statuses/_search?dateOfBirth=1994-05-23&fileNumber=001EA743&givenName=Noa&surname=P%C3%A9tit&unique=true"
           },
           "self": {
             "href": "https://passport-status-api.dev.dev-rhp.dts-stn.com/api/v1/passport-statuses/2467a29f-b68a-32a5-bfcb-7e051f223746"
@@ -204,7 +204,7 @@
         "lastModifiedDate": "2022-10-24T10:47:59.826807Z",
         "_links": {
           "search": {
-            "href": "https://passport-status-api.dev.dev-rhp.dts-stn.com/api/v1/passport-statuses/_search?dateOfBirth=1971-01-20&fileNumber=0020ABBA&firstName=Romain&lastName=Marchal&unique=true"
+            "href": "https://passport-status-api.dev.dev-rhp.dts-stn.com/api/v1/passport-statuses/_search?dateOfBirth=1971-01-20&fileNumber=0020ABBA&givenName=Romain&surname=Marchal&unique=true"
           },
           "self": {
             "href": "https://passport-status-api.dev.dev-rhp.dts-stn.com/api/v1/passport-statuses/6f240bfa-2ff0-317e-be85-b6fc943643d3"
@@ -246,7 +246,7 @@
         "lastModifiedDate": "2022-10-24T10:48:00.657098Z",
         "_links": {
           "search": {
-            "href": "https://passport-status-api.dev.dev-rhp.dts-stn.com/api/v1/passport-statuses/_search?dateOfBirth=1978-12-15&fileNumber=00222850&firstName=Mathis&lastName=Marchal&unique=true"
+            "href": "https://passport-status-api.dev.dev-rhp.dts-stn.com/api/v1/passport-statuses/_search?dateOfBirth=1978-12-15&fileNumber=00222850&givenName=Mathis&surname=Marchal&unique=true"
           },
           "self": {
             "href": "https://passport-status-api.dev.dev-rhp.dts-stn.com/api/v1/passport-statuses/6b14493c-3a5b-322a-837d-eab71dd193f2"
@@ -288,7 +288,7 @@
         "lastModifiedDate": "2022-10-24T10:48:00.574878Z",
         "_links": {
           "search": {
-            "href": "https://passport-status-api.dev.dev-rhp.dts-stn.com/api/v1/passport-statuses/_search?dateOfBirth=1997-07-01&fileNumber=002B7518&firstName=Zoe&lastName=Gauti%C3%A9r&unique=true"
+            "href": "https://passport-status-api.dev.dev-rhp.dts-stn.com/api/v1/passport-statuses/_search?dateOfBirth=1997-07-01&fileNumber=002B7518&givenName=Zoe&surname=Gauti%C3%A9r&unique=true"
           },
           "self": {
             "href": "https://passport-status-api.dev.dev-rhp.dts-stn.com/api/v1/passport-statuses/b393f472-14f2-3f39-af93-81c5830d384b"
@@ -330,7 +330,7 @@
         "lastModifiedDate": "2022-10-24T10:48:00.007857Z",
         "_links": {
           "search": {
-            "href": "https://passport-status-api.dev.dev-rhp.dts-stn.com/api/v1/passport-statuses/_search?dateOfBirth=1972-07-29&fileNumber=002D85ED&firstName=Yanis&lastName=Pi%C3%A9rre&unique=true"
+            "href": "https://passport-status-api.dev.dev-rhp.dts-stn.com/api/v1/passport-statuses/_search?dateOfBirth=1972-07-29&fileNumber=002D85ED&givenName=Yanis&surname=Pi%C3%A9rre&unique=true"
           },
           "self": {
             "href": "https://passport-status-api.dev.dev-rhp.dts-stn.com/api/v1/passport-statuses/b45bba28-9547-3aa9-85af-e45c7a923e0a"
@@ -372,7 +372,7 @@
         "lastModifiedDate": "2022-10-24T10:48:01.021528Z",
         "_links": {
           "search": {
-            "href": "https://passport-status-api.dev.dev-rhp.dts-stn.com/api/v1/passport-statuses/_search?dateOfBirth=2004-10-20&fileNumber=0037B283&firstName=Noah&lastName=B%C3%A9noit&unique=true"
+            "href": "https://passport-status-api.dev.dev-rhp.dts-stn.com/api/v1/passport-statuses/_search?dateOfBirth=2004-10-20&fileNumber=0037B283&givenName=Noah&surname=B%C3%A9noit&unique=true"
           },
           "self": {
             "href": "https://passport-status-api.dev.dev-rhp.dts-stn.com/api/v1/passport-statuses/17abdb4d-1421-3266-81f5-0f670ed78ff0"
@@ -414,7 +414,7 @@
         "lastModifiedDate": "2022-10-24T10:48:00.535452Z",
         "_links": {
           "search": {
-            "href": "https://passport-status-api.dev.dev-rhp.dts-stn.com/api/v1/passport-statuses/_search?dateOfBirth=1970-08-31&fileNumber=0040FF5D&firstName=Antoine&lastName=Rodrigu%C3%A9z&unique=true"
+            "href": "https://passport-status-api.dev.dev-rhp.dts-stn.com/api/v1/passport-statuses/_search?dateOfBirth=1970-08-31&fileNumber=0040FF5D&givenName=Antoine&surname=Rodrigu%C3%A9z&unique=true"
           },
           "self": {
             "href": "https://passport-status-api.dev.dev-rhp.dts-stn.com/api/v1/passport-statuses/70c7a2c1-8127-3eaa-b300-ec6f3215b492"
