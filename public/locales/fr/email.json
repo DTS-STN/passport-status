@@ -2,29 +2,29 @@
   "header": "Obtenir mon numéro de dossier (ESRF)",
   "description": "Veuillez saisir les champs obligatoires suivants, tels qu'ils figurent sur votre formulaire de demande de passeport, pour que votre numéro de dossier (ESRF) soit envoyé par e-mail au dossier.",
   "email": {
-    "label": "Email",
+    "label": "Adresse courriel",
     "error": {
-      "required": "Le $t(email.label) $t(common:error-messages.required)",
-      "valid": "Le $t(email.label) $t(common:error-messages.valid)"
+      "required": "Le $t(email.label) est obligatoire.",
+      "valid": "Le $t(email.label) doit être valide."
     }
   },
   "given-name": {
     "error": {
-      "required": "Le $t(given-name.label) $t(common:error-messages.required)"
+      "required": "Le $t(given-name.label) est obligatoire."
     },
     "label": "Prénom"
   },
   "surname": {
     "error": {
-      "required": "Le $t(surname.label) $t(common:error-messages.required)"
+      "required": "Le $t(surname.label) est obligatoire."
     },
     "label": "Nom de famille"
   },
   "date-of-birth": {
     "error": {
-      "current": "La $t(date-of-birth.label) $t(common:error-messages.in-past)",
-      "invalid": "La $t(date-of-birth.label) $t(common:error-messages.valid-format, { \"format\": \"dd/mm/yyyy\" })",
-      "required": "La $t(date-of-birth.label) $t(common:error-messages.required)"
+      "current": "La $t(date-of-birth.label) doit être dans le passé.",
+      "invalid": "La $t(date-of-birth.label) doit être valide au format de «\u00a0aaaa-MM-jj\u00a0».",
+      "required": "La $t(date-of-birth.label) est obligatoire."
     },
     "label": "Date de naissance"
   },

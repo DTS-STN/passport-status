@@ -2,29 +2,29 @@
   "header": "Get my File (ESRF) number",
   "description": "Please enter the following required feilds, as entered on your passport application form, to have your File number (ESRF) emailed to the email on file.",
   "email": {
-    "label": "Email",
+    "label": "Email address",
     "error": {
-      "required": "The $t(email.label) $t(common:error-messages.required)",
-      "valid": "The $t(email.label) $t(common:error-messages.valid)"
+      "required": "The $t(email.label) is required.",
+      "valid": "The $t(email.label) must be valid."
     }
   },
   "given-name": {
     "error": {
-      "required": "The $t(given-name.label) $t(common:error-messages.required)"
+      "required": "The $t(given-name.label) is required."
     },
-    "label": "Given Name"
+    "label": "Given name"
   },
   "surname": {
     "error": {
-      "required": "The $t(surname.label) $t(common:error-messages.required)"
+      "required": "The $t(surname.label) is required."
     },
     "label": "Surname"
   },
   "date-of-birth": {
     "error": {
-      "current": "The $t(date-of-birth.label) $t(common:error-messages.in-past)",
-      "invalid": "The $t(date-of-birth.label) $t(common:error-messages.valid-format, { \"format\": \"dd/mm/yyyy\" })",
-      "required": "The $t(date-of-birth.label) $t(common:error-messages.required)"
+      "current": "The $t(date-of-birth.label) must be in the past.",
+      "invalid": "The $t(date-of-birth.label) must be in a valid format of «\u00a0yyyy-MM-dd\u00a0».",
+      "required": "The $t(date-of-birth.label) is required."
     },
     "label": "Date of birth"
   },

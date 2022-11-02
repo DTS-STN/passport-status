@@ -1,9 +1,9 @@
 {
   "date-of-birth": {
     "error": {
-      "current": "La $t(date-of-birth.label) $t(common:error-messages.in-past)",
-      "invalid": "La $t(date-of-birth.label) $t(common:error-messages.valid-format, { \"format\": \"dd-mm-yyyy\" })",
-      "required": "La $t(date-of-birth.label) $t(common:error-messages.required)"
+      "current": "La $t(date-of-birth.label) doit être dans le passé.",
+      "invalid": "La $t(date-of-birth.label) doit être valide au format de «\u00a0aaaa-MM-jj\u00a0».",
+      "required": "La $t(date-of-birth.label) est obligatoire."
     },
     "label": "Date de naissance"
   },
@@ -12,14 +12,14 @@
   "description": "Utilisez ce service avec votre ESRF pour vérifier le statut de votre demande de passeport.",
   "esrf": {
     "error": {
-      "length": "Le $t(esrf.label) $t(common:error-messages.meet-length, {\"length\": 8})",
-      "required": "Le $t(esrf.label) $t(common:error-messages.required)"
+      "length": "Le $t(esrf.label) doit comporter 8 caractères",
+      "required": "Le $t(esrf.label) est obligatoire."
     },
     "label": "Numéro de dossier"
   },
   "given-name": {
     "error": {
-      "required": "Le $t(given-name.label) $t(common:error-messages.required)"
+      "required": "Le $t(given-name.label) est obligatoire."
     },
     "label": "Prénom"
   },
@@ -34,7 +34,7 @@
   "status-is": "Le dernier statut de votre candidature selon nos dossiers est : ",
   "surname": {
     "error": {
-      "required": "Le $t(surname.label) $t(common:error-messages.required)"
+      "required": "Le $t(surname.label) est obligatoire."
     },
     "label": "Nom de famille"
   },
