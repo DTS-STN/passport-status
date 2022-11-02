@@ -12,8 +12,8 @@
   "description": "Utilisez ce service avec votre numéro de dossier (FEDS) pour vérifier le statut de votre demande de passeport.",
   "esrf": {
     "error": {
-      "length": "Le numéro de dossier (FEDS) doit comporter 8 caractères.",
-      "required": "Le numéro de dossier (FEDS) est obligatoire."
+      "length": "Le numéro de dossier doit comporter 8 caractères.",
+      "required": "Le numéro de dossier est obligatoire."
     },
     "label": "Numéro de dossier"
   },

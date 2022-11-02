@@ -12,10 +12,10 @@
   "description": "Use this service with your file number (ESRF) to check the status of your passport application.",
   "esrf": {
     "error": {
-      "length": "The file number (ESRF) must be 8 characters long.",
-      "required": "The file number (ESRF) is required."
+      "length": "The file number must be 8 characters long.",
+      "required": "The file number is required."
     },
-    "label": "File number (ESRF)"
+    "label": "File number"
   },
   "given-name": {
     "error": {
