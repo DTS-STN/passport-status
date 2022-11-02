@@ -1,6 +1,6 @@
 {
-  "header": "Consentement par e-mail",
-  "description": "Nous respectons votre vie privée. Sur la page suivante, après avoir rempli le formulaire, votre numéro de dossier (ESRF) sera envoyé à l'adresse électronique figurant dans votre dossier. Afin de continuer, veuillez indiquer ci-dessous si vous consentez à ce que nous vous envoyions un e-mail.",
-  "yes-button": "Oui, je souhaite recevoir un email",
-  "no-button": "Non, je ne souhaite pas recevoir d'email"
+  "header": "Consentement par courriel",
+  "description": "Nous respectons votre vie privée. Sur la page suivante, après avoir rempli le formulaire, votre numéro de dossier (ESRF) sera envoyé à l'adresse courriel figurant dans votre dossier. Afin de continuer, veuillez indiquer ci-dessous si vous consentez à ce que nous vous envoyions un courriel.",
+  "yes-button": "Oui, je souhaite recevoir un courriel",
+  "no-button": "Non, je ne souhaite pas recevoir de courriel"
 }

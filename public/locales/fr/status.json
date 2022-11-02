@@ -1,9 +1,9 @@
 {
   "date-of-birth": {
     "error": {
-      "current": "La $t(date-of-birth.label) doit être dans le passé.",
-      "invalid": "La $t(date-of-birth.label) doit être valide au format de «\u00a0aaaa-MM-jj\u00a0».",
-      "required": "La $t(date-of-birth.label) est obligatoire."
+      "current": "La date of birth doit être dans le passé.",
+      "invalid": "La date of birth doit être valide au format de «\u00a0aaaa-MM-jj\u00a0».",
+      "required": "La date of birth est obligatoire."
     },
     "label": "Date de naissance"
   },
