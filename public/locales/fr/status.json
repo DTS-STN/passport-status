@@ -9,7 +9,7 @@
   },
   "check-again": "Pour vérifier l'état d'une autre demande, cliquez sur le bouton ci-dessous:",
   "check-status": "Vérifier l'état",
-  "description": "Utilisez ce service avec votre ESRF pour vérifier le statut de votre demande de passeport.",
+  "description": "Utilisez ce service avec votre numéro de dossier (FEDS) pour vérifier le statut de votre demande de passeport.",
   "esrf": {
     "error": {
       "length": "Le $t(esrf.label) doit comporter 8 caractères",

@@ -9,7 +9,7 @@
   },
   "check-again": "To check the status of another application, click the button below:",
   "check-status": "Check Status",
-  "description": "Use this service with your ESRF to check the status of your passport application.",
+  "description": "Use this service with your file number (ESRF) to check the status of your passport application.",
   "esrf": {
     "error": {
       "length": "The file number (ESRF) must be 8 characters long.",
