@@ -1,4 +1,5 @@
 import { FC } from 'react'
+import { setCookie } from 'cookies-next'
 import { GetStaticProps } from 'next'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
@@ -23,7 +24,7 @@ const Consent: FC = () => {
           <ActionButton
             text={t('yes-button')}
             onClick={() => {
-              window.sessionStorage.setItem('agreedToTerms', 'true')
+              setCookie('agreed-to-terms', 'true')
               router.push('/email')
             }}
             style="primary"

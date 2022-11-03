@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { hasCookie } from 'cookies-next'
 
 //regex to check if there's an extension in the path, ie .jpg
 const PUBLIC_FILE = /\.(.*)$/
@@ -22,5 +23,12 @@ export async function middleware(req: NextRequest) {
     req.nextUrl.pathname === '/'
   ) {
     return NextResponse.redirect(new URL(`/`, req.url))
+  }
+
+  if (
+    req.cookies.get('agreed-to-terms') != 'undefined' &&
+    req.nextUrl.pathname === '/email'
+  ) {
+    return NextResponse.redirect(new URL('/privacy', req.url))
   }
 }

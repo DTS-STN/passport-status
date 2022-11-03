@@ -28,7 +28,6 @@ const initialValues: EmailEsrfRequestBody = {
 export default function Email() {
   const { t } = useTranslation('email')
   const [modalOpen, setModalOpen] = useState(false)
-  const [termsAgreed, setTermsAgreed] = useState(false)
 
   const {
     isLoading: isEmailEsrfLoading,
@@ -62,12 +61,6 @@ export default function Email() {
 
   if (emailEsrfError) throw emailEsrfError
 
-  useEffect(() => {
-    if (sessionStorage.getItem('agreedToTerms') == 'true') {
-      setTermsAgreed(true)
-    }
-  }, [])
-
   return (
     <Layout
       meta={t('common:meta', { returnObjects: true })}
@@ -75,128 +68,116 @@ export default function Email() {
       footer={t('common:footer', { returnObjects: true })}
     >
       {(() => {
-        if (termsAgreed) {
-          if (isEmailEsrfSuccess) {
-            return (
-              <>
-                <h1 className="mb-4">{t('header')}</h1>
-                <p className="mb-6 text-2xl">{t('email-sent-confirmation')}</p>
-                <LinkSummary
-                  title={t('common:contact-program')}
-                  links={t<string, LinkSummaryItem[]>('common:program-links', {
-                    returnObjects: true,
-                  })}
-                />
-              </>
-            )
-          }
-
-          if (!isEmailEsrfSuccess) {
-            return (
-              <>
-                <h1 className="mb-4">{t('header')}</h1>
-                <form onSubmit={formik.handleSubmit} id="form-email-esrf">
-                  <p>{t('description')}</p>
-                  {errorSummary.length > 0 && (
-                    <ErrorSummary
-                      id="error-summary-email-esrf"
-                      summary={t('common:found-errors', {
-                        count: errorSummary.length,
-                      })}
-                      errors={errorSummary}
-                    />
-                  )}
-                  <InputField
-                    id="email"
-                    name="email"
-                    label={t('email.label')}
-                    onChange={formik.handleChange}
-                    value={formik.values.email}
-                    errorMessage={formik.errors.email && t(formik.errors.email)}
-                    textRequired={t('common:required')}
-                    required
-                  />
-                  <InputField
-                    id="givenName"
-                    name="givenName"
-                    label={t('given-name.label')}
-                    onChange={formik.handleChange}
-                    value={formik.values.givenName}
-                    errorMessage={
-                      formik.errors.givenName && t(formik.errors.givenName)
-                    }
-                    textRequired={t('common:required')}
-                    required
-                  />
-                  <InputField
-                    id="surname"
-                    name="surname"
-                    label={t('surname.label')}
-                    onChange={formik.handleChange}
-                    value={formik.values.surname}
-                    errorMessage={
-                      formik.errors.surname && t(formik.errors.surname)
-                    }
-                    textRequired={t('common:required')}
-                    required
-                  />
-                  <InputField
-                    id="dateOfBirth"
-                    name="dateOfBirth"
-                    type="date"
-                    label={t('date-of-birth.label')}
-                    onChange={formik.handleChange}
-                    value={formik.values.dateOfBirth}
-                    errorMessage={
-                      formik.errors.dateOfBirth && t(formik.errors.dateOfBirth)
-                    }
-                    textRequired={t('common:required')}
-                    required
-                  />
-                  <div className="flex flex-wrap">
-                    <div className="py-1 pr-2">
-                      <ActionButton
-                        disabled={isEmailEsrfLoading}
-                        type="submit"
-                        text={t('email-esrf')}
-                        style="primary"
-                      />
-                    </div>
-                    <div className="py-1">
-                      <Modal
-                        buttonText={t('common:cancel-modal.cancel-button')}
-                        description={t('common:cancel-modal.description')}
-                        isOpen={modalOpen}
-                        onClick={() => setModalOpen(!modalOpen)}
-                        buttons={[
-                          {
-                            text: t('common:cancel-modal.yes-button'),
-                            onClick: () => Router.push('/landing'),
-                            style: 'primary',
-                            type: 'button',
-                          },
-                          {
-                            text: t('common:cancel-modal.no-button'),
-                            onClick: () => setModalOpen(!modalOpen),
-                            style: 'default',
-                            type: 'button',
-                          },
-                        ]}
-                      />
-                    </div>
-                  </div>
-                </form>
-              </>
-            )
-          }
-        } else {
+        if (isEmailEsrfSuccess) {
           return (
             <>
-              <h1>{t('page-unauth.header')}</h1>
-              <div>
-                <h2 className="my-14">{t('page-unauth.desc')}</h2>
-                <LinkButton href="/privacy" text={t('page-unauth.button')} />
-              </div>
+              <h1 className="mb-4">{t('header')}</h1>
+              <p className="mb-6 text-2xl">{t('email-sent-confirmation')}</p>
+              <LinkSummary
+                title={t('common:contact-program')}
+                links={t<string, LinkSummaryItem[]>('common:program-links', {
+                  returnObjects: true,
+                })}
+              />
+            </>
+          )
+        }
+
+        if (!isEmailEsrfSuccess) {
+          return (
+            <>
+              <h1 className="mb-4">{t('header')}</h1>
+              <form onSubmit={formik.handleSubmit} id="form-email-esrf">
+                <p>{t('description')}</p>
+                {errorSummary.length > 0 && (
+                  <ErrorSummary
+                    id="error-summary-email-esrf"
+                    summary={t('common:found-errors', {
+                      count: errorSummary.length,
+                    })}
+                    errors={errorSummary}
+                  />
+                )}
+                <InputField
+                  id="email"
+                  name="email"
+                  label={t('email.label')}
+                  onChange={formik.handleChange}
+                  value={formik.values.email}
+                  errorMessage={formik.errors.email && t(formik.errors.email)}
+                  textRequired={t('common:required')}
+                  required
+                />
+                <InputField
+                  id="givenName"
+                  name="givenName"
+                  label={t('given-name.label')}
+                  onChange={formik.handleChange}
+                  value={formik.values.givenName}
+                  errorMessage={
+                    formik.errors.givenName && t(formik.errors.givenName)
+                  }
+                  textRequired={t('common:required')}
+                  required
+                />
+                <InputField
+                  id="surname"
+                  name="surname"
+                  label={t('surname.label')}
+                  onChange={formik.handleChange}
+                  value={formik.values.surname}
+                  errorMessage={
+                    formik.errors.surname && t(formik.errors.surname)
+                  }
+                  textRequired={t('common:required')}
+                  required
+                />
+                <InputField
+                  id="dateOfBirth"
+                  name="dateOfBirth"
+                  type="date"
+                  label={t('date-of-birth.label')}
+                  onChange={formik.handleChange}
+                  value={formik.values.dateOfBirth}
+                  errorMessage={
+                    formik.errors.dateOfBirth && t(formik.errors.dateOfBirth)
+                  }
+                  textRequired={t('common:required')}
+                  required
+                />
+                <div className="flex flex-wrap">
+                  <div className="py-1 pr-2">
+                    <ActionButton
+                      disabled={isEmailEsrfLoading}
+                      type="submit"
+                      text={t('email-esrf')}
+                      style="primary"
+                    />
+                  </div>
+                  <div className="py-1">
+                    <Modal
+                      buttonText={t('common:cancel-modal.cancel-button')}
+                      description={t('common:cancel-modal.description')}
+                      isOpen={modalOpen}
+                      onClick={() => setModalOpen(!modalOpen)}
+                      buttons={[
+                        {
+                          text: t('common:cancel-modal.yes-button'),
+                          onClick: () => Router.push('/landing'),
+                          style: 'primary',
+                          type: 'button',
+                        },
+                        {
+                          text: t('common:cancel-modal.no-button'),
+                          onClick: () => setModalOpen(!modalOpen),
+                          style: 'default',
+                          type: 'button',
+                        },
+                      ]}
+                    />
+                  </div>
+                </div>
+              </form>
             </>
           )
         }
