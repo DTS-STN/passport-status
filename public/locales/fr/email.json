@@ -1,33 +1,33 @@
 {
-  "header": "Obtenir mon numéro de dossier (ESRF)",
-  "description": "Veuillez saisir les champs obligatoires suivants, tels qu'ils figurent sur votre formulaire de demande de passeport, pour que votre numéro de dossier (ESRF) soit envoyé par e-mail au dossier.",
+  "header": "Obtenir mon numéro de dossier (FEDS)",
+  "description": "Veuillez saisir les champs obligatoires suivants, tels qu'ils figurent sur votre formulaire de demande de passeport, pour que votre numéro de dossier (FEDS) soit envoyé par courriel à l'adresse courriel au dossier.",
   "email": {
-    "label": "Email",
+    "label": "Adresse courriel",
     "error": {
-      "required": "Le $t(email.label) $t(common:error-messages.required)",
-      "valid": "Le $t(email.label) $t(common:error-messages.valid)"
+      "required": "L'adresse courriel est obligatoire.",
+      "valid": "L'adresse courriel doit être valide."
     }
   },
   "given-name": {
     "error": {
-      "required": "Le $t(given-name.label) $t(common:error-messages.required)"
+      "required": "Le prénom est obligatoire."
     },
     "label": "Prénom"
   },
   "surname": {
     "error": {
-      "required": "Le $t(surname.label) $t(common:error-messages.required)"
+      "required": "Le nom de famille est obligatoire."
     },
     "label": "Nom de famille"
   },
   "date-of-birth": {
     "error": {
-      "current": "La $t(date-of-birth.label) $t(common:error-messages.in-past)",
-      "invalid": "La $t(date-of-birth.label) $t(common:error-messages.valid-format, { \"format\": \"dd/mm/yyyy\" })",
-      "required": "La $t(date-of-birth.label) $t(common:error-messages.required)"
+      "current": "La date de naissance doit être dans le passé.",
+      "invalid": "La date de naissance doit être valide selon le format suivant\u00a0: AAAA-MM-JJ (Année-Mois-Jour).",
+      "required": "La date de naissance est obligatoire."
     },
     "label": "Date de naissance"
   },
-  "email-esrf": "Envoyer mon numéro de dossier (ESRF)",
-  "email-sent-confirmation": "Un e-mail a été envoyé s'il y avait une correspondance dans nos dossiers avec le numéro de dossier (ESRF)"
+  "email-esrf": "Envoyer mon numéro de dossier (FEDS)",
+  "email-sent-confirmation": "Un courriel a été envoyé s'il y avait une correspondance dans nos dossiers avec le numéro de dossier (FEDS)."
 }

@@ -1,25 +1,25 @@
 {
   "date-of-birth": {
     "error": {
-      "current": "La $t(date-of-birth.label) $t(common:error-messages.in-past)",
-      "invalid": "La $t(date-of-birth.label) $t(common:error-messages.valid-format, { \"format\": \"dd-mm-yyyy\" })",
-      "required": "La $t(date-of-birth.label) $t(common:error-messages.required)"
+      "current": "La date de naissance doit être dans le passé.",
+      "invalid": "La date de naissance doit être valide selon le format suivant\u00a0: aaaa-MM-jj (Année-Mois-Jour).",
+      "required": "La date de naissance obligatoire."
     },
     "label": "Date de naissance"
   },
-  "check-again": "Pour vérifier l'état d'une autre demande, cliquez sur le bouton ci-dessous:",
+  "check-again": "Pour vérifier l'état d'une autre demande, cliquez sur le bouton ci-dessous\u00a0:",
   "check-status": "Vérifier l'état",
-  "description": "Utilisez ce service avec votre ESRF pour vérifier le statut de votre demande de passeport.",
+  "description": "Utilisez ce service avec votre numéro de dossier (FEDS) pour vérifier le statut de votre demande de passeport.",
   "esrf": {
     "error": {
-      "length": "Le $t(esrf.label) $t(common:error-messages.meet-length, {\"length\": 8})",
-      "required": "Le $t(esrf.label) $t(common:error-messages.required)"
+      "length": "Le numéro de dossier doit comporter 8 caractères.",
+      "required": "Le numéro de dossier est obligatoire."
     },
     "label": "Numéro de dossier"
   },
   "given-name": {
     "error": {
-      "required": "Le $t(given-name.label) $t(common:error-messages.required)"
+      "required": "Le prénom est obligatoire."
     },
     "label": "Prénom"
   },
@@ -31,14 +31,14 @@
     "2": "En examen",
     "3": "Rejetée"
   },
-  "status-is": "Le dernier statut de votre candidature selon nos dossiers est : ",
+  "status-is": "Le dernier statut de votre candidature selon nos dossiers est\u00a0:",
   "surname": {
     "error": {
-      "required": "Le $t(surname.label) $t(common:error-messages.required)"
+      "required": "Le nom de famille est obligatoire."
     },
     "label": "Nom de famille"
   },
   "unable-to-find-status": "Nous ne sommes pas en mesure de déterminer le statut de votre demande pour le moment en utilisant ce service.",
   "other-ways-to-status": "Contactez-nous",
-  "no-match-title": "D'autres façons d'obtenir votre statut:"
+  "no-match-title": "D'autres façons d'obtenir votre statut\u00a0:"
 }
