@@ -26,8 +26,8 @@ export async function middleware(req: NextRequest) {
   }
 
   if (
-    req.cookies.get('agreed-to-email-esrf-terms') !== 'true' &&
-    req.nextUrl.pathname === '/email'
+    req.nextUrl.pathname === '/email' &&
+    req.cookies.get('agreed-to-email-esrf-terms') !== 'true'
   ) {
     return NextResponse.redirect(
       new URL(`/${req.nextUrl.locale}/privacy`, req.url)

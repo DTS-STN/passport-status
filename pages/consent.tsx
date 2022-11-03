@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, MouseEventHandler, useCallback } from 'react'
 import { setCookie } from 'cookies-next'
 import { GetStaticProps } from 'next'
 import { useTranslation } from 'next-i18next'
@@ -10,6 +10,15 @@ import router from 'next/router'
 
 const Consent: FC = () => {
   const { t } = useTranslation('consent')
+
+  const handleOnAgreeClick: MouseEventHandler<HTMLButtonElement> = useCallback(
+    (e) => {
+      e.preventDefault()
+      setCookie('agreed-to-email-esrf-terms', 'true', { sameSite: true })
+      router.push('/email')
+    },
+    []
+  )
 
   return (
     <Layout
@@ -23,12 +32,7 @@ const Consent: FC = () => {
         <div id="yes-button">
           <ActionButton
             text={t('yes-button')}
-            onClick={() => {
-              setCookie('agreed-to-email-esrf-terms', 'true', {
-                sameSite: true,
-              })
-              router.push('/email')
-            }}
+            onClick={handleOnAgreeClick}
             style="primary"
           />
         </div>
