@@ -2,7 +2,7 @@
   "date-of-birth": {
     "error": {
       "current": "The date of birth must be in the past.",
-      "invalid": "The date of birth must be in a valid format of «\u00a0yyyy-MM-dd\u00a0».",
+      "invalid": "The date of birth must be valid in the following format: YYYY-MM-DD (Year-Month-Day).",
       "required": "The date of birth is required."
     },
     "label": "Date of birth"

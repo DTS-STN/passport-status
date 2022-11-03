@@ -2,7 +2,7 @@
   "date-of-birth": {
     "error": {
       "current": "La date de naissance doit être dans le passé.",
-      "invalid": "La date de naissance doit être valide au format de «\u00a0aaaa-MM-jj\u00a0».",
+      "invalid": "La date de naissance doit être valide selon le format suivant\u00a0: aaaa-MM-jj (Année-Mois-Jour).",
       "required": "La date de naissance obligatoire."
     },
     "label": "Date de naissance"
