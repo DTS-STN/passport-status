@@ -24,7 +24,9 @@ const Consent: FC = () => {
           <ActionButton
             text={t('yes-button')}
             onClick={() => {
-              setCookie('agreed-to-terms', 'true')
+              setCookie('agreed-to-email-esrf-terms', 'true', {
+                sameSite: true,
+              })
               router.push('/email')
             }}
             style="primary"

@@ -26,9 +26,11 @@ export async function middleware(req: NextRequest) {
   }
 
   if (
-    req.cookies.get('agreed-to-terms') != 'undefined' &&
+    req.cookies.get('agreed-to-email-esrf-terms') !== 'true' &&
     req.nextUrl.pathname === '/email'
   ) {
-    return NextResponse.redirect(new URL('/privacy', req.url))
+    return NextResponse.redirect(
+      new URL(`/${req.nextUrl.locale}/privacy`, req.url)
+    )
   }
 }
