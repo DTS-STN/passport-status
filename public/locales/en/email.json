@@ -1,38 +1,38 @@
 {
-  "header": "Get my File (ESRF) number",
-  "description": "Please enter the following required feilds, as entered on your passport application form, to have your File number (ESRF) emailed to the email on file.",
+  "header": "Get my file number (ESRF)",
+  "description": "Please enter the following required feilds, as entered on your passport application form, to have your file number (ESRF) emailed to the email address on file.",
   "email": {
-    "label": "Email",
+    "label": "Email address",
     "error": {
-      "required": "The $t(email.label) $t(common:error-messages.required)",
-      "valid": "The $t(email.label) $t(common:error-messages.valid)"
+      "required": "The email address is required.",
+      "valid": "The email address must be valid."
     }
   },
   "given-name": {
     "error": {
-      "required": "The $t(given-name.label) $t(common:error-messages.required)"
+      "required": "The given name is required."
     },
-    "label": "Given Name"
+    "label": "Given name"
   },
   "surname": {
     "error": {
-      "required": "The $t(surname.label) $t(common:error-messages.required)"
+      "required": "The surname is required."
     },
     "label": "Surname"
   },
   "date-of-birth": {
     "error": {
-      "current": "The $t(date-of-birth.label) $t(common:error-messages.in-past)",
-      "invalid": "The $t(date-of-birth.label) $t(common:error-messages.valid-format, { \"format\": \"dd/mm/yyyy\" })",
-      "required": "The $t(date-of-birth.label) $t(common:error-messages.required)"
+      "current": "The date of birth must be in the past.",
+      "invalid": "The date of birth must be valid in the following format: YYYY-MM-DD (Year-Month-Day).",
+      "required": "The date of birth is required."
     },
     "label": "Date of birth"
   },
-  "email-esrf": "Email my File number (ESRF)",
-  "email-sent-confirmation": "An email has been sent if there was a match in our records with the File number (ESRF)",
+  "email-esrf": "Email my file number (ESRF)",
+  "email-sent-confirmation": "An email has been sent if there was a match in our records with the file number (ESRF).",
   "page-unauth": {
     "header": "Page Unauthorized",
-    "desc": "Please accept the Privacy and Email terms as well as give your consent before getting your esrf",
+    "desc": "Please accept the Privacy and Email terms as well as give your consent before getting your file number (ESRF)",
     "button": "Privacy and Email terms"
   }
 }
