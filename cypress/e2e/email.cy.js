@@ -2,6 +2,10 @@
 
 describe('email page loads', () => {
     beforeEach(() => {
+      cy.visit('/privacy')
+      cy.get('#termsBtnGrp button').first().click()
+      cy.get('#goToConsent').click()
+      cy.get('#yes-button button').click()
       cy.visit('/email')
     })
   
