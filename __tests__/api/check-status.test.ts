@@ -1,6 +1,6 @@
 import handler from '../../pages/api/check-status'
 import { createMocks, createRequest, createResponse } from 'node-mocks-http'
-import { CheckStatusRequest } from '../../lib/StatusTypes'
+import { CheckStatusRequest } from '../../lib/types'
 import { NextApiRequest, NextApiResponse } from 'next'
 
 /**
