@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { hasCookie } from 'cookies-next'
 
 //regex to check if there's an extension in the path, ie .jpg
 const PUBLIC_FILE = /\.(.*)$/
@@ -22,5 +23,14 @@ export async function middleware(req: NextRequest) {
     req.nextUrl.pathname === '/'
   ) {
     return NextResponse.redirect(new URL(`/`, req.url))
+  }
+
+  if (
+    req.nextUrl.pathname === '/email' &&
+    req.cookies.get('agreed-to-email-esrf-terms') !== 'true'
+  ) {
+    return NextResponse.redirect(
+      new URL(`/${req.nextUrl.locale}/privacy`, req.url)
+    )
   }
 }
