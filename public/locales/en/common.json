@@ -40,13 +40,6 @@
   "tools": "Tools",
   "top-of-page": "Top of Page",
   "welcome": "Welcome to",
-  "error-messages": {
-    "required": "is required",
-    "in-past": "must be in the past",
-    "valid": "must be valid",
-    "valid-format": "must be in a valid format of {{format}}",
-    "meet-length": "must be {{length}} characters long"
-  },
   "contact-program": "Contact Passport services",
   "program-links": [
     {
