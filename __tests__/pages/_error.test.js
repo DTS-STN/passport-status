@@ -8,9 +8,7 @@ import CustomError from '../../pages/_error'
 describe('custom error', () => {
   it('renders custom statusCode without crashing', () => {
     render(<CustomError statusCode="500" />)
-    expect(
-      screen.getByText('An error 500 occurred on server')
-    ).toBeInTheDocument()
+    expect(screen.getByText('Error 500')).toBeInTheDocument()
   })
 
   it('renders no statusCode without crashing', () => {
