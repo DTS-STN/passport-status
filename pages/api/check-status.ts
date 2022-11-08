@@ -5,9 +5,9 @@ import passportStatusesMock from '../../__mocks__/passportStatusesMock.json'
 import {
   PassportStatusesSearchResult,
   CheckStatusReponse,
-  mapToCheckStatusReponse,
   CheckStatusRequest,
-} from '../../lib/StatusTypes'
+} from '../../lib/types'
+import { mapToCheckStatusReponse } from '../../lib/mappers'
 
 /**
  * Fetch passport status from mock API data

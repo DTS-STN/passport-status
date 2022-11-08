@@ -1,6 +1,6 @@
 import { useQuery, UseQueryOptions } from '@tanstack/react-query'
 import { ApiError } from 'next/dist/server/api-utils'
-import { CheckStatusReponse, CheckStatusRequest } from './StatusTypes'
+import { CheckStatusReponse, CheckStatusRequest } from './types'
 
 export const fetchCheckStatus = async (
   checkStatusRequest: CheckStatusRequest,
@@ -28,7 +28,7 @@ export const useCheckStatus = (
   >(
     ['ps:api:check-status', checkStatusRequest],
     ({ signal }) => fetchCheckStatus(checkStatusRequest, { signal }),
-    { ...(queryOptions ?? {}) }
+    { staleTime: 5 * 60 * 1000, ...(queryOptions ?? {}) }
   )
 
   // fix isLoading with disabled: false
