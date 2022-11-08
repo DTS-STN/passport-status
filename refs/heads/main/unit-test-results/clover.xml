@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1667570467340" clover="3.2.0">
-  <project timestamp="1667570467341" name="All files">
-    <metrics statements="229" coveredstatements="125" conditionals="158" coveredconditionals="60" methods="81" coveredmethods="37" elements="468" coveredelements="222" complexity="0" loc="229" ncloc="229" packages="4" files="31" classes="31"/>
+<coverage generated="1667912759780" clover="3.2.0">
+  <project timestamp="1667912759780" name="All files">
+    <metrics statements="229" coveredstatements="125" conditionals="158" coveredconditionals="60" methods="81" coveredmethods="37" elements="468" coveredelements="222" complexity="0" loc="229" ncloc="229" packages="4" files="32" classes="32"/>
     <package name="components">
       <metrics statements="48" coveredstatements="43" conditionals="34" coveredconditionals="24" methods="22" coveredmethods="17"/>
       <file name="ActionButton.tsx" path="/home/runner/work/passport-status/passport-status/components/ActionButton.tsx">
@@ -97,24 +97,6 @@
     </package>
     <package name="lib">
       <metrics statements="31" coveredstatements="9" conditionals="21" coveredconditionals="1" methods="8" coveredmethods="3"/>
-      <file name="CheckStatusHook.ts" path="/home/runner/work/passport-status/passport-status/lib/CheckStatusHook.ts">
-        <metrics statements="10" coveredstatements="0" conditionals="8" coveredconditionals="0" methods="3" coveredmethods="0"/>
-        <line num="5" count="0" type="stmt"/>
-        <line num="9" count="0" type="stmt"/>
-        <line num="10" count="0" type="stmt"/>
-        <line num="11" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="12" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="13" count="0" type="stmt"/>
-        <line num="16" count="0" type="stmt"/>
-        <line num="24" count="0" type="stmt"/>
-        <line num="30" count="0" type="stmt"/>
-        <line num="36" count="0" type="stmt"/>
-      </file>
-      <file name="StatusTypes.ts" path="/home/runner/work/passport-status/passport-status/lib/StatusTypes.ts">
-        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="37" count="1" type="stmt"/>
-        <line num="39" count="1" type="stmt"/>
-      </file>
       <file name="logger.js" path="/home/runner/work/passport-status/passport-status/lib/logger.js">
         <metrics statements="14" coveredstatements="7" conditionals="11" coveredconditionals="1" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
@@ -131,6 +113,27 @@
         <line num="26" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="27" count="0" type="stmt"/>
         <line num="32" count="1" type="stmt"/>
+      </file>
+      <file name="mappers.ts" path="/home/runner/work/passport-status/passport-status/lib/mappers.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+      </file>
+      <file name="types.ts" path="/home/runner/work/passport-status/passport-status/lib/types.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="useCheckStatus.ts" path="/home/runner/work/passport-status/passport-status/lib/useCheckStatus.ts">
+        <metrics statements="10" coveredstatements="0" conditionals="8" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="11" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="12" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
       </file>
       <file name="useEmailEsrf.ts" path="/home/runner/work/passport-status/passport-status/lib/useEmailEsrf.ts">
         <metrics statements="5" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="0"/>
