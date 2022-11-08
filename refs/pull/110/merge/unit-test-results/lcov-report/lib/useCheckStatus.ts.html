@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for components/ErrorLayout.tsx</title>
+    <title>Code coverage report for lib/useCheckStatus.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">components</a> ErrorLayout.tsx</h1>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">lib</a> useCheckStatus.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>0/12</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>0/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>0/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>0/10</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -107,21 +107,18 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -129,60 +126,63 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { FC } from 'react'
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useQuery, UseQueryOptions } from '@tanstack/react-query'
+import { ApiError } from 'next/dist/server/api-utils'
+import { CheckStatusReponse, CheckStatusRequest } from './types'
 &nbsp;
-export interface ErrorLayoutProps {
-  children?: React.ReactNode
+export const fetchCheckStatus = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >as</span>ync (</span>
+  checkStatusRequest: CheckStatusRequest,
+  init?: RequestInit
+): Promise&lt;CheckStatusReponse | null&gt; =&gt; {
+  const query = <span class="cstat-no" title="statement not covered" >new URLSearchParams({ ...checkStatusRequest }).toString()</span>
+  const response = <span class="cstat-no" title="statement not covered" >await fetch('/api/check-status?' + query, init)</span>
+<span class="cstat-no" title="statement not covered" >  if (response.ok) <span class="cstat-no" title="statement not covered" >return response.json()</span></span>
+<span class="cstat-no" title="statement not covered" >  if (response.status === 404) <span class="cstat-no" title="statement not covered" >return null</span></span>
+<span class="cstat-no" title="statement not covered" >  throw new ApiError(response.status, response.statusText)</span>
 }
 &nbsp;
-const ErrorLayout: FC&lt;ErrorLayoutProps&gt; = ({ children }) =&gt; {
-  return (
-    &lt;div className="container mx-auto"&gt;
-      &lt;img
-        className="h-5 w-auto xs:h-6 sm:h-8 md:h-8 lg:h-7 xl:h-8 my-5 mx-4 lg:mx-6"
-        src={'/sig-blk-en.svg'}
-        alt="Government of Canada - Gouvernement du Canada"
-      /&gt;
-&nbsp;
-      &lt;main
-        role="main"
-        className="grid grid-cols-1 lg:grid-cols-2 mx-4 lg:mx-6 gap-4 lg:gap-8"
-      &gt;
-        {children}
-      &lt;/main&gt;
-&nbsp;
-      &lt;footer className="mt-12 mb-3 flex lg:flex-row-reverse pr-4 lg:pr-6 justify-between"&gt;
-        &lt;a className="w-32 sm:w-36 pl-4 lg:hidden text-sm font-body" href="#"&gt;
-          Top of page / Haut de la page&amp;nbsp;
-          &lt;span className="font-extrabold"&gt;&amp;#8963;&lt;/span&gt;
-        &lt;/a&gt;
-        &lt;img
-          className="h-6 w-auto lg:h-auto lg:w-40"
-          src={'/wmms-blk.svg'}
-          alt={
-            'Symbol of the Government of Canada - Symbole du gouvernement du Canada'
-          }
-        /&gt;
-      &lt;/footer&gt;
-    &lt;/div&gt;
+export const useCheckStatus = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(</span></span>
+  checkStatusRequest: CheckStatusRequest,
+  queryOptions?: UseQueryOptions&lt;
+    CheckStatusReponse | null,
+    ApiError,
+    CheckStatusReponse | null
+  &gt;
+) =&gt; {
+  const query = <span class="cstat-no" title="statement not covered" >useQuery&lt;</span>
+    CheckStatusReponse | null,
+    ApiError,
+    CheckStatusReponse | null
+  &gt;(
+    ['ps:api:check-status', checkStatusRequest],
+<span class="fstat-no" title="function not covered" >    ({</span> signal }) =&gt; <span class="cstat-no" title="statement not covered" >fetchCheckStatus(checkStatusRequest, { signal }),</span>
+    { staleTime: 5 * 60 * 1000, ...(queryOptions ?? {}) }
   )
-}
 &nbsp;
-export default ErrorLayout
+  // fix isLoading with disabled: false
+  // see: https://github.com/TanStack/query/issues/3584#issuecomment-1256986636
+<span class="cstat-no" title="statement not covered" >  return {</span>
+    ...query,
+    isLoading: query.isLoading &amp;&amp; query.fetchStatus !== 'idle',
+  }
+}
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
