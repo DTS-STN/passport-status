@@ -138,12 +138,16 @@
 <a name='L73'></a><a href='#L73'>73</a>
 <a name='L74'></a><a href='#L74'>74</a>
 <a name='L75'></a><a href='#L75'>75</a>
-<a name='L76'></a><a href='#L76'>76</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -228,60 +232,62 @@ const Custom404 = () =&gt; {
           title: 'Not Found | Pas trouvé - Canada.ca',
         }}
       /&gt;
-      &lt;div&gt;
-        &lt;h1 className="text-2xl"&gt;We couldn&amp;#39;t find that Web page&lt;/h1&gt;
-        &lt;h2&gt;An error 404 occured on server&lt;/h2&gt;
-        &lt;p&gt;
-          We&amp;#39;re sorry you ended up here. Sometimes a page gets moved or
-          deleted, but hopefully we can help you find what you&amp;#39;re looking
-          for. What next?
-        &lt;/p&gt;
 &nbsp;
-        &lt;ul&gt;
-          &lt;li&gt;
-            Return to the{' '}
-            &lt;Link href="/" locale="default"&gt;
-              &lt;a className="text-cyan-600 underline"&gt;home page&lt;/a&gt;
-            &lt;/Link&gt;
-            ;
-          &lt;/li&gt;
-          &lt;li&gt;
-            &lt;a
-              href="https://www.canada.ca/en/contact.html"
-              className="text-cyan-600 underline"
-            &gt;
-              Contact us
-            &lt;/a&gt;
-            &amp;nbsp;and we&amp;#39;ll help you out
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-        &lt;h1 className="text-2xl"&gt;Nous ne pouvons trouver cette page Web&lt;/h1&gt;
-        &lt;h2&gt;Erreur 404&lt;/h2&gt;
-        &lt;p&gt;
-          Nous sommes désolés que vous ayez abouti ici. Il arrive parfois
-          qu&amp;#39;une page ait été déplacée ou supprimée. Heureusement, nous
-          pouvons vous aider à trouver ce que vous cherchez. Que faire?
-        &lt;/p&gt;
-        &lt;ul&gt;
-          &lt;li&gt;
-            Retournez à la{' '}
-            &lt;Link href="/" locale="default"&gt;
-              &lt;a className="text-cyan-600 underline"&gt;page d&amp;#39;accueil&lt;/a&gt;
-            &lt;/Link&gt;
-            ;
-          &lt;/li&gt;
-          &lt;li&gt;
-            &lt;a
-              href="https://www.canada.ca/fr/contact.html"
-              className="text-cyan-600 underline"
-            &gt;
-              Communiquez avec nous
-            &lt;/a&gt;
-            &amp;nbsp;pour obtenir de l&amp;#39;aide.
-          &lt;/li&gt;
-        &lt;/ul&gt;
+      &lt;div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8"&gt;
+        &lt;div lang="en"&gt;
+          &lt;h1 className="text-2xl"&gt;We couldn&amp;#39;t find that Web page&lt;/h1&gt;
+          &lt;h2&gt;Error 404&lt;/h2&gt;
+          &lt;p&gt;
+            We&amp;#39;re sorry you ended up here. Sometimes a page gets moved or
+            deleted, but hopefully we can help you find what you&amp;#39;re looking
+            for. What next?
+          &lt;/p&gt;
+          &lt;ul className="list-disc list-inside mb-3"&gt;
+            &lt;li&gt;
+              Return to the{' '}
+              &lt;Link href="/" locale="default"&gt;
+                &lt;a className="text-cyan-600 underline"&gt;home page&lt;/a&gt;
+              &lt;/Link&gt;
+              ;
+            &lt;/li&gt;
+            &lt;li&gt;
+              &lt;a
+                href="https://www.canada.ca/en/contact.html"
+                className="text-cyan-600 underline"
+              &gt;
+                Contact us
+              &lt;/a&gt;{' '}
+              and we&amp;#39;ll help you out.
+            &lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/div&gt;
+        &lt;div lang="fr"&gt;
+          &lt;h1 className="text-2xl"&gt;Nous ne pouvons trouver cette page Web&lt;/h1&gt;
+          &lt;h2&gt;Erreur 404&lt;/h2&gt;
+          &lt;p&gt;
+            Nous sommes désolés que vous ayez abouti ici. Il arrive parfois
+            qu&amp;#39;une page ait été déplacée ou supprimée. Heureusement, nous
+            pouvons vous aider à trouver ce que vous cherchez. Que faire?
+          &lt;/p&gt;
+          &lt;ul className="list-disc list-inside mb-3"&gt;
+            &lt;li&gt;
+              Retournez à la{' '}
+              &lt;Link href="/" locale="default"&gt;
+                &lt;a className="text-cyan-600 underline"&gt;page d&amp;#39;accueil&lt;/a&gt;
+              &lt;/Link&gt;
+              ;
+            &lt;/li&gt;
+            &lt;li&gt;
+              &lt;a
+                href="https://www.canada.ca/fr/contact.html"
+                className="text-cyan-600 underline"
+              &gt;
+                Communiquez avec nous
+              &lt;/a&gt;{' '}
+              pour obtenir de l&amp;#39;aide.
+            &lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/div&gt;
       &lt;/div&gt;
     &lt;/ErrorLayout&gt;
   )
@@ -295,7 +301,7 @@ export default Custom404
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-11-08T14:33:53.625Z
+                at 2022-11-08T16:15:47.369Z
             </div>
         <script src="../prettify.js"></script>
         <script>
