@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for pages/consent.tsx</title>
+    <title>Code coverage report for components/ErrorLayout.tsx</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">pages</a> consent.tsx</h1>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">components</a> ErrorLayout.tsx</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">55.55% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>5/9</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">33.33% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/3</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">62.5% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5/8</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -107,41 +107,14 @@
 <a name='L42'></a><a href='#L42'>42</a>
 <a name='L43'></a><a href='#L43'>43</a>
 <a name='L44'></a><a href='#L44'>44</a>
-<a name='L45'></a><a href='#L45'>45</a>
-<a name='L46'></a><a href='#L46'>46</a>
-<a name='L47'></a><a href='#L47'>47</a>
-<a name='L48'></a><a href='#L48'>48</a>
-<a name='L49'></a><a href='#L49'>49</a>
-<a name='L50'></a><a href='#L50'>50</a>
-<a name='L51'></a><a href='#L51'>51</a>
-<a name='L52'></a><a href='#L52'>52</a>
-<a name='L53'></a><a href='#L53'>53</a>
-<a name='L54'></a><a href='#L54'>54</a>
-<a name='L55'></a><a href='#L55'>55</a>
-<a name='L56'></a><a href='#L56'>56</a>
-<a name='L57'></a><a href='#L57'>57</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L45'></a><a href='#L45'>45</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -165,7 +138,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -175,62 +147,54 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { FC, MouseEventHandler, useCallback } from 'react'
-import { setCookie } from 'cookies-next'
-import { GetStaticProps } from 'next'
-import { useTranslation } from 'next-i18next'
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import Layout from '../components/Layout'
-import LinkButton from '../components/LinkButton'
-import ActionButton from '../components/ActionButton'
-import router from 'next/router'
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { FC } from 'react'
 &nbsp;
-const Consent: FC = () =&gt; {
-  const { t } = useTranslation('consent')
+export interface ErrorLayoutProps {
+  children?: React.ReactNode
+}
 &nbsp;
-  const handleOnAgreeClick: MouseEventHandler&lt;HTMLButtonElement&gt; = useCallback(
-<span class="fstat-no" title="function not covered" >    (e</span>) =&gt; {
-<span class="cstat-no" title="statement not covered" >      e.preventDefault()</span>
-<span class="cstat-no" title="statement not covered" >      setCookie('agreed-to-email-esrf-terms', 'true', { sameSite: true })</span>
-<span class="cstat-no" title="statement not covered" >      router.push('/email')</span>
-    },
-    []
-  )
-&nbsp;
+const ErrorLayout: FC&lt;ErrorLayoutProps&gt; = ({ children }) =&gt; {
   return (
-    &lt;Layout
-      meta={t('common:meta', { returnObjects: true })}
-      header={t('common:header', { returnObjects: true })}
-      footer={t('common:footer', { returnObjects: true })}
-    &gt;
-      &lt;h1 className="mb-4"&gt;{t('header')}&lt;/h1&gt;
-      &lt;h2 className="my-14"&gt;{t('description')}&lt;/h2&gt;
-      &lt;div className="flex justify-center flex-wrap text-xl gap-4"&gt;
-        &lt;div id="yes-button"&gt;
-          &lt;ActionButton
-            text={t('yes-button')}
-            onClick={handleOnAgreeClick}
-            style="primary"
+    &lt;div className="flex flex-col min-h-screen"&gt;
+      &lt;header className="container mx-auto px-6 my-6"&gt;
+        &lt;img
+          className="h-5 w-auto xs:h-6 sm:h-8 md:h-8 lg:h-7 xl:h-8"
+          src={'/sig-blk-en.svg'}
+          alt="Government of Canada - Gouvernement du Canada"
+        /&gt;
+      &lt;/header&gt;
+      &lt;hr /&gt;
+      &lt;main
+        role="main"
+        id="mainContent"
+        className="container mx-auto px-6 my-8 flex-1"
+      &gt;
+        {children}
+      &lt;/main&gt;
+      &lt;footer className="py-4 bg-gray-light"&gt;
+        &lt;div className="container mx-auto px-6 flex lg:flex-row-reverse justify-between"&gt;
+          &lt;a className="w-32 sm:w-36 lg:hidden text-sm font-body" href="#"&gt;
+            Top of page / Haut de la page&amp;nbsp;
+            &lt;span className="font-extrabold"&gt;&amp;#8963;&lt;/span&gt;
+          &lt;/a&gt;
+          &lt;img
+            className="h-6 w-auto lg:h-auto lg:w-40"
+            src={'/wmms-blk.svg'}
+            alt={
+              'Symbol of the Government of Canada - Symbole du gouvernement du Canada'
+            }
           /&gt;
         &lt;/div&gt;
-        &lt;div id="no-button"&gt;
-          &lt;LinkButton text={t('no-button')} href="/contact" /&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/Layout&gt;
+      &lt;/footer&gt;
+    &lt;/div&gt;
   )
 }
 &nbsp;
-export const getStaticProps: GetStaticProps = <span class="fstat-no" title="function not covered" >as</span>ync ({ locale }) =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
-  props: {
-    ...(await serverSideTranslations(locale ?? 'default', [
-      'common',
-      'consent',
-    ])),
-  },
-})
-&nbsp;
-export default Consent
+export default ErrorLayout
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
