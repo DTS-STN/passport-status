@@ -27,14 +27,16 @@ const Custom404 = () => {
             <li>
               Return to the{' '}
               <Link href="/" locale="default">
-                <a className="text-cyan-600 underline">home page</a>
+                <a className="text-cyan-600 underline hover:text-link-selected">
+                  home page
+                </a>
               </Link>
               ;
             </li>
             <li>
               <a
                 href="https://www.canada.ca/en/contact.html"
-                className="text-cyan-600 underline"
+                className="text-cyan-600 underline hover:text-link-selected"
               >
                 Contact us
               </a>{' '}
@@ -54,14 +56,16 @@ const Custom404 = () => {
             <li>
               Retournez à la{' '}
               <Link href="/" locale="default">
-                <a className="text-cyan-600 underline">page d&#39;accueil</a>
+                <a className="text-cyan-600 underline hover:text-link-selected">
+                  page d&#39;accueil
+                </a>
               </Link>
               ;
             </li>
             <li>
               <a
                 href="https://www.canada.ca/fr/contact.html"
-                className="text-cyan-600 underline"
+                className="text-cyan-600 underline hover:text-link-selected"
               >
                 Communiquez avec nous
               </a>{' '}
