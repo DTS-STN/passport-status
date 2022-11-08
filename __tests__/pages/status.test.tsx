@@ -11,7 +11,7 @@ jest.mock('../../components/ErrorSummary')
 jest.mock('../../components/InputField')
 jest.mock('../../components/ActionButton')
 
-jest.mock('../../lib/CheckStatusHook', () => ({
+jest.mock('../../lib/useCheckStatus', () => ({
   useCheckStatus: () => ({
     isLoading: false,
     error: undefined,
