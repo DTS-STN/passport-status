@@ -20,6 +20,7 @@ describe('InputField', () => {
       label="label"
       onChange={() => {}}
       value=""
+      describedBy="describedBy"
     />
   )
 

@@ -7,6 +7,7 @@ export interface InputFieldProps {
   name: string
   label: string
   required?: boolean
+  describedBy?: string
   textRequired?: string
   errorMessage?: string
   type?: React.HTMLInputTypeAttribute
@@ -24,6 +25,7 @@ const InputField: FC<InputFieldProps> = ({
   textRequired,
   type,
   value,
+  describedBy,
 }) => {
   return (
     <div className="block mb-4" id={`input-${id}`} data-testid={id}>
@@ -44,7 +46,13 @@ const InputField: FC<InputFieldProps> = ({
         value={value ?? ''}
         onChange={onChange}
         aria-required={required}
+        aria-describedby={describedBy && id + 'Help'}
       />
+      {describedBy && (
+        <div className="text-gray-helpText text-sm md:w-2/3" id={id + 'Help'}>
+          {describedBy}
+        </div>
+      )}
     </div>
   )
 }
