@@ -2,6 +2,8 @@
 
 describe('status page loads', () => {
   beforeEach(() => {
+    cy.visit('/expectations')
+    cy.get('#confirmBtn button').first().click()
     cy.visit('/status')
   })
 
@@ -30,6 +32,8 @@ describe('status page loads', () => {
 
 describe('ESRF field validation', ()=>{
   beforeEach(() => {
+    cy.visit('/expectations')
+    cy.get('#confirmBtn button').first().click()
     cy.visit('/status')
   })
 
@@ -53,6 +57,8 @@ describe('ESRF field validation', ()=>{
 
 describe('givenName field validation', ()=>{
   beforeEach(() => {
+    cy.visit('/expectations')
+    cy.get('#confirmBtn button').first().click()
     cy.visit('/status')
   })
 
@@ -70,6 +76,8 @@ describe('givenName field validation', ()=>{
 
 describe('surname field validation', ()=>{
   beforeEach(() => {
+    cy.visit('/expectations')
+    cy.get('#confirmBtn button').first().click()
     cy.visit('/status')
   })
 
@@ -88,6 +96,8 @@ describe('surname field validation', ()=>{
 
 describe('Date of Birth field validation', ()=>{
   beforeEach(() => {
+    cy.visit('/expectations')
+    cy.get('#confirmBtn button').first().click()
     cy.visit('/status')
   })
 
@@ -113,6 +123,8 @@ describe('Date of Birth field validation', ()=>{
 
 describe('responses', ()=>{
   it('loads result', ()=>{
+    cy.visit('/expectations')
+    cy.get('#confirmBtn button').first().click()
     cy.visit('/status')
     cy.get('#esrf').type('002D85ED')
     cy.get('#givenName').type('Yanis')
@@ -128,6 +140,8 @@ describe('responses', ()=>{
   })
 
   it('loads no result', ()=>{
+    cy.visit('/expectations')
+    cy.get('#confirmBtn button').first().click()
     cy.visit('/status')
     cy.get('#esrf').type('12345678')
     cy.get('#givenName').type('John')

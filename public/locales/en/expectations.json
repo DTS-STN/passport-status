@@ -1,0 +1,15 @@
+{
+  "header-purpose": "Purpose",
+  "header-privacy": "Privacy",
+  "description-purpose": "The purpose of this tool is to verify the status of your passport application given some basic information",
+  "description-privacy": "Have you read and agree to the privacy and terms of service?",
+  "button-agree": "I have read and understand",
+  "for-applications": {
+    "p1": "For applications submitted in person or by mail within Canada or mailed to Canada from the US ",
+    "p2": "Recover the ESRF only if a valid email address was included on the application (Post July 2022)",
+    "p3": "Information only updated on a daily basis not real-time."
+  },
+  "recommend-10-days": "Recommend that status checker is only used 10 days after application has been sent. Please refer to (Link to service standards/processing times website) for processing times.",
+  "do-not-travel": "You should not finalize any travel plans until you have the passport. We are not liable for any losses if you do not receive it in time for your travel.",
+  "unsupported-tools": "(not finalized) List of tools that the app does not support: anything overseas (GAC) or IRCC (refugee travel doc, diplomatic passports) or any consulate cases in US or anywhere, but will include applications mailed from US"
+}

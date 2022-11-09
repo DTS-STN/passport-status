@@ -1,5 +1,7 @@
 describe('contact page loads', () => {
     beforeEach(() => {
+      cy.visit('/expectations')
+      cy.get('#confirmBtn button').first().click()
       cy.visit('/contact')
       cy.injectAxe();
     })

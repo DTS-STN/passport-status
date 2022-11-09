@@ -26,11 +26,11 @@ export async function middleware(req: NextRequest) {
   }
 
   if (
-    req.nextUrl.pathname === '/email' &&
+    !['/', '/expectations'].includes(req.nextUrl.pathname) &&
     req.cookies.get('agreed-to-email-esrf-terms') !== 'true'
   ) {
     return NextResponse.redirect(
-      new URL(`/${req.nextUrl.locale}/privacy`, req.url)
+      new URL(`/${req.nextUrl.locale}/expectations`, req.url)
     )
   }
 }
