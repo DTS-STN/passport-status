@@ -14,7 +14,7 @@
     "error": {
       "length": "Le numéro de dossier doit comporter 8 caractères.",
       "required": "Le numéro de dossier est obligatoire.",
-      "starts-with-letter": "Le numéro de dossier doit commencer par une lettre (p. ex. A1234567)"
+      "starts-with-letter": "Le numéro de dossier doit commencer par une lettre (p. ex. A1234567)."
     },
     "label": "Numéro de dossier"
   },
