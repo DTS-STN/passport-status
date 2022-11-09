@@ -13,7 +13,8 @@
   "esrf": {
     "error": {
       "length": "The file number must be 8 characters long.",
-      "required": "The file number is required."
+      "required": "The file number is required.",
+      "starts-with-letter": "The file number must begin with a letter (e.g. A1234567)."
     },
     "label": "File number"
   },

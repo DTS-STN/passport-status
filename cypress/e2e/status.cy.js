@@ -34,7 +34,7 @@ describe('ESRF field validation', ()=>{
   })
 
   it('validates valid ESRF',()=>{
-    cy.get('#esrf').type('35934S87')
+    cy.get('#esrf').type('A5934S87')
     cy.get('#button-get-status > button').click()
     cy.get('#input-esrf > span').should('not.exist')
   })
@@ -114,7 +114,7 @@ describe('Date of Birth field validation', ()=>{
 describe('responses', ()=>{
   it('loads result', ()=>{
     cy.visit('/status')
-    cy.get('#esrf').type('002D85ED')
+    cy.get('#esrf').type('A02D85ED')
     cy.get('#givenName').type('Yanis')
     cy.get('#surname').type('Piérre')
     cy.get('#dateOfBirth').type('1972-07-29')
@@ -129,7 +129,7 @@ describe('responses', ()=>{
 
   it('loads no result', ()=>{
     cy.visit('/status')
-    cy.get('#esrf').type('12345678')
+    cy.get('#esrf').type('A1234567')
     cy.get('#givenName').type('John')
     cy.get('#surname').type('Doe')
     cy.get('#dateOfBirth').type('1990-12-01')
