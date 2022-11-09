@@ -99,7 +99,7 @@ export default function Email() {
             errorMessage={formik.errors.email && t(formik.errors.email)}
             textRequired={t('common:required')}
             required
-            describedBy={t('describedby.email')}
+            helpMessage={t('help-message.email')}
           />
           <InputField
             id="givenName"
@@ -110,7 +110,7 @@ export default function Email() {
             errorMessage={formik.errors.givenName && t(formik.errors.givenName)}
             textRequired={t('common:required')}
             required
-            describedBy={t('describedby.given-name')}
+            helpMessage={t('help-message.given-name')}
           />
           <InputField
             id="surname"
@@ -121,7 +121,7 @@ export default function Email() {
             errorMessage={formik.errors.surname && t(formik.errors.surname)}
             textRequired={t('common:required')}
             required
-            describedBy={t('describedby.surname')}
+            helpMessage={t('help-message.surname')}
           />
           <InputField
             id="dateOfBirth"
@@ -135,7 +135,7 @@ export default function Email() {
             }
             textRequired={t('common:required')}
             required
-            describedBy={t('describedby.date-of-birth')}
+            helpMessage={t('help-message.date-of-birth')}
           />
           <div className="flex flex-wrap">
             <div className="py-1 pr-2">

@@ -35,7 +35,7 @@
     "desc": "Please accept the Privacy and Email terms as well as give your consent before getting your file number (ESRF)",
     "button": "Privacy and Email terms"
   },
-  "describedby": {
+  "help-message": {
     "email": "Provide your full email address as provided on the passport application form. If this is a request for a child application, please provide the full email address as provided on the passport application form for the applicant parent/guardian.",
     "given-name": "Please use the given name exactly as provided on your passport application. If this is a request for a child passport application, please use the child’s given name as provided on the passport application. Please note that the given name provided may have been updated to reflect the first given name on your proof of Canadian citizenship or supporting identification.",
     "surname": "Please use the last name exactly as provided on your passport application. If this is a request for a child passport application, please use the child’s last name as provided on the passport application. Please note that the surname provided may have been updated to reflect the surname on your proof of Canadian citizenship or supporting identification.",
