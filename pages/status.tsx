@@ -43,7 +43,7 @@ const Status: FC = () => {
         .required('esrf.error.required')
         .length(8, 'esrf.error.length')
         .trim()
-        .matches(/^[A-Za-z]/, 'esrf.error.starts-with-letter'),
+        .matches(/^[A-z]/, 'esrf.error.starts-with-letter'),
       givenName: Yup.string().required('given-name.error.required'),
       surname: Yup.string().required('surname.error.required'),
     }),
