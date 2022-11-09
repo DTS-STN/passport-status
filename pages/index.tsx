@@ -35,13 +35,13 @@ const Index = () => {
           <div className="flex w-max container py-11 mx-auto font-display">
             <div className="grid grid-cols-2 gap-2 xl:gap-6">
               <LinkButton
-                href="/en/landing"
+                href="/en/expectations"
                 text="English"
                 id="english-button"
                 lang="en"
               />
               <LinkButton
-                href="/fr/landing"
+                href="/fr/expectations"
                 text="Français"
                 id="french-button"
                 lang="fr"

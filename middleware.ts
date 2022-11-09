@@ -25,12 +25,14 @@ export async function middleware(req: NextRequest) {
     return NextResponse.redirect(new URL(`/`, req.url))
   }
 
-  if (
-    req.nextUrl.pathname === '/email' &&
-    req.cookies.get('agreed-to-email-esrf-terms') !== 'true'
-  ) {
-    return NextResponse.redirect(
-      new URL(`/${req.nextUrl.locale}/privacy`, req.url)
-    )
+  if (req.nextUrl.pathname !== '/') {
+    if (
+      req.nextUrl.pathname !== '/expectations' &&
+      req.cookies.get('agreed-to-email-esrf-terms') !== 'true'
+    ) {
+      return NextResponse.redirect(
+        new URL(`/${req.nextUrl.locale}/expectations`, req.url)
+      )
+    }
   }
 }

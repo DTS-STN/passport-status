@@ -1,0 +1,7 @@
+{
+  "header-purpose": "objectif de l'application",
+  "header-privacy": "confidentialité",
+  "description-purpose": "Le but de cet outil est de vérifier le statut de votre demande de passeport à partir de quelques informations de base.",
+  "description-privacy": "Avez-vous lu et accepté les conditions d'utilisation et de confidentialité ?",
+  "button-agree": "J'ai lu et j'accept"
+}
