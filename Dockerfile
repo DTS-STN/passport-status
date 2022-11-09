@@ -26,8 +26,4 @@ COPY --from=build /build/public ./public
 COPY --from=build /build/tracing.js ./
 RUN VERSION_NEXT=`node -p -e "require('./package.json').dependencies.next"`&& npm install --no-package-lock --no-save next@"$VERSION_NEXT"
 
-# Runtime envs -- will default to build args if no env values are specified at docker run
-ARG PASSPORT_STATUS_API_BASE_URI
-ENV PASSPORT_STATUS_API_BASE_URI=$PASSPORT_STATUS_API_BASE_URI
-
 CMD npm run start
