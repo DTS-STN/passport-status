@@ -26,8 +26,21 @@ const Expectations: FC = () => {
       footer={t('common:footer', { returnObjects: true })}
     >
       <h2>{t('header-purpose')}</h2>
-      <p>{t('description-purpose')}</p>
-      <h2>{t('header-privacy')}</h2>
+      <div className="my-5">
+        <p>{t('for-applications.p1')}</p>
+        <p>{t('for-applications.p2')}</p>
+        <p>{t('for-applications.p3')}</p>
+      </div>
+      <div>
+        <p>{t('recommend-10-days')}</p>
+      </div>
+      <div className="my-5 font-bold">
+        <p>{t('do-not-travel')}</p>
+      </div>
+      <div className="text-red-600">
+        <p>{t('unsupported-tools')}</p>
+      </div>
+      <h2 className="my-8">{t('header-privacy')}</h2>
       <p>{t('description-privacy')}</p>
       <div id="confirmBtn">
         <ActionButton
