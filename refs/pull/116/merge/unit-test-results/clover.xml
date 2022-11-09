@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1668023305498" clover="3.2.0">
-  <project timestamp="1668023305499" name="All files">
-    <metrics statements="223" coveredstatements="127" conditionals="158" coveredconditionals="63" methods="77" coveredmethods="38" elements="458" coveredelements="228" complexity="0" loc="223" ncloc="223" packages="4" files="32" classes="32"/>
+<coverage generated="1668023481628" clover="3.2.0">
+  <project timestamp="1668023481628" name="All files">
+    <metrics statements="223" coveredstatements="127" conditionals="158" coveredconditionals="65" methods="77" coveredmethods="38" elements="458" coveredelements="230" complexity="0" loc="223" ncloc="223" packages="4" files="32" classes="32"/>
     <package name="components">
-      <metrics statements="50" coveredstatements="45" conditionals="38" coveredconditionals="26" methods="23" coveredmethods="18"/>
+      <metrics statements="50" coveredstatements="45" conditionals="38" coveredconditionals="28" methods="23" coveredmethods="18"/>
       <file name="ActionButton.tsx" path="/home/runner/work/passport-status/passport-status/components/ActionButton.tsx">
         <metrics statements="9" coveredstatements="9" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
         <line num="11" count="7" type="stmt"/>
@@ -58,7 +58,7 @@
         <line num="8" count="1" type="stmt"/>
       </file>
       <file name="InputField.tsx" path="/home/runner/work/passport-status/passport-status/components/InputField.tsx">
-        <metrics statements="3" coveredstatements="3" conditionals="10" coveredconditionals="5" methods="1" coveredmethods="1"/>
+        <metrics statements="3" coveredstatements="3" conditionals="10" coveredconditionals="7" methods="1" coveredmethods="1"/>
         <line num="18" count="3" type="stmt"/>
         <line num="30" count="1" type="stmt"/>
         <line num="63" count="3" type="stmt"/>
