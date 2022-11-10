@@ -28,9 +28,30 @@
   "reset": "Redémarrer",
   "header": "Vérification du statut du passeport",
   "status": {
-    "1": "Approuvée",
-    "2": "En examen",
-    "3": "Rejetée"
+    "1": {
+      "label": "Être en cours de traitement",
+      "description": "Votre candidature a été reçue et est en cours. Si de plus amples informations sont nécessaires, nous vous contacterons."
+    },
+    "2": {
+      "label": "Émis et prêt pour le ramassage",
+      "description": "Votre passeport sera délivré et prêt à être récupéré à la date de ramassage prévue. Vous devez attendre la date de retrait prévue pour récupérer votre passeport. La date de retrait de votre passeport apparaîtra sur votre reçu de retrait."
+    },
+    "3": {
+      "label": "Émission et expédition Postes Canada",
+      "description": "Votre passeport a été délivré et expédié par Postes Canada. Veuillez noter que tous les documents que vous avez fournis à l'appui de votre demande de passeport vous seront expédiés séparément."
+    },
+    "4": {
+      "label": "Émission et expédition Fedex",
+      "description": "Votre passeport a été délivré et expédié par FedEx. Veuillez noter que tous les documents que vous avez fournis à l'appui de votre demande de passeport vous seront expédiés séparément."
+    },
+    "5": {
+      "label": "Non acceptable pour le traitement",
+      "description": "Nous avons examiné votre demande et vous recevrez d'autres communications par courrier ou par téléphone du Programme Passeport."
+    },
+    "99": {
+      "label": "L'application ne répond plus aux critères d'utilisation",
+      "description": "Si vous voyez cela, c'est que quelque chose s'est mal passé."
+    }
   },
   "status-is": "Le dernier statut de votre candidature selon nos dossiers est\u00a0:",
   "surname": {

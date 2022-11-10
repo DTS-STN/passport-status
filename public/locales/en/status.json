@@ -28,9 +28,30 @@
   "reset": "Restart",
   "header": "Passport Status Check",
   "status": {
-    "1": "Approved",
-    "2": "In examination",
-    "3": "Rejected"
+    "1": {
+      "label": "Being processed",
+      "description": "Your application has been received and is in progress. If any further information is required, we will contact you."
+    },
+    "2": {
+      "label": "Issued and Ready for Pickup",
+      "description": "Your passport will be issued and ready for pick-up on your scheduled pick-up date. You must wait until your scheduled pick-up date to pick up your passport. Your passport pick-up date will show on your pick-up receipt."
+    },
+    "3": {
+      "label": "Issued and Shipping Canada Post",
+      "description": "Your passport has been issued and shipped using Canada Post. Please note that any documents you provided to support your passport application will be shipped to you separately."
+    },
+    "4": {
+      "label": "Issued and Shipping Fedex",
+      "description": "Your passport has been issued and shipped using FedEx. Please note that any documents you provided to support your passport application will be shipped to you separately."
+    },
+    "5": {
+      "label": "Not acceptable for processing",
+      "description": "We reviewed your application and you will receive further communication by mail or by phone from the Passport Program."
+    },
+    "99": {
+      "label": "Application No Longer Meets Criteria for Use",
+      "description": "If you're seeing this then something has gone wrong."
+    }
   },
   "status-is": "The latest status of your application according to our records is:",
   "surname": {

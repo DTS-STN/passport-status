@@ -112,15 +112,18 @@ const Status: FC = () => {
                 goBackStyle="primary"
                 checkAgainText={t('check-again')}
               >
-                <p className="mb-6 text-2xl">
-                  {`${t('status-is')} `}
-                  <strong id="response-status">
-                    {t(`status.${checkStatusReponse.status}`, {
-                      defaultValue: checkStatusReponse.status,
-                    })}
-                  </strong>
-                  .
-                </p>
+                <div>
+                  <p className="mb-6 text-2xl">
+                    {`${t('status-is')} `}
+                    <strong id="response-status">
+                      {t(`status.${checkStatusReponse.status}.label`, {
+                        defaultValue: checkStatusReponse.status,
+                      })}
+                    </strong>
+                    .
+                  </p>
+                  <p>{t(`status.${checkStatusReponse.status}.description`)}</p>
+                </div>
               </StatusInfo>
               <LinkSummary
                 title={t('common:contact-program')}
