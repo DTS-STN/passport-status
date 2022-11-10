@@ -17,7 +17,7 @@ const getUrl = (checkStatusRequest: CheckStatusRequest) =>
 describe('api/check-status', () => {
   it('returns a result', async () => {
     const url = getUrl({
-      esrf: '002D85ED',
+      esrf: 'A02D85ED',
       givenName: 'Yanis',
       surname: 'Piérre',
       dateOfBirth: '1972-07-29',
