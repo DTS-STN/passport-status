@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1668088810945" clover="3.2.0">
-  <project timestamp="1668088810945" name="All files">
-    <metrics statements="223" coveredstatements="127" conditionals="158" coveredconditionals="65" methods="77" coveredmethods="38" elements="458" coveredelements="230" complexity="0" loc="223" ncloc="223" packages="4" files="32" classes="32"/>
+<coverage generated="1668111645290" clover="3.2.0">
+  <project timestamp="1668111645290" name="All files">
+    <metrics statements="226" coveredstatements="130" conditionals="158" coveredconditionals="65" methods="79" coveredmethods="40" elements="463" coveredelements="235" complexity="0" loc="226" ncloc="226" packages="4" files="32" classes="32"/>
     <package name="components">
       <metrics statements="50" coveredstatements="45" conditionals="38" coveredconditionals="28" methods="23" coveredmethods="18"/>
       <file name="ActionButton.tsx" path="/home/runner/work/passport-status/passport-status/components/ActionButton.tsx">
@@ -101,7 +101,15 @@
       </file>
     </package>
     <package name="lib">
-      <metrics statements="31" coveredstatements="9" conditionals="21" coveredconditionals="1" methods="8" coveredmethods="3"/>
+      <metrics statements="34" coveredstatements="12" conditionals="21" coveredconditionals="1" methods="10" coveredmethods="5"/>
+      <file name="checkStatusReponseMapper.ts" path="/home/runner/work/passport-status/passport-status/lib/checkStatusReponseMapper.ts">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="34" count="2" type="stmt"/>
+      </file>
       <file name="logger.js" path="/home/runner/work/passport-status/passport-status/lib/logger.js">
         <metrics statements="14" coveredstatements="7" conditionals="11" coveredconditionals="1" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
@@ -118,11 +126,6 @@
         <line num="26" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="27" count="0" type="stmt"/>
         <line num="32" count="1" type="stmt"/>
-      </file>
-      <file name="mappers.ts" path="/home/runner/work/passport-status/passport-status/lib/mappers.ts">
-        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="12" count="1" type="stmt"/>
-        <line num="14" count="1" type="stmt"/>
       </file>
       <file name="types.ts" path="/home/runner/work/passport-status/passport-status/lib/types.ts">
         <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
@@ -269,10 +272,10 @@
         <line num="21" count="2" type="stmt"/>
         <line num="22" count="2" type="stmt"/>
         <line num="27" count="2" type="stmt"/>
-        <line num="28" count="20" type="stmt"/>
+        <line num="28" count="28" type="stmt"/>
         <line num="30" count="2" type="stmt"/>
-        <line num="37" count="18" type="cond" truecount="4" falsecount="0"/>
-        <line num="41" count="36" type="stmt"/>
+        <line num="37" count="26" type="cond" truecount="4" falsecount="0"/>
+        <line num="41" count="52" type="stmt"/>
         <line num="55" count="2" type="cond" truecount="2" falsecount="0"/>
         <line num="56" count="1" type="stmt"/>
         <line num="66" count="1" type="stmt"/>
