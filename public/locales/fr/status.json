@@ -38,11 +38,13 @@
     },
     "3": {
       "label": "Émission et expédition Postes Canada",
-      "description": "Votre passeport a été délivré et expédié par Postes Canada. Veuillez noter que tous les documents que vous avez fournis à l'appui de votre demande de passeport vous seront expédiés séparément."
+      "description": "Votre passeport a été délivré et expédié par Postes Canada. Veuillez noter que tous les documents que vous avez fournis à l'appui de votre demande de passeport vous seront expédiés séparément.",
+      "tracking": "Vous pouvez suivre cet envoi sur le site Web de Postes Canada en utilisant le code de suivi\u00a0:"
     },
     "4": {
       "label": "Émission et expédition Fedex",
-      "description": "Votre passeport a été délivré et expédié par FedEx. Veuillez noter que tous les documents que vous avez fournis à l'appui de votre demande de passeport vous seront expédiés séparément."
+      "description": "Votre passeport a été délivré et expédié par FedEx. Veuillez noter que tous les documents que vous avez fournis à l'appui de votre demande de passeport vous seront expédiés séparément.",
+      "tracking": "Vous pouvez suivre cet envoi sur le site Web de FedEx en utilisant le code de suivi\u00a0:"
     },
     "5": {
       "label": "Non acceptable pour le traitement",
@@ -52,10 +54,6 @@
       "label": "L'application ne répond plus aux critères d'utilisation",
       "description": "Si vous voyez cela, c'est que quelque chose s'est mal passé."
     }
-  },
-  "tracking-number": {
-    "canada-post": "Vous pouvez suivre cet envoi sur le site Web de Postes Canada en utilisant le code de suivi\u00a0:",
-    "fedex": "Vous pouvez suivre cet envoi sur le site Web de FedEx en utilisant le code de suivi\u00a0:"
   },
   "status-is": "Le dernier statut de votre candidature selon nos dossiers est\u00a0:",
   "surname": {

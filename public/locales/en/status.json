@@ -38,11 +38,13 @@
     },
     "3": {
       "label": "Issued and Shipping Canada Post",
-      "description": "Your passport has been issued and shipped using Canada Post. Please note that any documents you provided to support your passport application will be shipped to you separately."
+      "description": "Your passport has been issued and shipped using Canada Post. Please note that any documents you provided to support your passport application will be shipped to you separately.",
+      "tracking": "You can track this shipment on Canada Post's website using the tracking code: "
     },
     "4": {
       "label": "Issued and Shipping Fedex",
-      "description": "Your passport has been issued and shipped using FedEx. Please note that any documents you provided to support your passport application will be shipped to you separately."
+      "description": "Your passport has been issued and shipped using FedEx. Please note that any documents you provided to support your passport application will be shipped to you separately.",
+      "tracking": "You can track this shipment on FedEx's website using the tracking code: "
     },
     "5": {
       "label": "Not acceptable for processing",
@@ -52,10 +54,6 @@
       "label": "Application No Longer Meets Criteria for Use",
       "description": "If you're seeing this then something has gone wrong."
     }
-  },
-  "tracking-number": {
-    "canada-post": "You can track this shipment on Canada Post's website using the tracking code: ",
-    "fedex": "You can track this shipment on FedEx's website using the tracking code: "
   },
   "status-is": "The latest status of your application according to our records is:",
   "surname": {
