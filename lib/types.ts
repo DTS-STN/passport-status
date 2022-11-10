@@ -6,6 +6,7 @@ export interface CheckStatusRequest {
 }
 
 export interface CheckStatusReponse {
+  manifestNumber?: string
   status: string
 }
 
@@ -21,7 +22,13 @@ export interface PassportStatusesGetCertificateApplicationResponse {
 }
 
 export interface PassportStatusesCertificateApplication {
+  CertificateApplicationIdentification: PassportStatusesCertificateApplicationIdentification[]
   CertificateApplicationStatus: PassportStatusesCertificateApplicationStatus
+}
+
+export interface PassportStatusesCertificateApplicationIdentification {
+  IdentificationCategoryText: string
+  IdentificationID: string
 }
 
 export interface PassportStatusesCertificateApplicationStatus {
