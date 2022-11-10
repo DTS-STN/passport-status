@@ -7,7 +7,7 @@ import {
   CheckStatusReponse,
   CheckStatusRequest,
 } from '../../lib/types'
-import { mapToCheckStatusReponse } from '../../lib/mappers'
+import { mapToCheckStatusReponse } from '../../lib/checkStatusReponseMapper'
 
 /**
  * Fetch passport status from mock API data
