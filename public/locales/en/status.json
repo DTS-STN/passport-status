@@ -53,6 +53,10 @@
       "description": "If you're seeing this then something has gone wrong."
     }
   },
+  "tracking-number": {
+    "canada-post": "You can track this shipment on Canada Post's website using the tracking code: ",
+    "fedex": "You can track this shipment on FedEx's website using the tracking code: "
+  },
   "status-is": "The latest status of your application according to our records is:",
   "surname": {
     "error": {

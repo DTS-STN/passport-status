@@ -103,6 +103,7 @@ const Status: FC = () => {
       <h1 className="mb-4">{t('header')}</h1>
       {(() => {
         if (checkStatusReponse) {
+          console.table(checkStatusReponse)
           return (
             <>
               <StatusInfo
@@ -123,6 +124,16 @@ const Status: FC = () => {
                     .
                   </p>
                   <p>{t(`status.${checkStatusReponse.status}.description`)}</p>
+                  {/* We only want to show the tracking # if the status is issued and shipped via Canada Post or Fedex. Currently, some records have a manifest # but are not one of these codes (ie. 99) */}
+                  {checkStatusReponse.status === ('3' || '4') &&
+                    checkStatusReponse.manifestNumber && (
+                      <p>
+                        {checkStatusReponse.status === '3'
+                          ? t('tracking-number.canada-post')
+                          : t('tracking-number.fedex')}
+                        <strong>{checkStatusReponse.manifestNumber}</strong>
+                      </p>
+                    )}
                 </div>
               </StatusInfo>
               <LinkSummary

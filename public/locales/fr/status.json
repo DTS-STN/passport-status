@@ -53,6 +53,10 @@
       "description": "Si vous voyez cela, c'est que quelque chose s'est mal passé."
     }
   },
+  "tracking-number": {
+    "canada-post": "Vous pouvez suivre cet envoi sur le site Web de Postes Canada en utilisant le code de suivi\u00a0:",
+    "fedex": "Vous pouvez suivre cet envoi sur le site Web de FedEx en utilisant le code de suivi\u00a0:"
+  },
   "status-is": "Le dernier statut de votre candidature selon nos dossiers est\u00a0:",
   "surname": {
     "error": {
