@@ -41,5 +41,11 @@
   },
   "unable-to-find-status": "We are unable to determine the status of your application at this time using this service.",
   "other-ways-to-status": "Contact us",
-  "no-match-title": "Other ways to get your status:"
+  "no-match-title": "Other ways to get your status:",
+  "help-message": {
+    "esrf": "When submitting your application in-person, you are provided with a File Number. The File Number begins with at least 1 letter and has a maximum of 8 total characters. (Examples of possible formats: “A1234567” or “AA123456” or “A123456” or “AA12345”)",
+    "given-name": "Please use the given name exactly as provided on your passport application. If this is a request for a child passport application, please use the child’s given name as provided on the passport application. Please note that the given name provided may have been updated to reflect the first given name on your proof of Canadian citizenship or supporting identification.",
+    "surname": "Please use the last name exactly as provided on your passport application. If this is a request for a child passport application, please use the child’s last name as provided on the passport application. Please note that the surname provided may have been updated to reflect the surname on your proof of Canadian citizenship or supporting identification.",
+    "date-of-birth": "Please provide your date of birth as provided on your passport application. If this is a request for a child passport application, please use the child’s date of birth as provided on the passport application. Please note that the date of birth provided may have been updated to reflect the date of birth on your proof of Canadian citizenship."
+  }
 }

@@ -173,6 +173,7 @@ const Status: FC = () => {
               errorMessage={formik.errors.esrf && t(formik.errors.esrf)}
               textRequired={t('common:required')}
               required
+              helpMessage={t('help-message.esrf')}
             />
             <InputField
               id="givenName"
@@ -185,6 +186,7 @@ const Status: FC = () => {
               }
               textRequired={t('common:required')}
               required
+              helpMessage={t('help-message.given-name')}
             />
             <InputField
               id="surname"
@@ -195,6 +197,7 @@ const Status: FC = () => {
               errorMessage={formik.errors.surname && t(formik.errors.surname)}
               textRequired={t('common:required')}
               required
+              helpMessage={t('help-message.surname')}
             />
             <InputField
               id="dateOfBirth"
@@ -208,6 +211,7 @@ const Status: FC = () => {
               }
               textRequired={t('common:required')}
               required
+              helpMessage={t('help-message.date-of-birth')}
             />
             <div className="flex flex-wrap">
               <div id="button-get-status" className="py-1 pr-2">
