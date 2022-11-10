@@ -30,6 +30,11 @@
   },
   "email-esrf": "Envoyer mon numéro de dossier (FEDS)",
   "email-sent-confirmation": "Un courriel a été envoyé s'il y avait une correspondance dans nos dossiers avec le numéro de dossier (FEDS).",
+  "email-confirmation-msg": {
+    "request-received": "We have received your request. If you have submitted a passport application and we are able to locate your file, you will receive an email containing your File Number.",
+    "please-contact": "If you do not receive an email containing your File Number within the next 24 hrs, please contact Service Canada:",
+    "call": "Call: Passport Call Centre (insert phone #)."
+  },
   "page-unauth": {
     "header": "Page non-autorisée",
     "desc": "Veuillez accepter les conditions de confidentialité et de courriel et donner votre consentement avant de recevoir votre numéro de dossier (FEDS).",
