@@ -31,9 +31,9 @@
   "email-esrf": "Envoyer mon numéro de dossier (FEDS)",
   "email-sent-confirmation": "Un courriel a été envoyé s'il y avait une correspondance dans nos dossiers avec le numéro de dossier (FEDS).",
   "email-confirmation-msg": {
-    "request-received": "We have received your request. If you have submitted a passport application and we are able to locate your file, you will receive an email containing your File Number.",
-    "please-contact": "If you do not receive an email containing your File Number within the next 24 hrs, please contact Service Canada:",
-    "call": "Call: Passport Call Centre (insert phone #)."
+    "request-received": "Nous avons reçu votre demande. Si vous avez soumis une demande de passeport et que nous sommes en mesure de localiser votre dossier, vous recevrez un courriel contenant votre numéro de dossier.",
+    "please-contact": "Si vous ne recevez pas un courriel contenant votre numéro de dossier dans les prochaines 24 heures, veuillez contacter Service Canada:",
+    "call": "Appelez: Centre d'appels pour les passeports (insérer le numéro de téléphone)."
   },
   "page-unauth": {
     "header": "Page non-autorisée",
