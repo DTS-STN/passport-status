@@ -123,7 +123,6 @@ const Status: FC = () => {
                     .
                   </p>
                   <p>{t(`status.${checkStatusReponse.status}.description`)}</p>
-                  {/* We only want to show the tracking # if the status is issued and shipped via Canada Post or Fedex. Currently, some records have a manifest # but are not one of these codes (ie. 99) */}
                   {checkStatusReponse.manifestNumber &&
                     [
                       StatusCode.PASSPORT_ISSUED_SHIPPING_CANADA_POST,
