@@ -17,6 +17,7 @@ import ErrorSummary, {
 import LinkSummary, { LinkSummaryItem } from '../components/LinkSummary'
 import StatusInfo from '../components/StatusInfo'
 import Modal from '../components/Modal'
+import { StatusCode } from '../lib/types'
 
 const initialValues: CheckStatusRequest = {
   dateOfBirth: '',
@@ -103,6 +104,7 @@ const Status: FC = () => {
       <h1 className="mb-4">{t('header')}</h1>
       {(() => {
         if (checkStatusReponse) {
+          console.table(checkStatusReponse)
           return (
             <>
               <StatusInfo
@@ -116,16 +118,17 @@ const Status: FC = () => {
                   <p className="mb-6 text-2xl">
                     {`${t('status-is')} `}
                     <strong id="response-status">
-                      {t(`status.${checkStatusReponse.status}.label`, {
-                        defaultValue: checkStatusReponse.status,
-                      })}
+                      {t(`status.${checkStatusReponse.status}.label`)}
                     </strong>
                     .
                   </p>
                   <p>{t(`status.${checkStatusReponse.status}.description`)}</p>
                   {/* We only want to show the tracking # if the status is issued and shipped via Canada Post or Fedex. Currently, some records have a manifest # but are not one of these codes (ie. 99) */}
                   {checkStatusReponse.manifestNumber &&
-                    ['3', '4'].indexOf(checkStatusReponse.status) >= 0 && (
+                    [
+                      StatusCode.PASSPORT_ISSUED_SHIPPING_CANADA_POST,
+                      StatusCode.PASSPORT_ISSUED_SHIPPING_FEDEX,
+                    ].includes(checkStatusReponse.status) && (
                       <p>
                         {t(`status.${checkStatusReponse.status}.tracking`)}
                         <strong>{checkStatusReponse.manifestNumber}</strong>
