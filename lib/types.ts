@@ -32,7 +32,7 @@ export interface PassportStatusesCertificateApplicationIdentification {
 }
 
 export interface PassportStatusesCertificateApplicationStatus {
-  StatusCode: string
+  StatusCode: StatusCode
 }
 
 export enum StatusCode {
