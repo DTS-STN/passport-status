@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1668445279688" clover="3.2.0">
-  <project timestamp="1668445279688" name="All files">
+<coverage generated="1668450130707" clover="3.2.0">
+  <project timestamp="1668450130707" name="All files">
     <metrics statements="226" coveredstatements="130" conditionals="161" coveredconditionals="65" methods="79" coveredmethods="40" elements="466" coveredelements="235" complexity="0" loc="226" ncloc="226" packages="4" files="32" classes="32"/>
     <package name="components">
       <metrics statements="50" coveredstatements="45" conditionals="38" coveredconditionals="28" methods="23" coveredmethods="18"/>
@@ -104,8 +104,8 @@
       <metrics statements="34" coveredstatements="12" conditionals="21" coveredconditionals="1" methods="10" coveredmethods="5"/>
       <file name="checkStatusReponseMapper.ts" path="/home/runner/work/passport-status/passport-status/lib/checkStatusReponseMapper.ts">
         <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
-        <line num="14" count="1" type="stmt"/>
-        <line num="16" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
         <line num="29" count="1" type="stmt"/>
         <line num="32" count="1" type="stmt"/>
         <line num="34" count="2" type="stmt"/>
