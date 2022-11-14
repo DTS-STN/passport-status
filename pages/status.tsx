@@ -124,8 +124,8 @@ const Status: FC = () => {
                   <p>{t(`status.${checkStatusReponse.status}.description`)}</p>
                   {checkStatusReponse.manifestNumber &&
                     [
-                      StatusCode.PASSPORT_ISSUED_SHIPPING_CANADA_POST,
-                      StatusCode.PASSPORT_ISSUED_SHIPPING_FEDEX,
+                      `${StatusCode.PASSPORT_ISSUED_SHIPPING_CANADA_POST}`,
+                      `${StatusCode.PASSPORT_ISSUED_SHIPPING_FEDEX}`,
                     ].includes(checkStatusReponse.status) && (
                       <p>
                         {t(`status.${checkStatusReponse.status}.tracking`)}

@@ -7,7 +7,7 @@ export interface CheckStatusRequest {
 
 export interface CheckStatusReponse {
   manifestNumber?: string
-  status: StatusCode
+  status: string
 }
 
 export interface PassportStatusesSearchResult {
@@ -32,7 +32,7 @@ export interface PassportStatusesCertificateApplicationIdentification {
 }
 
 export interface PassportStatusesCertificateApplicationStatus {
-  StatusCode: StatusCode | string
+  StatusCode: string
 }
 
 export enum StatusCode {

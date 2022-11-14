@@ -2,7 +2,6 @@ import {
   CheckStatusReponse,
   PassportStatusesCertificateApplicationIdentification,
   PassportStatusesGetCertificateApplicationResponse,
-  StatusCode,
 } from './types'
 
 /**
@@ -18,8 +17,9 @@ export const mapToCheckStatusReponse = (
     getCertificateApplicationResponse.CertificateApplication
       .CertificateApplicationIdentification
   ),
-  status: getCertificateApplicationResponse.CertificateApplication
-    .CertificateApplicationStatus.StatusCode as StatusCode,
+  status:
+    getCertificateApplicationResponse.CertificateApplication
+      .CertificateApplicationStatus.StatusCode,
 })
 
 /**
