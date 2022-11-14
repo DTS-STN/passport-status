@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">48.48% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>16/32</span>
+                <span class='fraction'>16/33</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">53.33% </span>
+                <span class="strong">51.61% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>16/30</span>
+                <span class='fraction'>16/31</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -338,7 +338,9 @@
 <a name='L273'></a><a href='#L273'>273</a>
 <a name='L274'></a><a href='#L274'>274</a>
 <a name='L275'></a><a href='#L275'>275</a>
-<a name='L276'></a><a href='#L276'>276</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L276'></a><a href='#L276'>276</a>
+<a name='L277'></a><a href='#L277'>277</a>
+<a name='L278'></a><a href='#L278'>278</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -352,6 +354,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -359,13 +369,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -443,6 +446,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -632,6 +636,7 @@ import ErrorSummary, {
 import LinkSummary, { LinkSummaryItem } from '../components/LinkSummary'
 import StatusInfo from '../components/StatusInfo'
 import Modal from '../components/Modal'
+import { StatusCode } from '../lib/types'
 &nbsp;
 const initialValues: CheckStatusRequest = {
   dateOfBirth: '',
@@ -718,6 +723,7 @@ const Status: FC = () =&gt; {
       &lt;h1 className="mb-4"&gt;{t('header')}&lt;/h1&gt;
       {(() =&gt; {
         <span class="missing-if-branch" title="if path not taken" >I</span>if (checkStatusReponse) {
+<span class="cstat-no" title="statement not covered" >          console.table(checkStatusReponse)</span>
 <span class="cstat-no" title="statement not covered" >          return (</span>
             &lt;&gt;
               &lt;StatusInfo
@@ -731,16 +737,16 @@ const Status: FC = () =&gt; {
                   &lt;p className="mb-6 text-2xl"&gt;
                     {`${t('status-is')} `}
                     &lt;strong id="response-status"&gt;
-                      {t(`status.${checkStatusReponse.status}.label`, {
-                        defaultValue: checkStatusReponse.status,
-                      })}
+                      {t(`status.${checkStatusReponse.status}.label`)}
                     &lt;/strong&gt;
                     .
                   &lt;/p&gt;
                   &lt;p&gt;{t(`status.${checkStatusReponse.status}.description`)}&lt;/p&gt;
-                  {/* We only want to show the tracking # if the status is issued and shipped via Canada Post or Fedex. Currently, some records have a manifest # but are not one of these codes (ie. 99) */}
                   {checkStatusReponse.manifestNumber &amp;&amp;
-                    ['3', '4'].indexOf(checkStatusReponse.status) &gt;= 0 &amp;&amp; (
+                    [
+                      StatusCode.PASSPORT_ISSUED_SHIPPING_CANADA_POST,
+                      StatusCode.PASSPORT_ISSUED_SHIPPING_FEDEX,
+                    ].includes(checkStatusReponse.status) &amp;&amp; (
                       &lt;p&gt;
                         {t(`status.${checkStatusReponse.status}.tracking`)}
                         &lt;strong&gt;{checkStatusReponse.manifestNumber}&lt;/strong&gt;
@@ -895,7 +901,7 @@ export default Status
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-11-10T21:53:05.045Z
+                at 2022-11-14T15:49:11.567Z
             </div>
         <script src="../prettify.js"></script>
         <script>
