@@ -42,6 +42,19 @@
   "unable-to-find-status": "Nous ne sommes pas en mesure de déterminer le statut de votre demande pour le moment en utilisant ce service.",
   "other-ways-to-status": "Contactez-nous",
   "no-match-title": "D'autres façons d'obtenir votre statut\u00a0:",
+  "cannot-provide-result": {
+    "title": "Nous ne pouvons pas fournir de résultat pour le moment car:",
+    "reason1": "les informations que vous avez fournies ne correspondent pas à celles qui se trouvent dans notre système;",
+    "reason2": "nous n'avons pas encore reçu votre demande; ",
+    "reason3": "nous avons reçu votre demande mais n'avons pas encore commencé à la traiter."
+  },
+  "please-verify": "Veuillez vérifier les informations saisies et réessayer.",
+  "please-wait": "Si vous n'avez pas attendu au moins (insérer le délai/la norme de service complet), veuillez réessayer à une date/heure ultérieure.",
+  "still-unable": {
+    "if-still-unable": "Si vous ne parvenez toujours pas à récupérer votre statut, vous pouvez le faire:",
+    "contact-call-center": "Contactez le centre d'appels pour les passeports (insérez le numéro de téléphone).",
+    "visit-in-person": "Rendez-vous dans un Centre Service Canada en personne le plus proche de chez vous (lien vers la CSFO)"
+  },
   "help-message": {
     "esrf": "Lorsque vous soumettez votre demande en personne, vous recevez un numéro de dossier. Le numéro de dossier commence par au moins 1 lettre et comporte un maximum de 8 caractères au total. (Exemples de formats possibles : « A1234567 » ou « AA123456 » ou « A123456 » ou « AA12345 »)",
     "given-name": "Veuillez utiliser le prénom exactement comme indiqué sur votre demande de passeport. S'il s'agit d'une demande de passeport pour enfant, veuillez utiliser le prénom de l'enfant tel qu'il figure sur la demande de passeport. Veuillez noter que le prénom fourni peut avoir été mis à jour pour refléter le premier prénom sur votre preuve de citoyenneté canadienne ou pièce d'identité à l'appui.",

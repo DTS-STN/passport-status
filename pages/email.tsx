@@ -70,7 +70,9 @@ export default function Email() {
 
       {isEmailEsrfSuccess ? (
         <>
-          <p className="mb-6 text-2xl">{t('email-sent-confirmation')}</p>
+          <p className="mb-3">{t('email-confirmation-msg.request-received')}</p>
+          <p className="mb-3">{t('email-confirmation-msg.please-contact')}</p>
+          <p className="mb-3">{t('email-confirmation-msg.call')}</p>
           <LinkSummary
             title={t('common:contact-program')}
             links={t<string, LinkSummaryItem[]>('common:program-links', {
