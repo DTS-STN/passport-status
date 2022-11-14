@@ -17,6 +17,7 @@ import ErrorSummary, {
 import LinkSummary, { LinkSummaryItem } from '../components/LinkSummary'
 import StatusInfo from '../components/StatusInfo'
 import Modal from '../components/Modal'
+import { StatusCode } from '../lib/types'
 
 const initialValues: CheckStatusRequest = {
   dateOfBirth: '',
@@ -112,15 +113,26 @@ const Status: FC = () => {
                 goBackStyle="primary"
                 checkAgainText={t('check-again')}
               >
-                <p className="mb-6 text-2xl">
-                  {`${t('status-is')} `}
-                  <strong id="response-status">
-                    {t(`status.${checkStatusReponse.status}`, {
-                      defaultValue: checkStatusReponse.status,
-                    })}
-                  </strong>
-                  .
-                </p>
+                <div>
+                  <p className="mb-6 text-2xl">
+                    {`${t('status-is')} `}
+                    <strong id="response-status">
+                      {t(`status.${checkStatusReponse.status}.label`)}
+                    </strong>
+                    .
+                  </p>
+                  <p>{t(`status.${checkStatusReponse.status}.description`)}</p>
+                  {checkStatusReponse.manifestNumber &&
+                    [
+                      `${StatusCode.PASSPORT_ISSUED_SHIPPING_CANADA_POST}`,
+                      `${StatusCode.PASSPORT_ISSUED_SHIPPING_FEDEX}`,
+                    ].includes(checkStatusReponse.status) && (
+                      <p>
+                        {t(`status.${checkStatusReponse.status}.tracking`)}
+                        <strong>{checkStatusReponse.manifestNumber}</strong>
+                      </p>
+                    )}
+                </div>
               </StatusInfo>
               <LinkSummary
                 title={t('common:contact-program')}
