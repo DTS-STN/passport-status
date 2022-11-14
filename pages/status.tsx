@@ -152,7 +152,26 @@ const Status: FC = () => {
                 goBackStyle="primary"
                 checkAgainText={t('check-again')}
               >
-                <p className=" mb-6 text-2xl">{t('unable-to-find-status')}</p>
+                {/* <p className=" mb-6 text-2xl">{t('unable-to-find-status')}</p> */}
+                <div>
+                  <h2 className="mb-3 text-2xl">
+                    {t('cannot-provide-result.title')}
+                  </h2>
+                  <ul className="list-disc list-inside pb-3 ml-4 space-y-4">
+                    <li>{t('cannot-provide-result.reason1')}</li>
+                    <li>{t('cannot-provide-result.reason2')}</li>
+                    <li>{t('cannot-provide-result.reason3')}</li>
+                  </ul>
+                  <p>{t('please-verify')}</p>
+                  <p>{t('please-wait')}</p>
+                  <h2 className="mb-3 text-2xl">
+                    {t('still-unable.if-still-unable')}
+                  </h2>
+                  <ul className="list-disc list-inside pb-6 ml-4 space-y-4">
+                    <li>{t('still-unable.contact-call-center')}</li>
+                    <li>{t('still-unable.visit-in-person')}</li>
+                  </ul>
+                </div>
               </StatusInfo>
               <LinkSummary
                 title={t('no-match-title')}

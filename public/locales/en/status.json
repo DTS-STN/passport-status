@@ -65,6 +65,19 @@
   "unable-to-find-status": "We are unable to determine the status of your application at this time using this service.",
   "other-ways-to-status": "Contact us",
   "no-match-title": "Other ways to get your status:",
+  "cannot-provide-result": {
+    "title": "We cannot provide a result at this time because:",
+    "reason1": "the information you provided does not match the information in our system;",
+    "reason2": "we have not yet received your application; or",
+    "reason3": "we have received your application but have not yet started processing it."
+  },
+  "please-verify": "Please verify the information entered and try again.",
+  "please-wait": "If you have not waited at least (insert amount of time/full service standard), please try again at a later date/time.",
+  "still-unable": {
+    "if-still-unable": "If you are still unable to retrieve your status, you may:",
+    "contact-call-center": "Contact the Passport Call Centre (insert phone #).",
+    "visit-in-person": "Visit an in-person Service Canada Centre nearest you (link to FSCO)"
+  },
   "help-message": {
     "esrf": "When submitting your application in-person, you are provided with a File Number. The File Number begins with at least 1 letter and has a maximum of 8 total characters. (Examples of possible formats: “A1234567” or “AA123456” or “A123456” or “AA12345”)",
     "given-name": "Please use the given name exactly as provided on your passport application. If this is a request for a child passport application, please use the child’s given name as provided on the passport application. Please note that the given name provided may have been updated to reflect the first given name on your proof of Canadian citizenship or supporting identification.",

@@ -30,6 +30,11 @@
   },
   "email-esrf": "Email my file number (ESRF)",
   "email-sent-confirmation": "An email has been sent if there was a match in our records with the file number (ESRF).",
+  "email-confirmation-msg": {
+    "request-received": "We have received your request. If you have submitted a passport application and we are able to locate your file, you will receive an email containing your File Number.",
+    "please-contact": "If you do not receive an email containing your File Number within the next 24 hrs, please contact Service Canada:",
+    "call": "Call: Passport Call Centre (insert phone #)."
+  },
   "page-unauth": {
     "header": "Page Unauthorized",
     "desc": "Please accept the Privacy and Email terms as well as give your consent before getting your file number (ESRF)",
