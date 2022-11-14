@@ -104,7 +104,6 @@ const Status: FC = () => {
       <h1 className="mb-4">{t('header')}</h1>
       {(() => {
         if (checkStatusReponse) {
-          console.table(checkStatusReponse)
           return (
             <>
               <StatusInfo
