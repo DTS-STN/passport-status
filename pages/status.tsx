@@ -142,7 +142,9 @@ const Status: FC = () => {
               >
                 {/* <p className=" mb-6 text-2xl">{t('unable-to-find-status')}</p> */}
                 <div>
-                  <h3 className="mb-3">{t('cannot-provide-result.title')}</h3>
+                  <h2 className="mb-3 text-2xl">
+                    {t('cannot-provide-result.title')}
+                  </h2>
                   <ul className="list-disc list-inside pb-3 ml-4 space-y-4">
                     <li>{t('cannot-provide-result.reason1')}</li>
                     <li>{t('cannot-provide-result.reason2')}</li>
@@ -150,7 +152,9 @@ const Status: FC = () => {
                   </ul>
                   <p>{t('please-verify')}</p>
                   <p>{t('please-wait')}</p>
-                  <h3 className="mb-3">{t('still-unable.if-still-unable')}</h3>
+                  <h2 className="mb-3 text-2xl">
+                    {t('still-unable.if-still-unable')}
+                  </h2>
                   <ul className="list-disc list-inside pb-6 ml-4 space-y-4">
                     <li>{t('still-unable.contact-call-center')}</li>
                     <li>{t('still-unable.visit-in-person')}</li>
