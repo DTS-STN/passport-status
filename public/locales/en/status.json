@@ -20,7 +20,7 @@
   },
   "given-name": {
     "error": {
-      "required": "The given name(s) is required."
+      "required": "Given name(s) required."
     },
     "label": "Given name(s)"
   },
