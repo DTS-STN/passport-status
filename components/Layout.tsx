@@ -13,17 +13,8 @@ export interface LayoutProps {
 const Layout: FC<LayoutProps> = ({ children, meta, header, footer }) => {
   return (
     <div className="flex flex-col min-h-screen">
-      <MetaData
-        data={{
-          author: meta.author,
-          desc: meta.desc,
-          keywords: meta.keywords,
-          title: meta.title,
-        }}
-      />
-
+      <MetaData author={meta.author} desc={meta.desc} title={meta.title} />
       <Header skipToMainText={header.skipToMain} gocLink={header.gocLink} />
-
       <main
         role="main"
         id="mainContent"
