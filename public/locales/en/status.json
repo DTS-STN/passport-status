@@ -12,7 +12,7 @@
   "description": "Use this service with your file number (ESRF) to check the status of your passport application.",
   "esrf": {
     "error": {
-      "length": "The file number can be a maximum of 8 characters long.",
+      "length": "The file number can have a maximum of 8 alphanumeric characters.",
       "required": "The file number is required.",
       "starts-with-letter": "The file number must begin with a letter (e.g. A1234567)."
     },
