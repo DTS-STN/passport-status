@@ -22,7 +22,7 @@
     "error": {
       "required": "The given name is required."
     },
-    "label": "Given name"
+    "label": "Given name(s)"
   },
   "previous": "Previous",
   "reset": "Restart",
