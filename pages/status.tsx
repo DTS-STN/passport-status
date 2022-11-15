@@ -5,7 +5,7 @@ import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
-import { CheckStatusRequest } from '../lib/types'
+import { CheckStatusRequest, StatusCode } from '../lib/types'
 import { useCheckStatus } from '../lib/useCheckStatus'
 import Layout from '../components/Layout'
 import InputField from '../components/InputField'
@@ -17,7 +17,6 @@ import ErrorSummary, {
 import LinkSummary, { LinkSummaryItem } from '../components/LinkSummary'
 import StatusInfo from '../components/StatusInfo'
 import Modal from '../components/Modal'
-import { StatusCode } from '../lib/types'
 
 const initialValues: CheckStatusRequest = {
   dateOfBirth: '',
@@ -83,7 +82,7 @@ const Status: FC = () => {
       )
   }, [formik, t])
 
-  const handleGoBack: MouseEventHandler<HTMLButtonElement> = useCallback(
+  const handleOnGoBackClick: MouseEventHandler<HTMLButtonElement> = useCallback(
     (e) => {
       e.preventDefault()
       formik.setStatus(undefined)
@@ -108,7 +107,7 @@ const Status: FC = () => {
             <>
               <StatusInfo
                 id="reponse-result"
-                handleGoBackClick={() => Router.push('/landing')}
+                onGoBackClick={() => Router.push('/landing')}
                 goBackText={t('reset')}
                 goBackStyle="primary"
                 checkAgainText={t('check-again')}
@@ -147,7 +146,7 @@ const Status: FC = () => {
             <>
               <StatusInfo
                 id="reponse-no-result"
-                handleGoBackClick={handleGoBack}
+                onGoBackClick={handleOnGoBackClick}
                 goBackText={t('previous')}
                 goBackStyle="primary"
                 checkAgainText={t('check-again')}

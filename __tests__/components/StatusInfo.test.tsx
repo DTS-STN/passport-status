@@ -8,11 +8,11 @@ expect.extend(toHaveNoViolations)
 jest.mock('../../components/ActionButton')
 
 describe('StatusInfo', () => {
-  const handleClick = jest.fn()
+  const handleOnGoBackClick = jest.fn()
   const sut = (
     <StatusInfo
       id="status-info"
-      handleGoBackClick={handleClick}
+      onGoBackClick={handleOnGoBackClick}
       goBackText="back"
       checkAgainText="check"
     >
