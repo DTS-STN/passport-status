@@ -20,9 +20,9 @@
   },
   "given-name": {
     "error": {
-      "required": "Le prénom est obligatoire."
+      "required": "Prénom(s) obligatoire(s)."
     },
-    "label": "Prénom"
+    "label": "Prénom(s)"
   },
   "previous": "Précédent",
   "reset": "Redémarrer",
@@ -80,7 +80,7 @@
   },
   "help-message": {
     "esrf": "Lorsque vous soumettez votre demande en personne, vous recevez un numéro de dossier. Le numéro de dossier commence par au moins 1 lettre et comporte un maximum de 8 caractères au total. (Exemples de formats possibles : « A1234567 » ou « AA123456 » ou « A123456 » ou « AA12345 »)",
-    "given-name": "Veuillez utiliser le prénom exactement comme indiqué sur votre demande de passeport. S'il s'agit d'une demande de passeport pour enfant, veuillez utiliser le prénom de l'enfant tel qu'il figure sur la demande de passeport. Veuillez noter que le prénom fourni peut avoir été mis à jour pour refléter le premier prénom sur votre preuve de citoyenneté canadienne ou pièce d'identité à l'appui.",
+    "given-name": "Veuillez utiliser le(s) prénom(s) exactement comme indiqué sur votre demande de passeport. S'il s'agit d'une demande de passeport pour enfant, veuillez utiliser le(s) prénom(s) de l'enfant tel qu'il(s) figure(ent) sur la demande de passeport. Veuillez noter que le(s) prénom(s) fourni(s) peut avoir été mis à jour pour refléter le(s) premier prénom(s) sur votre preuve de citoyenneté canadienne ou pièce d'identité à l'appui.",
     "surname": "Veuillez utiliser le nom de famille exactement comme indiqué sur votre demande de passeport. S'il s'agit d'une demande de passeport pour enfant, veuillez utiliser le nom de famille de l'enfant tel qu'il figure sur la demande de passeport. Veuillez noter que le nom de famille fourni peut avoir été mis à jour pour refléter le nom de famille sur votre preuve de citoyenneté canadienne ou pièce d'identité à l'appui.",
     "date-of-birth": "Veuillez indiquer votre date de naissance telle qu'elle figure sur votre demande de passeport. S'il s'agit d'une demande de passeport pour enfant, veuillez utiliser la date de naissance de l'enfant indiquée sur la demande de passeport. Veuillez noter que la date de naissance fournie peut avoir été mise à jour pour refléter la date de naissance sur votre preuve de citoyenneté canadienne."
   }
