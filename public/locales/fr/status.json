@@ -12,7 +12,7 @@
   "description": "Utilisez ce service avec votre numéro de dossier (FEDS) pour vérifier le statut de votre demande de passeport.",
   "esrf": {
     "error": {
-      "length": "Le numéro de dossier doit comporter 8 caractères.",
+      "length": "Le numéro de dossier peut avoir un maximum de 8 caractères alphanumériques.",
       "required": "Le numéro de dossier est obligatoire.",
       "starts-with-letter": "Le numéro de dossier doit commencer par une lettre (p. ex. A1234567)."
     },

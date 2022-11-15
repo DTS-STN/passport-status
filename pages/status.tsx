@@ -1,4 +1,11 @@
-import { FC, MouseEventHandler, useCallback, useMemo, useState } from 'react'
+import {
+  FC,
+  MouseEventHandler,
+  ChangeEventHandler,
+  useCallback,
+  useMemo,
+  useState,
+} from 'react'
 import { GetStaticProps } from 'next'
 import Router from 'next/router'
 import { useTranslation } from 'next-i18next'
@@ -41,7 +48,7 @@ const Status: FC = () => {
         .max(new Date(), 'date-of-birth.error.current'),
       esrf: Yup.string()
         .required('esrf.error.required')
-        .length(8, 'esrf.error.length')
+        .max(8, 'esrf.error.length')
         .trim()
         .matches(/^[A-Za-z]/, 'esrf.error.starts-with-letter'),
       givenName: Yup.string().required('given-name.error.required'),
@@ -89,6 +96,13 @@ const Status: FC = () => {
       removeCheckStatusResponse()
     },
     [formik, removeCheckStatusResponse]
+  )
+
+  const handleOnESRFChange: ChangeEventHandler<HTMLInputElement> = useCallback(
+    ({ target }) => {
+      formik.setFieldValue(target.name, target.value.replace(/[^a-z0-9]/gi, ''))
+    },
+    [formik]
   )
 
   //if the api failed, fail hard to show error page
@@ -198,7 +212,7 @@ const Status: FC = () => {
               id="esrf"
               name="esrf"
               label={t('esrf.label')}
-              onChange={formik.handleChange}
+              onChange={handleOnESRFChange}
               value={formik.values.esrf}
               errorMessage={formik.errors.esrf && t(formik.errors.esrf)}
               textRequired={t('common:required')}
