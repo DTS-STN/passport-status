@@ -11,17 +11,16 @@ const Error: NextPage<ErrorProps> = ({ statusCode }) => {
   return (
     <ErrorLayout>
       <MetaData
-        data={{
-          author: 'Service Canada',
-          desc: "Error message stating that the server is down, or the URL is incorrect or expired - Message d'erreur indiquant que le serveur est hors service, que l'URL est incorrecte ou qu'elle a expiré.",
-          keywords: '',
-          title:
-            statusCode === 500
-              ? 'Internal Server Error | Erreur de serveur interne - Canada.ca'
-              : 'Service Unavailable | Service indisponible - Canada.ca',
-        }}
+        author={'Service Canada'}
+        desc={
+          "Error message stating that the server is down, or the URL is incorrect or expired - Message d'erreur indiquant que le serveur est hors service, que l'URL est incorrecte ou qu'elle a expiré."
+        }
+        title={
+          statusCode === 500
+            ? 'Internal Server Error | Erreur de serveur interne - Canada.ca'
+            : 'Service Unavailable | Service indisponible - Canada.ca'
+        }
       />
-
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8">
         <div lang="en">
           <h1 className="text-2xl">
