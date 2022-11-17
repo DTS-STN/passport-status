@@ -1,13 +1,20 @@
-export interface CheckStatusRequest {
+export interface CheckStatusApiRequestQuery {
   dateOfBirth: string
   esrf: string
   givenName: string
   surname: string
 }
 
-export interface CheckStatusReponse {
+export interface CheckStatusApiResponse {
   manifestNumber?: string
   status: string
+}
+
+export interface EmailEsrfApiRequestBody {
+  dateOfBirth: string
+  email: string
+  givenName: string
+  surname: string
 }
 
 export interface PassportStatusesSearchResult {

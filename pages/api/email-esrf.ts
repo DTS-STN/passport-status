@@ -1,13 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next'
-import { ApiError } from 'next/dist/server/api-utils'
 import logger from '../../lib/logger'
-
-export interface EmailEsrfRequestBody {
-  dateOfBirth: string
-  email: string
-  givenName: string
-  surname: string
-}
+import { EmailEsrfApiRequestBody } from '../../lib/types'
 
 export default async function handler(
   req: NextApiRequest,
@@ -23,48 +16,44 @@ export default async function handler(
     return
   }
 
-  const body = req.body as EmailEsrfRequestBody
+  const body = req.body as EmailEsrfApiRequestBody
 
   try {
-    const response = await (process.env.PASSPORT_STATUS_API_BASE_URI
-      ? emailEsrfApi(body)
-      : emailEsrfMock())
-
-    if (!response.ok) {
-      throw new ApiError(response.status, response.statusText)
-    }
-
-    res.status(response.status).send(response.statusText)
+    process.env.PASSPORT_STATUS_API_BASE_URI
+      ? await emailEsrfApi(res, body)
+      : emailEsrfMock(res)
   } catch (error) {
     logger.error(error)
-
-    if ((error as Error).constructor.name === 'ApiError') {
-      const apiError = error as ApiError
-      res.status(apiError.statusCode).send(apiError.message)
-      return
-    }
-
     res.status(500).send('Something went wrong.')
   }
 }
 
-const emailEsrfApi = (emailEsrfRequestBody: EmailEsrfRequestBody) => {
+const emailEsrfApi = async (
+  res: NextApiResponse<string>,
+  emailEsrfApiRequestBody: EmailEsrfApiRequestBody
+) => {
+  if (!process.env.PASSPORT_STATUS_API_BASE_URI) {
+    throw Error(
+      'process.env.PASSPORT_STATUS_API_BASE_URI must not be undefined, null or empty'
+    )
+  }
+
   const body = {
     Client: {
       BirthDate: {
-        Date: emailEsrfRequestBody.dateOfBirth,
+        Date: emailEsrfApiRequestBody.dateOfBirth,
       },
       PersonContactInformation: {
-        ContactEmailID: emailEsrfRequestBody.email,
+        ContactEmailID: emailEsrfApiRequestBody.email,
       },
       PersonName: {
-        PersonGivenName: [emailEsrfRequestBody.givenName],
-        PersonSurName: emailEsrfRequestBody.surname,
+        PersonGivenName: [emailEsrfApiRequestBody.givenName],
+        PersonSurName: emailEsrfApiRequestBody.surname,
       },
     },
   }
 
-  return fetch(
+  const response = await fetch(
     `${process.env.PASSPORT_STATUS_API_BASE_URI}/api/v1/esrf-requests`,
     {
       method: 'POST',
@@ -74,10 +63,14 @@ const emailEsrfApi = (emailEsrfRequestBody: EmailEsrfRequestBody) => {
       body: JSON.stringify(body),
     }
   )
+
+  res.status(response.status).send(response.statusText)
 }
 
-const emailEsrfMock = async () => {
-  //unless there is an error in the network communication or bad data format,
-  //we expect the response to always be a 202 to protect the users data
-  return new Response(null, { status: 202, statusText: 'Email sent if found' })
+/**
+ * Unless there is an error in the network communication or bad data format,
+ * we expect the response to always be a 202 to protect the users data.
+ */
+const emailEsrfMock = (res: NextApiResponse<string>) => {
+  res.status(202).send('Email sent if found')
 }

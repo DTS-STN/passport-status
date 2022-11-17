@@ -12,7 +12,7 @@ import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
-import { CheckStatusRequest, StatusCode } from '../lib/types'
+import { CheckStatusApiRequestQuery, StatusCode } from '../lib/types'
 import { useCheckStatus } from '../lib/useCheckStatus'
 import Layout from '../components/Layout'
 import InputField from '../components/InputField'
@@ -25,7 +25,7 @@ import LinkSummary, { LinkSummaryItem } from '../components/LinkSummary'
 import StatusInfo from '../components/StatusInfo'
 import Modal from '../components/Modal'
 
-const initialValues: CheckStatusRequest = {
+const initialValues: CheckStatusApiRequestQuery = {
   dateOfBirth: '',
   esrf: '',
   givenName: '',
@@ -40,7 +40,7 @@ const Status: FC = () => {
     returnObjects: true,
   })
 
-  const formik = useFormik<CheckStatusRequest>({
+  const formik = useFormik<CheckStatusApiRequestQuery>({
     initialValues,
     validationSchema: Yup.object({
       dateOfBirth: Yup.date()
@@ -69,7 +69,7 @@ const Status: FC = () => {
   const {
     isLoading: isCheckStatusLoading,
     error: checkStatusError,
-    data: checkStatusReponse,
+    data: checkStatusResponse,
     remove: removeCheckStatusResponse,
   } = useCheckStatus(
     formik.status === 'submitted' ? formik.values : initialValues,
@@ -116,7 +116,7 @@ const Status: FC = () => {
     >
       <h1 className="mb-4">{t('header')}</h1>
       {(() => {
-        if (checkStatusReponse) {
+        if (checkStatusResponse) {
           return (
             <>
               <StatusInfo
@@ -130,19 +130,19 @@ const Status: FC = () => {
                   <p className="mb-6 text-2xl">
                     {`${t('status-is')} `}
                     <strong id="response-status">
-                      {t(`status.${checkStatusReponse.status}.label`)}
+                      {t(`status.${checkStatusResponse.status}.label`)}
                     </strong>
                     .
                   </p>
-                  <p>{t(`status.${checkStatusReponse.status}.description`)}</p>
-                  {checkStatusReponse.manifestNumber &&
+                  <p>{t(`status.${checkStatusResponse.status}.description`)}</p>
+                  {checkStatusResponse.manifestNumber &&
                     [
                       `${StatusCode.PASSPORT_ISSUED_SHIPPING_CANADA_POST}`,
                       `${StatusCode.PASSPORT_ISSUED_SHIPPING_FEDEX}`,
-                    ].includes(checkStatusReponse.status) && (
+                    ].includes(checkStatusResponse.status) && (
                       <p>
-                        {t(`status.${checkStatusReponse.status}.tracking`)}
-                        <strong>{checkStatusReponse.manifestNumber}</strong>
+                        {t(`status.${checkStatusResponse.status}.tracking`)}
+                        <strong>{checkStatusResponse.manifestNumber}</strong>
                       </p>
                     )}
                 </div>
@@ -155,7 +155,7 @@ const Status: FC = () => {
           )
         }
 
-        if (checkStatusReponse === null) {
+        if (checkStatusResponse === null) {
           return (
             <>
               <StatusInfo

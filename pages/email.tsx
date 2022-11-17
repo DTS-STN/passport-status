@@ -5,7 +5,6 @@ import Router from 'next/router'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Layout from '../components/Layout'
-import { EmailEsrfRequestBody } from './api/email-esrf'
 import { useMemo, useState } from 'react'
 import ErrorSummary, {
   ErrorSummaryItem,
@@ -16,8 +15,9 @@ import ActionButton from '../components/ActionButton'
 import Modal from '../components/Modal'
 import LinkSummary, { LinkSummaryItem } from '../components/LinkSummary'
 import useEmailEsrf from '../lib/useEmailEsrf'
+import { EmailEsrfApiRequestBody } from '../lib/types'
 
-const initialValues: EmailEsrfRequestBody = {
+const initialValues: EmailEsrfApiRequestBody = {
   dateOfBirth: '',
   email: '',
   givenName: '',
@@ -35,7 +35,7 @@ export default function Email() {
     mutate: emailEsrf,
   } = useEmailEsrf()
 
-  const formik = useFormik<EmailEsrfRequestBody>({
+  const formik = useFormik<EmailEsrfApiRequestBody>({
     initialValues,
     validationSchema: Yup.object({
       dateOfBirth: Yup.date()
