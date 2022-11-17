@@ -1,12 +1,14 @@
 import { useQuery, UseQueryOptions } from '@tanstack/react-query'
 import { ApiError } from 'next/dist/server/api-utils'
-import { CheckStatusReponse, CheckStatusRequest } from './types'
+import { CheckStatusApiResponse, CheckStatusApiRequestQuery } from './types'
 
 export const fetchCheckStatus = async (
-  checkStatusRequest: CheckStatusRequest,
+  checkStatusApiRequestQuery: CheckStatusApiRequestQuery,
   init?: RequestInit
-): Promise<CheckStatusReponse | null> => {
-  const query = new URLSearchParams({ ...checkStatusRequest }).toString()
+): Promise<CheckStatusApiResponse | null> => {
+  const query = new URLSearchParams({
+    ...checkStatusApiRequestQuery,
+  }).toString()
   const response = await fetch('/api/check-status?' + query, init)
   if (response.ok) return response.json()
   if (response.status === 404) return null
@@ -14,20 +16,20 @@ export const fetchCheckStatus = async (
 }
 
 export const useCheckStatus = (
-  checkStatusRequest: CheckStatusRequest,
+  checkStatusApiRequestQuery: CheckStatusApiRequestQuery,
   queryOptions?: UseQueryOptions<
-    CheckStatusReponse | null,
+    CheckStatusApiResponse | null,
     ApiError,
-    CheckStatusReponse | null
+    CheckStatusApiResponse | null
   >
 ) => {
   const query = useQuery<
-    CheckStatusReponse | null,
+    CheckStatusApiResponse | null,
     ApiError,
-    CheckStatusReponse | null
+    CheckStatusApiResponse | null
   >(
-    ['ps:api:check-status', checkStatusRequest],
-    ({ signal }) => fetchCheckStatus(checkStatusRequest, { signal }),
+    ['ps:api:check-status', checkStatusApiRequestQuery],
+    ({ signal }) => fetchCheckStatus(checkStatusApiRequestQuery, { signal }),
     { staleTime: 5 * 60 * 1000, ...(queryOptions ?? {}) }
   )
 

@@ -1,11 +1,11 @@
 import { useMutation, UseMutationOptions } from '@tanstack/react-query'
 import { ApiError } from 'next/dist/server/api-utils'
-import { EmailEsrfRequestBody } from '../pages/api/email-esrf'
+import { EmailEsrfApiRequestBody } from './types'
 
 const useEmailEsrf = (
-  options?: UseMutationOptions<void, ApiError, EmailEsrfRequestBody>
+  options?: UseMutationOptions<void, ApiError, EmailEsrfApiRequestBody>
 ) => {
-  return useMutation<void, ApiError, EmailEsrfRequestBody>(async (body) => {
+  return useMutation<void, ApiError, EmailEsrfApiRequestBody>(async (body) => {
     const response = await fetch('/api/email-esrf', {
       method: 'POST',
       headers: {

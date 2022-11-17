@@ -1,18 +1,18 @@
 import {
-  CheckStatusReponse,
+  CheckStatusApiResponse,
   PassportStatusesCertificateApplicationIdentification,
   PassportStatusesGetCertificateApplicationResponse,
-} from './types'
+} from '../types'
 
 /**
  * Map passport status object returned by the API to the client
  * filter external API fields
- * @param param0 Passport status object returned by the API
+ * @param getCertificateApplicationResponse Passport status object returned by the API
  * @returns Frontend check status object
  */
-export const mapToCheckStatusReponse = (
+export const mapToCheckStatusApiResponse = (
   getCertificateApplicationResponse: PassportStatusesGetCertificateApplicationResponse
-): CheckStatusReponse => ({
+): CheckStatusApiResponse => ({
   manifestNumber: getManifestNumber(
     getCertificateApplicationResponse.CertificateApplication
       .CertificateApplicationIdentification
