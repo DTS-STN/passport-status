@@ -12,6 +12,7 @@ export interface InputFieldProps {
   errorMessage?: string
   type?: React.HTMLInputTypeAttribute
   value?: string | number | readonly string[]
+  max?: string
   onChange?: React.ChangeEventHandler<HTMLInputElement>
 }
 
@@ -25,6 +26,7 @@ const InputField: FC<InputFieldProps> = ({
   textRequired,
   type,
   value,
+  max,
   helpMessage,
 }) => {
   return (
@@ -44,6 +46,7 @@ const InputField: FC<InputFieldProps> = ({
         name={name}
         type={type}
         value={value ?? ''}
+        max={max}
         onChange={onChange}
         aria-required={required}
         aria-describedby={helpMessage && `input-${id}-help`}
