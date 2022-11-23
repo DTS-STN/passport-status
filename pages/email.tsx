@@ -135,6 +135,7 @@ export default function Email() {
             errorMessage={
               formik.errors.dateOfBirth && t(formik.errors.dateOfBirth)
             }
+            max={'9999-12-31'}
             textRequired={t('common:required')}
             required
             helpMessage={t('help-message.date-of-birth')}

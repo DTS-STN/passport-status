@@ -254,6 +254,7 @@ const Status: FC = () => {
                 formik.errors.dateOfBirth && t(formik.errors.dateOfBirth)
               }
               textRequired={t('common:required')}
+              max={'9999-12-31'}
               required
               helpMessage={t('help-message.date-of-birth')}
             />
