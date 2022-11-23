@@ -3,14 +3,25 @@
 describe('app page loads', () => {
   beforeEach(() => {
     cy.visit('/')
-    cy.injectAxe();
   })
 
   it('displays the index page', () => {
-    cy.url().should("contains", "/");
+    cy.location('pathname').should('equal', "/")
   })
 
-  it('App has no detectable a11y violations on load', () => {
+  it('redirects to / when accessing /en', () => {
+    cy.visit('/en')
+    cy.location('pathname').should('equal', "/")
+  })
+
+  it('redirects to / when accessing /fr', () => {
+    cy.visit('/fr')
+    cy.location('pathname').should('equal', "/")
+  })
+
+  it('has no detectable a11y violations on load', () => {
+    cy.injectAxe();
+    cy.wait(500);
     cy.checkA11y()
   })
 })

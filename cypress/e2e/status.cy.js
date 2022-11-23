@@ -8,24 +8,23 @@ describe('status page loads', () => {
   })
 
   it('displays the status page', () => {
-    cy.url().should("contains", "/status");
+    cy.location('pathname').should("equal", "/en/status");
   })
 
   it('displays the language link to change to French', () => {
-    cy.url().should("contains", "/status");
+    cy.location('pathname').should("equal", "/en/status");
     cy.get('[data-cy=toggle-language-link]').should('contain.text', 'Français');
-
   })
 
   it('displays the language link to change to English', () => {
     cy.get('[data-cy=toggle-language-link]').click()
-    cy.url().should("contains", "/fr/status");
+    cy.location('pathname').should("equal", "/fr/status");
     cy.get('[data-cy=toggle-language-link]').should('contain.text', 'English');
-
   })
 
-  it('Status page has no detectable a11y violations on load', () => {
+  it('has no detectable a11y violations on load', () => {
     cy.injectAxe();
+    cy.wait(500);
     cy.checkA11y()
   })
 })
@@ -93,7 +92,6 @@ describe('surname field validation', ()=>{
   })
 })
 
-
 describe('Date of Birth field validation', ()=>{
   beforeEach(() => {
     cy.visit('/expectations')
@@ -136,6 +134,7 @@ describe('responses', ()=>{
 
   it('loads result is acessable', ()=>{
     cy.injectAxe();
+    cy.wait(500);
     cy.checkA11y()
   })
 
@@ -153,6 +152,7 @@ describe('responses', ()=>{
 
   it('no result is acessable', ()=>{
     cy.injectAxe();
+    cy.wait(500);
     cy.checkA11y()
   })
 })
