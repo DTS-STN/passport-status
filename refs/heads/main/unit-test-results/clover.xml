@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1669207325213" clover="3.2.0">
-  <project timestamp="1669207325213" name="All files">
-    <metrics statements="225" coveredstatements="138" conditionals="157" coveredconditionals="69" methods="80" coveredmethods="41" elements="462" coveredelements="248" complexity="0" loc="225" ncloc="225" packages="6" files="33" classes="33"/>
+<coverage generated="1669215634443" clover="3.2.0">
+  <project timestamp="1669215634443" name="All files">
+    <metrics statements="224" coveredstatements="137" conditionals="157" coveredconditionals="69" methods="80" coveredmethods="41" elements="461" coveredelements="247" complexity="0" loc="224" ncloc="224" packages="6" files="33" classes="33"/>
     <package name="components">
-      <metrics statements="51" coveredstatements="46" conditionals="38" coveredconditionals="28" methods="23" coveredmethods="18"/>
+      <metrics statements="50" coveredstatements="45" conditionals="38" coveredconditionals="28" methods="23" coveredmethods="18"/>
       <file name="ActionButton.tsx" path="/home/runner/work/passport-status/passport-status/components/ActionButton.tsx">
         <metrics statements="9" coveredstatements="9" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
         <line num="11" count="7" type="stmt"/>
@@ -28,16 +28,15 @@
         <line num="8" count="4" type="stmt"/>
       </file>
       <file name="ErrorSummary.tsx" path="/home/runner/work/passport-status/passport-status/components/ErrorSummary.tsx">
-        <metrics statements="9" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="2"/>
-        <line num="17" count="2" type="stmt"/>
-        <line num="20" count="0" type="stmt"/>
+        <metrics statements="8" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="2"/>
+        <line num="16" count="2" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
         <line num="26" count="0" type="stmt"/>
-        <line num="27" count="0" type="stmt"/>
-        <line num="29" count="0" type="stmt"/>
-        <line num="36" count="2" type="stmt"/>
-        <line num="37" count="1" type="stmt"/>
-        <line num="45" count="1" type="stmt"/>
-        <line num="56" count="2" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="35" count="2" type="stmt"/>
+        <line num="36" count="1" type="stmt"/>
+        <line num="44" count="1" type="stmt"/>
       </file>
       <file name="Footer.tsx" path="/home/runner/work/passport-status/passport-status/components/Footer.tsx">
         <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
