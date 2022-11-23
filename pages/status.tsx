@@ -24,6 +24,8 @@ import ErrorSummary, {
 import LinkSummary, { LinkSummaryItem } from '../components/LinkSummary'
 import StatusInfo from '../components/StatusInfo'
 import Modal from '../components/Modal'
+import { useIdleTimer } from 'react-idle-timer'
+import { setCookie } from 'cookies-next'
 
 const initialValues: CheckStatusApiRequestQuery = {
   dateOfBirth: '',
@@ -35,6 +37,35 @@ const initialValues: CheckStatusApiRequestQuery = {
 const Status: FC = () => {
   const { t } = useTranslation('status')
   const [modalOpen, setModalOpen] = useState(false)
+  const [isIdle, setIsIdle] = useState(false)
+  const onIdle = () => {
+    setIsIdle(true)
+    setModalOpen(true)
+  }
+
+  const modalRedirectHandler = () => {
+    //If user is idle and selects option to go back, clear the cookie so they get redirected to /expectations instead
+    if (isIdle) {
+      setCookie('agreed-to-email-esrf-terms', 'false', {
+        sameSite: true,
+      })
+    }
+    Router.push('/landing')
+  }
+
+  const modalResetHandler = () => {
+    setModalOpen(!modalOpen)
+    if (isIdle) {
+      setIsIdle(false)
+      reset()
+    }
+  }
+
+  const { reset } = useIdleTimer({
+    onIdle,
+    //15 minute timeout
+    timeout: 150 * 6 * 1000,
+  })
 
   const lsItems = t<string, LinkSummaryItem[]>('common:program-links', {
     returnObjects: true,
@@ -269,20 +300,24 @@ const Status: FC = () => {
               </div>
               <div className="py-1">
                 <Modal
-                  buttonText={t('common:cancel-modal.cancel-button')}
-                  description={t('common:cancel-modal.description')}
+                  buttonText={t('common:modal.cancel-button')}
+                  description={
+                    isIdle
+                      ? t('common:modal.idle')
+                      : t('common:modal.description')
+                  }
                   isOpen={modalOpen}
                   onClick={() => setModalOpen(!modalOpen)}
                   buttons={[
                     {
-                      text: t('common:cancel-modal.yes-button'),
-                      onClick: () => Router.push('/landing'),
+                      text: t('common:modal.yes-button'),
+                      onClick: modalRedirectHandler,
                       style: 'primary',
                       type: 'button',
                     },
                     {
-                      text: t('common:cancel-modal.no-button'),
-                      onClick: () => setModalOpen(!modalOpen),
+                      text: t('common:modal.no-button'),
+                      onClick: modalResetHandler,
                       style: 'default',
                       type: 'button',
                     },
