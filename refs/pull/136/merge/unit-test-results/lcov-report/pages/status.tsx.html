@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">47.82% </span>
+                <span class="strong">48.93% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>22/46</span>
+                <span class='fraction'>23/47</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">51.11% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>22/44</span>
+                <span class='fraction'>23/45</span>
             </div>
         
             
@@ -448,8 +448,16 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
@@ -457,8 +465,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -467,12 +473,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -760,7 +760,7 @@
   useState,
 } from 'react'
 import { GetStaticProps } from 'next'
-import Router from 'next/router'
+import { useRouter } from 'next/router'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useFormik } from 'formik'
@@ -778,7 +778,7 @@ import LinkSummary, { LinkSummaryItem } from '../components/LinkSummary'
 import StatusInfo from '../components/StatusInfo'
 import Modal from '../components/Modal'
 import { useIdleTimer } from 'react-idle-timer'
-import { setCookie } from 'cookies-next'
+import { deleteCookie } from 'cookies-next'
 &nbsp;
 const initialValues: CheckStatusApiRequestQuery = {
   dateOfBirth: '',
@@ -789,36 +789,36 @@ const initialValues: CheckStatusApiRequestQuery = {
 &nbsp;
 const Status: FC = () =&gt; {
   const { t } = useTranslation('status')
+  const router = useRouter()
   const [modalOpen, setModalOpen] = useState(false)
   const [isIdle, setIsIdle] = useState(false)
-  const onIdle = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
+&nbsp;
+  const handleOnIdleTimerIdle = useCallback(<span class="fstat-no" title="function not covered" >()</span> =&gt; {
 <span class="cstat-no" title="statement not covered" >    setIsIdle(true)</span>
 <span class="cstat-no" title="statement not covered" >    setModalOpen(true)</span>
-  }
+  }, [])
 &nbsp;
-  const modalRedirectHandler = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
+  const { reset: resetIdleTimer } = useIdleTimer({
+    onIdle: handleOnIdleTimerIdle,
+    //15 minute timeout
+    timeout: 15 * 60 * 1000,
+  })
+&nbsp;
+  const handleOnModalRedirectButtonClick = useCallback(<span class="fstat-no" title="function not covered" >()</span> =&gt; {
     //If user is idle and selects option to go back, clear the cookie so they get redirected to /expectations instead
 <span class="cstat-no" title="statement not covered" >    if (isIdle) {</span>
-<span class="cstat-no" title="statement not covered" >      setCookie('agreed-to-email-esrf-terms', 'false', {</span>
-        sameSite: true,
-      })
+<span class="cstat-no" title="statement not covered" >      deleteCookie('agreed-to-email-esrf-terms')</span>
     }
-<span class="cstat-no" title="statement not covered" >    Router.push('/landing')</span>
-  }
+<span class="cstat-no" title="statement not covered" >    router.push('/landing')</span>
+  }, [isIdle, router])
 &nbsp;
-  const modalResetHandler = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
-<span class="cstat-no" title="statement not covered" >    setModalOpen(!modalOpen)</span>
+  const handleOnModalResetButtonClick = useCallback(<span class="fstat-no" title="function not covered" >()</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >    setModalOpen(false)</span>
 <span class="cstat-no" title="statement not covered" >    if (isIdle) {</span>
 <span class="cstat-no" title="statement not covered" >      setIsIdle(false)</span>
-<span class="cstat-no" title="statement not covered" >      reset()</span>
+<span class="cstat-no" title="statement not covered" >      resetIdleTimer()</span>
     }
-  }
-&nbsp;
-  const { reset } = useIdleTimer({
-    onIdle,
-    //15 minute timeout
-    timeout: 150 * 6 * 1000,
-  })
+  }, [isIdle, resetIdleTimer])
 &nbsp;
   const lsItems = t&lt;string, LinkSummaryItem[]&gt;('common:program-links', {
     returnObjects: true,
@@ -905,7 +905,7 @@ const Status: FC = () =&gt; {
             &lt;&gt;
               &lt;StatusInfo
                 id="reponse-result"
-                onGoBackClick={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >Router.push('/landing')}</span>
+                onGoBackClick={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >router.push('/landing')}</span>
                 goBackText={t('reset')}
                 goBackStyle="primary"
                 checkAgainText={t('check-again')}
@@ -1064,13 +1064,13 @@ const Status: FC = () =&gt; {
                   buttons={[
                     {
                       text: t('common:modal.yes-button'),
-                      onClick: modalRedirectHandler,
+                      onClick: handleOnModalRedirectButtonClick,
                       style: 'primary',
                       type: 'button',
                     },
                     {
                       text: t('common:modal.no-button'),
-                      onClick: modalResetHandler,
+                      onClick: handleOnModalResetButtonClick,
                       style: 'default',
                       type: 'button',
                     },
@@ -1102,7 +1102,7 @@ export default Status
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-11-24T12:40:03.014Z
+                at 2022-11-24T17:18:02.410Z
             </div>
         <script src="../prettify.js"></script>
         <script>
