@@ -28,8 +28,8 @@ const Modal: FC<ModalProps> = ({
             style={{ background: 'rgba(71, 71, 71, 0.8)' }}
           >
             <div className="p-4 bg-white border-2 border-black">
-              <p className="font-body">{description}</p>
-              <div className="flex space-x-2 mx-4">
+              <p className="font-body p-2">{description}</p>
+              <div className="flex space-x-2 mx-4 justify-center">
                 {buttons.map((buttonProps) => (
                   <ActionButton key={buttonProps.text} {...buttonProps} />
                 ))}

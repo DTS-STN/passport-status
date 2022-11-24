@@ -1,11 +1,11 @@
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import { GetStaticProps } from 'next'
-import Router from 'next/router'
+import { useRouter } from 'next/router'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Layout from '../components/Layout'
-import { useMemo, useState } from 'react'
+import { useMemo, useState, useCallback } from 'react'
 import ErrorSummary, {
   ErrorSummaryItem,
   GetErrorSummary,
@@ -16,6 +16,8 @@ import Modal from '../components/Modal'
 import LinkSummary, { LinkSummaryItem } from '../components/LinkSummary'
 import useEmailEsrf from '../lib/useEmailEsrf'
 import { EmailEsrfApiRequestBody } from '../lib/types'
+import { useIdleTimer } from 'react-idle-timer'
+import { deleteCookie } from 'cookies-next'
 
 const initialValues: EmailEsrfApiRequestBody = {
   dateOfBirth: '',
@@ -26,7 +28,36 @@ const initialValues: EmailEsrfApiRequestBody = {
 
 export default function Email() {
   const { t } = useTranslation('email')
+  const router = useRouter()
   const [modalOpen, setModalOpen] = useState(false)
+  const [isIdle, setIsIdle] = useState(false)
+
+  const handleOnIdleTimerIdle = useCallback(() => {
+    setIsIdle(true)
+    setModalOpen(true)
+  }, [])
+
+  const { reset: resetIdleTimer } = useIdleTimer({
+    onIdle: handleOnIdleTimerIdle,
+    //15 minute timeout
+    timeout: 15 * 60 * 1000,
+  })
+
+  const handleOnModalRedirectButtonClick = useCallback(() => {
+    //If user is idle and selects option to go back, clear the cookie so they get redirected to /expectations instead
+    if (isIdle) {
+      deleteCookie('agreed-to-email-esrf-terms')
+    }
+    router.push('/landing')
+  }, [isIdle, router])
+
+  const handleOnModalResetButtonClick = useCallback(() => {
+    setModalOpen(false)
+    if (isIdle) {
+      setIsIdle(false)
+      resetIdleTimer()
+    }
+  }, [isIdle, resetIdleTimer])
 
   const {
     isLoading: isEmailEsrfLoading,
@@ -151,20 +182,24 @@ export default function Email() {
             </div>
             <div className="py-1">
               <Modal
-                buttonText={t('common:cancel-modal.cancel-button')}
-                description={t('common:cancel-modal.description')}
+                buttonText={t('common:modal.cancel-button')}
+                description={
+                  isIdle
+                    ? t('common:modal.idle')
+                    : t('common:modal.description')
+                }
                 isOpen={modalOpen}
                 onClick={() => setModalOpen(!modalOpen)}
                 buttons={[
                   {
-                    text: t('common:cancel-modal.yes-button'),
-                    onClick: () => Router.push('/landing'),
+                    text: t('common:modal.yes-button'),
+                    onClick: handleOnModalRedirectButtonClick,
                     style: 'primary',
                     type: 'button',
                   },
                   {
-                    text: t('common:cancel-modal.no-button'),
-                    onClick: () => setModalOpen(!modalOpen),
+                    text: t('common:modal.no-button'),
+                    onClick: handleOnModalResetButtonClick,
                     style: 'default',
                     type: 'button',
                   },
