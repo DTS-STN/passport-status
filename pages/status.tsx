@@ -7,7 +7,7 @@ import {
   useState,
 } from 'react'
 import { GetStaticProps } from 'next'
-import Router from 'next/router'
+import { useRouter } from 'next/router'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useFormik } from 'formik'
@@ -25,7 +25,7 @@ import LinkSummary, { LinkSummaryItem } from '../components/LinkSummary'
 import StatusInfo from '../components/StatusInfo'
 import Modal from '../components/Modal'
 import { useIdleTimer } from 'react-idle-timer'
-import { setCookie } from 'cookies-next'
+import { deleteCookie } from 'cookies-next'
 
 const initialValues: CheckStatusApiRequestQuery = {
   dateOfBirth: '',
@@ -36,36 +36,36 @@ const initialValues: CheckStatusApiRequestQuery = {
 
 const Status: FC = () => {
   const { t } = useTranslation('status')
+  const router = useRouter()
   const [modalOpen, setModalOpen] = useState(false)
   const [isIdle, setIsIdle] = useState(false)
-  const onIdle = () => {
+
+  const handleOnIdleTimerIdle = useCallback(() => {
     setIsIdle(true)
     setModalOpen(true)
-  }
+  }, [])
 
-  const modalRedirectHandler = () => {
+  const { reset: resetIdleTimer } = useIdleTimer({
+    onIdle: handleOnIdleTimerIdle,
+    //15 minute timeout
+    timeout: 15 * 60 * 1000,
+  })
+
+  const handleOnModalRedirectButtonClick = useCallback(() => {
     //If user is idle and selects option to go back, clear the cookie so they get redirected to /expectations instead
     if (isIdle) {
-      setCookie('agreed-to-email-esrf-terms', 'false', {
-        sameSite: true,
-      })
+      deleteCookie('agreed-to-email-esrf-terms')
     }
-    Router.push('/landing')
-  }
+    router.push('/landing')
+  }, [isIdle, router])
 
-  const modalResetHandler = () => {
-    setModalOpen(!modalOpen)
+  const handleOnModalResetButtonClick = useCallback(() => {
+    setModalOpen(false)
     if (isIdle) {
       setIsIdle(false)
-      reset()
+      resetIdleTimer()
     }
-  }
-
-  const { reset } = useIdleTimer({
-    onIdle,
-    //15 minute timeout
-    timeout: 150 * 6 * 1000,
-  })
+  }, [isIdle, resetIdleTimer])
 
   const lsItems = t<string, LinkSummaryItem[]>('common:program-links', {
     returnObjects: true,
@@ -152,7 +152,7 @@ const Status: FC = () => {
             <>
               <StatusInfo
                 id="reponse-result"
-                onGoBackClick={() => Router.push('/landing')}
+                onGoBackClick={() => router.push('/landing')}
                 goBackText={t('reset')}
                 goBackStyle="primary"
                 checkAgainText={t('check-again')}
@@ -311,13 +311,13 @@ const Status: FC = () => {
                   buttons={[
                     {
                       text: t('common:modal.yes-button'),
-                      onClick: modalRedirectHandler,
+                      onClick: handleOnModalRedirectButtonClick,
                       style: 'primary',
                       type: 'button',
                     },
                     {
                       text: t('common:modal.no-button'),
-                      onClick: modalResetHandler,
+                      onClick: handleOnModalResetButtonClick,
                       style: 'default',
                       type: 'button',
                     },
