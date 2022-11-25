@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "@opentelemetry/api": "^1.2.0",
-    "@opentelemetry/auto-instrumentations-node": "^0.33.1",
+    "@opentelemetry/auto-instrumentations-node": "^0.34.0",
     "@opentelemetry/sdk-node": "^0.33.0",
     "@tanstack/react-query": "^4.14.1",
     "cookies-next": "^2.1.1",
