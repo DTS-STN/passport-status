@@ -289,45 +289,43 @@ const Status: FC = () => {
               required
               helpMessage={t('help-message.date-of-birth')}
             />
-            <div className="flex flex-wrap">
-              <div id="button-get-status" className="py-1 pr-2">
-                <ActionButton
-                  disabled={isCheckStatusLoading}
-                  type="submit"
-                  text={t('check-status')}
-                  style="primary"
-                />
-              </div>
-              <div className="py-1">
-                <Modal
-                  buttonText={t('common:modal.cancel-button')}
-                  description={
-                    isIdle
-                      ? t('common:modal.idle')
-                      : t('common:modal.description')
-                  }
-                  isOpen={modalOpen}
-                  onClick={() => setModalOpen(!modalOpen)}
-                  buttons={[
-                    {
-                      text: t('common:modal.yes-button'),
-                      onClick: handleOnModalRedirectButtonClick,
-                      style: 'primary',
-                      type: 'button',
-                    },
-                    {
-                      text: t('common:modal.no-button'),
-                      onClick: handleOnModalResetButtonClick,
-                      style: 'default',
-                      type: 'button',
-                    },
-                  ]}
-                />
-              </div>
+            <div className="flex gap-2 flex-wrap">
+              <ActionButton
+                id="btn-submit"
+                disabled={isCheckStatusLoading}
+                type="submit"
+                text={t('check-status')}
+                style="primary"
+              />
+              <ActionButton
+                id="btn-cancel"
+                disabled={isCheckStatusLoading}
+                text={t('common:modal.cancel-button')}
+                onClick={() => setModalOpen(true)}
+              />
             </div>
           </form>
         )
       })()}
+      <Modal
+        open={modalOpen}
+        actionButtons={[
+          {
+            text: t('common:modal.yes-button'),
+            onClick: handleOnModalRedirectButtonClick,
+            style: 'primary',
+            type: 'button',
+          },
+          {
+            text: t('common:modal.no-button'),
+            onClick: handleOnModalResetButtonClick,
+            style: 'default',
+            type: 'button',
+          },
+        ]}
+      >
+        {isIdle ? t('common:modal.idle') : t('common:modal.description')}
+      </Modal>
     </Layout>
   )
 }
