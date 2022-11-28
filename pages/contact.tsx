@@ -1,14 +1,16 @@
 import { FC, useState } from 'react'
 import { GetStaticProps } from 'next'
-import router from 'next/router'
+import { useRouter } from 'next/router'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Layout from '../components/Layout'
 import LinkSummary, { LinkSummaryItem } from '../components/LinkSummary'
 import Modal from '../components/Modal'
+import ActionButton from '../components/ActionButton'
 
 const Contact: FC = () => {
   const { t } = useTranslation('contact')
+  const router = useRouter()
   const [modalOpen, setModalOpen] = useState(false)
 
   return (
@@ -26,25 +28,28 @@ const Contact: FC = () => {
           })}
         />
       </div>
-      <div className="py-2">
-        <Modal
-          buttonText={t('back-to-home')}
-          description={t('common:cancel-modal.description')}
-          isOpen={modalOpen}
-          onClick={() => setModalOpen(!modalOpen)}
-          buttons={[
-            {
-              text: t('common:cancel-modal.yes-button'),
-              onClick: () => router.push('/landing'),
-              style: 'primary',
-            },
-            {
-              text: t('common:cancel-modal.no-button'),
-              onClick: () => setModalOpen(!modalOpen),
-            },
-          ]}
+      <div className="my-2">
+        <ActionButton
+          text={t('back-to-home')}
+          onClick={() => setModalOpen(true)}
         />
       </div>
+      <Modal
+        open={modalOpen}
+        actionButtons={[
+          {
+            text: t('common:cancel-modal.yes-button'),
+            onClick: () => router.push('/landing'),
+            style: 'primary',
+          },
+          {
+            text: t('common:cancel-modal.no-button'),
+            onClick: () => setModalOpen(false),
+          },
+        ]}
+      >
+        {t('common:cancel-modal.description')}
+      </Modal>
     </Layout>
   )
 }
