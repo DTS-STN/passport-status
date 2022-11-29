@@ -1,6 +1,6 @@
 {
-  "header": "Passport Status Check",
-  "description": "In order to better serve you, please select the option below that best suits you",
-  "with-esrf": "I have my file number (ESRF)",
-  "without-esrf": "I don't have my file number (ESRF)"
+  "header": "Passport application status checker",
+  "description": "Do you have your passport application file number?",
+  "with-esrf": "I have my file number",
+  "without-esrf": "I don't have my file number"
 }

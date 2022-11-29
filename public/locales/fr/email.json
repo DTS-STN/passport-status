@@ -1,6 +1,6 @@
 {
-  "header": "Obtenir mon numéro de dossier (FEDS)",
-  "description": "Veuillez saisir les champs obligatoires suivants, tels qu'ils figurent sur votre formulaire de demande de passeport, pour que votre numéro de dossier (FEDS) soit envoyé par courriel à l'adresse courriel au dossier.",
+  "header": "Obtenir mon numéro de dossier",
+  "description": "Remplissez les champs ci-dessous pour obtenir votre numéro de dossier. Assurez-vous que vos informations correspondent à votre formulaire de demande de passeport. Nous enverrons ensuite le numéro de dossier par courriel à l'adresse courriel enregistrée.",
   "email": {
     "label": "Adresse courriel",
     "error": {
@@ -31,9 +31,10 @@
   "email-esrf": "Envoyer mon numéro de dossier (FEDS)",
   "email-sent-confirmation": "Un courriel a été envoyé s'il y avait une correspondance dans nos dossiers avec le numéro de dossier (FEDS).",
   "email-confirmation-msg": {
-    "request-received": "Nous avons reçu votre demande. Si vous avez soumis une demande de passeport et que nous sommes en mesure de localiser votre dossier, vous recevrez un courriel contenant votre numéro de dossier.",
-    "please-contact": "Si vous ne recevez pas un courriel contenant votre numéro de dossier dans les prochaines 24 heures, veuillez contacter Service Canada:",
-    "call": "Appelez: Centre d'appels pour les passeports (insérer le numéro de téléphone)."
+    "request-received": "Votre demande d'obtention du numéro de dossier a été reçue",
+    "if-exists": "Si nous sommes en mesure de localiser le dossier avec les informations que vous nous avez fournies, nous vous enverrons un courriel avec le numéro de dossier.",
+    "please-contact": "Vous devriez recevoir un courriel dans les 30 minutes. Si vous ne le recevez pas, appelez le centre d'appel des passeports au ",
+    "phone-number": "1-800-567-6868"
   },
   "page-unauth": {
     "header": "Page non-autorisée",
@@ -41,9 +42,9 @@
     "button": "Conditions de confidentialité et de courriel"
   },
   "help-message": {
-    "email": "Fournissez votre adresse courriel complète comme indiqué sur le formulaire de demande de passeport. S'il s'agit d'une demande pour un enfant, veuillez fournir l'adresse courriel complète indiquée sur le formulaire de demande de passeport pour le parent/tuteur demandeur.",
-    "given-name": "Veuillez utiliser le(s) prénom(s) exactement comme indiqué sur votre demande de passeport. S'il s'agit d'une demande de passeport pour enfant, veuillez utiliser le(s) prénom(s) de l'enfant tel qu'il(s) figure(ent) sur la demande de passeport. Veuillez noter que le(s) prénom(s) fourni(s) peut avoir été mis à jour pour refléter le(s) premier prénom(s) sur votre preuve de citoyenneté canadienne ou pièce d'identité à l'appui.",
-    "surname": "Veuillez utiliser le nom de famille exactement comme indiqué sur votre demande de passeport. S'il s'agit d'une demande de passeport pour enfant, veuillez utiliser le nom de famille de l'enfant tel qu'il figure sur la demande de passeport. Veuillez noter que le nom de famille fourni peut avoir été mis à jour pour refléter le nom de famille sur votre preuve de citoyenneté canadienne ou pièce d'identité à l'appui.",
-    "date-of-birth": "Veuillez indiquer votre date de naissance telle qu'elle figure sur votre demande de passeport. S'il s'agit d'une demande de passeport pour enfant, veuillez utiliser la date de naissance de l'enfant indiquée sur la demande de passeport. Veuillez noter que la date de naissance fournie peut avoir été mise à jour pour refléter la date de naissance sur votre preuve de citoyenneté canadienne."
+    "email": "Fournissez votre adresse courriel complète comme indiqué sur le formulaire de demande de passeport. Pour les demandes d'enfants, fournissez l'adresse courriel complète du parent ou du tuteur légal du demandeur exactement comme indiqué sur la demande de passeport.",
+    "given-name": "Veuillez utiliser le(s) prénom(s) exactement comme indiqué sur votre demande de passeport. Pour les demandes d'enfants, indiquez le(s) prénom(s) de l'enfant tel qu'indiqué sur la demande de passeport. Veuillez noter que le(s) prénom(s) fourni(s) peuvent avoir été mis à jour pour refléter le(s) premier(s) prénom(s) sur votre preuve de citoyenneté canadienne ou pièce d'identité à l'appui.",
+    "surname": "Veuillez utiliser le nom de famille exactement comme indiqué sur votre demande de passeport. Pour les demandes d'enfant, indiquez le nom de famille de l'enfant tel qu'indiqué sur la demande de passeport. Veuillez noter que le nom de famille fourni peut avoir été mis à jour pour refléter le nom de famille sur votre preuve de citoyenneté canadienne ou pièce d'identité à l'appui.",
+    "date-of-birth": "Veuillez indiquer votre date de naissance telle qu'elle figure sur votre demande de passeport. Pour les demandes d'enfant, indiquez la date de naissance de l'enfant comme indiqué sur la demande de passeport. Veuillez noter que la date de naissance fournie peut avoir été mise à jour pour refléter la date de naissance sur votre preuve de citoyenneté canadienne."
   }
 }
