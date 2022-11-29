@@ -1,44 +1,41 @@
-import { FC, MouseEventHandler } from 'react'
-import ActionButton from './ActionButton'
-import { ActionButtonProps } from './ActionButton'
+import { FC, ReactNode, useId } from 'react'
+import ActionButton, { ActionButtonProps } from './ActionButton'
 import { FocusOn } from 'react-focus-on'
 
 export interface ModalProps {
-  buttonText: string
-  description: string
-  isOpen: boolean
-  onClick: MouseEventHandler<HTMLButtonElement>
-  buttons: ActionButtonProps[]
+  actionButtons: ActionButtonProps[]
+  children: ReactNode
+  open: boolean
 }
 
-const Modal: FC<ModalProps> = ({
-  buttonText,
-  description,
-  buttons,
-  onClick,
-  isOpen,
-}) => {
+const Modal: FC<ModalProps> = ({ actionButtons, children, open }) => {
+  const id = useId()
+  if (!open) return <></>
   return (
-    <>
-      <ActionButton text={buttonText} onClick={onClick} />
-      {isOpen && (
-        <FocusOn autoFocus={false}>
-          <div
-            className="fixed top-0 left-0 w-screen h-full flex justify-center items-center"
-            style={{ background: 'rgba(71, 71, 71, 0.8)' }}
-          >
-            <div className="p-4 bg-white border-2 border-black">
-              <p className="font-body">{description}</p>
-              <div className="flex space-x-2 mx-4">
-                {buttons.map((buttonProps) => (
-                  <ActionButton key={buttonProps.text} {...buttonProps} />
-                ))}
-              </div>
-            </div>
+    <FocusOn autoFocus={false}>
+      <div
+        className="fixed top-0 left-0 w-screen h-full flex justify-center items-center"
+        style={{ background: 'rgba(71, 71, 71, 0.8)' }}
+      >
+        <div
+          role="dialog"
+          aria-describedby={`${id}-modal-desc`}
+          className="mx-6 p-4 bg-white border-2 border-black"
+        >
+          <div id={`${id}-modal-desc`} className="mb-4">
+            {children}
           </div>
-        </FocusOn>
-      )}
-    </>
+          <div className="flex gap-2 justify-center">
+            {actionButtons.map((actionButtonProps) => (
+              <ActionButton
+                key={actionButtonProps.text}
+                {...actionButtonProps}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+    </FocusOn>
   )
 }
 

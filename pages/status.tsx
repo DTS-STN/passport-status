@@ -7,7 +7,7 @@ import {
   useState,
 } from 'react'
 import { GetStaticProps } from 'next'
-import Router from 'next/router'
+import { useRouter } from 'next/router'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useFormik } from 'formik'
@@ -24,6 +24,8 @@ import ErrorSummary, {
 import LinkSummary, { LinkSummaryItem } from '../components/LinkSummary'
 import StatusInfo from '../components/StatusInfo'
 import Modal from '../components/Modal'
+import { useIdleTimer } from 'react-idle-timer'
+import { deleteCookie } from 'cookies-next'
 
 const initialValues: CheckStatusApiRequestQuery = {
   dateOfBirth: '',
@@ -34,7 +36,36 @@ const initialValues: CheckStatusApiRequestQuery = {
 
 const Status: FC = () => {
   const { t } = useTranslation('status')
+  const router = useRouter()
   const [modalOpen, setModalOpen] = useState(false)
+  const [isIdle, setIsIdle] = useState(false)
+
+  const handleOnIdleTimerIdle = useCallback(() => {
+    setIsIdle(true)
+    setModalOpen(true)
+  }, [])
+
+  const { reset: resetIdleTimer } = useIdleTimer({
+    onIdle: handleOnIdleTimerIdle,
+    //15 minute timeout
+    timeout: 15 * 60 * 1000,
+  })
+
+  const handleOnModalRedirectButtonClick = useCallback(() => {
+    //If user is idle and selects option to go back, clear the cookie so they get redirected to /expectations instead
+    if (isIdle) {
+      deleteCookie('agreed-to-email-esrf-terms')
+    }
+    router.push('/landing')
+  }, [isIdle, router])
+
+  const handleOnModalResetButtonClick = useCallback(() => {
+    setModalOpen(false)
+    if (isIdle) {
+      setIsIdle(false)
+      resetIdleTimer()
+    }
+  }, [isIdle, resetIdleTimer])
 
   const lsItems = t<string, LinkSummaryItem[]>('common:program-links', {
     returnObjects: true,
@@ -121,7 +152,7 @@ const Status: FC = () => {
             <>
               <StatusInfo
                 id="reponse-result"
-                onGoBackClick={() => Router.push('/landing')}
+                onGoBackClick={() => router.push('/landing')}
                 goBackText={t('reset')}
                 goBackStyle="primary"
                 checkAgainText={t('check-again')}
@@ -254,44 +285,47 @@ const Status: FC = () => {
                 formik.errors.dateOfBirth && t(formik.errors.dateOfBirth)
               }
               textRequired={t('common:required')}
+              max={'9999-12-31'}
               required
               helpMessage={t('help-message.date-of-birth')}
             />
-            <div className="flex flex-wrap">
-              <div id="button-get-status" className="py-1 pr-2">
-                <ActionButton
-                  disabled={isCheckStatusLoading}
-                  type="submit"
-                  text={t('check-status')}
-                  style="primary"
-                />
-              </div>
-              <div className="py-1">
-                <Modal
-                  buttonText={t('common:cancel-modal.cancel-button')}
-                  description={t('common:cancel-modal.description')}
-                  isOpen={modalOpen}
-                  onClick={() => setModalOpen(!modalOpen)}
-                  buttons={[
-                    {
-                      text: t('common:cancel-modal.yes-button'),
-                      onClick: () => Router.push('/landing'),
-                      style: 'primary',
-                      type: 'button',
-                    },
-                    {
-                      text: t('common:cancel-modal.no-button'),
-                      onClick: () => setModalOpen(!modalOpen),
-                      style: 'default',
-                      type: 'button',
-                    },
-                  ]}
-                />
-              </div>
+            <div className="flex gap-2 flex-wrap">
+              <ActionButton
+                id="btn-submit"
+                disabled={isCheckStatusLoading}
+                type="submit"
+                text={t('check-status')}
+                style="primary"
+              />
+              <ActionButton
+                id="btn-cancel"
+                disabled={isCheckStatusLoading}
+                text={t('common:modal.cancel-button')}
+                onClick={() => setModalOpen(true)}
+              />
             </div>
           </form>
         )
       })()}
+      <Modal
+        open={modalOpen}
+        actionButtons={[
+          {
+            text: t('common:modal.yes-button'),
+            onClick: handleOnModalRedirectButtonClick,
+            style: 'primary',
+            type: 'button',
+          },
+          {
+            text: t('common:modal.no-button'),
+            onClick: handleOnModalResetButtonClick,
+            style: 'default',
+            type: 'button',
+          },
+        ]}
+      >
+        {isIdle ? t('common:modal.idle') : t('common:modal.description')}
+      </Modal>
     </Layout>
   )
 }

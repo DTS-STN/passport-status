@@ -6,26 +6,42 @@ describe('email page loads', () => {
       cy.get('#confirmBtn button').first().click()
       cy.visit('/email')
     })
-  
+
     it('displays the status page', () => {
-      cy.url().should("contains", "/email");
+      cy.location('pathname').should("equal", "/en/email");
     })
-  
+
     it('displays the language link to change to French', () => {
-      cy.url().should("contains", "/email");
+      cy.location('pathname').should("equal", "/en/email");
       cy.get('[data-cy=toggle-language-link]').should('contain.text', 'Français');
-  
     })
-  
+
     it('displays the language link to change to English', () => {
       cy.get('[data-cy=toggle-language-link]').click()
-      cy.url().should("contains", "/fr/email");
+      cy.location('pathname').should("equal", "/fr/email");
       cy.get('[data-cy=toggle-language-link]').should('contain.text', 'English');
-  
     })
-  
-    it('Status page has no detectable a11y violations on load', () => {
+
+    it('has no detectable a11y violations on load', () => {
       cy.injectAxe();
+      cy.wait(500);
       cy.checkA11y()
     })
 })
+
+describe('cancel email esrf', ()=>{
+  it('loads dialog', ()=>{
+    cy.visit('/expectations')
+    cy.get('#confirmBtn button').first().click()
+    cy.visit('/email')
+    cy.get('#btn-cancel').click()
+    cy.get('[role="dialog"]').should('exist')
+  })
+
+  it.skip('cancel email esrf has no detectable a11y violations', ()=>{
+    cy.injectAxe();
+    cy.wait(500);
+    cy.checkA11y()
+  })
+})
+

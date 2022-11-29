@@ -1,6 +1,5 @@
 import { FormikErrors } from 'formik'
 import { TFunction } from 'next-i18next'
-import PropTypes from 'prop-types'
 import { FC } from 'react'
 
 export interface ErrorSummaryItem {
@@ -51,12 +50,6 @@ const ErrorSummary: FC<ErrorSummaryProps> = ({ id, errors, summary }) => {
       </ul>
     </section>
   )
-}
-
-ErrorSummary.propTypes = {
-  id: PropTypes.string.isRequired,
-  summary: PropTypes.string.isRequired,
-  errors: PropTypes.array.isRequired,
 }
 
 export default ErrorSummary

@@ -3,32 +3,30 @@ describe('contact page loads', () => {
       cy.visit('/expectations')
       cy.get('#confirmBtn button').first().click()
       cy.visit('/contact')
-      cy.injectAxe();
-    })
-  
-    it('displays the contact page', () => {
-      cy.url().should("contains", "/contact");
     })
 
-  
-    it('displays the language link to change to French', () => {
-      cy.url().should("contains", "/contact");
-      cy.get('[data-cy=toggle-language-link]').should('contain.text', 'Français');
-  
+    it('displays the contact page', () => {
+      cy.location('pathname').should("equal", "/en/contact");
     })
-  
+
+    it('displays the language link to change to French', () => {
+      cy.location('pathname').should("equal", "/en/contact");
+      cy.get('[data-cy=toggle-language-link]').should('contain.text', 'Français');
+    })
+
     it('displays the language link to change to English', () => {
       cy.get('[data-cy=toggle-language-link]').click()
-      cy.url().should("contains", "/fr/contact");
+      cy.location('pathname').should("equal", "/fr/contact");
       cy.get('[data-cy=toggle-language-link]').should('contain.text', 'English');
-  
     })
 
     it('has a list containing anchor tags',()=>{
         cy.get(`#contact-links > section > ul li:first > a`)
     })
-  
-    it('App has no detectable a11y violations on load', () => {
+
+    it('has no detectable a11y violations on load', () => {
+      cy.injectAxe();
+      cy.wait(500);
       cy.checkA11y()
     })
 })
