@@ -28,7 +28,6 @@
   "meta": {
     "author": "Service Canada",
     "desc": "English",
-    "keywords": "",
     "title": "Passport Application Status Checker (PASC)"
   },
   "required": "(required)",
@@ -58,10 +57,11 @@
       "external": true
     }
   ],
-  "cancel-modal": {
+  "modal": {
     "cancel-button": "Cancel",
     "yes-button": "Yes",
     "no-button": "No",
-    "description": "Are you sure you want to go back?"
+    "description": "Are you sure you want to go back?",
+    "idle": "You have been inactive for 15 minutes. Would you like to start over?"
   }
 }

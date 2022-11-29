@@ -11,12 +11,9 @@ const Index = () => {
       className="flex bg-splash-page bg-cover bg-center h-screen"
     >
       <MetaData
-        data={{
-          author: defaultTranslations.meta.author,
-          desc: defaultTranslations.meta.desc,
-          keywords: defaultTranslations.meta.keywords,
-          title: defaultTranslations.meta.title,
-        }}
+        author={defaultTranslations.meta.author}
+        desc={defaultTranslations.meta.desc}
+        title={defaultTranslations.meta.title}
       />
       <div className="flex flex-col justify-center items-center m-auto">
         <div className="z-10 bg-white h-auto w-[18.75rem] xl:w-[31.25rem]">
@@ -39,12 +36,14 @@ const Index = () => {
                 text="English"
                 id="english-button"
                 lang="en"
+                style="primary"
               />
               <LinkButton
                 href="/fr/expectations"
                 text="Français"
                 id="french-button"
                 lang="fr"
+                style="primary"
               />
             </div>
           </div>

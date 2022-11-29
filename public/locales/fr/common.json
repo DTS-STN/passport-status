@@ -28,7 +28,6 @@
   "meta": {
     "author": "Service Canada",
     "desc": "Français",
-    "keywords": "",
     "title": "Vérificateur du Statut de mon application pour un passport (VSAP)"
   },
   "required": "(obligatoire)",
@@ -58,10 +57,11 @@
       "external": true
     }
   ],
-  "cancel-modal": {
+  "modal": {
     "cancel-button": "Annuler",
     "yes-button": "Oui",
     "no-button": "Non",
-    "description": "Êtes-vous sûr de vouloir revenir en arrière?"
+    "description": "Êtes-vous sûr de vouloir revenir en arrière?",
+    "idle": "Vous avez été inactif pendant 15 minutes. Souhaitez-vous recommencer?"
   }
 }

@@ -1,12 +1,11 @@
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import { GetStaticProps } from 'next'
-import Router from 'next/router'
+import { useRouter } from 'next/router'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Layout from '../components/Layout'
-import { EmailEsrfRequestBody } from './api/email-esrf'
-import { useMemo, useState } from 'react'
+import { useMemo, useState, useCallback } from 'react'
 import ErrorSummary, {
   ErrorSummaryItem,
   GetErrorSummary,
@@ -16,8 +15,11 @@ import ActionButton from '../components/ActionButton'
 import Modal from '../components/Modal'
 import LinkSummary, { LinkSummaryItem } from '../components/LinkSummary'
 import useEmailEsrf from '../lib/useEmailEsrf'
+import { EmailEsrfApiRequestBody } from '../lib/types'
+import { useIdleTimer } from 'react-idle-timer'
+import { deleteCookie } from 'cookies-next'
 
-const initialValues: EmailEsrfRequestBody = {
+const initialValues: EmailEsrfApiRequestBody = {
   dateOfBirth: '',
   email: '',
   givenName: '',
@@ -26,7 +28,36 @@ const initialValues: EmailEsrfRequestBody = {
 
 export default function Email() {
   const { t } = useTranslation('email')
+  const router = useRouter()
   const [modalOpen, setModalOpen] = useState(false)
+  const [isIdle, setIsIdle] = useState(false)
+
+  const handleOnIdleTimerIdle = useCallback(() => {
+    setIsIdle(true)
+    setModalOpen(true)
+  }, [])
+
+  const { reset: resetIdleTimer } = useIdleTimer({
+    onIdle: handleOnIdleTimerIdle,
+    //15 minute timeout
+    timeout: 15 * 60 * 1000,
+  })
+
+  const handleOnModalRedirectButtonClick = useCallback(() => {
+    //If user is idle and selects option to go back, clear the cookie so they get redirected to /expectations instead
+    if (isIdle) {
+      deleteCookie('agreed-to-email-esrf-terms')
+    }
+    router.push('/landing')
+  }, [isIdle, router])
+
+  const handleOnModalResetButtonClick = useCallback(() => {
+    setModalOpen(false)
+    if (isIdle) {
+      setIsIdle(false)
+      resetIdleTimer()
+    }
+  }, [isIdle, resetIdleTimer])
 
   const {
     isLoading: isEmailEsrfLoading,
@@ -35,7 +66,7 @@ export default function Email() {
     mutate: emailEsrf,
   } = useEmailEsrf()
 
-  const formik = useFormik<EmailEsrfRequestBody>({
+  const formik = useFormik<EmailEsrfApiRequestBody>({
     initialValues,
     validationSchema: Yup.object({
       dateOfBirth: Yup.date()
@@ -70,9 +101,14 @@ export default function Email() {
 
       {isEmailEsrfSuccess ? (
         <>
-          <p className="mb-3">{t('email-confirmation-msg.request-received')}</p>
-          <p className="mb-3">{t('email-confirmation-msg.please-contact')}</p>
-          <p className="mb-3">{t('email-confirmation-msg.call')}</p>
+          <h2 className="my-4">
+            {t('email-confirmation-msg.request-received')}
+          </h2>
+          <p className="mb-4">{t('email-confirmation-msg.if-exists')}</p>
+          <p className="mb-4">
+            {t('email-confirmation-msg.please-contact')}{' '}
+            <b>{t('email-confirmation-msg.phone-number')}</b>.
+          </p>
           <LinkSummary
             title={t('common:contact-program')}
             links={t<string, LinkSummaryItem[]>('common:program-links', {
@@ -135,44 +171,47 @@ export default function Email() {
             errorMessage={
               formik.errors.dateOfBirth && t(formik.errors.dateOfBirth)
             }
+            max={'9999-12-31'}
             textRequired={t('common:required')}
             required
             helpMessage={t('help-message.date-of-birth')}
           />
-          <div className="flex flex-wrap">
-            <div className="py-1 pr-2">
-              <ActionButton
-                disabled={isEmailEsrfLoading}
-                type="submit"
-                text={t('email-esrf')}
-                style="primary"
-              />
-            </div>
-            <div className="py-1">
-              <Modal
-                buttonText={t('common:cancel-modal.cancel-button')}
-                description={t('common:cancel-modal.description')}
-                isOpen={modalOpen}
-                onClick={() => setModalOpen(!modalOpen)}
-                buttons={[
-                  {
-                    text: t('common:cancel-modal.yes-button'),
-                    onClick: () => Router.push('/landing'),
-                    style: 'primary',
-                    type: 'button',
-                  },
-                  {
-                    text: t('common:cancel-modal.no-button'),
-                    onClick: () => setModalOpen(!modalOpen),
-                    style: 'default',
-                    type: 'button',
-                  },
-                ]}
-              />
-            </div>
+          <div className="flex gap-2 flex-wrap my-2">
+            <ActionButton
+              id="btn-submit"
+              disabled={isEmailEsrfLoading}
+              type="submit"
+              text={t('email-esrf')}
+              style="primary"
+            />
+            <ActionButton
+              id="btn-cancel"
+              disabled={isEmailEsrfLoading}
+              text={t('common:modal.cancel-button')}
+              onClick={() => setModalOpen(true)}
+            />
           </div>
         </form>
       )}
+      <Modal
+        open={modalOpen}
+        actionButtons={[
+          {
+            text: t('common:modal.yes-button'),
+            onClick: handleOnModalRedirectButtonClick,
+            style: 'primary',
+            type: 'button',
+          },
+          {
+            text: t('common:modal.no-button'),
+            onClick: handleOnModalResetButtonClick,
+            style: 'default',
+            type: 'button',
+          },
+        ]}
+      >
+        {isIdle ? t('common:modal.idle') : t('common:modal.description')}
+      </Modal>
     </Layout>
   )
 }

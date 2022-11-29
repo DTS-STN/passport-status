@@ -9,10 +9,10 @@
   },
   "check-again": "To check the status of another application, click the button below:",
   "check-status": "Check Status",
-  "description": "Use this service with your file number (ESRF) to check the status of your passport application.",
+  "description": "Fill in the fields below to check the status of your passport application. Make sure your information matches your passport application form.",
   "esrf": {
     "error": {
-      "length": "The file number must be 8 characters long.",
+      "length": "The file number can have a maximum of 8 alphanumeric characters.",
       "required": "The file number is required.",
       "starts-with-letter": "The file number must begin with a letter (e.g. A1234567)."
     },
@@ -20,17 +20,40 @@
   },
   "given-name": {
     "error": {
-      "required": "The given name is required."
+      "required": "Given name(s) required."
     },
-    "label": "Given name"
+    "label": "Given name(s)"
   },
   "previous": "Previous",
   "reset": "Restart",
   "header": "Passport Status Check",
   "status": {
-    "1": "Approved",
-    "2": "In examination",
-    "3": "Rejected"
+    "1": {
+      "label": "Being processed",
+      "description": "Your application has been received and is in progress. If any further information is required, we will contact you."
+    },
+    "2": {
+      "label": "Issued and Ready for Pickup",
+      "description": "Your passport will be issued and ready for pick-up on your scheduled pick-up date. You must wait until your scheduled pick-up date to pick up your passport. Your passport pick-up date will show on your pick-up receipt."
+    },
+    "3": {
+      "label": "Issued and Shipping Canada Post",
+      "description": "Your passport has been issued and shipped using Canada Post. Please note that any documents you provided to support your passport application will be shipped to you separately.",
+      "tracking": "You can track this shipment on Canada Post's website using the tracking code: "
+    },
+    "4": {
+      "label": "Issued and Shipping Fedex",
+      "description": "Your passport has been issued and shipped using FedEx. Please note that any documents you provided to support your passport application will be shipped to you separately.",
+      "tracking": "You can track this shipment on FedEx's website using the tracking code: "
+    },
+    "5": {
+      "label": "Not acceptable for processing",
+      "description": "We reviewed your application and you will receive further communication by mail or by phone from the Passport Program."
+    },
+    "99": {
+      "label": "Application No Longer Meets Criteria for Use",
+      "description": "If you're seeing this then something has gone wrong."
+    }
   },
   "status-is": "The latest status of your application according to our records is:",
   "surname": {
@@ -57,8 +80,8 @@
   },
   "help-message": {
     "esrf": "When submitting your application in-person, you are provided with a File Number. The File Number begins with at least 1 letter and has a maximum of 8 total characters. (Examples of possible formats: “A1234567” or “AA123456” or “A123456” or “AA12345”)",
-    "given-name": "Please use the given name exactly as provided on your passport application. If this is a request for a child passport application, please use the child’s given name as provided on the passport application. Please note that the given name provided may have been updated to reflect the first given name on your proof of Canadian citizenship or supporting identification.",
-    "surname": "Please use the last name exactly as provided on your passport application. If this is a request for a child passport application, please use the child’s last name as provided on the passport application. Please note that the surname provided may have been updated to reflect the surname on your proof of Canadian citizenship or supporting identification.",
-    "date-of-birth": "Please provide your date of birth as provided on your passport application. If this is a request for a child passport application, please use the child’s date of birth as provided on the passport application. Please note that the date of birth provided may have been updated to reflect the date of birth on your proof of Canadian citizenship."
+    "given-name": "Please use the given name(s) exactly as provided on your passport application. For child applications, provide the child's given name(s) as provided on the passport application. Please note that the given name(s) provided may have been updated to reflect the first given name(s) on your proof of Canadian citizenship or supporting identification.",
+    "surname": "Please use the last name exactly as provided on your passport application. For child applications, provide the child's last name as provided on the passport application. Please note that the surname provided may have been updated to reflect the surname on your proof of Canadian citizenship or supporting identification.",
+    "date-of-birth": "Please provide your date of birth as provided on your passport application. For child applications, provide the child's date of birth as provided on the passport application. Please note that the date of birth provided may have been updated to reflect the date of birth on your proof of Canadian citizenship."
   }
 }

@@ -27,18 +27,46 @@ const Expectations: FC = () => {
     >
       <h2>{t('header-purpose')}</h2>
       <div className="my-5">
-        <p>{t('for-applications.p1')}</p>
-        <p>{t('for-applications.p2')}</p>
-        <p>{t('for-applications.p3')}</p>
+        {t('can-check.description')}
+        <ul className="ml-5 list-inside">
+          <li>
+            <span className="font-bold">&#10003; </span>
+            {t('can-check.list.item-1')}
+          </li>
+          <li>
+            <span className="font-bold">&#10003; </span>
+            {t('can-check.list.item-2')}
+          </li>
+        </ul>
       </div>
-      <div>
-        <p>{t('recommend-10-days')}</p>
+      <div className="my-5">
+        {t('available-after.description')}{' '}
+        <ul className="ml-5 list-inside">
+          <li>
+            <span className="font-bold">&#10003; </span>
+            {t('available-after.list.item-1')}
+          </li>
+          <li>
+            <span className="font-bold">&#10003; </span>
+            {t('available-after.list.item-2')}
+          </li>
+        </ul>
+      </div>
+      <div className="my-5">
+        {t('cannot-check.description')}{' '}
+        <ul className="ml-5 list-inside">
+          <li>
+            <span className="font-bold">&#10007; </span>
+            {t('cannot-check.list.item-1')}
+          </li>
+          <li>
+            <span className="font-bold">&#10007; </span>
+            {t('cannot-check.list.item-2')}
+          </li>
+        </ul>
       </div>
       <div className="my-5 font-bold">
         <p>{t('do-not-travel')}</p>
-      </div>
-      <div className="text-red-600">
-        <p>{t('unsupported-tools')}</p>
       </div>
       <h2 className="my-8">{t('header-privacy')}</h2>
       <p>{t('description-privacy')}</p>

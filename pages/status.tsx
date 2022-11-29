@@ -1,11 +1,18 @@
-import { FC, MouseEventHandler, useCallback, useMemo, useState } from 'react'
+import {
+  FC,
+  MouseEventHandler,
+  ChangeEventHandler,
+  useCallback,
+  useMemo,
+  useState,
+} from 'react'
 import { GetStaticProps } from 'next'
-import Router from 'next/router'
+import { useRouter } from 'next/router'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
-import { CheckStatusRequest } from '../lib/types'
+import { CheckStatusApiRequestQuery, StatusCode } from '../lib/types'
 import { useCheckStatus } from '../lib/useCheckStatus'
 import Layout from '../components/Layout'
 import InputField from '../components/InputField'
@@ -17,8 +24,10 @@ import ErrorSummary, {
 import LinkSummary, { LinkSummaryItem } from '../components/LinkSummary'
 import StatusInfo from '../components/StatusInfo'
 import Modal from '../components/Modal'
+import { useIdleTimer } from 'react-idle-timer'
+import { deleteCookie } from 'cookies-next'
 
-const initialValues: CheckStatusRequest = {
+const initialValues: CheckStatusApiRequestQuery = {
   dateOfBirth: '',
   esrf: '',
   givenName: '',
@@ -27,13 +36,42 @@ const initialValues: CheckStatusRequest = {
 
 const Status: FC = () => {
   const { t } = useTranslation('status')
+  const router = useRouter()
   const [modalOpen, setModalOpen] = useState(false)
+  const [isIdle, setIsIdle] = useState(false)
+
+  const handleOnIdleTimerIdle = useCallback(() => {
+    setIsIdle(true)
+    setModalOpen(true)
+  }, [])
+
+  const { reset: resetIdleTimer } = useIdleTimer({
+    onIdle: handleOnIdleTimerIdle,
+    //15 minute timeout
+    timeout: 15 * 60 * 1000,
+  })
+
+  const handleOnModalRedirectButtonClick = useCallback(() => {
+    //If user is idle and selects option to go back, clear the cookie so they get redirected to /expectations instead
+    if (isIdle) {
+      deleteCookie('agreed-to-email-esrf-terms')
+    }
+    router.push('/landing')
+  }, [isIdle, router])
+
+  const handleOnModalResetButtonClick = useCallback(() => {
+    setModalOpen(false)
+    if (isIdle) {
+      setIsIdle(false)
+      resetIdleTimer()
+    }
+  }, [isIdle, resetIdleTimer])
 
   const lsItems = t<string, LinkSummaryItem[]>('common:program-links', {
     returnObjects: true,
   })
 
-  const formik = useFormik<CheckStatusRequest>({
+  const formik = useFormik<CheckStatusApiRequestQuery>({
     initialValues,
     validationSchema: Yup.object({
       dateOfBirth: Yup.date()
@@ -41,7 +79,7 @@ const Status: FC = () => {
         .max(new Date(), 'date-of-birth.error.current'),
       esrf: Yup.string()
         .required('esrf.error.required')
-        .length(8, 'esrf.error.length')
+        .max(8, 'esrf.error.length')
         .trim()
         .matches(/^[A-Za-z]/, 'esrf.error.starts-with-letter'),
       givenName: Yup.string().required('given-name.error.required'),
@@ -62,7 +100,7 @@ const Status: FC = () => {
   const {
     isLoading: isCheckStatusLoading,
     error: checkStatusError,
-    data: checkStatusReponse,
+    data: checkStatusResponse,
     remove: removeCheckStatusResponse,
   } = useCheckStatus(
     formik.status === 'submitted' ? formik.values : initialValues,
@@ -82,13 +120,20 @@ const Status: FC = () => {
       )
   }, [formik, t])
 
-  const handleGoBack: MouseEventHandler<HTMLButtonElement> = useCallback(
+  const handleOnGoBackClick: MouseEventHandler<HTMLButtonElement> = useCallback(
     (e) => {
       e.preventDefault()
       formik.setStatus(undefined)
       removeCheckStatusResponse()
     },
     [formik, removeCheckStatusResponse]
+  )
+
+  const handleOnESRFChange: ChangeEventHandler<HTMLInputElement> = useCallback(
+    ({ target }) => {
+      formik.setFieldValue(target.name, target.value.replace(/[^a-z0-9]/gi, ''))
+    },
+    [formik]
   )
 
   //if the api failed, fail hard to show error page
@@ -102,25 +147,36 @@ const Status: FC = () => {
     >
       <h1 className="mb-4">{t('header')}</h1>
       {(() => {
-        if (checkStatusReponse) {
+        if (checkStatusResponse) {
           return (
             <>
               <StatusInfo
                 id="reponse-result"
-                handleGoBackClick={() => Router.push('/landing')}
+                onGoBackClick={() => router.push('/landing')}
                 goBackText={t('reset')}
                 goBackStyle="primary"
                 checkAgainText={t('check-again')}
               >
-                <p className="mb-6 text-2xl">
-                  {`${t('status-is')} `}
-                  <strong id="response-status">
-                    {t(`status.${checkStatusReponse.status}`, {
-                      defaultValue: checkStatusReponse.status,
-                    })}
-                  </strong>
-                  .
-                </p>
+                <div>
+                  <p className="mb-6 text-2xl">
+                    {`${t('status-is')} `}
+                    <strong id="response-status">
+                      {t(`status.${checkStatusResponse.status}.label`)}
+                    </strong>
+                    .
+                  </p>
+                  <p>{t(`status.${checkStatusResponse.status}.description`)}</p>
+                  {checkStatusResponse.manifestNumber &&
+                    [
+                      `${StatusCode.PASSPORT_ISSUED_SHIPPING_CANADA_POST}`,
+                      `${StatusCode.PASSPORT_ISSUED_SHIPPING_FEDEX}`,
+                    ].includes(checkStatusResponse.status) && (
+                      <p>
+                        {t(`status.${checkStatusResponse.status}.tracking`)}
+                        <strong>{checkStatusResponse.manifestNumber}</strong>
+                      </p>
+                    )}
+                </div>
               </StatusInfo>
               <LinkSummary
                 title={t('common:contact-program')}
@@ -130,12 +186,12 @@ const Status: FC = () => {
           )
         }
 
-        if (checkStatusReponse === null) {
+        if (checkStatusResponse === null) {
           return (
             <>
               <StatusInfo
                 id="reponse-no-result"
-                handleGoBackClick={handleGoBack}
+                onGoBackClick={handleOnGoBackClick}
                 goBackText={t('previous')}
                 goBackStyle="primary"
                 checkAgainText={t('check-again')}
@@ -187,7 +243,7 @@ const Status: FC = () => {
               id="esrf"
               name="esrf"
               label={t('esrf.label')}
-              onChange={formik.handleChange}
+              onChange={handleOnESRFChange}
               value={formik.values.esrf}
               errorMessage={formik.errors.esrf && t(formik.errors.esrf)}
               textRequired={t('common:required')}
@@ -229,44 +285,47 @@ const Status: FC = () => {
                 formik.errors.dateOfBirth && t(formik.errors.dateOfBirth)
               }
               textRequired={t('common:required')}
+              max={'9999-12-31'}
               required
               helpMessage={t('help-message.date-of-birth')}
             />
-            <div className="flex flex-wrap">
-              <div id="button-get-status" className="py-1 pr-2">
-                <ActionButton
-                  disabled={isCheckStatusLoading}
-                  type="submit"
-                  text={t('check-status')}
-                  style="primary"
-                />
-              </div>
-              <div className="py-1">
-                <Modal
-                  buttonText={t('common:cancel-modal.cancel-button')}
-                  description={t('common:cancel-modal.description')}
-                  isOpen={modalOpen}
-                  onClick={() => setModalOpen(!modalOpen)}
-                  buttons={[
-                    {
-                      text: t('common:cancel-modal.yes-button'),
-                      onClick: () => Router.push('/landing'),
-                      style: 'primary',
-                      type: 'button',
-                    },
-                    {
-                      text: t('common:cancel-modal.no-button'),
-                      onClick: () => setModalOpen(!modalOpen),
-                      style: 'default',
-                      type: 'button',
-                    },
-                  ]}
-                />
-              </div>
+            <div className="flex gap-2 flex-wrap">
+              <ActionButton
+                id="btn-submit"
+                disabled={isCheckStatusLoading}
+                type="submit"
+                text={t('check-status')}
+                style="primary"
+              />
+              <ActionButton
+                id="btn-cancel"
+                disabled={isCheckStatusLoading}
+                text={t('common:modal.cancel-button')}
+                onClick={() => setModalOpen(true)}
+              />
             </div>
           </form>
         )
       })()}
+      <Modal
+        open={modalOpen}
+        actionButtons={[
+          {
+            text: t('common:modal.yes-button'),
+            onClick: handleOnModalRedirectButtonClick,
+            style: 'primary',
+            type: 'button',
+          },
+          {
+            text: t('common:modal.no-button'),
+            onClick: handleOnModalResetButtonClick,
+            style: 'default',
+            type: 'button',
+          },
+        ]}
+      >
+        {isIdle ? t('common:modal.idle') : t('common:modal.description')}
+      </Modal>
     </Layout>
   )
 }

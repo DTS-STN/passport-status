@@ -1,6 +1,6 @@
 import handler from '../../pages/api/check-status'
 import { createMocks, createRequest, createResponse } from 'node-mocks-http'
-import { CheckStatusRequest } from '../../lib/types'
+import { CheckStatusApiRequestQuery } from '../../lib/types'
 import { NextApiRequest, NextApiResponse } from 'next'
 
 /**
@@ -10,9 +10,9 @@ import { NextApiRequest, NextApiResponse } from 'next'
 type ApiRequest = NextApiRequest & ReturnType<typeof createRequest>
 type ApiResponse = NextApiResponse & ReturnType<typeof createResponse>
 
-const getUrl = (checkStatusRequest: CheckStatusRequest) =>
+const getUrl = (checkStatusApiRequestQuery: CheckStatusApiRequestQuery) =>
   'api/check-status?' +
-  new URLSearchParams({ ...checkStatusRequest }).toString()
+  new URLSearchParams({ ...checkStatusApiRequestQuery }).toString()
 
 describe('api/check-status', () => {
   it('returns a result', async () => {
@@ -38,5 +38,22 @@ describe('api/check-status', () => {
     const { req, res } = createMocks<ApiRequest, ApiResponse>({ url })
     await handler(req, res)
     expect(res._getStatusCode()).toBe(404)
+  })
+
+  it('returns a method not allowed', async () => {
+    const method = 'POST'
+    const url = getUrl({
+      esrf: '',
+      givenName: '',
+      surname: '',
+      dateOfBirth: '',
+    })
+
+    const { req, res } = createMocks<ApiRequest, ApiResponse>({
+      method,
+      url,
+    })
+    await handler(req, res)
+    expect(res._getStatusCode()).toBe(405)
   })
 })

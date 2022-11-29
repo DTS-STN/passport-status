@@ -1,6 +1,6 @@
 {
-  "header": "Get my file number (ESRF)",
-  "description": "Please enter the following required feilds, as entered on your passport application form, to have your file number (ESRF) emailed to the email address on file.",
+  "header": "Get my file number",
+  "description": "Fill in the fields below to get your file number. Make sure your information matches your passport application form. We'll then email the file number to the email address on file.",
   "email": {
     "label": "Email address",
     "error": {
@@ -10,9 +10,9 @@
   },
   "given-name": {
     "error": {
-      "required": "The given name is required."
+      "required": "Given name(s) required."
     },
-    "label": "Given name"
+    "label": "Given name(s)"
   },
   "surname": {
     "error": {
@@ -31,9 +31,10 @@
   "email-esrf": "Email my file number (ESRF)",
   "email-sent-confirmation": "An email has been sent if there was a match in our records with the file number (ESRF).",
   "email-confirmation-msg": {
-    "request-received": "We have received your request. If you have submitted a passport application and we are able to locate your file, you will receive an email containing your File Number.",
-    "please-contact": "If you do not receive an email containing your File Number within the next 24 hrs, please contact Service Canada:",
-    "call": "Call: Passport Call Centre (insert phone #)."
+    "request-received": "Your request to get the file number has been received",
+    "if-exists": "If we're able to locate the file with the information you gave us, we'll send you an email with the file number.",
+    "please-contact": "You should receive the email within 30 minutes. If you don't receive it, call the passport call centre at ",
+    "phone-number": "1-800-567-6868"
   },
   "page-unauth": {
     "header": "Page Unauthorized",
@@ -41,9 +42,9 @@
     "button": "Privacy and Email terms"
   },
   "help-message": {
-    "email": "Provide your full email address as provided on the passport application form. If this is a request for a child application, please provide the full email address as provided on the passport application form for the applicant parent/guardian.",
-    "given-name": "Please use the given name exactly as provided on your passport application. If this is a request for a child passport application, please use the child’s given name as provided on the passport application. Please note that the given name provided may have been updated to reflect the first given name on your proof of Canadian citizenship or supporting identification.",
-    "surname": "Please use the last name exactly as provided on your passport application. If this is a request for a child passport application, please use the child’s last name as provided on the passport application. Please note that the surname provided may have been updated to reflect the surname on your proof of Canadian citizenship or supporting identification.",
-    "date-of-birth": "Please provide your date of birth as provided on your passport application. If this is a request for a child passport application, please use the child’s date of birth as provided on the passport application. Please note that the date of birth provided may have been updated to reflect the date of birth on your proof of Canadian citizenship."
+    "email": "Provide your full email address as provided on the passport application form. For child applications, provide the full email address for the applicant parent or legal guardian exactly as provided on the passport application.",
+    "given-name": "Please use the given name(s) exactly as provided on your passport application. For child applications, provide the child's given name(s) as provided on the passport application. Please note that the given name(s) provided may have been updated to reflect the first given name(s) on your proof of Canadian citizenship or supporting identification.",
+    "surname": "Please use the last name exactly as provided on your passport application. For child applications, provide the child's last name as provided on the passport application. Please note that the surname provided may have been updated to reflect the surname on your proof of Canadian citizenship or supporting identification.",
+    "date-of-birth": "Please provide your date of birth as provided on your passport application. For child applications, provide the child's date of birth as provided on the passport application. Please note that the date of birth provided may have been updated to reflect the date of birth on your proof of Canadian citizenship."
   }
 }
