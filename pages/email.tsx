@@ -101,9 +101,14 @@ export default function Email() {
 
       {isEmailEsrfSuccess ? (
         <>
-          <p className="mb-3">{t('email-confirmation-msg.request-received')}</p>
-          <p className="mb-3">{t('email-confirmation-msg.please-contact')}</p>
-          <p className="mb-3">{t('email-confirmation-msg.call')}</p>
+          <h2 className="my-4">
+            {t('email-confirmation-msg.request-received')}
+          </h2>
+          <p className="mb-4">{t('email-confirmation-msg.if-exists')}</p>
+          <p className="mb-4">
+            {t('email-confirmation-msg.please-contact')}{' '}
+            <b>{t('email-confirmation-msg.phone-number')}</b>.
+          </p>
           <LinkSummary
             title={t('common:contact-program')}
             links={t<string, LinkSummaryItem[]>('common:program-links', {
