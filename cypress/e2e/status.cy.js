@@ -38,18 +38,18 @@ describe('ESRF field validation', ()=>{
 
   it('validates valid ESRF',()=>{
     cy.get('#esrf').type('A5934S87')
-    cy.get('#button-get-status > button').click()
+    cy.get('#btn-submit').click()
     cy.get('#input-esrf > span').should('not.exist')
   })
 
   it('validates empty ESRF error',()=>{
-    cy.get('#button-get-status > button').click()
+    cy.get('#btn-submit').click()
     cy.get('#input-esrf > span').should('exist')
   })
 
   it('validates invalid length for ESRF', ()=>{
     cy.get('#esrf').type('1234')
-    cy.get('#button-get-status > button').click()
+    cy.get('#btn-submit').click()
     cy.get('#input-esrf > span').should('exist')
   })
 })
@@ -63,12 +63,12 @@ describe('givenName field validation', ()=>{
 
   it('validates valid givenName',()=>{
     cy.get('#givenName').type('Clara')
-    cy.get('#button-get-status > button').click()
+    cy.get('#btn-submit').click()
     cy.get('#input-givenName > span').should('not.exist')
   })
 
   it('validates empty givenName error',()=>{
-    cy.get('#button-get-status > button').click()
+    cy.get('#btn-submit').click()
     cy.get('#input-givenName > span').should('exist')
   })
 })
@@ -82,12 +82,12 @@ describe('surname field validation', ()=>{
 
   it('validates valid surname',()=>{
     cy.get('#surname').type('Renard')
-    cy.get('#button-get-status > button').click()
+    cy.get('#btn-submit').click()
     cy.get('#input-surname > span').should('not.exist')
   })
 
   it('validates empty surname error',()=>{
-    cy.get('#button-get-status > button').click()
+    cy.get('#btn-submit').click()
     cy.get('#input-surname > span').should('exist')
   })
 })
@@ -101,12 +101,12 @@ describe('Date of Birth field validation', ()=>{
 
   it('validates valid dateOfBirth',()=>{
     cy.get('#dateOfBirth').type('1982-12-08')
-    cy.get('#button-get-status > button').click()
+    cy.get('#btn-submit').click()
     cy.get('#input-dateOfBirth > span').should('not.exist')
   })
 
   it('validates empty dateOfBirth error',()=>{
-    cy.get('#button-get-status > button').click()
+    cy.get('#btn-submit').click()
     cy.get('#input-dateOfBirth > span').should('exist')
   })
 
@@ -114,7 +114,7 @@ describe('Date of Birth field validation', ()=>{
     const yearPlus1 = new Date(new Date().getFullYear()+1,1,1)
     const testDate = [yearPlus1.getFullYear(),'01','01'].join('-')
     cy.get('#dateOfBirth').type(testDate)
-    cy.get('#button-get-status > button').click()
+    cy.get('#btn-submit').click()
     cy.get('#input-dateOfBirth > span').should('exist')
   })
 })
@@ -128,11 +128,11 @@ describe('responses', ()=>{
     cy.get('#givenName').type('Yanis')
     cy.get('#surname').type('Piérre')
     cy.get('#dateOfBirth').type('1972-07-29')
-    cy.get('#button-get-status > button').click()
+    cy.get('#btn-submit').click()
     cy.get('#response-status').should('exist')
   })
 
-  it('loads result is acessable', ()=>{
+  it('loads result has no detectable a11y violations', ()=>{
     cy.injectAxe();
     cy.wait(500);
     cy.checkA11y()
@@ -146,11 +146,27 @@ describe('responses', ()=>{
     cy.get('#givenName').type('John')
     cy.get('#surname').type('Doe')
     cy.get('#dateOfBirth').type('1990-12-01')
-    cy.get('#button-get-status > button').click()
+    cy.get('#btn-submit').click()
     cy.get('#reponse-no-result').should('exist')
   })
 
-  it('no result is acessable', ()=>{
+  it('no result has no detectable a11y violations', ()=>{
+    cy.injectAxe();
+    cy.wait(500);
+    cy.checkA11y()
+  })
+})
+
+describe('cancel check status', ()=>{
+  it('loads dialog', ()=>{
+    cy.visit('/expectations')
+    cy.get('#confirmBtn button').first().click()
+    cy.visit('/status')
+    cy.get('#btn-cancel').click()
+    cy.get('[role="dialog"]').should('exist')
+  })
+
+  it.skip('cancel check status has no detectable a11y violations', ()=>{
     cy.injectAxe();
     cy.wait(500);
     cy.checkA11y()

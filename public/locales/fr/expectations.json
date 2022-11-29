@@ -1,15 +1,28 @@
 {
-  "header-purpose": "Objectif de l'application",
+  "header-purpose": "Vérifiez l'état de votre demande de passeport",
   "header-privacy": "Confidentialité",
-  "description-purpose": "Le but de cet outil est de vérifier le statut de votre demande de passeport à partir de quelques informations de base.",
+  "can-check": {
+    "description": "Vous pouvez obtenir le statut de votre demande de passeport en ligne si vous avez soumis votre demande de passeport soit\u00a0:",
+    "list": {
+      "item-1": "en personne ou par la poste au Canada ou",
+      "item-2": "par courrier depuis les États-Unis"
+    }
+  },
+  "available-after": {
+    "description": "Nous mettons à jour quotidiennement l'état des candidatures. Le statut de votre candidature est disponible après\u00a0:",
+    "list": {
+      "item-1": "5 jours si vous avez postulé en personne ou",
+      "item-2": "10 jours si vous avez postulé par courrier"
+    }
+  },
+  "cannot-check": {
+    "description": "Vous ne pouvez pas consulter l'état d'une demande de passeport en ligne si vous\u00a0:",
+    "list": {
+      "item-1": "demandé un passeport à l'extérieur du Canada et des États-Unis ou",
+      "item-2": "demandé un passeport spécial ou diplomatique"
+    }
+  },
   "description-privacy": "Avez-vous lu et accepté les conditions d'utilisation et de confidentialité?",
   "button-agree": "J'ai lu et j'accept",
-  "for-applications": {
-    "p1": "For applications submitted in person or by mail within Canada or mailed to Canada from the US ",
-    "p2": "Recover the ESRF only if a valid email address was included on the application (Post July 2022)",
-    "p3": "Information only updated on a daily basis not real-time."
-  },
-  "recommend-10-days": "Recommend that status checker is only used 10 days after application has been sent. Please refer to (Link to service standards/processing times website) for processing times.",
-  "do-not-travel": "You should not finalize any travel plans until you have the passport. We are not liable for any losses if you do not receive it in time for your travel.",
-  "unsupported-tools": "(not finalized) List of tools that the app does not support: anything overseas (GAC) or IRCC (refugee travel doc, diplomatic passports) or any consulate cases in US or anywhere, but will include applications mailed from US"
+  "do-not-travel": "Vous ne devez finaliser aucun projet de voyage tant que vous n'avez pas le passeport. Nous ne sommes pas responsables des pertes si vous ne le recevez pas à temps pour votre voyage."
 }

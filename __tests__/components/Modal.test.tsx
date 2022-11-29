@@ -7,17 +7,18 @@ expect.extend(toHaveNoViolations)
 
 describe('Modal', () => {
   const { container } = render(
-    <Modal
-      buttonText="Some text"
-      description="Some description"
-      isOpen={false}
-      onClick={() => jest.fn()}
-      buttons={[{ text: 'some text' }]}
-    />
+    <Modal open actionButtons={[{ text: 'button text' }]}>
+      <p>content</p>
+    </Modal>
   )
+
   it('renders', () => {
-    const sut = screen.getByText('Some text')
+    const sut = screen.getByRole('dialog')
+    const content = screen.getByText('content')
+    const actionButton = screen.getByText('button text')
     expect(sut).toBeInTheDocument()
+    expect(content).toBeInTheDocument()
+    expect(actionButton).toBeInTheDocument()
   })
 
   it('is meets a11y', async () => {

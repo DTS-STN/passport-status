@@ -36,12 +36,14 @@ const Index = () => {
                 text="English"
                 id="english-button"
                 lang="en"
+                style="primary"
               />
               <LinkButton
                 href="/fr/expectations"
                 text="Français"
                 id="french-button"
                 lang="fr"
+                style="primary"
               />
             </div>
           </div>
