@@ -89,6 +89,7 @@ export default function Email() {
     [formik, t]
   )
 
+  //if the api failed, fail hard to show error page
   if (emailEsrfError) throw emailEsrfError
 
   return (
