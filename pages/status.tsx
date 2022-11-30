@@ -137,7 +137,7 @@ const Status: FC = () => {
   )
 
   //if the api failed, fail hard to show error page
-  if (checkStatusError) throw new Error(checkStatusError.message)
+  if (checkStatusError) throw checkStatusError
 
   return (
     <Layout
