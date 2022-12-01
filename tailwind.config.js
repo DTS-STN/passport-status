@@ -7,7 +7,7 @@ module.exports = {
     extend: {
       fontFamily: {
         display: ['Lato', 'sans-serif'],
-        body: ['Noto sans', 'sans-serif'],
+        body: ['"Noto sans"', 'sans-serif'],
         extra: ['Patua One', 'cursive'],
       },
       borderWidth: {
