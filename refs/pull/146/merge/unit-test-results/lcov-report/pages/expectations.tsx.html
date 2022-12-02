@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">55.55% </span>
+                <span class="strong">63.63% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>5/9</span>
+                <span class='fraction'>7/11</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>2/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">33.33% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/3</span>
+                <span class='fraction'>2/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">62.5% </span>
+                <span class="strong">70% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5/8</span>
+                <span class='fraction'>7/10</span>
             </div>
         
             
@@ -150,7 +150,11 @@
 <a name='L85'></a><a href='#L85'>85</a>
 <a name='L86'></a><a href='#L86'>86</a>
 <a name='L87'></a><a href='#L87'>87</a>
-<a name='L88'></a><a href='#L88'>88</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -218,6 +222,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -266,37 +274,25 @@ const Expectations: FC = () =&gt; {
     &gt;
       &lt;h1&gt;{t('header-purpose')}&lt;/h1&gt;
       &lt;p&gt;{t('can-check.description')}&lt;/p&gt;
-      &lt;ul className="ml-4 mb-3 list-inside"&gt;
-        &lt;li&gt;
-          &lt;span className="font-bold"&gt;&amp;#10003; &lt;/span&gt;
-          {t('can-check.list.item-1')}
-        &lt;/li&gt;
-        &lt;li&gt;
-          &lt;span className="font-bold"&gt;&amp;#10003; &lt;/span&gt;
-          {t('can-check.list.item-2')}
-        &lt;/li&gt;
+      &lt;ul className="ml-4 mb-3"&gt;
+        &lt;IconListItem icon="check-mark" text={t('can-check.list.item-1')} /&gt;
+        &lt;IconListItem icon="check-mark" text={t('can-check.list.item-2')} /&gt;
       &lt;/ul&gt;
       &lt;p&gt;{t('available-after.description')}&lt;/p&gt;
-      &lt;ul className="ml-4 mb-3 list-inside"&gt;
-        &lt;li&gt;
-          &lt;span className="font-bold"&gt;&amp;#10003; &lt;/span&gt;
-          {t('available-after.list.item-1')}
-        &lt;/li&gt;
-        &lt;li&gt;
-          &lt;span className="font-bold"&gt;&amp;#10003; &lt;/span&gt;
-          {t('available-after.list.item-2')}
-        &lt;/li&gt;
+      &lt;ul className="ml-4 mb-3"&gt;
+        &lt;IconListItem
+          icon="check-mark"
+          text={t('available-after.list.item-1')}
+        /&gt;
+        &lt;IconListItem
+          icon="check-mark"
+          text={t('available-after.list.item-2')}
+        /&gt;
       &lt;/ul&gt;
       &lt;p&gt;{t('cannot-check.description')}&lt;/p&gt;
-      &lt;ul className="ml-4 mb-3 list-inside"&gt;
-        &lt;li&gt;
-          &lt;span className="font-bold"&gt;&amp;#10007; &lt;/span&gt;
-          {t('cannot-check.list.item-1')}
-        &lt;/li&gt;
-        &lt;li&gt;
-          &lt;span className="font-bold"&gt;&amp;#10007; &lt;/span&gt;
-          {t('cannot-check.list.item-2')}
-        &lt;/li&gt;
+      &lt;ul className="ml-4 mb-3"&gt;
+        &lt;IconListItem icon="cross" text={t('cannot-check.list.item-1')} /&gt;
+        &lt;IconListItem icon="cross" text={t('cannot-check.list.item-2')} /&gt;
       &lt;/ul&gt;
       &lt;p&gt;
         &lt;strong&gt;{t('do-not-travel')}&lt;/strong&gt;
@@ -311,6 +307,22 @@ const Expectations: FC = () =&gt; {
         /&gt;
       &lt;/div&gt;
     &lt;/Layout&gt;
+  )
+}
+&nbsp;
+interface IconListItemProps {
+  icon: 'check-mark' | 'cross'
+  text: string
+}
+&nbsp;
+const IconListItem: FC&lt;IconListItemProps&gt; = ({ icon, text }) =&gt; {
+  return (
+    &lt;li className="flex flex-nowrap gap-5"&gt;
+      &lt;div className="font-bold"&gt;
+        {icon === 'check-mark' ? &lt;&gt;&amp;#10003;&lt;/&gt; : &lt;&gt;&amp;#10007;&lt;/&gt;}
+      &lt;/div&gt;
+      &lt;div&gt;{text}&lt;/div&gt;
+    &lt;/li&gt;
   )
 }
 &nbsp;
@@ -331,7 +343,7 @@ export default Expectations
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-12-02T12:46:22.405Z
+                at 2022-12-02T13:02:47.331Z
             </div>
         <script src="../prettify.js"></script>
         <script>
