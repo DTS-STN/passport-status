@@ -63,5 +63,6 @@
     "no-button": "No",
     "description": "Are you sure you want to go back?",
     "idle": "You have been inactive for 15 minutes. Would you like to start over?"
-  }
+  },
+  "phone-number": "1-800-567-6868"
 }

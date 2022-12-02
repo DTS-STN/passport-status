@@ -108,7 +108,7 @@ export default function Email() {
           <p className="mb-4">{t('email-confirmation-msg.if-exists')}</p>
           <p className="mb-4">
             {t('email-confirmation-msg.please-contact')}{' '}
-            <b>{t('email-confirmation-msg.phone-number')}</b>.
+            <b>{t('common:email-confirmation-msg.phone-number')}</b>.
           </p>
           <LinkSummary
             title={t('common:contact-program')}

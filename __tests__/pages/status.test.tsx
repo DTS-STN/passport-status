@@ -6,7 +6,7 @@ import Status from '../../pages/status'
 expect.extend(toHaveNoViolations)
 
 jest.mock('../../components/Layout')
-jest.mock('../../components/StatusInfo')
+jest.mock('../../components/CheckStatusInfo')
 jest.mock('../../components/ErrorSummary')
 jest.mock('../../components/InputField')
 jest.mock('../../components/ActionButton')
