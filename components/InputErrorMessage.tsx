@@ -1,12 +1,16 @@
 import { FC } from 'react'
 
 export interface InputErrorMessageProps {
+  id?: string
   message: string
 }
 
-const InputErrorMessage: FC<InputErrorMessageProps> = ({ message }) => {
+const InputErrorMessage: FC<InputErrorMessageProps> = ({ id, message }) => {
   return (
-    <div className="font-bold border-l-4 border-red-dark mb-1.5 px-2 bg-red-light inline-block">
+    <div
+      id={id}
+      className="font-bold border-l-4 border-red-dark mb-1.5 px-2 bg-red-light inline-block"
+    >
       {message}
     </div>
   )

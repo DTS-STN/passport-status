@@ -37,7 +37,9 @@ const InputField: FC<InputFieldProps> = ({
         label={label}
         textRequired={textRequired}
       />
-      {errorMessage && <InputErrorMessage message={errorMessage} />}
+      {errorMessage && (
+        <InputErrorMessage id={`input-${id}-error`} message={errorMessage} />
+      )}
       <input
         aria-describedby={helpMessage && `input-${id}-help`}
         aria-invalid={!!errorMessage}
