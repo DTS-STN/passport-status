@@ -33,8 +33,7 @@
   "email-confirmation-msg": {
     "request-received": "Votre demande d'obtention du numéro de dossier a été reçue",
     "if-exists": "Si nous sommes en mesure de localiser le dossier avec les informations que vous nous avez fournies, nous vous enverrons un courriel avec le numéro de dossier.",
-    "please-contact": "Vous devriez recevoir un courriel dans les 30 minutes. Si vous ne le recevez pas, appelez le centre d'appel des passeports au ",
-    "phone-number": "1-800-567-6868"
+    "please-contact": "Vous devriez recevoir un courriel dans les 30 minutes. Si vous ne le recevez pas, appelez le centre d'appel des passeports au "
   },
   "page-unauth": {
     "header": "Page non-autorisée",

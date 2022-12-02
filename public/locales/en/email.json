@@ -33,8 +33,7 @@
   "email-confirmation-msg": {
     "request-received": "Your request to get the file number has been received",
     "if-exists": "If we're able to locate the file with the information you gave us, we'll send you an email with the file number.",
-    "please-contact": "You should receive the email within 30 minutes. If you don't receive it, call the passport call centre at ",
-    "phone-number": "1-800-567-6868"
+    "please-contact": "You should receive the email within 30 minutes. If you don't receive it, call the passport call centre at "
   },
   "page-unauth": {
     "header": "Page Unauthorized",

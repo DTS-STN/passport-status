@@ -129,7 +129,7 @@ describe('responses', ()=>{
     cy.get('#surname').type('Piérre')
     cy.get('#dateOfBirth').type('1972-07-29')
     cy.get('#btn-submit').click()
-    cy.get('#response-status').should('exist')
+    cy.get('#response-result').should('exist')
   })
 
   it('loads result has no detectable a11y violations', ()=>{
@@ -147,7 +147,7 @@ describe('responses', ()=>{
     cy.get('#surname').type('Doe')
     cy.get('#dateOfBirth').type('1990-12-01')
     cy.get('#btn-submit').click()
-    cy.get('#reponse-no-result').should('exist')
+    cy.get('#response-no-result').should('exist')
   })
 
   it('no result has no detectable a11y violations', ()=>{

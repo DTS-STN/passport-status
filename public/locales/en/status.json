@@ -83,5 +83,66 @@
     "given-name": "Please use the given name(s) exactly as provided on your passport application. For child applications, provide the child's given name(s) as provided on the passport application. Please note that the given name(s) provided may have been updated to reflect the first given name(s) on your proof of Canadian citizenship or supporting identification.",
     "surname": "Please use the last name exactly as provided on your passport application. For child applications, provide the child's last name as provided on the passport application. Please note that the surname provided may have been updated to reflect the surname on your proof of Canadian citizenship or supporting identification.",
     "date-of-birth": "Please provide your date of birth as provided on your passport application. For child applications, provide the child's date of birth as provided on the passport application. Please note that the date of birth provided may have been updated to reflect the date of birth on your proof of Canadian citizenship."
+  },
+  "no-record": {
+    "cannot-give-status": {
+      "description": "We can't give you your application status right now because:",
+      "list": {
+        "item-1": "the information you gave us doesn't match the information in our system or",
+        "item-2": "we received your application, but haven't started processing it yet"
+      }
+    },
+    "available-after": {
+      "description": "The status of your application is available after:",
+      "list": {
+        "item-1": "5 days if you applied in person or",
+        "item-2": "10 days if you applied by mail"
+      }
+    },
+    "double-check": "Double check your information and try again. If your application still can't be found, you can try again tomorrow. Our records update daily."
+  },
+  "being-processed": {
+    "received": "We've received your application and have started processing it.",
+    "we-will-contact": "If we need any further information, we'll contact you by email or telephone. Service Canada will not use text messages or instant messages to start a conversation with you about your passport application."
+  },
+  "ready-for-pickup": {
+    "has-been-printed": "The passport has been printed. Check your receipt to confirm when and where to pick up the passport.",
+    "do-not-visit": "Do not visit the pickup location before the date printed on your receipt."
+  },
+  "shipped-canada-post": {
+    "printed-and-mailing": "The passport has been printed. We're mailing it to you via Canada Post.",
+    "supporting-documents": "We may send your supporting documents back separately.",
+    "did-not-receive": "If you don't receive your documents within 4 weeks of receiving your passport, you can call us at "
+  },
+  "shipped-fedex": {
+    "printed-and-mailing": "The passport has been printed. We're mailing it to you via Fedex.",
+    "supporting-documents": "You'll receive your passport and supporting documents in the same envelope."
+  },
+  "not-acceptable": {
+    "cannot-process": "We have reviewed your application and can't process it further.",
+    "explanation": "We're sending you a letter explaining why, as well as your supporting documents. You should get these within the next few weeks."
+  },
+  "status-check-numerous-attempts": {
+    "description": "If after numerous attempts you are unable to access the status of your application online, or if your application is taking longer than the ",
+    "service-standard": {
+      "text": "service standard",
+      "href": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/check-passport-travel-document-application.html"
+    },
+    "can-call": ", you can call us at "
+  },
+  "status-check-urgent": {
+    "description": "If you need a passport within 10 business days, learn ",
+    "express-services": {
+      "text": "how to get urgent or express passport services.",
+      "href": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/urgent-emergency-passport.html"
+    }
+  },
+  "status-check-tracking": {
+    "number": "Your tracking number is ",
+    "link": {
+      "text": "You can track the package online.",
+      "canada-post": "https://www.canadapost-postescanada.ca/track-reperage/en",
+      "fedex": "https://www.fedex.com/fedextrack/?action=track&cntry_code=ca&locale=en_ca&trackingnumber="
+    }
   }
 }
