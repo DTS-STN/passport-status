@@ -5,10 +5,8 @@ export const CheckStatusNotAcceptable: FC<{}> = () => {
   const { t } = useTranslation(['status', 'common'])
   return (
     <>
-      <p data-testid="not-acceptable" className="my-5">
-        {t('not-acceptable.cannot-process')}
-      </p>
-      <p className="my-5">{t('not-acceptable.explanation')}</p>
+      <p data-testid="not-acceptable">{t('not-acceptable.cannot-process')}</p>
+      <p>{t('not-acceptable.explanation')}</p>
     </>
   )
 }

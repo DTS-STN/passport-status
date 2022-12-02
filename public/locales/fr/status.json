@@ -141,8 +141,8 @@
     "number": "Votre numéro de suivi est ",
     "link": {
       "text": "Vous pouvez suivre le colis en ligne.",
-      "canada-post": "https://www.canadapost-postescanada.ca/track-reperage/fr",
-      "fedex": "https://www.fedex.com/fedextrack/?action=track&cntry_code=ca&locale=fr_ca&trackingnumber="
+      "canada-post": "https://www.canadapost-postescanada.ca/track-reperage/fr?referenceNumber={{trackingNumber}}#/details/{{trackingNumber}}",
+      "fedex": "https://www.fedex.com/fedextrack/?action=track&cntry_code=ca&locale=fr_ca&trackingnumber={{trackingNumber}}"
     }
   }
 }
