@@ -16,7 +16,7 @@ const InputLabel: FC<InputLabelProps> = ({
   return (
     <label
       htmlFor={id}
-      className={`font-bold block mb-1.5 ${required ? 'required' : ''}`}
+      className={`font-bold block mb-2 ${required ? 'required' : ''}`}
     >
       {label}
       {required && (

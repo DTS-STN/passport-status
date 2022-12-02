@@ -6,9 +6,9 @@ export interface InputErrorMessageProps {
 
 const InputErrorMessage: FC<InputErrorMessageProps> = ({ message }) => {
   return (
-    <span className="font-bold border-l-4 border-red-dark mb-1 px-2 bg-red-light inline-block">
+    <div className="font-bold border-l-4 border-red-dark mb-1.5 px-2 bg-red-light inline-block">
       {message}
-    </span>
+    </div>
   )
 }
 
