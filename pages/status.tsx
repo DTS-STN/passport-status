@@ -121,12 +121,16 @@ const Status: FC = () => {
   }, [formik, t])
 
   const handleOnGoBackClick: MouseEventHandler<HTMLButtonElement> = useCallback(
-    (e) => {
+    async (e) => {
       e.preventDefault()
+      if (checkStatusResponse) {
+        await router.push('/landing')
+        return
+      }
       formik.setStatus(undefined)
       removeCheckStatusResponse()
     },
-    [formik, removeCheckStatusResponse]
+    [formik, removeCheckStatusResponse, checkStatusResponse, router]
   )
 
   const handleOnESRFChange: ChangeEventHandler<HTMLInputElement> = useCallback(
@@ -147,7 +151,7 @@ const Status: FC = () => {
     >
       <h1 className="mb-4">{t('header')}</h1>
       {(() => {
-        if (checkStatusResponse || checkStatusResponse === null) {
+        if (checkStatusResponse !== undefined) {
           return (
             <>
               <CheckStatusInfo
@@ -156,11 +160,7 @@ const Status: FC = () => {
                     ? 'response-no-result'
                     : 'response-result'
                 }
-                onGoBackClick={
-                  checkStatusResponse === null
-                    ? handleOnGoBackClick
-                    : () => router.push('/landing')
-                }
+                onGoBackClick={handleOnGoBackClick}
                 goBackText={
                   checkStatusResponse === null ? t('previous') : t('reset')
                 }
