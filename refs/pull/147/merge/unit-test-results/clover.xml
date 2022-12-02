@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1669995036345" clover="3.2.0">
-  <project timestamp="1669995036345" name="All files">
-    <metrics statements="288" coveredstatements="177" conditionals="180" coveredconditionals="76" methods="88" coveredmethods="47" elements="556" coveredelements="300" complexity="0" loc="288" ncloc="288" packages="7" files="39" classes="39"/>
+<coverage generated="1670000174790" clover="3.2.0">
+  <project timestamp="1670000174790" name="All files">
+    <metrics statements="288" coveredstatements="177" conditionals="184" coveredconditionals="77" methods="88" coveredmethods="47" elements="560" coveredelements="301" complexity="0" loc="288" ncloc="288" packages="7" files="39" classes="39"/>
     <package name="components">
       <metrics statements="71" coveredstatements="57" conditionals="46" coveredconditionals="32" methods="23" coveredmethods="19"/>
       <file name="ActionButton.tsx" path="/home/runner/work/passport-status/passport-status/components/ActionButton.tsx">
@@ -122,7 +122,7 @@
       </file>
     </package>
     <package name="components.CheckStatusResponses">
-      <metrics statements="18" coveredstatements="16" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="5"/>
+      <metrics statements="18" coveredstatements="16" conditionals="4" coveredconditionals="1" methods="6" coveredmethods="5"/>
       <file name="CheckStatusFileBeingProcessed.tsx" path="/home/runner/work/passport-status/passport-status/components/CheckStatusResponses/CheckStatusFileBeingProcessed.tsx">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="4" count="4" type="stmt"/>
@@ -148,13 +148,13 @@
         <line num="6" count="2" type="stmt"/>
       </file>
       <file name="CheckStatusShippingCanadaPost.tsx" path="/home/runner/work/passport-status/passport-status/components/CheckStatusResponses/CheckStatusShippingCanadaPost.tsx">
-        <metrics statements="3" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <metrics statements="3" coveredstatements="1" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="10" count="2" type="stmt"/>
         <line num="11" count="0" type="stmt"/>
         <line num="13" count="0" type="stmt"/>
       </file>
       <file name="CheckStatusShippingFedex.tsx" path="/home/runner/work/passport-status/passport-status/components/CheckStatusResponses/CheckStatusShippingFedex.tsx">
-        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="8" count="3" type="stmt"/>
         <line num="11" count="2" type="stmt"/>
         <line num="12" count="2" type="stmt"/>
