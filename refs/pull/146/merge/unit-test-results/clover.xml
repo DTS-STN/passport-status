@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1669987638520" clover="3.2.0">
-  <project timestamp="1669987638520" name="All files">
+<coverage generated="1669992834329" clover="3.2.0">
+  <project timestamp="1669992834329" name="All files">
     <metrics statements="261" coveredstatements="161" conditionals="181" coveredconditionals="82" methods="83" coveredmethods="43" elements="525" coveredelements="286" complexity="0" loc="261" ncloc="261" packages="6" files="33" classes="33"/>
     <package name="components">
       <metrics statements="58" coveredstatements="54" conditionals="48" coveredconditionals="37" methods="23" coveredmethods="19"/>
@@ -53,14 +53,14 @@
       </file>
       <file name="InputErrorMessage.tsx" path="/home/runner/work/passport-status/passport-status/components/InputErrorMessage.tsx">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="7" count="3" type="stmt"/>
-        <line num="8" count="1" type="stmt"/>
+        <line num="8" count="3" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
       </file>
       <file name="InputField.tsx" path="/home/runner/work/passport-status/passport-status/components/InputField.tsx">
         <metrics statements="3" coveredstatements="3" conditionals="10" coveredconditionals="7" methods="1" coveredmethods="1"/>
         <line num="19" count="3" type="stmt"/>
         <line num="32" count="1" type="stmt"/>
-        <line num="66" count="3" type="stmt"/>
+        <line num="69" count="3" type="stmt"/>
       </file>
       <file name="InputLabel.tsx" path="/home/runner/work/passport-status/passport-status/components/InputLabel.tsx">
         <metrics statements="2" coveredstatements="2" conditionals="4" coveredconditionals="2" methods="1" coveredmethods="1"/>
