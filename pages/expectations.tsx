@@ -27,12 +27,12 @@ const Expectations: FC = () => {
     >
       <h1>{t('header-purpose')}</h1>
       <p className="mt-8">{t('can-check.description')}</p>
-      <ul className="ml-4 mb-3">
+      <ul className="ml-4 mb-3 space-y-2">
         <IconListItem icon="check-mark" text={t('can-check.list.item-1')} />
         <IconListItem icon="check-mark" text={t('can-check.list.item-2')} />
       </ul>
       <p>{t('available-after.description')}</p>
-      <ul className="ml-4 mb-3">
+      <ul className="ml-4 mb-3 space-y-2">
         <IconListItem
           icon="check-mark"
           text={t('available-after.list.item-1')}
@@ -43,7 +43,7 @@ const Expectations: FC = () => {
         />
       </ul>
       <p>{t('cannot-check.description')}</p>
-      <ul className="ml-4 mb-3">
+      <ul className="ml-4 mb-3 space-y-2">
         <IconListItem icon="cross" text={t('cannot-check.list.item-1')} />
         <IconListItem icon="cross" text={t('cannot-check.list.item-2')} />
       </ul>
@@ -70,7 +70,7 @@ interface IconListItemProps {
 
 const IconListItem: FC<IconListItemProps> = ({ icon, text }) => {
   return (
-    <li className="flex flex-nowrap gap-5">
+    <li className="flex flex-nowrap gap-4">
       <div className="font-bold">
         {icon === 'check-mark' ? <>&#10003;</> : <>&#10007;</>}
       </div>
