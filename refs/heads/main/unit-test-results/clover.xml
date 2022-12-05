@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1670256020745" clover="3.2.0">
-  <project timestamp="1670256020745" name="All files">
+<coverage generated="1670256642765" clover="3.2.0">
+  <project timestamp="1670256642765" name="All files">
     <metrics statements="294" coveredstatements="181" conditionals="194" coveredconditionals="84" methods="89" coveredmethods="49" elements="577" coveredelements="314" complexity="0" loc="294" ncloc="294" packages="7" files="39" classes="39"/>
     <package name="components">
       <metrics statements="71" coveredstatements="57" conditionals="54" coveredconditionals="38" methods="23" coveredmethods="19"/>
@@ -78,12 +78,12 @@
         <metrics statements="3" coveredstatements="3" conditionals="10" coveredconditionals="7" methods="1" coveredmethods="1"/>
         <line num="19" count="3" type="stmt"/>
         <line num="32" count="1" type="stmt"/>
-        <line num="69" count="3" type="stmt"/>
+        <line num="71" count="3" type="stmt"/>
       </file>
       <file name="InputLabel.tsx" path="/home/runner/work/passport-status/passport-status/components/InputLabel.tsx">
         <metrics statements="2" coveredstatements="2" conditionals="4" coveredconditionals="2" methods="1" coveredmethods="1"/>
-        <line num="10" count="3" type="stmt"/>
-        <line num="16" count="1" type="stmt"/>
+        <line num="11" count="3" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
       </file>
       <file name="Layout.tsx" path="/home/runner/work/passport-status/passport-status/components/Layout.tsx">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
