@@ -14,21 +14,30 @@ const Landing: FC = () => {
       header={t('common:header', { returnObjects: true })}
       footer={t('common:footer', { returnObjects: true })}
     >
-      <h1 className="mb-4">{t('header')}</h1>
-      <h2 className="my-14">{t('description')}</h2>
-      <div className="flex justify-center flex-wrap text-xl gap-4">
-        <LinkButton
-          href="/status"
-          text={t('with-esrf')}
-          style="primary"
-          id="with-esrf"
-        ></LinkButton>
-
-        <LinkButton
-          href="/email"
-          text={t('without-esrf')}
-          id="without-esrf"
-        ></LinkButton>
+      <h1>{t('header')}</h1>
+      <div className="mt-8">
+        <p>{t('description')}</p>
+        <div className="flex flex-wrap gap-4">
+          <div className="w-full lg:w-4/12">
+            <LinkButton
+              href="/status"
+              text={t('with-esrf')}
+              fullWidth
+              size="lg"
+              style="primary"
+              id="with-esrf"
+            />
+          </div>
+          <div className="w-full lg:w-4/12">
+            <LinkButton
+              href="/email"
+              text={t('without-esrf')}
+              fullWidth
+              size="lg"
+              id="without-esrf"
+            />
+          </div>
+        </div>
       </div>
     </Layout>
   )

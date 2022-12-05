@@ -39,18 +39,18 @@ describe('ESRF field validation', ()=>{
   it('validates valid ESRF',()=>{
     cy.get('#esrf').type('A5934S87')
     cy.get('#btn-submit').click()
-    cy.get('#input-esrf > span').should('not.exist')
+    cy.get('#input-esrf-error').should('not.exist')
   })
 
   it('validates empty ESRF error',()=>{
     cy.get('#btn-submit').click()
-    cy.get('#input-esrf > span').should('exist')
+    cy.get('#input-esrf-error').should('exist')
   })
 
   it('validates invalid length for ESRF', ()=>{
     cy.get('#esrf').type('1234')
     cy.get('#btn-submit').click()
-    cy.get('#input-esrf > span').should('exist')
+    cy.get('#input-esrf-error').should('exist')
   })
 })
 
@@ -64,12 +64,12 @@ describe('givenName field validation', ()=>{
   it('validates valid givenName',()=>{
     cy.get('#givenName').type('Clara')
     cy.get('#btn-submit').click()
-    cy.get('#input-givenName > span').should('not.exist')
+    cy.get('#input-givenName-error').should('not.exist')
   })
 
   it('validates empty givenName error',()=>{
     cy.get('#btn-submit').click()
-    cy.get('#input-givenName > span').should('exist')
+    cy.get('#input-givenName-error').should('exist')
   })
 })
 
@@ -83,12 +83,12 @@ describe('surname field validation', ()=>{
   it('validates valid surname',()=>{
     cy.get('#surname').type('Renard')
     cy.get('#btn-submit').click()
-    cy.get('#input-surname > span').should('not.exist')
+    cy.get('#input-surname-error').should('not.exist')
   })
 
   it('validates empty surname error',()=>{
     cy.get('#btn-submit').click()
-    cy.get('#input-surname > span').should('exist')
+    cy.get('#input-surname-error').should('exist')
   })
 })
 
@@ -102,12 +102,12 @@ describe('Date of Birth field validation', ()=>{
   it('validates valid dateOfBirth',()=>{
     cy.get('#dateOfBirth').type('1982-12-08')
     cy.get('#btn-submit').click()
-    cy.get('#input-dateOfBirth > span').should('not.exist')
+    cy.get('#input-dateOfBirth-error').should('not.exist')
   })
 
   it('validates empty dateOfBirth error',()=>{
     cy.get('#btn-submit').click()
-    cy.get('#input-dateOfBirth > span').should('exist')
+    cy.get('#input-dateOfBirth-error').should('exist')
   })
 
   it('validates Date of Birth in the future',()=>{
@@ -115,7 +115,7 @@ describe('Date of Birth field validation', ()=>{
     const testDate = [yearPlus1.getFullYear(),'01','01'].join('-')
     cy.get('#dateOfBirth').type(testDate)
     cy.get('#btn-submit').click()
-    cy.get('#input-dateOfBirth > span').should('exist')
+    cy.get('#input-dateOfBirth-error').should('exist')
   })
 })
 

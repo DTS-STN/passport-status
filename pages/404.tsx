@@ -21,7 +21,7 @@ const Custom404 = () => {
             deleted, but hopefully we can help you find what you&#39;re looking
             for. What next?
           </p>
-          <ul className="list-disc list-inside mb-3">
+          <ul className="list-disc list-inside space-y-2 mb-3">
             <li>
               Return to the{' '}
               <Link href="/" locale="default">
@@ -50,7 +50,7 @@ const Custom404 = () => {
             qu&#39;une page ait été déplacée ou supprimée. Heureusement, nous
             pouvons vous aider à trouver ce que vous cherchez. Que faire?
           </p>
-          <ul className="list-disc list-inside mb-3">
+          <ul className="list-disc list-inside space-y-2 mb-3">
             <li>
               Retournez à la{' '}
               <Link href="/" locale="default">
