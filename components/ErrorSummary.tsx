@@ -34,12 +34,9 @@ export function GetErrorSummary<T>(formErrors: FormikErrors<T>, t: TFunction) {
 
 const ErrorSummary: FC<ErrorSummaryProps> = ({ id, errors, summary }) => {
   return (
-    <section
-      id={id}
-      className="border-l-6 border-accent-error mb-5 ml-2.5 pl-4"
-    >
-      <h2 className="text-2xl font-bold mb-3 pt-5">{summary}</h2>
-      <ul className="list-disc list-inside space-y-2 pb-5 ml-4">
+    <section id={id} className="border-l-6 border-accent-error mb-5 p-5">
+      <h2 className="text-2xl font-bold mb-3">{summary}</h2>
+      <ul className="list-disc space-y-2 pl-10">
         {errors.map(({ feildId, errorMessage }, index) => (
           <li key={index}>
             <a className="visited:text-link-default" href={`#${feildId}`}>
