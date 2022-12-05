@@ -16,14 +16,12 @@ const LinkSummary: FC<LinkSummaryProps> = ({ title, links }) => {
   return (
     <section className="mt-5">
       <p>{title}</p>
-      <ul className="list-disc list-inside pb-6 ml-4 space-y-2">
+      <ul className="list-disc list-inside ml-4 mb-3 space-y-2">
         {links.map(({ href, text, external }, index) => (
-          <li
-            key={index}
-            className="text-link-default hover:text-link-selected focus:text-link-selected"
-          >
+          <li key={index}>
             <Link href={href} passHref>
               <a
+                className="text-link-default hover:text-link-selected focus:text-link-selected"
                 target={external ? '_blank' : undefined}
                 rel={external ? 'noopener noreferrer' : undefined}
               >
