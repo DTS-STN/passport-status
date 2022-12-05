@@ -3,15 +3,15 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for components/Modal.tsx</title>
+    <title>Code coverage report for components/CheckStatusResponses/CheckStatusNoRecord.tsx</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../prettify.css" />
-    <link rel="stylesheet" href="../base.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="../favicon.png" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style type='text/css'>
         .coverage-summary .sorter {
-            background-image: url(../sort-arrow-sprite.png);
+            background-image: url(../../sort-arrow-sprite.png);
         }
     </style>
 </head>
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">components</a> Modal.tsx</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">components/CheckStatusResponses</a> CheckStatusNoRecord.tsx</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>6/6</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5/5</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
@@ -105,20 +105,15 @@
 <a name='L40'></a><a href='#L40'>40</a>
 <a name='L41'></a><a href='#L41'>41</a>
 <a name='L42'></a><a href='#L42'>42</a>
-<a name='L43'></a><a href='#L43'>43</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -134,7 +129,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -147,48 +141,63 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { FC, ReactNode, useId } from 'react'
-import ActionButton, { ActionButtonProps } from './ActionButton'
-import { FocusOn } from 'react-focus-on'
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { FC } from 'react'
+import { useTranslation } from 'next-i18next'
 &nbsp;
-export interface ModalProps {
-  actionButtons: ActionButtonProps[]
-  children: ReactNode
-  open: boolean
-}
-&nbsp;
-const Modal: FC&lt;ModalProps&gt; = ({ actionButtons, children, open }) =&gt; {
-  const id = useId()
-  if (!open) return &lt;&gt;&lt;/&gt;
+export const CheckStatusNoRecord: FC&lt;{}&gt; = () =&gt; {
+  const { t } = useTranslation(['status', 'common'])
   return (
-    &lt;FocusOn autoFocus={false}&gt;
-      &lt;div
-        className="fixed top-0 left-0 w-screen h-full flex justify-center items-center"
-        style={{ background: 'rgba(71, 71, 71, 0.8)' }}
-      &gt;
-        &lt;div
-          role="dialog"
-          aria-describedby={`${id}-modal-desc`}
-          className="mx-6 p-4 bg-white border-2 border-black"
-        &gt;
-          &lt;div id={`${id}-modal-desc`} className="mb-4"&gt;
-            {children}
-          &lt;/div&gt;
-          &lt;div className="flex gap-2 justify-center"&gt;
-            {actionButtons.map((actionButtonProps) =&gt; (
-              &lt;ActionButton
-                key={actionButtonProps.text}
-                {...actionButtonProps}
-              /&gt;
-            ))}
-          &lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/FocusOn&gt;
+    &lt;&gt;
+      &lt;p data-testid="no-record"&gt;
+        {t('no-record.cannot-give-status.description')}
+      &lt;/p&gt;
+      &lt;ul className="ml-5 list-inside list-disc"&gt;
+        &lt;li&gt;{t('no-record.cannot-give-status.list.item-1')}&lt;/li&gt;
+        &lt;li&gt;{t('no-record.cannot-give-status.list.item-2')}&lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;p&gt;{t('no-record.available-after.description')}&lt;/p&gt;
+      &lt;ul className="ml-5 list-inside"&gt;
+        &lt;li&gt;
+          &lt;span className="font-bold"&gt;&amp;#10003; &lt;/span&gt;
+          {t('no-record.available-after.list.item-1')}
+        &lt;/li&gt;
+        &lt;li&gt;
+          &lt;span className="font-bold"&gt;&amp;#10003; &lt;/span&gt;
+          {t('no-record.available-after.list.item-2')}
+        &lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;p&gt;{t('no-record.double-check')}&lt;/p&gt;
+      &lt;p&gt;
+        {t('status-check-numerous-attempts.description')}
+        &lt;a href={t('status-check-numerous-attempts.service-standard.href')}&gt;
+          {t('status-check-numerous-attempts.service-standard.text')}
+        &lt;/a&gt;
+        {t('status-check-numerous-attempts.can-call')}
+        &lt;b&gt;{t('common:phone-number')}&lt;/b&gt;.
+      &lt;/p&gt;
+      &lt;p&gt;
+        {t('status-check-urgent.description')}
+        &lt;a href={t('status-check-urgent.express-services.href')}&gt;
+          {t('status-check-urgent.express-services.text')}
+        &lt;/a&gt;
+      &lt;/p&gt;
+    &lt;/&gt;
   )
 }
 &nbsp;
-export default Modal
+export default CheckStatusNoRecord
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -198,14 +207,14 @@ export default Modal
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
                 at 2022-12-05T13:34:13.251Z
             </div>
-        <script src="../prettify.js"></script>
+        <script src="../../prettify.js"></script>
         <script>
             window.onload = function () {
                 prettyPrint();
             };
         </script>
-        <script src="../sorter.js"></script>
-        <script src="../block-navigation.js"></script>
+        <script src="../../sorter.js"></script>
+        <script src="../../block-navigation.js"></script>
     </body>
 </html>
     

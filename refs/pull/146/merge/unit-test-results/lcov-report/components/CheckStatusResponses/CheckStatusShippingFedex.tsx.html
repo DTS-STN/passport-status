@@ -3,15 +3,15 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for components/Modal.tsx</title>
+    <title>Code coverage report for components/CheckStatusResponses/CheckStatusShippingFedex.tsx</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../prettify.css" />
-    <link rel="stylesheet" href="../base.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="../favicon.png" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style type='text/css'>
         .coverage-summary .sorter {
-            background-image: url(../sort-arrow-sprite.png);
+            background-image: url(../../sort-arrow-sprite.png);
         }
     </style>
 </head>
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">components</a> Modal.tsx</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">components/CheckStatusResponses</a> CheckStatusShippingFedex.tsx</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>6/6</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>1/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5/5</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
@@ -98,28 +98,18 @@
 <a name='L33'></a><a href='#L33'>33</a>
 <a name='L34'></a><a href='#L34'>34</a>
 <a name='L35'></a><a href='#L35'>35</a>
-<a name='L36'></a><a href='#L36'>36</a>
-<a name='L37'></a><a href='#L37'>37</a>
-<a name='L38'></a><a href='#L38'>38</a>
-<a name='L39'></a><a href='#L39'>39</a>
-<a name='L40'></a><a href='#L40'>40</a>
-<a name='L41'></a><a href='#L41'>41</a>
-<a name='L42'></a><a href='#L42'>42</a>
-<a name='L43'></a><a href='#L43'>43</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L36'></a><a href='#L36'>36</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -134,7 +124,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -144,51 +133,41 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { FC, ReactNode, useId } from 'react'
-import ActionButton, { ActionButtonProps } from './ActionButton'
-import { FocusOn } from 'react-focus-on'
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { FC } from 'react'
+import { useTranslation } from 'next-i18next'
 &nbsp;
-export interface ModalProps {
-  actionButtons: ActionButtonProps[]
-  children: ReactNode
-  open: boolean
+export interface CheckStatusShippingFedexProps {
+  trackingNumber?: string
 }
 &nbsp;
-const Modal: FC&lt;ModalProps&gt; = ({ actionButtons, children, open }) =&gt; {
-  const id = useId()
-  if (!open) return &lt;&gt;&lt;/&gt;
+export const CheckStatusShippingFedex: FC&lt;CheckStatusShippingFedexProps&gt; = ({
+  trackingNumber,
+}) =&gt; {
+  const { t } = useTranslation(['status', 'common'])
   return (
-    &lt;FocusOn autoFocus={false}&gt;
-      &lt;div
-        className="fixed top-0 left-0 w-screen h-full flex justify-center items-center"
-        style={{ background: 'rgba(71, 71, 71, 0.8)' }}
-      &gt;
-        &lt;div
-          role="dialog"
-          aria-describedby={`${id}-modal-desc`}
-          className="mx-6 p-4 bg-white border-2 border-black"
-        &gt;
-          &lt;div id={`${id}-modal-desc`} className="mb-4"&gt;
-            {children}
-          &lt;/div&gt;
-          &lt;div className="flex gap-2 justify-center"&gt;
-            {actionButtons.map((actionButtonProps) =&gt; (
-              &lt;ActionButton
-                key={actionButtonProps.text}
-                {...actionButtonProps}
-              /&gt;
-            ))}
-          &lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/FocusOn&gt;
+    &lt;&gt;
+      &lt;p data-testid="shipped-fedex"&gt;
+        {t('shipped-fedex.printed-and-mailing')}
+      &lt;/p&gt;
+      {trackingNumber &amp;&amp; (
+<span class="branch-1 cbranch-no" title="branch not covered" >        &lt;p&gt;</span>
+          {t('status-check-tracking.number')} &lt;b&gt;{trackingNumber}&lt;/b&gt;.{' '}
+          &lt;a
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-link-default underline hover:text-link-selected focus:text-link-selected active:text-link-visited"
+            href={t('status-check-tracking.link.fedex', { trackingNumber })}
+          &gt;
+            {t('status-check-tracking.link.text')}
+          &lt;/a&gt;
+        &lt;/p&gt;
+      )}
+      &lt;p&gt;{t('shipped-fedex.supporting-documents')}&lt;/p&gt;
+    &lt;/&gt;
   )
 }
 &nbsp;
-export default Modal
+export default CheckStatusShippingFedex
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -198,14 +177,14 @@ export default Modal
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
                 at 2022-12-05T13:34:13.251Z
             </div>
-        <script src="../prettify.js"></script>
+        <script src="../../prettify.js"></script>
         <script>
             window.onload = function () {
                 prettyPrint();
             };
         </script>
-        <script src="../sorter.js"></script>
-        <script src="../block-navigation.js"></script>
+        <script src="../../sorter.js"></script>
+        <script src="../../block-navigation.js"></script>
     </body>
 </html>
     
