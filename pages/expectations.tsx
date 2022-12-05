@@ -70,7 +70,7 @@ interface IconListItemProps {
 
 const IconListItem: FC<IconListItemProps> = ({ icon, text }) => {
   return (
-    <li className="flex flex-nowrap gap-4">
+    <li className="flex flex-nowrap gap-3">
       <div className="font-bold">
         {icon === 'check-mark' ? <>&#10003;</> : <>&#10007;</>}
       </div>
