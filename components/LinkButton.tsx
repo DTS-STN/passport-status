@@ -24,10 +24,8 @@ const sizes = {
 }
 
 const styles = {
-  default:
-    'border-gray-dark bg-gray-normal text-blue-light hover:bg-gray-dark hover:border-l-gray-deep hover:border-t-grasy-deep focus:bg-gray-dark focus:text-blue-light border-r-gray-500 border-b-gray-500',
-  primary:
-    'border-blue-dark bg-blue-dark text-basic-white hover:bg-blue-normal active:bg-blue-active focus:bg-blue-normal focus:text-basic-white',
+  default: `bg-gray-normal border-b-gray-500 border-gray-dark border-r-gray-500 text-blue-light focus:bg-gray-dark focus:text-blue-light focus:text-blue-light hover:bg-gray-dark hover:border-l-gray-deep hover:border-t-grasy-deep hover:text-blue-light visited:text-blue-light`,
+  primary: `bg-blue-dark border-blue-dark text-basic-white active:bg-blue-active focus:bg-blue-normal focus:text-basic-white hover:bg-blue-normal hover:text-basic-white visited:text-basic-white`,
 }
 
 const LinkButton: FC<LinkButtonProps> = ({
@@ -41,7 +39,7 @@ const LinkButton: FC<LinkButtonProps> = ({
   text,
 }) => {
   const baseClasses =
-    'inline-flex justify-center items-center font-display align-middle border shadow-sm focus:ring-1 focus:ring-offset-2 focus:ring-black'
+    'inline-flex justify-center items-center font-display align-middle border shadow-sm focus:ring-1 focus:ring-offset-2 focus:ring-black no-underline'
   const fullWidthClasses = fullWidth ? 'w-full' : undefined
   const sizeClasses = sizes[size ?? 'md']
   const styleClasses = styles[style ?? 'default']

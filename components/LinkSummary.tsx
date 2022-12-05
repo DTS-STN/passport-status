@@ -21,7 +21,6 @@ const LinkSummary: FC<LinkSummaryProps> = ({ title, links }) => {
           <li key={index}>
             <Link href={href} passHref>
               <a
-                className="text-link-default hover:text-link-selected focus:text-link-selected"
                 target={external ? '_blank' : undefined}
                 rel={external ? 'noopener noreferrer' : undefined}
               >

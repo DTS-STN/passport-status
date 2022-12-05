@@ -21,7 +21,6 @@ export const CheckStatusShippingCanadaPost: FC<
           <a
             target="_blank"
             rel="noopener noreferrer"
-            className="text-link-default underline hover:text-link-selected focus:text-link-selected active:text-link-visited"
             href={t('status-check-tracking.link.canada-post', {
               trackingNumber,
             })}

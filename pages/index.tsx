@@ -57,17 +57,23 @@ const Index = () => {
         </div>
         <div className="p-8 flex gap-6 justify-between items-center bg-gray-light">
           <div className="text-bright-blue-dark">
-            <Link href="https://www.canada.ca/en/transparency/terms.html">
-              <a className="hover:underline" lang="en" data-cy="terms">
-                Terms &amp; conditions
-              </a>
-            </Link>
+            <a
+              className="text-inherit hover:text-inherit focus:text-inherit visited:text-inherit no-underline hover:underline focus:underline"
+              data-cy="terms"
+              href="https://www.canada.ca/en/transparency/terms.html"
+              lang="en"
+            >
+              Terms &amp; conditions
+            </a>
             <span className="text-gray-400"> • </span>
-            <Link href="https://www.canada.ca/fr/transparence/avis.html">
-              <a className="hover:underline" lang="fr" data-cy="avis">
-                Avis
-              </a>
-            </Link>
+            <a
+              className="text-inherit hover:text-inherit focus:text-inherit visited:text-inherit no-underline hover:underline focus:underline"
+              data-cy="avis"
+              href="https://www.canada.ca/fr/transparence/avis.html"
+              lang="fr"
+            >
+              Avis
+            </a>
           </div>
           <div className="w-5/12 xl:w-4/12">
             <img src="/wmms-blk.svg" alt="Symbol of the Government of Canada" />
