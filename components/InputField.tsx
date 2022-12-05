@@ -32,7 +32,8 @@ const InputField: FC<InputFieldProps> = ({
   return (
     <div className="mb-4" id={`input-${id}`} data-testid={id}>
       <InputLabel
-        id={id}
+        id={`input-${id}-label`}
+        htmlFor={id}
         required={required}
         label={label}
         textRequired={textRequired}
@@ -43,6 +44,7 @@ const InputField: FC<InputFieldProps> = ({
       <input
         aria-describedby={helpMessage && `input-${id}-help`}
         aria-invalid={!!errorMessage}
+        aria-label={`input-${id}-label`}
         aria-required={required}
         className={`block h-9 py-1.5 px-3 border rounded ${
           errorMessage ? 'border-accent-error' : 'border-neutral-400'
