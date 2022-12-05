@@ -149,7 +149,7 @@ const Status: FC = () => {
       header={t('common:header', { returnObjects: true })}
       footer={t('common:footer', { returnObjects: true })}
     >
-      <h1 className="mb-4">{t('header')}</h1>
+      <h1 className="h1">{t('header')}</h1>
       {(() => {
         if (checkStatusResponse !== undefined) {
           return (

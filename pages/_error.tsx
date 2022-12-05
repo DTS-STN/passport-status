@@ -21,14 +21,24 @@ const Error: NextPage<ErrorProps> = ({ statusCode }) => {
             : 'Service Unavailable | Service indisponible - Canada.ca'
         }
       />
+      <h1 className="sr-only" lang="en">
+        {statusCode === 500 ? 'Internal Server Error' : 'Service Unavailable'}
+      </h1>
+      <span className="sr-only">
+        {' '}
+        /{' '}
+        <span lang="fr">
+          {statusCode === 500
+            ? 'Erreur de serveur interne'
+            : 'Service indisponible'}
+        </span>
+      </span>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8">
         <div lang="en">
-          <h1 className="text-2xl">
-            We&#39;re having a problem with that page
-          </h1>
-          <h2>
+          <h2 className="h1">We&#39;re having a problem with that page</h2>
+          <p className="h2">
             {statusCode ? `Error ${statusCode}` : 'An error occurred on client'}
-          </h2>
+          </p>
           <p>
             We expect the problem to be fixed shortly. It&#39;s not your
             computer or Internet connection but a problem with our website&#39;s
@@ -39,7 +49,7 @@ const Error: NextPage<ErrorProps> = ({ statusCode }) => {
             <li>
               Return to the{' '}
               <Link href="/">
-                <a className="text-cyan-600 underline hover:text-link-selected">
+                <a className="underline text-link-default hover:text-link-selected focus:text-link-selected visited:text-link-visited">
                   home page
                 </a>
               </Link>
@@ -48,7 +58,7 @@ const Error: NextPage<ErrorProps> = ({ statusCode }) => {
             <li>
               <a
                 href="https://www.canada.ca/en/contact.html"
-                className="text-cyan-600 underline hover:text-link-selected"
+                className="underline text-link-default hover:text-link-selected focus:text-link-selected visited:text-link-visited"
               >
                 Contact us
               </a>
@@ -58,14 +68,12 @@ const Error: NextPage<ErrorProps> = ({ statusCode }) => {
           <p>Thank you for your patience.</p>
         </div>
         <div lang="fr">
-          <h1 className="text-2xl">
-            Nous éprouvons des difficultés avec cette page
-          </h1>
-          <h2>
+          <h2 className="h1">Nous éprouvons des difficultés avec cette page</h2>
+          <p className="h2">
             {statusCode
               ? `Erreur ${statusCode}`
               : 'Erreur produite sur le client'}
-          </h2>
+          </p>
           <p>
             Nous espérons résoudre le problème sous peu. Il ne s&#39;agit pas
             d&#39;un problème avec votre ordinateur ou Internet, mais plutôt
@@ -76,7 +84,7 @@ const Error: NextPage<ErrorProps> = ({ statusCode }) => {
             <li>
               Retournez à la{' '}
               <Link href="/">
-                <a className="text-cyan-600 underline hover:text-link-selected">
+                <a className="underline text-link-default hover:text-link-selected focus:text-link-selected visited:text-link-visited">
                   page d&#39;accueil
                 </a>
               </Link>
@@ -85,7 +93,7 @@ const Error: NextPage<ErrorProps> = ({ statusCode }) => {
             <li>
               <a
                 href="https://www.canada.ca/fr/contact.html"
-                className="text-cyan-600 underline hover:text-link-selected"
+                className="underline text-link-default hover:text-link-selected focus:text-link-selected visited:text-link-visited"
               >
                 Communiquez avec nous
               </a>{' '}

@@ -98,11 +98,11 @@ export default function Email() {
       header={t('common:header', { returnObjects: true })}
       footer={t('common:footer', { returnObjects: true })}
     >
-      <h1>{t('header')}</h1>
+      <h1 className="h1">{t('header')}</h1>
 
       {isEmailEsrfSuccess ? (
         <>
-          <h2>{t('email-confirmation-msg.request-received')}</h2>
+          <h2 className="h2">{t('email-confirmation-msg.request-received')}</h2>
           <p>{t('email-confirmation-msg.if-exists')}</p>
           <p>
             {t('email-confirmation-msg.please-contact')}{' '}

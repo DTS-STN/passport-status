@@ -19,36 +19,34 @@ const Contact: FC = () => {
       header={t('common:header', { returnObjects: true })}
       footer={t('common:footer', { returnObjects: true })}
     >
-      <h1 className="mb-4">{t('header')}</h1>
-      <h2 className="my-14">{t('description')}</h2>
-      <div id="contact-links" className="text-2xl">
+      <h1 className="h1">{t('header')}</h1>
+      <div id="contact-links" className="mb-5">
         <LinkSummary
+          title={t('description')}
           links={t<string, LinkSummaryItem[]>('common:program-links', {
             returnObjects: true,
           })}
         />
       </div>
-      <div className="my-2">
-        <ActionButton
-          text={t('back-to-home')}
-          onClick={() => setModalOpen(true)}
-        />
-      </div>
+      <ActionButton
+        text={t('back-to-home')}
+        onClick={() => setModalOpen(true)}
+      />
       <Modal
         open={modalOpen}
         actionButtons={[
           {
-            text: t('common:cancel-modal.yes-button'),
+            text: t('common:modal.yes-button'),
             onClick: () => router.push('/landing'),
             style: 'primary',
           },
           {
-            text: t('common:cancel-modal.no-button'),
+            text: t('common:modal.no-button'),
             onClick: () => setModalOpen(false),
           },
         ]}
       >
-        {t('common:cancel-modal.description')}
+        {t('common:modal.description')}
       </Modal>
     </Layout>
   )

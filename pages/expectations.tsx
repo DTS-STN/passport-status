@@ -25,7 +25,7 @@ const Expectations: FC = () => {
       header={t('common:header', { returnObjects: true })}
       footer={t('common:footer', { returnObjects: true })}
     >
-      <h1>{t('header-purpose')}</h1>
+      <h1 className="h1">{t('header-purpose')}</h1>
       <p className="mt-8">{t('can-check.description')}</p>
       <ul className="ml-4 mb-3 space-y-2">
         <IconListItem icon="check-mark" text={t('can-check.list.item-1')} />
@@ -50,7 +50,7 @@ const Expectations: FC = () => {
       <p>
         <strong>{t('do-not-travel')}</strong>
       </p>
-      <h2>{t('header-privacy')}</h2>
+      <h2 className="h2">{t('header-privacy')}</h2>
       <p>{t('description-privacy')}</p>
       <div id="confirmBtn">
         <ActionButton

@@ -38,7 +38,7 @@ const ErrorSummary: FC<ErrorSummaryProps> = ({ id, errors, summary }) => {
       id={id}
       className="border-l-6 border-accent-error mb-5 ml-2.5 pl-4"
     >
-      <h2 className="text-2xl pt-5">{summary}</h2>
+      <h2 className="text-2xl font-bold mb-3 pt-5">{summary}</h2>
       <ul className="list-disc list-inside space-y-2 pb-5 ml-4">
         {errors.map(({ feildId, errorMessage }, index) => (
           <li key={index}>
