@@ -25,28 +25,28 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>3/3</span>
+                <span class='fraction'>5/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>1/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>3/3</span>
+                <span class='fraction'>5/5</span>
             </div>
         
             
@@ -108,7 +108,23 @@
 <a name='L43'></a><a href='#L43'>43</a>
 <a name='L44'></a><a href='#L44'>44</a>
 <a name='L45'></a><a href='#L45'>45</a>
-<a name='L46'></a><a href='#L46'>46</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
@@ -153,6 +169,22 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { FC } from 'react'
 import { useTranslation } from 'next-i18next'
 &nbsp;
@@ -163,20 +195,20 @@ export const CheckStatusNoRecord: FC&lt;{}&gt; = () =&gt; {
       &lt;p data-testid="no-record"&gt;
         {t('no-record.cannot-give-status.description')}
       &lt;/p&gt;
-      &lt;ul className="ml-5 list-inside list-disc"&gt;
+      &lt;ul className="list-disc list-inside ml-4 mb-3 space-y-2"&gt;
         &lt;li&gt;{t('no-record.cannot-give-status.list.item-1')}&lt;/li&gt;
         &lt;li&gt;{t('no-record.cannot-give-status.list.item-2')}&lt;/li&gt;
       &lt;/ul&gt;
       &lt;p&gt;{t('no-record.available-after.description')}&lt;/p&gt;
-      &lt;ul className="ml-5 list-inside"&gt;
-        &lt;li&gt;
-          &lt;span className="font-bold"&gt;&amp;#10003; &lt;/span&gt;
-          {t('no-record.available-after.list.item-1')}
-        &lt;/li&gt;
-        &lt;li&gt;
-          &lt;span className="font-bold"&gt;&amp;#10003; &lt;/span&gt;
-          {t('no-record.available-after.list.item-2')}
-        &lt;/li&gt;
+      &lt;ul className="list-inside ml-4 mb-3 space-y-2"&gt;
+        &lt;IconListItem
+          icon="check-mark"
+          text={t('no-record.available-after.list.item-1')}
+        /&gt;
+        &lt;IconListItem
+          icon="check-mark"
+          text={t('no-record.available-after.list.item-2')}
+        /&gt;
       &lt;/ul&gt;
       &lt;p&gt;{t('no-record.double-check')}&lt;/p&gt;
       &lt;p&gt;
@@ -197,6 +229,22 @@ export const CheckStatusNoRecord: FC&lt;{}&gt; = () =&gt; {
   )
 }
 &nbsp;
+interface IconListItemProps {
+  icon: 'check-mark' | 'cross'
+  text: string
+}
+&nbsp;
+const IconListItem: FC&lt;IconListItemProps&gt; = ({ icon, text }) =&gt; {
+  return (
+    &lt;li className="flex flex-nowrap gap-3"&gt;
+      &lt;div className="font-bold"&gt;
+        {icon === 'check-mark' ? &lt;&gt;&amp;#10003;&lt;/&gt; : <span class="branch-1 cbranch-no" title="branch not covered" >&lt;&gt;&amp;#10007;&lt;/&gt;}</span>
+      &lt;/div&gt;
+      &lt;div&gt;{text}&lt;/div&gt;
+    &lt;/li&gt;
+  )
+}
+&nbsp;
 export default CheckStatusNoRecord
 &nbsp;</pre></td></tr></table></pre>
 
@@ -205,7 +253,7 @@ export default CheckStatusNoRecord
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-12-05T13:37:45.529Z
+                at 2022-12-05T16:00:20.783Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
