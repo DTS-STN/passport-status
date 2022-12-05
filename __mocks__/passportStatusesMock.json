@@ -27,6 +27,10 @@
             {
               "IdentificationCategoryText": "File Number",
               "IdentificationID": "A02D85ED"
+            },
+            {
+              "IdentificationCategoryText": "Manifest Number",
+              "IdentificationID": "84822B1A"
             }
           ],
           "CertificateApplicationStatus": {
@@ -75,10 +79,6 @@
             {
               "IdentificationCategoryText": "File Number",
               "IdentificationID": "A0245535"
-            },
-            {
-              "IdentificationCategoryText": "Manifest Number",
-              "IdentificationID": "84822B1A"
             }
           ],
           "CertificateApplicationStatus": {
@@ -127,10 +127,6 @@
             {
               "IdentificationCategoryText": "File Number",
               "IdentificationID": "A026CA0F"
-            },
-            {
-              "IdentificationCategoryText": "Manifest Number",
-              "IdentificationID": "B78A934C"
             }
           ],
           "CertificateApplicationStatus": {
@@ -179,6 +175,10 @@
             {
               "IdentificationCategoryText": "File Number",
               "IdentificationID": "A02E4FAC"
+            },
+            {
+              "IdentificationCategoryText": "Manifest Number",
+              "IdentificationID": "84822B1A"
             }
           ],
           "CertificateApplicationStatus": {
@@ -227,6 +227,10 @@
             {
               "IdentificationCategoryText": "File Number",
               "IdentificationID": "A02FA851"
+            },
+            {
+              "IdentificationCategoryText": "Manifest Number",
+              "IdentificationID": "84822B1A"
             }
           ],
           "CertificateApplicationStatus": {
@@ -419,10 +423,6 @@
             {
               "IdentificationCategoryText": "File Number",
               "IdentificationID": "A0558246"
-            },
-            {
-              "IdentificationCategoryText": "Manifest Number",
-              "IdentificationID": "EEF07E70"
             }
           ],
           "CertificateApplicationStatus": {
@@ -667,10 +667,6 @@
             {
               "IdentificationCategoryText": "File Number",
               "IdentificationID": "A072AC36"
-            },
-            {
-              "IdentificationCategoryText": "Manifest Number",
-              "IdentificationID": "B9B64146"
             }
           ],
           "CertificateApplicationStatus": {
@@ -767,6 +763,10 @@
             {
               "IdentificationCategoryText": "File Number",
               "IdentificationID": "A081EFD7"
+            },
+            {
+              "IdentificationCategoryText": "Manifest Number",
+              "IdentificationID": "84822B1A"
             }
           ],
           "CertificateApplicationStatus": {
@@ -815,10 +815,6 @@
             {
               "IdentificationCategoryText": "File Number",
               "IdentificationID": "A0836D84"
-            },
-            {
-              "IdentificationCategoryText": "Manifest Number",
-              "IdentificationID": "B7ED52A4"
             }
           ],
           "CertificateApplicationStatus": {
@@ -919,10 +915,6 @@
             {
               "IdentificationCategoryText": "File Number",
               "IdentificationID": "A0845393"
-            },
-            {
-              "IdentificationCategoryText": "Manifest Number",
-              "IdentificationID": "1C8E249A"
             }
           ],
           "CertificateApplicationStatus": {
@@ -1023,6 +1015,10 @@
             {
               "IdentificationCategoryText": "File Number",
               "IdentificationID": "A0916E1D"
+            },
+            {
+              "IdentificationCategoryText": "Manifest Number",
+              "IdentificationID": "84822B1A"
             }
           ],
           "CertificateApplicationStatus": {
@@ -1167,10 +1163,6 @@
             {
               "IdentificationCategoryText": "File Number",
               "IdentificationID": "A0A11F80"
-            },
-            {
-              "IdentificationCategoryText": "Manifest Number",
-              "IdentificationID": "A2D91062"
             }
           ],
           "CertificateApplicationStatus": {
@@ -1219,10 +1211,6 @@
             {
               "IdentificationCategoryText": "File Number",
               "IdentificationID": "A0A44DD4"
-            },
-            {
-              "IdentificationCategoryText": "Manifest Number",
-              "IdentificationID": "30E1392C"
             }
           ],
           "CertificateApplicationStatus": {

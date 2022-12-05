@@ -8,20 +8,20 @@ export const CheckStatusNoRecord: FC<{}> = () => {
       <p data-testid="no-record">
         {t('no-record.cannot-give-status.description')}
       </p>
-      <ul className="ml-5 list-inside list-disc">
+      <ul className="list-disc list-inside ml-4 mb-3 space-y-2">
         <li>{t('no-record.cannot-give-status.list.item-1')}</li>
         <li>{t('no-record.cannot-give-status.list.item-2')}</li>
       </ul>
       <p>{t('no-record.available-after.description')}</p>
-      <ul className="ml-5 list-inside">
-        <li>
-          <span className="font-bold">&#10003; </span>
-          {t('no-record.available-after.list.item-1')}
-        </li>
-        <li>
-          <span className="font-bold">&#10003; </span>
-          {t('no-record.available-after.list.item-2')}
-        </li>
+      <ul className="list-inside ml-4 mb-3 space-y-2">
+        <IconListItem
+          icon="check-mark"
+          text={t('no-record.available-after.list.item-1')}
+        />
+        <IconListItem
+          icon="check-mark"
+          text={t('no-record.available-after.list.item-2')}
+        />
       </ul>
       <p>{t('no-record.double-check')}</p>
       <p>
@@ -39,6 +39,22 @@ export const CheckStatusNoRecord: FC<{}> = () => {
         </a>
       </p>
     </>
+  )
+}
+
+interface IconListItemProps {
+  icon: 'check-mark' | 'cross'
+  text: string
+}
+
+const IconListItem: FC<IconListItemProps> = ({ icon, text }) => {
+  return (
+    <li className="flex flex-nowrap gap-3">
+      <div className="font-bold">
+        {icon === 'check-mark' ? <>&#10003;</> : <>&#10007;</>}
+      </div>
+      <div>{text}</div>
+    </li>
   )
 }
 
