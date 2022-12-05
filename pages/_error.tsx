@@ -44,7 +44,7 @@ const Error: NextPage<ErrorProps> = ({ statusCode }) => {
             computer or Internet connection but a problem with our website&#39;s
             server. What next?
           </p>
-          <ul className="list-disc list-inside space-y-2 mb-3">
+          <ul className="list-disc space-y-2 pl-10 mb-3">
             <li>Try refreshing the page or try again later;</li>
             <li>
               Return to the{' '}
@@ -72,7 +72,7 @@ const Error: NextPage<ErrorProps> = ({ statusCode }) => {
             d&#39;un problème avec votre ordinateur ou Internet, mais plutôt
             avec le serveur de notre site Web. Que faire?
           </p>
-          <ul className="list-disc list-inside space-y-2 mb-3">
+          <ul className="list-disc space-y-2 pl-10 mb-3">
             <li>Actualisez la page ou réessayez plus tard;</li>
             <li>
               Retournez à la{' '}

@@ -16,7 +16,7 @@ const LinkSummary: FC<LinkSummaryProps> = ({ title, links }) => {
   return (
     <section className="mt-5">
       <p>{title}</p>
-      <ul className="list-disc list-inside ml-4 mb-3 space-y-2">
+      <ul className="list-disc space-y-2 pl-10 mb-3">
         {links.map(({ href, text, external }, index) => (
           <li key={index}>
             <Link href={href} passHref>

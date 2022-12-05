@@ -8,12 +8,12 @@ export const CheckStatusNoRecord: FC<{}> = () => {
       <p data-testid="no-record">
         {t('no-record.cannot-give-status.description')}
       </p>
-      <ul className="list-disc list-inside ml-4 mb-3 space-y-2">
+      <ul className="list-disc space-y-2 pl-10 mb-3">
         <li>{t('no-record.cannot-give-status.list.item-1')}</li>
         <li>{t('no-record.cannot-give-status.list.item-2')}</li>
       </ul>
       <p>{t('no-record.available-after.description')}</p>
-      <ul className="list-inside ml-4 mb-3 space-y-2">
+      <ul className="space-y-2 pl-4 mb-3">
         <IconListItem
           icon="check-mark"
           text={t('no-record.available-after.list.item-1')}
@@ -49,7 +49,7 @@ interface IconListItemProps {
 
 const IconListItem: FC<IconListItemProps> = ({ icon, text }) => {
   return (
-    <li className="flex flex-nowrap gap-3">
+    <li className="flex flex-nowrap gap-2">
       <div className="font-bold">
         {icon === 'check-mark' ? <>&#10003;</> : <>&#10007;</>}
       </div>
