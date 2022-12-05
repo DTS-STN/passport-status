@@ -1,12 +1,16 @@
 import { FC, MouseEventHandler } from 'react'
 
+export type ActionButtonSize = 'xs' | 'sm' | 'md' | 'lg'
+
+export type ActionButtonStyle = 'default' | 'primary'
+
 export interface ActionButtonProps {
   disabled?: boolean
   fullWidth?: boolean
   id?: string
   onClick?: MouseEventHandler<HTMLButtonElement>
-  size?: 'xs' | 'sm' | 'md' | 'lg'
-  style?: 'default' | 'primary'
+  size?: ActionButtonSize
+  style?: ActionButtonStyle
   text: string
   type?: 'button' | 'submit' | 'reset'
 }
@@ -20,9 +24,9 @@ const sizes = {
 
 const styles = {
   default:
-    'border-gray-dark bg-gray-normal text-blue-light hover:bg-gray-dark hover:border-l-gray-deep hover:border-t-gray-deep focus:text-blue-light focus:bg-gray-dark border-r-gray-500 border-b-gray-500',
+    'border-gray-dark bg-gray-normal text-blue-light hover:bg-gray-dark hover:border-l-gray-deep hover:border-t-grasy-deep focus:bg-gray-dark focus:text-blue-light border-r-gray-500 border-b-gray-500',
   primary:
-    'border-blue-dark bg-blue-dark text-basic-white focus:bg-blue-normal hover:bg-blue-normal active:bg-blue-active',
+    'border-blue-dark bg-blue-dark text-basic-white hover:bg-blue-normal active:bg-blue-active focus:bg-blue-normal focus:text-basic-white',
 }
 
 const ActionButton: FC<ActionButtonProps> = ({
@@ -36,7 +40,7 @@ const ActionButton: FC<ActionButtonProps> = ({
   type,
 }) => {
   const baseClasses =
-    'inline-flex justify-center items-center font-display align-middle border shadow-sm focus:ring-1 focus:ring-offset-2 focus:ring-black focus:text-basic-white disabled:opacity-70 disabled:cursor-not-allowed disabled:shadow-none disabled:pointer-events-none'
+    'inline-flex justify-center items-center font-display align-middle border shadow-sm focus:ring-1 focus:ring-offset-2 focus:ring-black disabled:opacity-70 disabled:cursor-not-allowed disabled:shadow-none disabled:pointer-events-none'
   const fullWidthClasses = fullWidth ? 'w-full' : undefined
   const sizeClasses = sizes[size ?? 'md']
   const styleClasses = styles[style ?? 'default']

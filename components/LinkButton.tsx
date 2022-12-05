@@ -1,14 +1,18 @@
 import { FC } from 'react'
 import Link from 'next/link'
 
+export type LinkButtonSize = 'xs' | 'sm' | 'md' | 'lg'
+
+export type LinkButtonStyle = 'default' | 'primary'
+
 export interface LinkButtonProps {
   external?: boolean
   fullWidth?: boolean
   href: string
   id?: string
   lang?: string
-  size?: 'xs' | 'sm' | 'md' | 'lg'
-  style?: 'default' | 'primary'
+  size?: LinkButtonSize
+  style?: LinkButtonStyle
   text: string
 }
 
@@ -21,9 +25,9 @@ const sizes = {
 
 const styles = {
   default:
-    'border-gray-dark bg-gray-normal text-blue-light hover:bg-gray-dark hover:border-l-gray-deep hover:border-t-gray-deep focus:text-blue-light focus:bg-gray-dark border-r-gray-500 border-b-gray-500',
+    'border-gray-dark bg-gray-normal text-blue-light hover:bg-gray-dark hover:border-l-gray-deep hover:border-t-grasy-deep focus:bg-gray-dark focus:text-blue-light border-r-gray-500 border-b-gray-500',
   primary:
-    'border-blue-dark bg-blue-dark text-basic-white focus:bg-blue-normal hover:bg-blue-normal active:bg-blue-active',
+    'border-blue-dark bg-blue-dark text-basic-white hover:bg-blue-normal active:bg-blue-active focus:bg-blue-normal focus:text-basic-white',
 }
 
 const LinkButton: FC<LinkButtonProps> = ({
@@ -37,7 +41,7 @@ const LinkButton: FC<LinkButtonProps> = ({
   text,
 }) => {
   const baseClasses =
-    'inline-flex justify-center items-center font-display align-middle border shadow-sm focus:ring-1 focus:ring-offset-2 focus:ring-black focus:text-basic-white'
+    'inline-flex justify-center items-center font-display align-middle border shadow-sm focus:ring-1 focus:ring-offset-2 focus:ring-black'
   const fullWidthClasses = fullWidth ? 'w-full' : undefined
   const sizeClasses = sizes[size ?? 'md']
   const styleClasses = styles[style ?? 'default']

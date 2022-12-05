@@ -1,6 +1,6 @@
 import { FC, MouseEventHandler } from 'react'
 import { CheckStatusApiResponse } from '../lib/types'
-import ActionButton from './ActionButton'
+import ActionButton, { ActionButtonStyle } from './ActionButton'
 import { StatusCode } from '../lib/types'
 import CheckStatusFileBeingProcessed from './CheckStatusResponses/CheckStatusFileBeingProcessed'
 import CheckStatusReadyForPickup from './CheckStatusResponses/CheckStatusReadyForPickup'
@@ -13,7 +13,7 @@ export interface CheckStatusInfoProps {
   id: string
   onGoBackClick: MouseEventHandler<HTMLButtonElement>
   goBackText: string
-  goBackStyle?: 'default' | 'primary' | 'super' | 'danger'
+  goBackStyle?: ActionButtonStyle
   checkAgainText: string
   checkStatusResponse?: CheckStatusApiResponse | null
 }
