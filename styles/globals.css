@@ -14,47 +14,66 @@
     @apply focus:outline-none;
     @apply focus-visible:ring-1;
     @apply focus-visible:ring-black;
-  }  
-  html {
-    @apply text-basic-gray;
-    @apply text-xl;
   }
 
-  h1, h2, h3, h4 {
-    @apply font-bold;
+  html {
+    @apply text-basic-gray;
   }
-  h3 {
+
+  body {
+    @apply font-body
+  }
+
+  .h4 {
+    @apply font-bold;
+    @apply font-display;
+  }
+
+  .h3 {
+    @apply font-bold;
+    @apply font-display;
     @apply text-2xl;
   }
-  h2 {
+
+  .h2 {
+    @apply font-bold;
+    @apply font-display;
     @apply text-3xl;
+    @apply mt-8;
+    @apply mb-3;
   }
-  h1 {
+
+  .h1 {
+    @apply font-bold;
+    @apply font-display;
     @apply text-4xl;
-    @apply mt-4;
-    @apply pb-1;
-    @apply mb-1;
+    @apply mt-9;
+    @apply mb-8;
   }
-  h1::after {
+  .h1::after {
     content: "";
     display: block;
     width: 70px;
-    @apply pb-2;
+    @apply pt-2;
     border-bottom: 0.18em solid #af3c43;
   }
 
   p {
-    @apply mb-2.5
+    @apply mb-3
   }
 
-  main > a {
+  main {
+    @apply text-xl;
+  }
+  main a {
     @apply text-link-default;
     @apply underline;
   }
-  main > a:hover, a:focus {
+  main a:hover,
+  main a:focus {
     @apply text-link-selected;
   }
-  main > a:visited {
+  main a:visited {
     @apply text-link-visited;
   }
 

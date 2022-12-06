@@ -25,50 +25,32 @@ const Expectations: FC = () => {
       header={t('common:header', { returnObjects: true })}
       footer={t('common:footer', { returnObjects: true })}
     >
-      <h2>{t('header-purpose')}</h2>
-      <div className="my-5">
-        {t('can-check.description')}
-        <ul className="ml-5 list-inside">
-          <li>
-            <span className="font-bold">&#10003; </span>
-            {t('can-check.list.item-1')}
-          </li>
-          <li>
-            <span className="font-bold">&#10003; </span>
-            {t('can-check.list.item-2')}
-          </li>
-        </ul>
-      </div>
-      <div className="my-5">
-        {t('available-after.description')}{' '}
-        <ul className="ml-5 list-inside">
-          <li>
-            <span className="font-bold">&#10003; </span>
-            {t('available-after.list.item-1')}
-          </li>
-          <li>
-            <span className="font-bold">&#10003; </span>
-            {t('available-after.list.item-2')}
-          </li>
-        </ul>
-      </div>
-      <div className="my-5">
-        {t('cannot-check.description')}{' '}
-        <ul className="ml-5 list-inside">
-          <li>
-            <span className="font-bold">&#10007; </span>
-            {t('cannot-check.list.item-1')}
-          </li>
-          <li>
-            <span className="font-bold">&#10007; </span>
-            {t('cannot-check.list.item-2')}
-          </li>
-        </ul>
-      </div>
-      <div className="my-5 font-bold">
-        <p>{t('do-not-travel')}</p>
-      </div>
-      <h2 className="my-8">{t('header-privacy')}</h2>
+      <h1 className="h1">{t('header-purpose')}</h1>
+      <p>{t('can-check.description')}</p>
+      <ul className="space-y-2 pl-4 mb-3">
+        <IconListItem icon="check-mark" text={t('can-check.list.item-1')} />
+        <IconListItem icon="check-mark" text={t('can-check.list.item-2')} />
+      </ul>
+      <p>{t('available-after.description')}</p>
+      <ul className="space-y-2 pl-4 mb-3">
+        <IconListItem
+          icon="check-mark"
+          text={t('available-after.list.item-1')}
+        />
+        <IconListItem
+          icon="check-mark"
+          text={t('available-after.list.item-2')}
+        />
+      </ul>
+      <p>{t('cannot-check.description')}</p>
+      <ul className="space-y-2 pl-4">
+        <IconListItem icon="cross" text={t('cannot-check.list.item-1')} />
+        <IconListItem icon="cross" text={t('cannot-check.list.item-2')} />
+      </ul>
+      <p className="my-8">
+        <strong>{t('do-not-travel')}</strong>
+      </p>
+      <h2 className="h2">{t('header-privacy')}</h2>
       <p>{t('description-privacy')}</p>
       <div id="confirmBtn">
         <ActionButton
@@ -78,6 +60,22 @@ const Expectations: FC = () => {
         />
       </div>
     </Layout>
+  )
+}
+
+interface IconListItemProps {
+  icon: 'check-mark' | 'cross'
+  text: string
+}
+
+const IconListItem: FC<IconListItemProps> = ({ icon, text }) => {
+  return (
+    <li className="flex flex-nowrap gap-2">
+      <div className="font-bold">
+        {icon === 'check-mark' ? <>&#10003;</> : <>&#10007;</>}
+      </div>
+      <div>{text}</div>
+    </li>
   )
 }
 
