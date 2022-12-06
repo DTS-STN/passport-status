@@ -13,7 +13,7 @@ export interface DateModifiedProps {
  */
 const DateModified: FC<DateModifiedProps> = ({ id, text }) => {
   return (
-    <dl id={id} className="container mx-auto pl-6">
+    <dl id={id} className="container mx-auto py-8 px-4">
       <dt className="inline">{text}</dt>
       <dd className="inline">
         <time>{process.env.NEXT_PUBLIC_BUILD_DATE}</time>

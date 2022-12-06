@@ -51,7 +51,7 @@ export default function Footer({
       <DateModified text={dateModifiedText} />
       <div className="w-full">
         <div className="w-full h-full pb-4 bg-gray-light">
-          <div className="h-auto pt-5 container mx-auto px-6 flex flex-col xl:flex xl:flex-row md:justify-between">
+          <div className="h-auto pt-5 container mx-auto px-4 flex flex-col xl:flex xl:flex-row md:justify-between">
             <div
               className="mt-3.5 xl:mt-5"
               role="navigation"
