@@ -30,9 +30,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">55.55% </span>
+                <span class="strong">53.84% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>5/9</span>
+                <span class='fraction'>7/13</span>
             </div>
         
             
@@ -166,11 +166,7 @@
 <a name='L101'></a><a href='#L101'>101</a>
 <a name='L102'></a><a href='#L102'>102</a>
 <a name='L103'></a><a href='#L103'>103</a>
-<a name='L104'></a><a href='#L104'>104</a>
-<a name='L105'></a><a href='#L105'>105</a>
-<a name='L106'></a><a href='#L106'>106</a>
-<a name='L107'></a><a href='#L107'>107</a>
-<a name='L108'></a><a href='#L108'>108</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L104'></a><a href='#L104'>104</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -181,10 +177,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -300,72 +292,68 @@ const Error: NextPage&lt;ErrorProps&gt; = ({ statusCode }) =&gt; {
             : 'Service Unavailable | Service indisponible - Canada.ca'
         }
       /&gt;
+      &lt;h1 className="sr-only" lang="en"&gt;
+        {statusCode === 500 ? <span class="branch-0 cbranch-no" title="branch not covered" >'Internal Server Error' </span>: 'Service Unavailable'}
+      &lt;/h1&gt;
+      &lt;span className="sr-only"&gt;
+        {' '}
+        /{' '}
+        &lt;span lang="fr"&gt;
+          {statusCode === 500
+            ? <span class="branch-0 cbranch-no" title="branch not covered" >'Erreur de serveur interne'</span>
+            : 'Service indisponible'}
+        &lt;/span&gt;
+      &lt;/span&gt;
       &lt;div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8"&gt;
         &lt;div lang="en"&gt;
-          &lt;h1 className="text-2xl"&gt;
-            We&amp;#39;re having a problem with that page
-          &lt;/h1&gt;
-          &lt;h2&gt;
+          &lt;h2 className="h1"&gt;We&amp;#39;re having a problem with that page&lt;/h2&gt;
+          &lt;p className="h2"&gt;
             {statusCode ? `Error ${statusCode}` : 'An error occurred on client'}
-          &lt;/h2&gt;
+          &lt;/p&gt;
           &lt;p&gt;
             We expect the problem to be fixed shortly. It&amp;#39;s not your
             computer or Internet connection but a problem with our website&amp;#39;s
             server. What next?
           &lt;/p&gt;
-          &lt;ul className="list-disc list-inside mb-3"&gt;
+          &lt;ul className="list-disc space-y-2 pl-10 mb-3"&gt;
             &lt;li&gt;Try refreshing the page or try again later;&lt;/li&gt;
             &lt;li&gt;
               Return to the{' '}
               &lt;Link href="/"&gt;
-                &lt;a className="text-cyan-600 underline hover:text-link-selected"&gt;
-                  home page
-                &lt;/a&gt;
+                &lt;a&gt;home page&lt;/a&gt;
               &lt;/Link&gt;
               ;
             &lt;/li&gt;
             &lt;li&gt;
-              &lt;a
-                href="https://www.canada.ca/en/contact.html"
-                className="text-cyan-600 underline hover:text-link-selected"
-              &gt;
-                Contact us
-              &lt;/a&gt;
+              &lt;a href="https://www.canada.ca/en/contact.html"&gt;Contact us&lt;/a&gt;
               &amp;nbsp;and we&amp;#39;ll help you out
             &lt;/li&gt;
           &lt;/ul&gt;
           &lt;p&gt;Thank you for your patience.&lt;/p&gt;
         &lt;/div&gt;
         &lt;div lang="fr"&gt;
-          &lt;h1 className="text-2xl"&gt;
-            Nous éprouvons des difficultés avec cette page
-          &lt;/h1&gt;
-          &lt;h2&gt;
+          &lt;h2 className="h1"&gt;Nous éprouvons des difficultés avec cette page&lt;/h2&gt;
+          &lt;p className="h2"&gt;
             {statusCode
               ? `Erreur ${statusCode}`
               : 'Erreur produite sur le client'}
-          &lt;/h2&gt;
+          &lt;/p&gt;
           &lt;p&gt;
             Nous espérons résoudre le problème sous peu. Il ne s&amp;#39;agit pas
             d&amp;#39;un problème avec votre ordinateur ou Internet, mais plutôt
             avec le serveur de notre site Web. Que faire?
           &lt;/p&gt;
-          &lt;ul className="list-disc list-inside mb-3"&gt;
+          &lt;ul className="list-disc space-y-2 pl-10 mb-3"&gt;
             &lt;li&gt;Actualisez la page ou réessayez plus tard;&lt;/li&gt;
             &lt;li&gt;
               Retournez à la{' '}
               &lt;Link href="/"&gt;
-                &lt;a className="text-cyan-600 underline hover:text-link-selected"&gt;
-                  page d&amp;#39;accueil
-                &lt;/a&gt;
+                &lt;a&gt;page d&amp;#39;accueil&lt;/a&gt;
               &lt;/Link&gt;
               ;
             &lt;/li&gt;
             &lt;li&gt;
-              &lt;a
-                href="https://www.canada.ca/fr/contact.html"
-                className="text-cyan-600 underline hover:text-link-selected"
-              &gt;
+              &lt;a href="https://www.canada.ca/fr/contact.html"&gt;
                 Communiquez avec nous
               &lt;/a&gt;{' '}
               pour obtenir de l&amp;#39;aide.
@@ -391,7 +379,7 @@ export default Error
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-11-30T22:11:11.140Z
+                at 2022-12-06T18:39:50.416Z
             </div>
         <script src="../prettify.js"></script>
         <script>
