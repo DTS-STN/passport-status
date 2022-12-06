@@ -30,9 +30,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">66.66% </span>
+                <span class="strong">80% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>4/6</span>
+                <span class='fraction'>8/10</span>
             </div>
         
             
@@ -111,7 +111,27 @@
 <a name='L46'></a><a href='#L46'>46</a>
 <a name='L47'></a><a href='#L47'>47</a>
 <a name='L48'></a><a href='#L48'>48</a>
-<a name='L49'></a><a href='#L49'>49</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -130,18 +150,26 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -162,35 +190,49 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { FC } from 'react'
 import Link from 'next/link'
 &nbsp;
+export type LinkButtonSize = 'xs' | 'sm' | 'md' | 'lg'
+&nbsp;
+export type LinkButtonStyle = 'default' | 'primary'
+&nbsp;
 export interface LinkButtonProps {
+  external?: boolean
+  fullWidth?: boolean
   href: string
-  text: string
   id?: string
   lang?: string
-  external?: boolean
-  style?: 'default' | 'primary' | 'super' | 'danger'
+  size?: LinkButtonSize
+  style?: LinkButtonStyle
+  text: string
+}
+&nbsp;
+const sizes = {
+  xs: 'px-1.5 py-px rounded-sm text-sm',
+  sm: 'px-2.5 py-1.5 rounded-sm text-sm',
+  md: 'px-3.5 py-2.5 rounded text-base',
+  lg: 'px-4 py-2.5 rounded-md text-lg',
+}
+&nbsp;
+const styles = {
+  default: `bg-gray-normal border-b-gray-500 border-gray-dark border-r-gray-500 text-blue-light focus:bg-gray-dark focus:text-blue-light focus:text-blue-light hover:bg-gray-dark hover:border-l-gray-deep hover:border-t-grasy-deep hover:text-blue-light visited:text-blue-light`,
+  primary: `bg-blue-dark border-blue-dark text-basic-white active:bg-blue-active focus:bg-blue-normal focus:text-basic-white hover:bg-blue-normal hover:text-basic-white visited:text-basic-white`,
 }
 &nbsp;
 const LinkButton: FC&lt;LinkButtonProps&gt; = ({
+  external,
+  fullWidth,
   href,
-  text,
   id,
   lang,
-  external,
+  size,
   style,
+  text,
 }) =&gt; {
-  let classStyle =
-    'inline-block text-center align-middle rounded border py-2 px-10 focus:ring-1 focus:ring-offset-2 focus:ring-black focus:text-basic-white '
-  switch (style) {
-    case 'primary':
-      classStyle +=
-        'border-blue-dark bg-blue-dark text-basic-white focus:bg-blue-normal hover:bg-blue-normal active:bg-blue-active shadow-sm'
-      break
-    default:
-      classStyle +=
-        'border-gray-dark bg-gray-normal text-blue-light hover:bg-gray-dark hover:border-l-gray-deep hover:border-t-gray-deep focus:text-blue-light focus:bg-gray-dark shadow-sm border-r-gray-500 border-b-gray-500'
-      break
-  }
+  const baseClasses =
+    'align-middle border font-display inline-flex items-center justify-center no-underline shadow-sm text-center focus:ring-1 focus:ring-black focus:ring-offset-2'
+  const fullWidthClasses = fullWidth ? 'w-full' : undefined
+  const sizeClasses = sizes[size ?? 'md']
+  const styleClasses = styles[style ?? 'default']
+&nbsp;
   return (
     &lt;Link href={href} passHref&gt;
       &lt;a
@@ -198,7 +240,7 @@ const LinkButton: FC&lt;LinkButtonProps&gt; = ({
         rel={external ? <span class="branch-0 cbranch-no" title="branch not covered" >'noopener noreferrer' </span>: undefined}
         id={id}
         lang={lang}
-        className={classStyle}
+        className={`${baseClasses} ${fullWidthClasses} ${sizeClasses} ${styleClasses}`}
       &gt;
         {text}
       &lt;/a&gt;
@@ -214,7 +256,7 @@ export default LinkButton
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-11-30T22:11:08.751Z
+                at 2022-12-06T18:44:01.448Z
             </div>
         <script src="../prettify.js"></script>
         <script>

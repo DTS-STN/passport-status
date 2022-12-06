@@ -144,7 +144,17 @@
 <a name='L79'></a><a href='#L79'>79</a>
 <a name='L80'></a><a href='#L80'>80</a>
 <a name='L81'></a><a href='#L81'>81</a>
-<a name='L82'></a><a href='#L82'>82</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -152,6 +162,16 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -233,7 +253,7 @@ import defaultTranslations from '../public/locales/defaultTranslations.json'
 &nbsp;
 const Index = () =&gt; {
   return (
-    &lt;div
+    &lt;main
       role="main"
       className="flex bg-splash-page bg-cover bg-center h-screen"
     &gt;
@@ -242,66 +262,76 @@ const Index = () =&gt; {
         desc={defaultTranslations.meta.desc}
         title={defaultTranslations.meta.title}
       /&gt;
-      &lt;div className="flex flex-col justify-center items-center m-auto"&gt;
-        &lt;div className="z-10 bg-white h-auto w-[18.75rem] xl:w-[31.25rem]"&gt;
+      &lt;div className="m-auto w-[300px] md:w-[400px] lg:w-[500px] bg-white"&gt;
+        &lt;div className="p-8"&gt;
           &lt;h1 className="sr-only"&gt;service.canada.ca-passport-status-checker&lt;/h1&gt;
-&nbsp;
-          &lt;div className="h-auto w-64 mx-auto pt-6 xl:w-2/3 xl:mx-0 xl:px-6"&gt;
+          &lt;div className="w-11/12 lg:w-2/3"&gt;
             &lt;Image
               src="/sig-blk-en.svg"
-              alt="Government of Canada / Gouvernement du Canada logo"
+              alt="Government of Canada"
               width={10}
               height={1}
               layout="responsive"
               objectFit="scale-down"
-            &gt;&lt;/Image&gt;
+            /&gt;
+            &lt;span className="sr-only"&gt;
+              {' '}
+              / &lt;span lang="fr"&gt;Gouvernement du Canada&lt;/span&gt;
+            &lt;/span&gt;
           &lt;/div&gt;
-          &lt;div className="flex w-max container py-11 mx-auto font-display"&gt;
-            &lt;div className="grid grid-cols-2 gap-2 xl:gap-6"&gt;
+          &lt;div className="flex gap-6 items-stretch mt-11 mb-2"&gt;
+            &lt;section className="w-full" lang="en"&gt;
+              &lt;h2 className="sr-only"&gt;Government of Canada&lt;/h2&gt;
               &lt;LinkButton
                 href="/en/expectations"
                 text="English"
                 id="english-button"
-                lang="en"
                 style="primary"
+                fullWidth
               /&gt;
+            &lt;/section&gt;
+            &lt;section className="w-full" lang="fr"&gt;
+              &lt;h2 className="sr-only"&gt;Gouvernement du Canada&lt;/h2&gt;
               &lt;LinkButton
                 href="/fr/expectations"
                 text="Français"
                 id="french-button"
-                lang="fr"
                 style="primary"
+                fullWidth
               /&gt;
-            &lt;/div&gt;
+            &lt;/section&gt;
           &lt;/div&gt;
         &lt;/div&gt;
-&nbsp;
-        &lt;div className="relative py-8 bg-gray-light text-p h-auto min-w-[18.75rem] w-[18.75rem] flex justify-between p-6 xl:w-[31.25rem] xl:items-center"&gt;
-          &lt;div className="w-28 text-base xl:text-p xl:w-max font-body text-bright-blue-dark"&gt;
-            &lt;Link href="https://www.canada.ca/en/transparency/terms.html"&gt;
-              &lt;a
-                className="inline-block w-28 xl:w-max mr-0 hover:underline splash-a text-lg"
-                lang="en"
-                data-cy="terms"
-              &gt;
-                Terms &amp;amp; conditions
-              &lt;/a&gt;
-            &lt;/Link&gt;
-            &lt;span&gt; • &lt;/span&gt;
-            &lt;Link href="https://www.canada.ca/fr/transparence/avis.html"&gt;
-              &lt;a
-                className="inline-block hover:underline font-body text-lg"
-                lang="fr"
-                data-cy="avis"
-              &gt;
-                Avis
-              &lt;/a&gt;
-            &lt;/Link&gt;
+        &lt;div className="p-8 flex gap-6 justify-between items-center bg-gray-light"&gt;
+          &lt;div className="text-bright-blue-dark"&gt;
+            &lt;a
+              className="text-inherit hover:text-inherit focus:text-inherit visited:text-inherit no-underline hover:underline focus:underline"
+              data-cy="terms"
+              href="https://www.canada.ca/en/transparency/terms.html"
+              lang="en"
+            &gt;
+              Terms &amp;amp; conditions
+            &lt;/a&gt;
+            &lt;span className="text-gray-400"&gt; • &lt;/span&gt;
+            &lt;a
+              className="text-inherit hover:text-inherit focus:text-inherit visited:text-inherit no-underline hover:underline focus:underline"
+              data-cy="avis"
+              href="https://www.canada.ca/fr/transparence/avis.html"
+              lang="fr"
+            &gt;
+              Avis
+            &lt;/a&gt;
           &lt;/div&gt;
-          &lt;img className="h-auto w-24 xl:w-28" src="/wmms-blk.svg" alt="" /&gt;
+          &lt;div className="w-5/12 xl:w-4/12"&gt;
+            &lt;img src="/wmms-blk.svg" alt="Symbol of the Government of Canada" /&gt;
+            &lt;span className="sr-only"&gt;
+              {' '}
+              / &lt;span lang="fr"&gt;Symbole du gouvernement du Canada&lt;/span&gt;
+            &lt;/span&gt;
+          &lt;/div&gt;
         &lt;/div&gt;
       &lt;/div&gt;
-    &lt;/div&gt;
+    &lt;/main&gt;
   )
 }
 &nbsp;
@@ -313,7 +343,7 @@ export default Index
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-11-30T22:11:08.751Z
+                at 2022-12-06T18:44:01.448Z
             </div>
         <script src="../prettify.js"></script>
         <script>
