@@ -118,7 +118,9 @@ export default function Email() {
       ) : (
         <form onSubmit={formik.handleSubmit} id="form-email-esrf">
           <p>{t('header-messages.fill-in-field')}</p>
-          <p className="font-bold">{t('header-messages.matches')}</p>
+          <p>
+            <strong>{t('header-messages.matches')}</strong>
+          </p>
           <p>{t('header-messages.for-child')}</p>
           <p>{t('header-messages.passport-officer')}</p>
           {errorSummary.length > 0 && (
