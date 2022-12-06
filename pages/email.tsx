@@ -13,7 +13,6 @@ import ErrorSummary, {
 import InputField from '../components/InputField'
 import ActionButton from '../components/ActionButton'
 import Modal from '../components/Modal'
-import LinkSummary, { LinkSummaryItem } from '../components/LinkSummary'
 import useEmailEsrf from '../lib/useEmailEsrf'
 import { EmailEsrfApiRequestBody } from '../lib/types'
 import { useIdleTimer } from 'react-idle-timer'

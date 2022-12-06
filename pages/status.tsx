@@ -5,7 +5,6 @@ import {
   useCallback,
   useMemo,
   useState,
-  useEffect,
 } from 'react'
 import { GetStaticProps } from 'next'
 import { useRouter } from 'next/router'
