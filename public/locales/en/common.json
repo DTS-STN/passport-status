@@ -62,7 +62,9 @@
     "yes-button": "Yes",
     "no-button": "No",
     "description": "Are you sure you want to go back?",
-    "idle": "You have been inactive for 15 minutes. Would you like to start over?"
+    "idle": "You have been inactive for 10 minutes and your session is set to expire in 5 minutes. Select \"Continue Session\" to continue your session.",
+    "idle-continue-session": "Continue session",
+    "idle-end-session": "End session"
   },
   "phone-number": "1-800-567-6868"
 }

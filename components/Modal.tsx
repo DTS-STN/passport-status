@@ -20,7 +20,7 @@ const Modal: FC<ModalProps> = ({ actionButtons, children, open }) => {
         <div
           role="dialog"
           aria-describedby={`${id}-modal-desc`}
-          className="mx-6 p-4 bg-white border-2 border-black"
+          className="mx-6 p-4 bg-white border-2 border-black md:w-2/3 lg:w-2/5"
         >
           <div id={`${id}-modal-desc`} className="mb-4">
             {children}
