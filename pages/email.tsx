@@ -117,7 +117,12 @@ export default function Email() {
         </>
       ) : (
         <form onSubmit={formik.handleSubmit} id="form-email-esrf">
-          <p>{t('description')}</p>
+          <p>{t('header-messages.fill-in-field')}</p>
+          <p>
+            <strong>{t('header-messages.matches')}</strong>
+          </p>
+          <p>{t('header-messages.for-child')}</p>
+          <p>{t('header-messages.passport-officer')}</p>
           {errorSummary.length > 0 && (
             <ErrorSummary
               id="error-summary-email-esrf"
@@ -148,7 +153,6 @@ export default function Email() {
             errorMessage={formik.errors.givenName && t(formik.errors.givenName)}
             textRequired={t('common:required')}
             required
-            helpMessage={t('help-message.given-name')}
           />
           <InputField
             id="surname"
@@ -159,7 +163,6 @@ export default function Email() {
             errorMessage={formik.errors.surname && t(formik.errors.surname)}
             textRequired={t('common:required')}
             required
-            helpMessage={t('help-message.surname')}
           />
           <InputField
             id="dateOfBirth"
@@ -174,7 +177,6 @@ export default function Email() {
             max={'9999-12-31'}
             textRequired={t('common:required')}
             required
-            helpMessage={t('help-message.date-of-birth')}
           />
           <div className="flex gap-2 flex-wrap">
             <ActionButton
