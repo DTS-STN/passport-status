@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">45.09% </span>
+                <span class="strong">48.97% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>23/51</span>
+                <span class='fraction'>24/49</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">20% </span>
+                <span class="strong">26.66% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>3/15</span>
+                <span class='fraction'>4/15</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">46.93% </span>
+                <span class="strong">51.06% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>23/49</span>
+                <span class='fraction'>24/47</span>
             </div>
         
             
@@ -357,8 +357,7 @@
 <a name='L292'></a><a href='#L292'>292</a>
 <a name='L293'></a><a href='#L293'>293</a>
 <a name='L294'></a><a href='#L294'>294</a>
-<a name='L295'></a><a href='#L295'>295</a>
-<a name='L296'></a><a href='#L296'>296</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L295'></a><a href='#L295'>295</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -381,6 +380,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -388,13 +395,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
@@ -485,7 +485,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -499,7 +498,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -514,7 +513,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -660,6 +658,7 @@
   useCallback,
   useMemo,
   useState,
+  useEffect,
 } from 'react'
 import { GetStaticProps } from 'next'
 import { useRouter } from 'next/router'
@@ -780,7 +779,6 @@ const Status: FC = () =&gt; {
       }
 <span class="cstat-no" title="statement not covered" >      formik.setStatus(undefined)</span>
 <span class="cstat-no" title="statement not covered" >      removeCheckStatusResponse()</span>
-<span class="cstat-no" title="statement not covered" >      scrollToTop()</span>
     },
     [formik, removeCheckStatusResponse, checkStatusResponse, router]
   )
@@ -792,10 +790,10 @@ const Status: FC = () =&gt; {
     [formik]
   )
 &nbsp;
-  //When the page is conditionally rendered it maintains its spot on the page. Calling this will force it to scroll to the top of the page.
-  const scrollToTop = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
-<span class="cstat-no" title="statement not covered" >    window.scrollTo(0, 0)</span>
-  }
+  //When the page is conditionally rendered it maintains its spot on the page. When the component mounts and every time checkStatusResponse changes, this will force scroll to the top of the page.
+  useEffect(() =&gt; {
+    window.scrollTo(0, 0)
+  }, [checkStatusResponse])
 &nbsp;
   //if the api failed, fail hard to show error page
   <span class="missing-if-branch" title="if path not taken" >I</span>if (checkStatusError) <span class="cstat-no" title="statement not covered" >throw checkStatusError</span>
@@ -809,7 +807,6 @@ const Status: FC = () =&gt; {
       &lt;h1 className="h1"&gt;{t('header')}&lt;/h1&gt;
       {(() =&gt; {
         <span class="missing-if-branch" title="if path not taken" >I</span>if (checkStatusResponse !== undefined) {
-<span class="cstat-no" title="statement not covered" >          scrollToTop()</span>
 <span class="cstat-no" title="statement not covered" >          return (</span>
             &lt;&gt;
               &lt;CheckStatusInfo
@@ -955,7 +952,7 @@ export default Status
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-12-06T19:59:22.422Z
+                at 2022-12-06T20:32:29.095Z
             </div>
         <script src="../prettify.js"></script>
         <script>
