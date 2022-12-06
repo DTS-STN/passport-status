@@ -28,24 +28,17 @@ const Custom404 = () => {
             deleted, but hopefully we can help you find what you&#39;re looking
             for. What next?
           </p>
-          <ul className="list-disc pl-10 space-y-2">
+          <ul className="list-disc space-y-2 pl-10">
             <li>
               Return to the{' '}
               <Link href="/" locale="default">
-                <a className="underline text-link-default hover:text-link-selected focus:text-link-selected visited:text-link-visited">
-                  home page
-                </a>
+                <a>home page</a>
               </Link>
               ;
             </li>
             <li>
-              <a
-                href="https://www.canada.ca/en/contact.html"
-                className="underline text-link-default hover:text-link-selected focus:text-link-selected visited:text-link-visited"
-              >
-                Contact us
-              </a>{' '}
-              and we&#39;ll help you out.
+              <a href="https://www.canada.ca/en/contact.html">Contact us</a> and
+              we&#39;ll help you out.
             </li>
           </ul>
         </div>
@@ -57,21 +50,16 @@ const Custom404 = () => {
             qu&#39;une page ait été déplacée ou supprimée. Heureusement, nous
             pouvons vous aider à trouver ce que vous cherchez. Que faire?
           </p>
-          <ul className="list-disc pl-10 space-y-2">
+          <ul className="list-disc space-y-2 pl-10">
             <li>
               Retournez à la{' '}
               <Link href="/" locale="default">
-                <a className="underline text-link-default hover:text-link-selected focus:text-link-selected visited:text-link-visited">
-                  page d&#39;accueil
-                </a>
+                <a>page d&#39;accueil</a>
               </Link>
               ;
             </li>
             <li>
-              <a
-                href="https://www.canada.ca/fr/contact.html"
-                className="underline text-link-default hover:text-link-selected focus:text-link-selected visited:text-link-visited"
-              >
+              <a href="https://www.canada.ca/fr/contact.html">
                 Communiquez avec nous
               </a>{' '}
               pour obtenir de l&#39;aide.

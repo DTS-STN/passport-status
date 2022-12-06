@@ -32,7 +32,7 @@ export default function Header(props: HeaderProps) {
       </nav>
 
       <header>
-        <div className="container mx-auto px-6 flex-col flex md:flex md:flex-row justify-between pt-6">
+        <div className="container mx-auto px-4 flex-col flex md:flex md:flex-row justify-between pt-6">
           <div className="flex flex-row justify-between items-center lg:mt-7">
             <a href={props.gocLink}>
               <img

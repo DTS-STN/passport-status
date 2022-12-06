@@ -48,7 +48,7 @@
     @apply font-display;
     @apply text-4xl;
     @apply mt-9;
-    @apply mb-3;
+    @apply mb-8;
   }
   .h1::after {
     content: "";
@@ -65,14 +65,15 @@
   main {
     @apply text-xl;
   }
-  main > a {
+  main a {
     @apply text-link-default;
     @apply underline;
   }
-  main > a:hover, main a:focus {
+  main a:hover,
+  main a:focus {
     @apply text-link-selected;
   }
-  main > a:visited {
+  main a:visited {
     @apply text-link-visited;
   }
 
