@@ -25,31 +25,29 @@ const Expectations: FC = () => {
       header={t('common:header', { returnObjects: true })}
       footer={t('common:footer', { returnObjects: true })}
     >
-      <h1 className="h1 mb-8">{t('header-purpose')}</h1>
-      <div className="my-8">
-        <p>{t('can-check.description')}</p>
-        <ul className="space-y-2 pl-4 mb-3">
-          <IconListItem icon="check-mark" text={t('can-check.list.item-1')} />
-          <IconListItem icon="check-mark" text={t('can-check.list.item-2')} />
-        </ul>
-        <p>{t('available-after.description')}</p>
-        <ul className="space-y-2 pl-4 mb-3">
-          <IconListItem
-            icon="check-mark"
-            text={t('available-after.list.item-1')}
-          />
-          <IconListItem
-            icon="check-mark"
-            text={t('available-after.list.item-2')}
-          />
-        </ul>
-        <p>{t('cannot-check.description')}</p>
-        <ul className="space-y-2 pl-4">
-          <IconListItem icon="cross" text={t('cannot-check.list.item-1')} />
-          <IconListItem icon="cross" text={t('cannot-check.list.item-2')} />
-        </ul>
-      </div>
-      <p>
+      <h1 className="h1">{t('header-purpose')}</h1>
+      <p>{t('can-check.description')}</p>
+      <ul className="space-y-2 pl-4 mb-3">
+        <IconListItem icon="check-mark" text={t('can-check.list.item-1')} />
+        <IconListItem icon="check-mark" text={t('can-check.list.item-2')} />
+      </ul>
+      <p>{t('available-after.description')}</p>
+      <ul className="space-y-2 pl-4 mb-3">
+        <IconListItem
+          icon="check-mark"
+          text={t('available-after.list.item-1')}
+        />
+        <IconListItem
+          icon="check-mark"
+          text={t('available-after.list.item-2')}
+        />
+      </ul>
+      <p>{t('cannot-check.description')}</p>
+      <ul className="space-y-2 pl-4">
+        <IconListItem icon="cross" text={t('cannot-check.list.item-1')} />
+        <IconListItem icon="cross" text={t('cannot-check.list.item-2')} />
+      </ul>
+      <p className="my-8">
         <strong>{t('do-not-travel')}</strong>
       </p>
       <h2 className="h2">{t('header-privacy')}</h2>
