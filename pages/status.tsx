@@ -5,6 +5,7 @@ import {
   useCallback,
   useMemo,
   useState,
+  useEffect,
 } from 'react'
 import { GetStaticProps } from 'next'
 import { useRouter } from 'next/router'
@@ -125,6 +126,7 @@ const Status: FC = () => {
       }
       formik.setStatus(undefined)
       removeCheckStatusResponse()
+      scrollToTop()
     },
     [formik, removeCheckStatusResponse, checkStatusResponse, router]
   )
@@ -135,6 +137,11 @@ const Status: FC = () => {
     },
     [formik]
   )
+
+  //When the page is conditionally rendered it maintains its spot on the page. Calling this will force it to scroll to the top of the page.
+  const scrollToTop = () => {
+    window.scrollTo(0, 0)
+  }
 
   //if the api failed, fail hard to show error page
   if (checkStatusError) throw checkStatusError
@@ -148,6 +155,7 @@ const Status: FC = () => {
       <h1 className="h1">{t('header')}</h1>
       {(() => {
         if (checkStatusResponse !== undefined) {
+          scrollToTop()
           return (
             <>
               <CheckStatusInfo
