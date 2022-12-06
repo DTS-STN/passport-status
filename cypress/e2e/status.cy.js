@@ -46,12 +46,6 @@ describe('ESRF field validation', ()=>{
     cy.get('#btn-submit').click()
     cy.get('#input-esrf-error').should('exist')
   })
-
-  it('validates invalid length for ESRF', ()=>{
-    cy.get('#esrf').type('1234')
-    cy.get('#btn-submit').click()
-    cy.get('#input-esrf-error').should('exist')
-  })
 })
 
 describe('givenName field validation', ()=>{
