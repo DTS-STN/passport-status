@@ -12,9 +12,7 @@
   "description": "Remplissez les champs ci-dessous pour vérifier l'état de votre demande de passeport. Assurez-vous que vos informations correspondent à votre formulaire de demande de passeport.",
   "esrf": {
     "error": {
-      "length": "Le numéro de dossier peut avoir un maximum de 8 caractères alphanumériques.",
-      "required": "Le numéro de dossier est obligatoire.",
-      "starts-with-letter": "Le numéro de dossier doit commencer par une lettre (p. ex. A1234567)."
+      "required": "Le numéro de dossier est obligatoire."
     },
     "label": "Numéro de dossier"
   },
