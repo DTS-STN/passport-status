@@ -7,7 +7,7 @@ export interface ErrorLayoutProps {
 const ErrorLayout: FC<ErrorLayoutProps> = ({ children }) => {
   return (
     <div className="flex flex-col min-h-screen">
-      <header className="container mx-auto px-6 my-6">
+      <header className="container mx-auto px-4 my-6">
         <img
           className="h-5 w-auto xs:h-6 sm:h-8 md:h-8 lg:h-7 xl:h-8"
           src={'/sig-blk-en.svg'}
@@ -18,12 +18,12 @@ const ErrorLayout: FC<ErrorLayoutProps> = ({ children }) => {
       <main
         role="main"
         id="mainContent"
-        className="container mx-auto px-6 my-8 flex-1"
+        className="container mx-auto px-4 my-8 flex-1"
       >
         {children}
       </main>
       <footer className="py-4 bg-gray-light">
-        <div className="container mx-auto px-6 flex lg:flex-row-reverse justify-between">
+        <div className="container mx-auto px-4 flex lg:flex-row-reverse justify-between">
           <a className="w-32 sm:w-36 lg:hidden text-sm font-body" href="#">
             Top of page / Haut de la page&nbsp;
             <span className="font-extrabold">&#8963;</span>

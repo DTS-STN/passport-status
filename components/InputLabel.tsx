@@ -1,6 +1,7 @@
 import { FC } from 'react'
 
 export interface InputLabelProps {
+  htmlFor: string
   id: string
   label: string
   required?: boolean
@@ -8,6 +9,7 @@ export interface InputLabelProps {
 }
 
 const InputLabel: FC<InputLabelProps> = ({
+  htmlFor,
   id,
   label,
   required,
@@ -15,8 +17,9 @@ const InputLabel: FC<InputLabelProps> = ({
 }) => {
   return (
     <label
-      htmlFor={id}
-      className={`font-bold block mb-1.5 ${required ? 'required' : ''}`}
+      id={id}
+      htmlFor={htmlFor}
+      className={`font-bold block mb-2 ${required ? 'required' : ''}`}
     >
       {label}
       {required && (

@@ -18,7 +18,7 @@ const Layout: FC<LayoutProps> = ({ children, meta, header, footer }) => {
       <main
         role="main"
         id="mainContent"
-        className="container mx-auto px-6 mt-5 p-8 flex-1"
+        className="container mx-auto px-4 pb-8 mt-5 flex-1"
       >
         {children}
       </main>

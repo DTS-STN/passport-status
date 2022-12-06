@@ -6,7 +6,7 @@ import defaultTranslations from '../public/locales/defaultTranslations.json'
 
 const Index = () => {
   return (
-    <div
+    <main
       role="main"
       className="flex bg-splash-page bg-cover bg-center h-screen"
     >
@@ -15,66 +15,76 @@ const Index = () => {
         desc={defaultTranslations.meta.desc}
         title={defaultTranslations.meta.title}
       />
-      <div className="flex flex-col justify-center items-center m-auto">
-        <div className="z-10 bg-white h-auto w-[18.75rem] xl:w-[31.25rem]">
+      <div className="m-auto w-[300px] md:w-[400px] lg:w-[500px] bg-white">
+        <div className="p-8">
           <h1 className="sr-only">service.canada.ca-passport-status-checker</h1>
-
-          <div className="h-auto w-64 mx-auto pt-6 xl:w-2/3 xl:mx-0 xl:px-6">
+          <div className="w-11/12 lg:w-2/3">
             <Image
               src="/sig-blk-en.svg"
-              alt="Government of Canada / Gouvernement du Canada logo"
+              alt="Government of Canada"
               width={10}
               height={1}
               layout="responsive"
               objectFit="scale-down"
-            ></Image>
+            />
+            <span className="sr-only">
+              {' '}
+              / <span lang="fr">Gouvernement du Canada</span>
+            </span>
           </div>
-          <div className="flex w-max container py-11 mx-auto font-display">
-            <div className="grid grid-cols-2 gap-2 xl:gap-6">
+          <div className="flex gap-6 items-stretch mt-11 mb-2">
+            <section className="w-full" lang="en">
+              <h2 className="sr-only">Government of Canada</h2>
               <LinkButton
                 href="/en/expectations"
                 text="English"
                 id="english-button"
-                lang="en"
                 style="primary"
+                fullWidth
               />
+            </section>
+            <section className="w-full" lang="fr">
+              <h2 className="sr-only">Gouvernement du Canada</h2>
               <LinkButton
                 href="/fr/expectations"
                 text="Français"
                 id="french-button"
-                lang="fr"
                 style="primary"
+                fullWidth
               />
-            </div>
+            </section>
           </div>
         </div>
-
-        <div className="relative py-8 bg-gray-light text-p h-auto min-w-[18.75rem] w-[18.75rem] flex justify-between p-6 xl:w-[31.25rem] xl:items-center">
-          <div className="w-28 text-base xl:text-p xl:w-max font-body text-bright-blue-dark">
-            <Link href="https://www.canada.ca/en/transparency/terms.html">
-              <a
-                className="inline-block w-28 xl:w-max mr-0 hover:underline splash-a text-lg"
-                lang="en"
-                data-cy="terms"
-              >
-                Terms &amp; conditions
-              </a>
-            </Link>
-            <span> • </span>
-            <Link href="https://www.canada.ca/fr/transparence/avis.html">
-              <a
-                className="inline-block hover:underline font-body text-lg"
-                lang="fr"
-                data-cy="avis"
-              >
-                Avis
-              </a>
-            </Link>
+        <div className="p-8 flex gap-6 justify-between items-center bg-gray-light">
+          <div className="text-bright-blue-dark">
+            <a
+              className="text-inherit hover:text-inherit focus:text-inherit visited:text-inherit no-underline hover:underline focus:underline"
+              data-cy="terms"
+              href="https://www.canada.ca/en/transparency/terms.html"
+              lang="en"
+            >
+              Terms &amp; conditions
+            </a>
+            <span className="text-gray-400"> • </span>
+            <a
+              className="text-inherit hover:text-inherit focus:text-inherit visited:text-inherit no-underline hover:underline focus:underline"
+              data-cy="avis"
+              href="https://www.canada.ca/fr/transparence/avis.html"
+              lang="fr"
+            >
+              Avis
+            </a>
           </div>
-          <img className="h-auto w-24 xl:w-28" src="/wmms-blk.svg" alt="" />
+          <div className="w-5/12 xl:w-4/12">
+            <img src="/wmms-blk.svg" alt="Symbol of the Government of Canada" />
+            <span className="sr-only">
+              {' '}
+              / <span lang="fr">Symbole du gouvernement du Canada</span>
+            </span>
+          </div>
         </div>
       </div>
-    </div>
+    </main>
   )
 }
 

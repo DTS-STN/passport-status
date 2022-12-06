@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import { axe, toHaveNoViolations } from 'jest-axe'
 import '@testing-library/jest-dom/extend-expect'
-import StatusInfo from '../../components/StatusInfo'
+import CheckStatusInfo from '../../components/CheckStatusInfo'
 
 expect.extend(toHaveNoViolations)
 
@@ -10,21 +10,20 @@ jest.mock('../../components/ActionButton')
 describe('StatusInfo', () => {
   const handleOnGoBackClick = jest.fn()
   const sut = (
-    <StatusInfo
+    <CheckStatusInfo
       id="status-info"
       onGoBackClick={handleOnGoBackClick}
       goBackText="back"
       checkAgainText="check"
-    >
-      <p data-testid="test">Child</p>
-    </StatusInfo>
+      checkStatusResponse={null}
+    />
   )
 
-  it('renders', () => {
+  it('renders with no result', () => {
     render(sut)
     //back will not be in document as it is mocked
     expect(screen.getByText('check')).toBeInTheDocument()
-    expect(screen.getByTestId('test')).toBeInTheDocument()
+    expect(screen.getByTestId('no-record')).toBeInTheDocument()
   })
 
   it('meets a11y', async () => {

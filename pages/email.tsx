@@ -69,14 +69,14 @@ export default function Email() {
   const formik = useFormik<EmailEsrfApiRequestBody>({
     initialValues,
     validationSchema: Yup.object({
-      dateOfBirth: Yup.date()
-        .required('date-of-birth.error.required')
-        .max(new Date(), 'dateOfBirth.error.current'),
       email: Yup.string()
         .required('email.error.required')
         .email('email.error.valid'),
       givenName: Yup.string().required('given-name.error.required'),
       surname: Yup.string().required('surname.error.required'),
+      dateOfBirth: Yup.date()
+        .required('date-of-birth.error.required')
+        .max(new Date(), 'date-of-birth.error.current'),
     }),
     validateOnBlur: false,
     validateOnChange: false,
@@ -98,17 +98,15 @@ export default function Email() {
       header={t('common:header', { returnObjects: true })}
       footer={t('common:footer', { returnObjects: true })}
     >
-      <h1 className="mb-4">{t('header')}</h1>
+      <h1 className="h1">{t('header')}</h1>
 
       {isEmailEsrfSuccess ? (
         <>
-          <h2 className="my-4">
-            {t('email-confirmation-msg.request-received')}
-          </h2>
-          <p className="mb-4">{t('email-confirmation-msg.if-exists')}</p>
-          <p className="mb-4">
+          <h2 className="h2">{t('email-confirmation-msg.request-received')}</h2>
+          <p>{t('email-confirmation-msg.if-exists')}</p>
+          <p>
             {t('email-confirmation-msg.please-contact')}{' '}
-            <b>{t('email-confirmation-msg.phone-number')}</b>.
+            <b>{t('common:phone-number')}</b>.
           </p>
           <LinkSummary
             title={t('common:contact-program')}
@@ -132,6 +130,7 @@ export default function Email() {
           <InputField
             id="email"
             name="email"
+            type="email"
             label={t('email.label')}
             onChange={formik.handleChange}
             value={formik.values.email}
@@ -177,7 +176,7 @@ export default function Email() {
             required
             helpMessage={t('help-message.date-of-birth')}
           />
-          <div className="flex gap-2 flex-wrap my-2">
+          <div className="flex gap-2 flex-wrap">
             <ActionButton
               id="btn-submit"
               disabled={isEmailEsrfLoading}

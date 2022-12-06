@@ -12,7 +12,7 @@ import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
-import { CheckStatusApiRequestQuery, StatusCode } from '../lib/types'
+import { CheckStatusApiRequestQuery } from '../lib/types'
 import { useCheckStatus } from '../lib/useCheckStatus'
 import Layout from '../components/Layout'
 import InputField from '../components/InputField'
@@ -22,7 +22,7 @@ import ErrorSummary, {
   getErrorSummaryItem,
 } from '../components/ErrorSummary'
 import LinkSummary, { LinkSummaryItem } from '../components/LinkSummary'
-import StatusInfo from '../components/StatusInfo'
+import CheckStatusInfo from '../components/CheckStatusInfo'
 import Modal from '../components/Modal'
 import { useIdleTimer } from 'react-idle-timer'
 import { deleteCookie } from 'cookies-next'
@@ -74,16 +74,12 @@ const Status: FC = () => {
   const formik = useFormik<CheckStatusApiRequestQuery>({
     initialValues,
     validationSchema: Yup.object({
+      esrf: Yup.string().required('esrf.error.required'),
+      givenName: Yup.string().required('given-name.error.required'),
+      surname: Yup.string().required('surname.error.required'),
       dateOfBirth: Yup.date()
         .required('date-of-birth.error.required')
         .max(new Date(), 'date-of-birth.error.current'),
-      esrf: Yup.string()
-        .required('esrf.error.required')
-        .max(8, 'esrf.error.length')
-        .trim()
-        .matches(/^[A-Za-z]/, 'esrf.error.starts-with-letter'),
-      givenName: Yup.string().required('given-name.error.required'),
-      surname: Yup.string().required('surname.error.required'),
     }),
     validateOnBlur: false,
     validateOnChange: false,
@@ -121,12 +117,16 @@ const Status: FC = () => {
   }, [formik, t])
 
   const handleOnGoBackClick: MouseEventHandler<HTMLButtonElement> = useCallback(
-    (e) => {
+    async (e) => {
       e.preventDefault()
+      if (checkStatusResponse) {
+        await router.push('/landing')
+        return
+      }
       formik.setStatus(undefined)
       removeCheckStatusResponse()
     },
-    [formik, removeCheckStatusResponse]
+    [formik, removeCheckStatusResponse, checkStatusResponse, router]
   )
 
   const handleOnESRFChange: ChangeEventHandler<HTMLInputElement> = useCallback(
@@ -145,83 +145,28 @@ const Status: FC = () => {
       header={t('common:header', { returnObjects: true })}
       footer={t('common:footer', { returnObjects: true })}
     >
-      <h1 className="mb-4">{t('header')}</h1>
+      <h1 className="h1">{t('header')}</h1>
       {(() => {
-        if (checkStatusResponse) {
+        if (checkStatusResponse !== undefined) {
           return (
             <>
-              <StatusInfo
-                id="reponse-result"
-                onGoBackClick={() => router.push('/landing')}
-                goBackText={t('reset')}
+              <CheckStatusInfo
+                id={
+                  checkStatusResponse === null
+                    ? 'response-no-result'
+                    : 'response-result'
+                }
+                onGoBackClick={handleOnGoBackClick}
+                goBackText={
+                  checkStatusResponse === null ? t('previous') : t('reset')
+                }
                 goBackStyle="primary"
                 checkAgainText={t('check-again')}
-              >
-                <div>
-                  <p className="mb-6 text-2xl">
-                    {`${t('status-is')} `}
-                    <strong id="response-status">
-                      {t(`status.${checkStatusResponse.status}.label`)}
-                    </strong>
-                    .
-                  </p>
-                  <p>{t(`status.${checkStatusResponse.status}.description`)}</p>
-                  {checkStatusResponse.manifestNumber &&
-                    [
-                      `${StatusCode.PASSPORT_ISSUED_SHIPPING_CANADA_POST}`,
-                      `${StatusCode.PASSPORT_ISSUED_SHIPPING_FEDEX}`,
-                    ].includes(checkStatusResponse.status) && (
-                      <p>
-                        {t(`status.${checkStatusResponse.status}.tracking`)}
-                        <strong>{checkStatusResponse.manifestNumber}</strong>
-                      </p>
-                    )}
-                </div>
-              </StatusInfo>
+                checkStatusResponse={checkStatusResponse}
+              />
               <LinkSummary
                 title={t('common:contact-program')}
                 links={lsItems}
-              ></LinkSummary>
-            </>
-          )
-        }
-
-        if (checkStatusResponse === null) {
-          return (
-            <>
-              <StatusInfo
-                id="reponse-no-result"
-                onGoBackClick={handleOnGoBackClick}
-                goBackText={t('previous')}
-                goBackStyle="primary"
-                checkAgainText={t('check-again')}
-              >
-                {/* <p className=" mb-6 text-2xl">{t('unable-to-find-status')}</p> */}
-                <div>
-                  <h2 className="mb-3 text-2xl">
-                    {t('cannot-provide-result.title')}
-                  </h2>
-                  <ul className="list-disc list-inside pb-3 ml-4 space-y-4">
-                    <li>{t('cannot-provide-result.reason1')}</li>
-                    <li>{t('cannot-provide-result.reason2')}</li>
-                    <li>{t('cannot-provide-result.reason3')}</li>
-                  </ul>
-                  <p>{t('please-verify')}</p>
-                  <p>{t('please-wait')}</p>
-                  <h2 className="mb-3 text-2xl">
-                    {t('still-unable.if-still-unable')}
-                  </h2>
-                  <ul className="list-disc list-inside pb-6 ml-4 space-y-4">
-                    <li>{t('still-unable.contact-call-center')}</li>
-                    <li>{t('still-unable.visit-in-person')}</li>
-                  </ul>
-                </div>
-              </StatusInfo>
-              <LinkSummary
-                title={t('no-match-title')}
-                links={t<string, LinkSummaryItem[]>('common:program-links', {
-                  returnObjects: true,
-                })}
               ></LinkSummary>
             </>
           )
