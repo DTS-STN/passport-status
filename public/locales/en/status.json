@@ -12,9 +12,7 @@
   "description": "Fill in the fields below to check the status of your passport application. Make sure your information matches your passport application form.",
   "esrf": {
     "error": {
-      "length": "The file number can have a maximum of 8 alphanumeric characters.",
-      "required": "The file number is required.",
-      "starts-with-letter": "The file number must begin with a letter (e.g. A1234567)."
+      "required": "The file number is required."
     },
     "label": "File number"
   },
