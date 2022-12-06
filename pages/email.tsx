@@ -108,12 +108,6 @@ export default function Email() {
             {t('email-confirmation-msg.please-contact')}{' '}
             <b>{t('common:phone-number')}</b>.
           </p>
-          <LinkSummary
-            title={t('common:contact-program')}
-            links={t<string, LinkSummaryItem[]>('common:program-links', {
-              returnObjects: true,
-            })}
-          />
         </>
       ) : (
         <form onSubmit={formik.handleSubmit} id="form-email-esrf">
