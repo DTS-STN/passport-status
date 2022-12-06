@@ -81,9 +81,6 @@ const Status: FC = () => {
   const formik = useFormik<CheckStatusApiRequestQuery>({
     initialValues,
     validationSchema: Yup.object({
-      dateOfBirth: Yup.date()
-        .required('date-of-birth.error.required')
-        .max(new Date(), 'date-of-birth.error.current'),
       esrf: Yup.string()
         .required('esrf.error.required')
         .max(8, 'esrf.error.length')
@@ -91,6 +88,9 @@ const Status: FC = () => {
         .matches(/^[A-Za-z]/, 'esrf.error.starts-with-letter'),
       givenName: Yup.string().required('given-name.error.required'),
       surname: Yup.string().required('surname.error.required'),
+      dateOfBirth: Yup.date()
+        .required('date-of-birth.error.required')
+        .max(new Date(), 'date-of-birth.error.current'),
     }),
     validateOnBlur: false,
     validateOnChange: false,

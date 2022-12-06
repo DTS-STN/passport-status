@@ -76,14 +76,14 @@ export default function Email() {
   const formik = useFormik<EmailEsrfApiRequestBody>({
     initialValues,
     validationSchema: Yup.object({
-      dateOfBirth: Yup.date()
-        .required('date-of-birth.error.required')
-        .max(new Date(), 'dateOfBirth.error.current'),
       email: Yup.string()
         .required('email.error.required')
         .email('email.error.valid'),
       givenName: Yup.string().required('given-name.error.required'),
       surname: Yup.string().required('surname.error.required'),
+      dateOfBirth: Yup.date()
+        .required('date-of-birth.error.required')
+        .max(new Date(), 'date-of-birth.error.current'),
     }),
     validateOnBlur: false,
     validateOnChange: false,

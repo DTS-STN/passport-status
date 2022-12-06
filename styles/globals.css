@@ -48,7 +48,7 @@
     @apply font-display;
     @apply text-4xl;
     @apply mt-9;
-    @apply mb-3;
+    @apply mb-8;
   }
   .h1::after {
     content: "";
