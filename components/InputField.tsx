@@ -29,23 +29,35 @@ const InputField: FC<InputFieldProps> = ({
   max,
   helpMessage,
 }) => {
+  const inputErrorMessageId = `input-${id}-error`
+  const inputHelpMessageId = `input-${id}-help`
+  const inputWrapperId = `input-${id}`
+  const inputLabelId = `input-${id}-label`
+
+  const getAriaDescribedby = () => {
+    const ariaDescribedby: string[] = []
+    if (errorMessage) ariaDescribedby.push(inputErrorMessageId)
+    if (helpMessage) ariaDescribedby.push(inputHelpMessageId)
+    return ariaDescribedby.length > 0 ? ariaDescribedby.join(' ') : undefined
+  }
+
   return (
-    <div className="mb-4" id={`input-${id}`} data-testid={id}>
+    <div className="mb-4" id={inputWrapperId} data-testid={id}>
       <InputLabel
-        id={`input-${id}-label`}
+        id={inputLabelId}
         htmlFor={id}
         required={required}
         label={label}
         textRequired={textRequired}
       />
       {errorMessage && (
-        <InputErrorMessage id={`input-${id}-error`} message={errorMessage} />
+        <InputErrorMessage id={inputErrorMessageId} message={errorMessage} />
       )}
       <input
-        aria-describedby={helpMessage && `input-${id}-help`}
-        aria-invalid={!!errorMessage}
-        aria-label={`input-${id}-label`}
-        aria-required={required}
+        aria-describedby={getAriaDescribedby()}
+        aria-invalid={errorMessage ? true : undefined}
+        aria-label={inputLabelId}
+        aria-required={required ? true : undefined}
         className={`block h-9 py-1.5 px-3 border rounded ${
           errorMessage ? 'border-accent-error' : 'border-neutral-400'
         } focus:outline-none focus:border-sky-500 focus:ring-sky-500`}
@@ -59,7 +71,7 @@ const InputField: FC<InputFieldProps> = ({
       {helpMessage && (
         <div
           className="text-gray-helpText text-base max-w-prose mt-1.5"
-          id={`input-${id}-help`}
+          id={inputHelpMessageId}
         >
           {helpMessage}
         </div>

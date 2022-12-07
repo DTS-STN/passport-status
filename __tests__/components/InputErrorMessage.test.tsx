@@ -6,11 +6,14 @@ import InputErrorMessage from '../../components/InputErrorMessage'
 expect.extend(toHaveNoViolations)
 
 describe('InputErrorMessage', () => {
-  const { container } = render(<InputErrorMessage message="message" />)
+  const { container } = render(
+    <InputErrorMessage message="error message here" />
+  )
 
   it('renders', () => {
-    const sut = screen.getByText('message')
+    const sut = screen.getByTestId('input-error-message')
     expect(sut).toBeInTheDocument()
+    expect(sut.textContent).toEqual('error message here')
   })
 
   it('is meets a11y', async () => {

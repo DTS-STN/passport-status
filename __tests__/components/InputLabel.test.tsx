@@ -6,7 +6,9 @@ import { axe, toHaveNoViolations } from 'jest-axe'
 expect.extend(toHaveNoViolations)
 
 describe('InputLabel', () => {
-  const { container } = render(<InputLabel id="id" label="label" />)
+  const { container } = render(
+    <InputLabel id="id" label="label" htmlFor="input" />
+  )
 
   it('renders', () => {
     const sut = screen.getByText('label')
