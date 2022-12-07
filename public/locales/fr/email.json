@@ -41,9 +41,12 @@
     "button": "Conditions de confidentialité et de courriel"
   },
   "help-message": {
-    "email": "Fournissez votre adresse courriel complète comme indiqué sur le formulaire de demande de passeport. Pour les demandes d'enfants, fournissez l'adresse courriel complète du parent ou du tuteur légal du demandeur exactement comme indiqué sur la demande de passeport.",
-    "given-name": "Veuillez utiliser le(s) prénom(s) exactement comme indiqué sur votre demande de passeport. Pour les demandes d'enfants, indiquez le(s) prénom(s) de l'enfant tel qu'indiqué sur la demande de passeport. Veuillez noter que le(s) prénom(s) fourni(s) peuvent avoir été mis à jour pour refléter le(s) premier(s) prénom(s) sur votre preuve de citoyenneté canadienne ou pièce d'identité à l'appui.",
-    "surname": "Veuillez utiliser le nom de famille exactement comme indiqué sur votre demande de passeport. Pour les demandes d'enfant, indiquez le nom de famille de l'enfant tel qu'indiqué sur la demande de passeport. Veuillez noter que le nom de famille fourni peut avoir été mis à jour pour refléter le nom de famille sur votre preuve de citoyenneté canadienne ou pièce d'identité à l'appui.",
-    "date-of-birth": "Veuillez indiquer votre date de naissance telle qu'elle figure sur votre demande de passeport. Pour les demandes d'enfant, indiquez la date de naissance de l'enfant comme indiqué sur la demande de passeport. Veuillez noter que la date de naissance fournie peut avoir été mise à jour pour refléter la date de naissance sur votre preuve de citoyenneté canadienne."
+    "email": "Indiquez votre adresse électronique complète, telle qu'elle figure sur le formulaire de demande de passeport. Pour les demandes concernant des enfants, fournissez l'adresse électronique complète du parent ou du tuteur légal du demandeur, exactement comme indiqué sur la demande de passeport."
+  },
+  "header-messages": {
+    "fill-in-field": "Remplissez les champs ci-dessous pour obtenir votre numéro de dossier. Nous vous enverrons ensuite le numéro de dossier à l'adresse électronique indiquée dans votre dossier.",
+    "matches": "Assurez-vous que vos informations correspondent à votre formulaire de demande de passeport.",
+    "for-child": "Pour les demandes concernant des enfants, utilisez le(s) prénom(s) et le nom de famille de l'enfant exactement comme indiqué sur sa demande de passeport.",
+    "passport-officer": "Lors de la saisie de la demande dans notre système, l'agent des passeports peut avoir mis à jour les informations de la demande pour qu'elles correspondent aux informations fournies sur la preuve de citoyenneté ou sur les pièces d'identité justificatives. Ces renseignements peuvent différer des renseignements préférés pour vous ou votre enfant."
   }
 }

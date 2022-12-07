@@ -41,9 +41,12 @@
     "button": "Privacy and Email terms"
   },
   "help-message": {
-    "email": "Provide your full email address as provided on the passport application form. For child applications, provide the full email address for the applicant parent or legal guardian exactly as provided on the passport application.",
-    "given-name": "Please use the given name(s) exactly as provided on your passport application. For child applications, provide the child's given name(s) as provided on the passport application. Please note that the given name(s) provided may have been updated to reflect the first given name(s) on your proof of Canadian citizenship or supporting identification.",
-    "surname": "Please use the surname exactly as provided on your passport application. For child applications, provide the child's surname as provided on the passport application. Please note that the surname provided may have been updated to reflect the surname on your proof of Canadian citizenship or supporting identification.",
-    "date-of-birth": "Please provide your date of birth as provided on your passport application. For child applications, provide the child's date of birth as provided on the passport application. Please note that the date of birth provided may have been updated to reflect the date of birth on your proof of Canadian citizenship."
+    "email": "Provide your full email address exactly as provided on the passport application form. For child applications, provide the full email address for the applicant parent or legal guardian exactly as provided on the passport application."
+  },
+  "header-messages": {
+    "fill-in-field": "Fill in the fields below to get your file number. We'll then email the file number to the email address on file.",
+    "matches": "Make sure your information matches your passport application form.",
+    "for-child": "For child applications, use the child's given name(s) and surname exactly as provided on their passport application.",
+    "passport-officer": "When entering the application into our system, the passport officer may have updated information in the application to match the information provided on the proof of citizenship or supporting identification. This may differ from preferred information for you or your child."
   }
 }

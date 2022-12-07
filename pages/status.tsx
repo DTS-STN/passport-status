@@ -5,6 +5,7 @@ import {
   useCallback,
   useMemo,
   useState,
+  useEffect,
 } from 'react'
 import { GetStaticProps } from 'next'
 import { useRouter } from 'next/router'
@@ -81,11 +82,7 @@ const Status: FC = () => {
   const formik = useFormik<CheckStatusApiRequestQuery>({
     initialValues,
     validationSchema: Yup.object({
-      esrf: Yup.string()
-        .required('esrf.error.required')
-        .max(8, 'esrf.error.length')
-        .trim()
-        .matches(/^[A-Za-z]/, 'esrf.error.starts-with-letter'),
+      esrf: Yup.string().required('esrf.error.required'),
       givenName: Yup.string().required('given-name.error.required'),
       surname: Yup.string().required('surname.error.required'),
       dateOfBirth: Yup.date()
@@ -147,6 +144,11 @@ const Status: FC = () => {
     [formik]
   )
 
+  //When the page is conditionally rendered it maintains its spot on the page. When the component mounts and every time checkStatusResponse changes, this will force scroll to the top of the page.
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [checkStatusResponse])
+
   //if the api failed, fail hard to show error page
   if (checkStatusError) throw checkStatusError
 
@@ -185,7 +187,12 @@ const Status: FC = () => {
 
         return (
           <form onSubmit={formik.handleSubmit} id="form-get-status">
-            <p>{t('description')}</p>
+            <p>{t('header-messages.fill-in-field')}</p>
+            <p>
+              <strong>{t('header-messages.matches')}</strong>
+            </p>
+            <p>{t('header-messages.for-child')}</p>
+            <p>{t('header-messages.passport-officer')}</p>
             {errorSummary.length > 0 && (
               <ErrorSummary
                 id="error-summary-get-status"
@@ -204,7 +211,6 @@ const Status: FC = () => {
               errorMessage={formik.errors.esrf && t(formik.errors.esrf)}
               textRequired={t('common:required')}
               required
-              helpMessage={t('help-message.esrf')}
             />
             <InputField
               id="givenName"
@@ -217,7 +223,6 @@ const Status: FC = () => {
               }
               textRequired={t('common:required')}
               required
-              helpMessage={t('help-message.given-name')}
             />
             <InputField
               id="surname"
@@ -228,7 +233,6 @@ const Status: FC = () => {
               errorMessage={formik.errors.surname && t(formik.errors.surname)}
               textRequired={t('common:required')}
               required
-              helpMessage={t('help-message.surname')}
             />
             <InputField
               id="dateOfBirth"
@@ -243,7 +247,6 @@ const Status: FC = () => {
               textRequired={t('common:required')}
               max={'9999-12-31'}
               required
-              helpMessage={t('help-message.date-of-birth')}
             />
             <div className="flex gap-2 flex-wrap">
               <ActionButton

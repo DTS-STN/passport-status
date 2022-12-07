@@ -12,9 +12,7 @@
   "description": "Fill in the fields below to check the status of your passport application. Make sure your information matches your passport application form.",
   "esrf": {
     "error": {
-      "length": "The file number can have a maximum of 8 alphanumeric characters.",
-      "required": "The file number is required.",
-      "starts-with-letter": "The file number must begin with a letter (e.g. A1234567)."
+      "required": "The file number is required."
     },
     "label": "File number"
   },
@@ -78,12 +76,6 @@
     "contact-call-center": "Contact the Passport Call Centre (insert phone #).",
     "visit-in-person": "Visit an in-person Service Canada Centre nearest you (link to FSCO)"
   },
-  "help-message": {
-    "esrf": "When submitting your application in-person, you are provided with a File Number. The File Number begins with at least 1 letter and has a maximum of 8 total characters. (Examples of possible formats: “A1234567” or “AA123456” or “A123456” or “AA12345”)",
-    "given-name": "Please use the given name(s) exactly as provided on your passport application. For child applications, provide the child's given name(s) as provided on the passport application. Please note that the given name(s) provided may have been updated to reflect the first given name(s) on your proof of Canadian citizenship or supporting identification.",
-    "surname": "Please use the surname exactly as provided on your passport application. For child applications, provide the child's surname as provided on the passport application. Please note that the surname provided may have been updated to reflect the surname on your proof of Canadian citizenship or supporting identification.",
-    "date-of-birth": "Please provide your date of birth as provided on your passport application. For child applications, provide the child's date of birth as provided on the passport application. Please note that the date of birth provided may have been updated to reflect the date of birth on your proof of Canadian citizenship."
-  },
   "no-record": {
     "cannot-give-status": {
       "description": "We can't give you your application status right now because:",
@@ -144,5 +136,11 @@
       "canada-post": "https://www.canadapost-postescanada.ca/track-reperage/en?referenceNumber={{trackingNumber}}#/details/{{trackingNumber}}",
       "fedex": "https://www.fedex.com/fedextrack/?action=track&cntry_code=ca&locale=en_ca&trackingnumber={{trackingNumber}}"
     }
+  },
+  "header-messages": {
+    "fill-in-field": "Fill in the fields below to check the status of your passport application.",
+    "matches": "Make sure your information matches your passport application form.",
+    "for-child": "For child applications, use the child's given name(s) and surname exactly as provided on their passport application.",
+    "passport-officer": "When entering the application into our system, the passport officer may have updated information in the application to match the information provided on the proof of citizenship or supporting identification. This may differ from preferred information for you or your child."
   }
 }
