@@ -6,6 +6,11 @@ import ErrorSummary from '../../components/ErrorSummary'
 expect.extend(toHaveNoViolations)
 
 describe('ErrorSummary', () => {
+  /**
+   * @see https://stackoverflow.com/a/60225417
+   */
+  window.HTMLElement.prototype.scrollIntoView = jest.fn()
+
   const { container } = render(
     <ErrorSummary
       id="id"

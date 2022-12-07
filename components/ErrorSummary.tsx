@@ -1,6 +1,6 @@
 import { FormikErrors } from 'formik'
 import { TFunction } from 'next-i18next'
-import { FC } from 'react'
+import { FC, useEffect } from 'react'
 
 export interface ErrorSummaryItem {
   feildId: string
@@ -21,7 +21,10 @@ export const getErrorSummaryItem = (
   errorMessage,
 })
 
-export function GetErrorSummary<T>(formErrors: FormikErrors<T>, t: TFunction) {
+export const getErrorSummaryItems = <T extends unknown>(
+  formErrors: FormikErrors<T>,
+  t: TFunction
+) => {
   return Object.keys(formErrors)
     .filter((key) => !!formErrors[key as keyof typeof formErrors])
     .map((key) =>
@@ -32,9 +35,25 @@ export function GetErrorSummary<T>(formErrors: FormikErrors<T>, t: TFunction) {
     )
 }
 
+export const goToErrorSummary = (errorSummaryId: string) => {
+  const errorSummaryEl = document.querySelector<HTMLElement>(
+    `#${errorSummaryId}`
+  )
+  errorSummaryEl?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+  errorSummaryEl?.focus()
+}
+
 const ErrorSummary: FC<ErrorSummaryProps> = ({ id, errors, summary }) => {
+  useEffect(() => {
+    goToErrorSummary(id)
+  }, [id])
+
   return (
-    <section id={id} className="border-l-6 border-accent-error mb-5 p-5">
+    <section
+      id={id}
+      className="border-l-6 border-accent-error mb-5 p-5"
+      tabIndex={-1}
+    >
       <h2 className="text-2xl font-bold mb-3">{summary}</h2>
       <ul className="list-disc space-y-2 pl-10">
         {errors.map(({ feildId, errorMessage }, index) => (
