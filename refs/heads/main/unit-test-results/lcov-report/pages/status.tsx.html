@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">44% </span>
+                <span class="strong">43.39% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>22/50</span>
+                <span class='fraction'>23/53</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">30% </span>
+                <span class="strong">32.35% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>9/30</span>
+                <span class='fraction'>11/34</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">23.07% </span>
+                <span class="strong">21.42% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>3/13</span>
+                <span class='fraction'>3/14</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">45.83% </span>
+                <span class="strong">45.09% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>22/48</span>
+                <span class='fraction'>23/51</span>
             </div>
         
             
@@ -361,7 +361,17 @@
 <a name='L296'></a><a href='#L296'>296</a>
 <a name='L297'></a><a href='#L297'>297</a>
 <a name='L298'></a><a href='#L298'>298</a>
-<a name='L299'></a><a href='#L299'>299</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L299'></a><a href='#L299'>299</a>
+<a name='L300'></a><a href='#L300'>300</a>
+<a name='L301'></a><a href='#L301'>301</a>
+<a name='L302'></a><a href='#L302'>302</a>
+<a name='L303'></a><a href='#L303'>303</a>
+<a name='L304'></a><a href='#L304'>304</a>
+<a name='L305'></a><a href='#L305'>305</a>
+<a name='L306'></a><a href='#L306'>306</a>
+<a name='L307'></a><a href='#L307'>307</a>
+<a name='L308'></a><a href='#L308'>308</a>
+<a name='L309'></a><a href='#L309'>309</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -420,6 +430,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -621,6 +637,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -713,14 +733,20 @@ const Status: FC = () =&gt; {
   const [isIdle, setIsIdle] = useState(false)
 &nbsp;
   const handleOnIdleTimerIdle = useCallback(<span class="fstat-no" title="function not covered" >()</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >    deleteCookie('agreed-to-email-esrf-terms')</span>
+<span class="cstat-no" title="statement not covered" >    router.push('/landing')</span>
+  }, [router])
+&nbsp;
+  const handleOnIdleTimerPrompt = useCallback(<span class="fstat-no" title="function not covered" >()</span> =&gt; {
 <span class="cstat-no" title="statement not covered" >    setIsIdle(true)</span>
 <span class="cstat-no" title="statement not covered" >    setModalOpen(true)</span>
   }, [])
 &nbsp;
   const { reset: resetIdleTimer } = useIdleTimer({
     onIdle: handleOnIdleTimerIdle,
-    //15 minute timeout
-    timeout: 15 * 60 * 1000,
+    onPrompt: handleOnIdleTimerPrompt,
+    timeout: 10 * 60 * 1000, //10 minutes
+    promptTimeout: 5 * 60 * 1000, //5 minutes
   })
 &nbsp;
   const handleOnModalRedirectButtonClick = useCallback(<span class="fstat-no" title="function not covered" >()</span> =&gt; {
@@ -928,13 +954,17 @@ const Status: FC = () =&gt; {
         open={modalOpen}
         actionButtons={[
           {
-            text: t('common:modal.yes-button'),
+            text: isIdle
+              ? <span class="branch-0 cbranch-no" title="branch not covered" >t('common:modal.idle-end-session')</span>
+              : t('common:modal.yes-button'),
             onClick: handleOnModalRedirectButtonClick,
             style: 'primary',
             type: 'button',
           },
           {
-            text: t('common:modal.no-button'),
+            text: isIdle
+              ? <span class="branch-0 cbranch-no" title="branch not covered" >t('common:modal.idle-continue-session')</span>
+              : t('common:modal.no-button'),
             onClick: handleOnModalResetButtonClick,
             style: 'default',
             type: 'button',
@@ -964,7 +994,7 @@ export default Status
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-12-07T19:11:58.076Z
+                at 2022-12-07T19:42:41.781Z
             </div>
         <script src="../prettify.js"></script>
         <script>
