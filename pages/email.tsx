@@ -1,4 +1,4 @@
-import { useFormik } from 'formik'
+import { useFormik, validateYupSchema, yupToFormErrors } from 'formik'
 import * as Yup from 'yup'
 import { GetStaticProps } from 'next'
 import { useRouter } from 'next/router'
@@ -8,7 +8,8 @@ import Layout from '../components/Layout'
 import { useMemo, useState, useCallback } from 'react'
 import ErrorSummary, {
   ErrorSummaryItem,
-  GetErrorSummary,
+  getErrorSummaryItems,
+  goToErrorSummary,
 } from '../components/ErrorSummary'
 import InputField from '../components/InputField'
 import ActionButton from '../components/ActionButton'
@@ -24,6 +25,17 @@ const initialValues: EmailEsrfApiRequestBody = {
   givenName: '',
   surname: '',
 }
+
+const validationSchema = Yup.object({
+  email: Yup.string()
+    .required('email.error.required')
+    .email('email.error.valid'),
+  givenName: Yup.string().required('given-name.error.required'),
+  surname: Yup.string().required('surname.error.required'),
+  dateOfBirth: Yup.date()
+    .required('date-of-birth.error.required')
+    .max(new Date(), 'date-of-birth.error.current'),
+})
 
 export default function Email() {
   const { t } = useTranslation('email')
@@ -59,33 +71,39 @@ export default function Email() {
   }, [isIdle, resetIdleTimer])
 
   const {
+    error: emailEsrfError,
     isLoading: isEmailEsrfLoading,
     isSuccess: isEmailEsrfSuccess,
-    error: emailEsrfError,
     mutate: emailEsrf,
   } = useEmailEsrf()
 
-  const formik = useFormik<EmailEsrfApiRequestBody>({
+  const {
+    errors: formikErrors,
+    handleChange: handleFormikChange,
+    handleSubmit: handleFormikSubmit,
+    values: formikValues,
+  } = useFormik<EmailEsrfApiRequestBody>({
     initialValues,
-    validationSchema: Yup.object({
-      email: Yup.string()
-        .required('email.error.required')
-        .email('email.error.valid'),
-      givenName: Yup.string().required('given-name.error.required'),
-      surname: Yup.string().required('surname.error.required'),
-      dateOfBirth: Yup.date()
-        .required('date-of-birth.error.required')
-        .max(new Date(), 'date-of-birth.error.current'),
-    }),
+    onSubmit: (values) => emailEsrf(values),
+    validate: async (values) => {
+      // manually validate with yup, scroll and focus error summary section element on errors
+      try {
+        await validateYupSchema(values, validationSchema)
+        // empty errors
+        return {}
+      } catch (yupError) {
+        goToErrorSummary('error-summary-email-esrf')
+        return yupToFormErrors(yupError)
+      }
+    },
     validateOnBlur: false,
     validateOnChange: false,
     validateOnMount: false,
-    onSubmit: (values) => emailEsrf(values),
   })
 
-  const errorSummary = useMemo<ErrorSummaryItem[]>(
-    () => GetErrorSummary(formik.errors, t),
-    [formik, t]
+  const errorSummaryItems = useMemo<ErrorSummaryItem[]>(
+    () => getErrorSummaryItems(formikErrors, t),
+    [formikErrors, t]
   )
 
   //if the api failed, fail hard to show error page
@@ -109,20 +127,20 @@ export default function Email() {
           </p>
         </>
       ) : (
-        <form onSubmit={formik.handleSubmit} id="form-email-esrf">
+        <form onSubmit={handleFormikSubmit} id="form-email-esrf">
           <p>{t('header-messages.fill-in-field')}</p>
           <p>
             <strong>{t('header-messages.matches')}</strong>
           </p>
           <p>{t('header-messages.for-child')}</p>
           <p>{t('header-messages.passport-officer')}</p>
-          {errorSummary.length > 0 && (
+          {errorSummaryItems.length > 0 && (
             <ErrorSummary
               id="error-summary-email-esrf"
               summary={t('common:found-errors', {
-                count: errorSummary.length,
+                count: errorSummaryItems.length,
               })}
-              errors={errorSummary}
+              errors={errorSummaryItems}
             />
           )}
           <InputField
@@ -130,9 +148,9 @@ export default function Email() {
             name="email"
             type="email"
             label={t('email.label')}
-            onChange={formik.handleChange}
-            value={formik.values.email}
-            errorMessage={formik.errors.email && t(formik.errors.email)}
+            onChange={handleFormikChange}
+            value={formikValues.email}
+            errorMessage={formikErrors.email && t(formikErrors.email)}
             textRequired={t('common:required')}
             required
             helpMessage={t('help-message.email')}
@@ -141,9 +159,9 @@ export default function Email() {
             id="givenName"
             name="givenName"
             label={t('given-name.label')}
-            onChange={formik.handleChange}
-            value={formik.values.givenName}
-            errorMessage={formik.errors.givenName && t(formik.errors.givenName)}
+            onChange={handleFormikChange}
+            value={formikValues.givenName}
+            errorMessage={formikErrors.givenName && t(formikErrors.givenName)}
             textRequired={t('common:required')}
             required
           />
@@ -151,9 +169,9 @@ export default function Email() {
             id="surname"
             name="surname"
             label={t('surname.label')}
-            onChange={formik.handleChange}
-            value={formik.values.surname}
-            errorMessage={formik.errors.surname && t(formik.errors.surname)}
+            onChange={handleFormikChange}
+            value={formikValues.surname}
+            errorMessage={formikErrors.surname && t(formikErrors.surname)}
             textRequired={t('common:required')}
             required
           />
@@ -162,10 +180,10 @@ export default function Email() {
             name="dateOfBirth"
             type="date"
             label={t('date-of-birth.label')}
-            onChange={formik.handleChange}
-            value={formik.values.dateOfBirth}
+            onChange={handleFormikChange}
+            value={formikValues.dateOfBirth}
             errorMessage={
-              formik.errors.dateOfBirth && t(formik.errors.dateOfBirth)
+              formikErrors.dateOfBirth && t(formikErrors.dateOfBirth)
             }
             max={'9999-12-31'}
             textRequired={t('common:required')}
