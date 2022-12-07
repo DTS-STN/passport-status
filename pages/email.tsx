@@ -44,9 +44,8 @@ export default function Email() {
   const { reset: resetIdleTimer } = useIdleTimer({
     onIdle: handleOnIdleTimerIdle,
     onPrompt: handleOnIdleTimerPrompt,
-    //10 minute timeout followed by a 5 minute prompt timeout
-    timeout: 15 * 40 * 1000,
-    promptTimeout: 15 * 20 * 1000,
+    timeout: 10 * 60 * 1000, //10 minutes
+    promptTimeout: 5 * 60 * 1000, //5 minutes
   })
 
   const handleOnModalRedirectButtonClick = useCallback(() => {
