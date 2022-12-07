@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1670437146388" clover="3.2.0">
-  <project timestamp="1670437146388" name="All files">
-    <metrics statements="310" coveredstatements="191" conditionals="198" coveredconditionals="86" methods="91" coveredmethods="52" elements="599" coveredelements="329" complexity="0" loc="310" ncloc="310" packages="7" files="39" classes="39"/>
+<coverage generated="1670439901825" clover="3.2.0">
+  <project timestamp="1670439901825" name="All files">
+    <metrics statements="319" coveredstatements="200" conditionals="206" coveredconditionals="96" methods="92" coveredmethods="53" elements="617" coveredelements="349" complexity="0" loc="319" ncloc="319" packages="7" files="39" classes="39"/>
     <package name="components">
-      <metrics statements="78" coveredstatements="64" conditionals="54" coveredconditionals="38" methods="25" coveredmethods="21"/>
+      <metrics statements="87" coveredstatements="73" conditionals="62" coveredconditionals="48" methods="26" coveredmethods="22"/>
       <file name="ActionButton.tsx" path="/home/runner/work/passport-status/passport-status/components/ActionButton.tsx">
         <metrics statements="9" coveredstatements="9" conditionals="6" coveredconditionals="4" methods="1" coveredmethods="1"/>
         <line num="18" count="7" type="stmt"/>
@@ -78,19 +78,28 @@
       </file>
       <file name="InputErrorMessage.tsx" path="/home/runner/work/passport-status/passport-status/components/InputErrorMessage.tsx">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="8" count="3" type="stmt"/>
-        <line num="9" count="1" type="stmt"/>
+        <line num="8" count="4" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
       </file>
       <file name="InputField.tsx" path="/home/runner/work/passport-status/passport-status/components/InputField.tsx">
-        <metrics statements="3" coveredstatements="3" conditionals="10" coveredconditionals="7" methods="1" coveredmethods="1"/>
+        <metrics statements="12" coveredstatements="12" conditionals="18" coveredconditionals="17" methods="2" coveredmethods="2"/>
         <line num="19" count="3" type="stmt"/>
-        <line num="32" count="1" type="stmt"/>
-        <line num="71" count="3" type="stmt"/>
+        <line num="32" count="2" type="stmt"/>
+        <line num="33" count="2" type="stmt"/>
+        <line num="34" count="2" type="stmt"/>
+        <line num="35" count="2" type="stmt"/>
+        <line num="37" count="2" type="stmt"/>
+        <line num="38" count="2" type="stmt"/>
+        <line num="39" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="40" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="41" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="44" count="2" type="stmt"/>
+        <line num="83" count="3" type="stmt"/>
       </file>
       <file name="InputLabel.tsx" path="/home/runner/work/passport-status/passport-status/components/InputLabel.tsx">
         <metrics statements="2" coveredstatements="2" conditionals="4" coveredconditionals="2" methods="1" coveredmethods="1"/>
-        <line num="11" count="3" type="stmt"/>
-        <line num="18" count="1" type="stmt"/>
+        <line num="11" count="4" type="stmt"/>
+        <line num="18" count="3" type="stmt"/>
       </file>
       <file name="Layout.tsx" path="/home/runner/work/passport-status/passport-status/components/Layout.tsx">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
