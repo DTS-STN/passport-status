@@ -116,6 +116,7 @@ const Status: FC = () => {
     formikStatus === 'submitted' ? formikValues : initialValues,
     {
       enabled: formikStatus === 'submitted',
+      onSuccess: () => window.scrollTo(0, 0),
     }
   )
 
@@ -133,6 +134,7 @@ const Status: FC = () => {
       }
       setFormikStatus(undefined)
       removeCheckStatusResponse()
+      window.scrollTo(0, 0)
     },
     [checkStatusResponse, setFormikStatus, removeCheckStatusResponse, router]
   )
@@ -143,11 +145,6 @@ const Status: FC = () => {
     },
     [setFormikFieldValue]
   )
-
-  //When the page is conditionally rendered it maintains its spot on the page. When the component mounts and every time checkStatusResponse changes, this will force scroll to the top of the page.
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [checkStatusResponse])
 
   //if the api failed, fail hard to show error page
   if (checkStatusError) throw checkStatusError
