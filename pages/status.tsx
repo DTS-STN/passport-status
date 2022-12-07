@@ -11,7 +11,7 @@ import { GetStaticProps } from 'next'
 import { useRouter } from 'next/router'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import { useFormik } from 'formik'
+import { useFormik, validateYupSchema, yupToFormErrors } from 'formik'
 import * as Yup from 'yup'
 import { CheckStatusApiRequestQuery } from '../lib/types'
 import { useCheckStatus } from '../lib/useCheckStatus'
@@ -20,7 +20,8 @@ import InputField from '../components/InputField'
 import ActionButton from '../components/ActionButton'
 import ErrorSummary, {
   ErrorSummaryItem,
-  getErrorSummaryItem,
+  getErrorSummaryItems,
+  goToErrorSummary,
 } from '../components/ErrorSummary'
 import LinkSummary, { LinkSummaryItem } from '../components/LinkSummary'
 import CheckStatusInfo from '../components/CheckStatusInfo'
@@ -34,6 +35,15 @@ const initialValues: CheckStatusApiRequestQuery = {
   givenName: '',
   surname: '',
 }
+
+const validationSchema = Yup.object({
+  esrf: Yup.string().required('esrf.error.required'),
+  givenName: Yup.string().required('given-name.error.required'),
+  surname: Yup.string().required('surname.error.required'),
+  dateOfBirth: Yup.date()
+    .required('date-of-birth.error.required')
+    .max(new Date(), 'date-of-birth.error.current'),
+})
 
 const Status: FC = () => {
   const { t } = useTranslation('status')
@@ -68,55 +78,52 @@ const Status: FC = () => {
     }
   }, [isIdle, resetIdleTimer])
 
-  const lsItems = t<string, LinkSummaryItem[]>('common:program-links', {
-    returnObjects: true,
-  })
-
-  const formik = useFormik<CheckStatusApiRequestQuery>({
+  const {
+    errors: formikErrors,
+    handleChange: handleFormikChange,
+    handleSubmit: handleFormikSubmit,
+    setFieldValue: setFormikFieldValue,
+    setStatus: setFormikStatus,
+    status: formikStatus,
+    values: formikValues,
+  } = useFormik<CheckStatusApiRequestQuery>({
     initialValues,
-    validationSchema: Yup.object({
-      esrf: Yup.string().required('esrf.error.required'),
-      givenName: Yup.string().required('given-name.error.required'),
-      surname: Yup.string().required('surname.error.required'),
-      dateOfBirth: Yup.date()
-        .required('date-of-birth.error.required')
-        .max(new Date(), 'date-of-birth.error.current'),
-    }),
-    validateOnBlur: false,
-    validateOnChange: false,
-    validateOnMount: false,
-    onReset: (_, { setStatus }) => {
-      setStatus(undefined)
-      removeCheckStatusResponse()
-    },
     onSubmit: (_, { setStatus }) => {
       setStatus('submitted')
     },
+    validate: async (values) => {
+      // manually validate with yup, scroll and focus error summary section element on errors
+      try {
+        await validateYupSchema(values, validationSchema)
+        // empty errors
+        return {}
+      } catch (yupError) {
+        goToErrorSummary('error-summary-get-status')
+        return yupToFormErrors(yupError)
+      }
+    },
+    validateOnBlur: false,
+    validateOnChange: false,
+    validateOnMount: false,
   })
 
   const {
-    isLoading: isCheckStatusLoading,
-    error: checkStatusError,
     data: checkStatusResponse,
+    error: checkStatusError,
+    isLoading: isCheckStatusLoading,
     remove: removeCheckStatusResponse,
   } = useCheckStatus(
-    formik.status === 'submitted' ? formik.values : initialValues,
+    formikStatus === 'submitted' ? formikValues : initialValues,
     {
-      enabled: formik.status === 'submitted',
+      enabled: formikStatus === 'submitted',
       onSuccess: () => window.scrollTo(0, 0),
     }
   )
 
-  const errorSummary = useMemo<ErrorSummaryItem[]>(() => {
-    return Object.keys(formik.errors)
-      .filter((key) => !!formik.errors[key as keyof typeof formik.errors])
-      .map((key) =>
-        getErrorSummaryItem(
-          key,
-          t(formik.errors[key as keyof typeof formik.errors] as string)
-        )
-      )
-  }, [formik, t])
+  const errorSummaryItems = useMemo<ErrorSummaryItem[]>(
+    () => getErrorSummaryItems(formikErrors, t),
+    [formikErrors, t]
+  )
 
   const handleOnGoBackClick: MouseEventHandler<HTMLButtonElement> = useCallback(
     async (e) => {
@@ -125,18 +132,18 @@ const Status: FC = () => {
         await router.push('/landing')
         return
       }
-      formik.setStatus(undefined)
+      setFormikStatus(undefined)
       removeCheckStatusResponse()
       window.scrollTo(0, 0)
     },
-    [formik, removeCheckStatusResponse, checkStatusResponse, router]
+    [checkStatusResponse, setFormikStatus, removeCheckStatusResponse, router]
   )
 
   const handleOnESRFChange: ChangeEventHandler<HTMLInputElement> = useCallback(
     ({ target }) => {
-      formik.setFieldValue(target.name, target.value.replace(/[^a-z0-9]/gi, ''))
+      setFormikFieldValue(target.name, target.value.replace(/[^a-z0-9]/gi, ''))
     },
-    [formik]
+    [setFormikFieldValue]
   )
 
   //if the api failed, fail hard to show error page
@@ -169,27 +176,29 @@ const Status: FC = () => {
               />
               <LinkSummary
                 title={t('common:contact-program')}
-                links={lsItems}
+                links={t<string, LinkSummaryItem[]>('common:program-links', {
+                  returnObjects: true,
+                })}
               ></LinkSummary>
             </>
           )
         }
 
         return (
-          <form onSubmit={formik.handleSubmit} id="form-get-status">
+          <form onSubmit={handleFormikSubmit} id="form-get-status">
             <p>{t('header-messages.fill-in-field')}</p>
             <p>
               <strong>{t('header-messages.matches')}</strong>
             </p>
             <p>{t('header-messages.for-child')}</p>
             <p>{t('header-messages.passport-officer')}</p>
-            {errorSummary.length > 0 && (
+            {errorSummaryItems.length > 0 && (
               <ErrorSummary
                 id="error-summary-get-status"
                 summary={t('common:found-errors', {
-                  count: errorSummary.length,
+                  count: errorSummaryItems.length,
                 })}
-                errors={errorSummary}
+                errors={errorSummaryItems}
               />
             )}
             <InputField
@@ -197,8 +206,8 @@ const Status: FC = () => {
               name="esrf"
               label={t('esrf.label')}
               onChange={handleOnESRFChange}
-              value={formik.values.esrf}
-              errorMessage={formik.errors.esrf && t(formik.errors.esrf)}
+              value={formikValues.esrf}
+              errorMessage={formikErrors.esrf && t(formikErrors.esrf)}
               textRequired={t('common:required')}
               required
             />
@@ -206,11 +215,9 @@ const Status: FC = () => {
               id="givenName"
               name="givenName"
               label={t('given-name.label')}
-              onChange={formik.handleChange}
-              value={formik.values.givenName}
-              errorMessage={
-                formik.errors.givenName && t(formik.errors.givenName)
-              }
+              onChange={handleFormikChange}
+              value={formikValues.givenName}
+              errorMessage={formikErrors.givenName && t(formikErrors.givenName)}
               textRequired={t('common:required')}
               required
             />
@@ -218,9 +225,9 @@ const Status: FC = () => {
               id="surname"
               name="surname"
               label={t('surname.label')}
-              onChange={formik.handleChange}
-              value={formik.values.surname}
-              errorMessage={formik.errors.surname && t(formik.errors.surname)}
+              onChange={handleFormikChange}
+              value={formikValues.surname}
+              errorMessage={formikErrors.surname && t(formikErrors.surname)}
               textRequired={t('common:required')}
               required
             />
@@ -229,10 +236,10 @@ const Status: FC = () => {
               name="dateOfBirth"
               type="date"
               label={t('date-of-birth.label')}
-              onChange={formik.handleChange}
-              value={formik.values.dateOfBirth}
+              onChange={handleFormikChange}
+              value={formikValues.dateOfBirth}
               errorMessage={
-                formik.errors.dateOfBirth && t(formik.errors.dateOfBirth)
+                formikErrors.dateOfBirth && t(formikErrors.dateOfBirth)
               }
               textRequired={t('common:required')}
               max={'9999-12-31'}
