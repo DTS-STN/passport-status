@@ -44,14 +44,20 @@ export default function Email() {
   const [isIdle, setIsIdle] = useState(false)
 
   const handleOnIdleTimerIdle = useCallback(() => {
+    deleteCookie('agreed-to-email-esrf-terms')
+    router.push('/landing')
+  }, [router])
+
+  const handleOnIdleTimerPrompt = useCallback(() => {
     setIsIdle(true)
     setModalOpen(true)
   }, [])
 
   const { reset: resetIdleTimer } = useIdleTimer({
     onIdle: handleOnIdleTimerIdle,
-    //15 minute timeout
-    timeout: 15 * 60 * 1000,
+    onPrompt: handleOnIdleTimerPrompt,
+    timeout: 10 * 60 * 1000, //10 minutes
+    promptTimeout: 5 * 60 * 1000, //5 minutes
   })
 
   const handleOnModalRedirectButtonClick = useCallback(() => {
@@ -210,13 +216,17 @@ export default function Email() {
         open={modalOpen}
         actionButtons={[
           {
-            text: t('common:modal.yes-button'),
+            text: isIdle
+              ? t('common:modal.idle-end-session')
+              : t('common:modal.yes-button'),
             onClick: handleOnModalRedirectButtonClick,
             style: 'primary',
             type: 'button',
           },
           {
-            text: t('common:modal.no-button'),
+            text: isIdle
+              ? t('common:modal.idle-continue-session')
+              : t('common:modal.no-button'),
             onClick: handleOnModalResetButtonClick,
             style: 'default',
             type: 'button',
