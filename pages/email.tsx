@@ -16,8 +16,7 @@ import ActionButton from '../components/ActionButton'
 import Modal from '../components/Modal'
 import useEmailEsrf from '../lib/useEmailEsrf'
 import { EmailEsrfApiRequestBody } from '../lib/types'
-import { useIdleTimer } from 'react-idle-timer'
-import { deleteCookie } from 'cookies-next'
+import IdleTimeout from '../components/IdleTimeout'
 
 const initialValues: EmailEsrfApiRequestBody = {
   dateOfBirth: '',
@@ -41,40 +40,6 @@ export default function Email() {
   const { t } = useTranslation('email')
   const router = useRouter()
   const [modalOpen, setModalOpen] = useState(false)
-  const [isIdle, setIsIdle] = useState(false)
-
-  const handleOnIdleTimerIdle = useCallback(() => {
-    deleteCookie('agreed-to-email-esrf-terms')
-    router.push('/landing')
-  }, [router])
-
-  const handleOnIdleTimerPrompt = useCallback(() => {
-    setIsIdle(true)
-    setModalOpen(true)
-  }, [])
-
-  const { reset: resetIdleTimer } = useIdleTimer({
-    onIdle: handleOnIdleTimerIdle,
-    onPrompt: handleOnIdleTimerPrompt,
-    timeout: 10 * 60 * 1000, //10 minutes
-    promptTimeout: 5 * 60 * 1000, //5 minutes
-  })
-
-  const handleOnModalRedirectButtonClick = useCallback(() => {
-    //If user is idle and selects option to go back, clear the cookie so they get redirected to /expectations instead
-    if (isIdle) {
-      deleteCookie('agreed-to-email-esrf-terms')
-    }
-    router.push('/landing')
-  }, [isIdle, router])
-
-  const handleOnModalResetButtonClick = useCallback(() => {
-    setModalOpen(false)
-    if (isIdle) {
-      setIsIdle(false)
-      resetIdleTimer()
-    }
-  }, [isIdle, resetIdleTimer])
 
   const {
     error: emailEsrfError,
@@ -121,6 +86,7 @@ export default function Email() {
       header={t('common:header', { returnObjects: true })}
       footer={t('common:footer', { returnObjects: true })}
     >
+      <IdleTimeout />
       <h1 className="h1">{t('header')}</h1>
 
       {isEmailEsrfSuccess ? (
@@ -216,24 +182,20 @@ export default function Email() {
         open={modalOpen}
         actionButtons={[
           {
-            text: isIdle
-              ? t('common:modal.idle-end-session')
-              : t('common:modal.yes-button'),
-            onClick: handleOnModalRedirectButtonClick,
+            text: t('common:modal.yes-button'),
+            onClick: () => router.push('/landing'),
             style: 'primary',
             type: 'button',
           },
           {
-            text: isIdle
-              ? t('common:modal.idle-continue-session')
-              : t('common:modal.no-button'),
-            onClick: handleOnModalResetButtonClick,
+            text: t('common:modal.no-button'),
+            onClick: () => setModalOpen(false),
             style: 'default',
             type: 'button',
           },
         ]}
       >
-        {isIdle ? t('common:modal.idle') : t('common:modal.description')}
+        {t('common:modal.description')}
       </Modal>
     </Layout>
   )

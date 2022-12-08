@@ -5,7 +5,6 @@ import {
   useCallback,
   useMemo,
   useState,
-  useEffect,
 } from 'react'
 import { GetStaticProps } from 'next'
 import { useRouter } from 'next/router'
@@ -26,8 +25,7 @@ import ErrorSummary, {
 import LinkSummary, { LinkSummaryItem } from '../components/LinkSummary'
 import CheckStatusInfo from '../components/CheckStatusInfo'
 import Modal from '../components/Modal'
-import { useIdleTimer } from 'react-idle-timer'
-import { deleteCookie } from 'cookies-next'
+import IdleTimeout from '../components/IdleTimeout'
 
 const initialValues: CheckStatusApiRequestQuery = {
   dateOfBirth: '',
@@ -49,40 +47,6 @@ const Status: FC = () => {
   const { t } = useTranslation('status')
   const router = useRouter()
   const [modalOpen, setModalOpen] = useState(false)
-  const [isIdle, setIsIdle] = useState(false)
-
-  const handleOnIdleTimerIdle = useCallback(() => {
-    deleteCookie('agreed-to-email-esrf-terms')
-    router.push('/landing')
-  }, [router])
-
-  const handleOnIdleTimerPrompt = useCallback(() => {
-    setIsIdle(true)
-    setModalOpen(true)
-  }, [])
-
-  const { reset: resetIdleTimer } = useIdleTimer({
-    onIdle: handleOnIdleTimerIdle,
-    onPrompt: handleOnIdleTimerPrompt,
-    timeout: 10 * 60 * 1000, //10 minutes
-    promptTimeout: 5 * 60 * 1000, //5 minutes
-  })
-
-  const handleOnModalRedirectButtonClick = useCallback(() => {
-    //If user is idle and selects option to go back, clear the cookie so they get redirected to /expectations instead
-    if (isIdle) {
-      deleteCookie('agreed-to-email-esrf-terms')
-    }
-    router.push('/landing')
-  }, [isIdle, router])
-
-  const handleOnModalResetButtonClick = useCallback(() => {
-    setModalOpen(false)
-    if (isIdle) {
-      setIsIdle(false)
-      resetIdleTimer()
-    }
-  }, [isIdle, resetIdleTimer])
 
   const {
     errors: formikErrors,
@@ -161,6 +125,7 @@ const Status: FC = () => {
       header={t('common:header', { returnObjects: true })}
       footer={t('common:footer', { returnObjects: true })}
     >
+      <IdleTimeout />
       <h1 className="h1">{t('header')}</h1>
       {(() => {
         if (checkStatusResponse !== undefined) {
@@ -273,24 +238,17 @@ const Status: FC = () => {
         open={modalOpen}
         actionButtons={[
           {
-            text: isIdle
-              ? t('common:modal.idle-end-session')
-              : t('common:modal.yes-button'),
-            onClick: handleOnModalRedirectButtonClick,
+            text: t('common:modal.yes-button'),
+            onClick: () => router.push('/landing'),
             style: 'primary',
-            type: 'button',
           },
           {
-            text: isIdle
-              ? t('common:modal.idle-continue-session')
-              : t('common:modal.no-button'),
-            onClick: handleOnModalResetButtonClick,
-            style: 'default',
-            type: 'button',
+            text: t('common:modal.no-button'),
+            onClick: () => setModalOpen(false),
           },
         ]}
       >
-        {isIdle ? t('common:modal.idle') : t('common:modal.description')}
+        {t('common:modal.description')}
       </Modal>
     </Layout>
   )
