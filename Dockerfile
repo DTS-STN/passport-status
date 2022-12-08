@@ -6,11 +6,13 @@ COPY . .
 
 FROM base AS build
 
-# Build envs
 ARG BUILD_DATE
-ENV BUILD_DATE=$BUILD_DATE
+ARG BUILD_ID
 
+ENV BUILD_DATE=$BUILD_DATE
+ENV BUILD_ID=$BUILD_ID
 ENV NODE_ENV=production
+
 WORKDIR /build
 COPY --from=base /base ./
 RUN npm run build

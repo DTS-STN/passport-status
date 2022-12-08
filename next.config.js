@@ -54,6 +54,9 @@ const nextConfig = {
     NEXT_PUBLIC_BUILD_DATE: builddate,
     LOGGING_LEVEL: process.env.LOGGING_LEVEL ?? 'info',
   },
+  generateBuildId: async () => {
+    return process.env.BUILD_ID ?? 'local'
+  },
   reactStrictMode: true,
   i18n: {
     localeDetection: false,
