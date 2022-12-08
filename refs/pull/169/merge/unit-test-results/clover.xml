@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1670524327945" clover="3.2.0">
-  <project timestamp="1670524327945" name="All files">
+<coverage generated="1670527148534" clover="3.2.0">
+  <project timestamp="1670527148534" name="All files">
     <metrics statements="316" coveredstatements="197" conditionals="198" coveredconditionals="98" methods="97" coveredmethods="53" elements="611" coveredelements="348" complexity="0" loc="316" ncloc="316" packages="7" files="40" classes="40"/>
     <package name="components">
       <metrics statements="108" coveredstatements="82" conditionals="66" coveredconditionals="52" methods="33" coveredmethods="23"/>
@@ -76,7 +76,7 @@
         <line num="15" count="3" type="cond" truecount="2" falsecount="0"/>
         <line num="17" count="3" type="stmt"/>
       </file>
-      <file name="IdleTimout.tsx" path="/home/runner/work/passport-status/passport-status/components/IdleTimout.tsx">
+      <file name="IdleTimeout.tsx" path="/home/runner/work/passport-status/passport-status/components/IdleTimeout.tsx">
         <metrics statements="21" coveredstatements="9" conditionals="4" coveredconditionals="4" methods="7" coveredmethods="1"/>
         <line num="12" count="2" type="stmt"/>
         <line num="13" count="4" type="stmt"/>

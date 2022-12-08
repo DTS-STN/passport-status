@@ -167,7 +167,7 @@ BRF:10
 BRH:10
 end_of_record
 TN:
-SF:components/IdleTimout.tsx
+SF:components/IdleTimeout.tsx
 FN:12,(anonymous_0)
 FN:17,(anonymous_1)
 FN:22,(anonymous_2)
