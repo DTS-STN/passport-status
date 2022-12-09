@@ -32,11 +32,11 @@ export default function Header(props: HeaderProps) {
       </nav>
 
       <header>
-        <div className="container mx-auto px-4 flex-col flex md:flex md:flex-row justify-between pt-6">
-          <div className="flex flex-row justify-between items-center lg:mt-7">
+        <div className="container mx-auto px-4 flex-col flex md:flex md:flex-row justify-between pt-2.5">
+          <div className="flex flex-row justify-between items-center content-center md:mt-7">
             <a href={props.gocLink}>
               <img
-                className="h-5 w-auto xs:h-6 sm:h-8 md:h-8 lg:h-7 xl:h-8 "
+                className="w-auto h-7 lg:h-8"
                 src={locale === 'en' ? '/sig-blk-en.svg' : '/sig-blk-fr.svg'}
                 alt={
                   locale === 'en'
