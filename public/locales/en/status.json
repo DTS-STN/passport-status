@@ -142,5 +142,16 @@
     "matches": "Make sure your information matches your passport application form.",
     "for-child": "For child applications, use the child's given name(s) and surname exactly as provided on their passport application.",
     "passport-officer": "When entering the application into our system, the passport officer may have updated information in the application to match the information provided on the proof of citizenship or supporting identification. This may differ from preferred information for you or your child."
+  },
+  "collapse-file-number-title": "Can't find your File Number?",
+  "receipt-image-1": {
+    "title": "Example Receipt 1:",
+    "description-alt": "File Number (circled in red on image) located on centre of an \"Official Receipt\" below date/time",
+    "src": "/Receipt1_EN.PNG"
+  },
+  "receipt-image-2": {
+    "title": "Example Receipt 2:",
+    "description-alt": "File Number (circled in red on image) located close to the top of an \"Official Receipt and Pick-up Slip\" below the applicant's name",
+    "src": "/Receipt2_EN.PNG"
   }
 }
