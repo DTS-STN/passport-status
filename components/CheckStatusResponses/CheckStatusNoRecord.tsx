@@ -25,11 +25,11 @@ export const CheckStatusNoRecord: FC<{}> = () => {
       </ul>
       <p>{t('no-record.double-check')}</p>
       <p>
-        {t('status-check-numerous-attempts.description')}
-        <a href={t('status-check-numerous-attempts.service-standard.href')}>
-          {t('status-check-numerous-attempts.service-standard.text')}
+        {t('status-check-contact.description-no-record')}
+        <a href={t('status-check-contact.service-standard.href')}>
+          {t('status-check-contact.service-standard.text')}
         </a>
-        {t('status-check-numerous-attempts.can-call')}
+        {t('status-check-contact.can-call')}
         <b>{t('common:phone-number')}</b>.
       </p>
       <p>

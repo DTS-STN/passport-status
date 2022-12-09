@@ -95,7 +95,8 @@
   },
   "being-processed": {
     "received": "We've received your application and have started processing it.",
-    "we-will-contact": "If we need any further information, we'll contact you by email or telephone. Service Canada will not use text messages or instant messages to start a conversation with you about your passport application."
+    "we-will-contact": "If we need any further information, we'll contact you by email or telephone. Service Canada will not use text messages or instant messages to start a conversation with you about your passport application.",
+    "more-info": "More information"
   },
   "ready-for-pickup": {
     "has-been-printed": "The passport has been printed. Check your receipt to confirm when and where to pick up the passport.",
@@ -114,8 +115,12 @@
     "cannot-process": "We have reviewed your application and can't process it further.",
     "explanation": "We're sending you a letter explaining why, as well as your supporting documents. You should get these within the next few weeks."
   },
-  "status-check-numerous-attempts": {
-    "description": "If after numerous attempts you are unable to access the status of your application online, or if your application is taking longer than the ",
+  "status-check-contact": {
+    "description-no-record": "If after numerous attempts you are unable to access the status of your application online, or if your application is taking longer than the ",
+    "description-being-processed": {
+      "segment-1": "If your application is taking longer than the ",
+      "segment-2": " to process"
+    },
     "service-standard": {
       "text": "service standard",
       "href": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/check-passport-travel-document-application.html"

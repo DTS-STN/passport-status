@@ -7,12 +7,14 @@ export const CheckStatusFileBeingProcessed: FC<{}> = () => {
     <>
       <p data-testid="being-processed">{t('being-processed.received')}</p>
       <p>{t('being-processed.we-will-contact')}</p>
+      <p className="mt-6 text-blue-light">{t('being-processed.more-info')}</p>
       <p>
-        {t('status-check-numerous-attempts.description')}
-        <a href={t('status-check-numerous-attempts.service-standard.href')}>
-          {t('status-check-numerous-attempts.service-standard.text')}
+        {t('status-check-contact.description-being-processed.segment-1')}
+        <a href={t('status-check-contact.service-standard.href')}>
+          {t('status-check-contact.service-standard.text')}
         </a>
-        {t('status-check-numerous-attempts.can-call')}
+        {t('status-check-contact.description-being-processed.segment-2')}
+        {t('status-check-contact.can-call')}
         <b>{t('common:phone-number')}</b>.
       </p>
       <p>

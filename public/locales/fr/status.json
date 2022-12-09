@@ -95,7 +95,8 @@
   },
   "being-processed": {
     "received": "Nous avons reçu votre candidature et avons commencé à la traiter.",
-    "we-will-contact": "Si nous avons besoin de plus amples informations, nous vous contacterons par e-mail ou par téléphone. Service Canada n'utilisera pas de messages texte ou de messages instantanés pour entamer une conversation avec vous au sujet de votre demande de passeport."
+    "we-will-contact": "Si nous avons besoin de plus amples informations, nous vous contacterons par e-mail ou par téléphone. Service Canada n'utilisera pas de messages texte ou de messages instantanés pour entamer une conversation avec vous au sujet de votre demande de passeport.",
+    "more-info": "Plus d'information"
   },
   "ready-for-pickup": {
     "has-been-printed": "Le passeport a été imprimé. Vérifiez votre reçu pour confirmer quand et où retirer le passeport.",
@@ -114,8 +115,12 @@
     "cannot-process": "Nous avons examiné votre candidature et ne pouvons plus la traiter.",
     "explanation": "Nous vous envoyons une lettre expliquant pourquoi, ainsi que vos pièces justificatives. Vous devriez les recevoir dans les prochaines semaines."
   },
-  "status-check-numerous-attempts": {
-    "description": "Si après de nombreuses tentatives vous ne parvenez pas à accéder au statut de votre candidature en ligne, ou si votre candidature prend plus de temps que prévu ",
+  "status-check-contact": {
+    "description-no-record": "Si après de nombreuses tentatives vous ne parvenez pas à accéder au statut de votre candidature en ligne, ou si votre candidature prend plus de temps que prévu ",
+    "description-being-processed": {
+      "segment-1": "Si votre demande prend plus de temps que le ",
+      "segment-2": " à traiter"
+    },
     "service-standard": {
       "text": "norme de service",
       "href": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens/verifier-demande-passeports-documents-voyage.html"
