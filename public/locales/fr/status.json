@@ -28,7 +28,7 @@
   "status": {
     "1": {
       "label": "Être en cours de traitement",
-      "description": "Votre candidature a été reçue et est en cours. Si de plus amples informations sont nécessaires, nous vous contacterons."
+      "description": "Votre demande a été reçue et est en cours. Si de plus amples informations sont nécessaires, nous vous contacterons."
     },
     "2": {
       "label": "Émis et prêt pour le ramassage",
@@ -53,7 +53,7 @@
       "description": "Si vous voyez cela, c'est que quelque chose s'est mal passé."
     }
   },
-  "status-is": "Le dernier statut de votre candidature selon nos dossiers est\u00a0:",
+  "status-is": "Le dernier statut de votre demande selon nos dossiers est\u00a0:",
   "surname": {
     "error": {
       "required": "Le nom de famille est obligatoire."
@@ -78,14 +78,14 @@
   },
   "no-record": {
     "cannot-give-status": {
-      "description": "Nous ne pouvons pas vous donner le statut de votre candidature pour le moment car\u00a0:",
+      "description": "Nous ne pouvons pas vous donner le statut de votre demande pour le moment car\u00a0:",
       "list": {
         "item-1": "les informations que vous nous avez fournies ne correspondent pas aux informations de notre système ou",
-        "item-2": "nous avons reçu votre candidature, mais nous n'avons pas encore commencé à la traiter"
+        "item-2": "nous avons reçu votre demande, mais nous n'avons pas encore commencé à la traiter"
       }
     },
     "available-after": {
-      "description": "Le statut de votre candidature est disponible après\u00a0:",
+      "description": "Le statut de votre demande est disponible après\u00a0:",
       "list": {
         "item-1": "5 jours si vous avez postulé en personne ou",
         "item-2": "10 jours si vous avez postulé par courrier"
@@ -94,8 +94,9 @@
     "double-check": "Vérifiez vos informations et réessayez. Si votre application est toujours introuvable, vous pouvez réessayer demain. Nos dossiers sont mis à jour quotidiennement."
   },
   "being-processed": {
-    "received": "Nous avons reçu votre candidature et avons commencé à la traiter.",
-    "we-will-contact": "Si nous avons besoin de plus amples informations, nous vous contacterons par e-mail ou par téléphone. Service Canada n'utilisera pas de messages texte ou de messages instantanés pour entamer une conversation avec vous au sujet de votre demande de passeport."
+    "received": "Nous avons reçu votre demande et avons commencé à la traiter.",
+    "we-will-contact": "Si nous avons besoin de plus amples informations, nous vous contacterons par e-mail ou par téléphone. Service Canada n'utilisera pas de messages texte ou de messages instantanés pour entamer une conversation avec vous au sujet de votre demande de passeport.",
+    "more-info": "Plus d'information"
   },
   "ready-for-pickup": {
     "has-been-printed": "Le passeport a été imprimé. Vérifiez votre reçu pour confirmer quand et où retirer le passeport.",
@@ -111,11 +112,15 @@
     "supporting-documents": "Vous recevrez votre passeport et les pièces justificatives dans la même enveloppe."
   },
   "not-acceptable": {
-    "cannot-process": "Nous avons examiné votre candidature et ne pouvons plus la traiter.",
+    "cannot-process": "Nous avons examiné votre demande et ne pouvons plus la traiter.",
     "explanation": "Nous vous envoyons une lettre expliquant pourquoi, ainsi que vos pièces justificatives. Vous devriez les recevoir dans les prochaines semaines."
   },
-  "status-check-numerous-attempts": {
-    "description": "Si après de nombreuses tentatives vous ne parvenez pas à accéder au statut de votre candidature en ligne, ou si votre candidature prend plus de temps que prévu ",
+  "status-check-contact": {
+    "description-no-record": "Si après de nombreuses tentatives vous ne parvenez pas à accéder au statut de votre demande en ligne, ou si votre demande prend plus de temps que la ",
+    "description-being-processed": {
+      "segment-1": "Si votre demande prend plus de temps que la ",
+      "segment-2": " à traiter"
+    },
     "service-standard": {
       "text": "norme de service",
       "href": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens/verifier-demande-passeports-documents-voyage.html"
