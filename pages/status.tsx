@@ -247,9 +247,9 @@ const Status: FC = () => {
             onClick: () => setModalOpen(false),
           },
         ]}
-      >
-        {t('common:modal.description')}
-      </Modal>
+        header={t('common:modal.header')}
+        description={t('common:modal.description')}
+      />
     </Layout>
   )
 }

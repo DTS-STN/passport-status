@@ -61,8 +61,10 @@
     "cancel-button": "Annuler",
     "yes-button": "Oui",
     "no-button": "Non",
+    "header": "Retournez à la page d'accueil",
     "description": "Êtes-vous sûr de vouloir revenir en arrière?",
-    "idle": "Vous avez été inactif pendant 10 minutes et votre session doit expirer dans 5 minutes. Sélectionnez \"Continuer la session\" pour continuer votre session.",
+    "idle-header": "Avertissement d'expiration de la session",
+    "idle-description": "Vous avez été inactif pendant 10 minutes et votre session doit expirer dans {{timeRemaining}}. Sélectionnez \"Continuer la session\" pour continuer votre session.",
     "idle-continue-session": "Continuer la session",
     "idle-end-session": "Terminer la session"
   },

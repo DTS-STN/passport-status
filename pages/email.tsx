@@ -185,18 +185,15 @@ export default function Email() {
             text: t('common:modal.yes-button'),
             onClick: () => router.push('/landing'),
             style: 'primary',
-            type: 'button',
           },
           {
             text: t('common:modal.no-button'),
             onClick: () => setModalOpen(false),
-            style: 'default',
-            type: 'button',
           },
         ]}
-      >
-        {t('common:modal.description')}
-      </Modal>
+        header={t('common:modal.header')}
+        description={t('common:modal.description')}
+      />
     </Layout>
   )
 }

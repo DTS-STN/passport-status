@@ -61,8 +61,10 @@
     "cancel-button": "Cancel",
     "yes-button": "Yes",
     "no-button": "No",
+    "header": "Return to the home page",
     "description": "Are you sure you want to go back?",
-    "idle": "You have been inactive for 10 minutes and your session is set to expire in 5 minutes. Select \"Continue Session\" to continue your session.",
+    "idle-header": "Session timeout warning",
+    "idle-description": "You have been inactive for 10 minutes and your session is set to expire in {{timeRemaining}}. Select \"Continue Session\" to continue your session.",
     "idle-continue-session": "Continue session",
     "idle-end-session": "End session"
   },
