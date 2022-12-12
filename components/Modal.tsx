@@ -26,7 +26,7 @@ const Modal: FC<ModalProps> = ({
         <div
           role="dialog"
           aria-describedby={`${id}-modal-header`}
-          className="bg-white ring-2 ring-[#999] md:w-2/3 lg:w-2/5 rounded"
+          className="bg-white ring-2 ring-gray-modal md:w-2/3 lg:w-2/5 rounded"
         >
           <header
             id={`${id}-modal-header`}
@@ -37,7 +37,7 @@ const Modal: FC<ModalProps> = ({
           <div id={`${id}-modal-desc`} className="p-3">
             {description}
           </div>
-          <div className="flex gap-2 justify-end p-2 border-t border-[#999]">
+          <div className="flex gap-2 justify-end p-2 border-t border-gray-modal">
             {actionButtons.map((actionButtonProps) => (
               <ActionButton
                 key={actionButtonProps.text}

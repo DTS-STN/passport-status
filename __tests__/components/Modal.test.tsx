@@ -7,17 +7,22 @@ expect.extend(toHaveNoViolations)
 
 describe('Modal', () => {
   const { container } = render(
-    <Modal open actionButtons={[{ text: 'button text' }]}>
-      <p>content</p>
-    </Modal>
+    <Modal
+      open
+      actionButtons={[{ text: 'button text' }]}
+      header={'header'}
+      description={'description'}
+    />
   )
 
   it('renders', () => {
     const sut = screen.getByRole('dialog')
-    const content = screen.getByText('content')
+    const header = screen.getByText('header')
+    const description = screen.getByText('description')
     const actionButton = screen.getByText('button text')
     expect(sut).toBeInTheDocument()
-    expect(content).toBeInTheDocument()
+    expect(header).toBeInTheDocument()
+    expect(description).toBeInTheDocument()
     expect(actionButton).toBeInTheDocument()
   })
 
