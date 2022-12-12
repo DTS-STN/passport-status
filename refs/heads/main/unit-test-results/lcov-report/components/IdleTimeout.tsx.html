@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">42.85% </span>
+                <span class="strong">46.42% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>9/21</span>
+                <span class='fraction'>13/28</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">62.5% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>4/4</span>
+                <span class='fraction'>5/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">14.28% </span>
+                <span class="strong">22.22% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/7</span>
+                <span class='fraction'>2/9</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">42.85% </span>
+                <span class="strong">46.42% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>9/21</span>
+                <span class='fraction'>13/28</span>
             </div>
         
             
@@ -137,7 +137,21 @@
 <a name='L72'></a><a href='#L72'>72</a>
 <a name='L73'></a><a href='#L73'>73</a>
 <a name='L74'></a><a href='#L74'>74</a>
-<a name='L75'></a><a href='#L75'>75</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -152,6 +166,7 @@
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -190,11 +205,24 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -214,7 +242,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { deleteCookie } from 'cookies-next'
 import { useTranslation } from 'next-i18next'
 import { useRouter } from 'next/router'
-import { FC, useState } from 'react'
+import { FC, useState, useEffect, useCallback } from 'react'
 import { IIdleTimerProps, useIdleTimer } from 'react-idle-timer'
 import Modal from './Modal'
 &nbsp;
@@ -226,6 +254,7 @@ const IdleTimeout: FC&lt;IdleTimeoutProps&gt; = ({ promptTimeout, timeout }) =&g
   const { t } = useTranslation('common')
   const router = useRouter()
   const [modalOpen, setModalOpen] = useState(false)
+  const [timeRemaining, setTimeRemaining] = useState('')
 &nbsp;
   const handleOnIdle = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
 <span class="cstat-no" title="statement not covered" >    deleteCookie('agreed-to-email-esrf-terms')</span>
@@ -256,30 +285,43 @@ const IdleTimeout: FC&lt;IdleTimeoutProps&gt; = ({ promptTimeout, timeout }) =&g
 <span class="cstat-no" title="statement not covered" >    setModalOpen(true)</span>
   }
 &nbsp;
-  const { reset } = useIdleTimer({
+  const { reset, getRemainingTime } = useIdleTimer({
     onIdle: handleOnIdle,
     onPrompt: handleOnPrompt,
-    promptTimeout: promptTimeout ?? 5 + 60 * 1000, //5 minutes
+    promptTimeout: promptTimeout ?? 5 * 60 * 1000, //5 minutes
     timeout: timeout ?? 10 * 60 * 1000, //10 minutes
   })
 &nbsp;
+  const tick = useCallback(<span class="fstat-no" title="function not covered" >()</span> =&gt; {
+    const minutes = <span class="cstat-no" title="statement not covered" >Math.floor(getRemainingTime() / 60000)</span>
+    const seconds = <span class="cstat-no" title="statement not covered" >Math.floor((getRemainingTime() / 1000) % 60).toFixed(0)</span>
+<span class="cstat-no" title="statement not covered" >    setTimeRemaining(</span>
+      minutes + ':' + (parseInt(seconds) &lt; 10 ? '0' : '') + seconds
+    )
+  }, [getRemainingTime])
+&nbsp;
+  useEffect(() =&gt; {
+    setInterval(tick, 1000)
+  }, [tick])
+&nbsp;
   return (
     &lt;Modal
-      open={modalOpen}
+      open={modalOpen &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >timeRemaining.length &gt; 0}</span>
       actionButtons={[
         {
           onClick: <span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >handleOnIdle(),</span>
           style: 'primary',
-          text: t('modal.idle-end-session'),
+          text: t('modal-idle-timeout.end-session'),
         },
         {
           onClick: handleOnIdleContinueSession,
           style: 'default',
-          text: t('modal.idle-continue-session'),
+          text: t('modal-idle-timeout.continue-session'),
         },
       ]}
+      header={t('modal-idle-timeout.header')}
     &gt;
-      {t('modal.idle')}
+      &lt;p&gt;{t('modal-idle-timeout.description', { timeRemaining })}&lt;/p&gt;
     &lt;/Modal&gt;
   )
 }
@@ -292,7 +334,7 @@ export default IdleTimeout
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-12-09T16:50:41.117Z
+                at 2022-12-12T23:00:36.437Z
             </div>
         <script src="../prettify.js"></script>
         <script>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1670604641087" clover="3.2.0">
-  <project timestamp="1670604641087" name="All files">
-    <metrics statements="316" coveredstatements="197" conditionals="198" coveredconditionals="98" methods="97" coveredmethods="53" elements="611" coveredelements="348" complexity="0" loc="316" ncloc="316" packages="7" files="40" classes="40"/>
+<coverage generated="1670886036412" clover="3.2.0">
+  <project timestamp="1670886036412" name="All files">
+    <metrics statements="323" coveredstatements="201" conditionals="202" coveredconditionals="99" methods="99" coveredmethods="54" elements="624" coveredelements="354" complexity="0" loc="323" ncloc="323" packages="7" files="40" classes="40"/>
     <package name="components">
-      <metrics statements="108" coveredstatements="82" conditionals="66" coveredconditionals="52" methods="33" coveredmethods="23"/>
+      <metrics statements="115" coveredstatements="86" conditionals="70" coveredconditionals="53" methods="35" coveredmethods="24"/>
       <file name="ActionButton.tsx" path="/home/runner/work/passport-status/passport-status/components/ActionButton.tsx">
         <metrics statements="9" coveredstatements="9" conditionals="6" coveredconditionals="4" methods="1" coveredmethods="1"/>
         <line num="18" count="7" type="stmt"/>
@@ -77,28 +77,35 @@
         <line num="17" count="3" type="stmt"/>
       </file>
       <file name="IdleTimeout.tsx" path="/home/runner/work/passport-status/passport-status/components/IdleTimeout.tsx">
-        <metrics statements="21" coveredstatements="9" conditionals="4" coveredconditionals="4" methods="7" coveredmethods="1"/>
+        <metrics statements="28" coveredstatements="13" conditionals="8" coveredconditionals="5" methods="9" coveredmethods="2"/>
         <line num="12" count="2" type="stmt"/>
         <line num="13" count="4" type="stmt"/>
         <line num="14" count="4" type="stmt"/>
         <line num="15" count="4" type="stmt"/>
-        <line num="17" count="4" type="stmt"/>
-        <line num="18" count="0" type="stmt"/>
+        <line num="16" count="4" type="stmt"/>
+        <line num="18" count="4" type="stmt"/>
         <line num="19" count="0" type="stmt"/>
-        <line num="22" count="4" type="stmt"/>
-        <line num="23" count="0" type="stmt"/>
-        <line num="25" count="0" type="stmt"/>
-        <line num="28" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="23" count="4" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
         <line num="29" count="0" type="stmt"/>
-        <line num="31" count="0" type="stmt"/>
-        <line num="34" count="4" type="stmt"/>
-        <line num="36" count="0" type="stmt"/>
-        <line num="39" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="35" count="4" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
         <line num="40" count="0" type="stmt"/>
-        <line num="43" count="0" type="stmt"/>
-        <line num="46" count="4" type="stmt"/>
-        <line num="53" count="4" type="stmt"/>
-        <line num="58" count="0" type="stmt"/>
+        <line num="41" count="0" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="47" count="4" type="stmt"/>
+        <line num="54" count="4" type="stmt"/>
+        <line num="55" count="0" type="stmt"/>
+        <line num="56" count="0" type="stmt"/>
+        <line num="57" count="0" type="stmt"/>
+        <line num="62" count="4" type="stmt"/>
+        <line num="63" count="4" type="stmt"/>
+        <line num="66" count="4" type="stmt"/>
+        <line num="71" count="0" type="stmt"/>
       </file>
       <file name="InputErrorMessage.tsx" path="/home/runner/work/passport-status/passport-status/components/InputErrorMessage.tsx">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
@@ -154,11 +161,11 @@
       </file>
       <file name="Modal.tsx" path="/home/runner/work/passport-status/passport-status/components/Modal.tsx">
         <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
-        <line num="11" count="4" type="stmt"/>
-        <line num="12" count="11" type="stmt"/>
-        <line num="13" count="11" type="cond" truecount="2" falsecount="0"/>
-        <line num="14" count="1" type="stmt"/>
-        <line num="30" count="1" type="stmt"/>
+        <line num="12" count="4" type="stmt"/>
+        <line num="13" count="11" type="stmt"/>
+        <line num="14" count="11" type="cond" truecount="2" falsecount="0"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="37" count="1" type="stmt"/>
       </file>
     </package>
     <package name="components.CheckStatusResponses">
@@ -302,7 +309,7 @@
         <line num="33" count="0" type="stmt"/>
         <line num="40" count="0" type="stmt"/>
         <line num="45" count="0" type="stmt"/>
-        <line num="55" count="1" type="stmt"/>
+        <line num="56" count="1" type="stmt"/>
       </file>
       <file name="email.tsx" path="/home/runner/work/passport-status/passport-status/pages/email.tsx">
         <metrics statements="21" coveredstatements="12" conditionals="16" coveredconditionals="7" methods="8" coveredmethods="2"/>
@@ -325,8 +332,8 @@
         <line num="83" count="2" type="stmt"/>
         <line num="176" count="0" type="stmt"/>
         <line num="186" count="0" type="stmt"/>
-        <line num="192" count="0" type="stmt"/>
-        <line num="204" count="1" type="stmt"/>
+        <line num="191" count="0" type="stmt"/>
+        <line num="202" count="1" type="stmt"/>
       </file>
       <file name="expectations.tsx" path="/home/runner/work/passport-status/passport-status/pages/expectations.tsx">
         <metrics statements="10" coveredstatements="7" conditionals="4" coveredconditionals="2" methods="4" coveredmethods="2"/>
@@ -390,7 +397,7 @@
         <line num="231" count="0" type="stmt"/>
         <line num="242" count="0" type="stmt"/>
         <line num="247" count="0" type="stmt"/>
-        <line num="257" count="1" type="stmt"/>
+        <line num="258" count="1" type="stmt"/>
       </file>
     </package>
     <package name="pages.api">
