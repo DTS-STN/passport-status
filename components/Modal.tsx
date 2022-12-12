@@ -4,11 +4,12 @@ import { FocusOn } from 'react-focus-on'
 
 export interface ModalProps {
   actionButtons: ActionButtonProps[]
-  children: ReactNode
   open: boolean
+  header: string
+  children: ReactNode
 }
 
-const Modal: FC<ModalProps> = ({ actionButtons, children, open }) => {
+const Modal: FC<ModalProps> = ({ actionButtons, header, open, children }) => {
   const id = useId()
   if (!open) return <></>
   return (
@@ -19,13 +20,19 @@ const Modal: FC<ModalProps> = ({ actionButtons, children, open }) => {
       >
         <div
           role="dialog"
-          aria-describedby={`${id}-modal-desc`}
-          className="mx-4 p-4 bg-white border-2 border-black md:w-2/3 lg:w-2/5"
+          aria-describedby={`${id}-modal-header`}
+          className="mx-4 bg-white ring-2 ring-gray-modal md:w-2/3 lg:w-2/5 rounded"
         >
-          <div id={`${id}-modal-desc`} className="mb-4">
+          <header
+            id={`${id}-modal-header`}
+            className="bg-blue-deep text-white p-3 border-b border-black rounded-t"
+          >
+            <h2>{header}</h2>
+          </header>
+          <div id={`${id}-modal-desc`} className="p-3">
             {children}
           </div>
-          <div className="flex gap-2 justify-center">
+          <div className="flex gap-2 justify-end p-2 border-t border-gray-modal">
             {actionButtons.map((actionButtonProps) => (
               <ActionButton
                 key={actionButtonProps.text}

@@ -40,7 +40,7 @@ module.exports = {
           normal: '#1c578a',
           default: '#091c2d',
           dark: '#26374a',
-          deep: '#26374a',
+          deep: '#2e5274',
           active: '#16446c',
         },
         gray: {
@@ -51,6 +51,7 @@ module.exports = {
           dark: '#cfd1d5',
           deep: '#bbbfc5',
           helpText: '#6c757d',
+          modal: '#999999',
         },
         orange: {
           dark: '#e59700',

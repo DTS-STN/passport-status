@@ -57,14 +57,18 @@
       "external": true
     }
   ],
-  "modal": {
+  "modal-go-back": {
     "cancel-button": "Annuler",
     "yes-button": "Oui",
     "no-button": "Non",
-    "description": "Êtes-vous sûr de vouloir revenir en arrière?",
-    "idle": "Vous avez été inactif pendant 10 minutes et votre session doit expirer dans 5 minutes. Sélectionnez \"Continuer la session\" pour continuer votre session.",
-    "idle-continue-session": "Continuer la session",
-    "idle-end-session": "Terminer la session"
+    "header": "Retournez à la page d'accueil",
+    "description": "Êtes-vous sûr de vouloir revenir en arrière?"
+  },
+  "modal-idle-timeout": {
+    "header": "Avertissement d'expiration de la session",
+    "description": "Vous avez été inactif pendant 10 minutes et votre session doit expirer dans {{timeRemaining}}. Sélectionnez \"Continuer la session\" pour continuer votre session.",
+    "continue-session": "Continuer la session",
+    "end-session": "Terminer la session"
   },
   "phone-number": "1-800-567-6868"
 }

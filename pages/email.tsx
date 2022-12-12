@@ -172,7 +172,7 @@ export default function Email() {
             <ActionButton
               id="btn-cancel"
               disabled={isEmailEsrfLoading}
-              text={t('common:modal.cancel-button')}
+              text={t('common:modal-go-back.cancel-button')}
               onClick={() => setModalOpen(true)}
             />
           </div>
@@ -182,20 +182,18 @@ export default function Email() {
         open={modalOpen}
         actionButtons={[
           {
-            text: t('common:modal.yes-button'),
+            text: t('common:modal-go-back.yes-button'),
             onClick: () => router.push('/landing'),
             style: 'primary',
-            type: 'button',
           },
           {
-            text: t('common:modal.no-button'),
+            text: t('common:modal-go-back.no-button'),
             onClick: () => setModalOpen(false),
-            style: 'default',
-            type: 'button',
           },
         ]}
+        header={t('common:modal-go-back.header')}
       >
-        {t('common:modal.description')}
+        <p>{t('common:modal-go-back.description')}</p>
       </Modal>
     </Layout>
   )
