@@ -48,7 +48,7 @@ const IdleTimeout: FC<IdleTimeoutProps> = ({ promptTimeout, timeout }) => {
     onIdle: handleOnIdle,
     onPrompt: handleOnPrompt,
     promptTimeout: promptTimeout ?? 5 * 60 * 1000, //5 minutes
-    timeout: timeout ?? 10, //10 minutes
+    timeout: timeout ?? 10 * 60 * 1000, //10 minutes
   })
 
   const tick = useCallback(() => {
@@ -70,17 +70,17 @@ const IdleTimeout: FC<IdleTimeoutProps> = ({ promptTimeout, timeout }) => {
         {
           onClick: () => handleOnIdle(),
           style: 'primary',
-          text: t('modal.idle-end-session'),
+          text: t('modal-idle-timeout.end-session'),
         },
         {
           onClick: handleOnIdleContinueSession,
           style: 'default',
-          text: t('modal.idle-continue-session'),
+          text: t('modal-idle-timeout.continue-session'),
         },
       ]}
-      header={t('modal.idle-header')}
+      header={t('modal-idle-timeout.header')}
     >
-      <p>{t('modal.idle-description', { timeRemaining })}</p>
+      <p>{t('modal-idle-timeout.description', { timeRemaining })}</p>
     </Modal>
   )
 }

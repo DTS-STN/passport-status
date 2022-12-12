@@ -227,7 +227,7 @@ const Status: FC = () => {
               <ActionButton
                 id="btn-cancel"
                 disabled={isCheckStatusLoading}
-                text={t('common:modal.cancel-button')}
+                text={t('common:modal-go-back.cancel-button')}
                 onClick={() => setModalOpen(true)}
               />
             </div>
@@ -238,18 +238,18 @@ const Status: FC = () => {
         open={modalOpen}
         actionButtons={[
           {
-            text: t('common:modal.yes-button'),
+            text: t('common:modal-go-back.yes-button'),
             onClick: () => router.push('/landing'),
             style: 'primary',
           },
           {
-            text: t('common:modal.no-button'),
+            text: t('common:modal-go-back.no-button'),
             onClick: () => setModalOpen(false),
           },
         ]}
-        header={t('common:modal.header')}
+        header={t('common:modal-go-back.header')}
       >
-        <p>{t('common:modal.description')}</p>
+        <p>{t('common:modal-go-back.description')}</p>
       </Modal>
     </Layout>
   )

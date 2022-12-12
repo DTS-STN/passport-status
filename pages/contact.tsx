@@ -36,18 +36,18 @@ const Contact: FC = () => {
         open={modalOpen}
         actionButtons={[
           {
-            text: t('common:modal.yes-button'),
+            text: t('common:modal-go-back.yes-button'),
             onClick: () => router.push('/landing'),
             style: 'primary',
           },
           {
-            text: t('common:modal.no-button'),
+            text: t('common:modal-go-back.no-button'),
             onClick: () => setModalOpen(false),
           },
         ]}
-        header={t('common:modal.header')}
+        header={t('common:modal-go-back.header')}
       >
-        <p>{t('common:modal.description')}</p>
+        <p>{t('common:modal-go-back.description')}</p>
       </Modal>
     </Layout>
   )
