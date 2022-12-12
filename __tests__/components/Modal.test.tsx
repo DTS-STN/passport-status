@@ -7,12 +7,9 @@ expect.extend(toHaveNoViolations)
 
 describe('Modal', () => {
   const { container } = render(
-    <Modal
-      open
-      actionButtons={[{ text: 'button text' }]}
-      header={'header'}
-      description={'description'}
-    />
+    <Modal open actionButtons={[{ text: 'button text' }]} header={'header'}>
+      <p>description</p>
+    </Modal>
   )
 
   it('renders', () => {

@@ -1,4 +1,4 @@
-import { FC, useId } from 'react'
+import { FC, ReactNode, useId } from 'react'
 import ActionButton, { ActionButtonProps } from './ActionButton'
 import { FocusOn } from 'react-focus-on'
 
@@ -6,15 +6,10 @@ export interface ModalProps {
   actionButtons: ActionButtonProps[]
   open: boolean
   header: string
-  description: string
+  children: ReactNode
 }
 
-const Modal: FC<ModalProps> = ({
-  actionButtons,
-  header,
-  description,
-  open,
-}) => {
+const Modal: FC<ModalProps> = ({ actionButtons, header, open, children }) => {
   const id = useId()
   if (!open) return <></>
   return (
@@ -26,7 +21,7 @@ const Modal: FC<ModalProps> = ({
         <div
           role="dialog"
           aria-describedby={`${id}-modal-header`}
-          className="bg-white ring-2 ring-gray-modal md:w-2/3 lg:w-2/5 rounded"
+          className="mx-4 bg-white ring-2 ring-gray-modal md:w-2/3 lg:w-2/5 rounded"
         >
           <header
             id={`${id}-modal-header`}
@@ -35,7 +30,7 @@ const Modal: FC<ModalProps> = ({
             <h2>{header}</h2>
           </header>
           <div id={`${id}-modal-desc`} className="p-3">
-            {description}
+            {children}
           </div>
           <div className="flex gap-2 justify-end p-2 border-t border-gray-modal">
             {actionButtons.map((actionButtonProps) => (

@@ -248,8 +248,9 @@ const Status: FC = () => {
           },
         ]}
         header={t('common:modal.header')}
-        description={t('common:modal.description')}
-      />
+      >
+        <p>{t('common:modal.description')}</p>
+      </Modal>
     </Layout>
   )
 }

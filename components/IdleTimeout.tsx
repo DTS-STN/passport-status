@@ -48,12 +48,12 @@ const IdleTimeout: FC<IdleTimeoutProps> = ({ promptTimeout, timeout }) => {
     onIdle: handleOnIdle,
     onPrompt: handleOnPrompt,
     promptTimeout: promptTimeout ?? 5 * 60 * 1000, //5 minutes
-    timeout: timeout ?? 10 * 60 * 1000, //10 minutes
+    timeout: timeout ?? 10, //10 minutes
   })
 
   const tick = useCallback(() => {
-    var minutes = Math.floor(getRemainingTime() / 60000)
-    var seconds = Math.floor((getRemainingTime() / 1000) % 60).toFixed(0)
+    const minutes = Math.floor(getRemainingTime() / 60000)
+    const seconds = Math.floor((getRemainingTime() / 1000) % 60).toFixed(0)
     setTimeRemaining(
       minutes + ':' + (parseInt(seconds) < 10 ? '0' : '') + seconds
     )
@@ -63,9 +63,9 @@ const IdleTimeout: FC<IdleTimeoutProps> = ({ promptTimeout, timeout }) => {
     setInterval(tick, 1000)
   }, [tick])
 
-  return timeRemaining ? (
+  return (
     <Modal
-      open={modalOpen}
+      open={modalOpen && timeRemaining.length > 0}
       actionButtons={[
         {
           onClick: () => handleOnIdle(),
@@ -79,9 +79,10 @@ const IdleTimeout: FC<IdleTimeoutProps> = ({ promptTimeout, timeout }) => {
         },
       ]}
       header={t('modal.idle-header')}
-      description={t('modal.idle-description', { timeRemaining })}
-    />
-  ) : null
+    >
+      <p>{t('modal.idle-description', { timeRemaining })}</p>
+    </Modal>
+  )
 }
 
 export default IdleTimeout
