@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1670949618262" clover="3.2.0">
-  <project timestamp="1670949618262" name="All files">
-    <metrics statements="327" coveredstatements="204" conditionals="202" coveredconditionals="99" methods="101" coveredmethods="55" elements="630" coveredelements="358" complexity="0" loc="327" ncloc="327" packages="7" files="42" classes="42"/>
+<coverage generated="1670950245413" clover="3.2.0">
+  <project timestamp="1670950245413" name="All files">
+    <metrics statements="328" coveredstatements="205" conditionals="202" coveredconditionals="99" methods="101" coveredmethods="55" elements="631" coveredelements="359" complexity="0" loc="328" ncloc="328" packages="7" files="42" classes="42"/>
     <package name="components">
-      <metrics statements="119" coveredstatements="89" conditionals="70" coveredconditionals="53" methods="37" coveredmethods="25"/>
+      <metrics statements="120" coveredstatements="90" conditionals="70" coveredconditionals="53" methods="37" coveredmethods="25"/>
       <file name="ActionButton.tsx" path="/home/runner/work/passport-status/passport-status/components/ActionButton.tsx">
         <metrics statements="9" coveredstatements="9" conditionals="6" coveredconditionals="4" methods="1" coveredmethods="1"/>
         <line num="18" count="7" type="stmt"/>
@@ -35,8 +35,9 @@
         <line num="59" count="2" type="stmt"/>
       </file>
       <file name="Collapse.tsx" path="/home/runner/work/passport-status/passport-status/components/Collapse.tsx">
-        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="9" count="1" type="stmt"/>
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
         <line num="10" count="2" type="stmt"/>
       </file>
       <file name="DateModified.tsx" path="/home/runner/work/passport-status/passport-status/components/DateModified.tsx">
@@ -404,10 +405,10 @@
         <line num="133" count="2" type="cond" truecount="1" falsecount="1"/>
         <line num="134" count="0" type="stmt"/>
         <line num="160" count="2" type="stmt"/>
-        <line num="260" count="0" type="stmt"/>
-        <line num="271" count="0" type="stmt"/>
-        <line num="276" count="0" type="stmt"/>
-        <line num="287" count="1" type="stmt"/>
+        <line num="257" count="0" type="stmt"/>
+        <line num="268" count="0" type="stmt"/>
+        <line num="273" count="0" type="stmt"/>
+        <line num="284" count="1" type="stmt"/>
       </file>
     </package>
     <package name="pages.api">
