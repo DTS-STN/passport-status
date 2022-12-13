@@ -22,7 +22,6 @@ import ErrorSummary, {
   getErrorSummaryItems,
   goToErrorSummary,
 } from '../components/ErrorSummary'
-import LinkSummary, { LinkSummaryItem } from '../components/LinkSummary'
 import CheckStatusInfo from '../components/CheckStatusInfo'
 import Modal from '../components/Modal'
 import IdleTimeout from '../components/IdleTimeout'
@@ -145,12 +144,6 @@ const Status: FC = () => {
                 checkAgainText={t('check-again')}
                 checkStatusResponse={checkStatusResponse}
               />
-              <LinkSummary
-                title={t('common:contact-program')}
-                links={t<string, LinkSummaryItem[]>('common:program-links', {
-                  returnObjects: true,
-                })}
-              ></LinkSummary>
             </>
           )
         }
