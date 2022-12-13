@@ -6,6 +6,7 @@ import Status from '../../pages/status'
 expect.extend(toHaveNoViolations)
 
 jest.mock('../../components/ActionButton')
+jest.mock('../../components/ExampleImage')
 jest.mock('../../components/CheckStatusInfo')
 jest.mock('../../components/ErrorSummary', () => ({
   default: jest.fn(),
