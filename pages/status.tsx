@@ -184,7 +184,10 @@ const Status: FC = () => {
               textRequired={t('common:required')}
               required
             />
-            <Collapse title={t('collapse-file-number-title')}>
+            <Collapse
+              id="fileNumberDetails"
+              title={t('collapse-file-number-title')}
+            >
               <div className="border-t mt-3 p-3 max-w">
                 <ExampleImage
                   title={t('receipt-image-1.title')}

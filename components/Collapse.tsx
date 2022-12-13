@@ -1,14 +1,21 @@
 import { FC } from 'react'
 
 export interface CollapseProps {
+  id: string
   title: string
   children?: React.ReactNode
 }
 
-const Collapse: FC<CollapseProps> = ({ title, children }) => {
+const Collapse: FC<CollapseProps> = ({ id, title, children }) => {
   return (
-    <details className="max-w-prose border p-3 mb-3 rounded">
-      <summary className="text-blue-light hover:underline cursor-pointer focus:text-link-selected focus:underline hover:text-link-selected">
+    <details
+      aria-describedby={id}
+      className="max-w-prose border p-3 mb-3 rounded"
+    >
+      <summary
+        id={id}
+        className="text-blue-light hover:underline cursor-pointer focus:text-link-selected focus:underline hover:text-link-selected"
+      >
         {title}
       </summary>
       {children}
