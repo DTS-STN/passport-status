@@ -26,6 +26,8 @@ import LinkSummary, { LinkSummaryItem } from '../components/LinkSummary'
 import CheckStatusInfo from '../components/CheckStatusInfo'
 import Modal from '../components/Modal'
 import IdleTimeout from '../components/IdleTimeout'
+import Collapse from '../components/Collapse'
+import ExampleImage from '../components/ExampleImage'
 
 const initialValues: CheckStatusApiRequestQuery = {
   dateOfBirth: '',
@@ -182,6 +184,30 @@ const Status: FC = () => {
               textRequired={t('common:required')}
               required
             />
+            <Collapse title={t('collapse-file-number-title')}>
+              <div className="border-t mt-3 p-3 max-w">
+                <ExampleImage
+                  title={t('receipt-image-1.title')}
+                  description={t('receipt-image-1.description-alt')}
+                  imageProps={{
+                    src: t('receipt-image-1.src'),
+                    alt: t('receipt-image-1.description-alt'),
+                    width: 350,
+                    height: 550,
+                  }}
+                />
+                <ExampleImage
+                  title={t('receipt-image-2.title')}
+                  description={t('receipt-image-2.description-alt')}
+                  imageProps={{
+                    src: t('receipt-image-2.src'),
+                    alt: t('receipt-image-2.description-alt'),
+                    width: 350,
+                    height: 550,
+                  }}
+                />
+              </div>
+            </Collapse>
             <InputField
               id="givenName"
               name="givenName"
