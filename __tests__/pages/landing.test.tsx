@@ -8,6 +8,7 @@ import { axe, toHaveNoViolations } from 'jest-axe'
 
 expect.extend(toHaveNoViolations)
 
+jest.mock('../../components/ExampleImage')
 jest.mock('../../components/Layout')
 jest.mock('../../components/LinkButton')
 
