@@ -7,11 +7,11 @@
   "receipt-image-1": {
     "title": "Example Receipt 1:",
     "description-alt": "File Number (circled in red on image) located on centre of an \"Official Receipt\" below date/time",
-    "src": "/Receipt1_EN.PNG"
+    "src": "/Receipt1_EN.png"
   },
   "receipt-image-2": {
     "title": "Example Receipt 2:",
     "description-alt": "File Number (circled in red on image) located close to the top of an \"Official Receipt and Pick-up Slip\" below the applicant's name",
-    "src": "/Receipt2_EN.PNG"
+    "src": "/Receipt2_EN.png"
   }
 }

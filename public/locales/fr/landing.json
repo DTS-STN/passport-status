@@ -5,13 +5,13 @@
   "without-esrf": "Je n'ai pas mon numéro de dossier",
   "collapse-file-number-title": "Vous ne trouvez pas votre numéro de dossier?",
   "receipt-image-1": {
-    "title": "Exemple de reçu 1:",
+    "title": "Exemple de reçu 1\u00a0:",
     "description-alt": "Numéro de dossier (encerclé en rouge sur l'image) situé au centre d'un « reçu officiel » sous la date et l'heure",
-    "src": "/Receipt1_FR.PNG"
+    "src": "/Receipt1_FR.png"
   },
   "receipt-image-2": {
-    "title": "Exemple de reçu 2:",
+    "title": "Exemple de reçu 2\u00a0:",
     "description-alt": "Numéro de dossier (encerclé en rouge sur l'image) situé près du haut d'un « reçu officiel et bordereau de cueillette » sous le nom du requérant.",
-    "src": "/Receipt2_FR.PNG"
+    "src": "/Receipt2_FR.png"
   }
 }
