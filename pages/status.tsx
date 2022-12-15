@@ -8,7 +8,7 @@ import {
 } from 'react'
 import { GetStaticProps } from 'next'
 import { useRouter } from 'next/router'
-import { useTranslation } from 'next-i18next'
+import { Trans, useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useFormik, validateYupSchema, yupToFormErrors } from 'formik'
 import * as Yup from 'yup'
@@ -27,6 +27,7 @@ import Modal from '../components/Modal'
 import IdleTimeout from '../components/IdleTimeout'
 import Collapse from '../components/Collapse'
 import ExampleImage from '../components/ExampleImage'
+import Link from 'next/link'
 
 const initialValues: CheckStatusApiRequestQuery = {
   dateOfBirth: '',
@@ -146,6 +147,11 @@ const Status: FC = () => {
                 checkAgainText={t('check-again')}
                 checkStatusResponse={checkStatusResponse}
               />
+              <div className="mt-10">
+                <Trans i18nKey={'feedback-link'}>
+                  Insert feedback <a href="">Link</a>
+                </Trans>
+              </div>
             </>
           )
         }
