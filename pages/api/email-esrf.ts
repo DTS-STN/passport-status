@@ -50,6 +50,10 @@ const emailEsrfApi = async (
         PersonGivenName: [emailEsrfApiRequestBody.givenName],
         PersonSurName: emailEsrfApiRequestBody.surname,
       },
+      PersonPreferredLanguage: {
+        LanguageName:
+          emailEsrfApiRequestBody.locale === 'fr' ? 'FRENCH' : 'ENGLISH',
+      },
     },
   }
 

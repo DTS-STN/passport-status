@@ -22,6 +22,7 @@ const initialValues: EmailEsrfApiRequestBody = {
   dateOfBirth: '',
   email: '',
   givenName: '',
+  locale: '',
   surname: '',
 }
 
@@ -55,7 +56,8 @@ export default function Email() {
     values: formikValues,
   } = useFormik<EmailEsrfApiRequestBody>({
     initialValues,
-    onSubmit: (values) => emailEsrf(values),
+    onSubmit: (values) =>
+      emailEsrf({ ...values, locale: router.locale ?? 'en' }),
     validate: async (values) => {
       // manually validate with yup, scroll and focus error summary section element on errors
       try {
