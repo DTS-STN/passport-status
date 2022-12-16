@@ -12,9 +12,11 @@ const Landing: FC = () => {
 
   return (
     <Layout
-      meta={t('common:meta', { returnObjects: true })}
-      header={t('common:header', { returnObjects: true })}
-      footer={t('common:footer', { returnObjects: true })}
+      meta={{
+        author: t('common:meta.author'),
+        desc: t('common:meta.desc'),
+        title: t('common:meta.title'),
+      }}
     >
       <h1 className="h1">{t('header')}</h1>
       <p>{t('description')}</p>
