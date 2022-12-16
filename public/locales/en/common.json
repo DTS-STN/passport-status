@@ -2,16 +2,16 @@
   "contact-us": "Contact us",
   "english": "English",
   "footer": {
-    "dateModifiedText": "Date Modified: ",
+    "date-modified-text": "Date Modified: ",
     "about-this-site": "About this Site",
     "canada-ca-alt-text": "Symbol of the Government of Canada",
     "links": {
-      "contactUs": "Contact information",
-      "contactUsURL": "https://www.canada.ca/en/contact.html",
+      "contact-us": "Contact information",
+      "contact-us-url": "https://www.canada.ca/en/contact.html",
       "privacy": "Privacy",
-      "privacyURL": "https://www.canada.ca/en/transparency/privacy.html",
-      "termsAndCondition": "Terms and conditions",
-      "termsAndConditionURL": "https://www.canada.ca/en/transparency/terms.html"
+      "privacy-url": "https://www.canada.ca/en/transparency/privacy.html",
+      "terms-and-condition": "Terms and conditions",
+      "terms-and-condition-url": "https://www.canada.ca/en/transparency/terms.html"
     }
   },
   "found-errors_one": "The following error was found in the form:",
@@ -19,8 +19,8 @@
   "francais": "Français",
   "goc": "Government of Canada",
   "header": {
-    "gocLink": "https://www.canada.ca/en.html",
-    "skipToMain": "Skip to main content"
+    "goc-link": "https://www.canada.ca/en.html",
+    "skip-to-main": "Skip to main content"
   },
   "header-canada-ca-alt-text": "Symbol of the Government of Canada",
   "language-selection": "Language selection",
@@ -28,7 +28,7 @@
   "meta": {
     "author": "Service Canada",
     "desc": "English",
-    "title": "Passport Application Status Checker (PASC)"
+    "title": "Check the status of your passport application - Canada.ca"
   },
   "required": "(required)",
   "service-and-benefits": "Service and Benefits",
