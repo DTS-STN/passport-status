@@ -53,5 +53,7 @@
     "end-session": "End session"
   },
   "phone-number": "1-800-567-6868",
-  "feedback-link": "Did you find what you were looking for? <1>Give your feedback</1> on the passport status check tool."
+  "feedback-link": "Did you find what you were looking for? <1>Give your feedback</1> on the passport status check tool.",
+  "external-link": "External link",
+  "opens-in-new-tab": "Opens in a new tab"
 }

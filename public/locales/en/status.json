@@ -130,7 +130,7 @@
   "status-check-urgent": {
     "description": "If you need a passport within 10 business days, learn ",
     "express-services": {
-      "text": "how to get urgent or express passport services.",
+      "text": "how to get urgent or express passport services",
       "href": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/urgent-emergency-passport.html"
     }
   },
