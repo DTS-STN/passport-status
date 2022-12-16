@@ -27,7 +27,6 @@ import Modal from '../components/Modal'
 import IdleTimeout from '../components/IdleTimeout'
 import Collapse from '../components/Collapse'
 import ExampleImage from '../components/ExampleImage'
-import Link from 'next/link'
 
 const initialValues: CheckStatusApiRequestQuery = {
   dateOfBirth: '',

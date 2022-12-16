@@ -5,7 +5,7 @@ import { useRouter } from 'next/router'
 import { Trans, useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Layout from '../components/Layout'
-import { useMemo, useState, useCallback } from 'react'
+import { FC, useMemo, useState } from 'react'
 import ErrorSummary, {
   ErrorSummaryItem,
   getErrorSummaryItems,
@@ -37,7 +37,7 @@ const validationSchema = Yup.object({
     .max(new Date(), 'date-of-birth.error.current'),
 })
 
-export default function Email() {
+const Email: FC = () => {
   const { t } = useTranslation('email')
   const router = useRouter()
   const [modalOpen, setModalOpen] = useState(false)
@@ -213,3 +213,5 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => ({
     ...(await serverSideTranslations(locale ?? 'default', ['common', 'email'])),
   },
 })
+
+export default Email

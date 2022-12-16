@@ -1,5 +1,4 @@
 import { FC } from 'react'
-import { useTranslation } from 'next-i18next'
 import DateModified from './DateModified'
 
 export interface FooterLink {
@@ -37,14 +36,14 @@ export interface FooterProps {
 /**
  * footer element for all pages
  */
-export default function Footer({
+const Footer: FC<FooterProps> = ({
   footerLogoAltText,
   footerLogoImage,
   links,
   footerNav1,
   footerNav2,
   dateModifiedText,
-}: FooterProps) {
+}: FooterProps) => {
   return (
     <footer>
       <h2 className="sr-only">siteFooter</h2>
@@ -94,3 +93,5 @@ export default function Footer({
     </footer>
   )
 }
+
+export default Footer
