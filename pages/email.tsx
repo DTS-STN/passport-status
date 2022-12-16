@@ -2,7 +2,7 @@ import { useFormik, validateYupSchema, yupToFormErrors } from 'formik'
 import * as Yup from 'yup'
 import { GetStaticProps } from 'next'
 import { useRouter } from 'next/router'
-import { useTranslation } from 'next-i18next'
+import { Trans, useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Layout from '../components/Layout'
 import { useMemo, useState, useCallback } from 'react'
@@ -97,6 +97,11 @@ export default function Email() {
             {t('email-confirmation-msg.please-contact')}{' '}
             <b>{t('common:phone-number')}</b>.
           </p>
+          <div className="mt-10">
+            <Trans i18nKey={'common:feedback-link'}>
+              Insert feedback <a href="https://example.com">Link</a>
+            </Trans>
+          </div>
         </>
       ) : (
         <form onSubmit={handleFormikSubmit} id="form-email-esrf">
