@@ -52,5 +52,7 @@
     "continue-session": "Continuer la session",
     "end-session": "Terminer la session"
   },
-  "phone-number": "1-800-567-6868"
+  "phone-number": "1-800-567-6868",
+  "external-link": "Lien externe",
+  "opens-in-new-tab": "S'ouvre dans un nouvel onglet"
 }
