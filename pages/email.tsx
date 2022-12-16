@@ -98,8 +98,8 @@ export default function Email() {
             <b>{t('common:phone-number')}</b>.
           </p>
           <div className="mt-10">
-            <Trans i18nKey={'feedback-link'}>
-              Insert feedback <a href="">Link</a>
+            <Trans i18nKey={'common:feedback-link'}>
+              Insert feedback <a href="https://example.com">Link</a>
             </Trans>
           </div>
         </>
