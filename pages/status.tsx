@@ -27,6 +27,7 @@ import Modal from '../components/Modal'
 import IdleTimeout from '../components/IdleTimeout'
 import Collapse from '../components/Collapse'
 import ExampleImage from '../components/ExampleImage'
+import ExternalLink from '../components/ExternalLink'
 
 const initialValues: CheckStatusApiRequestQuery = {
   dateOfBirth: '',
@@ -150,7 +151,8 @@ const Status: FC = () => {
               />
               <div className="mt-10">
                 <Trans i18nKey={'common:feedback-link'}>
-                  Insert feedback <a href="https://example.com">Link</a>
+                  Insert feedback{' '}
+                  <ExternalLink href="https://example.com">Link</ExternalLink>
                 </Trans>
               </div>
             </>

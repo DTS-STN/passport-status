@@ -1,5 +1,6 @@
 import { FC } from 'react'
 import { useTranslation } from 'next-i18next'
+import ExternalLink from '../ExternalLink'
 
 export const CheckStatusNoRecord: FC<{}> = () => {
   const { t } = useTranslation(['status', 'common'])
@@ -26,17 +27,17 @@ export const CheckStatusNoRecord: FC<{}> = () => {
       <p>{t('no-record.double-check')}</p>
       <p>
         {t('status-check-contact.description-no-record')}
-        <a href={t('status-check-contact.service-standard.href')}>
+        <ExternalLink href={t('status-check-contact.service-standard.href')}>
           {t('status-check-contact.service-standard.text')}
-        </a>
+        </ExternalLink>
         {t('status-check-contact.can-call')}
         <b>{t('common:phone-number')}</b>.
       </p>
       <p>
         {t('status-check-urgent.description')}
-        <a href={t('status-check-urgent.express-services.href')}>
+        <ExternalLink href={t('status-check-urgent.express-services.href')}>
           {t('status-check-urgent.express-services.text')}
-        </a>
+        </ExternalLink>
       </p>
     </>
   )

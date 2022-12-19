@@ -17,6 +17,7 @@ import Modal from '../components/Modal'
 import useEmailEsrf from '../lib/useEmailEsrf'
 import { EmailEsrfApiRequestBody } from '../lib/types'
 import IdleTimeout from '../components/IdleTimeout'
+import ExternalLink from '../components/ExternalLink'
 
 const initialValues: EmailEsrfApiRequestBody = {
   dateOfBirth: '',
@@ -103,7 +104,8 @@ const Email: FC = () => {
           </p>
           <div className="mt-10">
             <Trans i18nKey={'common:feedback-link'}>
-              Insert feedback <a href="https://example.com">Link</a>
+              Insert feedback{' '}
+              <ExternalLink href="https://example.com">Link</ExternalLink>
             </Trans>
           </div>
         </>
