@@ -14,6 +14,7 @@ jest.mock('../../components/ErrorSummary', () => ({
 }))
 jest.mock('../../components/InputField')
 jest.mock('../../components/Layout')
+jest.mock('../../components/Modal')
 jest.mock('../../lib/useCheckStatus', () => ({
   useCheckStatus: () => ({
     isLoading: false,
@@ -22,25 +23,6 @@ jest.mock('../../lib/useCheckStatus', () => ({
     remove: jest.fn(),
   }),
 }))
-
-//Mocks for dialog element until PR containing fix for TypeError is merged into jsdom
-HTMLDialogElement.prototype.show = jest.fn(function mock(
-  this: HTMLDialogElement
-) {
-  this.open = true
-})
-
-HTMLDialogElement.prototype.showModal = jest.fn(function mock(
-  this: HTMLDialogElement
-) {
-  this.open = true
-})
-
-HTMLDialogElement.prototype.close = jest.fn(function mock(
-  this: HTMLDialogElement
-) {
-  this.open = false
-})
 
 describe('Check status page', () => {
   it('should render the page', () => {
