@@ -22,31 +22,12 @@ const IdleTimeout: FC<IdleTimeoutProps> = ({ promptTimeout, timeout }) => {
 
   const handleOnIdleContinueSession = () => {
     setModalOpen(false)
-    // show existing modals
-    document
-      .querySelectorAll('[role="dialog"]')
-      .forEach(function ({ parentElement }) {
-        parentElement?.classList.remove('hidden')
-        parentElement?.classList.add('flex')
-      })
     reset()
-  }
-
-  const handleOnPrompt = () => {
-    // hide existing modals
-    document
-      .querySelectorAll('[role="dialog"]')
-      .forEach(function ({ parentElement }) {
-        parentElement?.classList.remove('flex')
-        parentElement?.classList.add('hidden')
-      })
-
-    setModalOpen(true)
   }
 
   const { reset, getRemainingTime } = useIdleTimer({
     onIdle: handleOnIdle,
-    onPrompt: handleOnPrompt,
+    onPrompt: () => setModalOpen(true),
     promptTimeout: promptTimeout ?? 5 * 60 * 1000, //5 minutes
     timeout: timeout ?? 10 * 60 * 1000, //10 minutes
   })

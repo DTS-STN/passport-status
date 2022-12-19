@@ -31,7 +31,6 @@
     "prom-client": "^14.1.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-focus-on": "^3.7.0",
     "react-idle-timer": "^5.4.2",
     "yup": "^0.32.11"
   },

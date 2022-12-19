@@ -1,6 +1,5 @@
-import { FC, ReactNode, useId } from 'react'
+import { FC, ReactNode, useEffect, useId, useRef } from 'react'
 import ActionButton, { ActionButtonProps } from './ActionButton'
-import { FocusOn } from 'react-focus-on'
 
 export interface ModalProps {
   actionButtons: ActionButtonProps[]
@@ -10,39 +9,43 @@ export interface ModalProps {
 }
 
 const Modal: FC<ModalProps> = ({ actionButtons, header, open, children }) => {
+  const dialogRef = useRef<HTMLDialogElement>(null)
   const id = useId()
-  if (!open) return <></>
+
+  useEffect(() => {
+    if (open) {
+      dialogRef.current?.showModal()
+    } else {
+      dialogRef.current?.close()
+    }
+  }, [open])
+
   return (
-    <FocusOn autoFocus={false}>
-      <div
-        className="fixed top-0 left-0 w-screen h-full flex justify-center items-center"
-        style={{ background: 'rgba(71, 71, 71, 0.8)' }}
+    <dialog
+      ref={dialogRef}
+      className="border-none bg-transparent w-full md:w-2/3 lg:w-2/5 p-1 backdrop:bg-black backdrop:bg-opacity-80"
+    >
+      <section
+        tabIndex={-1}
+        className="bg-white rounded-md ring-2 ring-gray-modal"
+        aria-describedby={`${id}-modal-header`}
       >
-        <div
-          role="dialog"
-          aria-describedby={`${id}-modal-header`}
-          className="mx-4 bg-white ring-2 ring-gray-modal md:w-2/3 lg:w-2/5 rounded"
+        <header
+          id={`${id}-modal-header`}
+          className="bg-blue-deep text-white p-3 border-b border-black rounded-t-md"
         >
-          <header
-            id={`${id}-modal-header`}
-            className="bg-blue-deep text-white p-3 border-b border-black rounded-t"
-          >
-            <h2>{header}</h2>
-          </header>
-          <div id={`${id}-modal-desc`} className="p-3">
-            {children}
-          </div>
-          <div className="flex gap-2 justify-end p-2 border-t border-gray-modal">
-            {actionButtons.map((actionButtonProps) => (
-              <ActionButton
-                key={actionButtonProps.text}
-                {...actionButtonProps}
-              />
-            ))}
-          </div>
+          <h2>{header}</h2>
+        </header>
+        <div id={`${id}-modal-desc`} className="p-3">
+          {children}
         </div>
-      </div>
-    </FocusOn>
+        <div className="flex gap-2 justify-end p-2 border-t border-gray-modal">
+          {actionButtons.map((actionButtonProps) => (
+            <ActionButton key={actionButtonProps.text} {...actionButtonProps} />
+          ))}
+        </div>
+      </section>
+    </dialog>
   )
 }
 
