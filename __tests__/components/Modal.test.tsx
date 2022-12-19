@@ -5,6 +5,25 @@ import Modal from '../../components/Modal'
 
 expect.extend(toHaveNoViolations)
 
+//Mocks for dialog element until PR containing fix for TypeError is merged into jsdom
+HTMLDialogElement.prototype.show = jest.fn(function mock(
+  this: HTMLDialogElement
+) {
+  this.open = true
+})
+
+HTMLDialogElement.prototype.showModal = jest.fn(function mock(
+  this: HTMLDialogElement
+) {
+  this.open = true
+})
+
+HTMLDialogElement.prototype.close = jest.fn(function mock(
+  this: HTMLDialogElement
+) {
+  this.open = false
+})
+
 describe('Modal', () => {
   const { container } = render(
     <Modal

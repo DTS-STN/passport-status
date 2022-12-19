@@ -1,6 +1,7 @@
 import { FC, ReactNode, useEffect, useId, useRef } from 'react'
 import ActionButton, { ActionButtonProps } from './ActionButton'
 import FocusLock from 'react-focus-lock'
+import { RemoveScroll } from 'react-remove-scroll'
 
 export interface ModalProps {
   actionButtons: ActionButtonProps[]
@@ -44,30 +45,32 @@ const Modal: FC<ModalProps> = ({
       className="border-none bg-transparent w-full md:w-2/3 lg:w-2/5 p-1 backdrop:bg-black backdrop:bg-opacity-80"
     >
       <FocusLock disabled={!open}>
-        <section
-          data-autofocus
-          tabIndex={-1}
-          className="bg-white rounded-md ring-2 ring-gray-modal"
-          aria-describedby={`${id}-modal-header`}
-        >
-          <header
-            id={`${id}-modal-header`}
-            className="bg-blue-deep text-white p-3 border-b border-black rounded-t-md"
+        <RemoveScroll enabled={open}>
+          <section
+            data-autofocus
+            tabIndex={-1}
+            className="bg-white rounded-md ring-2 ring-gray-modal"
+            aria-describedby={`${id}-modal-header`}
           >
-            <h2>{header}</h2>
-          </header>
-          <div id={`${id}-modal-desc`} className="p-3">
-            {children}
-          </div>
-          <div className="flex gap-2 justify-end p-2 border-t border-gray-modal">
-            {actionButtons.map((actionButtonProps) => (
-              <ActionButton
-                key={actionButtonProps.text}
-                {...actionButtonProps}
-              />
-            ))}
-          </div>
-        </section>
+            <header
+              id={`${id}-modal-header`}
+              className="bg-blue-deep text-white p-3 border-b border-black rounded-t-md"
+            >
+              <h2>{header}</h2>
+            </header>
+            <div id={`${id}-modal-desc`} className="p-3">
+              {children}
+            </div>
+            <div className="flex gap-2 justify-end p-2 border-t border-gray-modal">
+              {actionButtons.map((actionButtonProps) => (
+                <ActionButton
+                  key={actionButtonProps.text}
+                  {...actionButtonProps}
+                />
+              ))}
+            </div>
+          </section>
+        </RemoveScroll>
       </FocusLock>
     </dialog>
   )
