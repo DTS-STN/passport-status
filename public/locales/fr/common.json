@@ -53,5 +53,6 @@
     "end-session": "Terminer la session"
   },
   "phone-number": "1-800-567-6868",
-  "feedback-link": "Avez-vous trouvé ce que vous cherchiez ? <1>Donnez votre avis</1> sur l'outil de vérification du statut des passeports"
+  "feedback-link": "Avez-vous trouvé ce que vous cherchiez ? <1>Donnez votre avis</1> sur l'outil de vérification du statut des passeports",
+  "opens-in-new-tab": "(s'ouvre dans un nouvel onglet)"
 }

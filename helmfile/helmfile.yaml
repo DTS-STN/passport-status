@@ -4,6 +4,9 @@ environments:
   prod-blue:
   prod-green:
 
+helmDefaults:
+  createNamespace: false
+
 releases:
 # Single Tier Website
   - name: {{ requiredEnv "PROJECT" }}-{{ requiredEnv "BRANCH" | lower }}

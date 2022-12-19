@@ -50,7 +50,6 @@ module.exports = {
           default: '#dcdee1',
           dark: '#cfd1d5',
           deep: '#bbbfc5',
-          helpText: '#6c757d',
           modal: '#999999',
         },
         orange: {

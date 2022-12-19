@@ -3,7 +3,7 @@
 describe('not found page loads', () => {
   beforeEach(() => {
     cy.visit('/expectations')
-    cy.get('#confirmBtn button').first().click()
+    cy.get('#btn-agree').first().click()
     cy.request({url: '/404', failOnStatusCode: false}).its('status').should('equal', 404)
     cy.visit('/404', {failOnStatusCode: false})
   })
