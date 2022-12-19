@@ -54,13 +54,12 @@ const Expectations: FC = () => {
       </p>
       <h2 className="h2">{t('header-privacy')}</h2>
       <p>{t('description-privacy')}</p>
-      <div id="confirmBtn">
-        <ActionButton
-          style="primary"
-          text={t('button-agree')}
-          onClick={handleOnAgreeClick}
-        />
-      </div>
+      <ActionButton
+        id="btn-agree"
+        style="primary"
+        text={t('button-agree')}
+        onClick={handleOnAgreeClick}
+      />
     </Layout>
   )
 }

@@ -5,7 +5,7 @@ import { useRouter } from 'next/router'
 import { Trans, useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Layout from '../components/Layout'
-import { FC, useMemo, useState } from 'react'
+import { FC, useCallback, useMemo, useRef, useState } from 'react'
 import ErrorSummary, {
   ErrorSummaryItem,
   getErrorSummaryItems,
@@ -41,14 +41,20 @@ const validationSchema = Yup.object({
 const Email: FC = () => {
   const { t } = useTranslation('email')
   const router = useRouter()
+  const headingRef = useRef<HTMLHeadingElement>(null)
   const [modalOpen, setModalOpen] = useState(false)
+
+  const scrollToHeading = useCallback(() => {
+    headingRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    headingRef.current?.focus()
+  }, [headingRef])
 
   const {
     error: emailEsrfError,
     isLoading: isEmailEsrfLoading,
     isSuccess: isEmailEsrfSuccess,
     mutate: emailEsrf,
-  } = useEmailEsrf()
+  } = useEmailEsrf({ onSuccess: () => scrollToHeading() })
 
   const {
     errors: formikErrors,
@@ -92,10 +98,12 @@ const Email: FC = () => {
       }}
     >
       <IdleTimeout />
-      <h1 className="h1">{t('header')}</h1>
+      <h1 ref={headingRef} className="h1" tabIndex={-1}>
+        {t('header')}
+      </h1>
 
       {isEmailEsrfSuccess ? (
-        <>
+        <div id="response-result">
           <h2 className="h2">{t('email-confirmation-msg.request-received')}</h2>
           <p>{t('email-confirmation-msg.if-exists')}</p>
           <p>
@@ -108,7 +116,7 @@ const Email: FC = () => {
               <ExternalLink href="https://example.com">Link</ExternalLink>
             </Trans>
           </div>
-        </>
+        </div>
       ) : (
         <form onSubmit={handleFormikSubmit} id="form-email-esrf">
           <p>{t('header-messages.fill-in-field')}</p>

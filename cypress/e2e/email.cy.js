@@ -3,7 +3,7 @@
 describe('email page loads', () => {
     beforeEach(() => {
       cy.visit('/expectations')
-      cy.get('#confirmBtn button').first().click()
+      cy.get('#btn-agree').first().click()
       cy.visit('/email')
     })
 
@@ -29,10 +29,31 @@ describe('email page loads', () => {
     })
 })
 
+describe('responses', ()=>{
+  it('loads result', ()=>{
+    cy.visit('/expectations')
+    cy.get('#btn-agree').first().click()
+    cy.visit('/email')
+    cy.get('#email').type('yanis.pierre@example.com')
+    cy.get('#givenName').type('Yanis')
+    cy.get('#surname').type('Piérre')
+    cy.get('#dateOfBirth').type('1972-07-29')
+    cy.get('#btn-submit').click()
+    cy.get('#response-result').should('exist')
+    cy.focused().should('have.prop', 'tagName' ).should('eq', 'H1')
+  })
+
+  it('loads result has no detectable a11y violations', ()=>{
+    cy.injectAxe();
+    cy.wait(500);
+    cy.checkA11y()
+  })
+})
+
 describe('cancel email esrf', ()=>{
   it('loads dialog', ()=>{
     cy.visit('/expectations')
-    cy.get('#confirmBtn button').first().click()
+    cy.get('#btn-agree').first().click()
     cy.visit('/email')
     cy.get('#btn-cancel').click()
     cy.get('[role="dialog"]').should('exist')
