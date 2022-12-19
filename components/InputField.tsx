@@ -70,7 +70,7 @@ const InputField: FC<InputFieldProps> = ({
       />
       {helpMessage && (
         <div
-          className="text-gray-helpText text-base max-w-prose mt-1.5"
+          className="text-gray-600 text-base max-w-prose mt-1.5"
           id={inputHelpMessageId}
         >
           {helpMessage}
