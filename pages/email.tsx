@@ -199,6 +199,7 @@ const Email: FC = () => {
       )}
       <Modal
         open={modalOpen}
+        onClose={() => setModalOpen(false)}
         actionButtons={[
           {
             text: t('common:modal-go-back.yes-button'),

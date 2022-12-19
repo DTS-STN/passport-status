@@ -3,12 +3,19 @@ import ActionButton, { ActionButtonProps } from './ActionButton'
 
 export interface ModalProps {
   actionButtons: ActionButtonProps[]
-  open: boolean
-  header: string
   children: ReactNode
+  header: string
+  onClose: EventListener
+  open: boolean
 }
 
-const Modal: FC<ModalProps> = ({ actionButtons, header, open, children }) => {
+const Modal: FC<ModalProps> = ({
+  actionButtons,
+  children,
+  header,
+  onClose,
+  open,
+}) => {
   const dialogRef = useRef<HTMLDialogElement>(null)
   const id = useId()
 
@@ -19,6 +26,16 @@ const Modal: FC<ModalProps> = ({ actionButtons, header, open, children }) => {
       dialogRef.current?.close()
     }
   }, [open])
+
+  useEffect(() => {
+    const el = dialogRef.current
+    el?.addEventListener('close', onClose)
+    return () => {
+      el?.removeEventListener('close', onClose)
+    }
+  }, [onClose])
+
+  // "Confirm" button of form triggers "close" on dialog because of [method="dialog"]
 
   return (
     <dialog

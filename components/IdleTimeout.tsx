@@ -47,6 +47,7 @@ const IdleTimeout: FC<IdleTimeoutProps> = ({ promptTimeout, timeout }) => {
   return (
     <Modal
       open={modalOpen && timeRemaining.length > 0}
+      onClose={handleOnIdleContinueSession}
       actionButtons={[
         {
           onClick: () => handleOnIdle(),
