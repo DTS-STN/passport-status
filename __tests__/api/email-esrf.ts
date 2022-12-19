@@ -17,6 +17,7 @@ describe('api/email-esrf', () => {
       dateOfBirth: '1996-07-23',
       email: 'camille.fontaine@example.com',
       givenName: 'Camille',
+      locale: 'en',
       surname: 'Fontainé',
     }
     const headers: IncomingHttpHeaders = {

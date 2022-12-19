@@ -2,10 +2,10 @@ import { useFormik, validateYupSchema, yupToFormErrors } from 'formik'
 import * as Yup from 'yup'
 import { GetStaticProps } from 'next'
 import { useRouter } from 'next/router'
-import { useTranslation } from 'next-i18next'
+import { Trans, useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Layout from '../components/Layout'
-import { useMemo, useState, useCallback } from 'react'
+import { FC, useMemo, useState } from 'react'
 import ErrorSummary, {
   ErrorSummaryItem,
   getErrorSummaryItems,
@@ -22,6 +22,7 @@ const initialValues: EmailEsrfApiRequestBody = {
   dateOfBirth: '',
   email: '',
   givenName: '',
+  locale: '',
   surname: '',
 }
 
@@ -36,7 +37,7 @@ const validationSchema = Yup.object({
     .max(new Date(), 'date-of-birth.error.current'),
 })
 
-export default function Email() {
+const Email: FC = () => {
   const { t } = useTranslation('email')
   const router = useRouter()
   const [modalOpen, setModalOpen] = useState(false)
@@ -55,7 +56,8 @@ export default function Email() {
     values: formikValues,
   } = useFormik<EmailEsrfApiRequestBody>({
     initialValues,
-    onSubmit: (values) => emailEsrf(values),
+    onSubmit: (values) =>
+      emailEsrf({ ...values, locale: router.locale ?? 'en' }),
     validate: async (values) => {
       // manually validate with yup, scroll and focus error summary section element on errors
       try {
@@ -82,9 +84,11 @@ export default function Email() {
 
   return (
     <Layout
-      meta={t('common:meta', { returnObjects: true })}
-      header={t('common:header', { returnObjects: true })}
-      footer={t('common:footer', { returnObjects: true })}
+      meta={{
+        author: t('common:meta.author'),
+        desc: t('common:meta.desc'),
+        title: t('common:meta.title'),
+      }}
     >
       <IdleTimeout />
       <h1 className="h1">{t('header')}</h1>
@@ -97,6 +101,11 @@ export default function Email() {
             {t('email-confirmation-msg.please-contact')}{' '}
             <b>{t('common:phone-number')}</b>.
           </p>
+          <div className="mt-10">
+            <Trans i18nKey={'common:feedback-link'}>
+              Insert feedback <a href="https://example.com">Link</a>
+            </Trans>
+          </div>
         </>
       ) : (
         <form onSubmit={handleFormikSubmit} id="form-email-esrf">
@@ -204,3 +213,5 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => ({
     ...(await serverSideTranslations(locale ?? 'default', ['common', 'email'])),
   },
 })
+
+export default Email

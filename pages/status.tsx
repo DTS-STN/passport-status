@@ -8,7 +8,7 @@ import {
 } from 'react'
 import { GetStaticProps } from 'next'
 import { useRouter } from 'next/router'
-import { useTranslation } from 'next-i18next'
+import { Trans, useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useFormik, validateYupSchema, yupToFormErrors } from 'formik'
 import * as Yup from 'yup'
@@ -122,9 +122,11 @@ const Status: FC = () => {
 
   return (
     <Layout
-      meta={t('common:meta', { returnObjects: true })}
-      header={t('common:header', { returnObjects: true })}
-      footer={t('common:footer', { returnObjects: true })}
+      meta={{
+        author: t('common:meta.author'),
+        desc: t('common:meta.desc'),
+        title: t('common:meta.title'),
+      }}
     >
       <IdleTimeout />
       <h1 className="h1">{t('header')}</h1>
@@ -146,6 +148,11 @@ const Status: FC = () => {
                 checkAgainText={t('check-again')}
                 checkStatusResponse={checkStatusResponse}
               />
+              <div className="mt-10">
+                <Trans i18nKey={'common:feedback-link'}>
+                  Insert feedback <a href="https://example.com">Link</a>
+                </Trans>
+              </div>
             </>
           )
         }

@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { hasCookie } from 'cookies-next'
 
 //regex to check if there's an extension in the path, ie .jpg
 const PUBLIC_FILE = /\.(.*)$/
