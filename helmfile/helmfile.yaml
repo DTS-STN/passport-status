@@ -1,4 +1,5 @@
 environments:
+  nightly:
   main:
   prod-blue:
   prod-green:
