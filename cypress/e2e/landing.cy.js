@@ -1,7 +1,7 @@
 describe('landing page loads', () => {
     beforeEach(() => {
       cy.visit('/expectations')
-      cy.get('#confirmBtn button').first().click()
+      cy.get('#btn-agree').first().click()
       cy.visit('/landing')
     })
 
@@ -27,7 +27,7 @@ describe('landing page loads', () => {
 describe('user does not ESRF number',()=>{
     it('should redirect to the email page',()=>{
       cy.visit('/expectations')
-      cy.get('#confirmBtn button').first().click()
+      cy.get('#btn-agree').first().click()
       cy.visit('/landing')
       cy.get('#without-esrf').click()
       cy.location('pathname').should("equal", "/en/email");
@@ -37,7 +37,7 @@ describe('user does not ESRF number',()=>{
 describe('user does have ESRF number',()=>{
   it('should redirect to the form',()=>{
     cy.visit('/expectations')
-    cy.get('#confirmBtn button').first().click()
+    cy.get('#btn-agree').first().click()
     cy.visit('/landing')
     cy.get('#with-esrf').click()
     cy.location('pathname').should("equal", "/en/status");
