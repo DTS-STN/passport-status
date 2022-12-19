@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">54.16% </span>
+                <span class="strong">51.72% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>13/24</span>
+                <span class='fraction'>15/29</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">25% </span>
+                <span class="strong">20% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/8</span>
+                <span class='fraction'>2/10</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">59.09% </span>
+                <span class="strong">57.69% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>13/22</span>
+                <span class='fraction'>15/26</span>
             </div>
         
             
@@ -282,7 +282,15 @@
 <a name='L217'></a><a href='#L217'>217</a>
 <a name='L218'></a><a href='#L218'>218</a>
 <a name='L219'></a><a href='#L219'>219</a>
-<a name='L220'></a><a href='#L220'>220</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L220'></a><a href='#L220'>220</a>
+<a name='L221'></a><a href='#L221'>221</a>
+<a name='L222'></a><a href='#L222'>222</a>
+<a name='L223'></a><a href='#L223'>223</a>
+<a name='L224'></a><a href='#L224'>224</a>
+<a name='L225'></a><a href='#L225'>225</a>
+<a name='L226'></a><a href='#L226'>226</a>
+<a name='L227'></a><a href='#L227'>227</a>
+<a name='L228'></a><a href='#L228'>228</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -326,6 +334,12 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -368,6 +382,8 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -508,7 +524,7 @@ import { useRouter } from 'next/router'
 import { Trans, useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Layout from '../components/Layout'
-import { FC, useMemo, useState } from 'react'
+import { FC, useCallback, useMemo, useRef, useState } from 'react'
 import ErrorSummary, {
   ErrorSummaryItem,
   getErrorSummaryItems,
@@ -544,14 +560,20 @@ const validationSchema = Yup.object({
 const Email: FC = () =&gt; {
   const { t } = useTranslation('email')
   const router = useRouter()
+  const headingRef = useRef&lt;HTMLHeadingElement&gt;(null)
   const [modalOpen, setModalOpen] = useState(false)
+&nbsp;
+  const scrollToHeading = useCallback(<span class="fstat-no" title="function not covered" >()</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >    headingRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })</span>
+<span class="cstat-no" title="statement not covered" >    headingRef.current?.focus()</span>
+  }, [headingRef])
 &nbsp;
   const {
     error: emailEsrfError,
     isLoading: isEmailEsrfLoading,
     isSuccess: isEmailEsrfSuccess,
     mutate: emailEsrf,
-  } = useEmailEsrf()
+  } = useEmailEsrf({ onSuccess: <span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >scrollToHeading() </span>})
 &nbsp;
   const {
     errors: formikErrors,
@@ -595,10 +617,12 @@ const Email: FC = () =&gt; {
       }}
     &gt;
       &lt;IdleTimeout /&gt;
-      &lt;h1 className="h1"&gt;{t('header')}&lt;/h1&gt;
+      &lt;h1 ref={headingRef} className="h1" tabIndex={-1}&gt;
+        {t('header')}
+      &lt;/h1&gt;
 &nbsp;
       {isEmailEsrfSuccess ? (
-<span class="branch-0 cbranch-no" title="branch not covered" >        &lt;&gt;</span>
+<span class="branch-0 cbranch-no" title="branch not covered" >        &lt;div id="response-result"&gt;</span>
           &lt;h2 className="h2"&gt;{t('email-confirmation-msg.request-received')}&lt;/h2&gt;
           &lt;p&gt;{t('email-confirmation-msg.if-exists')}&lt;/p&gt;
           &lt;p&gt;
@@ -611,7 +635,7 @@ const Email: FC = () =&gt; {
               &lt;ExternalLink href="https://example.com"&gt;Link&lt;/ExternalLink&gt;
             &lt;/Trans&gt;
           &lt;/div&gt;
-        &lt;/&gt;
+        &lt;/div&gt;
       ) : (
         &lt;form onSubmit={handleFormikSubmit} id="form-email-esrf"&gt;
           &lt;p&gt;{t('header-messages.fill-in-field')}&lt;/p&gt;
@@ -727,7 +751,7 @@ export default Email
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-12-19T16:45:44.506Z
+                at 2022-12-19T17:31:07.955Z
             </div>
         <script src="../prettify.js"></script>
         <script>
