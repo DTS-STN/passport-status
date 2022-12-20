@@ -159,10 +159,10 @@ describe('cancel check status', ()=>{
     cy.get('#btn-agree').first().click()
     cy.visit('/status')
     cy.get('#btn-cancel').click()
-    cy.get('[role="dialog"]').should('exist')
+    cy.get('dialog[open]').should('exist')
   })
 
-  it.skip('cancel check status has no detectable a11y violations', ()=>{
+  it('cancel check status has no detectable a11y violations', ()=>{
     cy.injectAxe();
     cy.wait(500);
     cy.checkA11y()

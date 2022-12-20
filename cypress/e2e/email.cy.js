@@ -56,10 +56,10 @@ describe('cancel email esrf', ()=>{
     cy.get('#btn-agree').first().click()
     cy.visit('/email')
     cy.get('#btn-cancel').click()
-    cy.get('[role="dialog"]').should('exist')
+    cy.get('dialog[open]').should('exist')
   })
 
-  it.skip('cancel email esrf has no detectable a11y violations', ()=>{
+  it('cancel email esrf has no detectable a11y violations', ()=>{
     cy.injectAxe();
     cy.wait(500);
     cy.checkA11y()
