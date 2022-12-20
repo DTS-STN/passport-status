@@ -54,7 +54,7 @@ const Modal: FC<ModalProps> = ({
             id={`${id}-modal-header`}
             className="bg-blue-deep text-white p-3 border-b border-black rounded-t-md"
           >
-            <h2>{header}</h2>
+            <h1>{header}</h1>
           </header>
           <div id={`${id}-modal-desc`} className="p-3">
             {children}
