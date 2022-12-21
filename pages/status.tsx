@@ -29,6 +29,9 @@ import IdleTimeout from '../components/IdleTimeout'
 import Collapse from '../components/Collapse'
 import ExampleImage from '../components/ExampleImage'
 import ExternalLink from '../components/ExternalLink'
+import DateSelectField, {
+  DateSelectFieldOnChangeEvent,
+} from '../components/DateSelectField'
 
 const initialValues: CheckStatusApiRequestQuery = {
   dateOfBirth: '',
@@ -127,6 +130,13 @@ const Status: FC = () => {
   const handleOnESRFChange: ChangeEventHandler<HTMLInputElement> = useCallback(
     ({ target }) => {
       setFormikFieldValue(target.name, target.value.replace(/[^a-z0-9]/gi, ''))
+    },
+    [setFormikFieldValue]
+  )
+
+  const handleOnDateOfBirthChange: DateSelectFieldOnChangeEvent = useCallback(
+    (dateString) => {
+      setFormikFieldValue('dateOfBirth', dateString)
     },
     [setFormikFieldValue]
   )
@@ -240,18 +250,15 @@ const Status: FC = () => {
             textRequired={t('common:required')}
             required
           />
-          <InputField
+          <DateSelectField
             id="dateOfBirth"
-            name="dateOfBirth"
-            type="date"
             label={t('date-of-birth.label')}
-            onChange={handleFormikChange}
+            onChange={handleOnDateOfBirthChange}
             value={formikValues.dateOfBirth}
             errorMessage={
               formikErrors.dateOfBirth && t(formikErrors.dateOfBirth)
             }
             textRequired={t('common:required')}
-            max={'9999-12-31'}
             required
           />
           <div className="flex gap-2 flex-wrap">
