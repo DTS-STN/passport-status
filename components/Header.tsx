@@ -1,6 +1,8 @@
 import React, { FC } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import Banner from './Banner'
+import { useTranslation } from 'next-i18next'
 
 export interface HeaderProps {
   gocLink: string
@@ -9,6 +11,7 @@ export interface HeaderProps {
 
 const Header: FC<HeaderProps> = ({ gocLink, skipToMainText }) => {
   const { locale, asPath } = useRouter()
+  const { t } = useTranslation('common')
 
   const langSelectorLocale = locale === 'en' ? 'fr' : 'en'
   const langSelectorAbbreviation = langSelectorLocale === 'fr' ? 'FR' : 'EN'
@@ -32,6 +35,12 @@ const Header: FC<HeaderProps> = ({ gocLink, skipToMainText }) => {
       </nav>
 
       <header>
+        {process.env.NEXT_PUBLIC_ENVIRONMENT !== 'prod' && (
+          <Banner
+            alert={t('banner.alert')}
+            description={t('banner.description')}
+          />
+        )}
         <div className="container mx-auto px-4 flex-col flex md:flex md:flex-row justify-between pt-2.5">
           <div className="flex flex-row justify-between items-center content-center md:mt-7">
             <a href={gocLink}>

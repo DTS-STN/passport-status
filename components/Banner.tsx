@@ -8,7 +8,7 @@ export interface BannerProps {
 const Banner: FC<BannerProps> = ({ alert, description }) => {
   return (
     <div className="bg-blue-normal">
-      <div className="container mx-auto px-4 my-4 flex-1 block lg:flex">
+      <div className="container mx-auto px-4 py-4 flex-1 block lg:flex">
         <div className="flex justify-between lg:block lg:w-max">
           <span
             className="font-body text-white border-2 block w-max px-4 py-1 my-auto leading-6 items-center"
