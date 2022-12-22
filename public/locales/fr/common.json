@@ -1,5 +1,10 @@
 {
   "contact-us": "Nous contacter",
+  "date-select-field": {
+    "day": "Jour",
+    "month": "Mois",
+    "year": "Année"
+  },
   "english": "English",
   "footer": {
     "date-modified-text": "Date de modification\u00A0: ",
