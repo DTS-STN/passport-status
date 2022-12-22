@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for pages/404.tsx</title>
+    <title>Code coverage report for components/DateSelect.tsx</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">pages</a> 404.tsx</h1>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">components</a> DateSelect.tsx</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">80% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>4/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>3/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">66.66% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>2/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">80% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>4/5</span>
             </div>
         
             
@@ -137,12 +137,12 @@
 <a name='L72'></a><a href='#L72'>72</a>
 <a name='L73'></a><a href='#L73'>73</a>
 <a name='L74'></a><a href='#L74'>74</a>
-<a name='L75'></a><a href='#L75'>75</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -166,6 +166,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -177,8 +178,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -201,6 +205,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">664x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -210,81 +215,82 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import Link from 'next/link'
-import ErrorLayout from '../components/ErrorLayout'
-import MetaData from '../components/MetaData'
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { FC } from 'react'
 &nbsp;
-const Custom404 = () =&gt; {
+export interface DateSelectOption {
+  value: string
+  label: string
+}
+export type DateSelectOptions = DateSelectOption[]
+export type DateSelectType = 'year' | 'month' | 'day'
+&nbsp;
+export type DateSelectOnChangeEvent = (
+  e: React.ChangeEvent&lt;HTMLSelectElement&gt;,
+  type: DateSelectType
+) =&gt; void
+&nbsp;
+export interface DateSelectProps {
+  ariaDescribedby?: string
+  dateSelectLabelId: string
+  error?: boolean
+  id: string
+  label: string
+  onChange: DateSelectOnChangeEvent
+  options: DateSelectOptions
+  required?: boolean
+  type: DateSelectType
+  value: string
+}
+&nbsp;
+const DateSelect: FC&lt;DateSelectProps&gt; = ({
+  ariaDescribedby,
+  dateSelectLabelId,
+  error,
+  id,
+  label,
+  onChange,
+  options,
+  required,
+  type,
+  value,
+}) =&gt; {
+  const handleOnSelectChange: React.ChangeEventHandler&lt;HTMLSelectElement&gt; = <span class="fstat-no" title="function not covered" >(</span>
+    e
+  ) =&gt; <span class="cstat-no" title="statement not covered" >onChange(e, type)</span>
+&nbsp;
   return (
-    &lt;ErrorLayout&gt;
-      &lt;MetaData
-        author={'Service Canada'}
-        desc={
-          "Error message stating that the server is down, or the URL is incorrect or expired - Message d'erreur indiquant que le serveur est hors service, que l'URL est incorrecte ou qu'elle a expiré."
-        }
-        title={'Not Found | Pas trouvé - Canada.ca'}
-      /&gt;
-      &lt;h1 className="sr-only" lang="en"&gt;
-        Not Found
-      &lt;/h1&gt;
-      &lt;span className="sr-only"&gt;
-        {' '}
-        / &lt;span lang="fr"&gt;Pas trouvé&lt;/span&gt;
-      &lt;/span&gt;
-      &lt;div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8"&gt;
-        &lt;div lang="en"&gt;
-          &lt;h2 className="h1"&gt;We couldn&amp;#39;t find that Web page&lt;/h2&gt;
-          &lt;p className="h2"&gt;Error 404&lt;/p&gt;
-          &lt;p&gt;
-            We&amp;#39;re sorry you ended up here. Sometimes a page gets moved or
-            deleted, but hopefully we can help you find what you&amp;#39;re looking
-            for. What next?
-          &lt;/p&gt;
-          &lt;ul className="list-disc space-y-2 pl-10"&gt;
-            &lt;li&gt;
-              Return to the{' '}
-              &lt;Link href="/" locale="default"&gt;
-                &lt;a&gt;home page&lt;/a&gt;
-              &lt;/Link&gt;
-              ;
-            &lt;/li&gt;
-            &lt;li&gt;
-              &lt;a href="https://www.canada.ca/en/contact.html"&gt;Contact us&lt;/a&gt; and
-              we&amp;#39;ll help you out.
-            &lt;/li&gt;
-          &lt;/ul&gt;
-        &lt;/div&gt;
-        &lt;div lang="fr"&gt;
-          &lt;h2 className="h1"&gt;Nous ne pouvons trouver cette page Web&lt;/h2&gt;
-          &lt;p className="h2"&gt;Erreur 404&lt;/p&gt;
-          &lt;p&gt;
-            Nous sommes désolés que vous ayez abouti ici. Il arrive parfois
-            qu&amp;#39;une page ait été déplacée ou supprimée. Heureusement, nous
-            pouvons vous aider à trouver ce que vous cherchez. Que faire?
-          &lt;/p&gt;
-          &lt;ul className="list-disc space-y-2 pl-10"&gt;
-            &lt;li&gt;
-              Retournez à la{' '}
-              &lt;Link href="/" locale="default"&gt;
-                &lt;a&gt;page d&amp;#39;accueil&lt;/a&gt;
-              &lt;/Link&gt;
-              ;
-            &lt;/li&gt;
-            &lt;li&gt;
-              &lt;a href="https://www.canada.ca/fr/contact.html"&gt;
-                Communiquez avec nous
-              &lt;/a&gt;{' '}
-              pour obtenir de l&amp;#39;aide.
-            &lt;/li&gt;
-          &lt;/ul&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/ErrorLayout&gt;
+    &lt;div className="flex flex-col space-y-2"&gt;
+      &lt;label
+        id={`date-select-${id}-${type}-label`}
+        htmlFor={`date-select-${id}-${type}`}
+        className="font-bold"
+      &gt;
+        {label}
+      &lt;/label&gt;
+      &lt;select
+        id={`date-select-${id}-${type}`}
+        value={value}
+        onChange={handleOnSelectChange}
+        aria-describedby={ariaDescribedby}
+        aria-invalid={error ? <span class="branch-0 cbranch-no" title="branch not covered" >true </span>: undefined}
+        aria-labelledby={`${dateSelectLabelId} date-select-${id}-${type}-label`}
+        aria-required={required ? true : <span class="branch-1 cbranch-no" title="branch not covered" >undefined}</span>
+        className={`py-1 px-3 border rounded w-40 ${
+          error ? <span class="branch-0 cbranch-no" title="branch not covered" >'border-accent-error' </span>: 'border-neutral-400'
+        } focus:outline-none focus:border-sky-500 focus:ring-sky-500`}
+      &gt;
+        &lt;option value="" disabled&gt;&lt;/option&gt;
+        {options.map(({ label, value }) =&gt; (
+          &lt;option key={value} value={value}&gt;
+            {label}
+          &lt;/option&gt;
+        ))}
+      &lt;/select&gt;
+    &lt;/div&gt;
   )
 }
 &nbsp;
-export default Custom404
+export default DateSelect
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
