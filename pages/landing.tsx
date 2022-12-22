@@ -6,6 +6,7 @@ import Layout from '../components/Layout'
 import LinkButton from '../components/LinkButton'
 import Collapse from '../components/Collapse'
 import ExampleImage from '../components/ExampleImage'
+import BorderedText from '../components/BorderedText'
 
 const Landing: FC = () => {
   const { t } = useTranslation('landing')
@@ -19,6 +20,11 @@ const Landing: FC = () => {
       }}
     >
       <h1 className="h1">{t('header')}</h1>
+      {process.env.NEXT_PUBLIC_ENVIRONMENT !== 'prod' && (
+        <BorderedText customStyle="h2">
+          <h2>{t('common:test-site')}</h2>
+        </BorderedText>
+      )}
       <p>{t('description')}</p>
       <div className="flex flex-wrap md:flex-nowrap gap-4 mb-4">
         <div className="w-full lg:w-4/12 xl:w-3/12">
