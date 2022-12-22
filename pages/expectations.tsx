@@ -6,7 +6,6 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Layout from '../components/Layout'
 import ActionButton from '../components/ActionButton'
 import { setCookie } from 'cookies-next'
-import BorderedText from '../components/BorderedText'
 
 const Expectations: FC = () => {
   const { t } = useTranslation('expectations')
@@ -29,11 +28,6 @@ const Expectations: FC = () => {
       }}
     >
       <h1 className="h1">{t('header-purpose')}</h1>
-      {process.env.NEXT_PUBLIC_ENVIRONMENT !== 'prod' && (
-        <BorderedText customStyle="h2">
-          <h2>{t('common:test-site')}</h2>
-        </BorderedText>
-      )}
       <p>{t('can-check.description')}</p>
       <ul className="space-y-2 pl-4 mb-3">
         <IconListItem icon="check-mark" text={t('can-check.list.item-1')} />

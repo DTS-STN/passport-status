@@ -1,16 +1,12 @@
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 import { axe, toHaveNoViolations } from 'jest-axe'
-import BorderedText from '../../components/BorderedText'
+import Banner from '../../components/Banner'
 
 expect.extend(toHaveNoViolations)
 
-describe('Borderedtext', () => {
-  const sut = (
-    <BorderedText>
-      <p>content</p>
-    </BorderedText>
-  )
+describe('Banner', () => {
+  const sut = <Banner alert="Test site" description="content" />
 
   it('renders', () => {
     render(sut)

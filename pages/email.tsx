@@ -18,7 +18,6 @@ import useEmailEsrf from '../lib/useEmailEsrf'
 import { EmailEsrfApiRequestBody } from '../lib/types'
 import IdleTimeout from '../components/IdleTimeout'
 import ExternalLink from '../components/ExternalLink'
-import BorderedText from '../components/BorderedText'
 
 const initialValues: EmailEsrfApiRequestBody = {
   dateOfBirth: '',
@@ -102,11 +101,6 @@ const Email: FC = () => {
       <h1 ref={headingRef} className="h1" tabIndex={-1}>
         {t('header')}
       </h1>
-      {process.env.NEXT_PUBLIC_ENVIRONMENT !== 'prod' && (
-        <BorderedText customStyle="h2">
-          <h2>{t('common:test-site')}</h2>
-        </BorderedText>
-      )}
 
       {isEmailEsrfSuccess ? (
         <div id="response-result">

@@ -55,5 +55,8 @@
   "phone-number": "1-800-567-6868",
   "feedback-link": "Did you find what you were looking for? <1>Give your feedback</1> on the passport status check tool.",
   "opens-in-new-tab": "(opens in a new tab)",
-  "test-site": "Testing site"
+  "banner": {
+    "alert": "Test site",
+    "description": "You cannot check the status of your passport application through this test site. Parts of this site may not work and will change."
+  }
 }

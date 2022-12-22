@@ -29,7 +29,6 @@ import IdleTimeout from '../components/IdleTimeout'
 import Collapse from '../components/Collapse'
 import ExampleImage from '../components/ExampleImage'
 import ExternalLink from '../components/ExternalLink'
-import BorderedText from '../components/BorderedText'
 
 const initialValues: CheckStatusApiRequestQuery = {
   dateOfBirth: '',
@@ -147,11 +146,6 @@ const Status: FC = () => {
       <h1 ref={headingRef} className="h1" tabIndex={-1}>
         {t('header')}
       </h1>
-      {process.env.NEXT_PUBLIC_ENVIRONMENT !== 'prod' && (
-        <BorderedText customStyle="h2">
-          <h2>{t('common:test-site')}</h2>
-        </BorderedText>
-      )}
       {checkStatusResponse !== undefined ? (
         <>
           <CheckStatusInfo
