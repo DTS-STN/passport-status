@@ -1,20 +1,23 @@
-import { FC } from 'react'
+import { FC, ReactNode } from 'react'
 import Header from './Header'
 import Footer from './Footer'
-import MetaData from './MetaData'
+import MetaData, { MetaDataProps } from './MetaData'
+import { useTranslation } from 'next-i18next'
 
 export interface LayoutProps {
-  children: React.ReactNode
-  meta: any
-  header: any
-  footer: any
+  children: ReactNode
+  meta: MetaDataProps
 }
 
-const Layout: FC<LayoutProps> = ({ children, meta, header, footer }) => {
+const Layout: FC<LayoutProps> = ({ children, meta }) => {
+  const { t } = useTranslation('common')
   return (
     <div className="flex flex-col min-h-screen">
-      <MetaData author={meta.author} desc={meta.desc} title={meta.title} />
-      <Header skipToMainText={header.skipToMain} gocLink={header.gocLink} />
+      <MetaData {...meta} />
+      <Header
+        skipToMainText={t('header.skip-to-main')}
+        gocLink={t('header.goc-link')}
+      />
       <main
         role="main"
         id="mainContent"
@@ -24,23 +27,23 @@ const Layout: FC<LayoutProps> = ({ children, meta, header, footer }) => {
       </main>
 
       <Footer
-        dateModifiedText={footer.dateModifiedText}
+        dateModifiedText={t('footer.date-modified-text')}
         footerLogoAltText="symbol2"
         footerLogoImage="/wmms-blk.svg"
         footerNav1="aboutGovernment"
         footerNav2="aboutThisSite"
         links={[
           {
-            link: footer.links.contactUsURL,
-            linkText: footer.links.contactUs,
+            link: t('footer.links.contact-us-url'),
+            linkText: t('footer.links.contact-us'),
           },
           {
-            link: footer.links.termsAndConditionURL,
-            linkText: footer.links.termsAndCondition,
+            link: t('footer.links.terms-and-condition-url'),
+            linkText: t('footer.links.terms-and-condition'),
           },
           {
-            link: footer.links.privacyURL,
-            linkText: footer.links.privacy,
+            link: t('footer.links.privacy-url'),
+            linkText: t('footer.links.privacy'),
           },
         ]}
       />

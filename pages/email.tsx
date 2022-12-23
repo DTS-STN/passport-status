@@ -2,10 +2,10 @@ import { useFormik, validateYupSchema, yupToFormErrors } from 'formik'
 import * as Yup from 'yup'
 import { GetStaticProps } from 'next'
 import { useRouter } from 'next/router'
-import { useTranslation } from 'next-i18next'
+import { Trans, useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Layout from '../components/Layout'
-import { useMemo, useState, useCallback } from 'react'
+import { FC, useCallback, useMemo, useRef, useState } from 'react'
 import ErrorSummary, {
   ErrorSummaryItem,
   getErrorSummaryItems,
@@ -17,11 +17,16 @@ import Modal from '../components/Modal'
 import useEmailEsrf from '../lib/useEmailEsrf'
 import { EmailEsrfApiRequestBody } from '../lib/types'
 import IdleTimeout from '../components/IdleTimeout'
+import ExternalLink from '../components/ExternalLink'
+import DateSelectField, {
+  DateSelectFieldOnChangeEvent,
+} from '../components/DateSelectField'
 
 const initialValues: EmailEsrfApiRequestBody = {
   dateOfBirth: '',
   email: '',
   givenName: '',
+  locale: '',
   surname: '',
 }
 
@@ -36,26 +41,34 @@ const validationSchema = Yup.object({
     .max(new Date(), 'date-of-birth.error.current'),
 })
 
-export default function Email() {
+const Email: FC = () => {
   const { t } = useTranslation('email')
   const router = useRouter()
+  const headingRef = useRef<HTMLHeadingElement>(null)
   const [modalOpen, setModalOpen] = useState(false)
+
+  const scrollToHeading = useCallback(() => {
+    headingRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    headingRef.current?.focus()
+  }, [headingRef])
 
   const {
     error: emailEsrfError,
     isLoading: isEmailEsrfLoading,
     isSuccess: isEmailEsrfSuccess,
     mutate: emailEsrf,
-  } = useEmailEsrf()
+  } = useEmailEsrf({ onSuccess: () => scrollToHeading() })
 
   const {
     errors: formikErrors,
     handleChange: handleFormikChange,
     handleSubmit: handleFormikSubmit,
+    setFieldValue: setFormikFieldValue,
     values: formikValues,
   } = useFormik<EmailEsrfApiRequestBody>({
     initialValues,
-    onSubmit: (values) => emailEsrf(values),
+    onSubmit: (values) =>
+      emailEsrf({ ...values, locale: router.locale ?? 'en' }),
     validate: async (values) => {
       // manually validate with yup, scroll and focus error summary section element on errors
       try {
@@ -77,27 +90,44 @@ export default function Email() {
     [formikErrors, t]
   )
 
+  const handleOnDateOfBirthChange: DateSelectFieldOnChangeEvent = useCallback(
+    (dateString) => {
+      setFormikFieldValue('dateOfBirth', dateString)
+    },
+    [setFormikFieldValue]
+  )
+
   //if the api failed, fail hard to show error page
   if (emailEsrfError) throw emailEsrfError
 
   return (
     <Layout
-      meta={t('common:meta', { returnObjects: true })}
-      header={t('common:header', { returnObjects: true })}
-      footer={t('common:footer', { returnObjects: true })}
+      meta={{
+        author: t('common:meta.author'),
+        desc: t('common:meta.desc'),
+        title: t('common:meta.title'),
+      }}
     >
       <IdleTimeout />
-      <h1 className="h1">{t('header')}</h1>
+      <h1 ref={headingRef} className="h1" tabIndex={-1}>
+        {t('header')}
+      </h1>
 
       {isEmailEsrfSuccess ? (
-        <>
+        <div id="response-result">
           <h2 className="h2">{t('email-confirmation-msg.request-received')}</h2>
           <p>{t('email-confirmation-msg.if-exists')}</p>
           <p>
             {t('email-confirmation-msg.please-contact')}{' '}
             <b>{t('common:phone-number')}</b>.
           </p>
-        </>
+          <div className="mt-10">
+            <Trans i18nKey={'common:feedback-link'}>
+              Insert feedback{' '}
+              <ExternalLink href="https://example.com">Link</ExternalLink>
+            </Trans>
+          </div>
+        </div>
       ) : (
         <form onSubmit={handleFormikSubmit} id="form-email-esrf">
           <p>{t('header-messages.fill-in-field')}</p>
@@ -147,17 +177,14 @@ export default function Email() {
             textRequired={t('common:required')}
             required
           />
-          <InputField
+          <DateSelectField
             id="dateOfBirth"
-            name="dateOfBirth"
-            type="date"
             label={t('date-of-birth.label')}
-            onChange={handleFormikChange}
+            onChange={handleOnDateOfBirthChange}
             value={formikValues.dateOfBirth}
             errorMessage={
               formikErrors.dateOfBirth && t(formikErrors.dateOfBirth)
             }
-            max={'9999-12-31'}
             textRequired={t('common:required')}
             required
           />
@@ -172,7 +199,7 @@ export default function Email() {
             <ActionButton
               id="btn-cancel"
               disabled={isEmailEsrfLoading}
-              text={t('common:modal.cancel-button')}
+              text={t('common:modal-go-back.cancel-button')}
               onClick={() => setModalOpen(true)}
             />
           </div>
@@ -180,22 +207,21 @@ export default function Email() {
       )}
       <Modal
         open={modalOpen}
+        onClose={() => setModalOpen(false)}
         actionButtons={[
           {
-            text: t('common:modal.yes-button'),
+            text: t('common:modal-go-back.yes-button'),
             onClick: () => router.push('/landing'),
             style: 'primary',
-            type: 'button',
           },
           {
-            text: t('common:modal.no-button'),
+            text: t('common:modal-go-back.no-button'),
             onClick: () => setModalOpen(false),
-            style: 'default',
-            type: 'button',
           },
         ]}
+        header={t('common:modal-go-back.header')}
       >
-        {t('common:modal.description')}
+        <p>{t('common:modal-go-back.description')}</p>
       </Modal>
     </Layout>
   )
@@ -206,3 +232,5 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => ({
     ...(await serverSideTranslations(locale ?? 'default', ['common', 'email'])),
   },
 })
+
+export default Email

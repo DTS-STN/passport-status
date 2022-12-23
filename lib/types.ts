@@ -14,6 +14,7 @@ export interface EmailEsrfApiRequestBody {
   dateOfBirth: string
   email: string
   givenName: string
+  locale: string
   surname: string
 }
 

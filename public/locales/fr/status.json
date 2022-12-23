@@ -147,5 +147,16 @@
     "matches": "Assurez-vous que vos informations correspondent à votre formulaire de demande de passeport.",
     "for-child": "Pour les demandes concernant des enfants, utilisez le(s) prénom(s) et le nom de famille de l'enfant exactement comme indiqué sur sa demande de passeport.",
     "passport-officer": "Lors de la saisie de la demande dans notre système, l'agent des passeports peut avoir mis à jour les informations de la demande pour qu'elles correspondent aux informations fournies sur la preuve de citoyenneté ou sur les pièces d'identité justificatives. Ces renseignements peuvent différer des renseignements préférés pour vous ou votre enfant."
+  },
+  "collapse-file-number-title": "Vous ne trouvez pas votre numéro de dossier?",
+  "receipt-image-1": {
+    "title": "Exemple de reçu 1\u00a0:",
+    "description-alt": "Numéro de dossier (encerclé en rouge sur l'image) situé au centre d'un « reçu officiel » sous la date et l'heure",
+    "src": "/Receipt1_FR.png"
+  },
+  "receipt-image-2": {
+    "title": "Exemple de reçu 2\u00a0:",
+    "description-alt": "Numéro de dossier (encerclé en rouge sur l'image) situé près du haut d'un « reçu officiel et bordereau de cueillette » sous le nom du requérant.",
+    "src": "/Receipt2_FR.png"
   }
 }

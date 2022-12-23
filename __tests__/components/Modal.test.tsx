@@ -5,19 +5,45 @@ import Modal from '../../components/Modal'
 
 expect.extend(toHaveNoViolations)
 
+//Mocks for dialog element until PR containing fix for TypeError is merged into jsdom
+HTMLDialogElement.prototype.show = jest.fn(function mock(
+  this: HTMLDialogElement
+) {
+  this.open = true
+})
+
+HTMLDialogElement.prototype.showModal = jest.fn(function mock(
+  this: HTMLDialogElement
+) {
+  this.open = true
+})
+
+HTMLDialogElement.prototype.close = jest.fn(function mock(
+  this: HTMLDialogElement
+) {
+  this.open = false
+})
+
 describe('Modal', () => {
   const { container } = render(
-    <Modal open actionButtons={[{ text: 'button text' }]}>
-      <p>content</p>
+    <Modal
+      open
+      onClose={jest.fn()}
+      actionButtons={[{ text: 'button text' }]}
+      header={'header'}
+    >
+      <p>description</p>
     </Modal>
   )
 
   it('renders', () => {
     const sut = screen.getByRole('dialog')
-    const content = screen.getByText('content')
+    const header = screen.getByText('header')
+    const description = screen.getByText('description')
     const actionButton = screen.getByText('button text')
     expect(sut).toBeInTheDocument()
-    expect(content).toBeInTheDocument()
+    expect(header).toBeInTheDocument()
+    expect(description).toBeInTheDocument()
     expect(actionButton).toBeInTheDocument()
   })
 

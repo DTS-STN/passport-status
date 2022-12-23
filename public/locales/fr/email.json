@@ -28,7 +28,7 @@
     },
     "label": "Date de naissance"
   },
-  "email-esrf": "Envoyer mon numéro de dossier (FEDS)",
+  "email-esrf": "Envoyer mon numéro de dossier",
   "email-sent-confirmation": "Un courriel a été envoyé s'il y avait une correspondance dans nos dossiers avec le numéro de dossier (FEDS).",
   "email-confirmation-msg": {
     "request-received": "Votre demande d'obtention du numéro de dossier a été reçue",

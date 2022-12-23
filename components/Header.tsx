@@ -1,14 +1,17 @@
 import React, { FC } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import Banner from './Banner'
+import { useTranslation } from 'next-i18next'
 
 export interface HeaderProps {
-  skipToMainText: string
   gocLink: string
+  skipToMainText: string
 }
 
-export default function Header(props: HeaderProps) {
+const Header: FC<HeaderProps> = ({ gocLink, skipToMainText }) => {
   const { locale, asPath } = useRouter()
+  const { t } = useTranslation('common')
 
   const langSelectorLocale = locale === 'en' ? 'fr' : 'en'
   const langSelectorAbbreviation = langSelectorLocale === 'fr' ? 'FR' : 'EN'
@@ -18,7 +21,7 @@ export default function Header(props: HeaderProps) {
     <>
       <nav
         role="navigation"
-        aria-label={props.skipToMainText}
+        aria-labelledby="skipToMainContent"
         className="absolute w-px h-px -left-96 focus-within:w-screen focus-within:h-auto focus-within:top-4 focus-within:z-50 focus-within:flex focus-within:justify-center"
       >
         <a
@@ -27,14 +30,20 @@ export default function Header(props: HeaderProps) {
           href="#mainContent"
           draggable="false"
         >
-          {props.skipToMainText}
+          {skipToMainText}
         </a>
       </nav>
 
       <header>
+        {process.env.NEXT_PUBLIC_ENVIRONMENT !== 'prod' && (
+          <Banner
+            alert={t('banner.alert')}
+            description={t('banner.description')}
+          />
+        )}
         <div className="container mx-auto px-4 flex-col flex md:flex md:flex-row justify-between pt-2.5">
           <div className="flex flex-row justify-between items-center content-center md:mt-7">
-            <a href={props.gocLink}>
+            <a href={gocLink}>
               <img
                 className="w-auto h-7 lg:h-8"
                 src={locale === 'en' ? '/sig-blk-en.svg' : '/sig-blk-fr.svg'}
@@ -104,3 +113,5 @@ export default function Header(props: HeaderProps) {
     </>
   )
 }
+
+export default Header

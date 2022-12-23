@@ -1,5 +1,6 @@
 import { FC } from 'react'
 import { useTranslation } from 'next-i18next'
+import ExternalLink from '../ExternalLink'
 
 export interface CheckStatusShippingFedexProps {
   trackingNumber?: string
@@ -17,13 +18,11 @@ export const CheckStatusShippingFedex: FC<CheckStatusShippingFedexProps> = ({
       {trackingNumber && (
         <p>
           {t('status-check-tracking.number')} <b>{trackingNumber}</b>.{' '}
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
+          <ExternalLink
             href={t('status-check-tracking.link.fedex', { trackingNumber })}
           >
             {t('status-check-tracking.link.text')}
-          </a>
+          </ExternalLink>
         </p>
       )}
       <p>{t('shipped-fedex.supporting-documents')}</p>

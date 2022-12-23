@@ -1,17 +1,22 @@
 {
   "contact-us": "Contact us",
+  "date-select-field": {
+    "day": "Day",
+    "month": "Month",
+    "year": "Year"
+  },
   "english": "English",
   "footer": {
-    "dateModifiedText": "Date Modified: ",
+    "date-modified-text": "Date Modified: ",
     "about-this-site": "About this Site",
     "canada-ca-alt-text": "Symbol of the Government of Canada",
     "links": {
-      "contactUs": "Contact information",
-      "contactUsURL": "https://www.canada.ca/en/contact.html",
+      "contact-us": "Contact information",
+      "contact-us-url": "https://www.canada.ca/en/contact.html",
       "privacy": "Privacy",
-      "privacyURL": "https://www.canada.ca/en/transparency/privacy.html",
-      "termsAndCondition": "Terms and conditions",
-      "termsAndConditionURL": "https://www.canada.ca/en/transparency/terms.html"
+      "privacy-url": "https://www.canada.ca/en/transparency/privacy.html",
+      "terms-and-condition": "Terms and conditions",
+      "terms-and-condition-url": "https://www.canada.ca/en/transparency/terms.html"
     }
   },
   "found-errors_one": "The following error was found in the form:",
@@ -19,8 +24,8 @@
   "francais": "Français",
   "goc": "Government of Canada",
   "header": {
-    "gocLink": "https://www.canada.ca/en.html",
-    "skipToMain": "Skip to main content"
+    "goc-link": "https://www.canada.ca/en.html",
+    "skip-to-main": "Skip to main content"
   },
   "header-canada-ca-alt-text": "Symbol of the Government of Canada",
   "language-selection": "Language selection",
@@ -28,7 +33,7 @@
   "meta": {
     "author": "Service Canada",
     "desc": "English",
-    "title": "Passport Application Status Checker (PASC)"
+    "title": "Check the status of your passport application - Canada.ca"
   },
   "required": "(required)",
   "service-and-benefits": "Service and Benefits",
@@ -39,32 +44,24 @@
   "tools": "Tools",
   "top-of-page": "Top of Page",
   "welcome": "Welcome to",
-  "contact-program": "Contact Passport services",
-  "program-links": [
-    {
-      "text": "Contact the Passport Program",
-      "href": "https://ircc.canada.ca/english/passport/map/map.asp",
-      "external": true
-    },
-    {
-      "text": "Find a passport service location near you",
-      "href": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/contact-passport-program.html",
-      "external": true
-    },
-    {
-      "text": "Appointment booking",
-      "href": "https://eservices.canada.ca/en/reservation/",
-      "external": true
-    }
-  ],
-  "modal": {
+  "modal-go-back": {
     "cancel-button": "Cancel",
     "yes-button": "Yes",
     "no-button": "No",
-    "description": "Are you sure you want to go back?",
-    "idle": "You have been inactive for 10 minutes and your session is set to expire in 5 minutes. Select \"Continue Session\" to continue your session.",
-    "idle-continue-session": "Continue session",
-    "idle-end-session": "End session"
+    "header": "Return to the home page",
+    "description": "Are you sure you want to go back?"
   },
-  "phone-number": "1-800-567-6868"
+  "modal-idle-timeout": {
+    "header": "Session timeout warning",
+    "description": "You have been inactive for 10 minutes and your session is set to expire in {{timeRemaining}}. Select \"Continue Session\" to continue your session.",
+    "continue-session": "Continue session",
+    "end-session": "End session"
+  },
+  "phone-number": "1-800-567-6868",
+  "feedback-link": "Did you find what you were looking for? <1>Give your feedback</1> on the passport status check tool.",
+  "opens-in-new-tab": "(opens in a new tab)",
+  "banner": {
+    "alert": "Test site",
+    "description": "You cannot check the status of your passport application through this test site. Parts of this site may not work and will change."
+  }
 }

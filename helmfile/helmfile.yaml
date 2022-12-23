@@ -1,7 +1,11 @@
 environments:
+  nightly:
   main:
   prod-blue:
   prod-green:
+
+helmDefaults:
+  createNamespace: false
 
 releases:
 # Single Tier Website

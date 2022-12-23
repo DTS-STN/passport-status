@@ -1,17 +1,22 @@
 {
   "contact-us": "Nous contacter",
+  "date-select-field": {
+    "day": "Jour",
+    "month": "Mois",
+    "year": "Année"
+  },
   "english": "English",
   "footer": {
-    "dateModifiedText": "Date de modification\u00A0: ",
+    "date-modified-text": "Date de modification\u00A0: ",
     "about-this-site": "À propos de ce site",
     "canada-ca-alt-text": "Symbole du gouvernement du Canada",
     "links": {
-      "contactUs": "Contactez-nous",
-      "contactUsURL": "https://www.canada.ca/fr/contact.html",
+      "contact-us": "Contactez-nous",
+      "contact-us-url": "https://www.canada.ca/fr/contact.html",
       "privacy": "Confidentialité",
-      "privacyURL": "https://www.canada.ca/en/transparency/privacy.html",
-      "termsAndCondition": "Avis",
-      "termsAndConditionURL": "https://www.canada.ca/en/transparency/terms.html"
+      "privacy-url": "https://www.canada.ca/fr/transparence/confidentialite.html",
+      "terms-and-condition": "Avis",
+      "terms-and-condition-url": "https://www.canada.ca/fr/transparence/avis.html"
     }
   },
   "found-errors_one": "L'erreur suivante a été trouvée dans le formulaire\u00A0: ",
@@ -19,8 +24,8 @@
   "francais": "Français",
   "goc": "Governement du Canada",
   "header": {
-    "gocLink": "https://www.canada.ca/fr.html",
-    "skipToMain": "Passer au contenu principal"
+    "goc-link": "https://www.canada.ca/fr.html",
+    "skip-to-main": "Passer au contenu principal"
   },
   "header-canada-ca-alt-text": "Symbole du gouvernement du Canada",
   "language-selection": "Sélection de la langue",
@@ -28,7 +33,7 @@
   "meta": {
     "author": "Service Canada",
     "desc": "Français",
-    "title": "Vérificateur du Statut de mon application pour un passport (VSAP)"
+    "title": "Vérifiez l'état de votre demande de passeport - Canada.ca"
   },
   "required": "(obligatoire)",
   "service-and-benefits": "Service et avantages",
@@ -39,32 +44,24 @@
   "tools": "Outils",
   "top-of-page": "Haut de la page",
   "welcome": "Bienvenue à",
-  "contact-program": "Contacter les services des passeports",
-  "program-links": [
-    {
-      "text": "Communiquez avec le Programme de passeport",
-      "href": "https://ircc.canada.ca/francais/passeport/map/carte.asp",
-      "external": true
-    },
-    {
-      "text": "Trouvez un emplacement de service de passeport près de chez vous",
-      "href": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens/communiquer-programme-passeport.html",
-      "external": true
-    },
-    {
-      "text": "Prise de rendez-vous",
-      "href": "https://eservices.canada.ca/fr/reservation/",
-      "external": true
-    }
-  ],
-  "modal": {
+  "modal-go-back": {
     "cancel-button": "Annuler",
     "yes-button": "Oui",
     "no-button": "Non",
-    "description": "Êtes-vous sûr de vouloir revenir en arrière?",
-    "idle": "Vous avez été inactif pendant 10 minutes et votre session doit expirer dans 5 minutes. Sélectionnez \"Continuer la session\" pour continuer votre session.",
-    "idle-continue-session": "Continuer la session",
-    "idle-end-session": "Terminer la session"
+    "header": "Retournez à la page d'accueil",
+    "description": "Êtes-vous sûr de vouloir revenir en arrière?"
   },
-  "phone-number": "1-800-567-6868"
+  "modal-idle-timeout": {
+    "header": "Avertissement d'expiration de la session",
+    "description": "Vous avez été inactif pendant 10 minutes et votre session doit expirer dans {{timeRemaining}}. Sélectionnez \"Continuer la session\" pour continuer votre session.",
+    "continue-session": "Continuer la session",
+    "end-session": "Terminer la session"
+  },
+  "phone-number": "1-800-567-6868",
+  "feedback-link": "Avez-vous trouvé ce que vous cherchiez ? <1>Donnez votre avis</1> sur l'outil de vérification du statut des passeports",
+  "opens-in-new-tab": "(s'ouvre dans un nouvel onglet)",
+  "banner": {
+    "alert": "Lieu de test",
+    "description": "Vous ne pouvez pas vérifier l'état de votre demande de passeport via ce site de test. Certaines parties de ce site peuvent ne pas fonctionner et seront modifiées."
+  }
 }
