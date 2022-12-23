@@ -7,21 +7,15 @@ export interface BannerProps {
 
 const Banner: FC<BannerProps> = ({ alert, description }) => {
   return (
-    <div className="bg-blue-normal">
-      <div className="container mx-auto px-4 py-4 flex-1 block lg:flex">
-        <div className="flex justify-between lg:block lg:w-max">
-          <span
-            className="font-body text-white border-2 block w-max px-4 py-1 my-auto leading-6 items-center"
-            role="alert"
-          >
-            <b>{alert}</b>
-          </span>
+    <div className="bg-blue-normal font-body text-white">
+      <div className="container mx-auto p-4 flex flex-col space-y-2 lg:flex-row lg:items-center lg:space-x-4 lg:space-y-0">
+        <div
+          className="border-2 px-4 py-1 whitespace-nowrap w-max"
+          role="alert"
+        >
+          <b>{alert}</b>
         </div>
-        <div className="lg:ml-4 xl:ml-8 xxl:ml-12">
-          <p className="mt-2 lg:mt-0 h-full font-body text-white lg:ml-4 my-auto flex items-center">
-            {description}
-          </p>
-        </div>
+        <div>{description}</div>
       </div>
     </div>
   )
