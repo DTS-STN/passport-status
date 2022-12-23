@@ -18,6 +18,9 @@ import useEmailEsrf from '../lib/useEmailEsrf'
 import { EmailEsrfApiRequestBody } from '../lib/types'
 import IdleTimeout from '../components/IdleTimeout'
 import ExternalLink from '../components/ExternalLink'
+import DateSelectField, {
+  DateSelectFieldOnChangeEvent,
+} from '../components/DateSelectField'
 
 const initialValues: EmailEsrfApiRequestBody = {
   dateOfBirth: '',
@@ -60,6 +63,7 @@ const Email: FC = () => {
     errors: formikErrors,
     handleChange: handleFormikChange,
     handleSubmit: handleFormikSubmit,
+    setFieldValue: setFormikFieldValue,
     values: formikValues,
   } = useFormik<EmailEsrfApiRequestBody>({
     initialValues,
@@ -84,6 +88,13 @@ const Email: FC = () => {
   const errorSummaryItems = useMemo<ErrorSummaryItem[]>(
     () => getErrorSummaryItems(formikErrors, t),
     [formikErrors, t]
+  )
+
+  const handleOnDateOfBirthChange: DateSelectFieldOnChangeEvent = useCallback(
+    (dateString) => {
+      setFormikFieldValue('dateOfBirth', dateString)
+    },
+    [setFormikFieldValue]
   )
 
   //if the api failed, fail hard to show error page
@@ -166,17 +177,14 @@ const Email: FC = () => {
             textRequired={t('common:required')}
             required
           />
-          <InputField
+          <DateSelectField
             id="dateOfBirth"
-            name="dateOfBirth"
-            type="date"
             label={t('date-of-birth.label')}
-            onChange={handleFormikChange}
+            onChange={handleOnDateOfBirthChange}
             value={formikValues.dateOfBirth}
             errorMessage={
               formikErrors.dateOfBirth && t(formikErrors.dateOfBirth)
             }
-            max={'9999-12-31'}
             textRequired={t('common:required')}
             required
           />
@@ -199,6 +207,7 @@ const Email: FC = () => {
       )}
       <Modal
         open={modalOpen}
+        onClose={() => setModalOpen(false)}
         actionButtons={[
           {
             text: t('common:modal-go-back.yes-button'),

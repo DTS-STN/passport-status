@@ -12,6 +12,7 @@ jest.mock('../../components/ErrorSummary', () => ({
 }))
 jest.mock('../../components/InputField')
 jest.mock('../../components/Layout')
+jest.mock('../../components/Modal')
 jest.mock('../../lib/useEmailEsrf', () => {
   return jest.fn(() => ({
     isLoading: false,

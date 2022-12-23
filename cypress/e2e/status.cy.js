@@ -94,22 +94,26 @@ describe('Date of Birth field validation', ()=>{
   })
 
   it('validates valid dateOfBirth',()=>{
-    cy.get('#dateOfBirth').type('1982-12-08')
+    cy.get('#date-select-dateOfBirth-year').select('1982')
+    cy.get('#date-select-dateOfBirth-month').select('12')
+    cy.get('#date-select-dateOfBirth-day').select('08')
     cy.get('#btn-submit').click()
-    cy.get('#input-dateOfBirth-error').should('not.exist')
+    cy.get('#date-select-dateOfBirth-error').should('not.exist')
   })
 
   it('validates empty dateOfBirth error',()=>{
     cy.get('#btn-submit').click()
-    cy.get('#input-dateOfBirth-error').should('exist')
+    cy.get('#date-select-dateOfBirth-error').should('exist')
   })
 
   it('validates Date of Birth in the future',()=>{
-    const yearPlus1 = new Date(new Date().getFullYear()+1,1,1)
-    const testDate = [yearPlus1.getFullYear(),'01','01'].join('-')
-    cy.get('#dateOfBirth').type(testDate)
+    const futureDate = new Date();
+    futureDate.setDate( futureDate.getDate() + 1);
+    cy.get('#date-select-dateOfBirth-year').select(futureDate.getFullYear().toString())
+    cy.get('#date-select-dateOfBirth-month').select((futureDate.getMonth() + 1).toString().padStart(2, '0'))
+    cy.get('#date-select-dateOfBirth-day').select(futureDate.getDate().toString().padStart(2, '0'))
     cy.get('#btn-submit').click()
-    cy.get('#input-dateOfBirth-error').should('exist')
+    cy.get('#date-select-dateOfBirth-error').should('exist')
   })
 })
 
@@ -121,7 +125,9 @@ describe('responses', ()=>{
     cy.get('#esrf').type('A02D85ED')
     cy.get('#givenName').type('Yanis')
     cy.get('#surname').type('Piérre')
-    cy.get('#dateOfBirth').type('1972-07-29')
+    cy.get('#date-select-dateOfBirth-year').select('1972')
+    cy.get('#date-select-dateOfBirth-month').select('07')
+    cy.get('#date-select-dateOfBirth-day').select('29')
     cy.get('#btn-submit').click()
     cy.get('#response-result').should('exist')
     cy.focused().should('have.prop', 'tagName' ).should('eq', 'H1')
@@ -140,7 +146,9 @@ describe('responses', ()=>{
     cy.get('#esrf').type('A1234567')
     cy.get('#givenName').type('John')
     cy.get('#surname').type('Doe')
-    cy.get('#dateOfBirth').type('1990-12-01')
+    cy.get('#date-select-dateOfBirth-year').select('1990')
+    cy.get('#date-select-dateOfBirth-month').select('12')
+    cy.get('#date-select-dateOfBirth-day').select('01')
     cy.get('#btn-submit').click()
     cy.get('#response-no-result').should('exist')
     cy.focused().should('have.prop', 'tagName' ).should('eq', 'H1')
@@ -159,10 +167,10 @@ describe('cancel check status', ()=>{
     cy.get('#btn-agree').first().click()
     cy.visit('/status')
     cy.get('#btn-cancel').click()
-    cy.get('[role="dialog"]').should('exist')
+    cy.get('dialog[open]').should('exist')
   })
 
-  it.skip('cancel check status has no detectable a11y violations', ()=>{
+  it('cancel check status has no detectable a11y violations', ()=>{
     cy.injectAxe();
     cy.wait(500);
     cy.checkA11y()
