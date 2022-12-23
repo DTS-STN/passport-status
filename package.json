@@ -27,7 +27,7 @@
     "cookies-next": "^2.1.1",
     "date-fns": "^2.29.3",
     "formik": "^2.2.9",
-    "next": "^12.3.3",
+    "next": "^12.3.4",
     "next-i18next": "^12.1.0",
     "prom-client": "^14.1.0",
     "react": "18.2.0",
