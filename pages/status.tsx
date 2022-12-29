@@ -211,7 +211,7 @@ const Status: FC = () => {
               <p>{t('common:receipt-explanation')}</p>
               <ExampleImage
                 title={t('common:receipt-image-1.title')}
-                description={t('common:receipt-image-1.description-alt')}
+                description={t('common:receipt-image-1.descriptive-text')}
                 imageProps={{
                   src: t('common:receipt-image-1.src'),
                   alt: t('common:receipt-image-1.alt'),
@@ -221,7 +221,7 @@ const Status: FC = () => {
               />
               <ExampleImage
                 title={t('common:receipt-image-2.title')}
-                description={t('common:receipt-image-2.description-alt')}
+                description={t('common:receipt-image-2.descriptive-text')}
                 imageProps={{
                   src: t('common:receipt-image-2.src'),
                   alt: t('common:receipt-image-2.alt'),
