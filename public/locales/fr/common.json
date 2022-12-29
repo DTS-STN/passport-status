@@ -63,5 +63,19 @@
   "banner": {
     "alert": "Lieu de test",
     "description": "Vous ne pouvez pas vérifier l'état de votre demande de passeport via ce site de test. Certaines parties de ce site peuvent ne pas fonctionner et seront modifiées."
+  },
+  "collapse-file-number-title": "Vous ne trouvez pas votre numéro de dossier?",
+  "receipt-explanation": "Le numéro de dossier est utilisé pour identifier la demande de passeport. Le numéro de dossier se trouve sur le reçu qui vous a été remis si vous avez fait votre demande de passeport en personne. Si vous avez fait votre demande par courrier, ou si vous n'avez pas de numéro de dossier, vous pouvez en demander un ci-dessous.",
+  "receipt-image-1": {
+    "title": "Exemple de reçu 1\u00a0:",
+    "alt": "Un exemple de reçu officiel. Le numéro de dossier est entouré au centre du reçu.",
+    "src": "/Receipt1_FR.png",
+    "descriptive-text": "Exemple de reçu où le numéro de dossier est entouré."
+  },
+  "receipt-image-2": {
+    "title": "Exemple de reçu 2\u00a0:",
+    "alt": "Exemple de reçu officiel. Le numéro de dossier est entouré dans la partie supérieure gauche du reçu, au-dessus d'un code-barres.",
+    "src": "/Receipt2_FR.png",
+    "descriptive-text": "Exemple d'un reçu où le numéro de dossier est entouré."
   }
 }
