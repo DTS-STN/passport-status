@@ -65,7 +65,7 @@
     "description": "You cannot check the status of your passport application through this test site. Parts of this site may not work and will change."
   },
   "collapse-file-number-title": "Can't find your File Number?",
-  "receipt-explanation": "The file number is used to identify the passport application. The file number can be found on the receipt you were given if you applied for the passport in person. If you applied by mail, or don't have a file number, you can request one below.",
+  "receipt-explanation": "The file number is used to identify the passport application. The file number can be found on the receipt you were given if you applied for the passport in person. If you applied by mail, or don't have a file number, you can select \"I don't have my file number.\"",
   "receipt-image-1": {
     "title": "Example Receipt 1:",
     "alt": "An example of an official receipt. The file number is circled in the centre of the receipt.",
