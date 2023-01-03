@@ -28,26 +28,30 @@ const Expectations: FC = () => {
       }}
     >
       <h1 className="h1">{t('header-purpose')}</h1>
-      <p>{t('can-check.description')}</p>
-      <ul className="space-y-2 pl-4 mb-3">
-        <IconListItem icon="check-mark" text={t('can-check.list.item-1')} />
-        <IconListItem icon="check-mark" text={t('can-check.list.item-2')} />
-      </ul>
+      <h2 className="h2">{t('header-avoid-waiting')}</h2>
       <p>{t('available-after.description')}</p>
-      <ul className="space-y-2 pl-4 mb-3">
-        <IconListItem
-          icon="check-mark"
-          text={t('available-after.list.item-1')}
-        />
-        <IconListItem
-          icon="check-mark"
-          text={t('available-after.list.item-2')}
-        />
+      <ul className="space-y-2 pl-4 mb-3 list-disc list-inside">
+        <li>
+          {t('available-after.list.item-1')} <b>{t('or')}</b>
+        </li>
+        <li>{t('available-after.list.item-2')}</li>
+      </ul>
+      <b>{t('available-after.updated-status')}</b>
+      <h2 className="h2">{t('header-who-can-check')}</h2>
+      <p>{t('can-check.description')}</p>
+      <ul className="space-y-2 pl-4 mb-3 list-disc list-inside">
+        <li>
+          {t('can-check.list.item-1.in-person')} <b>{t('or')} </b>
+          {t('can-check.list.item-1.by-mail')}
+        </li>
+        <li>{t('can-check.list.item-2')}</li>
       </ul>
       <p>{t('cannot-check.description')}</p>
-      <ul className="space-y-2 pl-4">
-        <IconListItem icon="cross" text={t('cannot-check.list.item-1')} />
-        <IconListItem icon="cross" text={t('cannot-check.list.item-2')} />
+      <ul className="space-y-2 pl-4 list-disc list-inside">
+        <li>
+          {t('cannot-check.list.item-1')} <b>{t('or')}</b>
+        </li>
+        <li>{t('cannot-check.list.item-2')}</li>
       </ul>
       <p className="my-8">
         <strong>{t('do-not-travel')}</strong>
@@ -61,22 +65,6 @@ const Expectations: FC = () => {
         onClick={handleOnAgreeClick}
       />
     </Layout>
-  )
-}
-
-interface IconListItemProps {
-  icon: 'check-mark' | 'cross'
-  text: string
-}
-
-const IconListItem: FC<IconListItemProps> = ({ icon, text }) => {
-  return (
-    <li className="flex flex-nowrap gap-2">
-      <div className="font-bold">
-        {icon === 'check-mark' ? <>&#10003;</> : <>&#10007;</>}
-      </div>
-      <div>{text}</div>
-    </li>
   )
 }
 
