@@ -5,7 +5,7 @@
       "invalid": "The date of birth must be valid in the following format: YYYY-MM-DD (Year-Month-Day).",
       "required": "The date of birth is required."
     },
-    "label": "Date of birth"
+    "label": "Applicant date of birth"
   },
   "check-again": "To check the status of another application, click the button below:",
   "check-status": "Check Status",
@@ -20,11 +20,11 @@
     "error": {
       "required": "Given name(s) required."
     },
-    "label": "Given name(s)"
+    "label": "Given name(s) of applicant"
   },
   "previous": "Previous",
   "reset": "Restart",
-  "header": "Passport Status Check",
+  "header": "Check the status of your passport application",
   "status": {
     "1": {
       "label": "Being processed",
@@ -58,7 +58,7 @@
     "error": {
       "required": "The surname is required."
     },
-    "label": "Surname"
+    "label": "Surname of applicant"
   },
   "unable-to-find-status": "We are unable to determine the status of your application at this time using this service.",
   "other-ways-to-status": "Contact us",
@@ -143,10 +143,17 @@
     }
   },
   "header-messages": {
-    "fill-in-field": "Fill in the fields below to check the status of your passport application.",
-    "matches": "Make sure your information matches your passport application form.",
-    "for-child": "For child applications, use the child's given name(s) and surname exactly as provided on their passport application.",
-    "passport-officer": "When entering the application into our system, the passport officer may have updated information in the application to match the information provided on the proof of citizenship or supporting identification. This may differ from preferred information for you or your child."
+    "matches": "Make sure your information matches your proof of citizenship and supporting ID. Your proof of citizenship could be",
+    "list": {
+      "item-1": "birth certificates",
+      "item-2": "citizenship certificates",
+      "item-3": "citizenship cards",
+      "item-4": "other documents, like naturalization certificates"
+    },
+    "for-child": {
+      "application": "For child applications",
+      "use-exactly": ", use the child's given name(s) and surname and date of birth, exactly as provided on their proof of citizenship."
+    }
   },
   "collapse-file-number-title": "Can't find your File Number?",
   "receipt-image-1": {

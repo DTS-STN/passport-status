@@ -5,10 +5,10 @@
       "invalid": "La date de naissance doit être valide selon le format suivant\u00a0: aaaa-MM-jj (Année-Mois-Jour).",
       "required": "La date de naissance obligatoire."
     },
-    "label": "Date de naissance"
+    "label": "Date de naissance du requérant"
   },
   "check-again": "Pour vérifier l'état d'une autre demande, cliquez sur le bouton ci-dessous\u00a0:",
-  "check-status": "Vérifier l'état",
+  "check-status": "Vérifiez l'état",
   "description": "Remplissez les champs ci-dessous pour vérifier l'état de votre demande de passeport. Assurez-vous que vos informations correspondent à votre formulaire de demande de passeport.",
   "esrf": {
     "error": {
@@ -20,11 +20,11 @@
     "error": {
       "required": "Prénom(s) obligatoire(s)."
     },
-    "label": "Prénom(s)"
+    "label": "Prénom(s) du requérant"
   },
   "previous": "Précédent",
   "reset": "Redémarrer",
-  "header": "Vérification du statut du passeport",
+  "header": "Vérifiez l'état de votre demande de passeport",
   "status": {
     "1": {
       "label": "Être en cours de traitement",
@@ -58,7 +58,7 @@
     "error": {
       "required": "Le nom de famille est obligatoire."
     },
-    "label": "Nom de famille"
+    "label": "Nom de famille du requérant"
   },
   "unable-to-find-status": "Nous ne sommes pas en mesure de déterminer le statut de votre demande pour le moment en utilisant ce service.",
   "other-ways-to-status": "Contactez-nous",
@@ -143,10 +143,17 @@
     }
   },
   "header-messages": {
-    "fill-in-field": "Remplissez les champs ci-dessous pour vérifier l'état de votre demande de passeport.",
-    "matches": "Assurez-vous que vos informations correspondent à votre formulaire de demande de passeport.",
-    "for-child": "Pour les demandes concernant des enfants, utilisez le(s) prénom(s) et le nom de famille de l'enfant exactement comme indiqué sur sa demande de passeport.",
-    "passport-officer": "Lors de la saisie de la demande dans notre système, l'agent des passeports peut avoir mis à jour les informations de la demande pour qu'elles correspondent aux informations fournies sur la preuve de citoyenneté ou sur les pièces d'identité justificatives. Ces renseignements peuvent différer des renseignements préférés pour vous ou votre enfant."
+    "matches": "Assurez-vous que vos informations correspondent à votre preuve de citoyenneté et à votre pièce d'identité. Votre preuve de citoyenneté peut être",
+    "list": {
+      "item-1": "Certificat de naissance",
+      "item-2": "Certificat de citoyenneté",
+      "item-3": "Carte de citoyenneté",
+      "item-4": "D'autres documents, comme un certificat de naturalisation"
+    },
+    "for-child": {
+      "application": "Pour la demande d'un enfant",
+      "use-exactly": ", utilisez le(s) prénom(s), nom de famille et date de naissance de l'enfant, exactement tels qu'ils figurent sur sa preuve de citoyenneté."
+    }
   },
   "collapse-file-number-title": "Vous ne trouvez pas votre numéro de dossier?",
   "receipt-image-1": {
