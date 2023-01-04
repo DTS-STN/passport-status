@@ -1,9 +1,9 @@
 {
   "date-of-birth": {
     "error": {
-      "current": "La date de naissance doit être dans le passé.",
-      "invalid": "La date de naissance doit être valide selon le format suivant\u00a0: aaaa-MM-jj (Année-Mois-Jour).",
-      "required": "La date de naissance obligatoire."
+      "current": "La date de naissance du requérant doit être dans le passé.",
+      "invalid": "La date de naissance du requérant doit être valide selon le format suivant\u00a0: aaaa-MM-jj (Année-Mois-Jour).",
+      "required": "La date de naissance du requérant est obligatoire."
     },
     "label": "Date de naissance du requérant"
   },
@@ -18,7 +18,7 @@
   },
   "given-name": {
     "error": {
-      "required": "Prénom(s) obligatoire(s)."
+      "required": "Le(s) prénom(s) du requérant est(sont) obligatoire(s)."
     },
     "label": "Prénom(s) du requérant"
   },
@@ -56,7 +56,7 @@
   "status-is": "Le dernier statut de votre demande selon nos dossiers est\u00a0:",
   "surname": {
     "error": {
-      "required": "Le nom de famille est obligatoire."
+      "required": "Le nom de famille du requérant est obligatoire."
     },
     "label": "Nom de famille du requérant"
   },

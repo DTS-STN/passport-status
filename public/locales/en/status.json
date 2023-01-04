@@ -1,9 +1,9 @@
 {
   "date-of-birth": {
     "error": {
-      "current": "The date of birth must be in the past.",
-      "invalid": "The date of birth must be valid in the following format: YYYY-MM-DD (Year-Month-Day).",
-      "required": "The date of birth is required."
+      "current": "The applicant date of birth must be in the past.",
+      "invalid": "The applicant date of birth must be valid in the following format: YYYY-MM-DD (Year-Month-Day).",
+      "required": "The applicant date of birth is required."
     },
     "label": "Applicant date of birth"
   },
@@ -18,7 +18,7 @@
   },
   "given-name": {
     "error": {
-      "required": "Given name(s) required."
+      "required": "The given name(s) of applicant is required."
     },
     "label": "Given name(s) of applicant"
   },
@@ -56,7 +56,7 @@
   "status-is": "The latest status of your application according to our records is:",
   "surname": {
     "error": {
-      "required": "The surname is required."
+      "required": "The surname of applicant is required."
     },
     "label": "Surname of applicant"
   },
