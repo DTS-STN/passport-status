@@ -31,9 +31,9 @@
   "email-esrf": "Envoyer mon numéro de dossier",
   "email-sent-confirmation": "Un courriel a été envoyé s'il y avait une correspondance dans nos dossiers avec le numéro de dossier (FEDS).",
   "email-confirmation-msg": {
-    "request-received": "Votre demande d'obtention du numéro de dossier a été reçue",
-    "if-exists": "Si nous sommes en mesure de localiser le dossier avec les informations que vous nous avez fournies, nous vous enverrons un courriel avec le numéro de dossier.",
-    "please-contact": "Vous devriez recevoir un courriel dans les 30 minutes. Si vous ne le recevez pas, appelez le centre d'appel des passeports au "
+    "request-received": "Votre demande pour obtenir le numéro de dossier a été reçue",
+    "if-exists": "Si nous pouvons trouver le dossier avec les informations que vous nous avez fournies, nous vous enverrons le numéro de dossier par courriel dans les 30 minutes.",
+    "please-contact": "Si vous ne le recevez pas, appelez-nous au "
   },
   "page-unauth": {
     "header": "Page non-autorisée",
