@@ -1,5 +1,5 @@
 {
-  "header": "Get my file number",
+  "header": "Get my passport application file number",
   "description": "Fill in the fields below to get your file number. Make sure your information matches your passport application form. We'll then email the file number to the email address on file.",
   "email": {
     "label": "Email address",
@@ -10,25 +10,25 @@
   },
   "given-name": {
     "error": {
-      "required": "Given name(s) required."
+      "required": "The given name(s) of applicant is required."
     },
-    "label": "Given name(s)"
+    "label": "Given name(s) of applicant"
   },
   "surname": {
     "error": {
-      "required": "The surname is required."
+      "required": "The surname of applicant is required."
     },
-    "label": "Surname"
+    "label": "Surname of applicant"
   },
   "date-of-birth": {
     "error": {
-      "current": "The date of birth must be in the past.",
-      "invalid": "The date of birth must be valid in the following format: YYYY-MM-DD (Year-Month-Day).",
-      "required": "The date of birth is required."
+      "current": "The applicant date of birth must be in the past.",
+      "invalid": "The applicant date of birth must be valid in the following format: YYYY-MM-DD (Year-Month-Day).",
+      "required": "The applicant date of birth is required."
     },
-    "label": "Date of birth"
+    "label": "Applicant date of birth"
   },
-  "email-esrf": "Email my file number",
+  "email-esrf": "Email my file number to me",
   "email-sent-confirmation": "An email has been sent if there was a match in our records with the file number (ESRF).",
   "email-confirmation-msg": {
     "request-received": "Your request to get the file number has been received",
@@ -41,12 +41,19 @@
     "button": "Privacy and Email terms"
   },
   "help-message": {
-    "email": "Provide your full email address exactly as provided on the passport application form. For child applications, provide the full email address for the applicant parent or legal guardian exactly as provided on the passport application."
+    "email": "Provide your full email address exactly as provided on the passport application form.",
+    "for-child": {
+      "application": "For child applications",
+      "use-exactly": ", provide the full email address for the applicant parent or legal guardian exactly as provided on the passport application."
+    }
   },
   "header-messages": {
-    "fill-in-field": "Fill in the fields below to get your file number. We'll then email the file number to the email address on file.",
-    "matches": "Make sure your information matches your passport application form.",
-    "for-child": "For child applications, use the child's given name(s) and surname exactly as provided on their passport application.",
-    "passport-officer": "When entering the application into our system, the passport officer may have updated information in the application to match the information provided on the proof of citizenship or supporting identification. This may differ from preferred information for you or your child."
+    "matches": "Make sure your information matches your proof of citizenship and supporting ID. Your proof of citizenship could be",
+    "list": {
+      "item-1": "birth certificates",
+      "item-2": "citizenship certificates",
+      "item-3": "citizenship cards",
+      "item-4": "other documents, like naturalization certificates"
+    }
   }
 }

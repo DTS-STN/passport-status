@@ -130,12 +130,15 @@ const Email: FC = () => {
         </div>
       ) : (
         <form onSubmit={handleFormikSubmit} id="form-email-esrf">
-          <p>{t('header-messages.fill-in-field')}</p>
           <p>
             <strong>{t('header-messages.matches')}</strong>
           </p>
-          <p>{t('header-messages.for-child')}</p>
-          <p>{t('header-messages.passport-officer')}</p>
+          <ul className="list-disc space-y-2 pl-10 mb-3">
+            <li>{t('header-messages.list.item-1')}</li>
+            <li>{t('header-messages.list.item-2')}</li>
+            <li>{t('header-messages.list.item-3')}</li>
+            <li>{t('header-messages.list.item-4')}</li>
+          </ul>
           {errorSummaryItems.length > 0 && (
             <ErrorSummary
               id="error-summary-email-esrf"
@@ -155,7 +158,13 @@ const Email: FC = () => {
             errorMessage={formikErrors.email && t(formikErrors.email)}
             textRequired={t('common:required')}
             required
-            helpMessage={t('help-message.email')}
+            helpMessage={
+              <p>
+                {t('help-message.email')}{' '}
+                <b>{t('help-message.for-child.application')}</b>
+                {t('help-message.for-child.use-exactly')}
+              </p>
+            }
           />
           <InputField
             id="givenName"
