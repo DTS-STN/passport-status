@@ -184,16 +184,19 @@ const Status: FC = () => {
           <p>
             <strong>{t('header-messages.matches')}</strong>
           </p>
-          <ul className="space-y-2 pl-4 mb-3 list-inside list-disc">
+          <ul className="list-disc space-y-2 pl-10 mb-3">
             <li>{t('header-messages.list.item-1')}</li>
             <li>{t('header-messages.list.item-2')}</li>
             <li>{t('header-messages.list.item-3')}</li>
             <li>{t('header-messages.list.item-4')}</li>
           </ul>
-          <p>
-            <b>{t('header-messages.for-child.application')}</b>
-            {t('header-messages.for-child.use-exactly')}
-          </p>
+          <blockquote className="py-3 px-6 mb-3 border-l-6 border-gray-200">
+            <p className="m-0">
+              <b>{t('header-messages.for-child.application')}</b>
+              {t('header-messages.for-child.use-exactly')}
+            </p>
+          </blockquote>
+
           {errorSummaryItems.length > 0 && (
             <ErrorSummary
               id="error-summary-get-status"
