@@ -20,8 +20,8 @@
     "tsc:validate": "tsc --noEmit --incremental false"
   },
   "dependencies": {
-    "@opentelemetry/api": "^1.2.0",
-    "@opentelemetry/auto-instrumentations-node": "^0.33.1",
+    "@opentelemetry/api": "^1.3.0",
+    "@opentelemetry/auto-instrumentations-node": "^0.36.0",
     "@opentelemetry/sdk-node": "^0.34.0",
     "@tanstack/react-query": "^4.19.1",
     "cookies-next": "^2.1.1",
