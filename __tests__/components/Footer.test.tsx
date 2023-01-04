@@ -3,20 +3,14 @@ import '@testing-library/jest-dom/extend-expect'
 import '@testing-library/jest-dom'
 import { axe, toHaveNoViolations } from 'jest-axe'
 import Footer from '../../components/Footer'
-import { useRouter } from 'next/router'
-
-jest.mock('next/router', () => ({
-  useRouter: jest.fn(),
-}))
 
 expect.extend(toHaveNoViolations)
 
 describe('Footer', () => {
-  useRouter.mockImplementation(() => ({}))
-
   it('renders Footer with links', () => {
     render(
       <Footer
+        dateModifiedText="testDateModified"
         footerLogoAltText="testAltText"
         footerLogoImage="testImage"
         links={[
@@ -46,6 +40,7 @@ describe('Footer', () => {
   it('has no a11y violations', async () => {
     const { container } = render(
       <Footer
+        dateModifiedText="testDateModified"
         footerLogoAltText="testAltText"
         footerLogoImage="testImage"
         links={[
