@@ -4,7 +4,7 @@ import ErrorLayout from '../components/ErrorLayout'
 import MetaData from '../components/MetaData'
 
 export interface ErrorProps {
-  statusCode: number | undefined
+  statusCode?: number
 }
 
 const Error: NextPage<ErrorProps> = ({ statusCode }) => {
