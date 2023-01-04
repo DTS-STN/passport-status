@@ -7,7 +7,7 @@ export interface InputFieldProps {
   name: string
   label: string
   required?: boolean
-  helpMessage?: string
+  helpMessage?: React.ReactNode
   textRequired?: string
   errorMessage?: string
   type?: React.HTMLInputTypeAttribute
