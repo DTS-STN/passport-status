@@ -1,28 +1,35 @@
 {
   "header-purpose": "Check the status of your passport application",
+  "header-avoid-waiting": "Avoid waiting on the phone and request the status of your application online",
+  "header-who-can-check": "Who can check their status online",
   "header-privacy": "Privacy",
   "can-check": {
-    "description": "You can get the status of your passport application online if you submitted your passport application either:",
+    "description": "You can get the status of your passport application online if you submitted your passport application either",
     "list": {
-      "item-1": "in person or by mail within Canada or",
+      "item-1": {
+        "in-person": "in person",
+        "by-mail": "by mail within Canada"
+      },
       "item-2": "by mail from the U.S."
     }
   },
   "available-after": {
-    "description": "We update the status of applications daily. The status of your application is available after:",
+    "description": "The status of your application is available after",
+    "updated-status": "We update the status of applications daily.",
     "list": {
-      "item-1": "5 days if you applied in person or",
+      "item-1": "5 days if you applied in person",
       "item-2": "10 days if you applied by mail"
     }
   },
   "cannot-check": {
-    "description": "You can't look up the status of a passport application online if you:",
+    "description": "You can't look up the status of a passport application online if you applied for a passport",
     "list": {
-      "item-1": "applied for a passport outside of Canada and the United States or",
-      "item-2": "applied for a special or diplomatic passport"
+      "item-1": "at a consulate or embassy abroad",
+      "item-2": "for official government business (special or diplomatic passports)"
     }
   },
   "description-privacy": "Have you read and agree to the privacy and terms of service?",
   "button-agree": "I have read and understand",
-  "do-not-travel": "You should not finalize any travel plans until you have the passport. We are not liable for any losses if you do not receive it in time for your travel."
+  "do-not-travel": "You should not finalize any travel plans until you have the passport. We are not liable for any losses if you do not receive it in time for your travel.",
+  "or": "or"
 }

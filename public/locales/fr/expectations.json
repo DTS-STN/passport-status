@@ -1,28 +1,35 @@
 {
   "header-purpose": "Vérifiez l'état de votre demande de passeport",
+  "header-avoid-waiting": "Évitez d'attendre au téléphone et demandez l'état de votre demande en ligne",
+  "header-who-can-check": "Qui peut vérifier l'état de sa demande en ligne",
   "header-privacy": "Confidentialité",
   "can-check": {
-    "description": "Vous pouvez obtenir le statut de votre demande de passeport en ligne si vous avez soumis votre demande de passeport soit\u00a0:",
+    "description": "Vous pouvez obtenir l'état de votre demande de passeport en ligne si vous avez présenté votre demande de passeport soit",
     "list": {
-      "item-1": "en personne ou par la poste au Canada ou",
-      "item-2": "par courrier depuis les États-Unis"
+      "item-1": {
+        "in-person": "En personne",
+        "by-mail": " par la poste au Canada"
+      },
+      "item-2": "Par la poste des États-Unis"
     }
   },
   "available-after": {
-    "description": "Nous mettons à jour quotidiennement l'état des candidatures. Le statut de votre candidature est disponible après\u00a0:",
+    "description": "L'état de votre demande est disponible après",
+    "updated-status": "Nous actualisons quotidiennement l'état des demandes.",
     "list": {
-      "item-1": "5 jours si vous avez postulé en personne ou",
-      "item-2": "10 jours si vous avez postulé par courrier"
+      "item-1": "5 jours si vous avez présenté votre demande en personne",
+      "item-2": "10 jours si vous avez envoyé votre demande par la poste"
     }
   },
   "cannot-check": {
-    "description": "Vous ne pouvez pas consulter l'état d'une demande de passeport en ligne si vous\u00a0:",
+    "description": "Vous ne pouvez pas vérifier l'état de votre demande de passeport en ligne si vous en avez fait la demande",
     "list": {
-      "item-1": "demandé un passeport à l'extérieur du Canada et des États-Unis ou",
-      "item-2": "demandé un passeport spécial ou diplomatique"
+      "item-1": "dans un consulat ou une ambassade à l'étranger",
+      "item-2": "pour les affaires officielles du gouvernement (passeports spéciaux ou diplomatiques)"
     }
   },
   "description-privacy": "Avez-vous lu et accepté les conditions d'utilisation et de confidentialité?",
   "button-agree": "J'ai lu et j'accept",
-  "do-not-travel": "Vous ne devez finaliser aucun projet de voyage tant que vous n'avez pas le passeport. Nous ne sommes pas responsables des pertes si vous ne le recevez pas à temps pour votre voyage."
+  "do-not-travel": "Vous ne devez pas finaliser vos plans de voyage avant d'avoir le passeport. Nous ne sommes pas responsables des pertes si vous ne le recevez pas à temps pour votre voyage.",
+  "or": "ou"
 }

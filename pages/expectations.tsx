@@ -28,30 +28,34 @@ const Expectations: FC = () => {
       }}
     >
       <h1 className="h1">{t('header-purpose')}</h1>
-      <p>{t('can-check.description')}</p>
-      <ul className="space-y-2 pl-4 mb-3">
-        <IconListItem icon="check-mark" text={t('can-check.list.item-1')} />
-        <IconListItem icon="check-mark" text={t('can-check.list.item-2')} />
-      </ul>
+      <h2 className="h2">{t('header-avoid-waiting')}</h2>
       <p>{t('available-after.description')}</p>
-      <ul className="space-y-2 pl-4 mb-3">
-        <IconListItem
-          icon="check-mark"
-          text={t('available-after.list.item-1')}
-        />
-        <IconListItem
-          icon="check-mark"
-          text={t('available-after.list.item-2')}
-        />
+      <ul className="list-disc space-y-2 pl-10 mb-3">
+        <li>
+          {t('available-after.list.item-1')} <b>{t('or')}</b>
+        </li>
+        <li>{t('available-after.list.item-2')}</li>
+      </ul>
+      <b>{t('available-after.updated-status')}</b>
+      <h2 className="h2">{t('header-who-can-check')}</h2>
+      <p>{t('can-check.description')}</p>
+      <ul className="list-disc space-y-2 pl-10 mb-3">
+        <li>
+          {t('can-check.list.item-1.in-person')} <b>{t('or')} </b>
+          {t('can-check.list.item-1.by-mail')}
+        </li>
+        <li>{t('can-check.list.item-2')}</li>
       </ul>
       <p>{t('cannot-check.description')}</p>
-      <ul className="space-y-2 pl-4">
-        <IconListItem icon="cross" text={t('cannot-check.list.item-1')} />
-        <IconListItem icon="cross" text={t('cannot-check.list.item-2')} />
+      <ul className="list-disc space-y-2 pl-10 mb-3">
+        <li>
+          {t('cannot-check.list.item-1')} <b>{t('or')}</b>
+        </li>
+        <li>{t('cannot-check.list.item-2')}</li>
       </ul>
-      <p className="my-8">
-        <strong>{t('do-not-travel')}</strong>
-      </p>
+      <blockquote className="py-3 px-6 mb-3 border-l-6 border-gray-200">
+        <p className="m-0">{t('do-not-travel')}</p>
+      </blockquote>
       <h2 className="h2">{t('header-privacy')}</h2>
       <p>{t('description-privacy')}</p>
       <ActionButton
@@ -61,22 +65,6 @@ const Expectations: FC = () => {
         onClick={handleOnAgreeClick}
       />
     </Layout>
-  )
-}
-
-interface IconListItemProps {
-  icon: 'check-mark' | 'cross'
-  text: string
-}
-
-const IconListItem: FC<IconListItemProps> = ({ icon, text }) => {
-  return (
-    <li className="flex flex-nowrap gap-2">
-      <div className="font-bold">
-        {icon === 'check-mark' ? <>&#10003;</> : <>&#10007;</>}
-      </div>
-      <div>{text}</div>
-    </li>
   )
 }
 
