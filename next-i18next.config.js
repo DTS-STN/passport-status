@@ -9,4 +9,5 @@ module.exports = {
     defaultLocale: 'default',
   },
   appendNamespaceToMissingKey: true,
+  returnNull: false,
 }
