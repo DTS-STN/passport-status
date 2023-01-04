@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">63.63% </span>
+                <span class="strong">55.55% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7/11</span>
+                <span class='fraction'>5/9</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>2/4</span>
+                <span class='fraction'>0/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">33.33% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/4</span>
+                <span class='fraction'>1/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">70% </span>
+                <span class="strong">62.5% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7/10</span>
+                <span class='fraction'>5/8</span>
             </div>
         
             
@@ -143,19 +143,7 @@
 <a name='L78'></a><a href='#L78'>78</a>
 <a name='L79'></a><a href='#L79'>79</a>
 <a name='L80'></a><a href='#L80'>80</a>
-<a name='L81'></a><a href='#L81'>81</a>
-<a name='L82'></a><a href='#L82'>82</a>
-<a name='L83'></a><a href='#L83'>83</a>
-<a name='L84'></a><a href='#L84'>84</a>
-<a name='L85'></a><a href='#L85'>85</a>
-<a name='L86'></a><a href='#L86'>86</a>
-<a name='L87'></a><a href='#L87'>87</a>
-<a name='L88'></a><a href='#L88'>88</a>
-<a name='L89'></a><a href='#L89'>89</a>
-<a name='L90'></a><a href='#L90'>90</a>
-<a name='L91'></a><a href='#L91'>91</a>
-<a name='L92'></a><a href='#L92'>92</a>
-<a name='L93'></a><a href='#L93'>93</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L81'></a><a href='#L81'>81</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -216,18 +204,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -277,30 +253,34 @@ const Expectations: FC = () =&gt; {
       }}
     &gt;
       &lt;h1 className="h1"&gt;{t('header-purpose')}&lt;/h1&gt;
-      &lt;p&gt;{t('can-check.description')}&lt;/p&gt;
-      &lt;ul className="space-y-2 pl-4 mb-3"&gt;
-        &lt;IconListItem icon="check-mark" text={t('can-check.list.item-1')} /&gt;
-        &lt;IconListItem icon="check-mark" text={t('can-check.list.item-2')} /&gt;
-      &lt;/ul&gt;
+      &lt;h2 className="h2"&gt;{t('header-avoid-waiting')}&lt;/h2&gt;
       &lt;p&gt;{t('available-after.description')}&lt;/p&gt;
-      &lt;ul className="space-y-2 pl-4 mb-3"&gt;
-        &lt;IconListItem
-          icon="check-mark"
-          text={t('available-after.list.item-1')}
-        /&gt;
-        &lt;IconListItem
-          icon="check-mark"
-          text={t('available-after.list.item-2')}
-        /&gt;
+      &lt;ul className="list-disc space-y-2 pl-10 mb-3"&gt;
+        &lt;li&gt;
+          {t('available-after.list.item-1')} &lt;b&gt;{t('or')}&lt;/b&gt;
+        &lt;/li&gt;
+        &lt;li&gt;{t('available-after.list.item-2')}&lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;b&gt;{t('available-after.updated-status')}&lt;/b&gt;
+      &lt;h2 className="h2"&gt;{t('header-who-can-check')}&lt;/h2&gt;
+      &lt;p&gt;{t('can-check.description')}&lt;/p&gt;
+      &lt;ul className="list-disc space-y-2 pl-10 mb-3"&gt;
+        &lt;li&gt;
+          {t('can-check.list.item-1.in-person')} &lt;b&gt;{t('or')} &lt;/b&gt;
+          {t('can-check.list.item-1.by-mail')}
+        &lt;/li&gt;
+        &lt;li&gt;{t('can-check.list.item-2')}&lt;/li&gt;
       &lt;/ul&gt;
       &lt;p&gt;{t('cannot-check.description')}&lt;/p&gt;
-      &lt;ul className="space-y-2 pl-4"&gt;
-        &lt;IconListItem icon="cross" text={t('cannot-check.list.item-1')} /&gt;
-        &lt;IconListItem icon="cross" text={t('cannot-check.list.item-2')} /&gt;
+      &lt;ul className="list-disc space-y-2 pl-10 mb-3"&gt;
+        &lt;li&gt;
+          {t('cannot-check.list.item-1')} &lt;b&gt;{t('or')}&lt;/b&gt;
+        &lt;/li&gt;
+        &lt;li&gt;{t('cannot-check.list.item-2')}&lt;/li&gt;
       &lt;/ul&gt;
-      &lt;p className="my-8"&gt;
-        &lt;strong&gt;{t('do-not-travel')}&lt;/strong&gt;
-      &lt;/p&gt;
+      &lt;blockquote className="py-3 px-6 mb-3 border-l-6 border-gray-200"&gt;
+        &lt;p className="m-0"&gt;{t('do-not-travel')}&lt;/p&gt;
+      &lt;/blockquote&gt;
       &lt;h2 className="h2"&gt;{t('header-privacy')}&lt;/h2&gt;
       &lt;p&gt;{t('description-privacy')}&lt;/p&gt;
       &lt;ActionButton
@@ -310,22 +290,6 @@ const Expectations: FC = () =&gt; {
         onClick={handleOnAgreeClick}
       /&gt;
     &lt;/Layout&gt;
-  )
-}
-&nbsp;
-interface IconListItemProps {
-  icon: 'check-mark' | 'cross'
-  text: string
-}
-&nbsp;
-const IconListItem: FC&lt;IconListItemProps&gt; = ({ icon, text }) =&gt; {
-  return (
-    &lt;li className="flex flex-nowrap gap-2"&gt;
-      &lt;div className="font-bold"&gt;
-        {icon === 'check-mark' ? &lt;&gt;&amp;#10003;&lt;/&gt; : &lt;&gt;&amp;#10007;&lt;/&gt;}
-      &lt;/div&gt;
-      &lt;div&gt;{text}&lt;/div&gt;
-    &lt;/li&gt;
   )
 }
 &nbsp;
@@ -346,7 +310,7 @@ export default Expectations
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-01-04T14:26:03.497Z
+                at 2023-01-04T14:31:07.460Z
             </div>
         <script src="../prettify.js"></script>
         <script>
