@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import Image from 'next/image'
+import Image from 'next/future/image'
 
 export interface ImageProps {
   src: string
@@ -23,13 +23,18 @@ const ExampleImage: FC<ExampleImageProps> = ({
       <p>
         <strong>{title}</strong>
       </p>
-      <Image
-        src={imageProps.src}
-        alt={imageProps.alt}
-        width={imageProps.width}
-        height={imageProps.height}
-      />
-      <p>{description}</p>
+      <figure className="md:w-3/5 bg-white rounded-lg drop-shadow-lg border mb-6 p-1">
+        <Image
+          src={imageProps.src}
+          alt={imageProps.alt}
+          width={imageProps.width}
+          height={imageProps.height}
+          className="w-full"
+        />
+        <figcaption className="px-5 py-3 text-lg">
+          <strong>{description}</strong>
+        </figcaption>
+      </figure>
     </>
   )
 }

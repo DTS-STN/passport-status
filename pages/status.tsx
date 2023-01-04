@@ -216,24 +216,25 @@ const Status: FC = () => {
             textRequired={t('common:required')}
             required
           />
-          <Collapse title={t('collapse-file-number-title')}>
-            <div className="border-t mt-3 p-3 max-w">
+          <Collapse title={t('common:collapse-file-number-title')}>
+            <div className="border-t mt-3 p-3 max-w-prose">
+              <p>{t('common:receipt-explanation')}</p>
               <ExampleImage
-                title={t('receipt-image-1.title')}
-                description={t('receipt-image-1.description-alt')}
+                title={t('common:receipt-image-1.title')}
+                description={t('common:receipt-image-1.descriptive-text')}
                 imageProps={{
-                  src: t('receipt-image-1.src'),
-                  alt: t('receipt-image-1.description-alt'),
+                  src: t('common:receipt-image-1.src'),
+                  alt: t('common:receipt-image-1.alt'),
                   width: 350,
                   height: 550,
                 }}
               />
               <ExampleImage
-                title={t('receipt-image-2.title')}
-                description={t('receipt-image-2.description-alt')}
+                title={t('common:receipt-image-2.title')}
+                description={t('common:receipt-image-2.descriptive-text')}
                 imageProps={{
-                  src: t('receipt-image-2.src'),
-                  alt: t('receipt-image-2.description-alt'),
+                  src: t('common:receipt-image-2.src'),
+                  alt: t('common:receipt-image-2.alt'),
                   width: 350,
                   height: 550,
                 }}
