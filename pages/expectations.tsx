@@ -30,7 +30,7 @@ const Expectations: FC = () => {
       <h1 className="h1">{t('header-purpose')}</h1>
       <h2 className="h2">{t('header-avoid-waiting')}</h2>
       <p>{t('available-after.description')}</p>
-      <ul className="space-y-2 pl-4 mb-3 list-disc list-inside">
+      <ul className="list-disc space-y-2 pl-10 mb-3">
         <li>
           {t('available-after.list.item-1')} <b>{t('or')}</b>
         </li>
@@ -39,7 +39,7 @@ const Expectations: FC = () => {
       <b>{t('available-after.updated-status')}</b>
       <h2 className="h2">{t('header-who-can-check')}</h2>
       <p>{t('can-check.description')}</p>
-      <ul className="space-y-2 pl-4 mb-3 list-disc list-inside">
+      <ul className="list-disc space-y-2 pl-10 mb-3">
         <li>
           {t('can-check.list.item-1.in-person')} <b>{t('or')} </b>
           {t('can-check.list.item-1.by-mail')}
@@ -47,15 +47,15 @@ const Expectations: FC = () => {
         <li>{t('can-check.list.item-2')}</li>
       </ul>
       <p>{t('cannot-check.description')}</p>
-      <ul className="space-y-2 pl-4 list-disc list-inside">
+      <ul className="list-disc space-y-2 pl-10 mb-3">
         <li>
           {t('cannot-check.list.item-1')} <b>{t('or')}</b>
         </li>
         <li>{t('cannot-check.list.item-2')}</li>
       </ul>
-      <p className="my-8">
-        <strong>{t('do-not-travel')}</strong>
-      </p>
+      <blockquote className="py-3 px-6 mb-3 border-l-6 border-gray-200">
+        <p className="m-0">{t('do-not-travel')}</p>
+      </blockquote>
       <h2 className="h2">{t('header-privacy')}</h2>
       <p>{t('description-privacy')}</p>
       <ActionButton
