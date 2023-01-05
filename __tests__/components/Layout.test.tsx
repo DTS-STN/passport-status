@@ -5,18 +5,13 @@ import { axe, toHaveNoViolations } from 'jest-axe'
 import Layout from '../../components/Layout'
 
 //mock custom components
-jest.mock('../../components/MetaData')
 jest.mock('../../components/Header')
 jest.mock('../../components/Footer')
 
 expect.extend(toHaveNoViolations)
 
 describe('Layout with default text', () => {
-  const sut = (
-    <Layout meta={{ author: 'author', desc: 'desc', title: 'title' }}>
-      Content
-    </Layout>
-  )
+  const sut = <Layout>Content</Layout>
 
   it('Layout contains a Main tag', () => {
     render(sut)

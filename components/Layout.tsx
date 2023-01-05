@@ -1,19 +1,16 @@
 import { FC, ReactNode } from 'react'
 import Header from './Header'
 import Footer from './Footer'
-import MetaData, { MetaDataProps } from './MetaData'
 import { useTranslation } from 'next-i18next'
 
 export interface LayoutProps {
   children: ReactNode
-  meta: MetaDataProps
 }
 
-const Layout: FC<LayoutProps> = ({ children, meta }) => {
+const Layout: FC<LayoutProps> = ({ children }) => {
   const { t } = useTranslation('common')
   return (
     <div className="flex flex-col min-h-screen">
-      <MetaData {...meta} />
       <Header
         skipToMainText={t('header.skip-to-main')}
         gocLink={t('header.goc-link')}

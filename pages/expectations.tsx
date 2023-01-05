@@ -20,13 +20,7 @@ const Expectations: FC = () => {
   )
 
   return (
-    <Layout
-      meta={{
-        author: t('common:meta.author'),
-        desc: t('common:meta.desc'),
-        title: t('common:meta.title'),
-      }}
-    >
+    <Layout>
       <h1 className="h1">{t('header-purpose')}</h1>
       <h2 className="h2">{t('header-avoid-waiting')}</h2>
       <p>{t('available-after.description')}</p>
