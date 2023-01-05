@@ -32,8 +32,8 @@
   "email-sent-confirmation": "An email has been sent if there was a match in our records with the file number (ESRF).",
   "email-confirmation-msg": {
     "request-received": "Your request to get the file number has been received",
-    "if-exists": "If we're able to locate the file with the information you gave us, we'll send you an email with the file number.",
-    "please-contact": "You should receive the email within 30 minutes. If you don't receive it, call the passport call centre at "
+    "if-exists": "If we can find the file with the information you gave us, we'll email you the file number within 30 minutes.",
+    "please-contact": "If you don't receive it, call the passport call centre at "
   },
   "page-unauth": {
     "header": "Page Unauthorized",
