@@ -78,54 +78,53 @@
   },
   "no-record": {
     "cannot-give-status": {
-      "description": "We can't give you your application status right now because:",
+      "description": "We can't give you your application status right now",
+      "because": "This is because",
       "list": {
-        "item-1": "the information you gave us doesn't match the information in our system or",
+        "item-1": "the information you gave us doesn't match the information in our system,",
         "item-2": "we received your application, but haven't started processing it yet"
       }
     },
-    "available-after": {
-      "description": "The status of your application is available after:",
-      "list": {
-        "item-1": "5 days if you applied in person or",
-        "item-2": "10 days if you applied by mail"
-      }
-    },
-    "double-check": "Double check your information and try again. If your application still can't be found, you can try again tomorrow. Our records update daily."
+    "double-check": "Double-check your information and try again. If your application still can't be found, you can try again tomorrow. We update our records daily.",
+    "if": "if"
   },
   "being-processed": {
-    "received": "We've received your application and have started processing it.",
-    "we-will-contact": "If we need any further information, we'll contact you by email or telephone. Service Canada will not use text messages or instant messages to start a conversation with you about your passport application.",
-    "more-info": "More information"
+    "received": "We have received your application and are now processing it",
+    "we-will-contact": {
+      "segment-1": "If we need more information, we'll contact you by email or telephone. We will ",
+      "segment-2": " use text or instant messages to contact you about your passport application."
+    },
+    "never": "never"
   },
   "ready-for-pickup": {
-    "has-been-printed": "The passport has been printed. Check your receipt to confirm when and where to pick up the passport.",
-    "do-not-visit": "Do not visit the pickup location before the date printed on your receipt."
+    "has-been-printed": "The passport has been printed",
+    "check-receipt": "Check your receipt to confirm when and where to pick up the passport.",
+    "do-not-visit": "Don't visit the pickup location before the date printed on your receipt."
   },
   "shipped-canada-post": {
-    "printed-and-mailing": "The passport has been printed. We're mailing it to you via Canada Post.",
+    "mailing": "We're mailing it to you by Canada Post. ",
     "supporting-documents": "We may send your supporting documents back separately.",
-    "did-not-receive": "If you don't receive your documents within 4 weeks of receiving your passport, you can call us at "
+    "did-not-receive": ", if you don't receive your documents within 4 weeks of receiving your passport."
   },
   "shipped-fedex": {
-    "printed-and-mailing": "The passport has been printed. We're mailing it to you via Fedex.",
-    "supporting-documents": "You'll receive your passport and supporting documents in the same envelope."
+    "mailing": "We're sending it to you by Fedex. ",
+    "supporting-documents": "You'll receive the passport and supporting documents in the same envelope."
   },
+  "status-check-passport-printed": "The passport has been printed",
   "not-acceptable": {
-    "cannot-process": "We have reviewed your application and can't process it further.",
-    "explanation": "We're sending you a letter explaining why, as well as your supporting documents. You should get these within the next few weeks."
+    "cannot-process": "We have reviewed your application and can't process it further",
+    "explanation": "We're sending you a letter explaining why, and including your supporting documents. You should get these within 4 weeks."
   },
   "status-check-contact": {
-    "description-no-record": "If after numerous attempts you are unable to access the status of your application online, or if your application is taking longer than the ",
-    "description-being-processed": {
-      "segment-1": "If your application is taking longer than the ",
-      "segment-2": " to process"
+    "description-no-record": {
+      "item-1": "after several attempts you still can't get your application status, ",
+      "item-2": "your application is taking longer than the "
     },
+    "description-being-processed": ", if your application is taking longer than the ",
     "service-standard": {
       "text": "service standard",
       "href": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/check-passport-travel-document-application.html"
-    },
-    "can-call": ", you can call us at "
+    }
   },
   "status-check-urgent": {
     "description": "If you need a passport within 10 business days, learn ",
@@ -142,6 +141,7 @@
       "fedex": "https://www.fedex.com/fedextrack/?action=track&cntry_code=ca&locale=en_ca&trackingnumber={{trackingNumber}}"
     }
   },
+  "status-check-call": "Call us at ",
   "header-messages": {
     "matches": "Make sure your information matches your proof of citizenship and supporting ID. Your proof of citizenship could be",
     "list": {

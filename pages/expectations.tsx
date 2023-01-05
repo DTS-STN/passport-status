@@ -32,7 +32,7 @@ const Expectations: FC = () => {
       <p>{t('available-after.description')}</p>
       <ul className="list-disc space-y-2 pl-10 mb-3">
         <li>
-          {t('available-after.list.item-1')} <b>{t('or')}</b>
+          {t('available-after.list.item-1')} <b>{t('common:or')}</b>
         </li>
         <li>{t('available-after.list.item-2')}</li>
       </ul>
@@ -41,7 +41,7 @@ const Expectations: FC = () => {
       <p>{t('can-check.description')}</p>
       <ul className="list-disc space-y-2 pl-10 mb-3">
         <li>
-          {t('can-check.list.item-1.in-person')} <b>{t('or')} </b>
+          {t('can-check.list.item-1.in-person')} <b>{t('common:or')} </b>
           {t('can-check.list.item-1.by-mail')}
         </li>
         <li>{t('can-check.list.item-2')}</li>
@@ -49,7 +49,7 @@ const Expectations: FC = () => {
       <p>{t('cannot-check.description')}</p>
       <ul className="list-disc space-y-2 pl-10 mb-3">
         <li>
-          {t('cannot-check.list.item-1')} <b>{t('or')}</b>
+          {t('cannot-check.list.item-1')} <b>{t('common:or')}</b>
         </li>
         <li>{t('cannot-check.list.item-2')}</li>
       </ul>

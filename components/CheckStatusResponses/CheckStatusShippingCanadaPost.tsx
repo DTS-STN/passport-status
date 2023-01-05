@@ -13,12 +13,14 @@ export const CheckStatusShippingCanadaPost: FC<
 
   return (
     <>
-      <p data-testid="shipped-canada-post">
-        {t('shipped-canada-post.printed-and-mailing')}
+      <p data-testid="shipped-canada-post" className="text-blue-light">
+        <b>{t('status-check-passport-printed')}</b>
       </p>
+      <span>{t('shipped-canada-post.mailing')}</span>
       {trackingNumber && (
-        <p>
-          {t('status-check-tracking.number')} <b>{trackingNumber}</b>.{' '}
+        <span>
+          {t('status-check-tracking.number')} <b>{trackingNumber}</b>.
+          <br />
           <ExternalLink
             href={t('status-check-tracking.link.canada-post', {
               trackingNumber,
@@ -26,12 +28,14 @@ export const CheckStatusShippingCanadaPost: FC<
           >
             {t('status-check-tracking.link.text')}
           </ExternalLink>
-        </p>
+        </span>
       )}
-      <p>{t('shipped-canada-post.supporting-documents')}</p>
+      <p className="mt-6 text-blue-light">
+        {t('shipped-canada-post.supporting-documents')}
+      </p>
       <p>
-        {t('shipped-canada-post.did-not-receive')}{' '}
-        <b>{t('common:phone-number')}</b>
+        {t('status-check-call')} <b>{t('common:phone-number')}</b>{' '}
+        {t('shipped-canada-post.did-not-receive')}
       </p>
     </>
   )
