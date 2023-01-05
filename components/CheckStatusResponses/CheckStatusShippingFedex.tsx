@@ -17,9 +17,8 @@ export const CheckStatusShippingFedex: FC<CheckStatusShippingFedexProps> = ({
       </p>
       <span>{t('shipped-fedex.mailing')}</span>
       {trackingNumber && (
-        <span>
+        <span className="whitespace-pre-line">
           {t('status-check-tracking.number')} <b>{trackingNumber}</b>.
-          <br />
           <ExternalLink
             href={t('status-check-tracking.link.fedex', { trackingNumber })}
           >

@@ -18,9 +18,8 @@ export const CheckStatusShippingCanadaPost: FC<
       </p>
       <span>{t('shipped-canada-post.mailing')}</span>
       {trackingNumber && (
-        <span>
+        <span className="whitespace-pre-line">
           {t('status-check-tracking.number')} <b>{trackingNumber}</b>.
-          <br />
           <ExternalLink
             href={t('status-check-tracking.link.canada-post', {
               trackingNumber,
