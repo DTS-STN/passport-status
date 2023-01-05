@@ -1,10 +1,10 @@
 /// <reference types="cypress" />
 
-describe('app page loads', () => {
-  beforeEach(() => {
-    cy.visit('/')
-  })
+beforeEach(() => {
+  cy.visit('/')
+})
 
+describe('app page loads', () => {
   it('displays the index page', () => {
     cy.location('pathname').should('equal', "/")
   })

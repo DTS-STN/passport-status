@@ -1,41 +1,35 @@
 /// <reference types="cypress" />
 
-describe('status page loads', () => {
-  beforeEach(() => {
-    cy.visit('/expectations')
-    cy.get('#btn-agree').first().click()
-    cy.visit('/status')
-  })
+beforeEach(() => {
+  cy.visit('/expectations')
+  cy.get('#btn-agree').first().click()
+  cy.visit('/status')
+})
 
+describe('status page loads', () => {
   it('displays the status page', () => {
-    cy.location('pathname').should("equal", "/en/status");
+    cy.location('pathname').should("equal", "/en/status")
   })
 
   it('displays the language link to change to French', () => {
-    cy.location('pathname').should("equal", "/en/status");
-    cy.get('[data-cy=toggle-language-link]').should('contain.text', 'Français');
+    cy.location('pathname').should("equal", "/en/status")
+    cy.get('[data-cy=toggle-language-link]').should('contain.text', 'Français')
   })
 
   it('displays the language link to change to English', () => {
     cy.get('[data-cy=toggle-language-link]').click()
-    cy.location('pathname').should("equal", "/fr/status");
-    cy.get('[data-cy=toggle-language-link]').should('contain.text', 'English');
+    cy.location('pathname').should("equal", "/fr/status")
+    cy.get('[data-cy=toggle-language-link]').should('contain.text', 'English')
   })
 
   it('has no detectable a11y violations on load', () => {
-    cy.injectAxe();
-    cy.wait(500);
+    cy.injectAxe()
+    cy.wait(500)
     cy.checkA11y()
   })
 })
 
 describe('ESRF field validation', ()=>{
-  beforeEach(() => {
-    cy.visit('/expectations')
-    cy.get('#btn-agree').first().click()
-    cy.visit('/status')
-  })
-
   it('validates valid ESRF',()=>{
     cy.get('#esrf').type('A5934S87')
     cy.get('#btn-submit').click()
@@ -49,12 +43,6 @@ describe('ESRF field validation', ()=>{
 })
 
 describe('givenName field validation', ()=>{
-  beforeEach(() => {
-    cy.visit('/expectations')
-    cy.get('#btn-agree').first().click()
-    cy.visit('/status')
-  })
-
   it('validates valid givenName',()=>{
     cy.get('#givenName').type('Clara')
     cy.get('#btn-submit').click()
@@ -68,12 +56,6 @@ describe('givenName field validation', ()=>{
 })
 
 describe('surname field validation', ()=>{
-  beforeEach(() => {
-    cy.visit('/expectations')
-    cy.get('#btn-agree').first().click()
-    cy.visit('/status')
-  })
-
   it('validates valid surname',()=>{
     cy.get('#surname').type('Renard')
     cy.get('#btn-submit').click()
@@ -87,12 +69,6 @@ describe('surname field validation', ()=>{
 })
 
 describe('Date of Birth field validation', ()=>{
-  beforeEach(() => {
-    cy.visit('/expectations')
-    cy.get('#btn-agree').first().click()
-    cy.visit('/status')
-  })
-
   it('validates valid dateOfBirth',()=>{
     cy.get('#date-select-dateOfBirth-year').select('1982')
     cy.get('#date-select-dateOfBirth-month').select('12')
@@ -107,8 +83,8 @@ describe('Date of Birth field validation', ()=>{
   })
 
   it('validates Date of Birth in the future',()=>{
-    const futureDate = new Date();
-    futureDate.setDate( futureDate.getDate() + 1);
+    const futureDate = new Date()
+    futureDate.setDate( futureDate.getDate() + 1)
     cy.get('#date-select-dateOfBirth-year').select(futureDate.getFullYear().toString())
     cy.get('#date-select-dateOfBirth-month').select((futureDate.getMonth() + 1).toString().padStart(2, '0'))
     cy.get('#date-select-dateOfBirth-day').select(futureDate.getDate().toString().padStart(2, '0'))
@@ -117,11 +93,8 @@ describe('Date of Birth field validation', ()=>{
   })
 })
 
-describe('responses', ()=>{
-  it('loads result', ()=>{
-    cy.visit('/expectations')
-    cy.get('#btn-agree').first().click()
-    cy.visit('/status')
+describe('responses - loads result', ()=>{
+  beforeEach(() => {
     cy.get('#esrf').type('A02D85ED')
     cy.get('#givenName').type('Yanis')
     cy.get('#surname').type('Piérre')
@@ -129,20 +102,22 @@ describe('responses', ()=>{
     cy.get('#date-select-dateOfBirth-month').select('07')
     cy.get('#date-select-dateOfBirth-day').select('29')
     cy.get('#btn-submit').click()
+  })
+
+  it('loads result', ()=>{
     cy.get('#response-result').should('exist')
     cy.focused().should('have.prop', 'tagName' ).should('eq', 'H1')
   })
 
   it('loads result has no detectable a11y violations', ()=>{
-    cy.injectAxe();
-    cy.wait(500);
+    cy.injectAxe()
+    cy.wait(500)
     cy.checkA11y()
   })
+})
 
-  it('loads no result', ()=>{
-    cy.visit('/expectations')
-    cy.get('#btn-agree').first().click()
-    cy.visit('/status')
+describe('responses - loads no result', ()=>{
+  beforeEach(() => {
     cy.get('#esrf').type('A1234567')
     cy.get('#givenName').type('John')
     cy.get('#surname').type('Doe')
@@ -150,29 +125,32 @@ describe('responses', ()=>{
     cy.get('#date-select-dateOfBirth-month').select('12')
     cy.get('#date-select-dateOfBirth-day').select('01')
     cy.get('#btn-submit').click()
+  })
+
+  it('loads no result', ()=>{
     cy.get('#response-no-result').should('exist')
     cy.focused().should('have.prop', 'tagName' ).should('eq', 'H1')
   })
 
   it('no result has no detectable a11y violations', ()=>{
-    cy.injectAxe();
-    cy.wait(500);
+    cy.injectAxe()
+    cy.wait(500)
     cy.checkA11y()
   })
 })
 
 describe('cancel check status', ()=>{
-  it('loads dialog', ()=>{
-    cy.visit('/expectations')
-    cy.get('#btn-agree').first().click()
-    cy.visit('/status')
+  beforeEach(() => {
     cy.get('#btn-cancel').click()
+  })
+
+  it('loads dialog', ()=>{
     cy.get('dialog[open]').should('exist')
   })
 
   it('cancel check status has no detectable a11y violations', ()=>{
-    cy.injectAxe();
-    cy.wait(500);
+    cy.injectAxe()
+    cy.wait(500)
     cy.checkA11y()
   })
 })
