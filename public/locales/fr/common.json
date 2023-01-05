@@ -73,5 +73,6 @@
     "alt": "Exemple de reçu officiel. Le numéro de dossier est entouré dans la partie supérieure gauche du reçu, au-dessus d'un code-barres.",
     "src": "/Receipt2_FR.png",
     "descriptive-text": "Exemple d'un reçu où le numéro de dossier est entouré."
-  }
+  },
+  "or": "ou"
 }

@@ -6,33 +6,34 @@ export const CheckStatusNoRecord: FC<{}> = () => {
   const { t } = useTranslation(['status', 'common'])
   return (
     <>
-      <p data-testid="no-record">
-        {t('no-record.cannot-give-status.description')}
+      <p data-testid="no-record" className="text-blue-light">
+        <b>{t('no-record.cannot-give-status.description')}</b>
       </p>
-      <ul className="list-disc space-y-2 pl-10 mb-3">
-        <li>{t('no-record.cannot-give-status.list.item-1')}</li>
+      <p>{t('no-record.cannot-give-status.because')}</p>
+      <ul className="list-disc space-y-2 pl-10 mb-5">
+        <li>
+          {t('no-record.cannot-give-status.list.item-1')}{' '}
+          <b>{t('common:or')}</b>
+        </li>
         <li>{t('no-record.cannot-give-status.list.item-2')}</li>
-      </ul>
-      <p>{t('no-record.available-after.description')}</p>
-      <ul className="space-y-2 pl-4 mb-3">
-        <IconListItem
-          icon="check-mark"
-          text={t('no-record.available-after.list.item-1')}
-        />
-        <IconListItem
-          icon="check-mark"
-          text={t('no-record.available-after.list.item-2')}
-        />
       </ul>
       <p>{t('no-record.double-check')}</p>
       <p>
-        {t('status-check-contact.description-no-record')}
-        <ExternalLink href={t('status-check-contact.service-standard.href')}>
-          {t('status-check-contact.service-standard.text')}
-        </ExternalLink>
-        {t('status-check-contact.can-call')}
-        <b>{t('common:phone-number')}</b>.
+        {t('status-check-call')} <b>{t('common:phone-number')}</b>{' '}
+        {t('no-record.if')}
       </p>
+      <ul className="list-disc space-y-2 pl-10 mb-5">
+        <li>
+          {t('status-check-contact.description-no-record.item-1')}{' '}
+          <b>{t('common:or')}</b>
+        </li>
+        <li>
+          {t('status-check-contact.description-no-record.item-2')}{' '}
+          <ExternalLink href={t('status-check-contact.service-standard.href')}>
+            {t('status-check-contact.service-standard.text')}
+          </ExternalLink>
+        </li>
+      </ul>
       <p>
         {t('status-check-urgent.description')}
         <ExternalLink href={t('status-check-urgent.express-services.href')}>
@@ -40,22 +41,6 @@ export const CheckStatusNoRecord: FC<{}> = () => {
         </ExternalLink>
       </p>
     </>
-  )
-}
-
-interface IconListItemProps {
-  icon: 'check-mark' | 'cross'
-  text: string
-}
-
-const IconListItem: FC<IconListItemProps> = ({ icon, text }) => {
-  return (
-    <li className="flex flex-nowrap gap-2">
-      <div className="font-bold">
-        {icon === 'check-mark' ? <>&#10003;</> : <>&#10007;</>}
-      </div>
-      <div>{text}</div>
-    </li>
   )
 }
 
