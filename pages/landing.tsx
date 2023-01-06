@@ -11,13 +11,7 @@ const Landing: FC = () => {
   const { t } = useTranslation('landing')
 
   return (
-    <Layout
-      meta={{
-        author: t('common:meta.author'),
-        desc: t('common:meta.desc'),
-        title: t('common:meta.title'),
-      }}
-    >
+    <Layout>
       <h1 className="h1">{t('header')}</h1>
       <p>{t('description')}</p>
       <div className="flex flex-wrap md:flex-nowrap gap-4 mb-4">

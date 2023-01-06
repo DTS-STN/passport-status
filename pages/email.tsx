@@ -101,13 +101,7 @@ const Email: FC = () => {
   if (emailEsrfError) throw emailEsrfError
 
   return (
-    <Layout
-      meta={{
-        author: t('common:meta.author'),
-        desc: t('common:meta.desc'),
-        title: t('common:meta.title'),
-      }}
-    >
+    <Layout>
       <IdleTimeout />
       <h1 ref={headingRef} className="h1" tabIndex={-1}>
         {t('header')}

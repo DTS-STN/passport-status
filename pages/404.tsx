@@ -1,16 +1,14 @@
+import { NextSeo } from 'next-seo'
 import Link from 'next/link'
 import ErrorLayout from '../components/ErrorLayout'
-import MetaData from '../components/MetaData'
 
 const Custom404 = () => {
   return (
     <ErrorLayout>
-      <MetaData
-        author={'Service Canada'}
-        desc={
-          "Error message stating that the server is down, or the URL is incorrect or expired - Message d'erreur indiquant que le serveur est hors service, que l'URL est incorrecte ou qu'elle a expiré."
-        }
-        title={'Not Found | Pas trouvé - Canada.ca'}
+      <NextSeo
+        description="Error message stating that the server is down, or the URL is incorrect or expired | Message d'erreur indiquant que le serveur est hors service, que l'URL est incorrecte ou qu'elle a expiré."
+        title="Not Found | Pas trouvé"
+        titleTemplate={'%s \u2010 Canada.ca'}
       />
       <h1 className="sr-only" lang="en">
         Not Found
