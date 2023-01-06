@@ -12,9 +12,9 @@ export const CheckStatusShippingFedex: FC<CheckStatusShippingFedexProps> = ({
   const { t } = useTranslation(['status', 'common'])
   return (
     <>
-      <p data-testid="shipped-fedex" className="text-blue-light">
-        <b>{t('status-check-passport-printed')}</b>
-      </p>
+      <h2 data-testid="shipped-fedex" className="h2 text-blue-normal">
+        {t('status-check-passport-printed')}
+      </h2>
       <span>{t('shipped-fedex.mailing')}</span>
       {trackingNumber && (
         <span className="whitespace-pre-line">
