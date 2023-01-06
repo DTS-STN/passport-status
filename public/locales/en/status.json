@@ -136,7 +136,7 @@
   "status-check-tracking": {
     "number": "Your tracking number is ",
     "link": {
-      "text": "\n You can track the package online.",
+      "text": "You can track the package online.",
       "canada-post": "https://www.canadapost-postescanada.ca/track-reperage/en?referenceNumber={{trackingNumber}}#/details/{{trackingNumber}}",
       "fedex": "https://www.fedex.com/fedextrack/?action=track&cntry_code=ca&locale=en_ca&trackingnumber={{trackingNumber}}"
     }

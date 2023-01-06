@@ -16,19 +16,21 @@ export const CheckStatusShippingCanadaPost: FC<
       <h2 data-testid="shipped-canada-post" className="h2 text-blue-normal">
         {t('status-check-passport-printed')}
       </h2>
-      <span>{t('shipped-canada-post.mailing')}</span>
-      {trackingNumber && (
-        <span className="whitespace-pre-line">
-          {t('status-check-tracking.number')} <b>{trackingNumber}</b>.
-          <ExternalLink
-            href={t('status-check-tracking.link.canada-post', {
-              trackingNumber,
-            })}
-          >
-            {t('status-check-tracking.link.text')}
-          </ExternalLink>
-        </span>
-      )}
+      <p>
+        {t('shipped-canada-post.mailing')}
+        {trackingNumber && (
+          <>
+            {t('status-check-tracking.number')} <b>{trackingNumber}</b>.<br />
+            <ExternalLink
+              href={t('status-check-tracking.link.canada-post', {
+                trackingNumber,
+              })}
+            >
+              {t('status-check-tracking.link.text')}
+            </ExternalLink>
+          </>
+        )}
+      </p>
       <p className="mt-6 text-blue-light">
         {t('shipped-canada-post.supporting-documents')}
       </p>
