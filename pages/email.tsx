@@ -116,6 +116,9 @@ const Email: FC = () => {
             <b>{t('common:phone-number')}</b>.
           </p>
           <div className="mt-10">
+            <h3 className="h3 text-blue-normal">
+              {t('common:feedback-link-header')}
+            </h3>
             <Trans i18nKey={'common:feedback-link'}>
               Insert feedback{' '}
               <ExternalLink href="https://example.com">Link</ExternalLink>
