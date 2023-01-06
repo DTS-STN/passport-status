@@ -13,9 +13,9 @@ export const CheckStatusShippingCanadaPost: FC<
 
   return (
     <>
-      <p data-testid="shipped-canada-post" className="text-blue-light">
-        <b>{t('status-check-passport-printed')}</b>
-      </p>
+      <h2 data-testid="shipped-canada-post" className="h2 text-blue-normal">
+        {t('status-check-passport-printed')}
+      </h2>
       <span>{t('shipped-canada-post.mailing')}</span>
       {trackingNumber && (
         <span className="whitespace-pre-line">

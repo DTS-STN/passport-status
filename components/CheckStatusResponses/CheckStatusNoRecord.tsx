@@ -6,9 +6,9 @@ export const CheckStatusNoRecord: FC<{}> = () => {
   const { t } = useTranslation(['status', 'common'])
   return (
     <>
-      <p data-testid="no-record" className="text-blue-light">
-        <b>{t('no-record.cannot-give-status.description')}</b>
-      </p>
+      <h2 data-testid="no-record" className="h2 text-blue-normal">
+        {t('no-record.cannot-give-status.description')}
+      </h2>
       <p>{t('no-record.cannot-give-status.because')}</p>
       <ul className="list-disc space-y-2 pl-10 mb-5">
         <li>

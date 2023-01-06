@@ -6,9 +6,9 @@ export const CheckStatusFileBeingProcessed: FC<{}> = () => {
   const { t } = useTranslation(['status', 'common'])
   return (
     <>
-      <p data-testid="being-processed" className="text-blue-light">
-        <b>{t('being-processed.received')}</b>
-      </p>
+      <h2 data-testid="being-processed" className="h2 text-blue-normal">
+        {t('being-processed.received')}
+      </h2>
       <p>
         {t('being-processed.we-will-contact.segment-1')}{' '}
         <b>{t('being-processed.never')}</b>{' '}
