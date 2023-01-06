@@ -127,7 +127,7 @@ const Email: FC = () => {
           <p>
             <strong>{t('header-messages.matches')}</strong>
           </p>
-          <ul className="list-disc space-y-2 pl-10 mb-3">
+          <ul className="list-disc space-y-2 pl-10 mb-5">
             <li>{t('header-messages.list.item-1')}</li>
             <li>{t('header-messages.list.item-2')}</li>
             <li>{t('header-messages.list.item-3')}</li>
