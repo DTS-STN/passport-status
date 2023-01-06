@@ -155,8 +155,9 @@
 <a name='L90'></a><a href='#L90'>90</a>
 <a name='L91'></a><a href='#L91'>91</a>
 <a name='L92'></a><a href='#L92'>92</a>
-<a name='L93'></a><a href='#L93'>93</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -247,94 +248,99 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import Image from 'next/image'
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { NextSeo } from 'next-seo'
+import Image from 'next/image'
 import LinkButton from '../components/LinkButton'
-import MetaData from '../components/MetaData'
-import defaultTranslations from '../public/locales/defaultTranslations.json'
 &nbsp;
 const Index = () =&gt; {
   return (
-    &lt;main
-      role="main"
-      className="flex bg-splash-page bg-cover bg-center h-screen"
-    &gt;
-      &lt;MetaData
-        author={defaultTranslations.meta.author}
-        desc={defaultTranslations.meta.desc}
-        title={defaultTranslations.meta.title}
-      /&gt;
-      &lt;div className="m-auto w-[300px] md:w-[400px] lg:w-[500px] bg-gray-lighter"&gt;
-        &lt;div className="p-8"&gt;
-          &lt;h1 className="sr-only"&gt;service.canada.ca-passport-status-checker&lt;/h1&gt;
-          &lt;div className="w-11/12 lg:w-8/12"&gt;
-            &lt;Image
-              alt="Government of Canada"
-              className="mb-1.5"
-              height={26}
-              layout="responsive"
-              objectFit="scale-down"
-              property="logo"
-              src="/sig-blk-en.svg"
-              width={283}
-            /&gt;
-            &lt;span className="sr-only"&gt;
-              {' '}
-              / &lt;span lang="fr"&gt;Gouvernement du Canada&lt;/span&gt;
-            &lt;/span&gt;
+    &lt;&gt;
+      &lt;NextSeo noindex /&gt;
+      &lt;main
+        role="main"
+        className="flex bg-splash-page bg-cover bg-center h-screen"
+      &gt;
+        &lt;div className="m-auto w-[300px] md:w-[400px] lg:w-[500px] bg-gray-lighter"&gt;
+          &lt;div className="p-8"&gt;
+            &lt;h1 className="sr-only"&gt;
+              service.canada.ca-passport-status-checker
+            &lt;/h1&gt;
+            &lt;div className="w-11/12 lg:w-8/12"&gt;
+              &lt;Image
+                alt="Government of Canada"
+                className="mb-1.5"
+                height={26}
+                layout="responsive"
+                objectFit="scale-down"
+                property="logo"
+                src="/sig-blk-en.svg"
+                width={283}
+              /&gt;
+              &lt;span className="sr-only"&gt;
+                {' '}
+                / &lt;span lang="fr"&gt;Gouvernement du Canada&lt;/span&gt;
+              &lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div className="flex gap-8 justify-center mt-9 mb-2"&gt;
+              &lt;section className="w-36" lang="en"&gt;
+                &lt;h2 className="sr-only"&gt;Government of Canada&lt;/h2&gt;
+                &lt;LinkButton
+                  href="/en/expectations"
+                  text="English"
+                  id="english-button"
+                  style="primary"
+                  fullWidth
+                /&gt;
+              &lt;/section&gt;
+              &lt;section className="w-36" lang="fr"&gt;
+                &lt;h2 className="sr-only"&gt;Gouvernement du Canada&lt;/h2&gt;
+                &lt;LinkButton
+                  href="/fr/expectations"
+                  text="Français"
+                  id="french-button"
+                  style="primary"
+                  fullWidth
+                /&gt;
+              &lt;/section&gt;
+            &lt;/div&gt;
           &lt;/div&gt;
-          &lt;div className="flex gap-8 justify-center mt-9 mb-2"&gt;
-            &lt;section className="w-36" lang="en"&gt;
-              &lt;h2 className="sr-only"&gt;Government of Canada&lt;/h2&gt;
-              &lt;LinkButton
-                href="/en/expectations"
-                text="English"
-                id="english-button"
-                style="primary"
-                fullWidth
+          &lt;div className="p-8 flex gap-6 justify-between items-center bg-gray-light"&gt;
+            &lt;div className="text-blue-light w-7/12 md:w-8/12"&gt;
+              &lt;a
+                className="text-inherit hover:text-inherit focus:text-inherit visited:text-inherit no-underline hover:underline focus:underline"
+                data-cy="terms"
+                href="https://www.canada.ca/en/transparency/terms.html"
+                lang="en"
+              &gt;
+                Terms &amp;amp; conditions
+              &lt;/a&gt;
+              &lt;span className="text-gray-400"&gt; • &lt;/span&gt;
+              &lt;a
+                className="text-inherit hover:text-inherit focus:text-inherit visited:text-inherit no-underline hover:underline focus:underline"
+                data-cy="avis"
+                href="https://www.canada.ca/fr/transparence/avis.html"
+                lang="fr"
+              &gt;
+                Avis
+              &lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div className="w-5/12 md:w-4/12"&gt;
+              &lt;img
+                src="/wmms-blk.svg"
+                alt="Symbol of the Government of Canada"
               /&gt;
-            &lt;/section&gt;
-            &lt;section className="w-36" lang="fr"&gt;
-              &lt;h2 className="sr-only"&gt;Gouvernement du Canada&lt;/h2&gt;
-              &lt;LinkButton
-                href="/fr/expectations"
-                text="Français"
-                id="french-button"
-                style="primary"
-                fullWidth
-              /&gt;
-            &lt;/section&gt;
+              &lt;span className="sr-only"&gt;
+                {' '}
+                / &lt;span lang="fr"&gt;Symbole du gouvernement du Canada&lt;/span&gt;
+              &lt;/span&gt;
+            &lt;/div&gt;
           &lt;/div&gt;
         &lt;/div&gt;
-        &lt;div className="p-8 flex gap-6 justify-between items-center bg-gray-light"&gt;
-          &lt;div className="text-blue-light w-7/12 md:w-8/12"&gt;
-            &lt;a
-              className="text-inherit hover:text-inherit focus:text-inherit visited:text-inherit no-underline hover:underline focus:underline"
-              data-cy="terms"
-              href="https://www.canada.ca/en/transparency/terms.html"
-              lang="en"
-            &gt;
-              Terms &amp;amp; conditions
-            &lt;/a&gt;
-            &lt;span className="text-gray-400"&gt; • &lt;/span&gt;
-            &lt;a
-              className="text-inherit hover:text-inherit focus:text-inherit visited:text-inherit no-underline hover:underline focus:underline"
-              data-cy="avis"
-              href="https://www.canada.ca/fr/transparence/avis.html"
-              lang="fr"
-            &gt;
-              Avis
-            &lt;/a&gt;
-          &lt;/div&gt;
-          &lt;div className="w-5/12 md:w-4/12"&gt;
-            &lt;img src="/wmms-blk.svg" alt="Symbol of the Government of Canada" /&gt;
-            &lt;span className="sr-only"&gt;
-              {' '}
-              / &lt;span lang="fr"&gt;Symbole du gouvernement du Canada&lt;/span&gt;
-            &lt;/span&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/main&gt;
+      &lt;/main&gt;
+    &lt;/&gt;
   )
 }
 &nbsp;
@@ -346,7 +352,7 @@ export default Index
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-01-06T14:47:20.265Z
+                at 2023-01-06T17:03:04.525Z
             </div>
         <script src="../prettify.js"></script>
         <script>
