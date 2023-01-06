@@ -135,7 +135,7 @@
   "status-check-tracking": {
     "number": "Votre numéro de repérage est ",
     "link": {
-      "text": "\n Vous pouvez faire le suivi de l'envoi en ligne",
+      "text": "Vous pouvez faire le suivi de l'envoi en ligne",
       "canada-post": "https://www.canadapost-postescanada.ca/track-reperage/fr?referenceNumber={{trackingNumber}}#/details/{{trackingNumber}}",
       "fedex": "https://www.fedex.com/fedextrack/?action=track&cntry_code=ca&locale=fr_ca&trackingnumber={{trackingNumber}}"
     }
