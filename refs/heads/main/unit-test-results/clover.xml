@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1673025232308" clover="3.2.0">
-  <project timestamp="1673025232308" name="All files">
+<coverage generated="1673027300167" clover="3.2.0">
+  <project timestamp="1673027300167" name="All files">
     <metrics statements="408" coveredstatements="272" conditionals="248" coveredconditionals="121" methods="121" coveredmethods="71" elements="777" coveredelements="464" complexity="0" loc="408" ncloc="408" packages="7" files="43" classes="43"/>
     <package name="components">
       <metrics statements="200" coveredstatements="161" conditionals="116" coveredconditionals="73" methods="58" coveredmethods="45"/>
@@ -421,11 +421,11 @@
         <line num="95" count="0" type="stmt"/>
         <line num="101" count="2" type="cond" truecount="1" falsecount="1"/>
         <line num="103" count="2" type="stmt"/>
-        <line num="206" count="0" type="stmt"/>
-        <line num="213" count="0" type="stmt"/>
-        <line num="217" count="0" type="stmt"/>
-        <line num="222" count="0" type="stmt"/>
-        <line num="233" count="1" type="stmt"/>
+        <line num="209" count="0" type="stmt"/>
+        <line num="216" count="0" type="stmt"/>
+        <line num="220" count="0" type="stmt"/>
+        <line num="225" count="0" type="stmt"/>
+        <line num="236" count="1" type="stmt"/>
       </file>
       <file name="expectations.tsx" path="/home/runner/work/passport-status/passport-status/pages/expectations.tsx">
         <metrics statements="8" coveredstatements="5" conditionals="2" coveredconditionals="0" methods="3" coveredmethods="1"/>
@@ -487,11 +487,11 @@
         <line num="139" count="0" type="stmt"/>
         <line num="145" count="2" type="cond" truecount="1" falsecount="1"/>
         <line num="147" count="2" type="stmt"/>
-        <line num="281" count="0" type="stmt"/>
-        <line num="288" count="0" type="stmt"/>
-        <line num="292" count="0" type="stmt"/>
-        <line num="297" count="0" type="stmt"/>
-        <line num="308" count="1" type="stmt"/>
+        <line num="284" count="0" type="stmt"/>
+        <line num="291" count="0" type="stmt"/>
+        <line num="295" count="0" type="stmt"/>
+        <line num="300" count="0" type="stmt"/>
+        <line num="311" count="1" type="stmt"/>
       </file>
     </package>
     <package name="pages.api">
