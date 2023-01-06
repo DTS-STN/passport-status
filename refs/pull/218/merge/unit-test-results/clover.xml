@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1672955498535" clover="3.2.0">
-  <project timestamp="1672955498536" name="All files">
-    <metrics statements="409" coveredstatements="273" conditionals="246" coveredconditionals="119" methods="122" coveredmethods="72" elements="777" coveredelements="464" complexity="0" loc="409" ncloc="409" packages="7" files="44" classes="44"/>
+<coverage generated="1673019757939" clover="3.2.0">
+  <project timestamp="1673019757939" name="All files">
+    <metrics statements="408" coveredstatements="272" conditionals="248" coveredconditionals="121" methods="121" coveredmethods="71" elements="777" coveredelements="464" complexity="0" loc="408" ncloc="408" packages="7" files="43" classes="43"/>
     <package name="components">
-      <metrics statements="202" coveredstatements="163" conditionals="116" coveredconditionals="73" methods="59" coveredmethods="46"/>
+      <metrics statements="200" coveredstatements="161" conditionals="116" coveredconditionals="73" methods="58" coveredmethods="45"/>
       <file name="ActionButton.tsx" path="/home/runner/work/passport-status/passport-status/components/ActionButton.tsx">
         <metrics statements="9" coveredstatements="9" conditionals="6" coveredconditionals="4" methods="1" coveredmethods="1"/>
         <line num="18" count="6" type="stmt"/>
@@ -232,9 +232,9 @@
       </file>
       <file name="Layout.tsx" path="/home/runner/work/passport-status/passport-status/components/Layout.tsx">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="12" count="1" type="stmt"/>
-        <line num="13" count="2" type="stmt"/>
-        <line num="14" count="2" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
       </file>
       <file name="LinkButton.tsx" path="/home/runner/work/passport-status/passport-status/components/LinkButton.tsx">
         <metrics statements="8" coveredstatements="8" conditionals="10" coveredconditionals="8" methods="1" coveredmethods="1"/>
@@ -246,11 +246,6 @@
         <line num="44" count="4" type="cond" truecount="2" falsecount="0"/>
         <line num="45" count="4" type="cond" truecount="2" falsecount="0"/>
         <line num="47" count="4" type="stmt"/>
-      </file>
-      <file name="MetaData.tsx" path="/home/runner/work/passport-status/passport-status/components/MetaData.tsx">
-        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="10" count="4" type="stmt"/>
-        <line num="11" count="4" type="stmt"/>
       </file>
       <file name="Modal.tsx" path="/home/runner/work/passport-status/passport-status/components/Modal.tsx">
         <metrics statements="14" coveredstatements="13" conditionals="2" coveredconditionals="1" methods="5" coveredmethods="5"/>
@@ -373,17 +368,18 @@
       </file>
     </package>
     <package name="pages">
-      <metrics statements="96" coveredstatements="53" conditionals="63" coveredconditionals="25" methods="38" coveredmethods="10"/>
+      <metrics statements="97" coveredstatements="54" conditionals="65" coveredconditionals="27" methods="38" coveredmethods="10"/>
       <file name="404.tsx" path="/home/runner/work/passport-status/passport-status/pages/404.tsx">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="5" count="1" type="stmt"/>
         <line num="6" count="1" type="stmt"/>
       </file>
       <file name="_app.tsx" path="/home/runner/work/passport-status/passport-status/pages/_app.tsx">
-        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="8" count="1" type="stmt"/>
-        <line num="10" count="1" type="stmt"/>
+        <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
         <line num="11" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
       </file>
       <file name="_document.tsx" path="/home/runner/work/passport-status/passport-status/pages/_document.tsx">
         <metrics statements="3" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="2" coveredmethods="0"/>
@@ -395,9 +391,9 @@
         <metrics statements="5" coveredstatements="3" conditionals="13" coveredconditionals="10" methods="2" coveredmethods="1"/>
         <line num="10" count="1" type="stmt"/>
         <line num="11" count="2" type="stmt"/>
-        <line num="98" count="1" type="stmt"/>
-        <line num="99" count="0" type="cond" truecount="0" falsecount="3"/>
-        <line num="100" count="0" type="stmt"/>
+        <line num="96" count="1" type="stmt"/>
+        <line num="97" count="0" type="cond" truecount="0" falsecount="3"/>
+        <line num="98" count="0" type="stmt"/>
       </file>
       <file name="email.tsx" path="/home/runner/work/passport-status/passport-status/pages/email.tsx">
         <metrics statements="29" coveredstatements="16" conditionals="18" coveredconditionals="7" methods="12" coveredmethods="2"/>
@@ -425,11 +421,11 @@
         <line num="95" count="0" type="stmt"/>
         <line num="101" count="2" type="cond" truecount="1" falsecount="1"/>
         <line num="103" count="2" type="stmt"/>
-        <line num="212" count="0" type="stmt"/>
-        <line num="219" count="0" type="stmt"/>
-        <line num="223" count="0" type="stmt"/>
-        <line num="228" count="0" type="stmt"/>
-        <line num="239" count="1" type="stmt"/>
+        <line num="206" count="0" type="stmt"/>
+        <line num="213" count="0" type="stmt"/>
+        <line num="217" count="0" type="stmt"/>
+        <line num="222" count="0" type="stmt"/>
+        <line num="233" count="1" type="stmt"/>
       </file>
       <file name="expectations.tsx" path="/home/runner/work/passport-status/passport-status/pages/expectations.tsx">
         <metrics statements="8" coveredstatements="5" conditionals="2" coveredconditionals="0" methods="3" coveredmethods="1"/>
@@ -440,19 +436,19 @@
         <line num="16" count="0" type="stmt"/>
         <line num="17" count="0" type="stmt"/>
         <line num="22" count="2" type="stmt"/>
-        <line num="71" count="1" type="stmt"/>
+        <line num="65" count="1" type="stmt"/>
       </file>
       <file name="index.tsx" path="/home/runner/work/passport-status/passport-status/pages/index.tsx">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="5" count="1" type="stmt"/>
         <line num="6" count="1" type="stmt"/>
-        <line num="7" count="1" type="stmt"/>
       </file>
       <file name="landing.tsx" path="/home/runner/work/passport-status/passport-status/pages/landing.tsx">
         <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="1"/>
         <line num="10" count="1" type="stmt"/>
         <line num="11" count="2" type="stmt"/>
         <line num="13" count="2" type="stmt"/>
-        <line num="71" count="1" type="stmt"/>
+        <line num="65" count="1" type="stmt"/>
       </file>
       <file name="status.tsx" path="/home/runner/work/passport-status/passport-status/pages/status.tsx">
         <metrics statements="40" coveredstatements="18" conditionals="24" coveredconditionals="8" methods="14" coveredmethods="2"/>
@@ -491,11 +487,11 @@
         <line num="139" count="0" type="stmt"/>
         <line num="145" count="2" type="cond" truecount="1" falsecount="1"/>
         <line num="147" count="2" type="stmt"/>
-        <line num="287" count="0" type="stmt"/>
-        <line num="294" count="0" type="stmt"/>
-        <line num="298" count="0" type="stmt"/>
-        <line num="303" count="0" type="stmt"/>
-        <line num="314" count="1" type="stmt"/>
+        <line num="281" count="0" type="stmt"/>
+        <line num="288" count="0" type="stmt"/>
+        <line num="292" count="0" type="stmt"/>
+        <line num="297" count="0" type="stmt"/>
+        <line num="308" count="1" type="stmt"/>
       </file>
     </package>
     <package name="pages.api">
