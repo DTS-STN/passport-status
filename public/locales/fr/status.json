@@ -78,70 +78,69 @@
   },
   "no-record": {
     "cannot-give-status": {
-      "description": "Nous ne pouvons pas vous donner le statut de votre demande pour le moment car\u00a0:",
+      "description": "Nous ne pouvons pas vous donner l'état de votre demande pour le moment",
+      "because": "Ceci est dû au fait que",
       "list": {
-        "item-1": "les informations que vous nous avez fournies ne correspondent pas aux informations de notre système ou",
-        "item-2": "nous avons reçu votre demande, mais nous n'avons pas encore commencé à la traiter"
+        "item-1": "les renseignements que vous nous avez fournis ne correspondent pas à celles de notre système ",
+        "item-2": "nous avons reçu votre demande, mais n'avons pas encore commencé à la traiter"
       }
     },
-    "available-after": {
-      "description": "Le statut de votre demande est disponible après\u00a0:",
-      "list": {
-        "item-1": "5 jours si vous avez postulé en personne ou",
-        "item-2": "10 jours si vous avez postulé par courrier"
-      }
-    },
-    "double-check": "Vérifiez vos informations et réessayez. Si votre application est toujours introuvable, vous pouvez réessayer demain. Nos dossiers sont mis à jour quotidiennement."
+    "double-check": "Revérifiez vos renseignements et essayez à nouveau. Si votre demande est toujours introuvable, vous pouvez réessayer demain. Nous mettons à jour nos dossiers chaque jour.",
+    "if": "si"
   },
   "being-processed": {
-    "received": "Nous avons reçu votre demande et avons commencé à la traiter.",
-    "we-will-contact": "Si nous avons besoin de plus amples informations, nous vous contacterons par e-mail ou par téléphone. Service Canada n'utilisera pas de messages texte ou de messages instantanés pour entamer une conversation avec vous au sujet de votre demande de passeport.",
-    "more-info": "Plus d'information"
+    "received": "Nous avons reçu votre demande et nous sommes en train de la traiter",
+    "we-will-contact": {
+      "segment-1": "Si nous avons besoin de plus amples renseignements, nous communiquerons avec vous par courriel ou par téléphone. Nous n'utiliserons",
+      "segment-2": " de SMS ou de messages textes ou de programmes de messagerie instantanée pour vous contacter au sujet de votre demande de passeport."
+    },
+    "never": "jamais"
   },
   "ready-for-pickup": {
-    "has-been-printed": "Le passeport a été imprimé. Vérifiez votre reçu pour confirmer quand et où retirer le passeport.",
-    "do-not-visit": "Ne vous rendez pas au lieu de ramassage avant la date imprimée sur votre reçu."
+    "check-receipt": "Vérifiez votre reçu pour confirmer la date et le lieu de retrait du passeport.",
+    "do-not-visit": "Ne vous rendez pas au lieu de retrait avant la date indiquée sur votre reçu."
   },
   "shipped-canada-post": {
-    "printed-and-mailing": "Le passeport a été imprimé. Nous vous l'envoyons via Postes Canada.",
-    "supporting-documents": "Nous pouvons vous renvoyer vos pièces justificatives séparément.",
-    "did-not-receive": "Si vous ne recevez pas vos documents dans les 4 semaines suivant la réception de votre passeport, vous pouvez nous appeler au "
+    "mailing": "Nous vous l'envoyons par Postes Canada. ",
+    "supporting-documents": "Nous pourrions renvoyer vos documents justificatifs séparément",
+    "did-not-receive": "si vous ne recevez pas vos documents dans les 4 semaines suivant la réception du passeport."
   },
   "shipped-fedex": {
-    "printed-and-mailing": "Le passeport a été imprimé. Nous vous l'envoyons via Fedex.",
-    "supporting-documents": "Vous recevrez votre passeport et les pièces justificatives dans la même enveloppe."
+    "mailing": "Nous vous l'envoyons par FedEx. ",
+    "supporting-documents": "Vous recevrez le passeport et les documents justificatifs dans la même enveloppe."
   },
+  "status-check-passport-printed": "Le passeport a été imprimé",
   "not-acceptable": {
-    "cannot-process": "Nous avons examiné votre demande et ne pouvons plus la traiter.",
-    "explanation": "Nous vous envoyons une lettre expliquant pourquoi, ainsi que vos pièces justificatives. Vous devriez les recevoir dans les prochaines semaines."
+    "cannot-process": "Nous avons examiné votre demande et ne pouvons pas la traiter davantage",
+    "explanation": "Nous vous envoyons une lettre expliquant pourquoi et incluant vos documents justificatifs. Vous devriez les recevoir dans un délai de 4 semaines."
   },
   "status-check-contact": {
-    "description-no-record": "Si après de nombreuses tentatives vous ne parvenez pas à accéder au statut de votre demande en ligne, ou si votre demande prend plus de temps que la ",
-    "description-being-processed": {
-      "segment-1": "Si votre demande prend plus de temps que la ",
-      "segment-2": " à traiter"
+    "description-no-record": {
+      "item-1": "après plusieurs tentatives, vous ne pouvez toujours pas à obtenir l'état de votre demande, ",
+      "item-2": "votre demande prend plus de temps que la "
     },
+    "description-being-processed": ", si votre demande prend plus de temps que la ",
     "service-standard": {
       "text": "norme de service",
       "href": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens/verifier-demande-passeports-documents-voyage.html"
-    },
-    "can-call": ", vous pouvez nous appeler au "
+    }
   },
   "status-check-urgent": {
-    "description": "Si vous avez besoin d'un passeport dans les 10 jours ouvrables, apprenez ",
+    "description": "Si vous avez besoin d'un passeport dans un délai de 10 jours ouvrables, apprenez ",
     "express-services": {
       "text": "comment obtenir des services de passeport urgents ou express.",
       "href": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens/passeport-urgent-express.html"
     }
   },
   "status-check-tracking": {
-    "number": "Votre numéro de suivi est ",
+    "number": "Votre numéro de repérage est ",
     "link": {
-      "text": "Vous pouvez suivre le colis en ligne.",
+      "text": "Vous pouvez faire le suivi de l'envoi en ligne",
       "canada-post": "https://www.canadapost-postescanada.ca/track-reperage/fr?referenceNumber={{trackingNumber}}#/details/{{trackingNumber}}",
       "fedex": "https://www.fedex.com/fedextrack/?action=track&cntry_code=ca&locale=fr_ca&trackingnumber={{trackingNumber}}"
     }
   },
+  "status-check-call": "Appelez-nous au ",
   "header-messages": {
     "matches": "Assurez-vous que vos informations correspondent à votre preuve de citoyenneté et à votre pièce d'identité. Votre preuve de citoyenneté peut être",
     "list": {

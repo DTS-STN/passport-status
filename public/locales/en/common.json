@@ -72,5 +72,6 @@
     "alt": "An example of an official receipt. The file number is circled in the upper left-hand side of the receipt, above a barcode.",
     "src": "/Receipt2_EN.png",
     "descriptive-text": "Example of a receipt where the file number is circled."
-  }
+  },
+  "or": "or"
 }
