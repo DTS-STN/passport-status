@@ -173,6 +173,7 @@ const Status: FC = () => {
             checkStatusResponse={checkStatusResponse}
           />
           <div className="mt-10">
+            <p>{t('common:feedback-link-header')}</p>
             <Trans i18nKey={'common:feedback-link'}>
               Insert feedback{' '}
               <ExternalLink href="https://example.com">Link</ExternalLink>
