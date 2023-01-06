@@ -1,7 +1,7 @@
 import { NextPage } from 'next'
+import { NextSeo } from 'next-seo'
 import Link from 'next/link'
 import ErrorLayout from '../components/ErrorLayout'
-import MetaData from '../components/MetaData'
 
 export interface ErrorProps {
   statusCode?: number
@@ -10,16 +10,14 @@ export interface ErrorProps {
 const Error: NextPage<ErrorProps> = ({ statusCode }) => {
   return (
     <ErrorLayout>
-      <MetaData
-        author={'Service Canada'}
-        desc={
-          "Error message stating that the server is down, or the URL is incorrect or expired - Message d'erreur indiquant que le serveur est hors service, que l'URL est incorrecte ou qu'elle a expiré."
-        }
+      <NextSeo
+        description="Error message stating that the server is down, or the URL is incorrect or expired | Message d'erreur indiquant que le serveur est hors service, que l'URL est incorrecte ou qu'elle a expiré."
         title={
           statusCode === 500
-            ? 'Internal Server Error | Erreur de serveur interne - Canada.ca'
-            : 'Service Unavailable | Service indisponible - Canada.ca'
+            ? 'Internal Server Error | Erreur de serveur interne'
+            : 'Service Unavailable | Service indisponible'
         }
+        titleTemplate={'%s \u2010 Canada.ca'}
       />
       <h1 className="sr-only" lang="en">
         {statusCode === 500 ? 'Internal Server Error' : 'Service Unavailable'}
