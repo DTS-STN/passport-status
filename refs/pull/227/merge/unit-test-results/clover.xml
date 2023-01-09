@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1673297720158" clover="3.2.0">
-  <project timestamp="1673297720158" name="All files">
-    <metrics statements="413" coveredstatements="280" conditionals="246" coveredconditionals="120" methods="122" coveredmethods="72" elements="781" coveredelements="472" complexity="0" loc="413" ncloc="413" packages="7" files="43" classes="43"/>
+<coverage generated="1673298110811" clover="3.2.0">
+  <project timestamp="1673298110811" name="All files">
+    <metrics statements="413" coveredstatements="277" conditionals="246" coveredconditionals="119" methods="122" coveredmethods="71" elements="781" coveredelements="467" complexity="0" loc="413" ncloc="413" packages="7" files="43" classes="43"/>
     <package name="components">
-      <metrics statements="202" coveredstatements="166" conditionals="116" coveredconditionals="74" methods="58" coveredmethods="46"/>
+      <metrics statements="202" coveredstatements="163" conditionals="116" coveredconditionals="73" methods="58" coveredmethods="45"/>
       <file name="ActionButton.tsx" path="/home/runner/work/passport-status/passport-status/components/ActionButton.tsx">
         <metrics statements="9" coveredstatements="9" conditionals="6" coveredconditionals="4" methods="1" coveredmethods="1"/>
         <line num="18" count="6" type="stmt"/>
@@ -184,27 +184,27 @@
         <line num="23" count="3" type="stmt"/>
       </file>
       <file name="IdleTimeout.tsx" path="/home/runner/work/passport-status/passport-status/components/IdleTimeout.tsx">
-        <metrics statements="21" coveredstatements="15" conditionals="8" coveredconditionals="6" methods="7" coveredmethods="3"/>
+        <metrics statements="21" coveredstatements="12" conditionals="8" coveredconditionals="5" methods="7" coveredmethods="2"/>
         <line num="12" count="3" type="stmt"/>
-        <line num="13" count="6" type="stmt"/>
-        <line num="14" count="6" type="stmt"/>
-        <line num="15" count="6" type="stmt"/>
-        <line num="16" count="6" type="stmt"/>
-        <line num="18" count="6" type="stmt"/>
+        <line num="13" count="5" type="stmt"/>
+        <line num="14" count="5" type="stmt"/>
+        <line num="15" count="5" type="stmt"/>
+        <line num="16" count="5" type="stmt"/>
+        <line num="18" count="5" type="stmt"/>
         <line num="19" count="0" type="stmt"/>
         <line num="20" count="0" type="stmt"/>
-        <line num="23" count="6" type="stmt"/>
+        <line num="23" count="5" type="stmt"/>
         <line num="24" count="0" type="stmt"/>
         <line num="25" count="0" type="stmt"/>
-        <line num="28" count="6" type="stmt"/>
+        <line num="28" count="5" type="stmt"/>
         <line num="30" count="0" type="stmt"/>
-        <line num="35" count="6" type="stmt"/>
-        <line num="36" count="2" type="stmt"/>
-        <line num="37" count="2" type="stmt"/>
-        <line num="38" count="2" type="stmt"/>
-        <line num="43" count="6" type="stmt"/>
+        <line num="35" count="5" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
+        <line num="38" count="0" type="stmt"/>
+        <line num="43" count="5" type="stmt"/>
         <line num="44" count="5" type="stmt"/>
-        <line num="47" count="6" type="stmt"/>
+        <line num="47" count="5" type="stmt"/>
         <line num="53" count="0" type="stmt"/>
       </file>
       <file name="InputErrorMessage.tsx" path="/home/runner/work/passport-status/passport-status/components/InputErrorMessage.tsx">
@@ -460,8 +460,8 @@
         <line num="37" count="1" type="stmt"/>
         <line num="44" count="1" type="stmt"/>
         <line num="53" count="1" type="stmt"/>
-        <line num="54" count="3" type="stmt"/>
-        <line num="55" count="3" type="stmt"/>
+        <line num="54" count="2" type="stmt"/>
+        <line num="55" count="2" type="stmt"/>
         <line num="56" count="2" type="stmt"/>
         <line num="57" count="2" type="stmt"/>
         <line num="59" count="2" type="stmt"/>
