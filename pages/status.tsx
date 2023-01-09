@@ -32,6 +32,7 @@ import ExternalLink from '../components/ExternalLink'
 import DateSelectField, {
   DateSelectFieldOnChangeEvent,
 } from '../components/DateSelectField'
+import { NextSeo } from 'next-seo'
 
 const initialValues: CheckStatusApiRequestQuery = {
   dateOfBirth: '',
@@ -146,6 +147,7 @@ const Status: FC = () => {
 
   return (
     <Layout>
+      <NextSeo title={t('page-title')} />
       <IdleTimeout />
       <h1 ref={headingRef} className="h1" tabIndex={-1}>
         {t('header')}

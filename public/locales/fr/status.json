@@ -1,4 +1,5 @@
 {
+  "page-title": "Vérifier mon statut",
   "date-of-birth": {
     "error": {
       "current": "La date de naissance du requérant doit être dans le passé.",
