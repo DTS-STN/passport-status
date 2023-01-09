@@ -13,10 +13,7 @@ const Landing: FC = () => {
 
   return (
     <Layout>
-      <NextSeo
-        title="Landing page | Page d'accueil"
-        titleTemplate={'%s \u2010 Canada.ca'}
-      />
+      <NextSeo title="Landing page | Page d'accueil" />
       <h1 className="h1">{t('header')}</h1>
       <p>{t('description')}</p>
       <div className="flex flex-wrap md:flex-nowrap gap-4 mb-4">

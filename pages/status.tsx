@@ -147,10 +147,7 @@ const Status: FC = () => {
 
   return (
     <Layout>
-      <NextSeo
-        title="Check the status of your passport application | Vérifiez l'état de votre demande de passeport"
-        titleTemplate={'%s \u2010 Canada.ca'}
-      />
+      <NextSeo title={t('page-title')} />
       <IdleTimeout />
       <h1 ref={headingRef} className="h1" tabIndex={-1}>
         {t('header')}

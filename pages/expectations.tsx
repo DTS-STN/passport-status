@@ -22,11 +22,7 @@ const Expectations: FC = () => {
 
   return (
     <Layout>
-      <NextSeo
-        title="Expectations and privacy | 
-        Attentes et confidentialité"
-        titleTemplate={'%s \u2010 Canada.ca'}
-      />
+      <NextSeo title={t('page-title')} />
       <h1 className="h1">{t('header-purpose')}</h1>
       <h2 className="h2">{t('header-avoid-waiting')}</h2>
       <p>{t('available-after.description')}</p>
