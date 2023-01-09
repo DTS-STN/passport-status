@@ -6,12 +6,17 @@ import Layout from '../components/Layout'
 import LinkButton from '../components/LinkButton'
 import Collapse from '../components/Collapse'
 import ExampleImage from '../components/ExampleImage'
+import { NextSeo } from 'next-seo'
 
 const Landing: FC = () => {
   const { t } = useTranslation('landing')
 
   return (
     <Layout>
+      <NextSeo
+        title="Landing page | Page d'accueil"
+        titleTemplate={'%s \u2010 Canada.ca'}
+      />
       <h1 className="h1">{t('header')}</h1>
       <p>{t('description')}</p>
       <div className="flex flex-wrap md:flex-nowrap gap-4 mb-4">

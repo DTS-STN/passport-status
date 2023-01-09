@@ -6,6 +6,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Layout from '../components/Layout'
 import ActionButton from '../components/ActionButton'
 import { setCookie } from 'cookies-next'
+import { NextSeo } from 'next-seo'
 
 const Expectations: FC = () => {
   const { t } = useTranslation('expectations')
@@ -21,6 +22,11 @@ const Expectations: FC = () => {
 
   return (
     <Layout>
+      <NextSeo
+        title="Expectations and privacy | 
+        Attentes et confidentialité"
+        titleTemplate={'%s \u2010 Canada.ca'}
+      />
       <h1 className="h1">{t('header-purpose')}</h1>
       <h2 className="h2">{t('header-avoid-waiting')}</h2>
       <p>{t('available-after.description')}</p>

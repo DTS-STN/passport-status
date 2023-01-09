@@ -32,6 +32,7 @@ import ExternalLink from '../components/ExternalLink'
 import DateSelectField, {
   DateSelectFieldOnChangeEvent,
 } from '../components/DateSelectField'
+import { NextSeo } from 'next-seo'
 
 const initialValues: CheckStatusApiRequestQuery = {
   dateOfBirth: '',
@@ -146,6 +147,10 @@ const Status: FC = () => {
 
   return (
     <Layout>
+      <NextSeo
+        title="Check the status of your passport application | Vérifiez l'état de votre demande de passeport"
+        titleTemplate={'%s \u2010 Canada.ca'}
+      />
       <IdleTimeout />
       <h1 ref={headingRef} className="h1" tabIndex={-1}>
         {t('header')}

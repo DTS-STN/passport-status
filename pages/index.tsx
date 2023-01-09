@@ -6,7 +6,11 @@ import LinkButton from '../components/LinkButton'
 const Index = () => {
   return (
     <>
-      <NextSeo noindex />
+      <NextSeo
+        noindex
+        title="Passport Application Status Checker (PASC) | Vérificateur du Statut de mon application pour un passport (VSAP)"
+        titleTemplate={'%s \u2010 Canada.ca'}
+      />
       <main
         role="main"
         className="flex bg-splash-page bg-cover bg-center h-screen"

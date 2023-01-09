@@ -21,6 +21,7 @@ import ExternalLink from '../components/ExternalLink'
 import DateSelectField, {
   DateSelectFieldOnChangeEvent,
 } from '../components/DateSelectField'
+import { NextSeo } from 'next-seo'
 
 const initialValues: EmailEsrfApiRequestBody = {
   dateOfBirth: '',
@@ -102,6 +103,10 @@ const Email: FC = () => {
 
   return (
     <Layout>
+      <NextSeo
+        title="Get my passport application file number | Obtenir le numéro de dossier de ma demande de passeport"
+        titleTemplate={'%s \u2010 Canada.ca'}
+      />
       <IdleTimeout />
       <h1 ref={headingRef} className="h1" tabIndex={-1}>
         {t('header')}
