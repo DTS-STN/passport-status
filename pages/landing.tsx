@@ -13,7 +13,7 @@ const Landing: FC = () => {
 
   return (
     <Layout>
-      <NextSeo title="Landing page | Page d'accueil" />
+      <NextSeo title={t('page-title')} />
       <h1 className="h1">{t('header')}</h1>
       <p>{t('description')}</p>
       <div className="flex flex-wrap md:flex-nowrap gap-4 mb-4">
