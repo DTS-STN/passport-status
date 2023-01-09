@@ -54,6 +54,10 @@ const nextConfig = {
     NEXT_PUBLIC_BUILD_DATE: builddate,
     LOGGING_LEVEL: process.env.LOGGING_LEVEL ?? 'info',
   },
+  publicRuntimeConfig: {
+    appBaseUri: process.env.NEXT_PUBLIC_APP_BASE_URI ?? '',
+    environment: process.env.NEXT_PUBLIC_ENVIRONMENT ?? '',
+  },
   generateBuildId: async () => {
     return process.env.BUILD_ID ?? 'local'
   },

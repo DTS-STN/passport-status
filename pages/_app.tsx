@@ -4,6 +4,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { DefaultSeo } from 'next-seo'
 import { getNextSEOConfig } from '../next-seo.config'
 import Head from 'next/head'
+import getConfig from 'next/config'
 
 import '../styles/globals.css'
 
@@ -11,10 +12,9 @@ import '../styles/globals.css'
 const queryClient = new QueryClient()
 
 const MyApp = ({ Component, pageProps, router }: AppProps) => {
-  const nextSEOConfig = getNextSEOConfig(
-    process.env.NEXT_PUBLIC_APP_BASE_URI ?? '',
-    router
-  )
+  const config = getConfig()
+  const appBaseUri = config?.publicRuntimeConfig?.appBaseUri
+  const nextSEOConfig = getNextSEOConfig(appBaseUri, router)
 
   return (
     <>
