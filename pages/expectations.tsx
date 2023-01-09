@@ -1,5 +1,5 @@
 import { FC, MouseEventHandler, useCallback } from 'react'
-import { GetStaticProps } from 'next'
+import { GetServerSideProps } from 'next'
 import Router from 'next/router'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
@@ -62,7 +62,7 @@ const Expectations: FC = () => {
   )
 }
 
-export const getStaticProps: GetStaticProps = async ({ locale }) => ({
+export const getServerSideProps: GetServerSideProps = async ({ locale }) => ({
   props: {
     ...(await serverSideTranslations(locale ?? 'default', [
       'common',

@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import Banner from './Banner'
 import { useTranslation } from 'next-i18next'
+import getConfig from 'next/config'
 
 export interface HeaderProps {
   gocLink: string
@@ -10,12 +11,14 @@ export interface HeaderProps {
 }
 
 const Header: FC<HeaderProps> = ({ gocLink, skipToMainText }) => {
+  const config = getConfig()
   const { locale, asPath } = useRouter()
   const { t } = useTranslation('common')
 
   const langSelectorLocale = locale === 'en' ? 'fr' : 'en'
   const langSelectorAbbreviation = langSelectorLocale === 'fr' ? 'FR' : 'EN'
   const langSelectorText = langSelectorLocale === 'fr' ? 'Français' : 'English'
+  const showBanner = config?.publicRuntimeConfig?.environment !== 'prod'
 
   return (
     <>
@@ -35,7 +38,7 @@ const Header: FC<HeaderProps> = ({ gocLink, skipToMainText }) => {
       </nav>
 
       <header>
-        {process.env.NEXT_PUBLIC_ENVIRONMENT !== 'prod' && (
+        {showBanner && (
           <Banner
             alert={t('banner.alert')}
             description={t('banner.description')}
