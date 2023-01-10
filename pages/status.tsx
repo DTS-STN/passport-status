@@ -142,6 +142,15 @@ const Status: FC = () => {
     [setFormikFieldValue]
   )
 
+  const handleOnCancelClick = useCallback(() => setModalOpen(true), [])
+
+  const handleOnModalClose = useCallback(() => setModalOpen(false), [])
+
+  const handleOnModalYesButtonClick = useCallback(
+    () => router.push('/landing'),
+    [router]
+  )
+
   //if the api failed, fail hard to show error page
   if (checkStatusError) throw checkStatusError
 
@@ -283,23 +292,23 @@ const Status: FC = () => {
               id="btn-cancel"
               disabled={isCheckStatusLoading}
               text={t('common:modal-go-back.cancel-button')}
-              onClick={() => setModalOpen(true)}
+              onClick={handleOnCancelClick}
             />
           </div>
         </form>
       )}
       <Modal
         open={modalOpen}
-        onClose={() => setModalOpen(false)}
+        onClose={handleOnModalClose}
         actionButtons={[
           {
             text: t('common:modal-go-back.yes-button'),
-            onClick: () => router.push('/landing'),
+            onClick: handleOnModalYesButtonClick,
             style: 'primary',
           },
           {
             text: t('common:modal-go-back.no-button'),
-            onClick: () => setModalOpen(false),
+            onClick: handleOnModalClose,
           },
         ]}
         header={t('common:modal-go-back.header')}
