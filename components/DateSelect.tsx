@@ -60,7 +60,7 @@ const DateSelect: FC<DateSelectProps> = ({
         aria-required={required ? true : undefined}
         className={`py-1 px-3 border rounded w-40 ${
           error ? 'border-accent-error' : 'border-neutral-400'
-        } focus:outline-none focus:border-sky-500 focus:ring-sky-500`}
+        } focus:outline-none focus:border-sky-500 focus:ring-sky-500 bg-white`}
       >
         <option value="" disabled></option>
         {options.map(({ label, value }) => (

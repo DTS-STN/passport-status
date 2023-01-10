@@ -1,4 +1,5 @@
 {
+  "page-title": "Check my status",
   "date-of-birth": {
     "error": {
       "current": "The applicant date of birth must be in the past.",

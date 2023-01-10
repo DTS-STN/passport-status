@@ -21,6 +21,7 @@ import ExternalLink from '../components/ExternalLink'
 import DateSelectField, {
   DateSelectFieldOnChangeEvent,
 } from '../components/DateSelectField'
+import { NextSeo } from 'next-seo'
 
 const initialValues: EmailEsrfApiRequestBody = {
   dateOfBirth: '',
@@ -97,11 +98,21 @@ const Email: FC = () => {
     [setFormikFieldValue]
   )
 
+  const handleOnCancelClick = useCallback(() => setModalOpen(true), [])
+
+  const handleOnModalClose = useCallback(() => setModalOpen(false), [])
+
+  const handleOnModalYesButtonClick = useCallback(
+    () => router.push('/landing'),
+    [router]
+  )
+
   //if the api failed, fail hard to show error page
   if (emailEsrfError) throw emailEsrfError
 
   return (
     <Layout>
+      <NextSeo title={t('page-title')} />
       <IdleTimeout />
       <h1 ref={headingRef} className="h1" tabIndex={-1}>
         {t('header')}
@@ -206,23 +217,23 @@ const Email: FC = () => {
               id="btn-cancel"
               disabled={isEmailEsrfLoading}
               text={t('common:modal-go-back.cancel-button')}
-              onClick={() => setModalOpen(true)}
+              onClick={handleOnCancelClick}
             />
           </div>
         </form>
       )}
       <Modal
         open={modalOpen}
-        onClose={() => setModalOpen(false)}
+        onClose={handleOnModalClose}
         actionButtons={[
           {
             text: t('common:modal-go-back.yes-button'),
-            onClick: () => router.push('/landing'),
+            onClick: handleOnModalYesButtonClick,
             style: 'primary',
           },
           {
             text: t('common:modal-go-back.no-button'),
-            onClick: () => setModalOpen(false),
+            onClick: handleOnModalClose,
           },
         ]}
         header={t('common:modal-go-back.header')}
