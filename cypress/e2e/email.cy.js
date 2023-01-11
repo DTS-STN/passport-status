@@ -34,9 +34,9 @@ describe('responses', ()=>{
     cy.get('#email').type('yanis.pierre@example.com')
     cy.get('#givenName').type('Yanis')
     cy.get('#surname').type('Piérre')
-    cy.get('#date-select-dateOfBirth-year').select('1972')
-    cy.get('#date-select-dateOfBirth-month').select('07')
-    cy.get('#date-select-dateOfBirth-day').select('29')
+    cy.get('#dateOfBirth').select('1972')
+    cy.get('#dateOfBirth-month').select('07')
+    cy.get('#dateOfBirth-day').select('29')
     cy.get('#btn-submit').click()
   })
 

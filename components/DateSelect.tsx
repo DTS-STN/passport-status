@@ -45,13 +45,13 @@ const DateSelect: FC<DateSelectProps> = ({
     <div className="flex flex-col space-y-2">
       <label
         id={`date-select-${id}-${type}-label`}
-        htmlFor={`date-select-${id}-${type}`}
+        htmlFor={id}
         className="font-bold"
       >
         {label}
       </label>
       <select
-        id={`date-select-${id}-${type}`}
+        id={id}
         value={value}
         onChange={handleOnSelectChange}
         aria-describedby={ariaDescribedby}
