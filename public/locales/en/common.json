@@ -1,4 +1,18 @@
 {
+  "breadcrumb": {
+    "canada-ca": {
+      "link": "https://www.canada.ca/en.html",
+      "text": "Canada.ca"
+    },
+    "canadian-passports-and-other-travel-documents": {
+      "link": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports.html",
+      "text": "Canadian passports and other travel documents: Applying in Canada"
+    },
+    "travel-and-tourism": {
+      "link": "https://www.canada.ca/en/services/travel.html",
+      "text": "Travel and tourism"
+    }
+  },
   "contact-us": "Contact us",
   "date-select-field": {
     "day": "Day",

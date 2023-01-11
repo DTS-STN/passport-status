@@ -5,8 +5,9 @@ import { axe, toHaveNoViolations } from 'jest-axe'
 import Layout from '../../components/Layout'
 
 //mock custom components
-jest.mock('../../components/Header')
+jest.mock('../../components/Breadcrumb')
 jest.mock('../../components/Footer')
+jest.mock('../../components/Header')
 
 expect.extend(toHaveNoViolations)
 

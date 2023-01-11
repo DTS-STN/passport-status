@@ -1,4 +1,18 @@
 {
+  "breadcrumb": {
+    "canada-ca": {
+      "link": "https://www.canada.ca/fr.html",
+      "text": "Canada.ca"
+    },
+    "canadian-passports-and-other-travel-documents": {
+      "link": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens.html",
+      "text": "Passeports canadiens et autres documents de voyage : Présenter une demande au Canada"
+    },
+    "travel-and-tourism": {
+      "link": "https://www.canada.ca/fr/services/voyage.html",
+      "text": "Voyage et tourisme"
+    }
+  },
   "contact-us": "Nous contacter",
   "date-select-field": {
     "day": "Jour",

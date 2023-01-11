@@ -63,15 +63,19 @@
   main {
     @apply text-xl;
   }
-  main a {
+  main a,
+  a.link {
     @apply text-link-default;
     @apply underline;
   }
-  main a:visited {
+  main a:visited,
+  a.link:visited {
     @apply text-link-visited;
   }
   main a:hover,
-  main a:focus {
+  main a:focus,
+  a.link:hover,
+  a.link:focus {
     @apply text-link-selected;
   }
 

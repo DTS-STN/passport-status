@@ -4,13 +4,19 @@ import { useRouter } from 'next/router'
 import Banner from './Banner'
 import { useTranslation } from 'next-i18next'
 import getConfig from 'next/config'
+import Breadcrumb, { BreadcrumbProps } from './Breadcrumb'
 
 export interface HeaderProps {
+  breadcrumbProps?: BreadcrumbProps
   gocLink: string
   skipToMainText: string
 }
 
-const Header: FC<HeaderProps> = ({ gocLink, skipToMainText }) => {
+const Header: FC<HeaderProps> = ({
+  breadcrumbProps,
+  gocLink,
+  skipToMainText,
+}) => {
   const config = getConfig()
   const { locale, asPath } = useRouter()
   const { t } = useTranslation('common')
@@ -106,12 +112,9 @@ const Header: FC<HeaderProps> = ({ gocLink, skipToMainText }) => {
           ]}
         /> */}
 
-        {/* Place Holder for the breadcrumbs
-
-        <div className="layout-container my-2">
-          <Breadcrumb items={breadcrumbItems} />
+        <div className="container mx-auto px-4 my-10">
+          <Breadcrumb {...breadcrumbProps} />
         </div>
-        */}
       </header>
     </>
   )
