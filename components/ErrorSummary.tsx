@@ -56,8 +56,8 @@ const ErrorSummary: FC<ErrorSummaryProps> = ({ id, errors, summary }) => {
     >
       <h2 className="text-2xl font-bold mb-3">{summary}</h2>
       <ul className="list-disc space-y-2 pl-10">
-        {errors.map(({ feildId, errorMessage }, index) => (
-          <li key={index}>
+        {errors.map(({ feildId, errorMessage }) => (
+          <li key={feildId}>
             <a className="visited:text-link-default" href={`#${feildId}`}>
               {errorMessage}
             </a>
