@@ -2,7 +2,7 @@
   "name": "passport-status",
   "version": "0.1.0",
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev | pino-pretty",
     "build": "next build",
     "start": "node -r ./tracing.js node_modules/next/dist/bin/next start",
     "test": "npm run lint && npm run test:e2e && npm run test:unit",
@@ -31,6 +31,7 @@
     "next": "^12.3.4",
     "next-i18next": "^13.0.3",
     "next-seo": "^5.15.0",
+    "pino": "^8.8.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-focus-on": "^3.7.0",

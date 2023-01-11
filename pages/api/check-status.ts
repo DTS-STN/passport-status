@@ -8,6 +8,7 @@ import {
   CheckStatusApiRequestQuery,
 } from '../../lib/types'
 import passportStatusesMock from '../../__mocks__/passportStatusesMock.json'
+import pino from 'pino'
 
 export default async function handler(
   req: NextApiRequest,
