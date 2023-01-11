@@ -153,7 +153,7 @@
     },
     "for-child": {
       "application": "For child applications",
-      "use-exactly": ", use the child's given name(s) and surname and date of birth, exactly as provided on their proof of citizenship."
+      "use-exactly": ", use the child's given name(s), surname and date of birth, exactly as provided on their proof of citizenship."
     }
   },
   "collapse-file-number-title": "Can't find your File Number?",
