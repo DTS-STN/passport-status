@@ -183,7 +183,9 @@ const Status: FC = () => {
             </h3>
             <Trans i18nKey={'common:feedback-link'}>
               Insert feedback{' '}
-              <ExternalLink href="https://example.com">Link</ExternalLink>
+              <ExternalLink href={t('common:feedback-link-url')}>
+                Link
+              </ExternalLink>
             </Trans>
           </div>
         </>
