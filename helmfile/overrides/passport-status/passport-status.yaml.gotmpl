@@ -1,7 +1,7 @@
 {{/* THIS EXAMPLE DEPLOYS SUCCESSFULLY TO DTS CLOUD */}}
 {{/* READ THE COMMENTS TO MAKE ANY MODIFICATIONS FOR YOUR APPLICATION */}}
 
-{{/* EXAMPLE OF HOW TO INCLUDE ENVIRONMENT VARIABLES */}} 
+{{/* EXAMPLE OF HOW TO INCLUDE ENVIRONMENT VARIABLES */}}
 {{/*
 extraEnv:
     - name: EXAMPLE_STATIC_ENVIRONMENT_VARIABLE
@@ -17,10 +17,10 @@ extraEnv:
       valueFrom:
         secretKeyRef:
           name: web-example-secret
-          key: example-secret-password         
+          key: example-secret-password
 */}}
-deployment: 
-  labels: 
+deployment:
+  labels:
     branch: "{{ requiredEnv "APP_LABEL_BRANCH" | replace " " "-" }}"
     classification: "{{ requiredEnv "APP_LABEL_CLASSIFICATION" | replace " " "-" }}"
     csd-id: "{{ requiredEnv "APP_LABEL_CSD_ID" | replace " " "-" }}"
@@ -35,7 +35,7 @@ deployment:
     section: "{{ requiredEnv "APP_LABEL_SECTION" | replace " " "-" }}"
 image:
   repository: {{ requiredEnv "CLOUD_ACR_DOMAIN" }}/{{ requiredEnv "PROJECT" }}
-  tag: "{{ env "DOCKER_TAG" | default "latest" }}" 
+  tag: "{{ env "DOCKER_TAG" | default "latest" }}"
   pullPolicy: Always
 service:
   annotations:
@@ -54,11 +54,8 @@ resources:
   requests:
     cpu: 200m
     memory: 512Mi
-healthChecks:
-    livenessDelay: 15
-    readinessDelay: 15
-    livenessPath: /
-    readinessPath: /
+livenessPath: /api/health
+readinessPath: /
 port: 3000
 persistence:
     enabled: true
