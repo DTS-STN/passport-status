@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "node -r ./tracing.js node_modules/next/dist/bin/next start",
+    "start": "next start",
     "test": "npm run lint && npm run test:e2e && npm run test:unit",
     "lint": "next lint",
     "cypress": "cypress open",
