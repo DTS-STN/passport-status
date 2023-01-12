@@ -14,10 +14,7 @@ const queryClient = new QueryClient()
 
 const MyApp = ({ Component, pageProps, router }: AppProps) => {
   const logger = getLogger('app')
-
-  logger.error('a error message from _app')
-  logger.debug('a debug message from _app')
-  logger.info('a info message from _app')
+  logger.debug('logger started')
 
   const config = getConfig()
   const appBaseUri = config?.publicRuntimeConfig?.appBaseUri

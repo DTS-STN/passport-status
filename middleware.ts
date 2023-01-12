@@ -3,17 +3,7 @@ import { getLogger } from './logging/log-util'
 
 //regex to check if there's an extension in the path, ie .jpg
 const PUBLIC_FILE = /\.(.*)$/
-const logger = getLogger('app')
-
-const reduceRequestFields = (req: NextRequest) => {
-  return {
-    method: req.method,
-    request: req.url,
-    headers: req.headers,
-    cookies: req.cookies,
-  }
-}
-//things to log: req url, headers, cookies, agent
+const logger = getLogger('middleware')
 
 export async function middleware(req: NextRequest) {
   if (
@@ -23,7 +13,7 @@ export async function middleware(req: NextRequest) {
   ) {
     return
   }
-  logger.info(reduceRequestFields(req))
+  logger.debug(req)
 
   if (req.nextUrl.locale === 'default' && !req.nextUrl.pathname.endsWith('/')) {
     return NextResponse.redirect(new URL(`/en${req.nextUrl.pathname}`, req.url))

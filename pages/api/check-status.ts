@@ -1,5 +1,4 @@
 import { NextApiRequest, NextApiResponse } from 'next'
-import logger from '../../lib/logger'
 import { mapToCheckStatusApiResponse } from '../../lib/mappers/checkStatusApiResponseMapper'
 import { compareCIAndAI } from '../../lib/utils/compareCIAndAI'
 import {
@@ -8,15 +7,17 @@ import {
   CheckStatusApiRequestQuery,
 } from '../../lib/types'
 import passportStatusesMock from '../../__mocks__/passportStatusesMock.json'
-import pino from 'pino'
+import { getLogger } from '../../logging/log-util'
+
+const logger = getLogger('check-status')
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<CheckStatusApiResponse | string>
 ) {
   if (req.method !== 'GET') {
-    res.status(405).send(`Invalid request method ${req.method}`)
-    return
+    logger.error(`error 405: Invalid request method ${req.method}`)
+    return res.status(405).send(`Invalid request method ${req.method}`)
   }
 
   const { searchParams } = new URL(req.url ?? '', `http://${req.headers.host}`)
@@ -32,7 +33,7 @@ export default async function handler(
       ? await searchPassportStatusApi(res, checkStatusRequest)
       : searchPassportStatusMock(res, checkStatusRequest)
   } catch (error) {
-    logger.error(error)
+    logger.error(`error 500: ${error}`)
     res.status(500).send('Something went wrong.')
   }
 }
@@ -48,6 +49,9 @@ export const searchPassportStatusApi = async (
   checkStatusApiRequestQuery: CheckStatusApiRequestQuery
 ) => {
   if (!process.env.PASSPORT_STATUS_API_BASE_URI) {
+    logger.error(
+      'PASSPORT_STATUS_API_BASE_URI must not be undefined, null or empty'
+    )
     throw Error(
       'process.env.PASSPORT_STATUS_API_BASE_URI must not be undefined, null or empty'
     )
@@ -64,24 +68,27 @@ export const searchPassportStatusApi = async (
   const response = await fetch(url)
 
   if (response.ok) {
+    logger.info('response OK')
     const searchResult: PassportStatusesSearchResult = await response.json()
     const { GetCertificateApplicationResponse } = searchResult._embedded
 
     if (GetCertificateApplicationResponse.length === 0) {
-      res.status(404).send('Passport Status Not Found')
-      return
+      logger.error('error 404: searchResult._embedded is empty')
+      return res.status(404).send('Passport Status Not Found')
     }
 
-    res.send(mapToCheckStatusApiResponse(GetCertificateApplicationResponse[0]))
-    return
+    return res.send(
+      mapToCheckStatusApiResponse(GetCertificateApplicationResponse[0])
+    )
   }
 
   if (response.status === 404 || response.status === 422) {
-    res.status(404).send('Passport Status Not Found')
-    return
+    logger.error(`error ${response.status}: ${response.body}`)
+    return res.status(response.status).send('Passport Status Not Found')
   }
 
-  res.status(response.status).send(response.statusText)
+  logger.info(`Status: ${response.status}: ${response.statusText}`)
+  return res.status(response.status).send(response.statusText)
 }
 
 /**
@@ -123,9 +130,9 @@ export const searchPassportStatusMock = (
   )
 
   if (applicationResponse) {
-    res.send(mapToCheckStatusApiResponse(applicationResponse))
-    return
+    logger.debug(applicationResponse)
+    return res.send(mapToCheckStatusApiResponse(applicationResponse))
   }
-
-  res.status(404).send('Passport Status Not Found')
+  logger.error(`Status 404: Passport Status Not Found`)
+  return res.status(404).send('Passport Status Not Found')
 }
