@@ -12,7 +12,7 @@ export default async function handler(
 
   res.status(200).json({
     appBaseUri: process.env.NEXT_PUBLIC_APP_BASE_URI ?? '',
-    buildDate: process.env.BUILD_DATE ?? '',
+    buildDate: process.env.NEXT_PUBLIC_BUILD_DATE ?? '',
     environment: process.env.NEXT_PUBLIC_ENVIRONMENT ?? '',
     status: 'UP',
     uptime: `${process.uptime()} seconds`,
