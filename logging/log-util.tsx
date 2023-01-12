@@ -1,4 +1,4 @@
-import logLevelData from '../log-level'
+import logLevelData from './log-level'
 import pino, { Logger } from 'pino'
 
 const logLevels = new Map<string, string>(Object.entries(logLevelData))
