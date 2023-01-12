@@ -1,19 +1,25 @@
 import { NextApiRequest, NextApiResponse } from 'next'
-import logger from '../../lib/logger'
 import { EmailEsrfApiRequestBody } from '../../lib/types'
+import { getLogger } from '../../logging/log-util'
+
+const logger = getLogger('email-esrf')
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<string>
 ) {
   if (req.method !== 'POST') {
-    res.status(405).send(`Invalid request method ${req.method}`)
-    return
+    logger.error(`Status 405: Invalid request method ${req.method}`)
+    return res.status(405).send(`Invalid request method ${req.method}`)
   }
 
   if (req.headers['content-type'] !== 'application/json') {
-    res.status(415).send(`Invalid media type ${req.headers['content-type']}`)
-    return
+    logger.error(
+      `Status 415: Invalid media type ${req.headers['content-type']}`
+    )
+    return res
+      .status(415)
+      .send(`Invalid media type ${req.headers['content-type']}`)
   }
 
   const body = req.body as EmailEsrfApiRequestBody
@@ -23,7 +29,7 @@ export default async function handler(
       ? await emailEsrfApi(res, body)
       : emailEsrfMock(res)
   } catch (error) {
-    logger.error(error)
+    logger.error(`Status 500: ${error}`)
     res.status(500).send('Something went wrong.')
   }
 }
@@ -67,7 +73,7 @@ const emailEsrfApi = async (
       body: JSON.stringify(body),
     }
   )
-
+  logger.info(`Status ${response.status}: ${response.statusText}`)
   res.status(response.status).send(response.statusText)
 }
 
@@ -76,5 +82,6 @@ const emailEsrfApi = async (
  * we expect the response to always be a 202 to protect the users data.
  */
 const emailEsrfMock = (res: NextApiResponse<string>) => {
+  logger.info('Status 202: Email sent if found')
   res.status(202).send('Email sent if found')
 }
