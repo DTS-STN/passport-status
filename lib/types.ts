@@ -18,6 +18,14 @@ export interface EmailEsrfApiRequestBody {
   surname: string
 }
 
+export interface HealthApiResponse {
+  appBaseUri: string
+  buildDate: string
+  environment: string
+  status: string
+  uptime: string
+}
+
 export interface PassportStatusesSearchResult {
   _embedded: {
     GetCertificateApplicationResponse: PassportStatusesGetCertificateApplicationResponse[]
