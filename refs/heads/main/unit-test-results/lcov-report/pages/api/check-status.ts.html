@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">47.36% </span>
+                <span class="strong">47.61% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>18/38</span>
+                <span class='fraction'>20/42</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">47.36% </span>
+                <span class="strong">47.61% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>18/38</span>
+                <span class='fraction'>20/42</span>
             </div>
         
             
@@ -193,7 +193,15 @@
 <a name='L128'></a><a href='#L128'>128</a>
 <a name='L129'></a><a href='#L129'>129</a>
 <a name='L130'></a><a href='#L130'>130</a>
-<a name='L131'></a><a href='#L131'>131</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L131'></a><a href='#L131'>131</a>
+<a name='L132'></a><a href='#L132'>132</a>
+<a name='L133'></a><a href='#L133'>133</a>
+<a name='L134'></a><a href='#L134'>134</a>
+<a name='L135'></a><a href='#L135'>135</a>
+<a name='L136'></a><a href='#L136'>136</a>
+<a name='L137'></a><a href='#L137'>137</a>
+<a name='L138'></a><a href='#L138'>138</a>
+<a name='L139'></a><a href='#L139'>139</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -203,6 +211,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -245,6 +255,9 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -260,21 +273,24 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -320,11 +336,10 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { NextApiRequest, NextApiResponse } from 'next'
-import logger from '../../lib/logger'
 import { mapToCheckStatusApiResponse } from '../../lib/mappers/checkStatusApiResponseMapper'
 import { compareCIAndAI } from '../../lib/utils/compareCIAndAI'
 import {
@@ -333,14 +348,17 @@ import {
   CheckStatusApiRequestQuery,
 } from '../../lib/types'
 import passportStatusesMock from '../../__mocks__/passportStatusesMock.json'
+import { getLogger } from '../../logging/log-util'
+&nbsp;
+const logger = getLogger('check-status')
 &nbsp;
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse&lt;CheckStatusApiResponse | string&gt;
 ) {
   if (req.method !== 'GET') {
-    res.status(405).send(`Invalid request method ${req.method}`)
-    return
+    logger.debug(`error 405: Invalid request method ${req.method}`)
+    return res.status(405).send(`Invalid request method ${req.method}`)
   }
 &nbsp;
   const { searchParams } = new URL(req.url ?? <span class="branch-1 cbranch-no" title="branch not covered" >'',</span> `http://${req.headers.host}`)
@@ -356,7 +374,7 @@ export default async function handler(
       ? <span class="branch-0 cbranch-no" title="branch not covered" >await searchPassportStatusApi(res, checkStatusRequest)</span>
       : searchPassportStatusMock(res, checkStatusRequest)
   } catch (error) {
-<span class="cstat-no" title="statement not covered" >    logger.error(error)</span>
+<span class="cstat-no" title="statement not covered" >    logger.error(`error 500: ${JSON.stringify(error)}`)</span>
 <span class="cstat-no" title="statement not covered" >    res.status(500).send('Something went wrong.')</span>
   }
 }
@@ -372,6 +390,9 @@ export const searchPassportStatusApi = <span class="fstat-no" title="function no
   checkStatusApiRequestQuery: CheckStatusApiRequestQuery
 ) =&gt; {
 <span class="cstat-no" title="statement not covered" >  if (!process.env.PASSPORT_STATUS_API_BASE_URI) {</span>
+<span class="cstat-no" title="statement not covered" >    logger.error(</span>
+      'PASSPORT_STATUS_API_BASE_URI must not be undefined, null or empty'
+    )
 <span class="cstat-no" title="statement not covered" >    throw Error(</span>
       'process.env.PASSPORT_STATUS_API_BASE_URI must not be undefined, null or empty'
     )
@@ -388,24 +409,27 @@ export const searchPassportStatusApi = <span class="fstat-no" title="function no
   const response = <span class="cstat-no" title="statement not covered" >await fetch(url)</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  if (response.ok) {</span>
+<span class="cstat-no" title="statement not covered" >    logger.debug('response OK')</span>
     const searchResult: PassportStatusesSearchResult = <span class="cstat-no" title="statement not covered" >await response.json()</span>
     const { GetCertificateApplicationResponse } = <span class="cstat-no" title="statement not covered" >searchResult._embedded</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    if (GetCertificateApplicationResponse.length === 0) {</span>
-<span class="cstat-no" title="statement not covered" >      res.status(404).send('Passport Status Not Found')</span>
-<span class="cstat-no" title="statement not covered" >      return</span>
+<span class="cstat-no" title="statement not covered" >      logger.debug('error 404: searchResult._embedded is empty')</span>
+<span class="cstat-no" title="statement not covered" >      return res.status(404).send('Passport Status Not Found')</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    res.send(mapToCheckStatusApiResponse(GetCertificateApplicationResponse[0]))</span>
-<span class="cstat-no" title="statement not covered" >    return</span>
+<span class="cstat-no" title="statement not covered" >    return res.send(</span>
+      mapToCheckStatusApiResponse(GetCertificateApplicationResponse[0])
+    )
   }
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  if (response.status === 404 || response.status === 422) {</span>
-<span class="cstat-no" title="statement not covered" >    res.status(404).send('Passport Status Not Found')</span>
-<span class="cstat-no" title="statement not covered" >    return</span>
+<span class="cstat-no" title="statement not covered" >    logger.debug(`error ${response.status}: ${response.body}`)</span>
+<span class="cstat-no" title="statement not covered" >    return res.status(response.status).send('Passport Status Not Found')</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  res.status(response.status).send(response.statusText)</span>
+<span class="cstat-no" title="statement not covered" >  logger.debug(`Status: ${response.status}: ${response.statusText}`)</span>
+<span class="cstat-no" title="statement not covered" >  return res.status(response.status).send(response.statusText)</span>
 }
 &nbsp;
 /**
@@ -447,11 +471,11 @@ export const searchPassportStatusMock = (
   )
 &nbsp;
   if (applicationResponse) {
-    res.send(mapToCheckStatusApiResponse(applicationResponse))
-    return
+    logger.debug(applicationResponse)
+    return res.send(mapToCheckStatusApiResponse(applicationResponse))
   }
-&nbsp;
-  res.status(404).send('Passport Status Not Found')
+  logger.debug(`Status 404: Passport Status Not Found`)
+  return res.status(404).send('Passport Status Not Found')
 }
 &nbsp;</pre></td></tr></table></pre>
 
@@ -460,7 +484,7 @@ export const searchPassportStatusMock = (
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-01-12T17:33:33.044Z
+                at 2023-01-13T16:42:30.713Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">63.15% </span>
+                <span class="strong">63.63% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>12/19</span>
+                <span class='fraction'>14/22</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">63.15% </span>
+                <span class="strong">63.63% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>12/19</span>
+                <span class='fraction'>14/22</span>
             </div>
         
             
@@ -143,9 +143,18 @@
 <a name='L78'></a><a href='#L78'>78</a>
 <a name='L79'></a><a href='#L79'>79</a>
 <a name='L80'></a><a href='#L80'>80</a>
-<a name='L81'></a><a href='#L81'>81</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -158,21 +167,16 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -182,6 +186,15 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -212,7 +225,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -220,25 +233,32 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { NextApiRequest, NextApiResponse } from 'next'
-import logger from '../../lib/logger'
 import { EmailEsrfApiRequestBody } from '../../lib/types'
+import { getLogger } from '../../logging/log-util'
+&nbsp;
+const logger = getLogger('email-esrf')
 &nbsp;
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse&lt;string&gt;
 ) {
   if (req.method !== 'POST') {
-    res.status(405).send(`Invalid request method ${req.method}`)
-    return
+    logger.debug(`Status 405: Invalid request method ${req.method}`)
+    return res.status(405).send(`Invalid request method ${req.method}`)
   }
 &nbsp;
   if (req.headers['content-type'] !== 'application/json') {
-    res.status(415).send(`Invalid media type ${req.headers['content-type']}`)
-    return
+    logger.debug(
+      `Status 415: Invalid media type ${req.headers['content-type']}`
+    )
+    return res
+      .status(415)
+      .send(`Invalid media type ${req.headers['content-type']}`)
   }
 &nbsp;
   const body = req.body as EmailEsrfApiRequestBody
@@ -248,7 +268,7 @@ export default async function handler(
       ? <span class="branch-0 cbranch-no" title="branch not covered" >await emailEsrfApi(res, body)</span>
       : emailEsrfMock(res)
   } catch (error) {
-<span class="cstat-no" title="statement not covered" >    logger.error(error)</span>
+<span class="cstat-no" title="statement not covered" >    logger.error(`Status 500: ${JSON.stringify(error)}`)</span>
 <span class="cstat-no" title="statement not covered" >    res.status(500).send('Something went wrong.')</span>
   }
 }
@@ -292,7 +312,7 @@ const emailEsrfApi = <span class="fstat-no" title="function not covered" >as</sp
       body: JSON.stringify(body),
     }
   )
-&nbsp;
+<span class="cstat-no" title="statement not covered" >  logger.debug(`Status ${response.status}: ${response.statusText}`)</span>
 <span class="cstat-no" title="statement not covered" >  res.status(response.status).send(response.statusText)</span>
 }
 &nbsp;
@@ -301,6 +321,7 @@ const emailEsrfApi = <span class="fstat-no" title="function not covered" >as</sp
  * we expect the response to always be a 202 to protect the users data.
  */
 const emailEsrfMock = (res: NextApiResponse&lt;string&gt;) =&gt; {
+  logger.info('Status 202: Email sent if found')
   res.status(202).send('Email sent if found')
 }
 &nbsp;</pre></td></tr></table></pre>
@@ -310,7 +331,7 @@ const emailEsrfMock = (res: NextApiResponse&lt;string&gt;) =&gt; {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-01-12T17:33:33.044Z
+                at 2023-01-13T16:42:30.713Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
