@@ -33,7 +33,7 @@ export default async function handler(
       ? await searchPassportStatusApi(res, checkStatusRequest)
       : searchPassportStatusMock(res, checkStatusRequest)
   } catch (error) {
-    logger.error(`error 500: ${error}`)
+    logger.error(`error 500: ${JSON.stringify(error)}`)
     res.status(500).send('Something went wrong.')
   }
 }

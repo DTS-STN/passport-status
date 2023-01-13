@@ -29,7 +29,7 @@ export default async function handler(
       ? await emailEsrfApi(res, body)
       : emailEsrfMock(res)
   } catch (error) {
-    logger.error(`Status 500: ${error}`)
+    logger.error(`Status 500: ${JSON.stringify(error)}`)
     res.status(500).send('Something went wrong.')
   }
 }
