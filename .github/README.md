@@ -38,6 +38,14 @@ You can start editing the page by modifying `pages/index.js`. The page auto-upda
 
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
+## logging
+
+To change logging level, set the `LOGGING_LEVEL` environment variable. Valid logging levels are fatal, error, warn, info, debug, trace or silent.
+
+```bash
+LOGGING_LEVEL=debug npm run dev
+```
+
 ### PR Procedures/Definition of done
 
 Have at least one person reviewing each PR before it can be merged. Each branch should be prefixed with the ID of the relevant ADO task. Eg. "379-update-readme"
