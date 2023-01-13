@@ -1,5 +1,5 @@
 const logLevelData = {
-  '*': process.env.LOGGING_LEVEL ?? 'info',
+  '*': process.env.LOGGING_LEVEL,
   //   'middleware': ''
   //   'home': 'info',
   //   'app': 'debug',

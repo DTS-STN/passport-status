@@ -1,5 +1,5 @@
 import logLevelData from './log-level'
-import pino, { Logger } from 'pino'
+import pino, { Logger, stdTimeFunctions } from 'pino'
 
 const logLevels = new Map<string, string>(Object.entries(logLevelData))
 
@@ -8,5 +8,9 @@ export function getLogLevel(logger: string): string {
 }
 
 export function getLogger(name: string): Logger {
-  return pino({ name, level: getLogLevel(name) })
+  return pino({
+    name,
+    level: getLogLevel(name),
+    timestamp: stdTimeFunctions.isoTime,
+  })
 }
