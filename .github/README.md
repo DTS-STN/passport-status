@@ -40,13 +40,10 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
 
 ## logging
 
-To change logging level, set the `LOGGING_LEVEL` environment variable OR edit `logging/log-level.js`. You can change the log level globally using the '\*' matcher, or set the level of a specific module. logging levels are fatal, error, warn, info, debug, trace or silent.
+To change logging level, set the `LOGGING_LEVEL` environment variable. Valid logging levels are fatal, error, warn, info, debug, trace or silent.
 
-```js
-const logLevelData = {
-  '*': process.env.LOGGING_LEVEL ?? 'info',
-  'middleware': 'debug',
-}
+```bash
+LOGGING_LEVEL=debug npm run dev
 ```
 
 ### PR Procedures/Definition of done

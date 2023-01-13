@@ -9,12 +9,12 @@ export default async function handler(
   res: NextApiResponse<string>
 ) {
   if (req.method !== 'POST') {
-    logger.error(`Status 405: Invalid request method ${req.method}`)
+    logger.debug(`Status 405: Invalid request method ${req.method}`)
     return res.status(405).send(`Invalid request method ${req.method}`)
   }
 
   if (req.headers['content-type'] !== 'application/json') {
-    logger.error(
+    logger.debug(
       `Status 415: Invalid media type ${req.headers['content-type']}`
     )
     return res
@@ -73,7 +73,7 @@ const emailEsrfApi = async (
       body: JSON.stringify(body),
     }
   )
-  logger.info(`Status ${response.status}: ${response.statusText}`)
+  logger.debug(`Status ${response.status}: ${response.statusText}`)
   res.status(response.status).send(response.statusText)
 }
 

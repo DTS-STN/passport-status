@@ -16,7 +16,7 @@ export default async function handler(
   res: NextApiResponse<CheckStatusApiResponse | string>
 ) {
   if (req.method !== 'GET') {
-    logger.error(`error 405: Invalid request method ${req.method}`)
+    logger.debug(`error 405: Invalid request method ${req.method}`)
     return res.status(405).send(`Invalid request method ${req.method}`)
   }
 
@@ -68,12 +68,12 @@ export const searchPassportStatusApi = async (
   const response = await fetch(url)
 
   if (response.ok) {
-    logger.info('response OK')
+    logger.debug('response OK')
     const searchResult: PassportStatusesSearchResult = await response.json()
     const { GetCertificateApplicationResponse } = searchResult._embedded
 
     if (GetCertificateApplicationResponse.length === 0) {
-      logger.error('error 404: searchResult._embedded is empty')
+      logger.debug('error 404: searchResult._embedded is empty')
       return res.status(404).send('Passport Status Not Found')
     }
 
@@ -83,11 +83,11 @@ export const searchPassportStatusApi = async (
   }
 
   if (response.status === 404 || response.status === 422) {
-    logger.error(`error ${response.status}: ${response.body}`)
+    logger.debug(`error ${response.status}: ${response.body}`)
     return res.status(response.status).send('Passport Status Not Found')
   }
 
-  logger.info(`Status: ${response.status}: ${response.statusText}`)
+  logger.debug(`Status: ${response.status}: ${response.statusText}`)
   return res.status(response.status).send(response.statusText)
 }
 
@@ -133,6 +133,6 @@ export const searchPassportStatusMock = (
     logger.debug(applicationResponse)
     return res.send(mapToCheckStatusApiResponse(applicationResponse))
   }
-  logger.error(`Status 404: Passport Status Not Found`)
+  logger.debug(`Status 404: Passport Status Not Found`)
   return res.status(404).send('Passport Status Not Found')
 }
