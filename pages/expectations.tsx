@@ -1,12 +1,13 @@
 import { FC, MouseEventHandler, useCallback } from 'react'
 import { GetServerSideProps } from 'next'
 import Router from 'next/router'
-import { useTranslation } from 'next-i18next'
+import { Trans, useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Layout from '../components/Layout'
 import ActionButton from '../components/ActionButton'
 import { setCookie } from 'cookies-next'
 import { NextSeo } from 'next-seo'
+import ExternalLink from '../components/ExternalLink'
 
 const Expectations: FC = () => {
   const { t } = useTranslation('expectations')
@@ -38,7 +39,7 @@ const Expectations: FC = () => {
       <ul className="list-disc space-y-2 pl-10 mb-5">
         <li>
           {t('can-check.list.item-1.in-person')} <b>{t('common:or')} </b>
-          {t('can-check.list.item-1.by-mail')}
+          {t('can-check.list.item-1.by-mail')} <b>{t('common:or')} </b>
         </li>
         <li>{t('can-check.list.item-2')}</li>
       </ul>
@@ -53,7 +54,54 @@ const Expectations: FC = () => {
         <p className="m-0">{t('do-not-travel')}</p>
       </blockquote>
       <h2 className="h2">{t('header-privacy')}</h2>
-      <p>{t('description-privacy')}</p>
+      <p>
+        <Trans i18nKey={'expectations:description-privacy.1'}>
+          Insert feedback{' '}
+          <ExternalLink href={t('expectations:description-privacy.1.1-link')}>
+            Link
+          </ExternalLink>
+        </Trans>
+      </p>
+      <p>
+        <Trans i18nKey={'expectations:description-privacy.2'}>
+          Insert feedback{' '}
+          <ExternalLink href={t('expectations:description-privacy.2.2-link')}>
+            Link
+          </ExternalLink>
+        </Trans>
+      </p>
+      <p>
+        <Trans i18nKey={'expectations:description-privacy.3'}>
+          Insert feedback{' '}
+          <ExternalLink href={t('expectations:description-privacy.3.3-link')}>
+            Link
+          </ExternalLink>
+        </Trans>
+      </p>
+      <p>
+        <Trans i18nKey={'expectations:description-privacy.4'}>
+          Insert feedback{' '}
+          <ExternalLink href={t('expectations:description-privacy.4.4-link')}>
+            Link
+          </ExternalLink>
+        </Trans>
+      </p>
+      <p>
+        <Trans i18nKey={'expectations:description-privacy.5'}>
+          Insert feedback{' '}
+          <ExternalLink href={t('expectations:description-privacy.5.5-link')}>
+            Link
+          </ExternalLink>
+        </Trans>
+      </p>
+      <p>
+        <Trans i18nKey={'expectations:description-privacy.6'}>
+          Insert feedback{' '}
+          <ExternalLink href={t('expectations:description-privacy.6.6-link')}>
+            Link
+          </ExternalLink>
+        </Trans>
+      </p>
       <ActionButton
         id="btn-agree"
         style="primary"
