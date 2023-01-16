@@ -61,11 +61,7 @@ const Expectations: FC = () => {
         <Trans
           i18nKey={'expectations:description-privacy.4'}
           components={{
-            Link: (
-              <ExternalLink href={t('description-privacy.4-link')}>
-                link
-              </ExternalLink>
-            ),
+            Link: <ExternalLink href={t('description-privacy.4-link')} />,
           }}
         />
       </p>
@@ -73,11 +69,7 @@ const Expectations: FC = () => {
         <Trans
           i18nKey={'expectations:description-privacy.5'}
           components={{
-            Link: (
-              <ExternalLink href={t('description-privacy.5-link')}>
-                link
-              </ExternalLink>
-            ),
+            Link: <ExternalLink href={t('description-privacy.5-link')} />,
           }}
         />
       </p>
@@ -85,11 +77,7 @@ const Expectations: FC = () => {
         <Trans
           i18nKey={'expectations:description-privacy.6'}
           components={{
-            Link: (
-              <ExternalLink href={t('description-privacy.6-link')}>
-                link
-              </ExternalLink>
-            ),
+            Link: <ExternalLink href={t('description-privacy.6-link')} />,
           }}
         />
       </p>
