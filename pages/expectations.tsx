@@ -54,53 +54,44 @@ const Expectations: FC = () => {
         <p className="m-0">{t('do-not-travel')}</p>
       </blockquote>
       <h2 className="h2">{t('header-privacy')}</h2>
+      <p>{t('expectations:description-privacy.1')}</p>
+      <p>{t('expectations:description-privacy.2')}</p>
+      <p>{t('expectations:description-privacy.3')}</p>
       <p>
-        <Trans i18nKey={'expectations:description-privacy.1'}>
-          Insert feedback{' '}
-          <ExternalLink href={t('expectations:description-privacy.1.1-link')}>
-            Link
-          </ExternalLink>
-        </Trans>
+        <Trans
+          i18nKey={'expectations:description-privacy.4'}
+          components={{
+            Link: (
+              <ExternalLink href={t('description-privacy.4-link')}>
+                link
+              </ExternalLink>
+            ),
+          }}
+        />
       </p>
       <p>
-        <Trans i18nKey={'expectations:description-privacy.2'}>
-          Insert feedback{' '}
-          <ExternalLink href={t('expectations:description-privacy.2.2-link')}>
-            Link
-          </ExternalLink>
-        </Trans>
+        <Trans
+          i18nKey={'expectations:description-privacy.5'}
+          components={{
+            Link: (
+              <ExternalLink href={t('description-privacy.5-link')}>
+                link
+              </ExternalLink>
+            ),
+          }}
+        />
       </p>
       <p>
-        <Trans i18nKey={'expectations:description-privacy.3'}>
-          Insert feedback{' '}
-          <ExternalLink href={t('expectations:description-privacy.3.3-link')}>
-            Link
-          </ExternalLink>
-        </Trans>
-      </p>
-      <p>
-        <Trans i18nKey={'expectations:description-privacy.4'}>
-          Insert feedback{' '}
-          <ExternalLink href={t('expectations:description-privacy.4.4-link')}>
-            Link
-          </ExternalLink>
-        </Trans>
-      </p>
-      <p>
-        <Trans i18nKey={'expectations:description-privacy.5'}>
-          Insert feedback{' '}
-          <ExternalLink href={t('expectations:description-privacy.5.5-link')}>
-            Link
-          </ExternalLink>
-        </Trans>
-      </p>
-      <p>
-        <Trans i18nKey={'expectations:description-privacy.6'}>
-          Insert feedback{' '}
-          <ExternalLink href={t('expectations:description-privacy.6.6-link')}>
-            Link
-          </ExternalLink>
-        </Trans>
+        <Trans
+          i18nKey={'expectations:description-privacy.6'}
+          components={{
+            Link: (
+              <ExternalLink href={t('description-privacy.6-link')}>
+                link
+              </ExternalLink>
+            ),
+          }}
+        />
       </p>
       <ActionButton
         id="btn-agree"
