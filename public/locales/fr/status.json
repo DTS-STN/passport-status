@@ -23,8 +23,8 @@
     },
     "label": "Prénom(s) du requérant"
   },
-  "previous": "Précédent",
-  "reset": "Redémarrer",
+  "previous": "Vérifier l'état d'une autre demande",
+  "reset": "Vérifier l'état d'une autre demande",
   "header": "Vérifiez l'état de votre demande de passeport",
   "status": {
     "1": {

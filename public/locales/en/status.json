@@ -23,8 +23,8 @@
     },
     "label": "Given name(s) of applicant"
   },
-  "previous": "Previous",
-  "reset": "Restart",
+  "previous": "Check the status of another application",
+  "reset": "Check the status of another application",
   "header": "Check the status of your passport application",
   "status": {
     "1": {
