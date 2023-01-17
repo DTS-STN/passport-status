@@ -169,11 +169,13 @@ const Email: FC = () => {
             textRequired={t('common:required')}
             required
             helpMessage={
-              <p>
-                {t('help-message.email')}{' '}
-                <b>{t('help-message.for-child.application')}</b>
-                {t('help-message.for-child.use-exactly')}
-              </p>
+              <>
+                <p>{t('help-message.email')} </p>
+                <p>
+                  <b>{t('help-message.for-child.application')}</b>
+                  {t('help-message.for-child.use-exactly')}
+                </p>
+              </>
             }
           />
           <InputField
