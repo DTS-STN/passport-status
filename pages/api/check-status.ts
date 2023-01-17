@@ -65,15 +65,23 @@ export const searchPassportStatusApi = async (
     surname,
   }).toString()
   const url = `${process.env.PASSPORT_STATUS_API_BASE_URI}/api/v1/passport-statuses/_search?${query}`
+
+  logger.debug(
+    `performing status check with information ${JSON.stringify(
+      checkStatusApiRequestQuery
+    )}`
+  )
   const response = await fetch(url)
 
   if (response.ok) {
-    logger.debug('response OK')
+    logger.debug('Check status returned OK')
     const searchResult: PassportStatusesSearchResult = await response.json()
     const { GetCertificateApplicationResponse } = searchResult._embedded
 
     if (GetCertificateApplicationResponse.length === 0) {
-      logger.debug('error 404: searchResult._embedded is empty')
+      logger.debug(
+        'error 404: searchResult._embedded is empty, passport status not found'
+      )
       return res.status(404).send('Passport Status Not Found')
     }
 
@@ -83,7 +91,9 @@ export const searchPassportStatusApi = async (
   }
 
   if (response.status === 404 || response.status === 422) {
-    logger.debug(`error ${response.status}: ${response.body}`)
+    logger.debug(
+      `Check status returned not OK - error ${response.status}: ${response.body}`
+    )
     return res.status(response.status).send('Passport Status Not Found')
   }
 
@@ -103,6 +113,12 @@ export const searchPassportStatusMock = (
 ) => {
   const { dateOfBirth, esrf, givenName, surname } = checkStatusApiRequestQuery
   const { GetCertificateApplicationResponse } = passportStatusesMock._embedded
+
+  logger.debug(
+    `performing status check with information ${JSON.stringify(
+      checkStatusApiRequestQuery
+    )}`
+  )
 
   const applicationResponse = GetCertificateApplicationResponse.find(
     ({
