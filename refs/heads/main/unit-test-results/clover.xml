@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1674059207445" clover="3.2.0">
-  <project timestamp="1674059207445" name="All files">
+<coverage generated="1674228278309" clover="3.2.0">
+  <project timestamp="1674228278309" name="All files">
     <metrics statements="424" coveredstatements="283" conditionals="254" coveredconditionals="119" methods="121" coveredmethods="70" elements="799" coveredelements="472" complexity="0" loc="424" ncloc="424" packages="7" files="44" classes="44"/>
     <package name="components">
       <metrics statements="202" coveredstatements="163" conditionals="116" coveredconditionals="73" methods="58" coveredmethods="45"/>
@@ -531,20 +531,20 @@
         <line num="80" count="0" type="stmt"/>
         <line num="85" count="0" type="cond" truecount="0" falsecount="4"/>
         <line num="86" count="0" type="stmt"/>
-        <line num="87" count="0" type="stmt"/>
         <line num="90" count="0" type="stmt"/>
-        <line num="91" count="0" type="stmt"/>
-        <line num="100" count="1" type="stmt"/>
-        <line num="104" count="2" type="stmt"/>
-        <line num="105" count="2" type="stmt"/>
+        <line num="93" count="0" type="stmt"/>
+        <line num="94" count="0" type="stmt"/>
+        <line num="103" count="1" type="stmt"/>
         <line num="107" count="2" type="stmt"/>
-        <line num="114" count="26" type="cond" truecount="4" falsecount="0"/>
-        <line num="118" count="52" type="stmt"/>
-        <line num="132" count="2" type="cond" truecount="2" falsecount="0"/>
-        <line num="133" count="1" type="stmt"/>
-        <line num="134" count="1" type="stmt"/>
+        <line num="108" count="2" type="stmt"/>
+        <line num="110" count="2" type="stmt"/>
+        <line num="117" count="26" type="cond" truecount="4" falsecount="0"/>
+        <line num="121" count="52" type="stmt"/>
+        <line num="135" count="2" type="cond" truecount="2" falsecount="0"/>
         <line num="136" count="1" type="stmt"/>
         <line num="137" count="1" type="stmt"/>
+        <line num="139" count="1" type="stmt"/>
+        <line num="140" count="1" type="stmt"/>
       </file>
       <file name="email-esrf.ts" path="/home/runner/work/passport-status/passport-status/pages/api/email-esrf.ts">
         <metrics statements="22" coveredstatements="14" conditionals="10" coveredconditionals="5" methods="3" coveredmethods="2"/>
