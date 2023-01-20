@@ -11,6 +11,20 @@ describe('status page loads', () => {
     cy.location('pathname').should("equal", "/en/status")
   })
 
+  it('should have correct title in English', () => {
+    cy.get("h1").filter(':visible').invoke('text').then((text) => {
+      cy.title().should("eq", `${text} - Passport application status checker - Canada.ca`);
+    });
+  })
+
+  it('should have correct title in French', () => {
+    cy.get('[data-cy=toggle-language-link]').click()
+    cy.wait(200)
+    cy.get("h1").filter(':visible').invoke('text').then((text) => {
+      cy.title().should("eq", `${text} - Outil de vérification de l'état de la demande de passeport - Canada.ca`);
+    });
+  })
+
   it('displays the language link to change to French', () => {
     cy.location('pathname').should("equal", "/en/status")
     cy.get('[data-cy=toggle-language-link]').should('contain.text', 'Français')
@@ -18,6 +32,7 @@ describe('status page loads', () => {
 
   it('displays the language link to change to English', () => {
     cy.get('[data-cy=toggle-language-link]').click()
+    cy.wait(200)
     cy.location('pathname').should("equal", "/fr/status")
     cy.get('[data-cy=toggle-language-link]').should('contain.text', 'English')
   })
