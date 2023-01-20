@@ -8,7 +8,7 @@ const Index = () => {
     <>
       <NextSeo
         noindex
-        title="Passport Application Status Checker (PASC) | Vérificateur du Statut de mon application pour un passport (VSAP)"
+        title="Passport application status checker | Outil de vérification de l'état de la demande de passeport"
         titleTemplate={'%s \u2010 Canada.ca'}
       />
       <main
@@ -18,7 +18,8 @@ const Index = () => {
         <div className="m-auto w-[300px] md:w-[400px] lg:w-[500px] bg-gray-lighter">
           <div className="p-8">
             <h1 className="sr-only">
-              service.canada.ca-passport-status-checker
+              Passport application status checker | Outil de vérification de
+              l&#39;état de la demande de passeport
             </h1>
             <div className="w-11/12 lg:w-8/12">
               <Image

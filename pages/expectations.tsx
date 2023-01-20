@@ -6,7 +6,6 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Layout from '../components/Layout'
 import ActionButton from '../components/ActionButton'
 import { setCookie } from 'cookies-next'
-import { NextSeo } from 'next-seo'
 import ExternalLink from '../components/ExternalLink'
 
 const Expectations: FC = () => {
@@ -23,8 +22,7 @@ const Expectations: FC = () => {
 
   return (
     <Layout>
-      <NextSeo title={t('page-title')} />
-      <h1 className="h1">{t('header-purpose')}</h1>
+      <h1 className="h1">{t('header')}</h1>
       <h2 className="h2">{t('header-avoid-waiting')}</h2>
       <p>{t('available-after.description')}</p>
       <ul className="list-disc space-y-2 pl-10 mb-5">

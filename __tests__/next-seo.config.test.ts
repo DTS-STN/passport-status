@@ -19,7 +19,7 @@ describe('getNextSEOConfig', () => {
 
     // assert
     expect(act.description).toBe(
-      "Check the status of your passport application. | Vérifiez l'état de votre demande de passeport."
+      "Passport application status checker | Outil de vérification de l'état de la demande de passeport"
     )
   })
 
@@ -32,9 +32,7 @@ describe('getNextSEOConfig', () => {
     const act = getNextSEOConfig(appBaseUri, router)
 
     // assert
-    expect(act.description).toBe(
-      'Check the status of your passport application.'
-    )
+    expect(act.description).toBe('Passport application status checker')
   })
 
   it('should call getFrenchConfig when router.locale is `fr`', () => {
@@ -47,7 +45,7 @@ describe('getNextSEOConfig', () => {
 
     // assert
     expect(act.description).toBe(
-      "Vérifiez l'état de votre demande de passeport."
+      "Outil de vérification de l'état de la demande de passeport"
     )
   })
 })

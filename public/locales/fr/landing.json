@@ -1,6 +1,5 @@
 {
-  "header": "Vérificateur de statut de demande de passeport",
-  "page-title": "Page d'accueil",
+  "header": "Outil de vérification de l'état de la demande de passeport",
   "description": "Avez-vous votre numéro de dossier de demande de passeport?",
   "with-esrf": "J'ai mon numéro de dossier",
   "without-esrf": "Je n'ai pas mon numéro de dossier"
