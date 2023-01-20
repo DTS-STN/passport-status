@@ -112,7 +112,7 @@ const Email: FC = () => {
 
   return (
     <Layout>
-      <NextSeo title={t('page-title')} />
+      <NextSeo title={t('header')} />
       <IdleTimeout />
       <h1 ref={headingRef} className="h1" tabIndex={-1}>
         {t('header')}

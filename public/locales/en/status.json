@@ -1,5 +1,4 @@
 {
-  "page-title": "Check my status",
   "date-of-birth": {
     "error": {
       "current": "The applicant date of birth must be in the past.",
@@ -63,7 +62,7 @@
   },
   "unable-to-find-status": "We are unable to determine the status of your application at this time using this service.",
   "other-ways-to-status": "Contact us",
-  "no-match-title": "Other ways to get your status:",
+  "no-match-title": "Other ways to get your application status:",
   "cannot-provide-result": {
     "title": "We cannot provide a result at this time because:",
     "reason1": "the information you provided does not match the information in our system;",
@@ -73,7 +72,7 @@
   "please-verify": "Please verify the information entered and try again.",
   "please-wait": "If you have not waited at least (insert amount of time/full service standard), please try again at a later date/time.",
   "still-unable": {
-    "if-still-unable": "If you are still unable to retrieve your status, you may:",
+    "if-still-unable": "If you are still unable to retrieve your application status, you may:",
     "contact-call-center": "Contact the Passport Call Centre (insert phone #).",
     "visit-in-person": "Visit an in-person Service Canada Centre nearest you (link to FSCO)"
   },

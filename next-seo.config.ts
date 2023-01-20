@@ -45,23 +45,32 @@ export type GetNextSEOConfig = (
 ) => DefaultSeoProps
 
 export const getDefaultConfig: GetNextSEOConfig = (appBaseUri, router) => ({
-  titleTemplate:
-    "%s \u2010 Check the status of your passport application | Vérifiez l'état de votre demande de passeport \u2010 Canada.ca",
+  titleTemplate: '%s \u2010 Canada.ca',
   defaultTitle:
-    "Check the status of your passport application | Vérifiez l'état de votre demande de passeport \u2010 Canada.ca",
+    "Passport application status checker | Outil de vérification de l'état de la demande de passeport",
   description:
-    "Check the status of your passport application. | Vérifiez l'état de votre demande de passeport.",
+    "Passport application status checker | Outil de vérification de l'état de la demande de passeport",
   additionalMetaTags: [
     {
       name: 'author',
-      content:
-        'Immigration, Refugees and Citizenship Canada | Immigration, Réfugiés et Citoyenneté Canada',
+      content: 'Immigration, Refugees and Citizenship Canada',
+    },
+    {
+      name: 'author',
+      keyOverride: 'author:fr',
+      lang: 'fr',
+      content: 'Immigration, Réfugiés et Citoyenneté Canada',
     },
     { name: 'dcterms.accessRights', content: '2' },
     {
       name: 'dcterms.creator',
-      content:
-        'Immigration, Refugees and Citizenship Canada | Immigration, Réfugiés et Citoyenneté Canada',
+      content: 'Immigration, Refugees and Citizenship Canada',
+    },
+    {
+      name: 'dcterms.creator',
+      keyOverride: 'dcterms.creator:fr',
+      lang: 'fr',
+      content: 'Immigration, Réfugiés et Citoyenneté Canada',
     },
     { name: 'dcterms.language', content: 'eng' },
     { name: 'dcterms.spatial', content: 'Canada' },
@@ -71,7 +80,7 @@ export const getDefaultConfig: GetNextSEOConfig = (appBaseUri, router) => ({
     images: getOpenGraphImages(appBaseUri),
     locale: 'en_CA',
     siteName:
-      "Check the status of your passport application | Vérifiez l'état de votre demande de passeport \u2010 Canada.ca",
+      "Passport application status checker | Outil de vérification de l'état de la demande de passeport \u2010 Canada.ca",
     type: 'website',
   },
   twitter: {
@@ -82,10 +91,9 @@ export const getDefaultConfig: GetNextSEOConfig = (appBaseUri, router) => ({
 
 export const getEnglishConfig: GetNextSEOConfig = (appBaseUri, router) => ({
   titleTemplate:
-    '%s \u2010 Check the status of your passport application \u2010 Canada.ca',
-  defaultTitle:
-    'Check the status of your passport application \u2010 Canada.ca',
-  description: 'Check the status of your passport application.',
+    '%s \u2010 Passport application status checker \u2010 Canada.ca',
+  defaultTitle: 'Passport application status checker \u2010 Canada.ca',
+  description: 'Passport application status checker',
   additionalMetaTags: [
     {
       name: 'author',
@@ -103,7 +111,7 @@ export const getEnglishConfig: GetNextSEOConfig = (appBaseUri, router) => ({
   openGraph: {
     images: getOpenGraphImages(appBaseUri),
     locale: 'en_CA',
-    siteName: 'Check the status of your passport application \u2010 Canada.ca',
+    siteName: 'Passport application status checker \u2010 Canada.ca',
     type: 'website',
   },
   twitter: {
@@ -114,10 +122,10 @@ export const getEnglishConfig: GetNextSEOConfig = (appBaseUri, router) => ({
 
 export const getFrenchConfig: GetNextSEOConfig = (appBaseUri, router) => ({
   titleTemplate:
-    "%s \u2010 Vérifiez l'état de votre demande de passeport \u2010 Canada.ca",
+    "%s \u2010 Outil de vérification de l'état de la demande de passeport \u2010 Canada.ca",
   defaultTitle:
-    "Vérifiez l'état de votre demande de passeport \u2010 Canada.ca",
-  description: "Vérifiez l'état de votre demande de passeport.",
+    "Outil de vérification de l'état de la demande de passeport \u2010 Canada.ca",
+  description: "Outil de vérification de l'état de la demande de passeport",
   additionalMetaTags: [
     {
       name: 'author',
@@ -135,7 +143,8 @@ export const getFrenchConfig: GetNextSEOConfig = (appBaseUri, router) => ({
   openGraph: {
     images: getOpenGraphImages(appBaseUri),
     locale: 'fr_CA',
-    siteName: "Vérifiez l'état de votre demande de passeport \u2010 Canada.ca",
+    siteName:
+      "Outil de vérification de l'état de la demande de passeport \u2010 Canada.ca",
     type: 'website',
   },
   twitter: {

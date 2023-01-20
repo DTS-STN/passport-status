@@ -1,9 +1,8 @@
 {
-  "header-purpose": "Check the status of your passport application",
+  "header": "Passport application status checker",
   "header-avoid-waiting": "Avoid waiting on the phone and request the status of your application online",
   "header-who-can-check": "Who can check their status online",
   "header-privacy": "Privacy notice statement",
-  "page-title": "Expectations and privacy",
   "can-check": {
     "description": "You can get the status of your passport application online if you submitted your passport application either",
     "list": {
