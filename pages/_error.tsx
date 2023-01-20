@@ -17,7 +17,7 @@ const Error: NextPage<ErrorProps> = ({ statusCode }) => {
             ? 'Internal Server Error | Erreur de serveur interne'
             : 'Service Unavailable | Service indisponible'
         }
-        titleTemplate={'%s \u2010 Canada.ca'}
+        titleTemplate="%s - Canada.ca"
       />
       <h1 className="sr-only" lang="en">
         {statusCode === 500 ? 'Internal Server Error' : 'Service Unavailable'}

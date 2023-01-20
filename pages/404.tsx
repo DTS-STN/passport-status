@@ -8,7 +8,7 @@ const Custom404 = () => {
       <NextSeo
         description="Error message stating that the server is down, or the URL is incorrect or expired | Message d'erreur indiquant que le serveur est hors service, que l'URL est incorrecte ou qu'elle a expiré."
         title="Not Found | Pas trouvé"
-        titleTemplate={'%s \u2010 Canada.ca'}
+        titleTemplate="%s - Canada.ca"
       />
       <h1 className="sr-only" lang="en">
         Not Found

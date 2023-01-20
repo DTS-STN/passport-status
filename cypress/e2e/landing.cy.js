@@ -11,6 +11,20 @@ describe('landing page loads', () => {
     cy.location('pathname').should("equal", "/en/landing")
   })
 
+  it('should have correct title in English', () => {
+    cy.get("h1").filter(':visible').invoke('text').then((text) => {
+      cy.title().should("eq", `${text} - Canada.ca`);
+    });
+  })
+
+  it('should have correct title in French', () => {
+    cy.get('[data-cy=toggle-language-link]').click()
+    cy.wait(200)
+    cy.get("h1").filter(':visible').invoke('text').then((text) => {
+      cy.title().should("eq", `${text} - Canada.ca`);
+    });
+  })
+
   it('should display the button for no ESRF',()=>{
       cy.get(`#without-esrf`).should('be.visible')
   })

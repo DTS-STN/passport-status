@@ -9,7 +9,7 @@ const Index = () => {
       <NextSeo
         noindex
         title="Passport application status checker | Outil de vérification de l'état de la demande de passeport"
-        titleTemplate={'%s \u2010 Canada.ca'}
+        titleTemplate="%s - Canada.ca"
       />
       <main
         role="main"
