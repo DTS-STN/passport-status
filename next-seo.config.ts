@@ -53,24 +53,24 @@ export const getDefaultConfig: GetNextSEOConfig = (appBaseUri, router) => ({
   additionalMetaTags: [
     {
       name: 'author',
-      content: 'Immigration, Refugees and Citizenship Canada',
+      content: 'Employment and Social Development Canada',
     },
     {
       name: 'author',
       keyOverride: 'author:fr',
       lang: 'fr',
-      content: 'Immigration, Réfugiés et Citoyenneté Canada',
+      content: 'Emploi et Développement social Canada',
     },
     { name: 'dcterms.accessRights', content: '2' },
     {
       name: 'dcterms.creator',
-      content: 'Immigration, Refugees and Citizenship Canada',
+      content: 'Employment and Social Development Canada',
     },
     {
       name: 'dcterms.creator',
       keyOverride: 'dcterms.creator:fr',
       lang: 'fr',
-      content: 'Immigration, Réfugiés et Citoyenneté Canada',
+      content: 'Emploi et Développement social Canada',
     },
     { name: 'dcterms.language', content: 'eng' },
     { name: 'dcterms.spatial', content: 'Canada' },
@@ -96,12 +96,12 @@ export const getEnglishConfig: GetNextSEOConfig = (appBaseUri, router) => ({
   additionalMetaTags: [
     {
       name: 'author',
-      content: 'Immigration, Refugees and Citizenship Canada',
+      content: 'Employment and Social Development Canada',
     },
     { name: 'dcterms.accessRights', content: '2' },
     {
       name: 'dcterms.creator',
-      content: 'Immigration, Refugees and Citizenship Canada',
+      content: 'Employment and Social Development Canada',
     },
     { name: 'dcterms.language', content: 'eng' },
     { name: 'dcterms.spatial', content: 'Canada' },
@@ -128,12 +128,12 @@ export const getFrenchConfig: GetNextSEOConfig = (appBaseUri, router) => ({
   additionalMetaTags: [
     {
       name: 'author',
-      content: 'Immigration, Réfugiés et Citoyenneté Canada',
+      content: 'Emploi et Développement social Canada',
     },
     { name: 'dcterms.accessRights', content: '2' },
     {
       name: 'dcterms.creator',
-      content: 'Immigration, Réfugiés et Citoyenneté Canada',
+      content: 'Emploi et Développement social Canada',
     },
     { name: 'dcterms.language', content: 'fra' },
     { name: 'dcterms.spatial', content: 'Canada' },
