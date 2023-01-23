@@ -126,7 +126,7 @@ const Email: FC = () => {
             {t('email-confirmation-msg.please-contact')}{' '}
             <b>{t('common:phone-number')}</b>.
           </p>
-          <div className="mt-10">
+          <div>
             <h2 className="h2">{t('common:feedback-link-header')}</h2>
             <ExternalLink href={t('common:feedback-link-url')}>
               {t('common:feedback-link')}
