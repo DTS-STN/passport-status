@@ -15,4 +15,7 @@ module.exports = {
       ? path.resolve('./public/locales')
       : '/public/locales',
   returnNull: false,
+  react: {
+    transKeepBasicHtmlNodesFor: ['br', 'strong', 'i', 'p', 'b', 'em'],
+  },
 }
