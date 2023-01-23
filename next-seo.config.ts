@@ -49,7 +49,7 @@ export const getDefaultConfig: GetNextSEOConfig = (appBaseUri, router) => ({
   defaultTitle:
     "Passport application status checker | Outil de vérification de l'état de la demande de passeport",
   description:
-    "Passport application status checker | Outil de vérification de l'état de la demande de passeport",
+    "Avoid waiting on the phone and request the status of your application online. | Évitez d'attendre au téléphone et demandez l'état de votre demande en ligne.",
   additionalMetaTags: [
     {
       name: 'author',
@@ -73,7 +73,23 @@ export const getDefaultConfig: GetNextSEOConfig = (appBaseUri, router) => ({
       content: 'Emploi et Développement social Canada',
     },
     { name: 'dcterms.language', content: 'eng' },
+    {
+      name: 'dcterms.language',
+      keyOverride: 'dcterms.language:fr',
+      lang: 'fr',
+      content: 'fra',
+    },
     { name: 'dcterms.spatial', content: 'Canada' },
+    {
+      name: 'dcterms.subject',
+      content: 'Travel and Tourism',
+    },
+    {
+      name: 'dcterms.subject',
+      keyOverride: 'dcterms.subject:fr',
+      lang: 'fr',
+      content: 'Voyage et tourisme',
+    },
   ],
   languageAlternates: getLanguageAlternates(appBaseUri, router),
   openGraph: {
@@ -92,7 +108,8 @@ export const getDefaultConfig: GetNextSEOConfig = (appBaseUri, router) => ({
 export const getEnglishConfig: GetNextSEOConfig = (appBaseUri, router) => ({
   titleTemplate: '%s - Passport application status checker - Canada.ca',
   defaultTitle: 'Passport application status checker - Canada.ca',
-  description: 'Passport application status checker',
+  description:
+    'Avoid waiting on the phone and request the status of your application online.',
   additionalMetaTags: [
     {
       name: 'author',
@@ -105,6 +122,10 @@ export const getEnglishConfig: GetNextSEOConfig = (appBaseUri, router) => ({
     },
     { name: 'dcterms.language', content: 'eng' },
     { name: 'dcterms.spatial', content: 'Canada' },
+    {
+      name: 'dcterms.subject',
+      content: 'Travel and Tourism',
+    },
   ],
   languageAlternates: getLanguageAlternates(appBaseUri, router),
   openGraph: {
@@ -124,7 +145,8 @@ export const getFrenchConfig: GetNextSEOConfig = (appBaseUri, router) => ({
     "%s - Outil de vérification de l'état de la demande de passeport - Canada.ca",
   defaultTitle:
     "Outil de vérification de l'état de la demande de passeport - Canada.ca",
-  description: "Outil de vérification de l'état de la demande de passeport",
+  description:
+    "Évitez d'attendre au téléphone et demandez l'état de votre demande en ligne.",
   additionalMetaTags: [
     {
       name: 'author',
@@ -137,6 +159,10 @@ export const getFrenchConfig: GetNextSEOConfig = (appBaseUri, router) => ({
     },
     { name: 'dcterms.language', content: 'fra' },
     { name: 'dcterms.spatial', content: 'Canada' },
+    {
+      name: 'dcterms.subject',
+      content: 'Voyage et tourisme',
+    },
   ],
   languageAlternates: getLanguageAlternates(appBaseUri, router),
   openGraph: {
