@@ -19,7 +19,7 @@ describe('getNextSEOConfig', () => {
 
     // assert
     expect(act.description).toBe(
-      "Passport application status checker | Outil de vérification de l'état de la demande de passeport"
+      "Avoid waiting on the phone and request the status of your application online. | Évitez d'attendre au téléphone et demandez l'état de votre demande en ligne."
     )
   })
 
@@ -32,7 +32,9 @@ describe('getNextSEOConfig', () => {
     const act = getNextSEOConfig(appBaseUri, router)
 
     // assert
-    expect(act.description).toBe('Passport application status checker')
+    expect(act.description).toBe(
+      'Avoid waiting on the phone and request the status of your application online.'
+    )
   })
 
   it('should call getFrenchConfig when router.locale is `fr`', () => {
@@ -45,7 +47,7 @@ describe('getNextSEOConfig', () => {
 
     // assert
     expect(act.description).toBe(
-      "Outil de vérification de l'état de la demande de passeport"
+      "Évitez d'attendre au téléphone et demandez l'état de votre demande en ligne."
     )
   })
 })
