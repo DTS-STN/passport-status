@@ -1,25 +1,25 @@
 {
   "header": "Passport application status checker",
-  "header-avoid-waiting": "Avoid waiting on the phone and request the status of your application online",
+  "header-avoid-waiting": "Avoid waiting on the phone and get the status of your application online",
   "header-who-can-check": "Who can check their status online",
   "header-privacy": "Privacy notice statement",
   "can-check": {
-    "description": "You can get the status of your passport application online if you submitted your passport application either",
+    "description": "You can get the status of your passport application online if you submitted your passport application either:",
     "list": {
-      "item-1": "in person <b>or</b> by mail within Canada <b>or</b>",
+      "item-1": "in person <b>or</b> by mail in Canada <b>or</b>",
       "item-2": "by mail from the United States."
     }
   },
   "available-after": {
-    "description": "The status of your application is available after",
+    "description": "The status of your application is available after:",
     "updated-status": "We update the status of applications daily.",
     "list": {
-      "item-1": "5 days if you applied in person <b>or</b>",
-      "item-2": "10 days if you applied by mail"
+      "item-1": "5 business days if you applied in person <b>or</b>",
+      "item-2": "10 business days if you applied by mail"
     }
   },
   "cannot-check": {
-    "description": "You can't look up the status of a passport application online if you applied for a passport",
+    "description": "You can't look up the status of a passport application online if you applied for a passport:",
     "list": {
       "item-1": "at a consulate or embassy abroad <b>or</b>",
       "item-2": "for official government business (special or diplomatic passports)"
