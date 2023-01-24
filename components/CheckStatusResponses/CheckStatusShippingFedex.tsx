@@ -13,7 +13,7 @@ export const CheckStatusShippingFedex: FC<CheckStatusShippingFedexProps> = ({
   return (
     <>
       <h2 data-testid="shipped-fedex" className="h2 text-blue-normal">
-        {t('status-check-passport-printed')}
+        {t('status-check-passport-printed-and-mailed')}
       </h2>
       <p>
         {t('shipped-fedex.mailing')}
