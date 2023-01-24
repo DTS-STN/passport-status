@@ -99,19 +99,19 @@
     "never": "jamais"
   },
   "ready-for-pickup": {
-    "check-receipt": "Vérifiez votre reçu pour confirmer la date et le lieu de retrait du passeport.",
-    "do-not-visit": "Ne vous rendez pas au lieu de retrait avant la date indiquée sur votre reçu."
+    "has-been-printed": "Le passeport a été imprimé",
+    "check-receipt": "Le passeport est en route vers le lieu de retrait. Vérifiez votre reçu pour confirmer la date et le lieu de retrait du passeport.",
+    "not-available": "Le passeport ne sera pas disponible avant la date de retrait imprimée sur votre reçu."
   },
   "shipped-canada-post": {
     "mailing": "Nous vous l'envoyons par Postes Canada. ",
-    "supporting-documents": "Nous pourrions renvoyer vos documents justificatifs séparément",
-    "did-not-receive": "si vous ne recevez pas vos documents dans les 4 semaines suivant la réception du passeport."
+    "supporting-documents": "Nous pourrions renvoyer vos documents justificatifs séparément"
   },
   "shipped-fedex": {
     "mailing": "Nous vous l'envoyons par FedEx. ",
     "supporting-documents": "Vous recevrez le passeport et les documents justificatifs dans la même enveloppe."
   },
-  "status-check-passport-printed": "Le passeport a été imprimé",
+  "status-check-passport-printed-and-mailed": "Le passeport a été imprimé",
   "not-acceptable": {
     "cannot-process": "Nous avons examiné votre demande et ne pouvons pas la traiter davantage",
     "explanation": "Nous vous envoyons une lettre expliquant pourquoi et incluant vos documents justificatifs. Vous devriez les recevoir dans un délai de 4 semaines."
@@ -142,7 +142,7 @@
       "fedex": "https://www.fedex.com/fedextrack/?action=track&cntry_code=ca&locale=fr_ca&trackingnumber={{trackingNumber}}"
     }
   },
-  "status-check-call": "Appelez-nous au ",
+  "status-check-call": "Appelez-nous sans frais au <strong>{{phoneNumber}}</strong>, si vous ne recevez pas vos documents dans les 4 semaines suivant la réception du passeport.",
   "header-messages": {
     "matches": "Assurez-vous que vos informations correspondent à votre preuve de citoyenneté et à votre pièce d'identité. Votre preuve de citoyenneté peut être",
     "list": {
