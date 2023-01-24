@@ -53,16 +53,16 @@
     "end-session": "End session"
   },
   "phone-number": "1-800-567-6868",
-  "feedback-link-header": "We want to improve this tool.",
-  "feedback-link": "<2>Give us your feedback</2> on the Passport application status checker tool.",
+  "feedback-link-header": "We want to improve this tool",
+  "feedback-link": "Give us your feedback on the Passport application status checker tool",
   "feedback-link-url": "https://www.canada.ca/en/employment-social-development/services/passport/application-status-feedback.html",
   "opens-in-new-tab": "(opens in a new tab)",
   "banner": {
     "alert": "Test site",
     "description": "You cannot check the status of your passport application through this test site. Parts of this site may not work and will change."
   },
-  "collapse-file-number-title": "Can't find your File Number?",
-  "receipt-explanation": "The file number is used to identify the passport application. The file number can be found on the receipt you were given if you applied for the passport in person. If you applied by mail, or don't have a file number, you can select \"I don't have my file number.\"",
+  "collapse-file-number-title": "Can't find your file number?",
+  "receipt-explanation": "The file number is used to identify the passport application. The file number can be found on the receipt you were given if you applied for the passport in person. If you applied by mail, or don't have a file number, request to receive it.",
   "receipt-image-1": {
     "title": "Example Receipt 1:",
     "alt": "An example of an official receipt. The file number is circled in the centre of the receipt.",

@@ -32,8 +32,8 @@
   "email-sent-confirmation": "Un courriel a été envoyé s'il y avait une correspondance dans nos dossiers avec le numéro de dossier (FEDS).",
   "email-confirmation-msg": {
     "request-received": "Votre demande pour obtenir le numéro de dossier a été reçue",
-    "if-exists": "Si nous pouvons trouver le dossier avec les informations que vous nous avez fournies, nous vous enverrons le numéro de dossier par courriel dans les 30 minutes.",
-    "please-contact": "Si vous ne le recevez pas, appelez-nous au "
+    "if-exists": "Si nous pouvons trouver le dossier avec les informations que vous nous avez fournies, nous vous enverrons le numéro de dossier par courriel. Si vous ne recevez pas le message de confirmation dans votre boîte de réception, vérifiez votre dossier de courriel indésirable.",
+    "please-contact": "Si vous ne le recevez pas, appelez-nous sans frais au "
   },
   "page-unauth": {
     "header": "Page non-autorisée",

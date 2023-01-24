@@ -27,7 +27,7 @@ const Expectations: FC = () => {
       <p>{t('available-after.description')}</p>
       <ul className="list-disc space-y-2 pl-10 mb-5">
         <li>
-          {t('available-after.list.item-1')} <b>{t('common:or')}</b>
+          <Trans i18nKey={'available-after.list.item-1'} ns="expectations" />
         </li>
         <li>{t('available-after.list.item-2')}</li>
       </ul>
@@ -36,15 +36,14 @@ const Expectations: FC = () => {
       <p>{t('can-check.description')}</p>
       <ul className="list-disc space-y-2 pl-10 mb-5">
         <li>
-          {t('can-check.list.item-1.in-person')} <b>{t('common:or')} </b>
-          {t('can-check.list.item-1.by-mail')} <b>{t('common:or')} </b>
+          <Trans i18nKey={'can-check.list.item-1'} ns="expectations" />
         </li>
         <li>{t('can-check.list.item-2')}</li>
       </ul>
       <p>{t('cannot-check.description')}</p>
       <ul className="list-disc space-y-2 pl-10 mb-5">
         <li>
-          {t('cannot-check.list.item-1')} <b>{t('common:or')}</b>
+          <Trans i18nKey={'cannot-check.list.item-1'} ns="expectations" />
         </li>
         <li>{t('cannot-check.list.item-2')}</li>
       </ul>
@@ -52,12 +51,15 @@ const Expectations: FC = () => {
         <p className="m-0">{t('do-not-travel')}</p>
       </blockquote>
       <h2 className="h2">{t('header-privacy')}</h2>
-      <p>{t('expectations:description-privacy.1')}</p>
-      <p>{t('expectations:description-privacy.2')}</p>
-      <p>{t('expectations:description-privacy.3')}</p>
+      <p>
+        <Trans i18nKey={'description-privacy.1'} ns="expectations" />
+      </p>
+      <p>{t('description-privacy.2')}</p>
+      <p>{t('description-privacy.3')}</p>
       <p>
         <Trans
-          i18nKey={'expectations:description-privacy.4'}
+          i18nKey={'description-privacy.4'}
+          ns="expectations"
           components={{
             Link: <ExternalLink href={t('description-privacy.4-link')} />,
           }}
@@ -65,7 +67,8 @@ const Expectations: FC = () => {
       </p>
       <p>
         <Trans
-          i18nKey={'expectations:description-privacy.5'}
+          i18nKey={'description-privacy.5'}
+          ns="expectations"
           components={{
             Link: <ExternalLink href={t('description-privacy.5-link')} />,
           }}
@@ -73,7 +76,8 @@ const Expectations: FC = () => {
       </p>
       <p>
         <Trans
-          i18nKey={'expectations:description-privacy.6'}
+          i18nKey={'description-privacy.6'}
+          ns="expectations"
           components={{
             Link: <ExternalLink href={t('description-privacy.6-link')} />,
           }}
