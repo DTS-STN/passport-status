@@ -116,7 +116,7 @@
   },
   "not-acceptable": {
     "cannot-process": "Nous avons examiné votre demande et ne pouvons pas la traiter davantage",
-    "explanation": "Nous vous envoyons une lettre expliquant pourquoi et incluant vos documents justificatifs. Vous devriez les recevoir dans un délai de 4 semaines."
+    "explanation": "Nous vous envoyons une lettre expliquant pourquoi et nous vous renverrons vos documents justificatifs par la même occasion.<br />Pour plus d'informations, appelez-nous sans frais au <strong>{{phoneNumber}}</strong>."
   },
   "status-check-contact": {
     "description-no-record": {
