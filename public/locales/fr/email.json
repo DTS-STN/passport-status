@@ -28,12 +28,12 @@
     },
     "label": "Date de naissance du requérant"
   },
-  "email-esrf": "Envoyer mon numéro de dossier",
+  "email-esrf": "Envoyez-moi mon numéro de dossier",
   "email-sent-confirmation": "Un courriel a été envoyé s'il y avait une correspondance dans nos dossiers avec le numéro de dossier (FEDS).",
   "email-confirmation-msg": {
     "request-received": "Votre demande pour obtenir le numéro de dossier a été reçue",
     "if-exists": "Si nous pouvons trouver le dossier avec les informations que vous nous avez fournies, nous vous enverrons le numéro de dossier par courriel. Si vous ne recevez pas le message de confirmation dans votre boîte de réception, vérifiez votre dossier de courriel indésirable.",
-    "please-contact": "Si vous ne le recevez pas, appelez-nous sans frais au "
+    "please-contact": "Si vous ne le recevez pas, appelez-nous sans frais au <strong>{{phoneNumber}}</strong>."
   },
   "page-unauth": {
     "header": "Page non-autorisée",
@@ -41,19 +41,16 @@
     "button": "Conditions de confidentialité et de courriel"
   },
   "help-message": {
-    "email": "Fournissez votre courrier électronique complète, exactement comme indiqué sur le formulaire de demande de passeport.",
-    "for-child": {
-      "application": "Pour la demande d'un enfant",
-      "use-exactly": ", indiquez le courrier électronique complète du parent ou du tuteur légal du requérant, telle qu'elle figure sur la demande de passeport."
-    }
+    "email": "Fournissez votre adresse courriel complète, exactement comme indiqué sur le formulaire de demande de passeport.",
+    "for-child-application": "<strong>Pour les demandes de passeport pour enfants,</strong> utilisez le(s) prénom(s), nom de famille et date de naissance de l'enfant, exactement tels qu'ils figurent sur sa preuve de citoyenneté."
   },
   "header-messages": {
-    "matches": "Assurez-vous que vos informations correspondent à votre preuve de citoyenneté et à votre pièce d'identité. Votre preuve de citoyenneté peut être",
+    "matches": "<strong>Assurez-vous que vos informations correspondent à votre preuve de citoyenneté et à votre pièce d'identité.</strong> Votre preuve de citoyenneté pourrait être l'une des suivantes\u00a0:",
     "list": {
-      "item-1": "Certificat de naissance",
-      "item-2": "Certificat de citoyenneté",
-      "item-3": "Carte de citoyenneté",
-      "item-4": "D'autres documents, comme un certificat de naturalisation"
+      "item-1": "un certificat de naissance",
+      "item-2": "un certificate de citoyenneté",
+      "item-3": "une carte de citoyenneté ou",
+      "item-4": "d'autres documents, comme un certificat de naturalisation"
     }
   }
 }

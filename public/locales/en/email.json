@@ -33,7 +33,7 @@
   "email-confirmation-msg": {
     "request-received": "Your request has been received",
     "if-exists": "If we can find the file with the information you gave us, we'll email you the file number. If you don't receive the confirmation message in your inbox, check your junk email folder.",
-    "please-contact": "If you don't receive it, call us toll free at "
+    "please-contact": "If you don't receive it, call us toll free at <strong>{{phoneNumber}}</strong>."
   },
   "page-unauth": {
     "header": "Page Unauthorized",
@@ -42,18 +42,15 @@
   },
   "help-message": {
     "email": "Provide your full email address exactly as provided on the passport application form.",
-    "for-child": {
-      "application": "For child applications",
-      "use-exactly": ", provide the full email address for the applicant parent or legal guardian exactly as provided on the passport application."
-    }
+    "for-child-application": "<strong>For child applications,</strong> use the child's given name(s) and surname and date of birth, exactly as provided on their proof of citizenship."
   },
   "header-messages": {
-    "matches": "Make sure your information matches your proof of citizenship and supporting ID. Your proof of citizenship could be",
+    "matches": "<strong>Make sure your information matches your proof of citizenship and supporting ID.</strong> Your proof of citizenship could be one of the following:",
     "list": {
-      "item-1": "birth certificates",
-      "item-2": "citizenship certificates",
-      "item-3": "citizenship cards",
-      "item-4": "other documents, like naturalization certificates"
+      "item-1": "birth certificate",
+      "item-2": "citizenship certificate",
+      "item-3": "citizenship card or",
+      "item-4": "other documents, like a naturalization certificate"
     }
   }
 }

@@ -2,7 +2,7 @@ import { useFormik, validateYupSchema, yupToFormErrors } from 'formik'
 import * as Yup from 'yup'
 import { GetServerSideProps } from 'next'
 import { useRouter } from 'next/router'
-import { useTranslation } from 'next-i18next'
+import { Trans, useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Layout from '../components/Layout'
 import { FC, useCallback, useMemo, useRef, useState } from 'react'
@@ -123,20 +123,23 @@ const Email: FC = () => {
           <h2 className="h2">{t('email-confirmation-msg.request-received')}</h2>
           <p>{t('email-confirmation-msg.if-exists')}</p>
           <p>
-            {t('email-confirmation-msg.please-contact')}{' '}
-            <b>{t('common:phone-number')}</b>.
+            <Trans
+              i18nKey="email-confirmation-msg.please-contact"
+              ns="email"
+              tOptions={{ phoneNumber: t('common:phone-number') }}
+            />
           </p>
-          <div>
-            <h2 className="h2">{t('common:feedback-link-header')}</h2>
+          <h2 className="h2">{t('common:feedback-link-header')}</h2>
+          <p>
             <ExternalLink href={t('common:feedback-link-url')}>
               {t('common:feedback-link')}
             </ExternalLink>
-          </div>
+          </p>
         </div>
       ) : (
         <form onSubmit={handleFormikSubmit} id="form-email-esrf">
           <p>
-            <strong>{t('header-messages.matches')}</strong>
+            <Trans i18nKey="header-messages.matches" ns="email" />
           </p>
           <ul className="list-disc space-y-2 pl-10 mb-5">
             <li>{t('header-messages.list.item-1')}</li>
@@ -167,8 +170,10 @@ const Email: FC = () => {
               <>
                 <p>{t('help-message.email')} </p>
                 <p>
-                  <b>{t('help-message.for-child.application')}</b>
-                  {t('help-message.for-child.use-exactly')}
+                  <Trans
+                    i18nKey="help-message.for-child-application"
+                    ns="email"
+                  />
                 </p>
               </>
             }
