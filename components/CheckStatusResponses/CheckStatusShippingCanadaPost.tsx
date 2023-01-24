@@ -13,7 +13,7 @@ export const CheckStatusShippingCanadaPost: FC<
 
   return (
     <>
-      <h2 data-testid="shipped-canada-post" className="h2 text-blue-normal">
+      <h2 data-testid="shipped-canada-post" className="h2">
         {t('status-check-passport-printed-and-mailed')}
       </h2>
       <p>
@@ -31,9 +31,7 @@ export const CheckStatusShippingCanadaPost: FC<
           </>
         )}
       </p>
-      <p className="mt-6 text-blue-light">
-        {t('shipped-canada-post.supporting-documents')}
-      </p>
+      <p className="mt-6">{t('shipped-canada-post.supporting-documents')}</p>
       <p>
         <Trans
           i18nKey="status-check-call"

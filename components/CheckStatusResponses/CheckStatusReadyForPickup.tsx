@@ -5,7 +5,7 @@ export const CheckStatusReadyForPickup: FC<{}> = () => {
   const { t } = useTranslation(['status'])
   return (
     <>
-      <h2 data-testid="ready-for-pickup" className="h2 text-blue-normal">
+      <h2 data-testid="ready-for-pickup" className="h2">
         {t('ready-for-pickup.has-been-printed')}
       </h2>
       <ul className="list-disc space-y-2 pl-10 mb-5">
