@@ -14,6 +14,7 @@
     "error": {
       "required": "Le numéro de dossier est obligatoire."
     },
+    "help": "Si vous ne pouvez pas trouver votre numéro de dossier, <Link>vous pouvez l'en demander</Link>.",
     "label": "Numéro de dossier"
   },
   "given-name": {
@@ -144,27 +145,13 @@
   },
   "status-check-call": "Appelez-nous sans frais au <strong>{{phoneNumber}}</strong>, si vous ne recevez pas vos documents dans les 4 semaines suivant la réception du passeport.",
   "header-messages": {
-    "matches": "Assurez-vous que vos informations correspondent à votre preuve de citoyenneté et à votre pièce d'identité. Votre preuve de citoyenneté peut être",
+    "matches": "<strong>Assurez-vous que vos informations correspondent à votre preuve de citoyenneté et à votre pièce d'identité.</strong> Votre preuve de citoyenneté pourrait être l'une des suivantes\u00a0:",
     "list": {
-      "item-1": "Certificat de naissance",
-      "item-2": "Certificat de citoyenneté",
-      "item-3": "Carte de citoyenneté",
-      "item-4": "D'autres documents, comme un certificat de naturalisation"
+      "item-1": "un certificat de naissance",
+      "item-2": "un certificat de citoyenneté",
+      "item-3": "une carte de citoyenneté <b>ou</b>",
+      "item-4": "d'autres documents, comme un certificat de naturalisation"
     },
-    "for-child": {
-      "application": "Pour la demande d'un enfant",
-      "use-exactly": ", utilisez le(s) prénom(s), nom de famille et date de naissance de l'enfant, exactement tels qu'ils figurent sur sa preuve de citoyenneté."
-    }
-  },
-  "collapse-file-number-title": "Vous ne trouvez pas votre numéro de dossier?",
-  "receipt-image-1": {
-    "title": "Exemple de reçu 1\u00a0:",
-    "description-alt": "Numéro de dossier (encerclé en rouge sur l'image) situé au centre d'un «\u00a0reçu officiel\u00a0» sous la date et l'heure",
-    "src": "/Receipt1_FR.png"
-  },
-  "receipt-image-2": {
-    "title": "Exemple de reçu 2\u00a0:",
-    "description-alt": "Numéro de dossier (encerclé en rouge sur l'image) situé près du haut d'un «\u00a0reçu officiel et bordereau de cueillette\u00a0» sous le nom du requérant.",
-    "src": "/Receipt2_FR.png"
+    "for-child-application": "<strong>Pour les demandes de passeport pour enfants,</strong> utilisez le(s) prénom(s), nom de famille et date de naissance de l'enfant, exactement tels qu'ils figurent sur sa preuve de citoyenneté."
   }
 }

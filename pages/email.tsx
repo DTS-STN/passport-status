@@ -144,9 +144,20 @@ const Email: FC = () => {
           <ul className="list-disc space-y-2 pl-10 mb-5">
             <li>{t('header-messages.list.item-1')}</li>
             <li>{t('header-messages.list.item-2')}</li>
-            <li>{t('header-messages.list.item-3')}</li>
+            <li>
+              <Trans i18nKey="header-messages.list.item-3" ns="email" />
+            </li>
             <li>{t('header-messages.list.item-4')}</li>
           </ul>
+          <div className="p-5 mb-5 border border-gray-300 bg-gray-100 rounded">
+            <p className="m-0">
+              <Trans
+                i18nKey="header-messages.for-child-application"
+                ns="email"
+              />
+            </p>
+          </div>
+
           {errorSummaryItems.length > 0 && (
             <ErrorSummary
               id="error-summary-email-esrf"
@@ -156,6 +167,7 @@ const Email: FC = () => {
               errors={errorSummaryItems}
             />
           )}
+
           <InputField
             id="email"
             name="email"
