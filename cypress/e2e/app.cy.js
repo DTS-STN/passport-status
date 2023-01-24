@@ -19,6 +19,10 @@ describe('app page loads', () => {
     cy.location('pathname').should('equal', "/")
   })
 
+  it('should have correct title', () => {
+    cy.title().should("eq", "Passport application status checker | Outil de vérification de l'état de la demande de passeport - Canada.ca");
+  })
+
   it('has no detectable a11y violations on load', () => {
     cy.injectAxe();
     cy.wait(500);

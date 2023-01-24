@@ -1,45 +1,41 @@
 {
-  "header-purpose": "Vérifiez l'état de votre demande de passeport",
-  "header-avoid-waiting": "Évitez d'attendre au téléphone et demandez l'état de votre demande en ligne",
+  "header": "Outil de vérification de l'état de la demande de passeport",
+  "header-avoid-waiting": "Évitez d'attendre au téléphone et obtenez l'état de votre demande en ligne",
   "header-who-can-check": "Qui peut vérifier l'état de sa demande en ligne",
   "header-privacy": "Avis de confidentialité",
-  "page-title": "Attentes et confidentialité",
   "can-check": {
-    "description": "Vous pouvez obtenir l'état de votre demande de passeport en ligne si vous avez présenté votre demande de passeport soit",
+    "description": "Vous pouvez obtenir l'état de votre demande de passeport en ligne si vous avez présenté votre demande de passeport soit\u00a0:",
     "list": {
-      "item-1": {
-        "in-person": "En personne",
-        "by-mail": " par la poste au Canada"
-      },
+      "item-1": "En personne <b>ou</b> par la poste au Canada <b>ou</b>",
       "item-2": "Par la poste des États-Unis"
     }
   },
   "available-after": {
-    "description": "L'état de votre demande est disponible après",
+    "description": "L'état de votre demande est disponible après\u00a0:",
     "updated-status": "Nous actualisons quotidiennement l'état des demandes.",
     "list": {
-      "item-1": "5 jours si vous avez présenté votre demande en personne",
-      "item-2": "10 jours si vous avez envoyé votre demande par la poste"
+      "item-1": "5 jours ouvrables si vous avez présenté votre demande en personne <b>ou</b>",
+      "item-2": "10 jours ouvrables si vous avez envoyé votre demande par la poste"
     }
   },
   "cannot-check": {
-    "description": "Vous ne pouvez pas vérifier l'état de votre demande de passeport en ligne si vous en avez fait la demande",
+    "description": "Vous ne pouvez pas vérifier l'état de votre demande de passeport en ligne si vous en avez fait la demande\u00a0:",
     "list": {
-      "item-1": "dans un consulat ou une ambassade à l'étranger",
+      "item-1": "dans un consulat ou une ambassade à l'étranger <b>ou</b>",
       "item-2": "pour les affaires officielles du gouvernement (passeports spéciaux ou diplomatiques)"
     }
   },
   "description-privacy": {
-    "1": "Les renseignements fournis sont recueillis en vertu de l'article 5.1(1)(a)(i) de la Loi sur le ministère de l'Emploi et du Développement social et/ou de l'article 12(e) du Décret sur les passeports canadiens dans le but de vous fournir l'état de votre demande de passeport. Si vous refusez de fournir des renseignements, vous ne serez pas en mesure de consulter l'état de votre demande de passeport.",
+    "1": "Les renseignements fournis sont recueillis en vertu de l'article 5.1(1)(a)(i) de la <em>Loi sur le ministère de l'Emploi et du Développement social</em> et/ou de l'article 12(e) du <em>Décret sur les passeports canadiens</em> dans le but de vous fournir l'état de votre demande de passeport. Si vous refusez de fournir des renseignements, vous ne serez pas en mesure de consulter l'état de votre demande de passeport.",
     "2": "De plus, nous ne recueillons votre adresse courriel que si vous demandez à Emploi et Développement social Canada (EDSC)C d'envoyer votre numéro de dossier de demande de passeport par courriel. Sans votre adresse courriel, EDSC ne peut pas envoyer votre numéro de demande de passeport par voie électronique.",
     "3": "Vos renseignements personnels peuvent être partagés au sein de Service Canada et avec Immigration, Réfugiés et Citoyenneté Canada pour améliorer les services au moyen d'évaluations, de rapports et de recherches. Cela n'entraînera jamais de décision administrative à votre sujet.",
     "4": "EDSC exécute cette application de vérification d'état en utilisant les services du fournisseur tiers Microsoft Corporation, qui peuvent être assujettis à des lois étrangères. Pour plus d'information, consultez la <Link>Politique de confidentialité de Microsoft</Link>.",
     "4-link": "https://www.microsoft.com/fr-ca/trust-center/privacy",
-    "5": "Vos renseignements personnels sont administrés conformément à la Loi sur le ministère de l'Emploi et du Développement social, la Loi sur la protection des renseignements personnels et les autres lois applicables. Vous avez le droit d'accéder à vos renseignements personnels et de les protéger, tel que décrit dans le fichier de renseignements personnels - Programme de passeport (EDSC PPU 708). Les instructions pour obtenir ces informations sont décrites dans la publication gouvernementale intitulée <Link>Renseignements sur les programmes et les fonds de renseignements</Link>.",
+    "5": "Vos renseignements personnels sont administrés conformément à la <em>Loi sur le ministère de l'Emploi et du Développement social</em>, la <em>Loi sur la protection des renseignements personnels</em> et les autres lois applicables. Vous avez le droit d'accéder à vos renseignements personnels et de les protéger, tel que décrit dans le fichier de renseignements personnels - Programme de passeport (EDSC PPU 708). Les instructions pour obtenir ces informations sont décrites dans la publication gouvernementale intitulée <Link>Renseignements sur les programmes et les fonds de renseignements</Link>.",
     "5-link": "https://www.canada.ca/fr/emploi-developpement-social/ministere/transparence/aai/rapports/infosource.html",
     "6": "Vous avez le droit de déposer une plainte auprès du Commissariat à la protection de la vie privée du Canada au sujet du traitement de vos renseignements personnels par EDSC\u00a0: <Link>https://www.priv.gc.ca/fr/signaler-un-probleme</Link>.",
     "6-link": "https://www.priv.gc.ca/fr/signaler-un-probleme"
   },
-  "button-agree": "J'ai lu et j'accept",
+  "button-agree": "J'ai lu et j'accepte",
   "do-not-travel": "Vous ne devez pas finaliser vos plans de voyage avant d'avoir le passeport. Nous ne sommes pas responsables des pertes si vous ne le recevez pas à temps pour votre voyage."
 }

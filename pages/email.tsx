@@ -2,7 +2,7 @@ import { useFormik, validateYupSchema, yupToFormErrors } from 'formik'
 import * as Yup from 'yup'
 import { GetServerSideProps } from 'next'
 import { useRouter } from 'next/router'
-import { Trans, useTranslation } from 'next-i18next'
+import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Layout from '../components/Layout'
 import { FC, useCallback, useMemo, useRef, useState } from 'react'
@@ -112,7 +112,7 @@ const Email: FC = () => {
 
   return (
     <Layout>
-      <NextSeo title={t('page-title')} />
+      <NextSeo title={t('header')} />
       <IdleTimeout />
       <h1 ref={headingRef} className="h1" tabIndex={-1}>
         {t('header')}
@@ -126,16 +126,11 @@ const Email: FC = () => {
             {t('email-confirmation-msg.please-contact')}{' '}
             <b>{t('common:phone-number')}</b>.
           </p>
-          <div className="mt-10">
-            <h3 className="h3 text-blue-normal">
-              {t('common:feedback-link-header')}
-            </h3>
-            <Trans i18nKey={'common:feedback-link'}>
-              Insert feedback{' '}
-              <ExternalLink href={t('common:feedback-link-url')}>
-                Link
-              </ExternalLink>
-            </Trans>
+          <div>
+            <h2 className="h2">{t('common:feedback-link-header')}</h2>
+            <ExternalLink href={t('common:feedback-link-url')}>
+              {t('common:feedback-link')}
+            </ExternalLink>
           </div>
         </div>
       ) : (

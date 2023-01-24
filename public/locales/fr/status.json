@@ -1,5 +1,4 @@
 {
-  "page-title": "Vérifier mon statut",
   "date-of-birth": {
     "error": {
       "current": "La date de naissance du requérant doit être dans le passé.",
@@ -54,16 +53,16 @@
       "description": "Si vous voyez cela, c'est que quelque chose s'est mal passé."
     }
   },
-  "status-is": "Le dernier statut de votre demande selon nos dossiers est\u00a0:",
+  "status-is": "L'état le plus récent de votre demande selon nos dossiers est\u00a0:",
   "surname": {
     "error": {
       "required": "Le nom de famille du requérant est obligatoire."
     },
     "label": "Nom de famille du requérant"
   },
-  "unable-to-find-status": "Nous ne sommes pas en mesure de déterminer le statut de votre demande pour le moment en utilisant ce service.",
+  "unable-to-find-status": "Nous ne sommes pas en mesure de déterminer l'état de votre demande pour le moment en utilisant ce service.",
   "other-ways-to-status": "Contactez-nous",
-  "no-match-title": "D'autres façons d'obtenir votre statut\u00a0:",
+  "no-match-title": "D'autres façons d'obtenir l'état de votre demande\u00a0:",
   "cannot-provide-result": {
     "title": "Nous ne pouvons pas fournir de résultat pour le moment car:",
     "reason1": "les informations que vous avez fournies ne correspondent pas à celles qui se trouvent dans notre système;",
@@ -73,7 +72,7 @@
   "please-verify": "Veuillez vérifier les informations saisies et réessayer.",
   "please-wait": "Si vous n'avez pas attendu au moins (insérer le délai/la norme de service complet), veuillez réessayer à une date/heure ultérieure.",
   "still-unable": {
-    "if-still-unable": "Si vous ne parvenez toujours pas à récupérer votre statut, vous pouvez le faire:",
+    "if-still-unable": "Si vous ne parvenez toujours pas à récupérer l'état de votre demande, vous pouvez le faire:",
     "contact-call-center": "Contactez le centre d'appels pour les passeports (insérez le numéro de téléphone).",
     "visit-in-person": "Rendez-vous dans un Centre Service Canada en personne le plus proche de chez vous (lien vers la CSFO)"
   },

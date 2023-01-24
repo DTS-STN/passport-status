@@ -45,33 +45,58 @@ export type GetNextSEOConfig = (
 ) => DefaultSeoProps
 
 export const getDefaultConfig: GetNextSEOConfig = (appBaseUri, router) => ({
-  titleTemplate:
-    "%s \u2010 Check the status of your passport application | Vérifiez l'état de votre demande de passeport \u2010 Canada.ca",
+  titleTemplate: '%s - Canada.ca',
   defaultTitle:
-    "Check the status of your passport application | Vérifiez l'état de votre demande de passeport \u2010 Canada.ca",
+    "Passport application status checker | Outil de vérification de l'état de la demande de passeport",
   description:
-    "Check the status of your passport application. | Vérifiez l'état de votre demande de passeport.",
+    "Avoid waiting on the phone and request the status of your application online. | Évitez d'attendre au téléphone et demandez l'état de votre demande en ligne.",
   additionalMetaTags: [
     {
       name: 'author',
-      content:
-        'Immigration, Refugees and Citizenship Canada | Immigration, Réfugiés et Citoyenneté Canada',
+      content: 'Employment and Social Development Canada',
+    },
+    {
+      name: 'author',
+      keyOverride: 'author:fr',
+      lang: 'fr',
+      content: 'Emploi et Développement social Canada',
     },
     { name: 'dcterms.accessRights', content: '2' },
     {
       name: 'dcterms.creator',
-      content:
-        'Immigration, Refugees and Citizenship Canada | Immigration, Réfugiés et Citoyenneté Canada',
+      content: 'Employment and Social Development Canada',
+    },
+    {
+      name: 'dcterms.creator',
+      keyOverride: 'dcterms.creator:fr',
+      lang: 'fr',
+      content: 'Emploi et Développement social Canada',
     },
     { name: 'dcterms.language', content: 'eng' },
+    {
+      name: 'dcterms.language',
+      keyOverride: 'dcterms.language:fr',
+      lang: 'fr',
+      content: 'fra',
+    },
     { name: 'dcterms.spatial', content: 'Canada' },
+    {
+      name: 'dcterms.subject',
+      content: 'Travel and Tourism',
+    },
+    {
+      name: 'dcterms.subject',
+      keyOverride: 'dcterms.subject:fr',
+      lang: 'fr',
+      content: 'Voyage et tourisme',
+    },
   ],
   languageAlternates: getLanguageAlternates(appBaseUri, router),
   openGraph: {
     images: getOpenGraphImages(appBaseUri),
     locale: 'en_CA',
     siteName:
-      "Check the status of your passport application | Vérifiez l'état de votre demande de passeport \u2010 Canada.ca",
+      "Passport application status checker | Outil de vérification de l'état de la demande de passeport - Canada.ca",
     type: 'website',
   },
   twitter: {
@@ -81,29 +106,32 @@ export const getDefaultConfig: GetNextSEOConfig = (appBaseUri, router) => ({
 })
 
 export const getEnglishConfig: GetNextSEOConfig = (appBaseUri, router) => ({
-  titleTemplate:
-    '%s \u2010 Check the status of your passport application \u2010 Canada.ca',
-  defaultTitle:
-    'Check the status of your passport application \u2010 Canada.ca',
-  description: 'Check the status of your passport application.',
+  titleTemplate: '%s - Passport application status checker - Canada.ca',
+  defaultTitle: 'Passport application status checker - Canada.ca',
+  description:
+    'Avoid waiting on the phone and request the status of your application online.',
   additionalMetaTags: [
     {
       name: 'author',
-      content: 'Immigration, Refugees and Citizenship Canada',
+      content: 'Employment and Social Development Canada',
     },
     { name: 'dcterms.accessRights', content: '2' },
     {
       name: 'dcterms.creator',
-      content: 'Immigration, Refugees and Citizenship Canada',
+      content: 'Employment and Social Development Canada',
     },
     { name: 'dcterms.language', content: 'eng' },
     { name: 'dcterms.spatial', content: 'Canada' },
+    {
+      name: 'dcterms.subject',
+      content: 'Travel and Tourism',
+    },
   ],
   languageAlternates: getLanguageAlternates(appBaseUri, router),
   openGraph: {
     images: getOpenGraphImages(appBaseUri),
     locale: 'en_CA',
-    siteName: 'Check the status of your passport application \u2010 Canada.ca',
+    siteName: 'Passport application status checker - Canada.ca',
     type: 'website',
   },
   twitter: {
@@ -114,28 +142,34 @@ export const getEnglishConfig: GetNextSEOConfig = (appBaseUri, router) => ({
 
 export const getFrenchConfig: GetNextSEOConfig = (appBaseUri, router) => ({
   titleTemplate:
-    "%s \u2010 Vérifiez l'état de votre demande de passeport \u2010 Canada.ca",
+    "%s - Outil de vérification de l'état de la demande de passeport - Canada.ca",
   defaultTitle:
-    "Vérifiez l'état de votre demande de passeport \u2010 Canada.ca",
-  description: "Vérifiez l'état de votre demande de passeport.",
+    "Outil de vérification de l'état de la demande de passeport - Canada.ca",
+  description:
+    "Évitez d'attendre au téléphone et demandez l'état de votre demande en ligne.",
   additionalMetaTags: [
     {
       name: 'author',
-      content: 'Immigration, Réfugiés et Citoyenneté Canada',
+      content: 'Emploi et Développement social Canada',
     },
     { name: 'dcterms.accessRights', content: '2' },
     {
       name: 'dcterms.creator',
-      content: 'Immigration, Réfugiés et Citoyenneté Canada',
+      content: 'Emploi et Développement social Canada',
     },
     { name: 'dcterms.language', content: 'fra' },
     { name: 'dcterms.spatial', content: 'Canada' },
+    {
+      name: 'dcterms.subject',
+      content: 'Voyage et tourisme',
+    },
   ],
   languageAlternates: getLanguageAlternates(appBaseUri, router),
   openGraph: {
     images: getOpenGraphImages(appBaseUri),
     locale: 'fr_CA',
-    siteName: "Vérifiez l'état de votre demande de passeport \u2010 Canada.ca",
+    siteName:
+      "Outil de vérification de l'état de la demande de passeport - Canada.ca",
     type: 'website',
   },
   twitter: {
