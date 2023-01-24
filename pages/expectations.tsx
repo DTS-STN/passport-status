@@ -47,9 +47,9 @@ const Expectations: FC = () => {
         </li>
         <li>{t('cannot-check.list.item-2')}</li>
       </ul>
-      <blockquote className="py-3 px-6 mb-3 border-l-6 border-gray-200">
+      <div className="p-5 mb-5 border border-gray-300 bg-gray-100 rounded">
         <p className="m-0">{t('do-not-travel')}</p>
-      </blockquote>
+      </div>
       <h2 className="h2">{t('header-privacy')}</h2>
       <p>
         <Trans i18nKey={'description-privacy.1'} ns="expectations" />

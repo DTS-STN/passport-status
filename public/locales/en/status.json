@@ -14,6 +14,7 @@
     "error": {
       "required": "The file number is required."
     },
+    "help": "If you can't find your file number, you can <Link>request to receive it</Link>.",
     "label": "File number"
   },
   "given-name": {
@@ -144,27 +145,13 @@
   },
   "status-check-call": "Call us toll free at <strong>{{phoneNumber}}</strong> if you don't receive your documents within 4 weeks of receiving your passport.",
   "header-messages": {
-    "matches": "Make sure your information matches your proof of citizenship and supporting ID. Your proof of citizenship could be",
+    "matches": "<strong>Make sure your information matches your proof of citizenship and supporting ID.</strong> Your proof of citizenship could be one of the following:",
     "list": {
-      "item-1": "birth certificates",
-      "item-2": "citizenship certificates",
-      "item-3": "citizenship cards",
-      "item-4": "other documents, like naturalization certificates"
+      "item-1": "birth certificate",
+      "item-2": "citizenship certificate",
+      "item-3": "citizenship card <b>or</b>",
+      "item-4": "other documents, like a naturalization certificate"
     },
-    "for-child": {
-      "application": "For child applications",
-      "use-exactly": ", use the child's given name(s), surname and date of birth, exactly as provided on their proof of citizenship."
-    }
-  },
-  "collapse-file-number-title": "Can't find your File Number?",
-  "receipt-image-1": {
-    "title": "Example Receipt 1:",
-    "description-alt": "File Number (circled in red on image) located on centre of an \"Official Receipt\" below date/time",
-    "src": "/Receipt1_EN.png"
-  },
-  "receipt-image-2": {
-    "title": "Example Receipt 2:",
-    "description-alt": "File Number (circled in red on image) located close to the top of an \"Official Receipt and Pick-up Slip\" below the applicant's name",
-    "src": "/Receipt2_EN.png"
+    "for-child-application": "<strong>For child applications,</strong> use the child's given name(s) and surname and date of birth, exactly as provided on their proof of citizenship."
   }
 }
