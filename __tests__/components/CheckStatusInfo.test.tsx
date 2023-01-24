@@ -14,7 +14,6 @@ describe('StatusInfo', () => {
       id="status-info"
       onGoBackClick={handleOnGoBackClick}
       goBackText="back"
-      checkAgainText="check"
       checkStatusResponse={null}
     />
   )
@@ -22,7 +21,6 @@ describe('StatusInfo', () => {
   it('renders with no result', () => {
     render(sut)
     //back will not be in document as it is mocked
-    expect(screen.getByText('check')).toBeInTheDocument()
     expect(screen.getByTestId('no-record')).toBeInTheDocument()
   })
 

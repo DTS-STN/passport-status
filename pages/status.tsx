@@ -174,15 +174,14 @@ const Status: FC = () => {
               checkStatusResponse === null ? t('previous') : t('reset')
             }
             goBackStyle="primary"
-            checkAgainText={t('check-again')}
             checkStatusResponse={checkStatusResponse}
           />
-          <div>
-            <h2 className="h2">{t('common:feedback-link-header')}</h2>
+          <h2 className="h2">{t('common:feedback-link-header')}</h2>
+          <p>
             <ExternalLink href={t('common:feedback-link-url')}>
               {t('common:feedback-link')}
             </ExternalLink>
-          </div>
+          </p>
         </>
       ) : (
         <form onSubmit={handleFormikSubmit} id="form-get-status">

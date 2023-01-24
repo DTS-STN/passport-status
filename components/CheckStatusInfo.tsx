@@ -14,12 +14,10 @@ export interface CheckStatusInfoProps {
   onGoBackClick: MouseEventHandler<HTMLButtonElement>
   goBackText: string
   goBackStyle?: ActionButtonStyle
-  checkAgainText: string
   checkStatusResponse?: CheckStatusApiResponse | null
 }
 
 export const CheckStatusInfo: FC<CheckStatusInfoProps> = ({
-  checkAgainText,
   goBackText,
   id,
   onGoBackClick,
@@ -59,7 +57,6 @@ export const CheckStatusInfo: FC<CheckStatusInfoProps> = ({
   return (
     <div id={id}>
       {statusComponent}
-      <p className="my-6">{checkAgainText}</p>
       <ActionButton
         onClick={onGoBackClick}
         text={goBackText}
