@@ -105,14 +105,15 @@
     "not-available": "Le passeport ne sera pas disponible avant la date de retrait imprimée sur votre reçu."
   },
   "shipped-canada-post": {
-    "mailing": "Nous vous l'envoyons par Postes Canada. ",
-    "supporting-documents": "Nous pourrions renvoyer vos documents justificatifs séparément"
+    "header": "Le passeport a été imprimé et envoyé par la poste",
+    "mailing": "Nous vous l'envoyons par Postes Canada.",
+    "supporting-documents": "Nous pourrions renvoyer vos documents justificatifs séparément."
   },
   "shipped-fedex": {
-    "mailing": "Nous vous l'envoyons par FedEx. ",
+    "header": "Le passeport a été imprimé et envoyé aux États-Unis",
+    "mailing": "Nous vous l'envoyons par FedEx.",
     "supporting-documents": "Vous recevrez le passeport et les documents justificatifs dans la même enveloppe."
   },
-  "status-check-passport-printed-and-mailed": "Le passeport a été imprimé",
   "not-acceptable": {
     "cannot-process": "Nous avons examiné votre demande et ne pouvons pas la traiter davantage",
     "explanation": "Nous vous envoyons une lettre expliquant pourquoi et incluant vos documents justificatifs. Vous devriez les recevoir dans un délai de 4 semaines."
@@ -136,9 +137,8 @@
     }
   },
   "status-check-tracking": {
-    "number": "Votre numéro de repérage est ",
+    "number": "Votre numéro de repérage est <strong>{{trackingNumber}}</strong>.<br /><Link>Vous pouvez faire le suivi de l'envoi en ligne</Link>",
     "link": {
-      "text": "Vous pouvez faire le suivi de l'envoi en ligne",
       "canada-post": "https://www.canadapost-postescanada.ca/track-reperage/fr?referenceNumber={{trackingNumber}}#/details/{{trackingNumber}}",
       "fedex": "https://www.fedex.com/fedextrack/?action=track&cntry_code=ca&locale=fr_ca&trackingnumber={{trackingNumber}}"
     }

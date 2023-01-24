@@ -105,14 +105,15 @@
     "not-available": "The passport will not be available before the pickup date printed on your receipt."
   },
   "shipped-canada-post": {
-    "mailing": "We're mailing it to you by Canada Post. ",
+    "header": "The passport has been printed and mailed",
+    "mailing": "We're mailing it to you by Canada Post.",
     "supporting-documents": "We may send your supporting documents back separately."
   },
   "shipped-fedex": {
-    "mailing": "We're sending it to you by Fedex. ",
+    "header": "The passport has been printed and sent to the United States",
+    "mailing": "We're sending it to you by FedEx.",
     "supporting-documents": "You'll receive the passport and supporting documents in the same envelope."
   },
-  "status-check-passport-printed-and-mailed": "The passport has been printed and mailed",
   "not-acceptable": {
     "cannot-process": "We have reviewed your application and can't process it further",
     "explanation": "We're sending you a letter explaining why, and including your supporting documents. You should get these within 4 weeks."
@@ -136,9 +137,8 @@
     }
   },
   "status-check-tracking": {
-    "number": "Your tracking number is ",
+    "number": "Your tracking number is <strong>{{trackingNumber}}</strong>.<br /><Link>You can track the package online</Link>",
     "link": {
-      "text": "You can track the package online.",
       "canada-post": "https://www.canadapost-postescanada.ca/track-reperage/en?referenceNumber={{trackingNumber}}#/details/{{trackingNumber}}",
       "fedex": "https://www.fedex.com/fedextrack/?action=track&cntry_code=ca&locale=en_ca&trackingnumber={{trackingNumber}}"
     }
