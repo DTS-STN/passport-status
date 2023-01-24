@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { useTranslation } from 'next-i18next'
+import { Trans, useTranslation } from 'next-i18next'
 import ExternalLink from '../ExternalLink'
 
 export interface CheckStatusShippingFedexProps {
@@ -12,19 +12,28 @@ export const CheckStatusShippingFedex: FC<CheckStatusShippingFedexProps> = ({
   const { t } = useTranslation(['status', 'common'])
   return (
     <>
-      <h2 data-testid="shipped-fedex" className="h2 text-blue-normal">
-        {t('status-check-passport-printed-and-mailed')}
+      <h2 data-testid="shipped-fedex" className="h2">
+        {t('shipped-fedex.header')}
       </h2>
       <p>
         {t('shipped-fedex.mailing')}
         {trackingNumber && (
           <>
-            {t('status-check-tracking.number')} <b>{trackingNumber}</b>.<br />
-            <ExternalLink
-              href={t('status-check-tracking.link.fedex', { trackingNumber })}
-            >
-              {t('status-check-tracking.link.text')}
-            </ExternalLink>
+            {' '}
+            <Trans
+              i18nKey="status-check-tracking.number"
+              ns="status"
+              tOptions={{ trackingNumber }}
+              components={{
+                Link: (
+                  <ExternalLink
+                    href={t('status-check-tracking.link.fedex', {
+                      trackingNumber,
+                    })}
+                  />
+                ),
+              }}
+            />
           </>
         )}
       </p>

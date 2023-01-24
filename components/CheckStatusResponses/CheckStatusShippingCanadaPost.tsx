@@ -14,20 +14,27 @@ export const CheckStatusShippingCanadaPost: FC<
   return (
     <>
       <h2 data-testid="shipped-canada-post" className="h2">
-        {t('status-check-passport-printed-and-mailed')}
+        {t('shipped-canada-post.header')}
       </h2>
       <p>
         {t('shipped-canada-post.mailing')}
         {trackingNumber && (
           <>
-            {t('status-check-tracking.number')} <b>{trackingNumber}</b>.<br />
-            <ExternalLink
-              href={t('status-check-tracking.link.canada-post', {
-                trackingNumber,
-              })}
-            >
-              {t('status-check-tracking.link.text')}
-            </ExternalLink>
+            {' '}
+            <Trans
+              i18nKey="status-check-tracking.number"
+              ns="status"
+              tOptions={{ trackingNumber }}
+              components={{
+                Link: (
+                  <ExternalLink
+                    href={t('status-check-tracking.link.canada-post', {
+                      trackingNumber,
+                    })}
+                  />
+                ),
+              }}
+            />
           </>
         )}
       </p>
