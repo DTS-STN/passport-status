@@ -7,7 +7,7 @@
     },
     "label": "Date de naissance du requérant"
   },
-  "check-again": "Pour vérifier l'état d'une autre demande, cliquez sur le bouton ci-dessous\u00a0:",
+  "check-again": "Vérifier l'état d'une autre demande",
   "check-status": "Vérifiez l'état",
   "description": "Remplissez les champs ci-dessous pour vérifier l'état de votre demande de passeport. Assurez-vous que vos informations correspondent à votre formulaire de demande de passeport.",
   "esrf": {
@@ -79,13 +79,15 @@
   "no-record": {
     "cannot-give-status": {
       "description": "Nous ne pouvons pas vous donner l'état de votre demande pour le moment",
-      "because": "Ceci est dû au fait que",
+      "because": "Ceci est dû au fait que\u00a0:",
       "list": {
-        "item-1": "les renseignements que vous nous avez fournis ne correspondent pas à celles de notre système ",
+        "item-1": "les renseignements que vous nous avez fournis ne correspondent pas à ceux de notre système ",
         "item-2": "nous avons reçu votre demande, mais n'avons pas encore commencé à la traiter"
       }
     },
-    "double-check": "Revérifiez vos renseignements et essayez à nouveau. Si votre demande est toujours introuvable, vous pouvez réessayer demain. Nous mettons à jour nos dossiers chaque jour.",
+    "contact-us": "Si vous ne pouvez pas obtenir l'état de votre demande à l'aide de cet outil, ou si votre demande prend plus de temps que la <Link>norme de service</Link>, veuillez appelez-nous sans frais au <b>1-800-567-6868</b>.",
+    "service-standard-link": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens/delais-traitement.html",
+    "double-check": "Revérifiez vos renseignements et essayez à nouveau. Si nous ne trouvons pas vos renseignements, vous pouvez réessayer demain. Nous mettons à jour nos dossiers chaque jour.",
     "if": "si"
   },
   "being-processed": {
@@ -126,9 +128,9 @@
     }
   },
   "status-check-urgent": {
-    "description": "Si vous avez besoin d'un passeport dans un délai de 10 jours ouvrables, apprenez ",
+    "description": "Si vous avez besoin du passeport dans un délai de 10 jours ouvrables, apprenez ",
     "express-services": {
-      "text": "comment obtenir des services de passeport urgents ou express.",
+      "text": "comment obtenir des services urgents ou express pour votre application existante.",
       "href": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens/passeport-urgent-express.html"
     }
   },

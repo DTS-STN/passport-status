@@ -9,7 +9,7 @@ import {
 } from 'react'
 import { GetServerSideProps } from 'next'
 import { useRouter } from 'next/router'
-import { Trans, useTranslation } from 'next-i18next'
+import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useFormik, validateYupSchema, yupToFormErrors } from 'formik'
 import * as Yup from 'yup'
@@ -174,20 +174,14 @@ const Status: FC = () => {
               checkStatusResponse === null ? t('previous') : t('reset')
             }
             goBackStyle="primary"
-            checkAgainText={t('check-again')}
             checkStatusResponse={checkStatusResponse}
           />
-          <div className="mt-10">
-            <h3 className="h3 text-blue-normal">
-              {t('common:feedback-link-header')}
-            </h3>
-            <Trans i18nKey={'common:feedback-link'}>
-              Insert feedback{' '}
-              <ExternalLink href={t('common:feedback-link-url')}>
-                Link
-              </ExternalLink>
-            </Trans>
-          </div>
+          <h2 className="h2">{t('common:feedback-link-header')}</h2>
+          <p>
+            <ExternalLink href={t('common:feedback-link-url')}>
+              {t('common:feedback-link')}
+            </ExternalLink>
+          </p>
         </>
       ) : (
         <form onSubmit={handleFormikSubmit} id="form-get-status">
