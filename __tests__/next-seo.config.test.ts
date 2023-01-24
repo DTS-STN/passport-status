@@ -19,7 +19,7 @@ describe('getNextSEOConfig', () => {
 
     // assert
     expect(act.description).toBe(
-      "Check the status of your passport application. | Vérifiez l'état de votre demande de passeport."
+      "Avoid waiting on the phone and request the status of your application online. | Évitez d'attendre au téléphone et demandez l'état de votre demande en ligne."
     )
   })
 
@@ -33,7 +33,7 @@ describe('getNextSEOConfig', () => {
 
     // assert
     expect(act.description).toBe(
-      'Check the status of your passport application.'
+      'Avoid waiting on the phone and request the status of your application online.'
     )
   })
 
@@ -47,7 +47,7 @@ describe('getNextSEOConfig', () => {
 
     // assert
     expect(act.description).toBe(
-      "Vérifiez l'état de votre demande de passeport."
+      "Évitez d'attendre au téléphone et demandez l'état de votre demande en ligne."
     )
   })
 })

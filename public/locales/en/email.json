@@ -1,5 +1,4 @@
 {
-  "page-title": "Get my passport application file number",
   "header": "Get my passport application file number",
   "description": "Fill in the fields below to get your file number. Make sure your information matches your passport application form. We'll then email the file number to the email address on file.",
   "email": {
@@ -32,9 +31,9 @@
   "email-esrf": "Email my file number to me",
   "email-sent-confirmation": "An email has been sent if there was a match in our records with the file number (ESRF).",
   "email-confirmation-msg": {
-    "request-received": "Your request to get the file number has been received",
-    "if-exists": "If we can find the file with the information you gave us, we'll email you the file number within 30 minutes.",
-    "please-contact": "If you don't receive it, call the passport call centre at "
+    "request-received": "Your request has been received",
+    "if-exists": "If we can find the file with the information you gave us, we'll email you the file number. If you don't receive the confirmation message in your inbox, check your junk email folder.",
+    "please-contact": "If you don't receive it, call us toll free at "
   },
   "page-unauth": {
     "header": "Page Unauthorized",
