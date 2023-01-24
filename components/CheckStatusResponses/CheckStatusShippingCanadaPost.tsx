@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { useTranslation } from 'next-i18next'
+import { Trans, useTranslation } from 'next-i18next'
 import ExternalLink from '../ExternalLink'
 
 export interface CheckStatusShippingCanadaPostProps {
@@ -13,8 +13,8 @@ export const CheckStatusShippingCanadaPost: FC<
 
   return (
     <>
-      <h2 data-testid="shipped-canada-post" className="h2 text-blue-normal">
-        {t('status-check-passport-printed')}
+      <h2 data-testid="shipped-canada-post" className="h2">
+        {t('status-check-passport-printed-and-mailed')}
       </h2>
       <p>
         {t('shipped-canada-post.mailing')}
@@ -31,12 +31,13 @@ export const CheckStatusShippingCanadaPost: FC<
           </>
         )}
       </p>
-      <p className="mt-6 text-blue-light">
-        {t('shipped-canada-post.supporting-documents')}
-      </p>
+      <p className="mt-6">{t('shipped-canada-post.supporting-documents')}</p>
       <p>
-        {t('status-check-call')} <b>{t('common:phone-number')}</b>{' '}
-        {t('shipped-canada-post.did-not-receive')}
+        <Trans
+          i18nKey="status-check-call"
+          ns="status"
+          tOptions={{ phoneNumber: t('common:phone-number') }}
+        />
       </p>
     </>
   )

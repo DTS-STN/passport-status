@@ -100,19 +100,18 @@
   },
   "ready-for-pickup": {
     "has-been-printed": "The passport has been printed",
-    "check-receipt": "Check your receipt to confirm when and where to pick up the passport.",
-    "do-not-visit": "Don't visit the pickup location before the date printed on your receipt."
+    "check-receipt": "The passport is on its way to the pickup location. Check your receipt to confirm the date and location.",
+    "not-available": "The passport will not be available before the pickup date printed on your receipt."
   },
   "shipped-canada-post": {
     "mailing": "We're mailing it to you by Canada Post. ",
-    "supporting-documents": "We may send your supporting documents back separately.",
-    "did-not-receive": ", if you don't receive your documents within 4 weeks of receiving your passport."
+    "supporting-documents": "We may send your supporting documents back separately."
   },
   "shipped-fedex": {
     "mailing": "We're sending it to you by Fedex. ",
     "supporting-documents": "You'll receive the passport and supporting documents in the same envelope."
   },
-  "status-check-passport-printed": "The passport has been printed",
+  "status-check-passport-printed-and-mailed": "The passport has been printed and mailed",
   "not-acceptable": {
     "cannot-process": "We have reviewed your application and can't process it further",
     "explanation": "We're sending you a letter explaining why, and including your supporting documents. You should get these within 4 weeks."
@@ -143,7 +142,7 @@
       "fedex": "https://www.fedex.com/fedextrack/?action=track&cntry_code=ca&locale=en_ca&trackingnumber={{trackingNumber}}"
     }
   },
-  "status-check-call": "Call us at ",
+  "status-check-call": "Call us toll free at <strong>{{phoneNumber}}</strong> if you don't receive your documents within 4 weeks of receiving your passport.",
   "header-messages": {
     "matches": "Make sure your information matches your proof of citizenship and supporting ID. Your proof of citizenship could be",
     "list": {
