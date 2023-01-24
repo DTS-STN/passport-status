@@ -10,9 +10,7 @@ export const CheckStatusFileBeingProcessed: FC<{}> = () => {
         {t('being-processed.received')}
       </h2>
       <p>
-        {t('being-processed.we-will-contact.segment-1')}{' '}
-        <b>{t('being-processed.never')}</b>{' '}
-        {t('being-processed.we-will-contact.segment-2')}
+        <Trans i18nKey={'being-processed.we-will-contact'} ns="status" />
       </p>
       <ul className="list-disc space-y-2 pl-10 mb-5">
         <li>
@@ -29,10 +27,17 @@ export const CheckStatusFileBeingProcessed: FC<{}> = () => {
           />
         </li>
         <li>
-          {t('status-check-urgent.description')}
-          <ExternalLink href={t('status-check-urgent.express-services.href')}>
-            {t('status-check-urgent.express-services.text')}
-          </ExternalLink>
+          <Trans
+            i18nKey={'status-check-urgent.description'}
+            ns="status"
+            components={{
+              Link: (
+                <ExternalLink
+                  href={t('status-check-urgent.express-services-href')}
+                />
+              ),
+            }}
+          />
         </li>
       </ul>
     </>

@@ -93,11 +93,7 @@
   },
   "being-processed": {
     "received": "Nous avons reçu votre demande et nous sommes en train de la traiter",
-    "we-will-contact": {
-      "segment-1": "Si nous avons besoin de plus amples renseignements, nous communiquerons avec vous par courriel ou par téléphone. Nous n'utiliserons",
-      "segment-2": " de SMS ou de messages textes ou de programmes de messagerie instantanée pour vous contacter au sujet de votre demande de passeport."
-    },
-    "never": "jamais"
+    "we-will-contact": "Si nous avons besoin de plus amples renseignements, nous communiquerons avec vous par courriel ou par téléphone. Nous n'utiliserons <strong>jamais</strong> de SMS ou de messages textes ou de programmes de messagerie instantanée pour vous contacter au sujet de votre demande de passeport."
   },
   "ready-for-pickup": {
     "has-been-printed": "Le passeport a été imprimé",
@@ -127,11 +123,8 @@
     "service-standard-href": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens/delais-traitement.html"
   },
   "status-check-urgent": {
-    "description": "Si vous avez besoin du passeport dans un délai de 10 jours ouvrables, apprenez ",
-    "express-services": {
-      "text": "comment obtenir des services urgents ou express pour votre application existante.",
-      "href": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens/passeport-urgent-express.html"
-    }
+    "description": "Si vous avez besoin du passeport dans un délai de 10 jours ouvrables, apprenez <Link>comment obtenir des services urgents ou express pour votre application existante</Link>",
+    "express-services-href": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens/passeport-urgent-express.html"
   },
   "status-check-tracking": {
     "number": "Votre numéro de repérage est <strong>{{trackingNumber}}</strong>.<br /><Link>Vous pouvez faire le suivi de l'envoi en ligne</Link>",
