@@ -7,7 +7,7 @@
     },
     "label": "Applicant date of birth"
   },
-  "check-again": "To check the status of another application, click the button below:",
+  "check-again": "Check the status of another application",
   "check-status": "Check Status",
   "description": "Fill in the fields below to check the status of your passport application. Make sure your information matches your passport application form.",
   "esrf": {
@@ -79,13 +79,15 @@
   "no-record": {
     "cannot-give-status": {
       "description": "We can't give you your application status right now",
-      "because": "This is because",
+      "because": "This is because:",
       "list": {
-        "item-1": "the information you gave us doesn't match the information in our system,",
+        "item-1": "the information you gave us doesn't match the information in our system",
         "item-2": "we received your application, but haven't started processing it yet"
       }
     },
-    "double-check": "Double-check your information and try again. If your application still can't be found, you can try again tomorrow. We update our records daily.",
+    "contact-us": "If you can’t get your application status using this tool, or if your application is taking longer than the <Link>service standard</Link>, please contact us by calling us toll free at <b>1-800-567-6868</b>.",
+    "service-standard-link": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/processing-times.html",
+    "double-check": "Double-check your information and try again. If we still can't find your data, you can try again tomorrow. We update our records daily.",
     "if": "if"
   },
   "being-processed": {
