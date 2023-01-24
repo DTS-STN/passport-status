@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { useTranslation } from 'next-i18next'
+import { Trans, useTranslation } from 'next-i18next'
 import ExternalLink from '../ExternalLink'
 
 export const CheckStatusFileBeingProcessed: FC<{}> = () => {
@@ -16,11 +16,17 @@ export const CheckStatusFileBeingProcessed: FC<{}> = () => {
       </p>
       <ul className="list-disc space-y-2 pl-10 mb-5">
         <li>
-          {t('status-check-call')} <b>{t('common:phone-number')}</b>
-          {t('status-check-contact.description-being-processed')}
-          <ExternalLink href={t('status-check-contact.service-standard.href')}>
-            {t('status-check-contact.service-standard.text')}
-          </ExternalLink>
+          <Trans
+            i18nKey={'status-check-contact.call-us'}
+            ns="status"
+            components={{
+              Link: (
+                <ExternalLink
+                  href={t('status-check-contact.service-standard-href')}
+                />
+              ),
+            }}
+          />
         </li>
         <li>
           {t('status-check-urgent.description')}

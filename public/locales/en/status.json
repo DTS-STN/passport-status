@@ -123,16 +123,13 @@
       "item-1": "after several attempts you still can't get your application status, ",
       "item-2": "your application is taking longer than the "
     },
-    "description-being-processed": ", if your application is taking longer than the ",
-    "service-standard": {
-      "text": "service standard",
-      "href": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/check-passport-travel-document-application.html"
-    }
+    "call-us": "Call us toll free at <b>1-800-567-6868</b> if your application is taking longer than the <Link>service standard</Link>",
+    "service-standard-href": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/processing-times.html"
   },
   "status-check-urgent": {
-    "description": "If you need a passport within 10 business days, learn ",
+    "description": "If you need the passport within 10 business days, learn ",
     "express-services": {
-      "text": "how to get urgent or express passport services",
+      "text": "how to get urgent or express service for your existing application",
       "href": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/urgent-emergency-passport.html"
     }
   },

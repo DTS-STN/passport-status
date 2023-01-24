@@ -123,11 +123,8 @@
       "item-1": "après plusieurs tentatives, vous ne pouvez toujours pas à obtenir l'état de votre demande, ",
       "item-2": "votre demande prend plus de temps que la "
     },
-    "description-being-processed": ", si votre demande prend plus de temps que la ",
-    "service-standard": {
-      "text": "norme de service",
-      "href": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens/verifier-demande-passeports-documents-voyage.html"
-    }
+    "call-us": "Appelez-nous sans frais au <b>1-800-567-6868</b>, si votre demande prend plus de temps que la <Link>norme de service</Link>",
+    "service-standard-href": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens/delais-traitement.html"
   },
   "status-check-urgent": {
     "description": "Si vous avez besoin du passeport dans un délai de 10 jours ouvrables, apprenez ",
