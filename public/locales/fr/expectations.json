@@ -6,8 +6,8 @@
   "can-check": {
     "description": "Vous pouvez obtenir l'état de votre demande de passeport en ligne si vous avez présenté votre demande de passeport soit\u00a0:",
     "list": {
-      "item-1": "En personne <b>ou</b> par la poste au Canada <b>ou</b>",
-      "item-2": "Par la poste des États-Unis"
+      "item-1": "en personne <b>ou</b> par la poste au Canada <b>ou</b>",
+      "item-2": "par la poste des États-Unis"
     }
   },
   "available-after": {
