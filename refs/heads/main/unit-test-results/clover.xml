@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1674665859272" clover="3.2.0">
-  <project timestamp="1674665859272" name="All files">
-    <metrics statements="426" coveredstatements="284" conditionals="256" coveredconditionals="119" methods="122" coveredmethods="70" elements="804" coveredelements="473" complexity="0" loc="426" ncloc="426" packages="7" files="45" classes="45"/>
+<coverage generated="1674669870933" clover="3.2.0">
+  <project timestamp="1674669870933" name="All files">
+    <metrics statements="428" coveredstatements="285" conditionals="256" coveredconditionals="119" methods="122" coveredmethods="70" elements="806" coveredelements="474" complexity="0" loc="428" ncloc="428" packages="7" files="45" classes="45"/>
     <package name="components">
       <metrics statements="204" coveredstatements="164" conditionals="118" coveredconditionals="73" methods="59" coveredmethods="45"/>
       <file name="ActionButton.tsx" path="/home/runner/work/passport-status/passport-status/components/ActionButton.tsx">
@@ -505,9 +505,9 @@
       </file>
     </package>
     <package name="pages.api">
-      <metrics statements="68" coveredstatements="34" conditionals="50" coveredconditionals="20" methods="9" coveredmethods="6"/>
+      <metrics statements="70" coveredstatements="35" conditionals="50" coveredconditionals="20" methods="9" coveredmethods="6"/>
       <file name="check-status.ts" path="/home/runner/work/passport-status/passport-status/pages/api/check-status.ts">
-        <metrics statements="42" coveredstatements="20" conditionals="32" coveredconditionals="15" methods="5" coveredmethods="4"/>
+        <metrics statements="44" coveredstatements="21" conditionals="32" coveredconditionals="15" methods="5" coveredmethods="4"/>
         <line num="12" count="1" type="stmt"/>
         <line num="18" count="3" type="cond" truecount="2" falsecount="0"/>
         <line num="19" count="1" type="stmt"/>
@@ -525,31 +525,33 @@
         <line num="60" count="0" type="stmt"/>
         <line num="61" count="0" type="stmt"/>
         <line num="67" count="0" type="stmt"/>
-        <line num="68" count="0" type="stmt"/>
-        <line num="70" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="71" count="0" type="stmt"/>
-        <line num="72" count="0" type="stmt"/>
-        <line num="73" count="0" type="stmt"/>
-        <line num="75" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="76" count="0" type="stmt"/>
+        <line num="69" count="0" type="stmt"/>
+        <line num="74" count="0" type="stmt"/>
+        <line num="76" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="77" count="0" type="stmt"/>
-        <line num="80" count="0" type="stmt"/>
-        <line num="85" count="0" type="cond" truecount="0" falsecount="4"/>
-        <line num="86" count="0" type="stmt"/>
-        <line num="90" count="0" type="stmt"/>
-        <line num="93" count="0" type="stmt"/>
+        <line num="78" count="0" type="stmt"/>
+        <line num="79" count="0" type="stmt"/>
+        <line num="81" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="82" count="0" type="stmt"/>
+        <line num="85" count="0" type="stmt"/>
+        <line num="88" count="0" type="stmt"/>
+        <line num="93" count="0" type="cond" truecount="0" falsecount="4"/>
         <line num="94" count="0" type="stmt"/>
-        <line num="103" count="1" type="stmt"/>
-        <line num="107" count="2" type="stmt"/>
-        <line num="108" count="2" type="stmt"/>
-        <line num="110" count="2" type="stmt"/>
-        <line num="117" count="26" type="cond" truecount="4" falsecount="0"/>
-        <line num="121" count="52" type="stmt"/>
-        <line num="135" count="2" type="cond" truecount="2" falsecount="0"/>
-        <line num="136" count="1" type="stmt"/>
-        <line num="137" count="1" type="stmt"/>
-        <line num="139" count="1" type="stmt"/>
-        <line num="140" count="1" type="stmt"/>
+        <line num="99" count="0" type="stmt"/>
+        <line num="102" count="0" type="stmt"/>
+        <line num="103" count="0" type="stmt"/>
+        <line num="112" count="1" type="stmt"/>
+        <line num="116" count="2" type="stmt"/>
+        <line num="117" count="2" type="stmt"/>
+        <line num="119" count="2" type="stmt"/>
+        <line num="125" count="2" type="stmt"/>
+        <line num="132" count="26" type="cond" truecount="4" falsecount="0"/>
+        <line num="136" count="52" type="stmt"/>
+        <line num="150" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="151" count="1" type="stmt"/>
+        <line num="152" count="1" type="stmt"/>
+        <line num="154" count="1" type="stmt"/>
+        <line num="155" count="1" type="stmt"/>
       </file>
       <file name="email-esrf.ts" path="/home/runner/work/passport-status/passport-status/pages/api/email-esrf.ts">
         <metrics statements="22" coveredstatements="14" conditionals="10" coveredconditionals="5" methods="3" coveredmethods="2"/>
