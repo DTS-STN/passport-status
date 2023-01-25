@@ -12,6 +12,10 @@ describe('not found page loads', () => {
     cy.location('pathname').should('equal', "/en/404")
   })
 
+  it('should have correct title', () => {
+    cy.title().should("eq", "Not Found | Pas trouvé - Canada.ca");
+  })
+
   it('has no detectable a11y violations on load', () => {
     cy.injectAxe();
     cy.wait(500);

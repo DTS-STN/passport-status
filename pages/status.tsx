@@ -26,13 +26,12 @@ import ErrorSummary, {
 import CheckStatusInfo from '../components/CheckStatusInfo'
 import Modal from '../components/Modal'
 import IdleTimeout from '../components/IdleTimeout'
-import Collapse from '../components/Collapse'
-import ExampleImage from '../components/ExampleImage'
 import ExternalLink from '../components/ExternalLink'
 import DateSelectField, {
   DateSelectFieldOnChangeEvent,
 } from '../components/DateSelectField'
 import { NextSeo } from 'next-seo'
+import LinkText from '../components/LinkText'
 
 const initialValues: CheckStatusApiRequestQuery = {
   dateOfBirth: '',
@@ -156,7 +155,7 @@ const Status: FC = () => {
 
   return (
     <Layout>
-      <NextSeo title={t('page-title')} />
+      <NextSeo title={t('header')} />
       <IdleTimeout />
       <h1 ref={headingRef} className="h1" tabIndex={-1}>
         {t('header')}
@@ -174,38 +173,36 @@ const Status: FC = () => {
               checkStatusResponse === null ? t('previous') : t('reset')
             }
             goBackStyle="primary"
-            checkAgainText={t('check-again')}
             checkStatusResponse={checkStatusResponse}
           />
-          <div className="mt-10">
-            <h3 className="h3 text-blue-normal">
-              {t('common:feedback-link-header')}
-            </h3>
-            <Trans i18nKey={'common:feedback-link'}>
-              Insert feedback{' '}
-              <ExternalLink href={t('common:feedback-link-url')}>
-                Link
-              </ExternalLink>
-            </Trans>
-          </div>
+          <h2 className="h2">{t('common:feedback-link-header')}</h2>
+          <p>
+            <ExternalLink href={t('common:feedback-link-url')}>
+              {t('common:feedback-link')}
+            </ExternalLink>
+          </p>
         </>
       ) : (
         <form onSubmit={handleFormikSubmit} id="form-get-status">
           <p>
-            <strong>{t('header-messages.matches')}</strong>
+            <Trans i18nKey="header-messages.matches" ns="status" />
           </p>
           <ul className="list-disc space-y-2 pl-10 mb-5">
             <li>{t('header-messages.list.item-1')}</li>
             <li>{t('header-messages.list.item-2')}</li>
-            <li>{t('header-messages.list.item-3')}</li>
+            <li>
+              <Trans i18nKey="header-messages.list.item-3" ns="status" />
+            </li>
             <li>{t('header-messages.list.item-4')}</li>
           </ul>
-          <blockquote className="py-3 px-6 mb-3 border-l-6 border-gray-200">
+          <div className="p-5 mb-5 border border-gray-300 bg-gray-100 rounded">
             <p className="m-0">
-              <b>{t('header-messages.for-child.application')}</b>
-              {t('header-messages.for-child.use-exactly')}
+              <Trans
+                i18nKey="header-messages.for-child-application"
+                ns="status"
+              />
             </p>
-          </blockquote>
+          </div>
 
           {errorSummaryItems.length > 0 && (
             <ErrorSummary
@@ -216,6 +213,7 @@ const Status: FC = () => {
               errors={errorSummaryItems}
             />
           )}
+
           <InputField
             id="esrf"
             name="esrf"
@@ -225,32 +223,18 @@ const Status: FC = () => {
             errorMessage={formikErrors.esrf && t(formikErrors.esrf)}
             textRequired={t('common:required')}
             required
+            helpMessage={
+              <p>
+                <Trans
+                  i18nKey="esrf.help"
+                  ns="status"
+                  components={{
+                    Link: <LinkText href="/email" />,
+                  }}
+                />
+              </p>
+            }
           />
-          <Collapse title={t('common:collapse-file-number-title')}>
-            <div className="border-t mt-3 p-3 max-w-prose">
-              <p>{t('common:receipt-explanation')}</p>
-              <ExampleImage
-                title={t('common:receipt-image-1.title')}
-                description={t('common:receipt-image-1.descriptive-text')}
-                imageProps={{
-                  src: t('common:receipt-image-1.src'),
-                  alt: t('common:receipt-image-1.alt'),
-                  width: 350,
-                  height: 550,
-                }}
-              />
-              <ExampleImage
-                title={t('common:receipt-image-2.title')}
-                description={t('common:receipt-image-2.descriptive-text')}
-                imageProps={{
-                  src: t('common:receipt-image-2.src'),
-                  alt: t('common:receipt-image-2.alt'),
-                  width: 350,
-                  height: 550,
-                }}
-              />
-            </div>
-          </Collapse>
           <InputField
             id="givenName"
             name="givenName"

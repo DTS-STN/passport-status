@@ -1,5 +1,4 @@
 {
-  "page-title": "Check my status",
   "date-of-birth": {
     "error": {
       "current": "The applicant date of birth must be in the past.",
@@ -8,13 +7,14 @@
     },
     "label": "Applicant date of birth"
   },
-  "check-again": "To check the status of another application, click the button below:",
+  "check-again": "Check the status of another application",
   "check-status": "Check Status",
   "description": "Fill in the fields below to check the status of your passport application. Make sure your information matches your passport application form.",
   "esrf": {
     "error": {
       "required": "The file number is required."
     },
+    "help": "If you can't find your file number, you can <Link>request to receive it</Link>.",
     "label": "File number"
   },
   "given-name": {
@@ -63,7 +63,7 @@
   },
   "unable-to-find-status": "We are unable to determine the status of your application at this time using this service.",
   "other-ways-to-status": "Contact us",
-  "no-match-title": "Other ways to get your status:",
+  "no-match-title": "Other ways to get your application status:",
   "cannot-provide-result": {
     "title": "We cannot provide a result at this time because:",
     "reason1": "the information you provided does not match the information in our system;",
@@ -73,98 +73,75 @@
   "please-verify": "Please verify the information entered and try again.",
   "please-wait": "If you have not waited at least (insert amount of time/full service standard), please try again at a later date/time.",
   "still-unable": {
-    "if-still-unable": "If you are still unable to retrieve your status, you may:",
+    "if-still-unable": "If you are still unable to retrieve your application status, you may:",
     "contact-call-center": "Contact the Passport Call Centre (insert phone #).",
     "visit-in-person": "Visit an in-person Service Canada Centre nearest you (link to FSCO)"
   },
   "no-record": {
     "cannot-give-status": {
       "description": "We can't give you your application status right now",
-      "because": "This is because",
+      "because": "This is because:",
       "list": {
-        "item-1": "the information you gave us doesn't match the information in our system,",
+        "item-1": "the information you gave us doesn't match the information in our system",
         "item-2": "we received your application, but haven't started processing it yet"
       }
     },
-    "double-check": "Double-check your information and try again. If your application still can't be found, you can try again tomorrow. We update our records daily.",
+    "contact-us": "If you can't get your application status using this tool, or if your application is taking longer than the <Link>service standard</Link>, please contact us by calling us toll free at <b>1-800-567-6868</b>.",
+    "service-standard-link": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/processing-times.html",
+    "double-check": "Double-check your information and try again. If we still can't find your file, you can try again tomorrow. We update our records daily.",
     "if": "if"
   },
   "being-processed": {
     "received": "We have received your application and are now processing it",
-    "we-will-contact": {
-      "segment-1": "If we need more information, we'll contact you by email or telephone. We will ",
-      "segment-2": " use text or instant messages to contact you about your passport application."
-    },
-    "never": "never"
+    "we-will-contact": "If we need more information, we'll contact you by email or telephone. We will <strong>never</strong> use text or instant messages to contact you about your passport application."
   },
   "ready-for-pickup": {
     "has-been-printed": "The passport has been printed",
-    "check-receipt": "Check your receipt to confirm when and where to pick up the passport.",
-    "do-not-visit": "Don't visit the pickup location before the date printed on your receipt."
+    "check-receipt": "The passport is on its way to the pickup location. Check your receipt to confirm the date and location.",
+    "not-available": "The passport will not be available before the pickup date printed on your receipt."
   },
   "shipped-canada-post": {
-    "mailing": "We're mailing it to you by Canada Post. ",
-    "supporting-documents": "We may send your supporting documents back separately.",
-    "did-not-receive": ", if you don't receive your documents within 4 weeks of receiving your passport."
+    "header": "The passport has been printed and mailed",
+    "mailing": "We're mailing it to you by Canada Post.",
+    "supporting-documents": "We may send your supporting documents back separately."
   },
   "shipped-fedex": {
-    "mailing": "We're sending it to you by Fedex. ",
+    "header": "The passport has been printed and sent to the United States",
+    "mailing": "We're sending it to you by FedEx.",
     "supporting-documents": "You'll receive the passport and supporting documents in the same envelope."
   },
-  "status-check-passport-printed": "The passport has been printed",
   "not-acceptable": {
     "cannot-process": "We have reviewed your application and can't process it further",
-    "explanation": "We're sending you a letter explaining why, and including your supporting documents. You should get these within 4 weeks."
+    "explanation": "We're sending you a letter explaining why and will return your supporting documents at the same time.<br />For more information, call us toll free at <strong>{{phoneNumber}}</strong>."
   },
   "status-check-contact": {
     "description-no-record": {
       "item-1": "after several attempts you still can't get your application status, ",
       "item-2": "your application is taking longer than the "
     },
-    "description-being-processed": ", if your application is taking longer than the ",
-    "service-standard": {
-      "text": "service standard",
-      "href": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/check-passport-travel-document-application.html"
-    }
+    "call-us": "Call us toll free at <b>1-800-567-6868</b> if your application is taking longer than the <Link>service standard</Link>",
+    "service-standard-href": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/processing-times.html"
   },
   "status-check-urgent": {
-    "description": "If you need a passport within 10 business days, learn ",
-    "express-services": {
-      "text": "how to get urgent or express passport services",
-      "href": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/urgent-emergency-passport.html"
-    }
+    "description": "If you need the passport within 10 business days, learn <Link>how to get urgent or express service for your existing application</Link>",
+    "express-services-href": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/urgent-emergency-passport.html"
   },
   "status-check-tracking": {
-    "number": "Your tracking number is ",
+    "number": "Your tracking number is <strong>{{trackingNumber}}</strong>.<br /><Link>You can track the package online</Link>",
     "link": {
-      "text": "You can track the package online.",
       "canada-post": "https://www.canadapost-postescanada.ca/track-reperage/en?referenceNumber={{trackingNumber}}#/details/{{trackingNumber}}",
       "fedex": "https://www.fedex.com/fedextrack/?action=track&cntry_code=ca&locale=en_ca&trackingnumber={{trackingNumber}}"
     }
   },
-  "status-check-call": "Call us at ",
+  "status-check-call": "Call us toll free at <strong>{{phoneNumber}}</strong> if you don't receive your documents within 4 weeks of receiving your passport.",
   "header-messages": {
-    "matches": "Make sure your information matches your proof of citizenship and supporting ID. Your proof of citizenship could be",
+    "matches": "<strong>Make sure your information matches your proof of citizenship and supporting ID.</strong> Your proof of citizenship could be one of the following:",
     "list": {
-      "item-1": "birth certificates",
-      "item-2": "citizenship certificates",
-      "item-3": "citizenship cards",
-      "item-4": "other documents, like naturalization certificates"
+      "item-1": "birth certificate",
+      "item-2": "citizenship certificate",
+      "item-3": "citizenship card <b>or</b>",
+      "item-4": "other documents, like a naturalization certificate"
     },
-    "for-child": {
-      "application": "For child applications",
-      "use-exactly": ", use the child's given name(s), surname and date of birth, exactly as provided on their proof of citizenship."
-    }
-  },
-  "collapse-file-number-title": "Can't find your File Number?",
-  "receipt-image-1": {
-    "title": "Example Receipt 1:",
-    "description-alt": "File Number (circled in red on image) located on centre of an \"Official Receipt\" below date/time",
-    "src": "/Receipt1_EN.png"
-  },
-  "receipt-image-2": {
-    "title": "Example Receipt 2:",
-    "description-alt": "File Number (circled in red on image) located close to the top of an \"Official Receipt and Pick-up Slip\" below the applicant's name",
-    "src": "/Receipt2_EN.png"
+    "for-child-application": "<strong>For child applications,</strong> use the child's given name(s) and surname and date of birth, exactly as provided on their proof of citizenship."
   }
 }

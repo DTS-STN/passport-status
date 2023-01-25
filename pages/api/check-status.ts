@@ -94,7 +94,9 @@ export const searchPassportStatusApi = async (
     logger.debug(
       `Check status returned not OK - error ${response.status}: ${response.body}`
     )
-    return res.status(response.status).send('Passport Status Not Found')
+    // 404 and 422 responses should both be handled as
+    // `not found` results to mitigate data probing attacks
+    return res.status(404).send('Passport Status Not Found')
   }
 
   logger.debug(`Status: ${response.status}: ${response.statusText}`)

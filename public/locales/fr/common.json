@@ -52,22 +52,22 @@
     "continue-session": "Continuer la session",
     "end-session": "Terminer la session"
   },
-  "phone-number": "1 800 567 6868",
-  "feedback-link-header": "Nous voulons améliorer cet outil.",
-  "feedback-link": "<2>Faites-nous part de vos commentaires</2> sur l'outil Vérifiez l'état de votre demande de passeport.",
+  "phone-number": "1-800-567-6868",
+  "feedback-link-header": "Nous voulons améliorer cet outil",
+  "feedback-link": "Donnez-nous votre avis sur l'Outil de vérification de l'état de la demande de passeport",
   "feedback-link-url": "https://www.canada.ca/fr/emploi-developpement-social/services/passeport/retroaction-etat-demande.html",
   "opens-in-new-tab": "(s'ouvre dans un nouvel onglet)",
   "banner": {
     "alert": "Lieu de test",
     "description": "Vous ne pouvez pas vérifier l'état de votre demande de passeport via ce site de test. Certaines parties de ce site peuvent ne pas fonctionner et seront modifiées."
   },
-  "collapse-file-number-title": "Vous ne trouvez pas votre numéro de dossier?",
-  "receipt-explanation": "Le numéro de dossier est utilisé pour identifier la demande de passeport. Le numéro de dossier se trouve sur le reçu qui vous a été remis si vous avez fait votre demande de passeport en personne. Si vous avez fait votre demande par courrier, ou si vous n'avez pas de numéro de dossier, vous pouvez selectioner «\u00a0Je n'ai pas mon numéro de dossier\u00a0».",
+  "collapse-file-number-title": "Vous ne pouvez pas trouver votre numéro de dossier?",
+  "receipt-explanation": "Le numéro de dossier est utilisé pour identifier la demande de passeport. Le numéro de dossier se trouve sur le reçu qui vous a été remis si vous avez fait votre demande de passeport en personne. Si vous avez fait une demande par la poste, ou si vous n'avez pas de numéro de dossier, vous pouvez l'en demander.",
   "receipt-image-1": {
     "title": "Exemple de reçu 1\u00a0:",
     "alt": "Un exemple de reçu officiel. Le numéro de dossier est entouré au centre du reçu.",
     "src": "/Receipt1_FR.png",
-    "descriptive-text": "Exemple de reçu où le numéro de dossier est entouré."
+    "descriptive-text": "Exemple d'un reçu où le numéro de dossier est entouré."
   },
   "receipt-image-2": {
     "title": "Exemple de reçu 2\u00a0:",

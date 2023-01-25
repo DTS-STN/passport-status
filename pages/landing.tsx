@@ -2,18 +2,18 @@ import { FC } from 'react'
 import { GetServerSideProps } from 'next'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import { NextSeo } from 'next-seo'
 import Layout from '../components/Layout'
 import LinkButton from '../components/LinkButton'
 import Collapse from '../components/Collapse'
 import ExampleImage from '../components/ExampleImage'
-import { NextSeo } from 'next-seo'
 
 const Landing: FC = () => {
   const { t } = useTranslation('landing')
 
   return (
     <Layout>
-      <NextSeo title={t('page-title')} />
+      <NextSeo title={t('header')} />
       <h1 className="h1">{t('header')}</h1>
       <p>{t('description')}</p>
       <div className="flex flex-wrap md:flex-nowrap gap-4 mb-4">

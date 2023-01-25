@@ -112,7 +112,7 @@ const Email: FC = () => {
 
   return (
     <Layout>
-      <NextSeo title={t('page-title')} />
+      <NextSeo title={t('header')} />
       <IdleTimeout />
       <h1 ref={headingRef} className="h1" tabIndex={-1}>
         {t('header')}
@@ -123,32 +123,41 @@ const Email: FC = () => {
           <h2 className="h2">{t('email-confirmation-msg.request-received')}</h2>
           <p>{t('email-confirmation-msg.if-exists')}</p>
           <p>
-            {t('email-confirmation-msg.please-contact')}{' '}
-            <b>{t('common:phone-number')}</b>.
+            <Trans
+              i18nKey="email-confirmation-msg.please-contact"
+              ns="email"
+              tOptions={{ phoneNumber: t('common:phone-number') }}
+            />
           </p>
-          <div className="mt-10">
-            <h3 className="h3 text-blue-normal">
-              {t('common:feedback-link-header')}
-            </h3>
-            <Trans i18nKey={'common:feedback-link'}>
-              Insert feedback{' '}
-              <ExternalLink href={t('common:feedback-link-url')}>
-                Link
-              </ExternalLink>
-            </Trans>
-          </div>
+          <h2 className="h2">{t('common:feedback-link-header')}</h2>
+          <p>
+            <ExternalLink href={t('common:feedback-link-url')}>
+              {t('common:feedback-link')}
+            </ExternalLink>
+          </p>
         </div>
       ) : (
         <form onSubmit={handleFormikSubmit} id="form-email-esrf">
           <p>
-            <strong>{t('header-messages.matches')}</strong>
+            <Trans i18nKey="header-messages.matches" ns="email" />
           </p>
           <ul className="list-disc space-y-2 pl-10 mb-5">
             <li>{t('header-messages.list.item-1')}</li>
             <li>{t('header-messages.list.item-2')}</li>
-            <li>{t('header-messages.list.item-3')}</li>
+            <li>
+              <Trans i18nKey="header-messages.list.item-3" ns="email" />
+            </li>
             <li>{t('header-messages.list.item-4')}</li>
           </ul>
+          <div className="p-5 mb-5 border border-gray-300 bg-gray-100 rounded">
+            <p className="m-0">
+              <Trans
+                i18nKey="header-messages.for-child-application"
+                ns="email"
+              />
+            </p>
+          </div>
+
           {errorSummaryItems.length > 0 && (
             <ErrorSummary
               id="error-summary-email-esrf"
@@ -158,6 +167,7 @@ const Email: FC = () => {
               errors={errorSummaryItems}
             />
           )}
+
           <InputField
             id="email"
             name="email"
@@ -172,8 +182,10 @@ const Email: FC = () => {
               <>
                 <p>{t('help-message.email')} </p>
                 <p>
-                  <b>{t('help-message.for-child.application')}</b>
-                  {t('help-message.for-child.use-exactly')}
+                  <Trans
+                    i18nKey="help-message.for-child-application"
+                    ns="email"
+                  />
                 </p>
               </>
             }
