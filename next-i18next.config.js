@@ -10,10 +10,7 @@ module.exports = {
     defaultLocale: 'default',
   },
   appendNamespaceToMissingKey: true,
-  localePath:
-    typeof window === 'undefined'
-      ? path.resolve('./public/locales')
-      : '/public/locales',
+  localePath: path.resolve('./public/locales'),
   returnNull: false,
   react: {
     transKeepBasicHtmlNodesFor: ['br', 'strong', 'i', 'p', 'b', 'em'],
