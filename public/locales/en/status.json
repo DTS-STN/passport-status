@@ -93,11 +93,7 @@
   },
   "being-processed": {
     "received": "We have received your application and are now processing it",
-    "we-will-contact": {
-      "segment-1": "If we need more information, we'll contact you by email or telephone. We will ",
-      "segment-2": " use text or instant messages to contact you about your passport application."
-    },
-    "never": "never"
+    "we-will-contact": "If we need more information, we'll contact you by email or telephone. We will <strong>never</strong> use text or instant messages to contact you about your passport application."
   },
   "ready-for-pickup": {
     "has-been-printed": "The passport has been printed",
@@ -127,11 +123,8 @@
     "service-standard-href": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/processing-times.html"
   },
   "status-check-urgent": {
-    "description": "If you need the passport within 10 business days, learn ",
-    "express-services": {
-      "text": "how to get urgent or express service for your existing application",
-      "href": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/urgent-emergency-passport.html"
-    }
+    "description": "If you need the passport within 10 business days, learn <Link>how to get urgent or express service for your existing application</Link>",
+    "express-services-href": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/urgent-emergency-passport.html"
   },
   "status-check-tracking": {
     "number": "Your tracking number is <strong>{{trackingNumber}}</strong>.<br /><Link>You can track the package online</Link>",

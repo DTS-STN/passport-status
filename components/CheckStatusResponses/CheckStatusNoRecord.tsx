@@ -28,10 +28,17 @@ export const CheckStatusNoRecord: FC<{}> = () => {
         />
       </p>
       <p>
-        {t('status-check-urgent.description')}
-        <ExternalLink href={t('status-check-urgent.express-services.href')}>
-          {t('status-check-urgent.express-services.text')}
-        </ExternalLink>
+        <Trans
+          i18nKey={'status-check-urgent.description'}
+          ns="status"
+          components={{
+            Link: (
+              <ExternalLink
+                href={t('status-check-urgent.express-services-href')}
+              />
+            ),
+          }}
+        />
       </p>
     </>
   )
