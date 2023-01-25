@@ -88,7 +88,7 @@
     },
     "contact-us": "If you can't get your application status using this tool, or if your application is taking longer than the <Link>service standard</Link>, please contact us by calling us toll free at <b>1-800-567-6868</b>.",
     "service-standard-link": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/processing-times.html",
-    "double-check": "Double-check your information and try again. If we still can't find your data, you can try again tomorrow. We update our records daily.",
+    "double-check": "Double-check your information and try again. If we still can't find your file, you can try again tomorrow. We update our records daily.",
     "if": "if"
   },
   "being-processed": {
