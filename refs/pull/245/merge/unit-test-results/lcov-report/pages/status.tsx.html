@@ -380,24 +380,7 @@
 <a name='L315'></a><a href='#L315'>315</a>
 <a name='L316'></a><a href='#L316'>316</a>
 <a name='L317'></a><a href='#L317'>317</a>
-<a name='L318'></a><a href='#L318'>318</a>
-<a name='L319'></a><a href='#L319'>319</a>
-<a name='L320'></a><a href='#L320'>320</a>
-<a name='L321'></a><a href='#L321'>321</a>
-<a name='L322'></a><a href='#L322'>322</a>
-<a name='L323'></a><a href='#L323'>323</a>
-<a name='L324'></a><a href='#L324'>324</a>
-<a name='L325'></a><a href='#L325'>325</a>
-<a name='L326'></a><a href='#L326'>326</a>
-<a name='L327'></a><a href='#L327'>327</a>
-<a name='L328'></a><a href='#L328'>328</a>
-<a name='L329'></a><a href='#L329'>329</a>
-<a name='L330'></a><a href='#L330'>330</a>
-<a name='L331'></a><a href='#L331'>331</a>
-<a name='L332'></a><a href='#L332'>332</a>
-<a name='L333'></a><a href='#L333'>333</a>
-<a name='L334'></a><a href='#L334'>334</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L318'></a><a href='#L318'>318</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -553,21 +536,6 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -757,13 +725,12 @@ import ErrorSummary, {
 import CheckStatusInfo from '../components/CheckStatusInfo'
 import Modal from '../components/Modal'
 import IdleTimeout from '../components/IdleTimeout'
-import Collapse from '../components/Collapse'
-import ExampleImage from '../components/ExampleImage'
 import ExternalLink from '../components/ExternalLink'
 import DateSelectField, {
   DateSelectFieldOnChangeEvent,
 } from '../components/DateSelectField'
 import { NextSeo } from 'next-seo'
+import LinkText from '../components/LinkText'
 &nbsp;
 const initialValues: CheckStatusApiRequestQuery = {
   dateOfBirth: '',
@@ -887,7 +854,7 @@ const Status: FC = () =&gt; {
 &nbsp;
   return (
     &lt;Layout&gt;
-      &lt;NextSeo title={t('page-title')} /&gt;
+      &lt;NextSeo title={t('header')} /&gt;
       &lt;IdleTimeout /&gt;
       &lt;h1 ref={headingRef} className="h1" tabIndex={-1}&gt;
         {t('header')}
@@ -905,38 +872,36 @@ const Status: FC = () =&gt; {
               checkStatusResponse === null ? t('previous') : t('reset')
             }
             goBackStyle="primary"
-            checkAgainText={t('check-again')}
             checkStatusResponse={checkStatusResponse}
           /&gt;
-          &lt;div className="mt-10"&gt;
-            &lt;h3 className="h3 text-blue-normal"&gt;
-              {t('common:feedback-link-header')}
-            &lt;/h3&gt;
-            &lt;Trans i18nKey={'common:feedback-link'}&gt;
-              Insert feedback{' '}
-              &lt;ExternalLink href={t('common:feedback-link-url')}&gt;
-                Link
-              &lt;/ExternalLink&gt;
-            &lt;/Trans&gt;
-          &lt;/div&gt;
+          &lt;h2 className="h2"&gt;{t('common:feedback-link-header')}&lt;/h2&gt;
+          &lt;p&gt;
+            &lt;ExternalLink href={t('common:feedback-link-url')}&gt;
+              {t('common:feedback-link')}
+            &lt;/ExternalLink&gt;
+          &lt;/p&gt;
         &lt;/&gt;
       ) : (
         &lt;form onSubmit={handleFormikSubmit} id="form-get-status"&gt;
           &lt;p&gt;
-            &lt;strong&gt;{t('header-messages.matches')}&lt;/strong&gt;
+            &lt;Trans i18nKey="header-messages.matches" ns="status" /&gt;
           &lt;/p&gt;
           &lt;ul className="list-disc space-y-2 pl-10 mb-5"&gt;
             &lt;li&gt;{t('header-messages.list.item-1')}&lt;/li&gt;
             &lt;li&gt;{t('header-messages.list.item-2')}&lt;/li&gt;
-            &lt;li&gt;{t('header-messages.list.item-3')}&lt;/li&gt;
+            &lt;li&gt;
+              &lt;Trans i18nKey="header-messages.list.item-3" ns="status" /&gt;
+            &lt;/li&gt;
             &lt;li&gt;{t('header-messages.list.item-4')}&lt;/li&gt;
           &lt;/ul&gt;
-          &lt;blockquote className="py-3 px-6 mb-3 border-l-6 border-gray-200"&gt;
+          &lt;div className="p-5 mb-5 border border-gray-300 bg-gray-100 rounded"&gt;
             &lt;p className="m-0"&gt;
-              &lt;b&gt;{t('header-messages.for-child.application')}&lt;/b&gt;
-              {t('header-messages.for-child.use-exactly')}
+              &lt;Trans
+                i18nKey="header-messages.for-child-application"
+                ns="status"
+              /&gt;
             &lt;/p&gt;
-          &lt;/blockquote&gt;
+          &lt;/div&gt;
 &nbsp;
           {errorSummaryItems.length &gt; 0 &amp;&amp; (
 <span class="branch-1 cbranch-no" title="branch not covered" >            &lt;ErrorSummary</span>
@@ -947,6 +912,7 @@ const Status: FC = () =&gt; {
               errors={errorSummaryItems}
             /&gt;
           )}
+&nbsp;
           &lt;InputField
             id="esrf"
             name="esrf"
@@ -956,32 +922,18 @@ const Status: FC = () =&gt; {
             errorMessage={formikErrors.esrf &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >t(formikErrors.esrf)}</span>
             textRequired={t('common:required')}
             required
+            helpMessage={
+              &lt;p&gt;
+                &lt;Trans
+                  i18nKey="esrf.help"
+                  ns="status"
+                  components={{
+                    Link: &lt;LinkText href="/email" /&gt;,
+                  }}
+                /&gt;
+              &lt;/p&gt;
+            }
           /&gt;
-          &lt;Collapse title={t('common:collapse-file-number-title')}&gt;
-            &lt;div className="border-t mt-3 p-3 max-w-prose"&gt;
-              &lt;p&gt;{t('common:receipt-explanation')}&lt;/p&gt;
-              &lt;ExampleImage
-                title={t('common:receipt-image-1.title')}
-                description={t('common:receipt-image-1.descriptive-text')}
-                imageProps={{
-                  src: t('common:receipt-image-1.src'),
-                  alt: t('common:receipt-image-1.alt'),
-                  width: 350,
-                  height: 550,
-                }}
-              /&gt;
-              &lt;ExampleImage
-                title={t('common:receipt-image-2.title')}
-                description={t('common:receipt-image-2.descriptive-text')}
-                imageProps={{
-                  src: t('common:receipt-image-2.src'),
-                  alt: t('common:receipt-image-2.alt'),
-                  width: 350,
-                  height: 550,
-                }}
-              /&gt;
-            &lt;/div&gt;
-          &lt;/Collapse&gt;
           &lt;InputField
             id="givenName"
             name="givenName"
@@ -1069,7 +1021,7 @@ export default Status
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-01-17T21:18:34.455Z
+                at 2023-01-25T17:20:08.750Z
             </div>
         <script src="../prettify.js"></script>
         <script>

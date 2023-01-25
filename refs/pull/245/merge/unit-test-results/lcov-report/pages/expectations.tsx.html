@@ -166,8 +166,9 @@
 <a name='L101'></a><a href='#L101'>101</a>
 <a name='L102'></a><a href='#L102'>102</a>
 <a name='L103'></a><a href='#L103'>103</a>
-<a name='L104'></a><a href='#L104'>104</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L104'></a><a href='#L104'>104</a>
+<a name='L105'></a><a href='#L105'>105</a>
+<a name='L106'></a><a href='#L106'>106</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -190,6 +191,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -277,7 +281,6 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Layout from '../components/Layout'
 import ActionButton from '../components/ActionButton'
 import { setCookie } from 'cookies-next'
-import { NextSeo } from 'next-seo'
 import ExternalLink from '../components/ExternalLink'
 &nbsp;
 const Expectations: FC = () =&gt; {
@@ -294,13 +297,12 @@ const Expectations: FC = () =&gt; {
 &nbsp;
   return (
     &lt;Layout&gt;
-      &lt;NextSeo title={t('page-title')} /&gt;
-      &lt;h1 className="h1"&gt;{t('header-purpose')}&lt;/h1&gt;
+      &lt;h1 className="h1"&gt;{t('header')}&lt;/h1&gt;
       &lt;h2 className="h2"&gt;{t('header-avoid-waiting')}&lt;/h2&gt;
       &lt;p&gt;{t('available-after.description')}&lt;/p&gt;
       &lt;ul className="list-disc space-y-2 pl-10 mb-5"&gt;
         &lt;li&gt;
-          {t('available-after.list.item-1')} &lt;b&gt;{t('common:or')}&lt;/b&gt;
+          &lt;Trans i18nKey={'available-after.list.item-1'} ns="expectations" /&gt;
         &lt;/li&gt;
         &lt;li&gt;{t('available-after.list.item-2')}&lt;/li&gt;
       &lt;/ul&gt;
@@ -309,28 +311,30 @@ const Expectations: FC = () =&gt; {
       &lt;p&gt;{t('can-check.description')}&lt;/p&gt;
       &lt;ul className="list-disc space-y-2 pl-10 mb-5"&gt;
         &lt;li&gt;
-          {t('can-check.list.item-1.in-person')} &lt;b&gt;{t('common:or')} &lt;/b&gt;
-          {t('can-check.list.item-1.by-mail')} &lt;b&gt;{t('common:or')} &lt;/b&gt;
+          &lt;Trans i18nKey={'can-check.list.item-1'} ns="expectations" /&gt;
         &lt;/li&gt;
         &lt;li&gt;{t('can-check.list.item-2')}&lt;/li&gt;
       &lt;/ul&gt;
       &lt;p&gt;{t('cannot-check.description')}&lt;/p&gt;
       &lt;ul className="list-disc space-y-2 pl-10 mb-5"&gt;
         &lt;li&gt;
-          {t('cannot-check.list.item-1')} &lt;b&gt;{t('common:or')}&lt;/b&gt;
+          &lt;Trans i18nKey={'cannot-check.list.item-1'} ns="expectations" /&gt;
         &lt;/li&gt;
         &lt;li&gt;{t('cannot-check.list.item-2')}&lt;/li&gt;
       &lt;/ul&gt;
-      &lt;blockquote className="py-3 px-6 mb-3 border-l-6 border-gray-200"&gt;
+      &lt;div className="p-5 mb-5 border border-gray-300 bg-gray-100 rounded"&gt;
         &lt;p className="m-0"&gt;{t('do-not-travel')}&lt;/p&gt;
-      &lt;/blockquote&gt;
+      &lt;/div&gt;
       &lt;h2 className="h2"&gt;{t('header-privacy')}&lt;/h2&gt;
-      &lt;p&gt;{t('expectations:description-privacy.1')}&lt;/p&gt;
-      &lt;p&gt;{t('expectations:description-privacy.2')}&lt;/p&gt;
-      &lt;p&gt;{t('expectations:description-privacy.3')}&lt;/p&gt;
+      &lt;p&gt;
+        &lt;Trans i18nKey={'description-privacy.1'} ns="expectations" /&gt;
+      &lt;/p&gt;
+      &lt;p&gt;{t('description-privacy.2')}&lt;/p&gt;
+      &lt;p&gt;{t('description-privacy.3')}&lt;/p&gt;
       &lt;p&gt;
         &lt;Trans
-          i18nKey={'expectations:description-privacy.4'}
+          i18nKey={'description-privacy.4'}
+          ns="expectations"
           components={{
             Link: &lt;ExternalLink href={t('description-privacy.4-link')} /&gt;,
           }}
@@ -338,7 +342,8 @@ const Expectations: FC = () =&gt; {
       &lt;/p&gt;
       &lt;p&gt;
         &lt;Trans
-          i18nKey={'expectations:description-privacy.5'}
+          i18nKey={'description-privacy.5'}
+          ns="expectations"
           components={{
             Link: &lt;ExternalLink href={t('description-privacy.5-link')} /&gt;,
           }}
@@ -346,7 +351,8 @@ const Expectations: FC = () =&gt; {
       &lt;/p&gt;
       &lt;p&gt;
         &lt;Trans
-          i18nKey={'expectations:description-privacy.6'}
+          i18nKey={'description-privacy.6'}
+          ns="expectations"
           components={{
             Link: &lt;ExternalLink href={t('description-privacy.6-link')} /&gt;,
           }}
@@ -379,7 +385,7 @@ export default Expectations
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-01-17T21:18:34.455Z
+                at 2023-01-25T17:20:08.750Z
             </div>
         <script src="../prettify.js"></script>
         <script>

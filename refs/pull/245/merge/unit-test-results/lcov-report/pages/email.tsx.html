@@ -320,7 +320,19 @@
 <a name='L255'></a><a href='#L255'>255</a>
 <a name='L256'></a><a href='#L256'>256</a>
 <a name='L257'></a><a href='#L257'>257</a>
-<a name='L258'></a><a href='#L258'>258</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L258'></a><a href='#L258'>258</a>
+<a name='L259'></a><a href='#L259'>259</a>
+<a name='L260'></a><a href='#L260'>260</a>
+<a name='L261'></a><a href='#L261'>261</a>
+<a name='L262'></a><a href='#L262'>262</a>
+<a name='L263'></a><a href='#L263'>263</a>
+<a name='L264'></a><a href='#L264'>264</a>
+<a name='L265'></a><a href='#L265'>265</a>
+<a name='L266'></a><a href='#L266'>266</a>
+<a name='L267'></a><a href='#L267'>267</a>
+<a name='L268'></a><a href='#L268'>268</a>
+<a name='L269'></a><a href='#L269'>269</a>
+<a name='L270'></a><a href='#L270'>270</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -433,6 +445,18 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -691,7 +715,7 @@ const Email: FC = () =&gt; {
 &nbsp;
   return (
     &lt;Layout&gt;
-      &lt;NextSeo title={t('page-title')} /&gt;
+      &lt;NextSeo title={t('header')} /&gt;
       &lt;IdleTimeout /&gt;
       &lt;h1 ref={headingRef} className="h1" tabIndex={-1}&gt;
         {t('header')}
@@ -702,32 +726,41 @@ const Email: FC = () =&gt; {
           &lt;h2 className="h2"&gt;{t('email-confirmation-msg.request-received')}&lt;/h2&gt;
           &lt;p&gt;{t('email-confirmation-msg.if-exists')}&lt;/p&gt;
           &lt;p&gt;
-            {t('email-confirmation-msg.please-contact')}{' '}
-            &lt;b&gt;{t('common:phone-number')}&lt;/b&gt;.
+            &lt;Trans
+              i18nKey="email-confirmation-msg.please-contact"
+              ns="email"
+              tOptions={{ phoneNumber: t('common:phone-number') }}
+            /&gt;
           &lt;/p&gt;
-          &lt;div className="mt-10"&gt;
-            &lt;h3 className="h3 text-blue-normal"&gt;
-              {t('common:feedback-link-header')}
-            &lt;/h3&gt;
-            &lt;Trans i18nKey={'common:feedback-link'}&gt;
-              Insert feedback{' '}
-              &lt;ExternalLink href={t('common:feedback-link-url')}&gt;
-                Link
-              &lt;/ExternalLink&gt;
-            &lt;/Trans&gt;
-          &lt;/div&gt;
+          &lt;h2 className="h2"&gt;{t('common:feedback-link-header')}&lt;/h2&gt;
+          &lt;p&gt;
+            &lt;ExternalLink href={t('common:feedback-link-url')}&gt;
+              {t('common:feedback-link')}
+            &lt;/ExternalLink&gt;
+          &lt;/p&gt;
         &lt;/div&gt;
       ) : (
         &lt;form onSubmit={handleFormikSubmit} id="form-email-esrf"&gt;
           &lt;p&gt;
-            &lt;strong&gt;{t('header-messages.matches')}&lt;/strong&gt;
+            &lt;Trans i18nKey="header-messages.matches" ns="email" /&gt;
           &lt;/p&gt;
           &lt;ul className="list-disc space-y-2 pl-10 mb-5"&gt;
             &lt;li&gt;{t('header-messages.list.item-1')}&lt;/li&gt;
             &lt;li&gt;{t('header-messages.list.item-2')}&lt;/li&gt;
-            &lt;li&gt;{t('header-messages.list.item-3')}&lt;/li&gt;
+            &lt;li&gt;
+              &lt;Trans i18nKey="header-messages.list.item-3" ns="email" /&gt;
+            &lt;/li&gt;
             &lt;li&gt;{t('header-messages.list.item-4')}&lt;/li&gt;
           &lt;/ul&gt;
+          &lt;div className="p-5 mb-5 border border-gray-300 bg-gray-100 rounded"&gt;
+            &lt;p className="m-0"&gt;
+              &lt;Trans
+                i18nKey="header-messages.for-child-application"
+                ns="email"
+              /&gt;
+            &lt;/p&gt;
+          &lt;/div&gt;
+&nbsp;
           {errorSummaryItems.length &gt; 0 &amp;&amp; (
 <span class="branch-1 cbranch-no" title="branch not covered" >            &lt;ErrorSummary</span>
               id="error-summary-email-esrf"
@@ -737,6 +770,7 @@ const Email: FC = () =&gt; {
               errors={errorSummaryItems}
             /&gt;
           )}
+&nbsp;
           &lt;InputField
             id="email"
             name="email"
@@ -751,8 +785,10 @@ const Email: FC = () =&gt; {
               &lt;&gt;
                 &lt;p&gt;{t('help-message.email')} &lt;/p&gt;
                 &lt;p&gt;
-                  &lt;b&gt;{t('help-message.for-child.application')}&lt;/b&gt;
-                  {t('help-message.for-child.use-exactly')}
+                  &lt;Trans
+                    i18nKey="help-message.for-child-application"
+                    ns="email"
+                  /&gt;
                 &lt;/p&gt;
               &lt;/&gt;
             }
@@ -841,7 +877,7 @@ export default Email
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-01-17T21:18:34.455Z
+                at 2023-01-25T17:20:08.750Z
             </div>
         <script src="../prettify.js"></script>
         <script>
