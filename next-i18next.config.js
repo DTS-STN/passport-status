@@ -8,9 +8,9 @@ module.exports = {
   i18n: {
     locales: ['default', 'en', 'fr'],
     defaultLocale: 'default',
+    localePath: path.resolve('./public/locales'),
   },
   appendNamespaceToMissingKey: true,
-  localePath: path.resolve('./public/locales'),
   returnNull: false,
   react: {
     transKeepBasicHtmlNodesFor: ['br', 'strong', 'i', 'p', 'b', 'em'],
