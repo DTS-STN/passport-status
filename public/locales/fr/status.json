@@ -127,13 +127,14 @@
     "express-services-href": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens/passeport-urgent-express.html"
   },
   "status-check-tracking": {
-    "number": "Votre numéro de repérage est <strong>{{trackingNumber}}</strong>.<br /><Link>Vous pouvez faire le suivi de l'envoi en ligne</Link>",
+    "number": "Votre numéro de repérage est <strong>{{trackingNumber}}</strong>.",
+    "can-track": "Vous pouvez faire le suivi de l'envoi en ligne",
     "link": {
       "canada-post": "https://www.canadapost-postescanada.ca/track-reperage/fr?referenceNumber={{trackingNumber}}#/details/{{trackingNumber}}",
       "fedex": "https://www.fedex.com/fedextrack/?action=track&cntry_code=ca&locale=fr_ca&trackingnumber={{trackingNumber}}"
     }
   },
-  "status-check-call": "Appelez-nous sans frais au <strong>{{phoneNumber}}</strong>, si vous ne recevez pas vos documents dans les 4 semaines suivant la réception du passeport.",
+  "status-check-call": "Appelez-nous sans frais au <strong>{{phoneNumber}}</strong> si vous ne recevez pas vos documents dans les 4 semaines suivant la réception du passeport.",
   "header-messages": {
     "matches": "<strong>Assurez-vous que vos informations correspondent à votre preuve de citoyenneté et à votre pièce d'identité.</strong> Votre preuve de citoyenneté pourrait être l'une des suivantes\u00a0:",
     "list": {

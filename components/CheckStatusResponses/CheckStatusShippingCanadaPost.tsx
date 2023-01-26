@@ -25,18 +25,18 @@ export const CheckStatusShippingCanadaPost: FC<
               i18nKey="status-check-tracking.number"
               ns="status"
               tOptions={{ trackingNumber }}
-              components={{
-                Link: (
-                  <ExternalLink
-                    href={t('status-check-tracking.link.canada-post', {
-                      trackingNumber,
-                    })}
-                  />
-                ),
-              }}
             />
           </>
         )}
+      </p>
+      <p>
+        <ExternalLink
+          href={t('status-check-tracking.link.canada-post', {
+            trackingNumber,
+          })}
+        >
+          {t('status-check-tracking.can-track')}
+        </ExternalLink>
       </p>
       <p className="mt-6">{t('shipped-canada-post.supporting-documents')}</p>
       <p>
