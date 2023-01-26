@@ -86,7 +86,7 @@
         "item-2": "we received your application, but haven't started processing it yet"
       }
     },
-    "contact-us": "If you can't get your application status using this tool, or if your application is taking longer than the <Link>service standard</Link>, please contact us by calling us toll free at <b>1-800-567-6868</b>.",
+    "contact-us": "If you can't get your application status using this tool, or if your application is taking longer than the <Link>service standard</Link>, please call us toll free at <b>1-800-567-6868</b>.",
     "service-standard-link": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/processing-times.html",
     "double-check": "Double-check your information and try again. If we still can't find your file, you can try again tomorrow. We update our records daily.",
     "if": "if"
@@ -112,7 +112,8 @@
   },
   "not-acceptable": {
     "cannot-process": "We have reviewed your application and can't process it further",
-    "explanation": "We're sending you a letter explaining why and will return your supporting documents at the same time.<br />For more information, call us toll free at <strong>{{phoneNumber}}</strong>."
+    "explanation": "We're sending you a letter explaining why and will return your supporting documents at the same time.",
+    "call-us": "For more information, call us toll free at <strong>{{phoneNumber}}</strong>."
   },
   "status-check-contact": {
     "description-no-record": {
