@@ -119,7 +119,7 @@
       "item-1": "après plusieurs tentatives, vous ne pouvez toujours pas à obtenir l'état de votre demande, ",
       "item-2": "votre demande prend plus de temps que la "
     },
-    "call-us": "Appelez-nous sans frais au <b>1-800-567-6868</b>, si votre demande prend plus de temps que la <Link>norme de service</Link>",
+    "call-us": "Appelez-nous sans frais au <b>1-800-567-6868</b> si votre demande prend plus de temps que la <Link>norme de service</Link>",
     "service-standard-href": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens/delais-traitement.html"
   },
   "status-check-urgent": {
@@ -133,7 +133,7 @@
       "fedex": "https://www.fedex.com/fedextrack/?action=track&cntry_code=ca&locale=fr_ca&trackingnumber={{trackingNumber}}"
     }
   },
-  "status-check-call": "Appelez-nous sans frais au <strong>{{phoneNumber}}</strong>, si vous ne recevez pas vos documents dans les 4 semaines suivant la réception du passeport.",
+  "status-check-call": "Appelez-nous sans frais au <strong>{{phoneNumber}}</strong> si vous ne recevez pas vos documents dans les 4 semaines suivant la réception du passeport.",
   "header-messages": {
     "matches": "<strong>Assurez-vous que vos informations correspondent à votre preuve de citoyenneté et à votre pièce d'identité.</strong> Votre preuve de citoyenneté pourrait être l'une des suivantes\u00a0:",
     "list": {
