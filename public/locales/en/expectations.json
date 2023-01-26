@@ -7,7 +7,7 @@
     "description": "You can get the status of your passport application online if you submitted your passport application either:",
     "list": {
       "item-1": "in person <b>or</b> by mail in Canada <b>or</b>",
-      "item-2": "by mail from the United States."
+      "item-2": "by mail from the United States"
     }
   },
   "available-after": {
