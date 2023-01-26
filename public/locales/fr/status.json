@@ -97,8 +97,8 @@
   },
   "ready-for-pickup": {
     "has-been-printed": "Le passeport a été imprimé",
-    "check-receipt": "Le passeport est en route vers le lieu de retrait. Vérifiez votre reçu pour confirmer la date et le lieu de retrait du passeport.",
-    "not-available": "Le passeport ne sera pas disponible avant la date de retrait imprimée sur votre reçu."
+    "check-receipt": "Le passeport est en route vers le lieu de retrait. Vérifiez votre reçu pour confirmer la date et le lieu de retrait du passeport",
+    "not-available": "Le passeport ne sera pas disponible avant la date de retrait imprimée sur votre reçu"
   },
   "shipped-canada-post": {
     "header": "Le passeport a été imprimé et envoyé par la poste",
