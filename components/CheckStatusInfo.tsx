@@ -57,11 +57,13 @@ export const CheckStatusInfo: FC<CheckStatusInfoProps> = ({
   return (
     <div id={id}>
       {statusComponent}
-      <ActionButton
-        onClick={onGoBackClick}
-        text={goBackText}
-        style={goBackStyle}
-      />
+      <div className="pt-5">
+        <ActionButton
+          onClick={onGoBackClick}
+          text={goBackText}
+          style={goBackStyle}
+        />
+      </div>
     </div>
   )
 }

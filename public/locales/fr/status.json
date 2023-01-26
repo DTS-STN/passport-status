@@ -128,7 +128,8 @@
     "express-services-href": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens/passeport-urgent-express.html"
   },
   "status-check-tracking": {
-    "number": "Votre numéro de repérage est <strong>{{trackingNumber}}</strong>.<br /><Link>Vous pouvez faire le suivi de l'envoi en ligne</Link>",
+    "number": "Votre numéro de repérage est <strong>{{trackingNumber}}</strong>.",
+    "can-track": "Vous pouvez faire le suivi de l'envoi en ligne",
     "link": {
       "canada-post": "https://www.canadapost-postescanada.ca/track-reperage/fr?referenceNumber={{trackingNumber}}#/details/{{trackingNumber}}",
       "fedex": "https://www.fedex.com/fedextrack/?action=track&cntry_code=ca&locale=fr_ca&trackingnumber={{trackingNumber}}"

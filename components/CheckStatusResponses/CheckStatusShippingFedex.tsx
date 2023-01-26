@@ -9,7 +9,7 @@ export interface CheckStatusShippingFedexProps {
 export const CheckStatusShippingFedex: FC<CheckStatusShippingFedexProps> = ({
   trackingNumber,
 }) => {
-  const { t } = useTranslation(['status', 'common'])
+  const { t } = useTranslation('status')
   return (
     <>
       <h2 data-testid="shipped-fedex" className="h2">
@@ -24,18 +24,18 @@ export const CheckStatusShippingFedex: FC<CheckStatusShippingFedexProps> = ({
               i18nKey="status-check-tracking.number"
               ns="status"
               tOptions={{ trackingNumber }}
-              components={{
-                Link: (
-                  <ExternalLink
-                    href={t('status-check-tracking.link.fedex', {
-                      trackingNumber,
-                    })}
-                  />
-                ),
-              }}
             />
           </>
         )}
+      </p>
+      <p>
+        <ExternalLink
+          href={t('status-check-tracking.link.fedex', {
+            trackingNumber,
+          })}
+        >
+          {t('status-check-tracking.can-track')}
+        </ExternalLink>
       </p>
       <p className="mt-6">{t('shipped-fedex.supporting-documents')}</p>
     </>

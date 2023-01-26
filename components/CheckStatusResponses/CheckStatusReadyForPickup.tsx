@@ -2,7 +2,7 @@ import { FC } from 'react'
 import { useTranslation } from 'next-i18next'
 
 export const CheckStatusReadyForPickup: FC<{}> = () => {
-  const { t } = useTranslation(['status'])
+  const { t } = useTranslation('status')
   return (
     <>
       <h2 data-testid="ready-for-pickup" className="h2">
