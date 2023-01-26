@@ -97,8 +97,8 @@
   },
   "ready-for-pickup": {
     "has-been-printed": "The passport has been printed",
-    "check-receipt": "The passport is on its way to the pickup location. Check your receipt to confirm the date and location.",
-    "not-available": "The passport will not be available before the pickup date printed on your receipt."
+    "check-receipt": "The passport is on its way to the pickup location. Check your receipt to confirm the date and location",
+    "not-available": "The passport will not be available before the pickup date printed on your receipt"
   },
   "shipped-canada-post": {
     "header": "The passport has been printed and mailed",
