@@ -8,9 +8,10 @@ export const CheckStatusNotAcceptable: FC<{}> = () => {
       <h2 data-testid="not-acceptable" className="h2">
         {t('not-acceptable.cannot-process')}
       </h2>
+      <p>{t('not-acceptable.explanation')}</p>
       <p>
         <Trans
-          i18nKey="not-acceptable.explanation"
+          i18nKey="not-acceptable.call-us"
           ns="status"
           tOptions={{ phoneNumber: t('common:phone-number') }}
         />

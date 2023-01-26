@@ -15,4 +15,5 @@ module.exports = {
   react: {
     transKeepBasicHtmlNodesFor: ['br', 'strong', 'i', 'p', 'b', 'em'],
   },
+  reloadOnPrerender: process.env.NODE_ENV === 'development',
 }

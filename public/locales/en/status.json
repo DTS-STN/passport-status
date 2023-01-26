@@ -112,7 +112,8 @@
   },
   "not-acceptable": {
     "cannot-process": "We have reviewed your application and can't process it further",
-    "explanation": "We're sending you a letter explaining why and will return your supporting documents at the same time.<br />For more information, call us toll free at <strong>{{phoneNumber}}</strong>."
+    "explanation": "We're sending you a letter explaining why and will return your supporting documents at the same time.",
+    "call-us": "For more information, call us toll free at <strong>{{phoneNumber}}</strong>."
   },
   "status-check-contact": {
     "description-no-record": {
