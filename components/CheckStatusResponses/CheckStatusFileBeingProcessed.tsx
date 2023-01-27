@@ -17,6 +17,7 @@ export const CheckStatusFileBeingProcessed: FC<{}> = () => {
           <Trans
             i18nKey={'status-check-contact.call-us'}
             ns="status"
+            tOptions={{ phoneNumber: t('common:phone-number') }}
             components={{
               Link: (
                 <ExternalLink

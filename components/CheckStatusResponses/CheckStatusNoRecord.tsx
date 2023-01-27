@@ -22,6 +22,7 @@ export const CheckStatusNoRecord: FC<{}> = () => {
         <Trans
           i18nKey={'no-record.contact-us'}
           ns="status"
+          tOptions={{ phoneNumber: t('common:phone-number') }}
           components={{
             Link: <ExternalLink href={t('no-record.service-standard-link')} />,
           }}
