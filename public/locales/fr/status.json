@@ -86,7 +86,7 @@
         "item-2": "nous avons reçu votre demande, mais n'avons pas encore commencé à la traiter"
       }
     },
-    "contact-us": "Si vous ne pouvez pas obtenir l'état de votre demande à l'aide de cet outil, ou si votre demande prend plus de temps que la <Link>norme de service</Link>, appelez-nous sans frais au <b>1-800-567-6868</b>.",
+    "contact-us": "Si vous ne pouvez pas obtenir l'état de votre demande à l'aide de cet outil, ou si votre demande prend plus de temps que la <Link>norme de service</Link>, appelez-nous sans frais au <b>1\u2011800\u2011567\u20116868</b>.",
     "service-standard-link": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens/delais-traitement.html",
     "double-check": "Revérifiez vos renseignements et essayez à nouveau. Si nous ne trouvons pas votre dossier, vous pouvez réessayer demain. Nous mettons à jour nos dossiers chaque jour.",
     "if": "si"
@@ -120,7 +120,7 @@
       "item-1": "après plusieurs tentatives, vous ne pouvez toujours pas à obtenir l'état de votre demande, ",
       "item-2": "votre demande prend plus de temps que la "
     },
-    "call-us": "Appelez-nous sans frais au <b>1-800-567-6868</b> si votre demande prend plus de temps que la <Link>norme de service</Link>",
+    "call-us": "Appelez-nous sans frais au <b>1\u2011800\u2011567\u20116868</b> si votre demande prend plus de temps que la <Link>norme de service</Link>",
     "service-standard-href": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens/delais-traitement.html"
   },
   "status-check-urgent": {
