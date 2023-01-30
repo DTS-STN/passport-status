@@ -1,5 +1,5 @@
 # Install dependencies only when needed
-FROM node:18.13-bullseye-slim AS deps
+FROM node:19.5-bullseye-slim AS deps
 WORKDIR /app
 
 
@@ -9,7 +9,7 @@ RUN npm ci
 
 
 # Rebuild the source code only when needed
-FROM node:18.13-bullseye-slim AS builder
+FROM node:19.5-bullseye-slim AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
@@ -29,7 +29,7 @@ ENV NEXT_TELEMETRY_DISABLED 1
 RUN npm run build
 
 # Production image, copy all the files and run next
-FROM node:18.13-bullseye-slim AS runner
+FROM node:19.5-bullseye-slim AS runner
 WORKDIR /app
 
 ENV NODE_ENV production
