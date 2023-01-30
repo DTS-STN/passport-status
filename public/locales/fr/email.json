@@ -49,7 +49,7 @@
     "list": {
       "item-1": "un certificat de naissance",
       "item-2": "un certificat de citoyenneté",
-      "item-3": "une carte de citoyenneté <b>ou</b>",
+      "item-3": "une carte de citoyenneté <strong>ou</strong>",
       "item-4": "d'autres documents, comme un certificat de naturalisation"
     },
     "for-child-application": "<strong>Pour les demandes de passeport pour enfants,</strong> utilisez le(s) prénom(s), nom de famille et date de naissance de l'enfant, exactement tels qu'ils figurent sur sa preuve de citoyenneté."

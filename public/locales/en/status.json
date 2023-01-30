@@ -61,35 +61,24 @@
     },
     "label": "Surname of applicant"
   },
-  "unable-to-find-status": "We are unable to determine the status of your application at this time using this service.",
-  "other-ways-to-status": "Contact us",
-  "no-match-title": "Other ways to get your application status:",
   "cannot-provide-result": {
     "title": "We cannot provide a result at this time because:",
     "reason1": "the information you provided does not match the information in our system;",
     "reason2": "we have not yet received your application; or",
     "reason3": "we have received your application but have not yet started processing it."
   },
-  "please-verify": "Please verify the information entered and try again.",
-  "please-wait": "If you have not waited at least (insert amount of time/full service standard), please try again at a later date/time.",
-  "still-unable": {
-    "if-still-unable": "If you are still unable to retrieve your application status, you may:",
-    "contact-call-center": "Contact the Passport Call Centre (insert phone #).",
-    "visit-in-person": "Visit an in-person Service Canada Centre nearest you (link to FSCO)"
-  },
   "no-record": {
     "cannot-give-status": {
       "description": "We can't give you your application status right now",
       "because": "This is because:",
       "list": {
-        "item-1": "the information you gave us doesn't match the information in our system",
+        "item-1": "the information you gave us doesn't match the information in our system <strong>or</strong>",
         "item-2": "we received your application, but haven't started processing it yet"
       }
     },
     "contact-us": "If you can't get your application status using this tool, or if your application is taking longer than the <Link>service standard</Link>, please call us toll free at <strong>{{phoneNumber}}</strong>.",
     "service-standard-link": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/processing-times.html",
-    "double-check": "Double-check your information and try again. If we still can't find your file, you can try again tomorrow. We update our records daily.",
-    "if": "if"
+    "double-check": "Double-check your information and try again. If we still can't find your file, you can try again tomorrow. We update our records daily."
   },
   "being-processed": {
     "received": "We have received your application and are now processing it",
@@ -116,10 +105,6 @@
     "call-us": "For more information, call us toll free at <strong>{{phoneNumber}}</strong>."
   },
   "status-check-contact": {
-    "description-no-record": {
-      "item-1": "after several attempts you still can't get your application status, ",
-      "item-2": "your application is taking longer than the "
-    },
     "call-us": "Call us toll free at <strong>{{phoneNumber}}</strong> if your application is taking longer than the <Link>service standard</Link>",
     "service-standard-href": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/processing-times.html"
   },
@@ -141,7 +126,7 @@
     "list": {
       "item-1": "birth certificate",
       "item-2": "citizenship certificate",
-      "item-3": "citizenship card <b>or</b>",
+      "item-3": "citizenship card <strong>or</strong>",
       "item-4": "other documents, like a naturalization certificate"
     },
     "for-child-application": "<strong>For child applications,</strong> use the child's given name(s) and surname and date of birth, exactly as provided on their proof of citizenship."

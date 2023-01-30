@@ -61,35 +61,24 @@
     },
     "label": "Nom de famille du requérant"
   },
-  "unable-to-find-status": "Nous ne sommes pas en mesure de déterminer l'état de votre demande pour le moment en utilisant ce service.",
-  "other-ways-to-status": "Contactez-nous",
-  "no-match-title": "D'autres façons d'obtenir l'état de votre demande\u00a0:",
   "cannot-provide-result": {
     "title": "Nous ne pouvons pas fournir de résultat pour le moment car:",
     "reason1": "les informations que vous avez fournies ne correspondent pas à celles qui se trouvent dans notre système;",
     "reason2": "nous n'avons pas encore reçu votre demande; ",
     "reason3": "nous avons reçu votre demande mais n'avons pas encore commencé à la traiter."
   },
-  "please-verify": "Veuillez vérifier les informations saisies et réessayer.",
-  "please-wait": "Si vous n'avez pas attendu au moins (insérer le délai/la norme de service complet), veuillez réessayer à une date/heure ultérieure.",
-  "still-unable": {
-    "if-still-unable": "Si vous ne parvenez toujours pas à récupérer l'état de votre demande, vous pouvez le faire:",
-    "contact-call-center": "Contactez le centre d'appels pour les passeports (insérez le numéro de téléphone).",
-    "visit-in-person": "Rendez-vous dans un Centre Service Canada en personne le plus proche de chez vous (lien vers la CSFO)"
-  },
   "no-record": {
     "cannot-give-status": {
       "description": "Nous ne pouvons pas vous donner l'état de votre demande pour le moment",
       "because": "Ceci est dû au fait que\u00a0:",
       "list": {
-        "item-1": "les renseignements que vous nous avez fournis ne correspondent pas à ceux de notre système ",
+        "item-1": "les renseignements que vous nous avez fournis ne correspondent pas à ceux de notre système <strong>ou</strong>",
         "item-2": "nous avons reçu votre demande, mais n'avons pas encore commencé à la traiter"
       }
     },
     "contact-us": "Si vous ne pouvez pas obtenir l'état de votre demande à l'aide de cet outil, ou si votre demande prend plus de temps que la <Link>norme de service</Link>, appelez-nous sans frais au <strong>{{phoneNumber}}</strong>.",
     "service-standard-link": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens/delais-traitement.html",
-    "double-check": "Revérifiez vos renseignements et essayez à nouveau. Si nous ne trouvons pas votre dossier, vous pouvez réessayer demain. Nous mettons à jour nos dossiers chaque jour.",
-    "if": "si"
+    "double-check": "Revérifiez vos renseignements et essayez à nouveau. Si nous ne trouvons pas votre dossier, vous pouvez réessayer demain. Nous mettons à jour nos dossiers chaque jour."
   },
   "being-processed": {
     "received": "Nous avons reçu votre demande et nous sommes en train de la traiter",
@@ -116,10 +105,6 @@
     "call-us": "Pour plus d'informations, appelez-nous sans frais au <strong>{{phoneNumber}}</strong>."
   },
   "status-check-contact": {
-    "description-no-record": {
-      "item-1": "après plusieurs tentatives, vous ne pouvez toujours pas à obtenir l'état de votre demande, ",
-      "item-2": "votre demande prend plus de temps que la "
-    },
     "call-us": "Appelez-nous sans frais au <strong>{{phoneNumber}}</strong> si votre demande prend plus de temps que la <Link>norme de service</Link>",
     "service-standard-href": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens/delais-traitement.html"
   },
@@ -141,7 +126,7 @@
     "list": {
       "item-1": "un certificat de naissance",
       "item-2": "un certificat de citoyenneté",
-      "item-3": "une carte de citoyenneté <b>ou</b>",
+      "item-3": "une carte de citoyenneté <strong>ou</strong>",
       "item-4": "d'autres documents, comme un certificat de naturalisation"
     },
     "for-child-application": "<strong>Pour les demandes de passeport pour enfants,</strong> utilisez le(s) prénom(s), nom de famille et date de naissance de l'enfant, exactement tels qu'ils figurent sur sa preuve de citoyenneté."

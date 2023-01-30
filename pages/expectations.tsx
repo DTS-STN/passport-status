@@ -31,7 +31,9 @@ const Expectations: FC = () => {
         </li>
         <li>{t('available-after.list.item-2')}</li>
       </ul>
-      <b>{t('available-after.updated-status')}</b>
+      <p>
+        <strong>{t('available-after.updated-status')}</strong>
+      </p>
       <h2 className="h2">{t('header-who-can-check')}</h2>
       <p>{t('can-check.description')}</p>
       <ul className="list-disc space-y-2 pl-10 mb-5">
