@@ -1,4 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next'
+
 import { HealthApiResponse } from '../../lib/types'
 
 export default async function handler(

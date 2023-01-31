@@ -1,7 +1,9 @@
 import { FC, ReactNode } from 'react'
-import Header from './Header'
-import Footer from './Footer'
+
 import { useTranslation } from 'next-i18next'
+
+import Footer from './Footer'
+import Header from './Header'
 
 export interface LayoutProps {
   children: ReactNode

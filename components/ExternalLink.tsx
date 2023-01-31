@@ -1,4 +1,5 @@
 import { FC, PropsWithChildren } from 'react'
+
 import { useTranslation } from 'next-i18next'
 
 export interface ExternalLinkProps extends PropsWithChildren {

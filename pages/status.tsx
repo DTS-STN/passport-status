@@ -1,37 +1,39 @@
 import {
+  ChangeEventHandler,
   FC,
   MouseEventHandler,
-  ChangeEventHandler,
   useCallback,
   useMemo,
-  useState,
   useRef,
+  useState,
 } from 'react'
+
+import { useFormik, validateYupSchema, yupToFormErrors } from 'formik'
 import { GetServerSideProps } from 'next'
-import { useRouter } from 'next/router'
 import { Trans, useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import { useFormik, validateYupSchema, yupToFormErrors } from 'formik'
+import { NextSeo } from 'next-seo'
+import { useRouter } from 'next/router'
 import * as Yup from 'yup'
-import { CheckStatusApiRequestQuery } from '../lib/types'
-import { useCheckStatus } from '../lib/useCheckStatus'
-import Layout from '../components/Layout'
-import InputField from '../components/InputField'
+
 import ActionButton from '../components/ActionButton'
+import CheckStatusInfo from '../components/CheckStatusInfo'
+import DateSelectField, {
+  DateSelectFieldOnChangeEvent,
+} from '../components/DateSelectField'
 import ErrorSummary, {
   ErrorSummaryItem,
   getErrorSummaryItems,
   goToErrorSummary,
 } from '../components/ErrorSummary'
-import CheckStatusInfo from '../components/CheckStatusInfo'
-import Modal from '../components/Modal'
-import IdleTimeout from '../components/IdleTimeout'
 import ExternalLink from '../components/ExternalLink'
-import DateSelectField, {
-  DateSelectFieldOnChangeEvent,
-} from '../components/DateSelectField'
-import { NextSeo } from 'next-seo'
+import IdleTimeout from '../components/IdleTimeout'
+import InputField from '../components/InputField'
+import Layout from '../components/Layout'
 import LinkText from '../components/LinkText'
+import Modal from '../components/Modal'
+import { CheckStatusApiRequestQuery } from '../lib/types'
+import { useCheckStatus } from '../lib/useCheckStatus'
 
 const initialValues: CheckStatusApiRequestQuery = {
   dateOfBirth: '',

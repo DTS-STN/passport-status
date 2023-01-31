@@ -1,5 +1,6 @@
 import { NextSeo } from 'next-seo'
 import Link from 'next/link'
+
 import ErrorLayout from '../components/ErrorLayout'
 
 const Custom404 = () => {

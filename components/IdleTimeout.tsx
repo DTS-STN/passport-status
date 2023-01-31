@@ -1,8 +1,10 @@
+import { FC, useCallback, useEffect, useState } from 'react'
+
 import { deleteCookie } from 'cookies-next'
 import { useTranslation } from 'next-i18next'
 import { useRouter } from 'next/router'
-import { FC, useState, useEffect, useCallback } from 'react'
 import { IIdleTimerProps, useIdleTimer } from 'react-idle-timer'
+
 import Modal from './Modal'
 
 export interface IdleTimeoutProps

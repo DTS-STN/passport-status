@@ -1,6 +1,7 @@
 import { GetServerSideProps } from 'next'
 import { NextSeo } from 'next-seo'
 import Image from 'next/image'
+
 import LinkButton from '../components/LinkButton'
 
 const Index = () => {

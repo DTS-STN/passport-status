@@ -1,12 +1,13 @@
 import { NextApiRequest, NextApiResponse } from 'next'
-import { mapToCheckStatusApiResponse } from '../../lib/mappers/checkStatusApiResponseMapper'
-import { compareCIAndAI } from '../../lib/utils/compareCIAndAI'
-import {
-  PassportStatusesSearchResult,
-  CheckStatusApiResponse,
-  CheckStatusApiRequestQuery,
-} from '../../lib/types'
+
 import passportStatusesMock from '../../__mocks__/passportStatusesMock.json'
+import { mapToCheckStatusApiResponse } from '../../lib/mappers/checkStatusApiResponseMapper'
+import {
+  CheckStatusApiRequestQuery,
+  CheckStatusApiResponse,
+  PassportStatusesSearchResult,
+} from '../../lib/types'
+import { compareCIAndAI } from '../../lib/utils/compareCIAndAI'
 import { getLogger } from '../../logging/log-util'
 
 const logger = getLogger('check-status')

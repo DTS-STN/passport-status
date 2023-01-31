@@ -1,6 +1,8 @@
-import { render, screen } from '@testing-library/react'
-import { axe, toHaveNoViolations } from 'jest-axe'
 import '@testing-library/jest-dom/extend-expect'
+import { render, screen } from '@testing-library/react'
+
+import { axe, toHaveNoViolations } from 'jest-axe'
+
 import CheckStatusFileBeingProcessed from '../../components/CheckStatusResponses/CheckStatusFileBeingProcessed'
 
 expect.extend(toHaveNoViolations)

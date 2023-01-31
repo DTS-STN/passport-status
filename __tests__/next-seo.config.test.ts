@@ -1,11 +1,13 @@
 import '@testing-library/jest-dom'
+
 import { OpenGraphMedia } from 'next-seo/lib/types'
+
 import {
+  LanguageAlternate,
+  NextSEORouter,
   getLanguageAlternates,
   getNextSEOConfig,
   getOpenGraphImages,
-  LanguageAlternate,
-  NextSEORouter,
 } from '../next-seo.config'
 
 describe('getNextSEOConfig', () => {

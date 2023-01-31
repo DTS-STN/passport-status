@@ -1,13 +1,14 @@
 import { FC, MouseEventHandler } from 'react'
+
 import { CheckStatusApiResponse } from '../lib/types'
-import ActionButton, { ActionButtonStyle } from './ActionButton'
 import { StatusCode } from '../lib/types'
+import ActionButton, { ActionButtonStyle } from './ActionButton'
 import CheckStatusFileBeingProcessed from './CheckStatusResponses/CheckStatusFileBeingProcessed'
+import CheckStatusNoRecord from './CheckStatusResponses/CheckStatusNoRecord'
+import CheckStatusNotAcceptable from './CheckStatusResponses/CheckStatusNotAcceptable'
 import CheckStatusReadyForPickup from './CheckStatusResponses/CheckStatusReadyForPickup'
 import CheckStatusShippingCanadaPost from './CheckStatusResponses/CheckStatusShippingCanadaPost'
 import CheckStatusShippingFedex from './CheckStatusResponses/CheckStatusShippingFedex'
-import CheckStatusNotAcceptable from './CheckStatusResponses/CheckStatusNotAcceptable'
-import CheckStatusNoRecord from './CheckStatusResponses/CheckStatusNoRecord'
 
 export interface CheckStatusInfoProps {
   id: string

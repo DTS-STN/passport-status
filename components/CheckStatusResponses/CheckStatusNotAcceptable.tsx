@@ -1,4 +1,5 @@
 import { FC } from 'react'
+
 import { Trans, useTranslation } from 'next-i18next'
 
 export const CheckStatusNotAcceptable: FC<{}> = () => {

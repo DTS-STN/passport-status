@@ -1,5 +1,7 @@
 import { FC } from 'react'
+
 import { Trans, useTranslation } from 'next-i18next'
+
 import ExternalLink from '../ExternalLink'
 
 export const CheckStatusNoRecord: FC<{}> = () => {

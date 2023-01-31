@@ -1,7 +1,10 @@
 import React from 'react'
-import { render, screen } from '@testing-library/react'
+
 import '@testing-library/jest-dom/extend-expect'
+import { render, screen } from '@testing-library/react'
+
 import { axe, toHaveNoViolations } from 'jest-axe'
+
 import Layout from '../../components/Layout'
 
 //mock custom components

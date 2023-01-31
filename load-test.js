@@ -1,6 +1,5 @@
 // k6 Documentation: https://k6.io/docs/
-
-import { sleep, group } from 'k6'
+import { group, sleep } from 'k6'
 import http from 'k6/http'
 
 export const options = {

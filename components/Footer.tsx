@@ -1,4 +1,5 @@
 import { FC } from 'react'
+
 import DateModified from './DateModified'
 
 export interface FooterLink {

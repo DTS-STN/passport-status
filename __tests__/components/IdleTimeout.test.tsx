@@ -1,6 +1,8 @@
 import { FC } from 'react'
-import { render, screen } from '@testing-library/react'
+
 import '@testing-library/jest-dom/extend-expect'
+import { render, screen } from '@testing-library/react'
+
 import IdleTimeout from '../../components/IdleTimeout'
 import { ModalProps } from '../../components/Modal'
 

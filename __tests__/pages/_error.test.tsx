@@ -1,8 +1,9 @@
 /**
  * @jest-environment jsdom
  */
-import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
+import { render, screen } from '@testing-library/react'
+
 import CustomError from '../../pages/_error'
 
 describe('custom error', () => {

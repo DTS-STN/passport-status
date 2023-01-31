@@ -1,8 +1,9 @@
-import handler from '../../pages/api/email-esrf'
-import { createMocks, createRequest, createResponse } from 'node-mocks-http'
-import { NextApiRequest, NextApiResponse } from 'next'
 import { IncomingHttpHeaders } from 'http'
+import { NextApiRequest, NextApiResponse } from 'next'
+import { createMocks, createRequest, createResponse } from 'node-mocks-http'
+
 import { EmailEsrfApiRequestBody } from '../../lib/types'
+import handler from '../../pages/api/email-esrf'
 
 /**
  * NextApiRequest, NextApiResponse and node-mocks-http createResponse, createResponse types union
