@@ -1,12 +1,13 @@
 import { FC } from 'react'
 import { GetServerSideProps } from 'next'
-import { useTranslation } from 'next-i18next'
+import { Trans, useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { NextSeo } from 'next-seo'
 import Layout from '../components/Layout'
 import LinkButton from '../components/LinkButton'
 import Collapse from '../components/Collapse'
 import ExampleImage from '../components/ExampleImage'
+import LinkText from '../components/LinkText'
 
 const Landing: FC = () => {
   const { t } = useTranslation('landing')
@@ -35,25 +36,31 @@ const Landing: FC = () => {
           />
         </div>
       </div>
-      <Collapse title={t('common:collapse-file-number-title')}>
+      <Collapse title={t('collapse-file-number-title')}>
         <div className="border-t mt-3 p-3 max-w-prose">
-          <p>{t('common:receipt-explanation')}</p>
+          <p>
+            <Trans
+              i18nKey="receipt-explanation"
+              ns="landing"
+              components={{ Link: <LinkText href="/email" /> }}
+            />
+          </p>
           <ExampleImage
-            title={t('common:receipt-image-1.title')}
-            description={t('common:receipt-image-1.descriptive-text')}
+            title={t('receipt-image-1.title')}
+            description={t('receipt-image-1.descriptive-text')}
             imageProps={{
-              src: t('common:receipt-image-1.src'),
-              alt: t('common:receipt-image-1.alt'),
+              src: t('receipt-image-1.src'),
+              alt: t('receipt-image-1.alt'),
               width: 350,
               height: 550,
             }}
           />
           <ExampleImage
-            title={t('common:receipt-image-2.title')}
-            description={t('common:receipt-image-2.descriptive-text')}
+            title={t('receipt-image-2.title')}
+            description={t('receipt-image-2.descriptive-text')}
             imageProps={{
-              src: t('common:receipt-image-2.src'),
-              alt: t('common:receipt-image-2.alt'),
+              src: t('receipt-image-2.src'),
+              alt: t('receipt-image-2.alt'),
               width: 350,
               height: 550,
             }}
