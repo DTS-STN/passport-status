@@ -58,9 +58,9 @@ const InputField: FC<InputFieldProps> = ({
         aria-invalid={errorMessage ? true : undefined}
         aria-label={inputLabelId}
         aria-required={required ? true : undefined}
-        className={`block h-9 py-1.5 px-3 border rounded ${
+        className={`block h-9 rounded border py-1.5 px-3 ${
           errorMessage ? 'border-accent-error' : 'border-neutral-400'
-        } focus:outline-none focus:border-sky-500 focus:ring-sky-500`}
+        } focus:border-sky-500 focus:outline-none focus:ring-sky-500`}
         id={id}
         max={max}
         name={name}
@@ -70,7 +70,7 @@ const InputField: FC<InputFieldProps> = ({
       />
       {helpMessage && (
         <div
-          className="text-gray-600 text-base max-w-prose mt-1.5"
+          className="mt-1.5 max-w-prose text-base text-gray-600"
           id={inputHelpMessageId}
         >
           {helpMessage}

@@ -8,7 +8,7 @@ export const CheckStatusReadyForPickup: FC<{}> = () => {
       <h2 data-testid="ready-for-pickup" className="h2">
         {t('ready-for-pickup.has-been-printed')}
       </h2>
-      <ul className="list-disc space-y-2 pl-10 mb-5">
+      <ul className="mb-5 list-disc space-y-2 pl-10">
         <li>{t('ready-for-pickup.check-receipt')}</li>
         <li>{t('ready-for-pickup.not-available')}</li>
       </ul>

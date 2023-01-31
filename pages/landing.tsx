@@ -17,7 +17,7 @@ const Landing: FC = () => {
       <NextSeo title={t('header')} />
       <h1 className="h1">{t('header')}</h1>
       <p>{t('description')}</p>
-      <div className="flex flex-wrap md:flex-nowrap gap-4 mb-4">
+      <div className="mb-4 flex flex-wrap gap-4 md:flex-nowrap">
         <div className="w-full lg:w-4/12 xl:w-3/12">
           <LinkButton
             href="/status"
@@ -37,7 +37,7 @@ const Landing: FC = () => {
         </div>
       </div>
       <Collapse title={t('collapse-file-number-title')}>
-        <div className="border-t mt-3 p-3 max-w-prose">
+        <div className="mt-3 max-w-prose border-t p-3">
           <p>
             <Trans
               i18nKey="receipt-explanation"

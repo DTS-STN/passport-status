@@ -58,9 +58,9 @@ const DateSelect: FC<DateSelectProps> = ({
         aria-invalid={error ? true : undefined}
         aria-labelledby={`${dateSelectLabelId} date-select-${id}-${type}-label`}
         aria-required={required ? true : undefined}
-        className={`py-1 px-3 border rounded w-40 ${
+        className={`w-40 rounded border py-1 px-3 ${
           error ? 'border-accent-error' : 'border-neutral-400'
-        } focus:outline-none focus:border-sky-500 focus:ring-sky-500 bg-white`}
+        } bg-white focus:border-sky-500 focus:outline-none focus:ring-sky-500`}
       >
         <option value="" disabled></option>
         {options.map(({ label, value }) => (

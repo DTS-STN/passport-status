@@ -141,7 +141,7 @@ const Email: FC = () => {
           <p>
             <Trans i18nKey="header-messages.matches" ns="email" />
           </p>
-          <ul className="list-disc space-y-2 pl-10 mb-5">
+          <ul className="mb-5 list-disc space-y-2 pl-10">
             <li>{t('header-messages.list.item-1')}</li>
             <li>{t('header-messages.list.item-2')}</li>
             <li>
@@ -149,7 +149,7 @@ const Email: FC = () => {
             </li>
             <li>{t('header-messages.list.item-4')}</li>
           </ul>
-          <div className="p-5 mb-5 border border-gray-300 bg-gray-100 rounded">
+          <div className="mb-5 rounded border border-gray-300 bg-gray-100 p-5">
             <p className="m-0">
               <Trans
                 i18nKey="header-messages.for-child-application"
@@ -221,7 +221,7 @@ const Email: FC = () => {
             textRequired={t('common:required')}
             required
           />
-          <div className="flex gap-2 flex-wrap">
+          <div className="flex flex-wrap gap-2">
             <ActionButton
               id="btn-submit"
               disabled={isEmailEsrfLoading}

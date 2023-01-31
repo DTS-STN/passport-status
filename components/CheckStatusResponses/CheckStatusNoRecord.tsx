@@ -10,7 +10,7 @@ export const CheckStatusNoRecord: FC<{}> = () => {
         {t('no-record.cannot-give-status.description')}
       </h2>
       <p>{t('no-record.cannot-give-status.because')}</p>
-      <ul className="list-disc space-y-2 pl-10 mb-5">
+      <ul className="mb-5 list-disc space-y-2 pl-10">
         <li>
           <Trans
             i18nKey={'no-record.cannot-give-status.list.item-1'}

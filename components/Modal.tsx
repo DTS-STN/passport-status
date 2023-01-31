@@ -41,25 +41,25 @@ const Modal: FC<ModalProps> = ({
   return (
     <dialog
       ref={dialogRef}
-      className="border-none bg-transparent w-full md:w-2/3 lg:w-2/5 p-1 backdrop:bg-black backdrop:bg-opacity-80"
+      className="w-full border-none bg-transparent p-1 backdrop:bg-black backdrop:bg-opacity-80 md:w-2/3 lg:w-2/5"
     >
       <FocusOn enabled={open}>
         <section
           data-autofocus
           tabIndex={-1}
-          className="bg-white rounded-md ring-2 ring-gray-modal"
+          className="rounded-md bg-white ring-2 ring-gray-modal"
           aria-describedby={`${id}-modal-header`}
         >
           <header
             id={`${id}-modal-header`}
-            className="bg-blue-deep text-white p-3 border-b border-black rounded-t-md"
+            className="rounded-t-md border-b border-black bg-blue-deep p-3 text-white"
           >
             <h1>{header}</h1>
           </header>
           <div id={`${id}-modal-desc`} className="p-3">
             {children}
           </div>
-          <div className="flex gap-2 justify-end p-2 border-t border-gray-modal">
+          <div className="flex justify-end gap-2 border-t border-gray-modal p-2">
             {actionButtons.map((actionButtonProps) => (
               <ActionButton
                 key={actionButtonProps.text}

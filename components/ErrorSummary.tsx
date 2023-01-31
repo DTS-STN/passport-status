@@ -51,10 +51,10 @@ const ErrorSummary: FC<ErrorSummaryProps> = ({ id, errors, summary }) => {
   return (
     <section
       id={id}
-      className="border-l-6 border-accent-error mb-5 p-5"
+      className="mb-5 border-l-6 border-accent-error p-5"
       tabIndex={-1}
     >
-      <h2 className="text-2xl font-bold mb-3">{summary}</h2>
+      <h2 className="mb-3 text-2xl font-bold">{summary}</h2>
       <ul className="list-disc space-y-2 pl-10">
         {errors.map(({ feildId, errorMessage }) => (
           <li key={feildId}>

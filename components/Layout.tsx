@@ -10,7 +10,7 @@ export interface LayoutProps {
 const Layout: FC<LayoutProps> = ({ children }) => {
   const { t } = useTranslation('common')
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex min-h-screen flex-col">
       <Header
         skipToMainText={t('header.skip-to-main')}
         gocLink={t('header.goc-link')}
@@ -18,7 +18,7 @@ const Layout: FC<LayoutProps> = ({ children }) => {
       <main
         role="main"
         id="mainContent"
-        className="container mx-auto px-4 pb-8 mt-5 flex-1"
+        className="container mx-auto mt-5 flex-1 px-4 pb-8"
       >
         {children}
       </main>

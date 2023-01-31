@@ -17,7 +17,7 @@ const Custom404 = () => {
         {' '}
         / <span lang="fr">Pas trouvé</span>
       </span>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8">
+      <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-8">
         <div lang="en">
           <h2 className="h1">We couldn&#39;t find that Web page</h2>
           <p className="h2">Error 404</p>

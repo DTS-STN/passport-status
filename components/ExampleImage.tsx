@@ -23,7 +23,7 @@ const ExampleImage: FC<ExampleImageProps> = ({
       <p>
         <strong>{title}</strong>
       </p>
-      <figure className="md:w-3/5 bg-white rounded-lg drop-shadow-lg border mb-6 p-1">
+      <figure className="mb-6 rounded-lg border bg-white p-1 drop-shadow-lg md:w-3/5">
         <Image
           src={imageProps.src}
           alt={imageProps.alt}

@@ -12,7 +12,7 @@ export const CheckStatusFileBeingProcessed: FC<{}> = () => {
       <p>
         <Trans i18nKey={'being-processed.we-will-contact'} ns="status" />
       </p>
-      <ul className="list-disc space-y-2 pl-10 mb-5">
+      <ul className="mb-5 list-disc space-y-2 pl-10">
         <li>
           <Trans
             i18nKey={'status-check-contact.call-us'}

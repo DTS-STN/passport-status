@@ -25,7 +25,7 @@ const Expectations: FC = () => {
       <h1 className="h1">{t('header')}</h1>
       <h2 className="h2">{t('header-avoid-waiting')}</h2>
       <p>{t('available-after.description')}</p>
-      <ul className="list-disc space-y-2 pl-10 mb-5">
+      <ul className="mb-5 list-disc space-y-2 pl-10">
         <li>
           <Trans i18nKey={'available-after.list.item-1'} ns="expectations" />
         </li>
@@ -36,20 +36,20 @@ const Expectations: FC = () => {
       </p>
       <h2 className="h2">{t('header-who-can-check')}</h2>
       <p>{t('can-check.description')}</p>
-      <ul className="list-disc space-y-2 pl-10 mb-5">
+      <ul className="mb-5 list-disc space-y-2 pl-10">
         <li>
           <Trans i18nKey={'can-check.list.item-1'} ns="expectations" />
         </li>
         <li>{t('can-check.list.item-2')}</li>
       </ul>
       <p>{t('cannot-check.description')}</p>
-      <ul className="list-disc space-y-2 pl-10 mb-5">
+      <ul className="mb-5 list-disc space-y-2 pl-10">
         <li>
           <Trans i18nKey={'cannot-check.list.item-1'} ns="expectations" />
         </li>
         <li>{t('cannot-check.list.item-2')}</li>
       </ul>
-      <div className="p-5 mb-5 border border-gray-300 bg-gray-100 rounded">
+      <div className="mb-5 rounded border border-gray-300 bg-gray-100 p-5">
         <p className="m-0">{t('do-not-travel')}</p>
       </div>
       <h2 className="h2">{t('header-privacy')}</h2>
