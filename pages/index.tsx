@@ -13,9 +13,9 @@ const Index = () => {
       />
       <main
         role="main"
-        className="flex bg-splash-page bg-cover bg-center h-screen"
+        className="flex h-screen bg-splash-page bg-cover bg-center"
       >
-        <div className="m-auto w-[300px] md:w-[400px] lg:w-[500px] bg-gray-lighter">
+        <div className="m-auto w-[300px] bg-gray-lighter md:w-[400px] lg:w-[500px]">
           <div className="p-8">
             <h1 className="sr-only">
               Passport application status checker | Outil de vérification de
@@ -37,7 +37,7 @@ const Index = () => {
                 / <span lang="fr">Gouvernement du Canada</span>
               </span>
             </div>
-            <div className="flex gap-8 justify-center mt-9 mb-2">
+            <div className="mt-9 mb-2 flex justify-center gap-8">
               <section className="w-36" lang="en">
                 <h2 className="sr-only">Government of Canada</h2>
                 <LinkButton
@@ -60,10 +60,10 @@ const Index = () => {
               </section>
             </div>
           </div>
-          <div className="p-8 flex gap-6 justify-between items-center bg-gray-light">
-            <div className="text-blue-light w-7/12 md:w-8/12">
+          <div className="flex items-center justify-between gap-6 bg-gray-light p-8">
+            <div className="w-7/12 text-blue-light md:w-8/12">
               <a
-                className="text-inherit hover:text-inherit focus:text-inherit visited:text-inherit no-underline hover:underline focus:underline"
+                className="text-inherit no-underline visited:text-inherit hover:text-inherit hover:underline focus:text-inherit focus:underline"
                 data-cy="terms"
                 href="https://www.canada.ca/en/transparency/terms.html"
                 lang="en"
@@ -72,7 +72,7 @@ const Index = () => {
               </a>
               <span className="text-gray-400"> • </span>
               <a
-                className="text-inherit hover:text-inherit focus:text-inherit visited:text-inherit no-underline hover:underline focus:underline"
+                className="text-inherit no-underline visited:text-inherit hover:text-inherit hover:underline focus:text-inherit focus:underline"
                 data-cy="avis"
                 href="https://www.canada.ca/fr/transparence/avis.html"
                 lang="fr"

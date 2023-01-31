@@ -8,9 +8,9 @@ export interface BannerProps {
 const Banner: FC<BannerProps> = ({ alert, description }) => {
   return (
     <div className="bg-blue-normal font-body text-white">
-      <div className="container mx-auto p-4 flex flex-col space-y-2 lg:flex-row lg:items-center lg:space-x-4 lg:space-y-0">
+      <div className="container mx-auto flex flex-col space-y-2 p-4 lg:flex-row lg:items-center lg:space-x-4 lg:space-y-0">
         <div
-          className="border-2 px-4 py-1 whitespace-nowrap w-max"
+          className="w-max whitespace-nowrap border-2 px-4 py-1"
           role="alert"
         >
           <b>{alert}</b>

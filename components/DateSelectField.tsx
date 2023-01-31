@@ -216,7 +216,7 @@ const DateSelectField: FC<DateSelectFieldProps> = ({
       </div>
       {helpMessage && (
         <div
-          className="text-gray-600 text-base max-w-prose mt-1.5"
+          className="mt-1.5 max-w-prose text-base text-gray-600"
           id={dateSelectHelpMessageId}
         >
           {helpMessage}

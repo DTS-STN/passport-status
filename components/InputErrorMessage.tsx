@@ -10,7 +10,7 @@ const InputErrorMessage: FC<InputErrorMessageProps> = ({ id, message }) => {
     <div
       id={id}
       data-testid="input-error-message"
-      className="font-bold border-l-4 border-red-dark mb-1.5 px-2 bg-red-light inline-block"
+      className="mb-1.5 inline-block border-l-4 border-red-dark bg-red-light px-2 font-bold"
     >
       {message}
     </div>

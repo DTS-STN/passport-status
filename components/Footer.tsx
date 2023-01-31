@@ -49,8 +49,8 @@ const Footer: FC<FooterProps> = ({
       <h2 className="sr-only">siteFooter</h2>
       <DateModified text={dateModifiedText} />
       <div className="w-full">
-        <div className="w-full h-full pb-4 bg-gray-light">
-          <div className="h-auto pt-5 container mx-auto px-4 flex flex-col xl:flex xl:flex-row md:justify-between">
+        <div className="h-full w-full bg-gray-light pb-4">
+          <div className="container mx-auto flex h-auto flex-col px-4 pt-5 md:justify-between xl:flex xl:flex-row">
             <div
               className="mt-3.5 xl:mt-5"
               role="navigation"
@@ -59,18 +59,18 @@ const Footer: FC<FooterProps> = ({
               <h3 className="sr-only" id="footerNav2">
                 {footerNav2}
               </h3>
-              <ul className="flex flex-col md:grid md:grid-cols-2 xl:flex lg:flex-row">
+              <ul className="flex flex-col md:grid md:grid-cols-2 lg:flex-row xl:flex">
                 {links.map(({ link, linkText }, index) => (
                   <li
                     key={link}
                     className={
                       index === 0
-                        ? 'lg:mb-4 mb-5 mr-2.5 list-inside list-disc xl:list-none text-sm'
-                        : 'lg:mb-4 mb-5 mr-2.5 list-inside list-disc text-sm'
+                        ? 'mb-5 mr-2.5 list-inside list-disc text-sm lg:mb-4 xl:list-none'
+                        : 'mb-5 mr-2.5 list-inside list-disc text-sm lg:mb-4'
                     }
                   >
                     <a
-                      className="text-sm font-body text-[#21303F] hover:text-[#5E8EBD]"
+                      className="font-body text-sm text-[#21303F] hover:text-[#5E8EBD]"
                       data-cy="social-media-link"
                       href={link}
                     >
@@ -82,7 +82,7 @@ const Footer: FC<FooterProps> = ({
             </div>
             <div>
               <img
-                className="mb-2.5 mt-8 xl:mt-0 h-6 md:h-10 w-auto float-right"
+                className="float-right mb-2.5 mt-8 h-6 w-auto md:h-10 xl:mt-0"
                 src={footerLogoImage}
                 alt={footerLogoAltText}
               />

@@ -25,11 +25,11 @@ const Header: FC<HeaderProps> = ({ gocLink, skipToMainText }) => {
       <nav
         role="navigation"
         aria-labelledby="skipToMainContent"
-        className="absolute w-px h-px -left-96 focus-within:w-screen focus-within:h-auto focus-within:top-4 focus-within:z-50 focus-within:flex focus-within:justify-center"
+        className="absolute -left-96 h-px w-px focus-within:top-4 focus-within:z-50 focus-within:flex focus-within:h-auto focus-within:w-screen focus-within:justify-center"
       >
         <a
           id="skipToMainContent"
-          className="bg-blue-dark border border-blue-dark text-white px-2 focus:text-white focus:ring-2 focus:ring-offset-2 focus:ring-orange-dark hover:bg-basic-darkgray font-body font-bold focus:ring-inset "
+          className="border border-blue-dark bg-blue-dark px-2 font-body font-bold text-white hover:bg-basic-darkgray focus:text-white focus:ring-2 focus:ring-inset focus:ring-orange-dark focus:ring-offset-2 "
           href="#mainContent"
           draggable="false"
         >
@@ -44,11 +44,11 @@ const Header: FC<HeaderProps> = ({ gocLink, skipToMainText }) => {
             description={t('banner.description')}
           />
         )}
-        <div className="container mx-auto px-4 flex-col flex md:flex md:flex-row justify-between pt-2.5">
-          <div className="flex flex-row justify-between items-center content-center md:mt-7">
+        <div className="container mx-auto flex flex-col justify-between px-4 pt-2.5 md:flex md:flex-row">
+          <div className="flex flex-row content-center items-center justify-between md:mt-7">
             <a href={gocLink}>
               <img
-                className="w-auto h-7 lg:h-8"
+                className="h-7 w-auto lg:h-8"
                 src={locale === 'en' ? '/sig-blk-en.svg' : '/sig-blk-fr.svg'}
                 alt={
                   locale === 'en'
@@ -61,7 +61,7 @@ const Header: FC<HeaderProps> = ({ gocLink, skipToMainText }) => {
             {/* Language selector for small screens */}
             <Link href={asPath} locale={langSelectorLocale} replace>
               <a
-                className={`block md:hidden md:text-sm ml-6 pb-2 sm:ml-16 underline decoration-dotted cursor-help font-body font-bold text-[#284162] text-base hover:text-[#0535d2]`}
+                className={`ml-6 block cursor-help pb-2 font-body text-base font-bold text-[#284162] underline decoration-dotted hover:text-[#0535d2] sm:ml-16 md:hidden md:text-sm`}
                 lang={langSelectorLocale}
               >
                 <abbr title={langSelectorText}>{langSelectorAbbreviation}</abbr>
@@ -69,11 +69,11 @@ const Header: FC<HeaderProps> = ({ gocLink, skipToMainText }) => {
             </Link>
           </div>
 
-          <div className="flex-col flex">
+          <div className="flex flex-col">
             {/* Language selector for mid to larger screens */}
             <Link href={asPath} locale={langSelectorLocale} replace>
               <a
-                className="md:block hidden pb-0 lg:pb-4 self-end underline font-body text-[#284162] hover:text-[#0535d2]"
+                className="hidden self-end pb-0 font-body text-[#284162] underline hover:text-[#0535d2] md:block lg:pb-4"
                 data-cy="toggle-language-link"
                 lang={langSelectorLocale}
               >
@@ -86,7 +86,7 @@ const Header: FC<HeaderProps> = ({ gocLink, skipToMainText }) => {
         </div>
 
         {/* Border */}
-        <div className="mb-2 border-t pb-2 mt-4"></div>
+        <div className="mb-2 mt-4 border-t pb-2"></div>
 
         {/* <Menu
           loginText={t('login')}
