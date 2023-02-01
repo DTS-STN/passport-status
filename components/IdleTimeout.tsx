@@ -8,10 +8,10 @@ import { IIdleTimerProps, useIdleTimer } from 'react-idle-timer'
 import Modal from './Modal'
 
 export interface IdleTimeoutProps
-  extends Pick<IIdleTimerProps, 'promptTimeout'>,
+  extends Pick<IIdleTimerProps, 'promptBeforeIdle'>,
     Pick<IIdleTimerProps, 'timeout'> {}
 
-const IdleTimeout: FC<IdleTimeoutProps> = ({ promptTimeout, timeout }) => {
+const IdleTimeout: FC<IdleTimeoutProps> = ({ promptBeforeIdle, timeout }) => {
   const { t } = useTranslation('common')
   const router = useRouter()
   const [modalOpen, setModalOpen] = useState(false)
@@ -30,8 +30,8 @@ const IdleTimeout: FC<IdleTimeoutProps> = ({ promptTimeout, timeout }) => {
   const { reset, getRemainingTime } = useIdleTimer({
     onIdle: handleOnIdle,
     onPrompt: () => setModalOpen(true),
-    promptTimeout: promptTimeout ?? 5 * 60 * 1000, //5 minutes
-    timeout: timeout ?? 10 * 60 * 1000, //10 minutes
+    promptBeforeIdle: promptBeforeIdle ?? 5 * 60 * 1000, //5 minutes
+    timeout: timeout ?? 15 * 60 * 1000, //15 minutes
   })
 
   const tick = useCallback(() => {
