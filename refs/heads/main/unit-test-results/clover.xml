@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1675266474156" clover="3.2.0">
-  <project timestamp="1675266474156" name="All files">
-    <metrics statements="428" coveredstatements="285" conditionals="256" coveredconditionals="119" methods="122" coveredmethods="70" elements="806" coveredelements="474" complexity="0" loc="428" ncloc="428" packages="7" files="45" classes="45"/>
+<coverage generated="1675286338247" clover="3.2.0">
+  <project timestamp="1675286338248" name="All files">
+    <metrics statements="428" coveredstatements="289" conditionals="256" coveredconditionals="122" methods="122" coveredmethods="72" elements="806" coveredelements="483" complexity="0" loc="428" ncloc="428" packages="7" files="45" classes="45"/>
     <package name="components">
-      <metrics statements="204" coveredstatements="164" conditionals="118" coveredconditionals="73" methods="59" coveredmethods="45"/>
+      <metrics statements="204" coveredstatements="168" conditionals="118" coveredconditionals="76" methods="59" coveredmethods="47"/>
       <file name="ActionButton.tsx" path="/home/runner/work/passport-status/passport-status/components/ActionButton.tsx">
         <metrics statements="9" coveredstatements="9" conditionals="6" coveredconditionals="4" methods="1" coveredmethods="1"/>
         <line num="18" count="6" type="stmt"/>
@@ -184,27 +184,27 @@
         <line num="25" count="3" type="stmt"/>
       </file>
       <file name="IdleTimeout.tsx" path="/home/runner/work/passport-status/passport-status/components/IdleTimeout.tsx">
-        <metrics statements="21" coveredstatements="12" conditionals="8" coveredconditionals="5" methods="7" coveredmethods="2"/>
+        <metrics statements="21" coveredstatements="16" conditionals="8" coveredconditionals="8" methods="7" coveredmethods="4"/>
         <line num="14" count="3" type="stmt"/>
-        <line num="15" count="5" type="stmt"/>
-        <line num="16" count="5" type="stmt"/>
-        <line num="17" count="5" type="stmt"/>
-        <line num="18" count="5" type="stmt"/>
-        <line num="20" count="5" type="stmt"/>
+        <line num="15" count="3" type="stmt"/>
+        <line num="16" count="3" type="stmt"/>
+        <line num="17" count="3" type="stmt"/>
+        <line num="18" count="3" type="stmt"/>
+        <line num="20" count="3" type="stmt"/>
         <line num="21" count="0" type="stmt"/>
         <line num="22" count="0" type="stmt"/>
-        <line num="25" count="5" type="stmt"/>
+        <line num="25" count="3" type="stmt"/>
         <line num="26" count="0" type="stmt"/>
         <line num="27" count="0" type="stmt"/>
-        <line num="30" count="5" type="stmt"/>
-        <line num="32" count="0" type="stmt"/>
-        <line num="37" count="5" type="stmt"/>
-        <line num="38" count="0" type="stmt"/>
-        <line num="39" count="0" type="stmt"/>
-        <line num="40" count="0" type="stmt"/>
-        <line num="45" count="5" type="stmt"/>
-        <line num="46" count="5" type="stmt"/>
-        <line num="49" count="5" type="stmt"/>
+        <line num="30" count="3" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="37" count="3" type="stmt"/>
+        <line num="38" count="2" type="stmt"/>
+        <line num="39" count="2" type="stmt"/>
+        <line num="40" count="2" type="stmt"/>
+        <line num="45" count="3" type="stmt"/>
+        <line num="46" count="2" type="stmt"/>
+        <line num="49" count="3" type="stmt"/>
         <line num="55" count="0" type="stmt"/>
       </file>
       <file name="InputErrorMessage.tsx" path="/home/runner/work/passport-status/passport-status/components/InputErrorMessage.tsx">
