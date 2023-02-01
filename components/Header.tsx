@@ -1,9 +1,11 @@
 import React, { FC } from 'react'
-import Link from 'next/link'
-import { useRouter } from 'next/router'
-import Banner from './Banner'
+
 import { useTranslation } from 'next-i18next'
 import getConfig from 'next/config'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+
+import Banner from './Banner'
 
 export interface HeaderProps {
   gocLink: string

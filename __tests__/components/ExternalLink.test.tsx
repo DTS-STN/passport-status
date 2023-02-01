@@ -1,6 +1,8 @@
-import { render, screen } from '@testing-library/react'
-import { axe, toHaveNoViolations } from 'jest-axe'
 import '@testing-library/jest-dom/extend-expect'
+import { render, screen } from '@testing-library/react'
+
+import { axe, toHaveNoViolations } from 'jest-axe'
+
 import ExternalLink from '../../components/ExternalLink'
 
 expect.extend(toHaveNoViolations)

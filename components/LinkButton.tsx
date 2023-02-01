@@ -1,4 +1,5 @@
 import { FC } from 'react'
+
 import Link from 'next/link'
 
 export type LinkButtonSize = 'xs' | 'sm' | 'md' | 'lg'

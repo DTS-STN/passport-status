@@ -1,10 +1,12 @@
 /**
  * @jest-environment jsdom
  */
-import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
-import App from '../../pages/_app'
+import { render, screen } from '@testing-library/react'
+
 import { Router } from 'next/router'
+
+import App from '../../pages/_app'
 
 const MockComponent = jest
   .fn()

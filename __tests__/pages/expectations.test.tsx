@@ -1,9 +1,11 @@
 /**
  * @jest-environment jsdom
  */
-import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
+import { render, screen } from '@testing-library/react'
+
 import { axe, toHaveNoViolations } from 'jest-axe'
+
 import Expectations from '../../pages/expectations'
 
 expect.extend(toHaveNoViolations)

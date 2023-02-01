@@ -1,4 +1,5 @@
 import { FC } from 'react'
+
 import Link, { LinkProps } from 'next/link'
 
 type LinkTextProps<T> = React.AnchorHTMLAttributes<HTMLAnchorElement> &

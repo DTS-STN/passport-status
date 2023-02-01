@@ -1,12 +1,14 @@
 import { FC, MouseEventHandler, useCallback } from 'react'
+
+import { setCookie } from 'cookies-next'
 import { GetServerSideProps } from 'next'
-import Router from 'next/router'
 import { Trans, useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import Layout from '../components/Layout'
+import Router from 'next/router'
+
 import ActionButton from '../components/ActionButton'
-import { setCookie } from 'cookies-next'
 import ExternalLink from '../components/ExternalLink'
+import Layout from '../components/Layout'
 
 const Expectations: FC = () => {
   const { t } = useTranslation('expectations')

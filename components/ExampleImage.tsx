@@ -1,4 +1,5 @@
 import { FC } from 'react'
+
 import Image from 'next/future/image'
 
 export interface ImageProps {

@@ -1,8 +1,9 @@
 /**
  * @jest-environment jsdom
  */
-import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
+import { render, screen } from '@testing-library/react'
+
 import Index from '../../pages/index'
 
 // mocks useRouter to be able to use component' router.asPath

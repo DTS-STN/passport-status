@@ -1,12 +1,14 @@
 import { FC } from 'react'
+
 import { GetServerSideProps } from 'next'
 import { Trans, useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { NextSeo } from 'next-seo'
-import Layout from '../components/Layout'
-import LinkButton from '../components/LinkButton'
+
 import Collapse from '../components/Collapse'
 import ExampleImage from '../components/ExampleImage'
+import Layout from '../components/Layout'
+import LinkButton from '../components/LinkButton'
 import LinkText from '../components/LinkText'
 
 const Landing: FC = () => {

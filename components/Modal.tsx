@@ -1,6 +1,8 @@
 import { FC, ReactNode, useEffect, useId, useRef } from 'react'
-import ActionButton, { ActionButtonProps } from './ActionButton'
+
 import { FocusOn } from 'react-focus-on'
+
+import ActionButton, { ActionButtonProps } from './ActionButton'
 
 export interface ModalProps {
   actionButtons: ActionButtonProps[]

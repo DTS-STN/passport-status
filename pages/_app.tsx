@@ -1,11 +1,11 @@
-import { AppProps } from 'next/app'
-import { appWithTranslation } from 'next-i18next'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { appWithTranslation } from 'next-i18next'
 import { DefaultSeo } from 'next-seo'
-import { getNextSEOConfig } from '../next-seo.config'
-import Head from 'next/head'
+import { AppProps } from 'next/app'
 import getConfig from 'next/config'
+import Head from 'next/head'
 
+import { getNextSEOConfig } from '../next-seo.config'
 import '../styles/globals.css'
 
 // Create a react-query client

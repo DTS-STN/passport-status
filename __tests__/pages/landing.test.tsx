@@ -1,10 +1,12 @@
 /**
  * @jest-environment jsdom
  */
-import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
-import Landing from '../../pages/landing'
+import { render, screen } from '@testing-library/react'
+
 import { axe, toHaveNoViolations } from 'jest-axe'
+
+import Landing from '../../pages/landing'
 
 expect.extend(toHaveNoViolations)
 
