@@ -12,6 +12,7 @@ jest.mock('../../components/ErrorSummary', () => ({
   default: jest.fn(),
   getErrorSummaryItems: jest.fn(() => []),
 }))
+jest.mock('../../components/IdleTimeout')
 jest.mock('../../components/InputField')
 jest.mock('../../components/Layout')
 jest.mock('../../components/Modal')
