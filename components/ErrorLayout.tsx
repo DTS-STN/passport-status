@@ -1,6 +1,6 @@
 import { FC } from 'react'
 
-import Image from 'next/future/image'
+import Image from 'next/image'
 
 export interface ErrorLayoutProps {
   children?: React.ReactNode
