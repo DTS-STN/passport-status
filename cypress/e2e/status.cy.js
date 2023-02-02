@@ -85,7 +85,7 @@ describe('surname field validation', ()=>{
 
 describe('Date of Birth field validation', ()=>{
   it('validates valid dateOfBirth',()=>{
-    cy.get('#dateOfBirth').select('1982')
+    cy.get('#dateOfBirth-year').select('1982')
     cy.get('#dateOfBirth-month').select('12')
     cy.get('#dateOfBirth-day').select('08')
     cy.get('#btn-submit').click()
@@ -100,7 +100,7 @@ describe('Date of Birth field validation', ()=>{
   it('validates Date of Birth in the future',()=>{
     const futureDate = new Date()
     futureDate.setDate( futureDate.getDate() + 1)
-    cy.get('#dateOfBirth').select(futureDate.getFullYear().toString())
+    cy.get('#dateOfBirth-year').select(futureDate.getFullYear().toString())
     cy.get('#dateOfBirth-month').select((futureDate.getMonth() + 1).toString().padStart(2, '0'))
     cy.get('#dateOfBirth-day').select(futureDate.getDate().toString().padStart(2, '0'))
     cy.get('#btn-submit').click()
@@ -113,7 +113,7 @@ describe('responses - loads result', ()=>{
     cy.get('#esrf').type('A02D85ED')
     cy.get('#givenName').type('Yanis')
     cy.get('#surname').type('Piérre')
-    cy.get('#dateOfBirth').select('1972')
+    cy.get('#dateOfBirth-year').select('1972')
     cy.get('#dateOfBirth-month').select('07')
     cy.get('#dateOfBirth-day').select('29')
     cy.get('#btn-submit').click()
@@ -136,7 +136,7 @@ describe('responses - loads no result', ()=>{
     cy.get('#esrf').type('A1234567')
     cy.get('#givenName').type('John')
     cy.get('#surname').type('Doe')
-    cy.get('#dateOfBirth').select('1990')
+    cy.get('#dateOfBirth-year').select('1990')
     cy.get('#dateOfBirth-month').select('12')
     cy.get('#dateOfBirth-day').select('01')
     cy.get('#btn-submit').click()
