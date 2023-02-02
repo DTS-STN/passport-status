@@ -1,6 +1,15 @@
 import { FC } from 'react'
 
+import Image from 'next/future/image'
+
 import DateModified from './DateModified'
+
+export interface FooterLogo {
+  src: string
+  alt: string
+  width: number
+  height: number
+}
 
 export interface FooterLink {
   link: string
@@ -9,14 +18,10 @@ export interface FooterLink {
 
 export interface FooterProps {
   /**
-   * alt text for footer canada-ca logo
+   * footer canada-ca logo
    */
-  footerLogoAltText: string
+  footerLogo: FooterLogo
 
-  /**
-   * image path for footer logo
-   */
-  footerLogoImage: string
   /**
    * Screenreader section indicator
    */
@@ -38,8 +43,7 @@ export interface FooterProps {
  * footer element for all pages
  */
 const Footer: FC<FooterProps> = ({
-  footerLogoAltText,
-  footerLogoImage,
+  footerLogo,
   links,
   footerNav1,
   footerNav2,
@@ -82,10 +86,13 @@ const Footer: FC<FooterProps> = ({
               </ul>
             </div>
             <div>
-              <img
+              <Image
                 className="float-right mb-2.5 mt-8 h-6 w-auto md:h-10 xl:mt-0"
-                src={footerLogoImage}
-                alt={footerLogoAltText}
+                alt={footerLogo.alt}
+                src={footerLogo.src}
+                width={footerLogo.width}
+                height={footerLogo.height}
+                priority
               />
             </div>
           </div>

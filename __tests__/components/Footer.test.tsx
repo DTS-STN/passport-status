@@ -13,8 +13,12 @@ describe('Footer', () => {
     render(
       <Footer
         dateModifiedText="testDateModified"
-        footerLogoAltText="testAltText"
-        footerLogoImage="testImage"
+        footerLogo={{
+          alt: 'testAltText',
+          src: '/testImage',
+          width: 1,
+          height: 1,
+        }}
         links={[
           {
             link: 'https://some-link-1.com',
@@ -43,8 +47,12 @@ describe('Footer', () => {
     const { container } = render(
       <Footer
         dateModifiedText="testDateModified"
-        footerLogoAltText="testAltText"
-        footerLogoImage="testImage"
+        footerLogo={{
+          alt: 'testAltText',
+          src: '/testImage',
+          width: 1,
+          height: 1,
+        }}
         links={[
           {
             link: 'https://some-link-1.com',
