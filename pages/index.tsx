@@ -9,7 +9,7 @@ const Index = () => {
     <>
       <NextSeo
         noindex
-        title="Passport application status checker | Outil de vérification de l'état de la demande de passeport"
+        title="Passport Application Status Checker | Vérificateur de l'état d'une demande de passeport"
         titleTemplate="%s - Canada.ca"
       />
       <main
@@ -19,8 +19,8 @@ const Index = () => {
         <div className="m-auto w-[300px] bg-gray-lighter md:w-[400px] lg:w-[500px]">
           <div className="p-8">
             <h1 className="sr-only">
-              Passport application status checker | Outil de vérification de
-              l&#39;état de la demande de passeport
+              Passport Application Status Checker | Vérificateur de l&#39;état
+              d&#39;une demande de passeport
             </h1>
             <div className="w-11/12 lg:w-8/12">
               <Image
