@@ -13,7 +13,7 @@ describe('status page loads', () => {
 
   it('should have correct title in English', () => {
     cy.get("h1").filter(':visible').invoke('text').then((text) => {
-      cy.title().should("eq", `${text} - Passport application status checker - Canada.ca`);
+      cy.title().should("eq", `${text} - Passport Application Status Checker - Canada.ca`);
     });
   })
 
@@ -21,7 +21,7 @@ describe('status page loads', () => {
     cy.get('[data-cy=toggle-language-link]').click()
     cy.wait(200)
     cy.get("h1").filter(':visible').invoke('text').then((text) => {
-      cy.title().should("eq", `${text} - Outil de vérification de l'état de la demande de passeport - Canada.ca`);
+      cy.title().should("eq", `${text} - Vérificateur de l'état d'une demande de passeport - Canada.ca`);
     });
   })
 

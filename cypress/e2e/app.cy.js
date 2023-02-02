@@ -20,7 +20,7 @@ describe('app page loads', () => {
   })
 
   it('should have correct title', () => {
-    cy.title().should("eq", "Passport application status checker | Outil de vérification de l'état de la demande de passeport - Canada.ca");
+    cy.title().should("eq", "Passport Application Status Checker | Vérificateur de l'état d'une demande de passeport - Canada.ca");
   })
 
   it('has no detectable a11y violations on load', () => {

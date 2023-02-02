@@ -47,7 +47,7 @@ export type GetNextSEOConfig = (
 export const getDefaultConfig: GetNextSEOConfig = (appBaseUri, router) => ({
   titleTemplate: '%s - Canada.ca',
   defaultTitle:
-    "Passport application status checker | Outil de vérification de l'état de la demande de passeport",
+    "Passport Application Status Checker | Vérificateur de l'état d'une demande de passeport",
   description:
     "Avoid waiting on the phone and request the status of your application online. | Évitez d'attendre au téléphone et demandez l'état de votre demande en ligne.",
   additionalMetaTags: [
@@ -96,7 +96,7 @@ export const getDefaultConfig: GetNextSEOConfig = (appBaseUri, router) => ({
     images: getOpenGraphImages(appBaseUri),
     locale: 'en_CA',
     siteName:
-      "Passport application status checker | Outil de vérification de l'état de la demande de passeport - Canada.ca",
+      "Passport Application Status Checker | Vérificateur de l'état d'une demande de passeport - Canada.ca",
     type: 'website',
   },
   twitter: {
@@ -106,8 +106,8 @@ export const getDefaultConfig: GetNextSEOConfig = (appBaseUri, router) => ({
 })
 
 export const getEnglishConfig: GetNextSEOConfig = (appBaseUri, router) => ({
-  titleTemplate: '%s - Passport application status checker - Canada.ca',
-  defaultTitle: 'Passport application status checker - Canada.ca',
+  titleTemplate: '%s - Passport Application Status Checker - Canada.ca',
+  defaultTitle: 'Passport Application Status Checker - Canada.ca',
   description:
     'Avoid waiting on the phone and request the status of your application online.',
   additionalMetaTags: [
@@ -131,7 +131,7 @@ export const getEnglishConfig: GetNextSEOConfig = (appBaseUri, router) => ({
   openGraph: {
     images: getOpenGraphImages(appBaseUri),
     locale: 'en_CA',
-    siteName: 'Passport application status checker - Canada.ca',
+    siteName: 'Passport Application Status Checker - Canada.ca',
     type: 'website',
   },
   twitter: {
@@ -142,9 +142,8 @@ export const getEnglishConfig: GetNextSEOConfig = (appBaseUri, router) => ({
 
 export const getFrenchConfig: GetNextSEOConfig = (appBaseUri, router) => ({
   titleTemplate:
-    "%s - Outil de vérification de l'état de la demande de passeport - Canada.ca",
-  defaultTitle:
-    "Outil de vérification de l'état de la demande de passeport - Canada.ca",
+    "%s - Vérificateur de l'état d'une demande de passeport - Canada.ca",
+  defaultTitle: "Vérificateur de l'état d'une demande de passeport - Canada.ca",
   description:
     "Évitez d'attendre au téléphone et demandez l'état de votre demande en ligne.",
   additionalMetaTags: [
@@ -168,8 +167,7 @@ export const getFrenchConfig: GetNextSEOConfig = (appBaseUri, router) => ({
   openGraph: {
     images: getOpenGraphImages(appBaseUri),
     locale: 'fr_CA',
-    siteName:
-      "Outil de vérification de l'état de la demande de passeport - Canada.ca",
+    siteName: "Vérificateur de l'état d'une demande de passeport - Canada.ca",
     type: 'website',
   },
   twitter: {
