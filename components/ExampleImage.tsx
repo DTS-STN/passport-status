@@ -8,6 +8,7 @@ export interface ImageProps {
   width: number
   height: number
 }
+
 export interface ExampleImageProps {
   title: string
   imageProps: ImageProps
@@ -26,11 +27,12 @@ const ExampleImage: FC<ExampleImageProps> = ({
       </p>
       <figure className="mb-6 rounded-lg border bg-white p-1 drop-shadow-lg md:w-3/5">
         <Image
-          src={imageProps.src}
+          key={imageProps.src}
+          className="w-full"
           alt={imageProps.alt}
+          src={imageProps.src}
           width={imageProps.width}
           height={imageProps.height}
-          className="w-full"
         />
         <figcaption className="px-5 py-3 text-lg">
           <strong>{description}</strong>

@@ -27,8 +27,12 @@ const Layout: FC<LayoutProps> = ({ children }) => {
 
       <Footer
         dateModifiedText={t('footer.date-modified-text')}
-        footerLogoAltText="symbol2"
-        footerLogoImage="/wmms-blk.svg"
+        footerLogo={{
+          alt: t('footer.canada-ca-alt-text'),
+          src: '/wmms-blk.svg',
+          width: 300,
+          height: 71,
+        }}
         footerNav1="aboutGovernment"
         footerNav2="aboutThisSite"
         links={[

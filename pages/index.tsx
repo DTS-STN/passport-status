@@ -1,6 +1,6 @@
 import { GetServerSideProps } from 'next'
 import { NextSeo } from 'next-seo'
-import Image from 'next/image'
+import Image from 'next/future/image'
 
 import LinkButton from '../components/LinkButton'
 
@@ -24,14 +24,13 @@ const Index = () => {
             </h1>
             <div className="w-11/12 lg:w-8/12">
               <Image
-                alt="Government of Canada"
                 className="mb-1.5"
-                height={26}
-                layout="responsive"
-                objectFit="scale-down"
                 property="logo"
+                alt="Government of Canada"
                 src="/sig-blk-en.svg"
-                width={283}
+                width={300}
+                height={28}
+                priority
               />
               <span className="sr-only">
                 {' '}
@@ -82,9 +81,12 @@ const Index = () => {
               </a>
             </div>
             <div className="w-5/12 md:w-4/12">
-              <img
-                src="/wmms-blk.svg"
+              <Image
                 alt="Symbol of the Government of Canada"
+                src="/wmms-blk.svg"
+                width={300}
+                height={71}
+                priority
               />
               <span className="sr-only">
                 {' '}

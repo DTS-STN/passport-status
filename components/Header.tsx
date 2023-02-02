@@ -2,6 +2,7 @@ import React, { FC } from 'react'
 
 import { useTranslation } from 'next-i18next'
 import getConfig from 'next/config'
+import Image from 'next/future/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
@@ -49,14 +50,18 @@ const Header: FC<HeaderProps> = ({ gocLink, skipToMainText }) => {
         <div className="container mx-auto flex flex-col justify-between px-4 pt-2.5 md:flex md:flex-row">
           <div className="flex flex-row content-center items-center justify-between md:mt-7">
             <a href={gocLink}>
-              <img
+              <Image
+                key={locale}
                 className="h-7 w-auto lg:h-8"
-                src={locale === 'en' ? '/sig-blk-en.svg' : '/sig-blk-fr.svg'}
                 alt={
                   locale === 'en'
                     ? 'Government of Canada'
                     : 'Gouvernement du Canada'
                 }
+                src={locale === 'en' ? '/sig-blk-en.svg' : '/sig-blk-fr.svg'}
+                width={300}
+                height={28}
+                priority
               />
             </a>
 
