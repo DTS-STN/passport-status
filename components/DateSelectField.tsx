@@ -178,12 +178,12 @@ const DateSelectField: FC<DateSelectFieldProps> = ({
           message={errorMessage}
         />
       )}
-      <div className="flex flex-col space-y-2 sm:flex-row sm:space-x-2 sm:space-y-0">
+      <fieldset className="flex flex-col space-y-2 sm:flex-row sm:space-x-2 sm:space-y-0">
         <DateSelect
           ariaDescribedby={getAriaDescribedby()}
           dateSelectLabelId={dateSelectLabelId}
           error={!!errorMessage}
-          id={id}
+          id={`${id}-year`}
           label={t('common:date-select-field.year')}
           onChange={handleOnDateSelectChange}
           options={yearOptions}
@@ -215,7 +215,7 @@ const DateSelectField: FC<DateSelectFieldProps> = ({
           type="day"
           value={state.dayValue}
         />
-      </div>
+      </fieldset>
       {helpMessage && (
         <div
           className="mt-1.5 max-w-prose text-base text-gray-600"
