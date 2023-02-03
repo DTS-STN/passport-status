@@ -21,7 +21,7 @@ describe('InputField', () => {
   it('renders', () => {
     const sut = screen.getByTestId('id')
     expect(sut).toBeInTheDocument()
-    expect(sut.querySelector(`#id`)).toHaveAccessibleName('input-id-label')
+    expect(sut.querySelector(`#id`)).toHaveAccessibleName('label')
     expect(sut.querySelector(`#id`)).not.toHaveAccessibleDescription()
   })
 

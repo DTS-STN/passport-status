@@ -16,11 +16,12 @@ const InputLabel: FC<InputLabelProps> = ({
   textRequired,
 }) => {
   return (
-    <label
-      id={id}
-      htmlFor={htmlFor}
-      className={`mb-2 block font-bold ${required ? 'required' : ''}`}
-    >
+    <label id={id} htmlFor={htmlFor} className="mb-2 block font-bold">
+      {required && (
+        <span className="text-accent-error" aria-hidden="true">
+          {'* '}
+        </span>
+      )}
       {label}
       {required && (
         <strong className="text-accent-error">&nbsp;{textRequired}</strong>
