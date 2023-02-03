@@ -167,7 +167,7 @@ const DateSelectField: FC<DateSelectFieldProps> = ({
     <div className="mb-4" id={dateSelectWrapperId} data-testid={id}>
       <InputLabel
         id={dateSelectLabelId}
-        htmlFor={id}
+        htmlFor={`${id}-year`}
         required={required}
         label={label}
         textRequired={textRequired}
