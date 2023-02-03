@@ -105,7 +105,12 @@ const Status: FC = () => {
   )
 
   const errorSummaryItems = useMemo<ErrorSummaryItem[]>(
-    () => getErrorSummaryItems(formikErrors, t),
+    () =>
+      getErrorSummaryItems(formikErrors, t).map((item) => {
+        if (item.feildId !== 'dateOfBirth') return item
+        // field id should target the year select input
+        return { ...item, feildId: 'dateOfBirth-year' }
+      }),
     [formikErrors, t]
   )
 

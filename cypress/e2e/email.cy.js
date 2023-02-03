@@ -49,7 +49,7 @@ describe('responses', ()=>{
     cy.get('#email').type('yanis.pierre@example.com')
     cy.get('#givenName').type('Yanis')
     cy.get('#surname').type('Piérre')
-    cy.get('#dateOfBirth').select('1972')
+    cy.get('#dateOfBirth-year').select('1972')
     cy.get('#dateOfBirth-month').select('07')
     cy.get('#dateOfBirth-day').select('29')
     cy.get('#btn-submit').click()
