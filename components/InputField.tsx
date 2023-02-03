@@ -57,7 +57,7 @@ const InputField: FC<InputFieldProps> = ({
       <input
         aria-describedby={getAriaDescribedby()}
         aria-invalid={errorMessage ? true : undefined}
-        aria-label={inputLabelId}
+        aria-labelledby={inputLabelId}
         aria-required={required ? true : undefined}
         className={`block h-9 rounded border py-1.5 px-3 ${
           errorMessage ? 'border-accent-error' : 'border-neutral-400'

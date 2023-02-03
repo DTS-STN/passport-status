@@ -83,10 +83,4 @@
     width: 1em;
     text-align: center;
   }
-
-  label.required::before {
-    content: '* ';
-    margin-left: -0.665em;
-    @apply text-accent-error;
-  }
 }
