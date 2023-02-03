@@ -18,9 +18,9 @@ const InputLabel: FC<InputLabelProps> = ({
   return (
     <label id={id} htmlFor={htmlFor} className="mb-2 block font-bold">
       {required && (
-        <b className="text-accent-error mr-0.5" aria-hidden="true">
-          *
-        </b>
+        <span className="text-accent-error" aria-hidden="true">
+          {'* '}
+        </span>
       )}
       {label}
       {required && (
