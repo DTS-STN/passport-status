@@ -110,6 +110,14 @@ describe('Date of Birth field validation', ()=>{
 
 describe('responses - loads result', ()=>{
   beforeEach(() => {
+    cy.intercept("GET", '/api/check-status?dateOfBirth=1972-07-29&esrf=A02D85ED&givenName=Yanis&surname=Pi%C3%A9rre', {
+      statusCode: 200,
+      // FILE_BEING_PROCESSED = '1'
+      body: {
+        status: '1',
+      }
+    })
+
     cy.get('#esrf').type('A02D85ED')
     cy.get('#givenName').type('Yanis')
     cy.get('#surname').type('Piérre')
@@ -133,6 +141,11 @@ describe('responses - loads result', ()=>{
 
 describe('responses - loads no result', ()=>{
   beforeEach(() => {
+    cy.intercept("GET", '/api/check-status?dateOfBirth=1990-12-01&esrf=A1234567&givenName=John&surname=Doe', {
+      statusCode: 404,
+      body: "Passport Status Not Found"
+    })
+
     cy.get('#esrf').type('A1234567')
     cy.get('#givenName').type('John')
     cy.get('#surname').type('Doe')
