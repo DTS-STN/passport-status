@@ -46,6 +46,11 @@ describe('email page loads', () => {
 
 describe('responses', ()=>{
   beforeEach(() => {
+    cy.intercept("POST", '/api/email-esrf', {
+      statusCode: 202,
+      body: "Email sent if found",
+    })
+
     cy.get('#email').type('yanis.pierre@example.com')
     cy.get('#givenName').type('Yanis')
     cy.get('#surname').type('Piérre')

@@ -26,11 +26,9 @@ export default async function handler(
   const body = req.body as EmailEsrfApiRequestBody
 
   try {
-    process.env.PASSPORT_STATUS_API_BASE_URI
-      ? await emailEsrfApi(res, body)
-      : emailEsrfMock(res)
+    await emailEsrfApi(res, body)
   } catch (error) {
-    logger.error(`Status 500: ${JSON.stringify(error)}`)
+    logger.error(error, 'Unhandled exception: Internal Server Error (500)')
     res.status(500).send('Something went wrong.')
   }
 }
@@ -76,13 +74,4 @@ const emailEsrfApi = async (
   )
   logger.debug(`Status ${response.status}: ${response.statusText}`)
   res.status(response.status).send(response.statusText)
-}
-
-/**
- * Unless there is an error in the network communication or bad data format,
- * we expect the response to always be a 202 to protect the users data.
- */
-const emailEsrfMock = (res: NextApiResponse<string>) => {
-  logger.info('Status 202: Email sent if found')
-  res.status(202).send('Email sent if found')
 }

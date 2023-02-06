@@ -1,13 +1,11 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 
-import passportStatusesMock from '../../__mocks__/passportStatusesMock.json'
 import { mapToCheckStatusApiResponse } from '../../lib/mappers/checkStatusApiResponseMapper'
 import {
   CheckStatusApiRequestQuery,
   CheckStatusApiResponse,
   PassportStatusesSearchResult,
 } from '../../lib/types'
-import { compareCIAndAI } from '../../lib/utils/compareCIAndAI'
 import { getLogger } from '../../logging/log-util'
 
 const logger = getLogger('check-status')
@@ -30,11 +28,9 @@ export default async function handler(
   }
 
   try {
-    process.env.PASSPORT_STATUS_API_BASE_URI
-      ? await searchPassportStatusApi(res, checkStatusRequest)
-      : searchPassportStatusMock(res, checkStatusRequest)
+    await searchPassportStatusApi(res, checkStatusRequest)
   } catch (error) {
-    logger.error(`error 500: ${JSON.stringify(error)}`)
+    logger.error(error, 'Unhandled exception: Internal Server Error (500)')
     res.status(500).send('Something went wrong.')
   }
 }
@@ -66,12 +62,7 @@ export const searchPassportStatusApi = async (
     surname,
   }).toString()
   const url = `${process.env.PASSPORT_STATUS_API_BASE_URI}/api/v1/passport-statuses/_search?${query}`
-
-  logger.debug(
-    `performing status check with information ${JSON.stringify(
-      checkStatusApiRequestQuery
-    )}`
-  )
+  logger.debug({ url }, 'performing status check')
   const response = await fetch(url)
 
   if (response.ok) {
@@ -102,56 +93,4 @@ export const searchPassportStatusApi = async (
 
   logger.debug(`Status: ${response.status}: ${response.statusText}`)
   return res.status(response.status).send(response.statusText)
-}
-
-/**
- * Search passport status from mock API data
- * @param res
- * @param checkStatusApiRequestQuery Check status request object
- * @returns Response with status 200 and passport status API mock json, othewise response with status 404
- */
-export const searchPassportStatusMock = (
-  res: NextApiResponse<CheckStatusApiResponse | string>,
-  checkStatusApiRequestQuery: CheckStatusApiRequestQuery
-) => {
-  const { dateOfBirth, esrf, givenName, surname } = checkStatusApiRequestQuery
-  const { GetCertificateApplicationResponse } = passportStatusesMock._embedded
-
-  logger.debug(
-    `performing status check with information ${JSON.stringify(
-      checkStatusApiRequestQuery
-    )}`
-  )
-
-  const applicationResponse = GetCertificateApplicationResponse.find(
-    ({
-      CertificateApplication: {
-        CertificateApplicationApplicant,
-        CertificateApplicationIdentification,
-      },
-    }) =>
-      compareCIAndAI(
-        esrf,
-        CertificateApplicationIdentification.find(
-          ({ IdentificationCategoryText }) =>
-            IdentificationCategoryText === 'File Number'
-        )?.IdentificationID ?? ''
-      ) &&
-      compareCIAndAI(
-        givenName,
-        CertificateApplicationApplicant.PersonName.PersonGivenName[0]
-      ) &&
-      compareCIAndAI(
-        surname,
-        CertificateApplicationApplicant.PersonName.PersonSurName
-      ) &&
-      dateOfBirth === CertificateApplicationApplicant.BirthDate.Date
-  )
-
-  if (applicationResponse) {
-    logger.debug(applicationResponse)
-    return res.send(mapToCheckStatusApiResponse(applicationResponse))
-  }
-  logger.debug(`Status 404: Passport Status Not Found`)
-  return res.status(404).send('Passport Status Not Found')
 }
