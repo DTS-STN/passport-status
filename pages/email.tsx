@@ -24,6 +24,7 @@ import Layout from '../components/Layout'
 import Modal from '../components/Modal'
 import { EmailEsrfApiRequestBody } from '../lib/types'
 import useEmailEsrf from '../lib/useEmailEsrf'
+import LinkButton from '../components/LinkButton'
 
 const initialValues: EmailEsrfApiRequestBody = {
   dateOfBirth: '',
@@ -136,6 +137,15 @@ const Email: FC = () => {
               tOptions={{ phoneNumber: t('common:phone-number') }}
             />
           </p>
+          <div>
+            <LinkButton
+              href="/email"
+              text={t('request-another')}
+              id="getAnotherFileNumber"
+              style="primary"
+              fullWidth
+            />
+          </div>
           <h2 className="h2">{t('common:feedback-link-header')}</h2>
           <p>
             <ExternalLink href={t('common:feedback-link-url')}>
