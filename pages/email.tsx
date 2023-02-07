@@ -114,6 +114,8 @@ const Email: FC = () => {
     [router]
   )
 
+  const handleOnNewFileRequest = useCallback(() => router.reload(), [router])
+
   //if the api failed, fail hard to show error page
   if (emailEsrfError) throw emailEsrfError
 
@@ -136,6 +138,15 @@ const Email: FC = () => {
               tOptions={{ phoneNumber: t('common:phone-number') }}
             />
           </p>
+          <div className="mt-8">
+            <ActionButton
+              id="getAnotherFileNumber"
+              type="button"
+              text={t('request-another')}
+              onClick={handleOnNewFileRequest}
+              style="primary"
+            />
+          </div>
           <h2 className="h2">{t('common:feedback-link-header')}</h2>
           <p>
             <ExternalLink href={t('common:feedback-link-url')}>

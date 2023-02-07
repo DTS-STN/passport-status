@@ -53,5 +53,6 @@
       "item-4": "d'autres documents, comme un certificat de naturalisation"
     },
     "for-child-application": "<strong>Pour les demandes de passeport pour enfants,</strong> utilisez le(s) prénom(s), nom de famille et date de naissance de l'enfant, exactement tels qu'ils figurent sur sa preuve de citoyenneté."
-  }
+  },
+  "request-another": "Obtenir un autre numéro de dossier"
 }
