@@ -24,7 +24,6 @@ import Layout from '../components/Layout'
 import Modal from '../components/Modal'
 import { EmailEsrfApiRequestBody } from '../lib/types'
 import useEmailEsrf from '../lib/useEmailEsrf'
-import LinkButton from '../components/LinkButton'
 
 const initialValues: EmailEsrfApiRequestBody = {
   dateOfBirth: '',
@@ -115,6 +114,11 @@ const Email: FC = () => {
     [router]
   )
 
+  const handleOnNewFileRequest = useCallback(
+    () => router.push('/email'),
+    [router]
+  )
+
   //if the api failed, fail hard to show error page
   if (emailEsrfError) throw emailEsrfError
 
@@ -138,12 +142,12 @@ const Email: FC = () => {
             />
           </p>
           <div>
-            <LinkButton
-              href="/email"
-              text={t('request-another')}
+            <ActionButton
               id="getAnotherFileNumber"
+              type="button"
+              text={t('request-another')}
+              onClick={handleOnNewFileRequest}
               style="primary"
-              fullWidth
             />
           </div>
           <h2 className="h2">{t('common:feedback-link-header')}</h2>
