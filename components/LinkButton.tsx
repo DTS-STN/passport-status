@@ -46,7 +46,7 @@ const LinkButton: FC<LinkButtonProps> = ({
   const styleClasses = styles[style ?? 'default']
 
   return (
-    <Link href={href} passHref>
+    <Link href={href}>
       <a
         target={external ? '_blank' : undefined}
         rel={external ? 'noopener noreferrer' : undefined}
