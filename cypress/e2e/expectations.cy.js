@@ -36,6 +36,15 @@ describe('expectations page loads', () => {
     cy.get('#btn-agree').first().click()
     cy.location('pathname').should("equal", "/en/landing")
   })
+  
+  it('should have a bar in the header with the application name', () => {
+    cy.get('#app-bar').should("be.visible")
+  })
+
+  it('should redirect you to the expectations page when clicking the text in the application name bar', () => {
+    cy.get('#app-bar a').click()
+    cy.location('pathname').should("equal", "/en/expectations")
+  })
 
   it('has no detectable a11y violations on load', () => {
     cy.injectAxe()
