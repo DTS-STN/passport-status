@@ -93,8 +93,6 @@ const Header: FC<HeaderProps> = ({ gocLink, skipToMainText }) => {
           </div>
         </div>
 
-        {/* Border  
-        <div className="mb-2 mt-4 border-t pb-2"></div>*/}
         <ApplicationNameBar
           text={t('application-name-bar')}
           href="/expectations"
