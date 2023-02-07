@@ -59,5 +59,6 @@
   "banner": {
     "alert": "Test site",
     "description": "You cannot check the status of your passport application through this test site. Parts of this site may not work and will change."
-  }
+  },
+  "application-name-bar": "Passport application status checker"
 }

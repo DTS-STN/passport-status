@@ -6,6 +6,7 @@ import Image from 'next/future/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
+import ApplicationNameBar from './ApplicationNameBar'
 import Banner from './Banner'
 
 export interface HeaderProps {
@@ -47,7 +48,7 @@ const Header: FC<HeaderProps> = ({ gocLink, skipToMainText }) => {
             description={t('banner.description')}
           />
         )}
-        <div className="container mx-auto flex flex-col justify-between px-4 pt-2.5 md:flex md:flex-row">
+        <div className="container mx-auto flex flex-col justify-between px-4 py-2.5 md:flex md:flex-row">
           <div className="flex flex-row content-center items-center justify-between md:mt-7">
             <a href={gocLink}>
               <Image
@@ -92,8 +93,10 @@ const Header: FC<HeaderProps> = ({ gocLink, skipToMainText }) => {
           </div>
         </div>
 
-        {/* Border */}
-        <div className="mb-2 mt-4 border-t pb-2"></div>
+        <ApplicationNameBar
+          text={t('application-name-bar')}
+          href="/expectations"
+        />
 
         {/* <Menu
           loginText={t('login')}
