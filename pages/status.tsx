@@ -273,7 +273,7 @@ const Status: FC = () => {
             textRequired={t('common:required')}
             required
           />
-          <div className="flex flex-wrap gap-2">
+          <div className="mt-8 flex flex-wrap gap-2">
             <ActionButton
               id="btn-submit"
               disabled={isCheckStatusLoading}

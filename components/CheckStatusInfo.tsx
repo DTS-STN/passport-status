@@ -58,7 +58,7 @@ export const CheckStatusInfo: FC<CheckStatusInfoProps> = ({
   return (
     <div id={id}>
       {statusComponent}
-      <div className="pt-5">
+      <div className="my-8">
         <ActionButton
           onClick={onGoBackClick}
           text={goBackText}

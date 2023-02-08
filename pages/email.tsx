@@ -138,7 +138,7 @@ const Email: FC = () => {
               tOptions={{ phoneNumber: t('common:phone-number') }}
             />
           </p>
-          <div className="mt-8">
+          <div className="my-8">
             <ActionButton
               id="getAnotherFileNumber"
               type="button"
@@ -239,7 +239,7 @@ const Email: FC = () => {
             textRequired={t('common:required')}
             required
           />
-          <div className="flex flex-wrap gap-2">
+          <div className="mt-8 flex flex-wrap gap-2">
             <ActionButton
               id="btn-submit"
               disabled={isEmailEsrfLoading}
