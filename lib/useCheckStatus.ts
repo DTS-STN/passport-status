@@ -31,7 +31,7 @@ export const useCheckStatus = (
   >(
     ['ps:api:check-status', checkStatusApiRequestQuery],
     ({ signal }) => fetchCheckStatus(checkStatusApiRequestQuery, { signal }),
-    { refetchOnWindowFocus: false, ...(queryOptions ?? {}) }
+    { ...(queryOptions ?? {}) }
   )
 
   // fix isLoading with disabled: false

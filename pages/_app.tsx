@@ -13,7 +13,9 @@ import { getNextSEOConfig } from '../next-seo.config'
 import '../styles/globals.css'
 
 // Create a react-query client
-const queryClient = new QueryClient()
+const queryClient = new QueryClient({
+  defaultOptions: { queries: { refetchOnWindowFocus: false } },
+})
 
 // help to prevent double firing of adobe analytics pageLoad event
 let appPreviousLocationPathname = ''
