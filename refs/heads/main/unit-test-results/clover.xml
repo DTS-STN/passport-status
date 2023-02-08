@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1675864625425" clover="3.2.0">
-  <project timestamp="1675864625425" name="All files">
+<coverage generated="1675873199689" clover="3.2.0">
+  <project timestamp="1675873199689" name="All files">
     <metrics statements="431" coveredstatements="302" conditionals="252" coveredconditionals="125" methods="124" coveredmethods="70" elements="807" coveredelements="497" complexity="0" loc="431" ncloc="431" packages="6" files="45" classes="45"/>
     <package name="components">
       <metrics statements="206" coveredstatements="170" conditionals="118" coveredconditionals="76" methods="60" coveredmethods="48"/>
@@ -381,24 +381,24 @@
       <file name="_app.tsx" path="/home/runner/work/passport-status/passport-status/pages/_app.tsx">
         <metrics statements="19" coveredstatements="19" conditionals="4" coveredconditionals="4" methods="4" coveredmethods="4"/>
         <line num="16" count="1" type="stmt"/>
-        <line num="19" count="1" type="stmt"/>
         <line num="21" count="1" type="stmt"/>
-        <line num="22" count="2" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
         <line num="24" count="2" type="stmt"/>
-        <line num="25" count="2" type="stmt"/>
         <line num="26" count="2" type="stmt"/>
-        <line num="31" count="2" type="stmt"/>
-        <line num="32" count="2" type="stmt"/>
-        <line num="34" count="2" type="cond" truecount="2" falsecount="0"/>
-        <line num="35" count="1" type="stmt"/>
-        <line num="36" count="1" type="stmt"/>
-        <line num="40" count="2" type="stmt"/>
-        <line num="41" count="2" type="stmt"/>
+        <line num="27" count="2" type="stmt"/>
+        <line num="28" count="2" type="stmt"/>
+        <line num="33" count="2" type="stmt"/>
+        <line num="34" count="2" type="stmt"/>
+        <line num="36" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="37" count="1" type="stmt"/>
+        <line num="38" count="1" type="stmt"/>
         <line num="42" count="2" type="stmt"/>
         <line num="43" count="2" type="stmt"/>
         <line num="44" count="2" type="stmt"/>
         <line num="45" count="2" type="stmt"/>
-        <line num="49" count="2" type="stmt"/>
+        <line num="46" count="2" type="stmt"/>
+        <line num="47" count="2" type="stmt"/>
+        <line num="51" count="2" type="stmt"/>
       </file>
       <file name="_document.tsx" path="/home/runner/work/passport-status/passport-status/pages/_document.tsx">
         <metrics statements="3" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="2" coveredmethods="0"/>
