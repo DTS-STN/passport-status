@@ -7,33 +7,34 @@ const PUBLIC_FILE = /\.(.*)$/
 const logger = getLogger('middleware')
 
 export async function middleware(req: NextRequest) {
+  const { cookies, nextUrl, url } = req
+  const { locale, pathname } = nextUrl
+
   if (
-    req.nextUrl.pathname.startsWith('/_next') ||
-    req.nextUrl.pathname.includes('/api/') ||
-    PUBLIC_FILE.test(req.nextUrl.pathname)
+    pathname.startsWith('/_next') ||
+    pathname.includes('/api/') ||
+    PUBLIC_FILE.test(pathname)
   ) {
-    return
+    return NextResponse.next()
   }
+
   logger.debug(req)
 
-  if (req.nextUrl.locale === 'default' && !req.nextUrl.pathname.endsWith('/')) {
-    return NextResponse.redirect(new URL(`/en${req.nextUrl.pathname}`, req.url))
+  if (locale === 'default' && !pathname.endsWith('/')) {
+    return NextResponse.redirect(new URL(`/en${pathname}`, url))
   }
 
   //Redirect for index page as it's meant to be bilingual so we don't want users navigating to /en or /fr
-  if (
-    (req.nextUrl.locale === 'en' || req.nextUrl.locale === 'fr') &&
-    req.nextUrl.pathname === '/'
-  ) {
-    return NextResponse.redirect(new URL(`/`, req.url))
+  if ((locale === 'en' || locale === 'fr') && pathname === '/') {
+    return NextResponse.redirect(new URL(`/`, url))
   }
 
   if (
-    !['/', '/expectations'].includes(req.nextUrl.pathname) &&
-    req.cookies.get('agreed-to-email-esrf-terms') !== 'true'
+    !['/', '/expectations'].includes(pathname) &&
+    cookies.get('agreed-to-email-esrf-terms') !== 'true'
   ) {
-    return NextResponse.redirect(
-      new URL(`/${req.nextUrl.locale}/expectations`, req.url)
-    )
+    return NextResponse.redirect(new URL(`/${locale}/expectations`, url))
   }
+
+  return NextResponse.next()
 }
