@@ -31,7 +31,7 @@ export const useCheckStatus = (
   >(
     ['ps:api:check-status', checkStatusApiRequestQuery],
     ({ signal }) => fetchCheckStatus(checkStatusApiRequestQuery, { signal }),
-    { staleTime: 5 * 60 * 1000, ...(queryOptions ?? {}) }
+    { ...(queryOptions ?? {}) }
   )
 
   // fix isLoading with disabled: false
