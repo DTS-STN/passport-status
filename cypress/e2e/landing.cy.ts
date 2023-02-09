@@ -1,5 +1,3 @@
-/// <reference types="cypress" />
-
 beforeEach(() => {
   cy.visit('/expectations')
   cy.get('#btn-agree').first().click()
@@ -32,7 +30,7 @@ describe('landing page loads', () => {
   it('should display the button for has ESRF',()=>{
       cy.get(`#with-esrf`).should('be.visible')
   })
-  
+
   it('should have a bar in the header with the application name', () => {
     cy.get('#app-bar').should("be.visible")
   })
