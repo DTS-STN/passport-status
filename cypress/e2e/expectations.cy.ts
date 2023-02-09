@@ -1,5 +1,3 @@
-/// <reference types="cypress" />
-
 beforeEach(() => {
   cy.visit('/expectations')
 })
@@ -36,7 +34,7 @@ describe('expectations page loads', () => {
     cy.get('#btn-agree').first().click()
     cy.location('pathname').should("equal", "/en/landing")
   })
-  
+
   it('should have a bar in the header with the application name', () => {
     cy.get('#app-bar').should("be.visible")
   })

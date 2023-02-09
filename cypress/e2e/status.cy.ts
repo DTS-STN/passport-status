@@ -1,5 +1,3 @@
-/// <reference types="cypress" />
-
 beforeEach(() => {
   cy.visit('/expectations')
   cy.get('#btn-agree').first().click()
