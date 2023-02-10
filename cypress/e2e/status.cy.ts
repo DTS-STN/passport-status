@@ -1,3 +1,5 @@
+import { CheckStatusApiResponse, StatusCode } from '../../lib/types'
+
 beforeEach(() => {
   cy.visit('/expectations')
   cy.get('#btn-agree').first().click()
@@ -6,42 +8,54 @@ beforeEach(() => {
 
 describe('status page loads', () => {
   it('displays the status page', () => {
-    cy.location('pathname').should("equal", "/en/status")
+    cy.location('pathname').should('equal', '/en/status')
   })
 
   it('should have correct title in English', () => {
-    cy.get("h1").filter(':visible').invoke('text').then((text) => {
-      cy.title().should("eq", `${text} - Passport Application Status Checker - Canada.ca`);
-    });
+    cy.get('h1')
+      .filter(':visible')
+      .invoke('text')
+      .then((text) => {
+        cy.title().should(
+          'eq',
+          `${text} - Passport Application Status Checker - Canada.ca`
+        )
+      })
   })
 
   it('should have correct title in French', () => {
     cy.get('[data-cy=toggle-language-link]').click()
     cy.wait(200)
-    cy.get("h1").filter(':visible').invoke('text').then((text) => {
-      cy.title().should("eq", `${text} - Vérificateur de l'état d'une demande de passeport - Canada.ca`);
-    });
+    cy.get('h1')
+      .filter(':visible')
+      .invoke('text')
+      .then((text) => {
+        cy.title().should(
+          'eq',
+          `${text} - Vérificateur de l'état d'une demande de passeport - Canada.ca`
+        )
+      })
   })
 
   it('displays the language link to change to French', () => {
-    cy.location('pathname').should("equal", "/en/status")
+    cy.location('pathname').should('equal', '/en/status')
     cy.get('[data-cy=toggle-language-link]').should('contain.text', 'Français')
   })
 
   it('displays the language link to change to English', () => {
     cy.get('[data-cy=toggle-language-link]').click()
     cy.wait(200)
-    cy.location('pathname').should("equal", "/fr/status")
+    cy.location('pathname').should('equal', '/fr/status')
     cy.get('[data-cy=toggle-language-link]').should('contain.text', 'English')
   })
 
   it('should have a bar in the header with the application name', () => {
-    cy.get('#app-bar').should("be.visible")
+    cy.get('#app-bar').should('be.visible')
   })
 
   it('should redirect you to the expectations page when clicking the text in the application name bar', () => {
     cy.get('#app-bar a').click()
-    cy.location('pathname').should("equal", "/en/expectations")
+    cy.location('pathname').should('equal', '/en/expectations')
   })
 
   it('has no detectable a11y violations on load', () => {
@@ -51,47 +65,47 @@ describe('status page loads', () => {
   })
 })
 
-describe('ESRF field validation', ()=>{
-  it('validates valid ESRF',()=>{
+describe('ESRF field validation', () => {
+  it('validates valid ESRF', () => {
     cy.get('#esrf').type('A5934S87')
     cy.get('#btn-submit').click()
     cy.get('#input-esrf-error').should('not.exist')
   })
 
-  it('validates empty ESRF error',()=>{
+  it('validates empty ESRF error', () => {
     cy.get('#btn-submit').click()
     cy.get('#input-esrf-error').should('exist')
   })
 })
 
-describe('givenName field validation', ()=>{
-  it('validates valid givenName',()=>{
+describe('givenName field validation', () => {
+  it('validates valid givenName', () => {
     cy.get('#givenName').type('Clara')
     cy.get('#btn-submit').click()
     cy.get('#input-givenName-error').should('not.exist')
   })
 
-  it('validates empty givenName error',()=>{
+  it('validates empty givenName error', () => {
     cy.get('#btn-submit').click()
     cy.get('#input-givenName-error').should('exist')
   })
 })
 
-describe('surname field validation', ()=>{
-  it('validates valid surname',()=>{
+describe('surname field validation', () => {
+  it('validates valid surname', () => {
     cy.get('#surname').type('Renard')
     cy.get('#btn-submit').click()
     cy.get('#input-surname-error').should('not.exist')
   })
 
-  it('validates empty surname error',()=>{
+  it('validates empty surname error', () => {
     cy.get('#btn-submit').click()
     cy.get('#input-surname-error').should('exist')
   })
 })
 
-describe('Date of Birth field validation', ()=>{
-  it('validates valid dateOfBirth',()=>{
+describe('Date of Birth field validation', () => {
+  it('validates valid dateOfBirth', () => {
     cy.get('#dateOfBirth-year').select('1982')
     cy.get('#dateOfBirth-month').select('12')
     cy.get('#dateOfBirth-day').select('08')
@@ -99,59 +113,100 @@ describe('Date of Birth field validation', ()=>{
     cy.get('#date-select-dateOfBirth-error').should('not.exist')
   })
 
-  it('validates empty dateOfBirth error',()=>{
+  it('validates empty dateOfBirth error', () => {
     cy.get('#btn-submit').click()
     cy.get('#date-select-dateOfBirth-error').should('exist')
   })
 
-  it('validates Date of Birth in the future',()=>{
+  it('validates Date of Birth in the future', () => {
     const futureDate = new Date()
-    futureDate.setDate( futureDate.getDate() + 1)
+    futureDate.setDate(futureDate.getDate() + 1)
     cy.get('#dateOfBirth-year').select(futureDate.getFullYear().toString())
-    cy.get('#dateOfBirth-month').select((futureDate.getMonth() + 1).toString().padStart(2, '0'))
-    cy.get('#dateOfBirth-day').select(futureDate.getDate().toString().padStart(2, '0'))
+    cy.get('#dateOfBirth-month').select(
+      (futureDate.getMonth() + 1).toString().padStart(2, '0')
+    )
+    cy.get('#dateOfBirth-day').select(
+      futureDate.getDate().toString().padStart(2, '0')
+    )
     cy.get('#btn-submit').click()
     cy.get('#date-select-dateOfBirth-error').should('exist')
   })
 })
 
-describe('responses - loads result', ()=>{
-  beforeEach(() => {
-    cy.intercept("GET", '/api/check-status?dateOfBirth=1972-07-29&esrf=A02D85ED&givenName=Yanis&surname=Pi%C3%A9rre', {
-      statusCode: 200,
-      // FILE_BEING_PROCESSED = '1'
-      body: {
-        status: '1',
-      }
+const statusCodes: ReadonlyArray<CheckStatusApiResponse> = [
+  { status: StatusCode.APPLICATION_NO_LONGER_MEETS_CRITERIA },
+  { status: StatusCode.FILE_BEING_PROCESSED },
+  { status: StatusCode.NOT_ACCEPTABLE_FOR_PROCESSING },
+  { status: StatusCode.PASSPORT_ISSUED_READY_FOR_PICKUP },
+  {
+    status: StatusCode.PASSPORT_ISSUED_SHIPPING_CANADA_POST,
+    manifestNumber: '7035114477138472',
+  },
+  {
+    status: StatusCode.PASSPORT_ISSUED_SHIPPING_FEDEX,
+    manifestNumber: '9261299991099834284833',
+  },
+]
+statusCodes.forEach((response) => {
+  describe(`responses- loads result - '${response.status}'`, () => {
+    beforeEach(() => {
+      cy.intercept(
+        {
+          method: 'GET',
+          pathname: '/api/check-status',
+          query: {
+            dateOfBirth: '1972-07-29',
+            esrf: 'A02D85ED',
+            givenName: 'Yanis',
+            surname: 'Piérre',
+          },
+        },
+        {
+          statusCode: 200,
+          body: response,
+        }
+      )
+
+      cy.get('#esrf').type('A02D85ED')
+      cy.get('#givenName').type('Yanis')
+      cy.get('#surname').type('Piérre')
+      cy.get('#dateOfBirth-year').select('1972')
+      cy.get('#dateOfBirth-month').select('07')
+      cy.get('#dateOfBirth-day').select('29')
+      cy.get('#btn-submit').click()
     })
 
-    cy.get('#esrf').type('A02D85ED')
-    cy.get('#givenName').type('Yanis')
-    cy.get('#surname').type('Piérre')
-    cy.get('#dateOfBirth-year').select('1972')
-    cy.get('#dateOfBirth-month').select('07')
-    cy.get('#dateOfBirth-day').select('29')
-    cy.get('#btn-submit').click()
-  })
+    it(`loads result for status '${response.status}'`, () => {
+      cy.get('#response-result').should('exist')
+      cy.focused().should('have.prop', 'tagName').should('eq', 'H1')
+    })
 
-  it('loads result', ()=>{
-    cy.get('#response-result').should('exist')
-    cy.focused().should('have.prop', 'tagName' ).should('eq', 'H1')
-  })
-
-  it('loads result has no detectable a11y violations', ()=>{
-    cy.injectAxe()
-    cy.wait(500)
-    cy.checkA11y()
+    it(`loads result for status '${response.status}' has no detectable a11y violations`, () => {
+      cy.injectAxe()
+      cy.wait(500)
+      cy.checkA11y()
+    })
   })
 })
 
-describe('responses - loads no result', ()=>{
+describe('responses - loads no result', () => {
   beforeEach(() => {
-    cy.intercept("GET", '/api/check-status?dateOfBirth=1990-12-01&esrf=A1234567&givenName=John&surname=Doe', {
-      statusCode: 404,
-      body: "Passport Status Not Found"
-    })
+    cy.intercept(
+      {
+        method: 'GET',
+        pathname: '/api/check-status',
+        query: {
+          dateOfBirth: '1990-12-01',
+          esrf: 'A1234567',
+          givenName: 'John',
+          surname: 'Doe',
+        },
+      },
+      {
+        statusCode: 404,
+        body: 'Passport Status Not Found',
+      }
+    )
 
     cy.get('#esrf').type('A1234567')
     cy.get('#givenName').type('John')
@@ -162,28 +217,33 @@ describe('responses - loads no result', ()=>{
     cy.get('#btn-submit').click()
   })
 
-  it('loads no result', ()=>{
+  it('loads no result', () => {
     cy.get('#response-no-result').should('exist')
-    cy.focused().should('have.prop', 'tagName' ).should('eq', 'H1')
+    cy.focused().should('have.prop', 'tagName').should('eq', 'H1')
   })
 
-  it('no result has no detectable a11y violations', ()=>{
+  it('no result has no detectable a11y violations', () => {
     cy.injectAxe()
     cy.wait(500)
     cy.checkA11y()
   })
 })
 
-describe('cancel check status', ()=>{
+describe('cancel check status', () => {
   beforeEach(() => {
     cy.get('#btn-cancel').click()
   })
 
-  it('loads dialog', ()=>{
+  it('cancel check status should loads dialog', () => {
     cy.get('dialog[open]').should('exist')
   })
 
-  it('cancel check status has no detectable a11y violations', ()=>{
+  it('cancel check status should redirects to landing page', () => {
+    cy.get('button').contains('Yes').should('exist').click()
+    cy.location('pathname').should('equal', '/en/landing')
+  })
+
+  it('cancel check status dialog has no detectable a11y violations', () => {
     cy.injectAxe()
     cy.wait(500)
     cy.checkA11y()
