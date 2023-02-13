@@ -1,3 +1,5 @@
+import { faker } from '@faker-js/faker'
+
 import { CheckStatusApiResponse, StatusCode } from '../../lib/types'
 
 beforeEach(() => {
@@ -67,7 +69,7 @@ describe('status page loads', () => {
 
 describe('ESRF field validation', () => {
   it('validates valid ESRF', () => {
-    cy.get('#esrf').type('A5934S87')
+    cy.get('#esrf').type(faker.helpers.replaceSymbols('?#######'))
     cy.get('#btn-submit').click()
     cy.get('#input-esrf-error').should('not.exist')
   })
@@ -80,7 +82,7 @@ describe('ESRF field validation', () => {
 
 describe('givenName field validation', () => {
   it('validates valid givenName', () => {
-    cy.get('#givenName').type('Clara')
+    cy.get('#givenName').type(faker.name.firstName())
     cy.get('#btn-submit').click()
     cy.get('#input-givenName-error').should('not.exist')
   })
@@ -93,7 +95,7 @@ describe('givenName field validation', () => {
 
 describe('surname field validation', () => {
   it('validates valid surname', () => {
-    cy.get('#surname').type('Renard')
+    cy.get('#surname').type(faker.name.lastName())
     cy.get('#btn-submit').click()
     cy.get('#input-surname-error').should('not.exist')
   })
@@ -104,30 +106,32 @@ describe('surname field validation', () => {
   })
 })
 
-describe('Date of Birth field validation', () => {
+describe('dateOfBirth field validation', () => {
   it('validates valid dateOfBirth', () => {
-    cy.get('#dateOfBirth-year').select('1982')
-    cy.get('#dateOfBirth-month').select('12')
-    cy.get('#dateOfBirth-day').select('08')
+    const dateOfBirth = faker.date.past()
+    const year = dateOfBirth.getFullYear().toString().padStart(4, '0')
+    const month = (dateOfBirth.getMonth() + 1).toString().padStart(2, '0')
+    const day = dateOfBirth.getDate().toString().padStart(2, '0')
+    cy.get('#dateOfBirth-year').select(year)
+    cy.get('#dateOfBirth-month').select(month)
+    cy.get('#dateOfBirth-day').select(day)
     cy.get('#btn-submit').click()
     cy.get('#date-select-dateOfBirth-error').should('not.exist')
   })
 
-  it('validates empty dateOfBirth error', () => {
+  it('validates dateOfBirth in the future', () => {
+    const dateOfBirth = faker.date.future(0)
+    const year = dateOfBirth.getFullYear().toString().padStart(4, '0')
+    const month = (dateOfBirth.getMonth() + 1).toString().padStart(2, '0')
+    const day = dateOfBirth.getDate().toString().padStart(2, '0')
+    cy.get('#dateOfBirth-year').select(year)
+    cy.get('#dateOfBirth-month').select(month)
+    cy.get('#dateOfBirth-day').select(day)
     cy.get('#btn-submit').click()
     cy.get('#date-select-dateOfBirth-error').should('exist')
   })
 
-  it('validates Date of Birth in the future', () => {
-    const futureDate = new Date()
-    futureDate.setDate(futureDate.getDate() + 1)
-    cy.get('#dateOfBirth-year').select(futureDate.getFullYear().toString())
-    cy.get('#dateOfBirth-month').select(
-      (futureDate.getMonth() + 1).toString().padStart(2, '0')
-    )
-    cy.get('#dateOfBirth-day').select(
-      futureDate.getDate().toString().padStart(2, '0')
-    )
+  it('validates empty dateOfBirth error', () => {
     cy.get('#btn-submit').click()
     cy.get('#date-select-dateOfBirth-error').should('exist')
   })
@@ -140,40 +144,50 @@ const statusCodes: ReadonlyArray<CheckStatusApiResponse> = [
   { status: StatusCode.PASSPORT_ISSUED_READY_FOR_PICKUP },
   {
     status: StatusCode.PASSPORT_ISSUED_SHIPPING_CANADA_POST,
-    manifestNumber: '7035114477138472',
+    manifestNumber: faker.helpers.replaceSymbols('################'),
   },
   {
     status: StatusCode.PASSPORT_ISSUED_SHIPPING_FEDEX,
-    manifestNumber: '9261299991099834284833',
+    manifestNumber: faker.helpers.replaceSymbols('######################'),
   },
 ]
 statusCodes.forEach((response) => {
   describe(`responses- loads result - '${response.status}'`, () => {
     beforeEach(() => {
+      const esrf = faker.helpers.replaceSymbols('?#######')
+      const givenName = faker.name.firstName()
+      const surname = faker.name.lastName()
+      const dateOfBirth = faker.date.past()
+      const year = dateOfBirth.getFullYear().toString().padStart(4, '0')
+      const month = (dateOfBirth.getMonth() + 1).toString().padStart(2, '0')
+      const day = dateOfBirth.getDate().toString().padStart(2, '0')
+
       cy.intercept(
         {
           method: 'GET',
           pathname: '/api/check-status',
           query: {
-            dateOfBirth: '1972-07-29',
-            esrf: 'A02D85ED',
-            givenName: 'Yanis',
-            surname: 'Piérre',
+            dateOfBirth: `${year}-${month}-${day}`,
+            esrf: esrf,
+            givenName: givenName,
+            surname: surname,
           },
         },
         {
           statusCode: 200,
           body: response,
         }
-      )
+      ).as('check-status')
 
-      cy.get('#esrf').type('A02D85ED')
-      cy.get('#givenName').type('Yanis')
-      cy.get('#surname').type('Piérre')
-      cy.get('#dateOfBirth-year').select('1972')
-      cy.get('#dateOfBirth-month').select('07')
-      cy.get('#dateOfBirth-day').select('29')
+      cy.get('#esrf').type(esrf)
+      cy.get('#givenName').type(givenName)
+      cy.get('#surname').type(surname)
+      cy.get('#dateOfBirth-year').select(year)
+      cy.get('#dateOfBirth-month').select(month)
+      cy.get('#dateOfBirth-day').select(day)
       cy.get('#btn-submit').click()
+
+      cy.wait('@check-status').its('response.statusCode').should('eq', 200)
     })
 
     it(`loads result for status '${response.status}'`, () => {
@@ -191,30 +205,40 @@ statusCodes.forEach((response) => {
 
 describe('responses - loads no result', () => {
   beforeEach(() => {
+    const esrf = faker.helpers.replaceSymbols('?#######')
+    const givenName = faker.name.firstName()
+    const surname = faker.name.lastName()
+    const dateOfBirth = faker.date.past()
+    const year = dateOfBirth.getFullYear().toString().padStart(4, '0')
+    const month = (dateOfBirth.getMonth() + 1).toString().padStart(2, '0')
+    const day = dateOfBirth.getDate().toString().padStart(2, '0')
+
     cy.intercept(
       {
         method: 'GET',
         pathname: '/api/check-status',
         query: {
-          dateOfBirth: '1990-12-01',
-          esrf: 'A1234567',
-          givenName: 'John',
-          surname: 'Doe',
+          dateOfBirth: `${year}-${month}-${day}`,
+          esrf: esrf,
+          givenName: givenName,
+          surname: surname,
         },
       },
       {
         statusCode: 404,
         body: 'Passport Status Not Found',
       }
-    )
+    ).as('check-status')
 
-    cy.get('#esrf').type('A1234567')
-    cy.get('#givenName').type('John')
-    cy.get('#surname').type('Doe')
-    cy.get('#dateOfBirth-year').select('1990')
-    cy.get('#dateOfBirth-month').select('12')
-    cy.get('#dateOfBirth-day').select('01')
+    cy.get('#esrf').type(esrf)
+    cy.get('#givenName').type(givenName)
+    cy.get('#surname').type(surname)
+    cy.get('#dateOfBirth-year').select(year)
+    cy.get('#dateOfBirth-month').select(month)
+    cy.get('#dateOfBirth-day').select(day)
     cy.get('#btn-submit').click()
+
+    cy.wait('@check-status').its('response.statusCode').should('eq', 404)
   })
 
   it('loads no result', () => {

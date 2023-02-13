@@ -1,3 +1,4 @@
+import { faker } from '@faker-js/faker'
 import { IncomingHttpHeaders } from 'http'
 import { NextApiRequest, NextApiResponse } from 'next'
 import { createMocks, createRequest, createResponse } from 'node-mocks-http'
@@ -35,12 +36,24 @@ describe('api/email-esrf', () => {
     )
     global.fetch = fetchMock
 
+    const givenName = faker.name.firstName()
+    const surname = faker.name.lastName()
+    const email = faker.internet.email(
+      givenName,
+      surname,
+      'example.fakerjs.dev'
+    )
+    const dateOfBirth = faker.date.past()
+    const year = dateOfBirth.getFullYear().toString().padStart(4, '0')
+    const month = (dateOfBirth.getMonth() + 1).toString().padStart(2, '0')
+    const day = dateOfBirth.getDate().toString().padStart(2, '0')
+
     const body: EmailEsrfApiRequestBody = {
-      dateOfBirth: '1996-07-23',
-      email: 'camille.fontaine@example.com',
-      givenName: 'Camille',
+      dateOfBirth: `${year}-${month}-${day}`,
+      email,
+      givenName,
       locale: 'en',
-      surname: 'Fontainé',
+      surname,
     }
     const headers: IncomingHttpHeaders = {
       'content-type': 'application/json',
@@ -63,7 +76,7 @@ describe('api/email-esrf', () => {
     expect(fetchMock).toHaveBeenCalledWith(
       'http://localhost:8080/api/v1/esrf-requests',
       {
-        body: '{"Client":{"BirthDate":{"Date":"1996-07-23"},"PersonContactInformation":{"ContactEmailID":"camille.fontaine@example.com"},"PersonName":{"PersonGivenName":["Camille"],"PersonSurName":"Fontainé"},"PersonPreferredLanguage":{"LanguageName":"ENGLISH"}}}',
+        body: `{"Client":{"BirthDate":{"Date":"${body.dateOfBirth}"},"PersonContactInformation":{"ContactEmailID":"${body.email}"},"PersonName":{"PersonGivenName":["${body.givenName}"],"PersonSurName":"${body.surname}"},"PersonPreferredLanguage":{"LanguageName":"ENGLISH"}}}`,
         headers: { 'Content-Type': 'application/json' },
         method: 'POST',
       }
