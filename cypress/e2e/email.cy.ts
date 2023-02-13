@@ -1,3 +1,5 @@
+import { faker } from '@faker-js/faker'
+
 beforeEach(() => {
   cy.visit('/expectations')
   cy.get('#btn-agree').first().click()
@@ -65,6 +67,18 @@ describe('email page loads', () => {
 
 describe('responses', () => {
   beforeEach(() => {
+    const givenName = faker.name.firstName()
+    const surname = faker.name.lastName()
+    const email = faker.internet.email(
+      givenName,
+      surname,
+      'example.fakerjs.dev'
+    )
+    const dateOfBirth = faker.date.past()
+    const year = dateOfBirth.getFullYear().toString().padStart(4, '0')
+    const month = (dateOfBirth.getMonth() + 1).toString().padStart(2, '0')
+    const day = dateOfBirth.getDate().toString().padStart(2, '0')
+
     cy.intercept(
       {
         method: 'POST',
@@ -77,15 +91,27 @@ describe('responses', () => {
         statusCode: 202,
         body: 'Email sent if found',
       }
-    )
+    ).as('email-esrf')
 
-    cy.get('#email').type('yanis.pierre@example.com')
-    cy.get('#givenName').type('Yanis')
-    cy.get('#surname').type('Piérre')
-    cy.get('#dateOfBirth-year').select('1972')
-    cy.get('#dateOfBirth-month').select('07')
-    cy.get('#dateOfBirth-day').select('29')
+    cy.get('#email').type(email)
+    cy.get('#givenName').type(givenName)
+    cy.get('#surname').type(surname)
+    cy.get('#dateOfBirth-year').select(year)
+    cy.get('#dateOfBirth-month').select(month)
+    cy.get('#dateOfBirth-day').select(day)
     cy.get('#btn-submit').click()
+
+    cy.wait('@email-esrf').then((interception) => {
+      cy.wrap(interception.response.statusCode).should('eq', 202)
+      cy.wrap(interception.request.body.email).should('eq', email)
+      cy.wrap(interception.request.body.givenName).should('eq', givenName)
+      cy.wrap(interception.request.body.surname).should('eq', surname)
+      cy.wrap(interception.request.body.dateOfBirth).should(
+        'eq',
+        `${year}-${month}-${day}`
+      )
+      cy.wrap(interception.request.body.locale).should('eq', 'en')
+    })
   })
 
   it('loads result', () => {

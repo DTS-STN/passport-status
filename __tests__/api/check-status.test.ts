@@ -1,3 +1,4 @@
+import { faker } from '@faker-js/faker'
 import { NextApiRequest, NextApiResponse } from 'next'
 import { createMocks, createRequest, createResponse } from 'node-mocks-http'
 
@@ -38,12 +39,20 @@ describe('api/check-status', () => {
     )
     global.fetch = fetchMock
 
-    const url = getUrl({
-      esrf: 'A02D85ED',
-      givenName: 'Yanis',
-      surname: 'Piérre',
-      dateOfBirth: '1972-07-29',
-    })
+    const esrf = faker.helpers.replaceSymbols('?#######')
+    const givenName = faker.name.firstName()
+    const surname = faker.name.lastName()
+    const dateOfBirth = faker.date.past()
+    const year = dateOfBirth.getFullYear().toString().padStart(4, '0')
+    const month = (dateOfBirth.getMonth() + 1).toString().padStart(2, '0')
+    const day = dateOfBirth.getDate().toString().padStart(2, '0')
+    const checkStatusApiRequestQuery = {
+      esrf,
+      givenName,
+      surname,
+      dateOfBirth: `${year}-${month}-${day}`,
+    }
+    const url = getUrl(checkStatusApiRequestQuery)
 
     const { req, res } = createMocks<ApiRequest, ApiResponse>({ url })
 
@@ -52,8 +61,14 @@ describe('api/check-status', () => {
 
     // assert
     expect(res._getStatusCode()).toBe(200)
+    const apiSearchQuery = new URLSearchParams({
+      dateOfBirth: checkStatusApiRequestQuery.dateOfBirth,
+      fileNumber: checkStatusApiRequestQuery.esrf,
+      givenName: checkStatusApiRequestQuery.givenName,
+      surname: checkStatusApiRequestQuery.surname,
+    }).toString()
     expect(fetchMock).toHaveBeenCalledWith(
-      'http://localhost:8080/api/v1/passport-statuses/_search?dateOfBirth=1972-07-29&fileNumber=A02D85ED&givenName=Yanis&surname=Pi%C3%A9rre'
+      `http://localhost:8080/api/v1/passport-statuses/_search?${apiSearchQuery}`
     )
 
     fetchMock.mockClear()
@@ -69,12 +84,20 @@ describe('api/check-status', () => {
     )
     global.fetch = fetchMock
 
-    const url = getUrl({
-      esrf: '',
-      givenName: '',
-      surname: '',
-      dateOfBirth: '',
-    })
+    const esrf = faker.helpers.replaceSymbols('?#######')
+    const givenName = faker.name.firstName()
+    const surname = faker.name.lastName()
+    const dateOfBirth = faker.date.past()
+    const year = dateOfBirth.getFullYear().toString().padStart(4, '0')
+    const month = (dateOfBirth.getMonth() + 1).toString().padStart(2, '0')
+    const day = dateOfBirth.getDate().toString().padStart(2, '0')
+    const checkStatusApiRequestQuery = {
+      esrf,
+      givenName,
+      surname,
+      dateOfBirth: `${year}-${month}-${day}`,
+    }
+    const url = getUrl(checkStatusApiRequestQuery)
 
     const { req, res } = createMocks<ApiRequest, ApiResponse>({ url })
 
@@ -83,8 +106,14 @@ describe('api/check-status', () => {
 
     // assert
     expect(res._getStatusCode()).toBe(404)
+    const apiSearchQuery = new URLSearchParams({
+      dateOfBirth: checkStatusApiRequestQuery.dateOfBirth,
+      fileNumber: checkStatusApiRequestQuery.esrf,
+      givenName: checkStatusApiRequestQuery.givenName,
+      surname: checkStatusApiRequestQuery.surname,
+    }).toString()
     expect(fetchMock).toHaveBeenCalledWith(
-      'http://localhost:8080/api/v1/passport-statuses/_search?dateOfBirth=&fileNumber=&givenName=&surname='
+      `http://localhost:8080/api/v1/passport-statuses/_search?${apiSearchQuery}`
     )
 
     fetchMock.mockClear()
