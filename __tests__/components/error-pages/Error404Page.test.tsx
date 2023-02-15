@@ -4,11 +4,11 @@
 import '@testing-library/jest-dom'
 import { render, screen } from '@testing-library/react'
 
-import Custom404 from '../../pages/404'
+import Error404Page from '../../../components/error-pages/Error404Page'
 
-describe('404', () => {
+describe('Error 404 Page', () => {
   it('renders 404 without crashing', () => {
-    render(<Custom404 />)
+    render(<Error404Page />)
     expect(screen.getByText('Error 404')).toBeInTheDocument()
   })
 })
