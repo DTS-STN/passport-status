@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1676481543995" clover="3.2.0">
-  <project timestamp="1676481543995" name="All files">
+<coverage generated="1676483738198" clover="3.2.0">
+  <project timestamp="1676483738199" name="All files">
     <metrics statements="431" coveredstatements="302" conditionals="252" coveredconditionals="125" methods="124" coveredmethods="70" elements="807" coveredelements="497" complexity="0" loc="431" ncloc="431" packages="6" files="45" classes="45"/>
     <package name="components">
       <metrics statements="206" coveredstatements="170" conditionals="118" coveredconditionals="76" methods="60" coveredmethods="48"/>
@@ -277,39 +277,39 @@
         <line num="66" count="1" type="stmt"/>
       </file>
     </package>
-    <package name="components.CheckStatusResponses">
+    <package name="components.check-status-responses">
       <metrics statements="18" coveredstatements="16" conditionals="4" coveredconditionals="1" methods="6" coveredmethods="5"/>
-      <file name="CheckStatusFileBeingProcessed.tsx" path="/home/runner/work/passport-status/passport-status/components/CheckStatusResponses/CheckStatusFileBeingProcessed.tsx">
+      <file name="CheckStatusFileBeingProcessed.tsx" path="/home/runner/work/passport-status/passport-status/components/check-status-responses/CheckStatusFileBeingProcessed.tsx">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="7" count="4" type="stmt"/>
         <line num="8" count="4" type="stmt"/>
         <line num="9" count="4" type="stmt"/>
       </file>
-      <file name="CheckStatusNoRecord.tsx" path="/home/runner/work/passport-status/passport-status/components/CheckStatusResponses/CheckStatusNoRecord.tsx">
+      <file name="CheckStatusNoRecord.tsx" path="/home/runner/work/passport-status/passport-status/components/check-status-responses/CheckStatusNoRecord.tsx">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="7" count="3" type="stmt"/>
         <line num="8" count="4" type="stmt"/>
         <line num="9" count="4" type="stmt"/>
       </file>
-      <file name="CheckStatusNotAcceptable.tsx" path="/home/runner/work/passport-status/passport-status/components/CheckStatusResponses/CheckStatusNotAcceptable.tsx">
+      <file name="CheckStatusNotAcceptable.tsx" path="/home/runner/work/passport-status/passport-status/components/check-status-responses/CheckStatusNotAcceptable.tsx">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="5" count="3" type="stmt"/>
         <line num="6" count="2" type="stmt"/>
         <line num="7" count="2" type="stmt"/>
       </file>
-      <file name="CheckStatusReadyForPickup.tsx" path="/home/runner/work/passport-status/passport-status/components/CheckStatusResponses/CheckStatusReadyForPickup.tsx">
+      <file name="CheckStatusReadyForPickup.tsx" path="/home/runner/work/passport-status/passport-status/components/check-status-responses/CheckStatusReadyForPickup.tsx">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="5" count="3" type="stmt"/>
         <line num="6" count="2" type="stmt"/>
         <line num="7" count="2" type="stmt"/>
       </file>
-      <file name="CheckStatusShippingCanadaPost.tsx" path="/home/runner/work/passport-status/passport-status/components/CheckStatusResponses/CheckStatusShippingCanadaPost.tsx">
+      <file name="CheckStatusShippingCanadaPost.tsx" path="/home/runner/work/passport-status/passport-status/components/check-status-responses/CheckStatusShippingCanadaPost.tsx">
         <metrics statements="3" coveredstatements="1" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="13" count="2" type="stmt"/>
         <line num="14" count="0" type="stmt"/>
         <line num="16" count="0" type="stmt"/>
       </file>
-      <file name="CheckStatusShippingFedex.tsx" path="/home/runner/work/passport-status/passport-status/components/CheckStatusResponses/CheckStatusShippingFedex.tsx">
+      <file name="CheckStatusShippingFedex.tsx" path="/home/runner/work/passport-status/passport-status/components/check-status-responses/CheckStatusShippingFedex.tsx">
         <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="11" count="3" type="stmt"/>
         <line num="14" count="2" type="stmt"/>

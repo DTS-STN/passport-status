@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for components/CheckStatusResponses/CheckStatusShippingFedex.tsx</title>
+    <title>Code coverage report for components/check-status-responses/CheckStatusFileBeingProcessed.tsx</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,7 +19,7 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">components/CheckStatusResponses</a> CheckStatusShippingFedex.tsx</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">components/check-status-responses</a> CheckStatusFileBeingProcessed.tsx</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
@@ -30,9 +30,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1/2</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
@@ -110,7 +110,18 @@
 <a name='L45'></a><a href='#L45'>45</a>
 <a name='L46'></a><a href='#L46'>46</a>
 <a name='L47'></a><a href='#L47'>47</a>
-<a name='L48'></a><a href='#L48'>48</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -120,11 +131,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -163,47 +169,50 @@ import { Trans, useTranslation } from 'next-i18next'
 &nbsp;
 import ExternalLink from '../ExternalLink'
 &nbsp;
-export interface CheckStatusShippingFedexProps {
-  trackingNumber?: string
-}
-&nbsp;
-export const CheckStatusShippingFedex: FC&lt;CheckStatusShippingFedexProps&gt; = ({
-  trackingNumber,
-}) =&gt; {
-  const { t } = useTranslation('status')
+export const CheckStatusFileBeingProcessed: FC&lt;{}&gt; = () =&gt; {
+  const { t } = useTranslation(['status', 'common'])
   return (
     &lt;&gt;
-      &lt;h2 data-testid="shipped-fedex" className="h2"&gt;
-        {t('shipped-fedex.header')}
+      &lt;h2 data-testid="being-processed" className="h2"&gt;
+        {t('being-processed.received')}
       &lt;/h2&gt;
       &lt;p&gt;
-        {t('shipped-fedex.mailing')}
-        {trackingNumber &amp;&amp; (
-<span class="branch-1 cbranch-no" title="branch not covered" >          &lt;&gt;</span>
-            {' '}
-            &lt;Trans
-              i18nKey="status-check-tracking.number"
-              ns="status"
-              tOptions={{ trackingNumber }}
-            /&gt;
-          &lt;/&gt;
-        )}
+        &lt;Trans i18nKey={'being-processed.we-will-contact'} ns="status" /&gt;
       &lt;/p&gt;
-      &lt;p&gt;
-        &lt;ExternalLink
-          href={t('status-check-tracking.link.fedex', {
-            trackingNumber,
-          })}
-        &gt;
-          {t('status-check-tracking.can-track')}
-        &lt;/ExternalLink&gt;
-      &lt;/p&gt;
-      &lt;p className="mt-6"&gt;{t('shipped-fedex.supporting-documents')}&lt;/p&gt;
+      &lt;ul className="mb-5 list-disc space-y-2 pl-10"&gt;
+        &lt;li&gt;
+          &lt;Trans
+            i18nKey={'status-check-contact.call-us'}
+            ns="status"
+            tOptions={{ phoneNumber: t('common:phone-number') }}
+            components={{
+              Link: (
+                &lt;ExternalLink
+                  href={t('status-check-contact.service-standard-href')}
+                /&gt;
+              ),
+            }}
+          /&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+          &lt;Trans
+            i18nKey={'status-check-urgent.description'}
+            ns="status"
+            components={{
+              Link: (
+                &lt;ExternalLink
+                  href={t('status-check-urgent.express-services-href')}
+                /&gt;
+              ),
+            }}
+          /&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
     &lt;/&gt;
   )
 }
 &nbsp;
-export default CheckStatusShippingFedex
+export default CheckStatusFileBeingProcessed
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -211,7 +220,7 @@ export default CheckStatusShippingFedex
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-02-15T17:19:04.011Z
+                at 2023-02-15T17:55:38.215Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

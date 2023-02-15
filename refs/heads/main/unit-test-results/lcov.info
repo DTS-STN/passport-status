@@ -641,7 +641,7 @@ BRF:2
 BRH:1
 end_of_record
 TN:
-SF:components/CheckStatusResponses/CheckStatusFileBeingProcessed.tsx
+SF:components/check-status-responses/CheckStatusFileBeingProcessed.tsx
 FN:7,(anonymous_0)
 FNF:1
 FNH:1
@@ -655,7 +655,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:components/CheckStatusResponses/CheckStatusNoRecord.tsx
+SF:components/check-status-responses/CheckStatusNoRecord.tsx
 FN:7,(anonymous_0)
 FNF:1
 FNH:1
@@ -669,7 +669,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:components/CheckStatusResponses/CheckStatusNotAcceptable.tsx
+SF:components/check-status-responses/CheckStatusNotAcceptable.tsx
 FN:5,(anonymous_0)
 FNF:1
 FNH:1
@@ -683,7 +683,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:components/CheckStatusResponses/CheckStatusReadyForPickup.tsx
+SF:components/check-status-responses/CheckStatusReadyForPickup.tsx
 FN:5,(anonymous_0)
 FNF:1
 FNH:1
@@ -697,7 +697,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:components/CheckStatusResponses/CheckStatusShippingCanadaPost.tsx
+SF:components/check-status-responses/CheckStatusShippingCanadaPost.tsx
 FN:13,(anonymous_0)
 FNF:1
 FNH:0
@@ -713,7 +713,7 @@ BRF:2
 BRH:0
 end_of_record
 TN:
-SF:components/CheckStatusResponses/CheckStatusShippingFedex.tsx
+SF:components/check-status-responses/CheckStatusShippingFedex.tsx
 FN:11,(anonymous_0)
 FNF:1
 FNH:1
