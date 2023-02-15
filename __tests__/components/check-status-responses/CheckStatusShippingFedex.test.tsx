@@ -3,17 +3,17 @@ import { render, screen } from '@testing-library/react'
 
 import { axe, toHaveNoViolations } from 'jest-axe'
 
-import CheckStatusShippingFedex from '../../components/CheckStatusResponses/CheckStatusShippingFedex'
+import CheckStatusFileBeingProcessed from '../../../components/check-status-responses/CheckStatusFileBeingProcessed'
 
 expect.extend(toHaveNoViolations)
 
-describe('CheckStatusShippingFedex', () => {
-  const sut = <CheckStatusShippingFedex />
+describe('CheckStatusFileBeingProcessed', () => {
+  const sut = <CheckStatusFileBeingProcessed />
 
   //TODO: add test for when phone number is visible and when it isn't
   it('renders', () => {
     render(sut)
-    expect(screen.getByTestId('shipped-fedex')).toBeInTheDocument()
+    expect(screen.getByTestId('being-processed')).toBeInTheDocument()
   })
 
   it('meets a11y', async () => {
