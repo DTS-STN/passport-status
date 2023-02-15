@@ -3,16 +3,17 @@ import { render, screen } from '@testing-library/react'
 
 import { axe, toHaveNoViolations } from 'jest-axe'
 
-import CheckStatusReadyForPickup from '../../components/CheckStatusResponses/CheckStatusReadyForPickup'
+import CheckStatusNoRecord from '../../../components/check-status-responses/CheckStatusNoRecord'
 
 expect.extend(toHaveNoViolations)
 
-describe('CheckStatusReadyForPickup', () => {
-  const sut = <CheckStatusReadyForPickup />
+describe('CheckStatusNoRecord', () => {
+  const sut = <CheckStatusNoRecord />
 
+  //TODO: add test for when phone number is visible and when it isn't
   it('renders', () => {
     render(sut)
-    expect(screen.getByTestId('ready-for-pickup')).toBeInTheDocument()
+    expect(screen.getByTestId('no-record')).toBeInTheDocument()
   })
 
   it('meets a11y', async () => {
