@@ -120,7 +120,8 @@ describe('dateOfBirth field validation', () => {
   })
 
   it('validates dateOfBirth in the future', () => {
-    const dateOfBirth = faker.date.future(0)
+    const dateOfBirth = new Date()
+    dateOfBirth.setDate(dateOfBirth.getDate() + 1)
     const year = dateOfBirth.getFullYear().toString().padStart(4, '0')
     const month = (dateOfBirth.getMonth() + 1).toString().padStart(2, '0')
     const day = dateOfBirth.getDate().toString().padStart(2, '0')
