@@ -32,7 +32,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
@@ -156,19 +156,8 @@
 <a name='L91'></a><a href='#L91'>91</a>
 <a name='L92'></a><a href='#L92'>92</a>
 <a name='L93'></a><a href='#L93'>93</a>
-<a name='L94'></a><a href='#L94'>94</a>
-<a name='L95'></a><a href='#L95'>95</a>
-<a name='L96'></a><a href='#L96'>96</a>
-<a name='L97'></a><a href='#L97'>97</a>
-<a name='L98'></a><a href='#L98'>98</a>
-<a name='L99'></a><a href='#L99'>99</a>
-<a name='L100'></a><a href='#L100'>100</a>
-<a name='L101'></a><a href='#L101'>101</a>
-<a name='L102'></a><a href='#L102'>102</a>
-<a name='L103'></a><a href='#L103'>103</a>
-<a name='L104'></a><a href='#L104'>104</a>
-<a name='L105'></a><a href='#L105'>105</a>
-<a name='L106'></a><a href='#L106'>106</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L94'></a><a href='#L94'>94</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -220,10 +209,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -237,15 +222,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -292,6 +268,13 @@ export interface FooterLink {
 }
 &nbsp;
 export interface FooterProps {
+  dateModifiedText: string
+&nbsp;
+  /**
+   * footer header
+   */
+  footerHeader: string
+&nbsp;
   /**
    * footer canada-ca logo
    */
@@ -300,55 +283,38 @@ export interface FooterProps {
   /**
    * Screenreader section indicator
    */
-  footerNav1?: string
-&nbsp;
-  /**
-   * Screenreader section indicator
-   */
-  footerNav2?: string
+  footerNavHeader: string
 &nbsp;
   /**
    * array of objects containing the link text and link
    */
   links: FooterLink[]
-  dateModifiedText: string
 }
 &nbsp;
 /**
  * footer element for all pages
  */
 const Footer: FC&lt;FooterProps&gt; = ({
-  footerLogo,
-  links,
-  footerNav1,
-  footerNav2,
   dateModifiedText,
+  footerHeader,
+  footerLogo,
+  footerNavHeader,
+  links,
 }: FooterProps) =&gt; {
   return (
     &lt;footer&gt;
-      &lt;h2 className="sr-only"&gt;siteFooter&lt;/h2&gt;
+      &lt;h2 className="sr-only"&gt;{footerHeader}&lt;/h2&gt;
       &lt;DateModified text={dateModifiedText} /&gt;
-      &lt;div className="w-full"&gt;
-        &lt;div className="h-full w-full bg-gray-light pb-4"&gt;
-          &lt;div className="container mx-auto flex h-auto flex-col px-4 pt-5 md:justify-between xl:flex xl:flex-row"&gt;
-            &lt;div
-              className="mt-3.5 xl:mt-5"
-              role="navigation"
-              aria-labelledby="footerNav2"
-            &gt;
-              &lt;h3 className="sr-only" id="footerNav2"&gt;
-                {footerNav2}
-              &lt;/h3&gt;
-              &lt;ul className="flex flex-col md:grid md:grid-cols-2 lg:flex-row xl:flex"&gt;
-                {links.map(({ link, linkText }, index) =&gt; (
-                  &lt;li
-                    key={link}
-                    className={
-                      index === 0
-                        ? 'mb-5 mr-2.5 list-inside list-disc text-sm lg:mb-4 xl:list-none'
-                        : 'mb-5 mr-2.5 list-inside list-disc text-sm lg:mb-4'
-                    }
-                  &gt;
+      &lt;div className="bg-gray-light pt-6 pb-8"&gt;
+        &lt;div className="container mx-auto px-4"&gt;
+          &lt;div role="navigation" aria-labelledby="footerNav"&gt;
+            &lt;h3 className="sr-only" id="footerNav"&gt;
+              {footerNavHeader}
+            &lt;/h3&gt;
+            &lt;div className="flex justify-between items-end md:items-center"&gt;
+              &lt;ul className="list-none md:list-disc md:list-inside flex flex-wrap flex-col space-y-3 md:space-y-0 md:flex-row md:items-center marker:text-xs"&gt;
+                {links.map(({ link, linkText }) =&gt; (
+                  &lt;li key={link} className="first:list-none md:mr-4"&gt;
                     &lt;a
                       className="font-body text-sm text-[#21303F] hover:text-[#5E8EBD]"
                       data-cy="social-media-link"
@@ -359,10 +325,8 @@ const Footer: FC&lt;FooterProps&gt; = ({
                   &lt;/li&gt;
                 ))}
               &lt;/ul&gt;
-            &lt;/div&gt;
-            &lt;div&gt;
               &lt;Image
-                className="float-right mb-2.5 mt-8 h-6 w-auto md:h-10 xl:mt-0"
+                className="h-10 w-auto"
                 alt={footerLogo.alt}
                 src={footerLogo.src}
                 width={footerLogo.width}
@@ -385,7 +349,7 @@ export default Footer
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-02-23T00:11:02.588Z
+                at 2023-02-23T17:28:32.682Z
             </div>
         <script src="../prettify.js"></script>
         <script>
