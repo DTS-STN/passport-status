@@ -8,13 +8,18 @@
   "english": "English",
   "footer": {
     "date-modified-text": "Date de modification\u00A0: ",
-    "about-this-site": "À propos de ce site",
     "canada-ca-alt-text": "Symbole du gouvernement du Canada",
+    "header": "À propos de ce site",
+    "nav-header": "Organisation du gouvernement du Canada",
     "links": {
-      "contact-us": "Contactez-nous",
-      "contact-us-url": "https://www.canada.ca/fr/contact.html",
+      "about-canada-ca": "À propos de Canada.ca",
+      "about-canada-ca-url": "https://www.canada.ca/fr/gouvernement/a-propos.html",
+      "mobile-applications": "Applications mobiles",
+      "mobile-applications-url": "https://www.canada.ca/fr/mobile.html",
       "privacy": "Confidentialité",
       "privacy-url": "https://www.canada.ca/fr/transparence/confidentialite.html",
+      "social-media": "Médias sociaux",
+      "social-media-url": "https://www.canada.ca/fr/sociaux.html",
       "terms-and-condition": "Avis",
       "terms-and-condition-url": "https://www.canada.ca/fr/transparence/avis.html"
     }
