@@ -33,7 +33,7 @@ const Error404Page: FC = () => {
             <li>
               Return to the{' '}
               <Link href="/" locale="default">
-                <a>home page</a>
+                home page
               </Link>
               ;
             </li>
@@ -55,7 +55,7 @@ const Error404Page: FC = () => {
             <li>
               Retournez à la{' '}
               <Link href="/" locale="default">
-                <a>page d&#39;accueil</a>
+                page d&#39;accueil
               </Link>
               ;
             </li>

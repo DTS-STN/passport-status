@@ -7,6 +7,9 @@ import Email from '../../pages/email'
 
 expect.extend(toHaveNoViolations)
 
+jest.mock('next/router', () => ({
+  useRouter: () => ({}),
+}))
 jest.mock('../../components/ActionButton')
 jest.mock('../../components/ErrorSummary', () => ({
   default: jest.fn(),
@@ -25,7 +28,7 @@ jest.mock('../../lib/useEmailEsrf', () => {
   }))
 })
 
-describe('Check status page', () => {
+describe('Check email page', () => {
   it('should render the page', () => {
     render(<Email />)
     const heading = screen.getByRole('heading', { level: 1 })

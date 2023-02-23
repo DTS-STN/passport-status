@@ -31,7 +31,7 @@ export async function middleware(req: NextRequest) {
 
   if (
     !['/', '/expectations'].includes(pathname) &&
-    cookies.get('agreed-to-email-esrf-terms') !== 'true'
+    cookies.get('agreed-to-email-esrf-terms')?.value !== 'true'
   ) {
     return NextResponse.redirect(new URL(`/${locale}/expectations`, url))
   }

@@ -7,6 +7,9 @@ import Status from '../../pages/status'
 
 expect.extend(toHaveNoViolations)
 
+jest.mock('next/router', () => ({
+  useRouter: () => ({}),
+}))
 jest.mock('../../components/ActionButton')
 jest.mock('../../components/ExampleImage')
 jest.mock('../../components/CheckStatusInfo')

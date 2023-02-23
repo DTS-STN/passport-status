@@ -10,6 +10,9 @@ const ModalMock: FC<ModalProps> = ({ open }: ModalProps) => {
   return <div data-testid="modal">{open ? 'modal-opened' : 'modal-closed'}</div>
 }
 
+jest.mock('next/router', () => ({
+  useRouter: () => ({}),
+}))
 jest.mock('../../components/Modal', () => ModalMock)
 
 describe('IdleTimeout', () => {

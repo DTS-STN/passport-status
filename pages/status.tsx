@@ -13,6 +13,7 @@ import { GetServerSideProps } from 'next'
 import { Trans, useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { NextSeo } from 'next-seo'
+import Link from 'next/link'
 import { useRouter } from 'next/router'
 import * as Yup from 'yup'
 
@@ -30,7 +31,6 @@ import ExternalLink from '../components/ExternalLink'
 import IdleTimeout from '../components/IdleTimeout'
 import InputField from '../components/InputField'
 import Layout from '../components/Layout'
-import LinkText from '../components/LinkText'
 import Modal from '../components/Modal'
 import { CheckStatusApiRequestQuery } from '../lib/types'
 import { useCheckStatus } from '../lib/useCheckStatus'
@@ -236,7 +236,7 @@ const Status: FC = () => {
                   i18nKey="esrf.help"
                   ns="status"
                   components={{
-                    Link: <LinkText href="/email" />,
+                    Link: <Link href="/email" />,
                   }}
                 />
               </p>
