@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1677165351963" clover="3.2.0">
-  <project timestamp="1677165351964" name="All files">
-    <metrics statements="432" coveredstatements="304" conditionals="252" coveredconditionals="127" methods="124" coveredmethods="71" elements="808" coveredelements="502" complexity="0" loc="432" ncloc="432" packages="7" files="45" classes="45"/>
+<coverage generated="1677165630177" clover="3.2.0">
+  <project timestamp="1677165630177" name="All files">
+    <metrics statements="432" coveredstatements="304" conditionals="250" coveredconditionals="125" methods="124" coveredmethods="71" elements="806" coveredelements="500" complexity="0" loc="432" ncloc="432" packages="7" files="45" classes="45"/>
     <package name="components">
-      <metrics statements="204" coveredstatements="169" conditionals="116" coveredconditionals="76" methods="59" coveredmethods="48"/>
+      <metrics statements="204" coveredstatements="169" conditionals="114" coveredconditionals="74" methods="59" coveredmethods="48"/>
       <file name="ActionButton.tsx" path="/home/runner/work/passport-status/passport-status/components/ActionButton.tsx">
         <metrics statements="9" coveredstatements="9" conditionals="6" coveredconditionals="4" methods="1" coveredmethods="1"/>
         <line num="18" count="6" type="stmt"/>
@@ -171,7 +171,7 @@
         <line num="11" count="4" type="stmt"/>
       </file>
       <file name="Footer.tsx" path="/home/runner/work/passport-status/passport-status/components/Footer.tsx">
-        <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="46" count="2" type="stmt"/>
         <line num="53" count="2" type="stmt"/>
         <line num="66" count="5" type="stmt"/>

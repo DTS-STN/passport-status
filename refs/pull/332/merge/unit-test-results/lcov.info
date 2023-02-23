@@ -385,10 +385,8 @@ DA:53,2
 DA:66,5
 LF:3
 LH:3
-BRDA:69,0,0,2
-BRDA:69,0,1,3
-BRF:2
-BRH:2
+BRF:0
+BRH:0
 end_of_record
 TN:
 SF:components/Header.tsx
