@@ -27,18 +27,26 @@ const Layout: FC<LayoutProps> = ({ children }) => {
 
       <Footer
         dateModifiedText={t('footer.date-modified-text')}
+        footerHeader={t('footer.header')}
         footerLogo={{
           alt: t('footer.canada-ca-alt-text'),
           src: '/wmms-blk.svg',
           width: 300,
           height: 71,
         }}
-        footerNav1="aboutGovernment"
-        footerNav2="aboutThisSite"
+        footerNavHeader={t('footer.nav-header')}
         links={[
           {
-            link: t('footer.links.contact-us-url'),
-            linkText: t('footer.links.contact-us'),
+            link: t('footer.links.social-media-url'),
+            linkText: t('footer.links.social-media'),
+          },
+          {
+            link: t('footer.links.mobile-applications-url'),
+            linkText: t('footer.links.mobile-applications'),
+          },
+          {
+            link: t('footer.links.about-canada-ca-url'),
+            linkText: t('footer.links.about-canada-ca'),
           },
           {
             link: t('footer.links.terms-and-condition-url'),

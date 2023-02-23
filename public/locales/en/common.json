@@ -8,13 +8,18 @@
   "english": "English",
   "footer": {
     "date-modified-text": "Date Modified: ",
-    "about-this-site": "About this Site",
     "canada-ca-alt-text": "Symbol of the Government of Canada",
+    "header": "About this Site",
+    "nav-header": "Government of Canada Corporate",
     "links": {
-      "contact-us": "Contact information",
-      "contact-us-url": "https://www.canada.ca/en/contact.html",
+      "about-canada-ca": "About Canada.ca",
+      "about-canada-ca-url": "https://www.canada.ca/en/government/about.html",
+      "mobile-applications": "Mobile applications",
+      "mobile-applications-url": "https://www.canada.ca/en/mobile.html",
       "privacy": "Privacy",
       "privacy-url": "https://www.canada.ca/en/transparency/privacy.html",
+      "social-media": "Social media",
+      "social-media-url": "https://www.canada.ca/en/social.html",
       "terms-and-condition": "Terms and conditions",
       "terms-and-condition-url": "https://www.canada.ca/en/transparency/terms.html"
     }
