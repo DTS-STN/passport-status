@@ -48,8 +48,8 @@ COPY --from=builder /app/next.config.js ./next.config.js
 COPY --from=builder /app/next-i18next.config.js ./next-i18next.config.js
 
 # install next.js
-COPY --from=builder /app/package.json ./
-RUN VERSION_NEXT=`node -p -e "require('./package.json').dependencies.next"` && npm install --no-package-lock --no-save next@"$VERSION_NEXT"
+COPY --from=builder /app/package*.json ./
+RUN npm install --no-save next
 
 USER nextjs
 
