@@ -3,12 +3,12 @@ import { FC, MouseEventHandler } from 'react'
 import { CheckStatusApiResponse } from '../lib/types'
 import { StatusCode } from '../lib/types'
 import ActionButton, { ActionButtonStyle } from './ActionButton'
-import CheckStatusFileBeingProcessed from './CheckStatusResponses/CheckStatusFileBeingProcessed'
-import CheckStatusNoRecord from './CheckStatusResponses/CheckStatusNoRecord'
-import CheckStatusNotAcceptable from './CheckStatusResponses/CheckStatusNotAcceptable'
-import CheckStatusReadyForPickup from './CheckStatusResponses/CheckStatusReadyForPickup'
-import CheckStatusShippingCanadaPost from './CheckStatusResponses/CheckStatusShippingCanadaPost'
-import CheckStatusShippingFedex from './CheckStatusResponses/CheckStatusShippingFedex'
+import CheckStatusFileBeingProcessed from './check-status-responses/CheckStatusFileBeingProcessed'
+import CheckStatusNoRecord from './check-status-responses/CheckStatusNoRecord'
+import CheckStatusNotAcceptable from './check-status-responses/CheckStatusNotAcceptable'
+import CheckStatusReadyForPickup from './check-status-responses/CheckStatusReadyForPickup'
+import CheckStatusShippingCanadaPost from './check-status-responses/CheckStatusShippingCanadaPost'
+import CheckStatusShippingFedex from './check-status-responses/CheckStatusShippingFedex'
 
 export interface CheckStatusInfoProps {
   id: string
@@ -58,7 +58,7 @@ export const CheckStatusInfo: FC<CheckStatusInfoProps> = ({
   return (
     <div id={id}>
       {statusComponent}
-      <div className="pt-5">
+      <div className="my-8">
         <ActionButton
           onClick={onGoBackClick}
           text={goBackText}

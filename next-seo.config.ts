@@ -79,6 +79,7 @@ export const getDefaultConfig: GetNextSEOConfig = (appBaseUri, router) => ({
       lang: 'fr',
       content: 'fra',
     },
+    { name: 'dcterms.service', content: 'ESDC-EDSC_PASC-VEDP' },
     { name: 'dcterms.spatial', content: 'Canada' },
     {
       name: 'dcterms.subject',
@@ -121,6 +122,7 @@ export const getEnglishConfig: GetNextSEOConfig = (appBaseUri, router) => ({
       content: 'Employment and Social Development Canada',
     },
     { name: 'dcterms.language', content: 'eng' },
+    { name: 'dcterms.service', content: 'ESDC-EDSC_PASC-VEDP' },
     { name: 'dcterms.spatial', content: 'Canada' },
     {
       name: 'dcterms.subject',
@@ -157,6 +159,7 @@ export const getFrenchConfig: GetNextSEOConfig = (appBaseUri, router) => ({
       content: 'Emploi et Développement social Canada',
     },
     { name: 'dcterms.language', content: 'fra' },
+    { name: 'dcterms.service', content: 'ESDC-EDSC_PASC-VEDP' },
     { name: 'dcterms.spatial', content: 'Canada' },
     {
       name: 'dcterms.subject',

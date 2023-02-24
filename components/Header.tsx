@@ -2,10 +2,11 @@ import React, { FC } from 'react'
 
 import { useTranslation } from 'next-i18next'
 import getConfig from 'next/config'
-import Image from 'next/future/image'
+import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
+import ApplicationNameBar from './ApplicationNameBar'
 import Banner from './Banner'
 
 export interface HeaderProps {
@@ -47,7 +48,7 @@ const Header: FC<HeaderProps> = ({ gocLink, skipToMainText }) => {
             description={t('banner.description')}
           />
         )}
-        <div className="container mx-auto flex flex-col justify-between px-4 pt-2.5 md:flex md:flex-row">
+        <div className="container mx-auto flex flex-col justify-between px-4 py-2.5 md:flex md:flex-row">
           <div className="flex flex-row content-center items-center justify-between md:mt-7">
             <a href={gocLink}>
               <Image
@@ -66,34 +67,38 @@ const Header: FC<HeaderProps> = ({ gocLink, skipToMainText }) => {
             </a>
 
             {/* Language selector for small screens */}
-            <Link href={asPath} locale={langSelectorLocale} replace>
-              <a
-                className={`ml-6 block cursor-help pb-2 font-body text-base font-bold text-[#284162] underline decoration-dotted hover:text-[#0535d2] sm:ml-16 md:hidden md:text-sm`}
-                lang={langSelectorLocale}
-              >
-                <abbr title={langSelectorText}>{langSelectorAbbreviation}</abbr>
-              </a>
+            <Link
+              href={asPath}
+              locale={langSelectorLocale}
+              replace
+              className={`ml-6 block cursor-help pb-2 font-body text-base font-bold text-[#284162] underline decoration-dotted hover:text-[#0535d2] sm:ml-16 md:hidden md:text-sm`}
+              lang={langSelectorLocale}
+            >
+              <abbr title={langSelectorText}>{langSelectorAbbreviation}</abbr>
             </Link>
           </div>
 
           <div className="flex flex-col">
             {/* Language selector for mid to larger screens */}
-            <Link href={asPath} locale={langSelectorLocale} replace>
-              <a
-                className="hidden self-end pb-0 font-body text-[#284162] underline hover:text-[#0535d2] md:block lg:pb-4"
-                data-cy="toggle-language-link"
-                lang={langSelectorLocale}
-              >
-                {langSelectorText}
-              </a>
+            <Link
+              href={asPath}
+              locale={langSelectorLocale}
+              replace
+              className="hidden self-end pb-0 font-body text-[#284162] underline hover:text-[#0535d2] md:block lg:pb-4"
+              data-cy="toggle-language-link"
+              lang={langSelectorLocale}
+            >
+              {langSelectorText}
             </Link>
             {/* Placeholder for SearchBar in case is back in ver 4??? */}
             {/* <SearchBar /> */}
           </div>
         </div>
 
-        {/* Border */}
-        <div className="mb-2 mt-4 border-t pb-2"></div>
+        <ApplicationNameBar
+          text={t('application-name-bar')}
+          href="/expectations"
+        />
 
         {/* <Menu
           loginText={t('login')}

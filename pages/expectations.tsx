@@ -87,12 +87,14 @@ const Expectations: FC = () => {
           }}
         />
       </p>
-      <ActionButton
-        id="btn-agree"
-        style="primary"
-        text={t('button-agree')}
-        onClick={handleOnAgreeClick}
-      />
+      <div className="mt-8">
+        <ActionButton
+          id="btn-agree"
+          style="primary"
+          text={t('button-agree')}
+          onClick={handleOnAgreeClick}
+        />
+      </div>
     </Layout>
   )
 }

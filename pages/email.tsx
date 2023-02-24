@@ -113,6 +113,8 @@ const Email: FC = () => {
     [router]
   )
 
+  const handleOnNewFileRequest = useCallback(() => router.reload(), [router])
+
   //if the api failed, fail hard to show error page
   if (emailEsrfError) throw emailEsrfError
 
@@ -135,6 +137,15 @@ const Email: FC = () => {
               tOptions={{ phoneNumber: t('common:phone-number') }}
             />
           </p>
+          <div className="my-8">
+            <ActionButton
+              id="getAnotherFileNumber"
+              type="button"
+              text={t('request-another')}
+              onClick={handleOnNewFileRequest}
+              style="primary"
+            />
+          </div>
         </div>
       ) : (
         <form onSubmit={handleFormikSubmit} id="form-email-esrf">
@@ -221,7 +232,7 @@ const Email: FC = () => {
             textRequired={t('common:required')}
             required
           />
-          <div className="flex flex-wrap gap-2">
+          <div className="mt-8 flex flex-wrap gap-2">
             <ActionButton
               id="btn-submit"
               disabled={isEmailEsrfLoading}

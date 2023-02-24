@@ -13,12 +13,14 @@ describe('Footer', () => {
     render(
       <Footer
         dateModifiedText="testDateModified"
+        footerHeader="testFooterHeader"
         footerLogo={{
           alt: 'testAltText',
           src: '/testImage',
           width: 1,
           height: 1,
         }}
+        footerNavHeader="footerNavHeader"
         links={[
           {
             link: 'https://some-link-1.com',
@@ -47,6 +49,7 @@ describe('Footer', () => {
     const { container } = render(
       <Footer
         dateModifiedText="testDateModified"
+        footerHeader="testFooterHeader"
         footerLogo={{
           alt: 'testAltText',
           src: '/testImage',
@@ -59,8 +62,7 @@ describe('Footer', () => {
             linkText: 'some-link-1',
           },
         ]}
-        footerNav1="aboutGovernment"
-        footerNav2="aboutThisSite"
+        footerNavHeader="testFooterNavHeader"
       />
     )
     const results = await axe(container)

@@ -1,3 +1,7 @@
+export type AdobeDataLayer = { push?: (object: Record<string, string>) => void }
+export type AppWindow = Window &
+  typeof globalThis & { adobeDataLayer?: AdobeDataLayer }
+
 export interface CheckStatusApiRequestQuery {
   dateOfBirth: string
   esrf: string

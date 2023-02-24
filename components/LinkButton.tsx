@@ -25,7 +25,7 @@ const sizes = {
 }
 
 const styles = {
-  default: `bg-gray-normal border-b-gray-500 border-gray-dark border-r-gray-500 text-blue-light focus:bg-gray-dark focus:text-blue-light focus:text-blue-light hover:bg-gray-dark hover:border-l-gray-deep hover:border-t-grasy-deep hover:text-blue-light visited:text-blue-light`,
+  default: `bg-gray-normal border-b-gray-500 border-gray-dark border-r-gray-500 text-blue-light focus:bg-gray-dark focus:text-blue-light hover:bg-gray-dark hover:border-l-gray-deep hover:border-t-grasy-deep hover:text-blue-light visited:text-blue-light`,
   primary: `bg-blue-dark border-blue-dark text-basic-white active:bg-blue-active focus:bg-blue-normal focus:text-basic-white hover:bg-blue-normal hover:text-basic-white visited:text-basic-white`,
 }
 
@@ -46,16 +46,15 @@ const LinkButton: FC<LinkButtonProps> = ({
   const styleClasses = styles[style ?? 'default']
 
   return (
-    <Link href={href} passHref>
-      <a
-        target={external ? '_blank' : undefined}
-        rel={external ? 'noopener noreferrer' : undefined}
-        id={id}
-        lang={lang}
-        className={`${baseClasses} ${fullWidthClasses} ${sizeClasses} ${styleClasses}`}
-      >
-        {text}
-      </a>
+    <Link
+      href={href}
+      target={external ? '_blank' : undefined}
+      rel={external ? 'noopener noreferrer' : undefined}
+      id={id}
+      lang={lang}
+      className={`${baseClasses} ${fullWidthClasses} ${sizeClasses} ${styleClasses}`}
+    >
+      {text}
     </Link>
   )
 }
