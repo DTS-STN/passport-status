@@ -17,7 +17,6 @@ import ErrorSummary, {
   getErrorSummaryItems,
   goToErrorSummary,
 } from '../components/ErrorSummary'
-import ExternalLink from '../components/ExternalLink'
 import IdleTimeout from '../components/IdleTimeout'
 import InputField from '../components/InputField'
 import Layout from '../components/Layout'
@@ -147,12 +146,6 @@ const Email: FC = () => {
               style="primary"
             />
           </div>
-          <h2 className="h2">{t('common:feedback-link-header')}</h2>
-          <p>
-            <ExternalLink href={t('common:feedback-link-url')}>
-              {t('common:feedback-link')}
-            </ExternalLink>
-          </p>
         </div>
       ) : (
         <form onSubmit={handleFormikSubmit} id="form-email-esrf">

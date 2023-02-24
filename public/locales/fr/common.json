@@ -57,9 +57,6 @@
     "end-session": "Terminer la session"
   },
   "phone-number": "1\u2011800\u2011567\u20116868",
-  "feedback-link-header": "Nous voulons améliorer cet outil",
-  "feedback-link": "Donnez-nous votre avis sur le Vérificateur de l'état d'une demande de passeport",
-  "feedback-link-url": "https://www.canada.ca/fr/emploi-developpement-social/services/passeport/retroaction-etat-demande.html",
   "opens-in-new-tab": "(s'ouvre dans un nouvel onglet)",
   "banner": {
     "alert": "Lieu de test",
