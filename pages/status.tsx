@@ -26,7 +26,6 @@ import ErrorSummary, {
   getErrorSummaryItems,
   goToErrorSummary,
 } from '../components/ErrorSummary'
-import ExternalLink from '../components/ExternalLink'
 import IdleTimeout from '../components/IdleTimeout'
 import InputField from '../components/InputField'
 import Layout from '../components/Layout'
@@ -168,27 +167,17 @@ const Status: FC = () => {
         {t('header')}
       </h1>
       {checkStatusResponse !== undefined ? (
-        <>
-          <CheckStatusInfo
-            id={
-              checkStatusResponse === null
-                ? 'response-no-result'
-                : 'response-result'
-            }
-            onGoBackClick={handleOnGoBackClick}
-            goBackText={
-              checkStatusResponse === null ? t('previous') : t('reset')
-            }
-            goBackStyle="primary"
-            checkStatusResponse={checkStatusResponse}
-          />
-          <h2 className="h2">{t('common:feedback-link-header')}</h2>
-          <p>
-            <ExternalLink href={t('common:feedback-link-url')}>
-              {t('common:feedback-link')}
-            </ExternalLink>
-          </p>
-        </>
+        <CheckStatusInfo
+          id={
+            checkStatusResponse === null
+              ? 'response-no-result'
+              : 'response-result'
+          }
+          onGoBackClick={handleOnGoBackClick}
+          goBackText={checkStatusResponse === null ? t('previous') : t('reset')}
+          goBackStyle="primary"
+          checkStatusResponse={checkStatusResponse}
+        />
       ) : (
         <form onSubmit={handleFormikSubmit} id="form-get-status">
           <p>
