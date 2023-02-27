@@ -47,7 +47,11 @@ const ErrorPage: FC<ErrorPageProps> = ({ statusCode }) => {
           <ul className="mb-5 list-disc space-y-2 pl-10">
             <li>Try refreshing the page or try again later;</li>
             <li>
-              Return to the <Link href="/">home page</Link>;
+              Return to the{' '}
+              <Link href="/" locale="default">
+                home page
+              </Link>
+              ;
             </li>
             <li>
               <a href="https://www.canada.ca/en/contact.html">Contact us</a>
@@ -71,7 +75,11 @@ const ErrorPage: FC<ErrorPageProps> = ({ statusCode }) => {
           <ul className="mb-5 list-disc space-y-2 pl-10">
             <li>Actualisez la page ou réessayez plus tard;</li>
             <li>
-              Retournez à la <Link href="/">page d&#39;accueil</Link>;
+              Retournez à la{' '}
+              <Link href="/" locale="default">
+                page d&#39;accueil
+              </Link>
+              ;
             </li>
             <li>
               <a href="https://www.canada.ca/fr/contact.html">
