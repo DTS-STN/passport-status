@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react'
 
 import { axe, toHaveNoViolations } from 'jest-axe'
 
-import CheckStatusReadyForPickup from '../../../components/check-status-responses/CheckStatusReadyForPickup'
+import CheckStatusReadyForPickup from '../../../src/components/check-status-responses/CheckStatusReadyForPickup'
 
 expect.extend(toHaveNoViolations)
 

@@ -4,7 +4,7 @@ import { render, screen } from '@testing-library/react'
 
 import { axe, toHaveNoViolations } from 'jest-axe'
 
-import Footer from '../../components/Footer'
+import Footer from '../../src/components/Footer'
 
 expect.extend(toHaveNoViolations)
 

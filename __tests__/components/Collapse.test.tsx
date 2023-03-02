@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react'
 
 import { axe, toHaveNoViolations } from 'jest-axe'
 
-import Collapse from '../../components/Collapse'
+import Collapse from '../../src/components/Collapse'
 
 expect.extend(toHaveNoViolations)
 

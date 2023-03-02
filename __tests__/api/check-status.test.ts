@@ -2,8 +2,8 @@ import { faker } from '@faker-js/faker'
 import { NextApiRequest, NextApiResponse } from 'next'
 import { createMocks, createRequest, createResponse } from 'node-mocks-http'
 
-import { CheckStatusApiRequestQuery } from '../../lib/types'
-import handler from '../../pages/api/check-status'
+import { CheckStatusApiRequestQuery } from '../../src/lib/types'
+import handler from '../../src/pages/api/check-status'
 
 /**
  * NextApiRequest, NextApiResponse and node-mocks-http createResponse, createResponse types union

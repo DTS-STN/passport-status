@@ -8,7 +8,7 @@ import {
   getLanguageAlternates,
   getNextSEOConfig,
   getOpenGraphImages,
-} from '../next-seo.config'
+} from '../src/next-seo.config'
 
 describe('getNextSEOConfig', () => {
   it('should call getDefaultConfig when router.locale is empty', () => {

@@ -5,8 +5,8 @@ import { render, screen } from '@testing-library/react'
 
 import { axe, toHaveNoViolations } from 'jest-axe'
 
-import { DateSelectProps } from '../../components/DateSelect'
-import DateSelectField from '../../components/DateSelectField'
+import { DateSelectProps } from '../../src/components/DateSelect'
+import DateSelectField from '../../src/components/DateSelectField'
 
 expect.extend(toHaveNoViolations)
 
@@ -14,7 +14,7 @@ const DateSelectMock: FC<DateSelectProps> = ({ label }: DateSelectProps) => {
   return <div data-testid="date-selector">{label}</div>
 }
 
-jest.mock('../../components/DateSelect', () => DateSelectMock)
+jest.mock('../../src/components/DateSelect', () => DateSelectMock)
 
 describe('DateSelectField', () => {
   const sut = (

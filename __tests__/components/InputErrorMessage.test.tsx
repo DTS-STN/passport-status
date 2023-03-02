@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react'
 
 import { axe, toHaveNoViolations } from 'jest-axe'
 
-import InputErrorMessage from '../../components/InputErrorMessage'
+import InputErrorMessage from '../../src/components/InputErrorMessage'
 
 expect.extend(toHaveNoViolations)
 

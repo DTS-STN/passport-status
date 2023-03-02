@@ -3,25 +3,25 @@ import { render, screen } from '@testing-library/react'
 
 import { axe, toHaveNoViolations } from 'jest-axe'
 
-import Status from '../../pages/status'
+import Status from '../../src/pages/status'
 
 expect.extend(toHaveNoViolations)
 
 jest.mock('next/router', () => ({
   useRouter: () => ({}),
 }))
-jest.mock('../../components/ActionButton')
-jest.mock('../../components/ExampleImage')
-jest.mock('../../components/CheckStatusInfo')
-jest.mock('../../components/ErrorSummary', () => ({
+jest.mock('../../src/components/ActionButton')
+jest.mock('../../src/components/ExampleImage')
+jest.mock('../../src/components/CheckStatusInfo')
+jest.mock('../../src/components/ErrorSummary', () => ({
   default: jest.fn(),
   getErrorSummaryItems: jest.fn(() => []),
 }))
-jest.mock('../../components/IdleTimeout')
-jest.mock('../../components/InputField')
-jest.mock('../../components/Layout')
-jest.mock('../../components/Modal')
-jest.mock('../../lib/useCheckStatus', () => ({
+jest.mock('../../src/components/IdleTimeout')
+jest.mock('../../src/components/InputField')
+jest.mock('../../src/components/Layout')
+jest.mock('../../src/components/Modal')
+jest.mock('../../src/lib/useCheckStatus', () => ({
   useCheckStatus: () => ({
     isLoading: false,
     error: undefined,

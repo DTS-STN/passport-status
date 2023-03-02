@@ -4,16 +4,16 @@
 import '@testing-library/jest-dom'
 import { render, screen } from '@testing-library/react'
 
-import CustomError from '../../pages/_error'
+import CustomError from '../../src/pages/_error'
 
-jest.mock('../../components/error-pages/Error404Page', () => ({
+jest.mock('../../src/components/error-pages/Error404Page', () => ({
   __esModule: true,
   default: () => {
     return <div data-testid="mock-error-404-page"></div>
   },
 }))
 
-jest.mock('../../components/error-pages/ErrorPage', () => ({
+jest.mock('../../src/components/error-pages/ErrorPage', () => ({
   __esModule: true,
   default: (props: { statusCode?: number }) => {
     return (

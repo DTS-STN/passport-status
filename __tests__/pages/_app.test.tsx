@@ -4,7 +4,7 @@
 import '@testing-library/jest-dom'
 import { render, screen } from '@testing-library/react'
 
-import App from '../../pages/_app'
+import App from '../../src/pages/_app'
 
 const adobeAnalyticsScriptSrc =
   'https://assets.adobedtm.com/be5dfd287373/1e84b99f81fb/launch-ffa1e01dbeab-staging.min.js'

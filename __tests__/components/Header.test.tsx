@@ -4,7 +4,7 @@ import { render, screen } from '@testing-library/react'
 import { axe, toHaveNoViolations } from 'jest-axe'
 import { useRouter } from 'next/router'
 
-import Header from '../../components/Header'
+import Header from '../../src/components/Header'
 
 const defaultRouterObj = {
   pathname: '/',

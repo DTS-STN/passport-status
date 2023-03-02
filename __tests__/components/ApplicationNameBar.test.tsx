@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react'
 
 import { axe, toHaveNoViolations } from 'jest-axe'
 
-import ApplicationNameBar from '../../components/ApplicationNameBar'
+import ApplicationNameBar from '../../src/components/ApplicationNameBar'
 
 expect.extend(toHaveNoViolations)
 

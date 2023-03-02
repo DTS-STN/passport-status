@@ -3,23 +3,23 @@ import { render, screen } from '@testing-library/react'
 
 import { axe, toHaveNoViolations } from 'jest-axe'
 
-import Email from '../../pages/email'
+import Email from '../../src/pages/email'
 
 expect.extend(toHaveNoViolations)
 
 jest.mock('next/router', () => ({
   useRouter: () => ({}),
 }))
-jest.mock('../../components/ActionButton')
-jest.mock('../../components/ErrorSummary', () => ({
+jest.mock('../../src/components/ActionButton')
+jest.mock('../../src/components/ErrorSummary', () => ({
   default: jest.fn(),
   getErrorSummaryItems: jest.fn(() => []),
 }))
-jest.mock('../../components/IdleTimeout')
-jest.mock('../../components/InputField')
-jest.mock('../../components/Layout')
-jest.mock('../../components/Modal')
-jest.mock('../../lib/useEmailEsrf', () => {
+jest.mock('../../src/components/IdleTimeout')
+jest.mock('../../src/components/InputField')
+jest.mock('../../src/components/Layout')
+jest.mock('../../src/components/Modal')
+jest.mock('../../src/lib/useEmailEsrf', () => {
   return jest.fn(() => ({
     isLoading: false,
     isSuccess: false,

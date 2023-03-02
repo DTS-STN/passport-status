@@ -3,7 +3,7 @@ import { render } from '@testing-library/react'
 
 import { axe, toHaveNoViolations } from 'jest-axe'
 
-import DateModified from '../../components/DateModified'
+import DateModified from '../../src/components/DateModified'
 
 expect.extend(toHaveNoViolations)
 
