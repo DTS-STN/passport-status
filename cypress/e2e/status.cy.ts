@@ -1,6 +1,6 @@
 import { faker } from '@faker-js/faker'
 
-import { CheckStatusApiResponse, StatusCode } from '../../lib/types'
+import { CheckStatusApiResponse, StatusCode } from '../../src/lib/types'
 
 beforeEach(() => {
   cy.visit('/expectations')

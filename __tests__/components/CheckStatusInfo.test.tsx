@@ -3,11 +3,11 @@ import { render, screen } from '@testing-library/react'
 
 import { axe, toHaveNoViolations } from 'jest-axe'
 
-import CheckStatusInfo from '../../components/CheckStatusInfo'
+import CheckStatusInfo from '../../src/components/CheckStatusInfo'
 
 expect.extend(toHaveNoViolations)
 
-jest.mock('../../components/ActionButton')
+jest.mock('../../src/components/ActionButton')
 
 describe('StatusInfo', () => {
   const handleOnGoBackClick = jest.fn()

@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react'
 
 import { axe, toHaveNoViolations } from 'jest-axe'
 
-import ExternalLink from '../../components/ExternalLink'
+import ExternalLink from '../../src/components/ExternalLink'
 
 expect.extend(toHaveNoViolations)
 

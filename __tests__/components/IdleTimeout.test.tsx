@@ -3,8 +3,8 @@ import { FC } from 'react'
 import '@testing-library/jest-dom/extend-expect'
 import { render, screen, waitFor } from '@testing-library/react'
 
-import IdleTimeout from '../../components/IdleTimeout'
-import { ModalProps } from '../../components/Modal'
+import IdleTimeout from '../../src/components/IdleTimeout'
+import { ModalProps } from '../../src/components/Modal'
 
 const ModalMock: FC<ModalProps> = ({ open }: ModalProps) => {
   return <div data-testid="modal">{open ? 'modal-opened' : 'modal-closed'}</div>
@@ -13,7 +13,7 @@ const ModalMock: FC<ModalProps> = ({ open }: ModalProps) => {
 jest.mock('next/router', () => ({
   useRouter: () => ({}),
 }))
-jest.mock('../../components/Modal', () => ModalMock)
+jest.mock('../../src/components/Modal', () => ModalMock)
 
 describe('IdleTimeout', () => {
   it('renders with modal closed', () => {

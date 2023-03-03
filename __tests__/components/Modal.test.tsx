@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react'
 
 import { axe, toHaveNoViolations } from 'jest-axe'
 
-import Modal from '../../components/Modal'
+import Modal from '../../src/components/Modal'
 
 expect.extend(toHaveNoViolations)
 

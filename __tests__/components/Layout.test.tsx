@@ -5,11 +5,11 @@ import { render, screen } from '@testing-library/react'
 
 import { axe, toHaveNoViolations } from 'jest-axe'
 
-import Layout from '../../components/Layout'
+import Layout from '../../src/components/Layout'
 
 //mock custom components
-jest.mock('../../components/Header')
-jest.mock('../../components/Footer')
+jest.mock('../../src/components/Header')
+jest.mock('../../src/components/Footer')
 
 expect.extend(toHaveNoViolations)
 

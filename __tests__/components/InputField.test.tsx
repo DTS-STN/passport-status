@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react'
 
 import { axe, toHaveNoViolations } from 'jest-axe'
 
-import InputField from '../../components/InputField'
+import InputField from '../../src/components/InputField'
 
 expect.extend(toHaveNoViolations)
 

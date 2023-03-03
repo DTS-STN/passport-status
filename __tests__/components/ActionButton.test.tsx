@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react'
 
 import { axe, toHaveNoViolations } from 'jest-axe'
 
-import ActionButton from '../../components/ActionButton'
+import ActionButton from '../../src/components/ActionButton'
 
 expect.extend(toHaveNoViolations)
 

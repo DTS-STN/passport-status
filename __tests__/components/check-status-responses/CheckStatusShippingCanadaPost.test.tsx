@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react'
 
 import { axe, toHaveNoViolations } from 'jest-axe'
 
-import CheckStatusShippingFedex from '../../../components/check-status-responses/CheckStatusShippingFedex'
+import CheckStatusShippingFedex from '../../../src/components/check-status-responses/CheckStatusShippingFedex'
 
 expect.extend(toHaveNoViolations)
 

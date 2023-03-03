@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react'
 
 import { axe, toHaveNoViolations } from 'jest-axe'
 
-import ErrorSummary from '../../components/ErrorSummary'
+import ErrorSummary from '../../src/components/ErrorSummary'
 
 expect.extend(toHaveNoViolations)
 

@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react'
 
 import { axe, toHaveNoViolations } from 'jest-axe'
 
-import Banner from '../../components/Banner'
+import Banner from '../../src/components/Banner'
 
 expect.extend(toHaveNoViolations)
 

@@ -6,13 +6,13 @@ import { render, screen } from '@testing-library/react'
 
 import { axe, toHaveNoViolations } from 'jest-axe'
 
-import Landing from '../../pages/landing'
+import Landing from '../../src/pages/landing'
 
 expect.extend(toHaveNoViolations)
 
-jest.mock('../../components/ExampleImage')
-jest.mock('../../components/Layout')
-jest.mock('../../components/LinkButton')
+jest.mock('../../src/components/ExampleImage')
+jest.mock('../../src/components/Layout')
+jest.mock('../../src/components/LinkButton')
 
 describe('landing page', () => {
   it('should render the page', () => {

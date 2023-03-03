@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react'
 
 import { axe, toHaveNoViolations } from 'jest-axe'
 
-import LinkButton from '../../components/LinkButton'
+import LinkButton from '../../src/components/LinkButton'
 
 expect.extend(toHaveNoViolations)
 

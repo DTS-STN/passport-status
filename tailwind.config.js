@@ -1,7 +1,7 @@
 module.exports = {
   content: [
-    './pages/**/*.{js,ts,jsx,tsx}',
-    './components/**/*.{js,ts,jsx,tsx}',
+    './src/pages/**/*.{js,ts,jsx,tsx}',
+    './src/components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     extend: {
@@ -57,8 +57,8 @@ module.exports = {
         },
       },
       backgroundImage: () => ({
-        'footer-parliament-image': 'url(../public/landscape.png)',
-        'splash-page': 'url(../public/sp-bg-1.jpg)',
+        'footer-parliament-image': 'url(../../public/landscape.png)',
+        'splash-page': 'url(../../public/sp-bg-1.jpg)',
       }),
       boxShadow: {
         card: '0px 2px 8px rgba(0, 0, 0, 0.25)',

@@ -6,7 +6,7 @@ import { render, screen } from '@testing-library/react'
 
 import { axe, toHaveNoViolations } from 'jest-axe'
 
-import ErrorLayout from '../../components/ErrorLayout'
+import ErrorLayout from '../../src/components/ErrorLayout'
 
 expect.extend(toHaveNoViolations)
 

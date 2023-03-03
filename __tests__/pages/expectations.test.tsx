@@ -6,12 +6,12 @@ import { render, screen } from '@testing-library/react'
 
 import { axe, toHaveNoViolations } from 'jest-axe'
 
-import Expectations from '../../pages/expectations'
+import Expectations from '../../src/pages/expectations'
 
 expect.extend(toHaveNoViolations)
 
-jest.mock('../../components/Layout')
-jest.mock('../../components/LinkButton')
+jest.mock('../../src/components/Layout')
+jest.mock('../../src/components/LinkButton')
 
 describe('expectations page', () => {
   it('should render the page', () => {

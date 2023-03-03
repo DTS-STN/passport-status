@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react'
 
 import { axe, toHaveNoViolations } from 'jest-axe'
 
-import CheckStatusFileBeingProcessed from '../../../components/check-status-responses/CheckStatusFileBeingProcessed'
+import CheckStatusFileBeingProcessed from '../../../src/components/check-status-responses/CheckStatusFileBeingProcessed'
 
 expect.extend(toHaveNoViolations)
 

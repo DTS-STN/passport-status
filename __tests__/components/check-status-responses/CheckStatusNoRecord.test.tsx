@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react'
 
 import { axe, toHaveNoViolations } from 'jest-axe'
 
-import CheckStatusNoRecord from '../../../components/check-status-responses/CheckStatusNoRecord'
+import CheckStatusNoRecord from '../../../src/components/check-status-responses/CheckStatusNoRecord'
 
 expect.extend(toHaveNoViolations)
 
