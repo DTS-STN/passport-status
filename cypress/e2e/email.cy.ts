@@ -124,6 +124,20 @@ describe('responses', () => {
     cy.wait(500)
     cy.checkA11y()
   })
+
+  it('loads result click get another file number button should reset form', () => {
+    cy.get('#response-result').should('exist')
+    cy.focused().should('have.prop', 'tagName').should('eq', 'H1')
+    cy.get('button#get-another-file-number').click()
+    cy.wait(200)
+    cy.focused().should('have.prop', 'tagName').should('eq', 'H1')
+    cy.get('#email').invoke('val').should('be.empty')
+    cy.get('#givenName').invoke('val').should('be.empty')
+    cy.get('#surname').invoke('val').should('be.empty')
+    cy.get('#dateOfBirth-year').invoke('val').should('be.null')
+    cy.get('#dateOfBirth-month').invoke('val').should('be.null')
+    cy.get('#dateOfBirth-day').invoke('val').should('be.null')
+  })
 })
 
 describe('cancel email esrf', () => {
