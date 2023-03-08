@@ -1,4 +1,11 @@
-import { FC, useCallback, useMemo, useRef, useState } from 'react'
+import {
+  FC,
+  MouseEventHandler,
+  useCallback,
+  useMemo,
+  useRef,
+  useState,
+} from 'react'
 
 import { useFormik, validateYupSchema, yupToFormErrors } from 'formik'
 import { GetServerSideProps } from 'next'
@@ -59,6 +66,7 @@ const Email: FC = () => {
     isLoading: isEmailEsrfLoading,
     isSuccess: isEmailEsrfSuccess,
     mutate: emailEsrf,
+    reset: resetEmailEsrf,
   } = useEmailEsrf({ onSuccess: () => scrollToHeading() })
 
   const {
@@ -66,6 +74,7 @@ const Email: FC = () => {
     handleChange: handleFormikChange,
     handleSubmit: handleFormikSubmit,
     setFieldValue: setFormikFieldValue,
+    resetForm: resetFormik,
     values: formikValues,
   } = useFormik<EmailEsrfApiRequestBody>({
     initialValues,
@@ -113,7 +122,16 @@ const Email: FC = () => {
     [router]
   )
 
-  const handleOnNewFileRequest = useCallback(() => router.reload(), [router])
+  const handleOnNewFileRequest: MouseEventHandler<HTMLButtonElement> =
+    useCallback(
+      (e) => {
+        e.preventDefault()
+        resetFormik()
+        resetEmailEsrf()
+        scrollToHeading()
+      },
+      [resetEmailEsrf, resetFormik, scrollToHeading]
+    )
 
   //if the api failed, fail hard to show error page
   if (emailEsrfError) throw emailEsrfError
@@ -139,7 +157,7 @@ const Email: FC = () => {
           </p>
           <div className="my-8">
             <ActionButton
-              id="getAnotherFileNumber"
+              id="get-another-file-number"
               type="button"
               text={t('request-another')}
               onClick={handleOnNewFileRequest}
