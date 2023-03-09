@@ -20,8 +20,8 @@ describe('getNextSEOConfig', () => {
     const act = getNextSEOConfig(appBaseUri, router)
 
     // assert
-    expect(act.description).toBe(
-      "Avoid waiting on the phone and request the status of your application online. | Évitez d'attendre au téléphone et demandez l'état de votre demande en ligne."
+    expect(act.defaultTitle).toBe(
+      "Passport Application Status Checker | Vérificateur de l'état d'une demande de passeport - Canada.ca"
     )
   })
 
@@ -34,8 +34,8 @@ describe('getNextSEOConfig', () => {
     const act = getNextSEOConfig(appBaseUri, router)
 
     // assert
-    expect(act.description).toBe(
-      'Avoid waiting on the phone and request the status of your application online.'
+    expect(act.defaultTitle).toBe(
+      'Passport Application Status Checker - Canada.ca'
     )
   })
 
@@ -48,8 +48,8 @@ describe('getNextSEOConfig', () => {
     const act = getNextSEOConfig(appBaseUri, router)
 
     // assert
-    expect(act.description).toBe(
-      "Évitez d'attendre au téléphone et demandez l'état de votre demande en ligne."
+    expect(act.defaultTitle).toBe(
+      "Vérificateur de l'état d'une demande de passeport - Canada.ca"
     )
   })
 })
