@@ -8,7 +8,6 @@ const Index = () => {
   return (
     <>
       <NextSeo
-        noindex
         title="Passport Application Status Checker | Vérificateur de l'état d'une demande de passeport"
         titleTemplate="%s - Canada.ca"
       />
