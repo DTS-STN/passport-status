@@ -63,7 +63,11 @@ const MyApp = ({ Component, pageProps, router }: AppProps) => {
         </>
       )}
 
-      <DefaultSeo {...nextSEOConfig} />
+      <DefaultSeo
+        dangerouslySetAllPagesToNoIndex
+        dangerouslySetAllPagesToNoFollow
+        {...nextSEOConfig}
+      />
       <QueryClientProvider client={queryClient}>
         <Component {...pageProps} />
       </QueryClientProvider>
