@@ -37,5 +37,8 @@
     "6-link": "https://www.priv.gc.ca/en/report-a-concern"
   },
   "button-agree": "I have read and understand",
-  "do-not-travel": "You should not finalize any travel plans until you have the passport. We are not liable for any losses if you do not receive it in time for your travel."
+  "do-not-travel": "You should not finalize any travel plans until you have the passport. We are not liable for any losses if you do not receive it in time for your travel.",
+  "meta": {
+    "description": "Avoid waiting on the phone and request the status of your application online."
+  }
 }

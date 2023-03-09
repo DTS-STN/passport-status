@@ -47,9 +47,7 @@ export type GetNextSEOConfig = (
 export const getDefaultConfig: GetNextSEOConfig = (appBaseUri, router) => ({
   titleTemplate: '%s - Canada.ca',
   defaultTitle:
-    "Passport Application Status Checker | Vérificateur de l'état d'une demande de passeport",
-  description:
-    "Avoid waiting on the phone and request the status of your application online. | Évitez d'attendre au téléphone et demandez l'état de votre demande en ligne.",
+    "Passport Application Status Checker | Vérificateur de l'état d'une demande de passeport - Canada.ca",
   additionalMetaTags: [
     {
       name: 'author',
@@ -109,8 +107,6 @@ export const getDefaultConfig: GetNextSEOConfig = (appBaseUri, router) => ({
 export const getEnglishConfig: GetNextSEOConfig = (appBaseUri, router) => ({
   titleTemplate: '%s - Passport Application Status Checker - Canada.ca',
   defaultTitle: 'Passport Application Status Checker - Canada.ca',
-  description:
-    'Avoid waiting on the phone and request the status of your application online.',
   additionalMetaTags: [
     {
       name: 'author',
@@ -146,8 +142,6 @@ export const getFrenchConfig: GetNextSEOConfig = (appBaseUri, router) => ({
   titleTemplate:
     "%s - Vérificateur de l'état d'une demande de passeport - Canada.ca",
   defaultTitle: "Vérificateur de l'état d'une demande de passeport - Canada.ca",
-  description:
-    "Évitez d'attendre au téléphone et demandez l'état de votre demande en ligne.",
   additionalMetaTags: [
     {
       name: 'author',
