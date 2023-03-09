@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1678388887673" clover="3.2.0">
-  <project timestamp="1678388887674" name="All files">
+<coverage generated="1678388881428" clover="3.2.0">
+  <project timestamp="1678388881429" name="All files">
     <metrics statements="468" coveredstatements="322" conditionals="279" coveredconditionals="136" methods="133" coveredmethods="79" elements="880" coveredelements="537" complexity="0" loc="468" ncloc="468" packages="9" files="49" classes="49"/>
     <package name="src">
       <metrics statements="28" coveredstatements="14" conditionals="26" coveredconditionals="8" methods="7" coveredmethods="6"/>
@@ -522,7 +522,7 @@
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
         <line num="7" count="1" type="stmt"/>
         <line num="8" count="1" type="stmt"/>
-        <line num="102" count="1" type="stmt"/>
+        <line num="103" count="1" type="stmt"/>
       </file>
       <file name="landing.tsx" path="/home/runner/work/passport-status/passport-status/src/pages/landing.tsx">
         <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="1"/>
