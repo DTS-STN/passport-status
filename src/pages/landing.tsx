@@ -10,13 +10,19 @@ import Collapse from '../components/Collapse'
 import ExampleImage from '../components/ExampleImage'
 import Layout from '../components/Layout'
 import LinkButton from '../components/LinkButton'
+import { getDCTermsTitle } from '../lib/utils/seo-utils'
 
 const Landing: FC = () => {
-  const { t } = useTranslation('landing')
+  const { t, i18n } = useTranslation('landing')
+  const en = i18n.getFixedT('en', 'landing')
+  const fr = i18n.getFixedT('fr', 'landing')
 
   return (
     <Layout>
-      <NextSeo title={t('header')} />
+      <NextSeo
+        title={t('header')}
+        additionalMetaTags={[getDCTermsTitle(en('header'), fr('header'))]}
+      />
       <h1 className="h1">{t('header')}</h1>
       <p>{t('description')}</p>
       <div className="mb-4 flex flex-wrap gap-4 md:flex-nowrap">
@@ -75,10 +81,12 @@ const Landing: FC = () => {
 
 export const getServerSideProps: GetServerSideProps = async ({ locale }) => ({
   props: {
-    ...(await serverSideTranslations(locale ?? 'default', [
-      'common',
-      'landing',
-    ])),
+    ...(await serverSideTranslations(
+      locale ?? 'default',
+      ['common', 'landing'],
+      null,
+      ['en', 'fr']
+    )),
   },
 })
 
