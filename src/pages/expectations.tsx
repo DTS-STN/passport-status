@@ -10,9 +10,12 @@ import Router from 'next/router'
 import ActionButton from '../components/ActionButton'
 import ExternalLink from '../components/ExternalLink'
 import Layout from '../components/Layout'
+import { getDCTermsTitle } from '../lib/utils/seo-utils'
 
 const Expectations: FC = () => {
-  const { t } = useTranslation('expectations')
+  const { t, i18n } = useTranslation('expectations')
+  const en = i18n.getFixedT('en', 'expectations')
+  const fr = i18n.getFixedT('fr', 'expectations')
 
   const handleOnAgreeClick: MouseEventHandler<HTMLButtonElement> = useCallback(
     (e) => {
@@ -25,7 +28,10 @@ const Expectations: FC = () => {
 
   return (
     <>
-      <NextSeo description={t('meta.description')} />
+      <NextSeo
+        description={t('meta.description')}
+        additionalMetaTags={[getDCTermsTitle(en('header'), fr('header'))]}
+      />
       <Layout>
         <h1 className="h1">{t('header')}</h1>
         <h2 className="h2">{t('header-avoid-waiting')}</h2>
@@ -105,10 +111,12 @@ const Expectations: FC = () => {
 
 export const getServerSideProps: GetServerSideProps = async ({ locale }) => ({
   props: {
-    ...(await serverSideTranslations(locale ?? 'default', [
-      'common',
-      'expectations',
-    ])),
+    ...(await serverSideTranslations(
+      locale ?? 'default',
+      ['common', 'expectations'],
+      null,
+      ['en', 'fr']
+    )),
   },
 })
 

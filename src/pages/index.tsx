@@ -3,6 +3,7 @@ import { NextSeo } from 'next-seo'
 import Image from 'next/image'
 
 import LinkButton from '../components/LinkButton'
+import { getDCTermsTitle } from '../lib/utils/seo-utils'
 
 const Index = () => {
   return (
@@ -10,6 +11,12 @@ const Index = () => {
       <NextSeo
         title="Passport Application Status Checker | Vérificateur de l'état d'une demande de passeport"
         titleTemplate="%s - Canada.ca"
+        additionalMetaTags={[
+          getDCTermsTitle(
+            'Passport Application Status Checker',
+            "Vérificateur de l'état d'une demande de passeport"
+          ),
+        ]}
       />
       <main
         role="main"

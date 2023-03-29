@@ -33,6 +33,7 @@ import Layout from '../components/Layout'
 import Modal from '../components/Modal'
 import { CheckStatusApiRequestQuery } from '../lib/types'
 import { useCheckStatus } from '../lib/useCheckStatus'
+import { getDCTermsTitle } from '../lib/utils/seo-utils'
 
 const initialValues: CheckStatusApiRequestQuery = {
   dateOfBirth: '',
@@ -51,7 +52,10 @@ const validationSchema = Yup.object({
 })
 
 const Status: FC = () => {
-  const { t } = useTranslation('status')
+  const { t, i18n } = useTranslation('status')
+  const en = i18n.getFixedT('en', 'status')
+  const fr = i18n.getFixedT('fr', 'status')
+
   const router = useRouter()
   const headingRef = useRef<HTMLHeadingElement>(null)
   const [modalOpen, setModalOpen] = useState(false)
@@ -161,7 +165,10 @@ const Status: FC = () => {
 
   return (
     <Layout>
-      <NextSeo title={t('header')} />
+      <NextSeo
+        title={t('header')}
+        additionalMetaTags={[getDCTermsTitle(en('header'), fr('header'))]}
+      />
       <IdleTimeout />
       <h1 ref={headingRef} className="h1" tabIndex={-1}>
         {t('header')}
@@ -303,10 +310,12 @@ const Status: FC = () => {
 
 export const getServerSideProps: GetServerSideProps = async ({ locale }) => ({
   props: {
-    ...(await serverSideTranslations(locale ?? 'default', [
-      'common',
-      'status',
-    ])),
+    ...(await serverSideTranslations(
+      locale ?? 'default',
+      ['common', 'status'],
+      null,
+      ['en', 'fr']
+    )),
   },
 })
 

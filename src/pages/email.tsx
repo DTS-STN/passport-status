@@ -30,6 +30,7 @@ import Layout from '../components/Layout'
 import Modal from '../components/Modal'
 import { EmailEsrfApiRequestBody } from '../lib/types'
 import useEmailEsrf from '../lib/useEmailEsrf'
+import { getDCTermsTitle } from '../lib/utils/seo-utils'
 
 const initialValues: EmailEsrfApiRequestBody = {
   dateOfBirth: '',
@@ -51,7 +52,10 @@ const validationSchema = Yup.object({
 })
 
 const Email: FC = () => {
-  const { t } = useTranslation('email')
+  const { t, i18n } = useTranslation('email')
+  const en = i18n.getFixedT('en', 'email')
+  const fr = i18n.getFixedT('fr', 'email')
+
   const router = useRouter()
   const headingRef = useRef<HTMLHeadingElement>(null)
   const [modalOpen, setModalOpen] = useState(false)
@@ -138,7 +142,10 @@ const Email: FC = () => {
 
   return (
     <Layout>
-      <NextSeo title={t('header')} />
+      <NextSeo
+        title={t('header')}
+        additionalMetaTags={[getDCTermsTitle(en('header'), fr('header'))]}
+      />
       <IdleTimeout />
       <h1 ref={headingRef} className="h1" tabIndex={-1}>
         {t('header')}
@@ -291,7 +298,12 @@ const Email: FC = () => {
 
 export const getServerSideProps: GetServerSideProps = async ({ locale }) => ({
   props: {
-    ...(await serverSideTranslations(locale ?? 'default', ['common', 'email'])),
+    ...(await serverSideTranslations(
+      locale ?? 'default',
+      ['common', 'email'],
+      null,
+      ['en', 'fr']
+    )),
   },
 })
 
