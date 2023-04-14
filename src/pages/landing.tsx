@@ -55,7 +55,8 @@ const Landing: FC = () => {
           </p>
           <ExampleImage
             title={t('receipt-image-1.title')}
-            description={t('receipt-image-1.descriptive-text')}
+            descriptionKey="receipt-image-1.descriptive-text"
+            descriptionNamespace="landing"
             imageProps={{
               src: t('receipt-image-1.src'),
               alt: t('receipt-image-1.alt'),
@@ -65,7 +66,8 @@ const Landing: FC = () => {
           />
           <ExampleImage
             title={t('receipt-image-2.title')}
-            description={t('receipt-image-2.descriptive-text')}
+            descriptionKey="receipt-image-2.descriptive-text"
+            descriptionNamespace="landing"
             imageProps={{
               src: t('receipt-image-2.src'),
               alt: t('receipt-image-2.alt'),

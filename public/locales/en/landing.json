@@ -9,7 +9,7 @@
     "title": "Example Receipt 1:",
     "alt": "An example of an official receipt. The file number is circled in the centre of the receipt.",
     "src": "/Receipt1_EN.png",
-    "descriptive-text": "Example of a receipt where the file number is circled."
+    "descriptive-text": "<strong>An example of an official receipt only.</strong> The file number is circled in the center of the receipt."
   },
   "receipt-image-2": {
     "title": "Example Receipt 2:",
