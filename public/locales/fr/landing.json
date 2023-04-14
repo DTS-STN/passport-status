@@ -9,7 +9,7 @@
     "title": "Exemple de reçu 1\u00a0:",
     "alt": "Un exemple de reçu officiel. Le numéro de dossier est entouré au centre du reçu.",
     "src": "/Receipt1_FR.png",
-    "descriptive-text": "Exemple d'un reçu où le numéro de dossier est entouré."
+    "descriptive-text": "<strong>Exemple de reçu officiel unique.</strong> Le numéro de dossier est encerclé au centre du reçu."
   },
   "receipt-image-2": {
     "title": "Exemple de reçu 2\u00a0:",

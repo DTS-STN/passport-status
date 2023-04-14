@@ -1,5 +1,6 @@
 import { FC } from 'react'
 
+import { Trans } from 'next-i18next'
 import Image from 'next/image'
 
 export interface ImageProps {
@@ -12,13 +13,15 @@ export interface ImageProps {
 export interface ExampleImageProps {
   title: string
   imageProps: ImageProps
-  description: string
+  descriptionKey: string
+  descriptionNamespace: string
 }
 
 const ExampleImage: FC<ExampleImageProps> = ({
   title,
   imageProps,
-  description,
+  descriptionKey,
+  descriptionNamespace,
 }) => {
   return (
     <>
@@ -35,7 +38,7 @@ const ExampleImage: FC<ExampleImageProps> = ({
           height={imageProps.height}
         />
         <figcaption className="px-5 py-3 text-lg">
-          <strong>{description}</strong>
+          <Trans i18nKey={descriptionKey} ns={descriptionNamespace} />
         </figcaption>
       </figure>
     </>
