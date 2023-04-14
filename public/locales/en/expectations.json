@@ -1,12 +1,12 @@
 {
   "header": "Passport Application Status Checker",
-  "header-avoid-waiting": "Avoid waiting on the phone and get the status of your application online",
+  "header-avoid-waiting": "Avoid waiting on the phone and get the status of your passport application online",
   "header-who-can-check": "Who can check their status online",
   "header-privacy": "Privacy notice statement",
   "can-check": {
-    "description": "You can get the status of your passport application online if you submitted your passport application either:",
+    "description": "You <strong>can get the status</strong> of your application online if you submitted your passport application either:",
     "list": {
-      "item-1": "in person <strong>or</strong> by mail in Canada <strong>or</strong>",
+      "item-1": "in person or by mail in Canada or",
       "item-2": "by mail from the United States"
     }
   },
@@ -14,14 +14,14 @@
     "description": "The status of your application is available after:",
     "updated-status": "We update the status of applications daily.",
     "list": {
-      "item-1": "5 business days if you applied in person <strong>or</strong>",
+      "item-1": "5 business days if you applied in person or",
       "item-2": "10 business days if you applied by mail"
     }
   },
   "cannot-check": {
-    "description": "You can't look up the status of a passport application online if you applied for a passport:",
+    "description": "You <strong>can't get the status</strong> of an application online if you applied for a passport:",
     "list": {
-      "item-1": "at a consulate or embassy abroad <strong>or</strong>",
+      "item-1": "at a consulate or embassy abroad or",
       "item-2": "for official government business (special or diplomatic passports)"
     }
   },
@@ -37,7 +37,8 @@
     "6-link": "https://www.priv.gc.ca/en/report-a-concern"
   },
   "button-agree": "I have read and understand",
-  "do-not-travel": "You should not finalize any travel plans until you have the passport. We are not liable for any losses if you do not receive it in time for your travel.",
+  "do-not-travel": "Don't finalize travel plans without a passport",
+  "not-liable": "We're not liable for any losses if you do not receive it in time for travel.",
   "meta": {
     "description": "Avoid waiting on the phone and request the status of your application online."
   }
