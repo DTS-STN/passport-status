@@ -6,15 +6,15 @@
   "collapse-file-number-title": "Vous ne trouvez pas trouver votre numéro de dossier?",
   "receipt-explanation": "Le numéro de dossier sert à identifier votre demande de passeport. Le numéro de dossier figure sur le reçu qui vous a été remis si vous avez déposé votre demande de passeport en personne. Si vous avez déposé votre demande par courrier, ou si vous n’avez pas de numéro de dossier, <Link>vous pouvez demander à le recevoir</Link> (s’ouvre dans un nouvel onglet).",
   "receipt-image-1": {
-    "title": "Exemple de reçu 1\u00a0:",
+    "title": "Exemple de reçu 1\u00a0",
     "alt": "Un exemple de reçu officiel. Le numéro de dossier est entouré au centre du reçu.",
     "src": "/Receipt1_FR.png",
-    "descriptive-text": "<strong>Exemple de reçu officiel unique.</strong> Le numéro de dossier est encerclé au centre du reçu."
+    "descriptive-text": "<strong>Exemple de reçu officiel unique. Le numéro de dossier est encerclé au centre du reçu.</strong>"
   },
   "receipt-image-2": {
-    "title": "Exemple de reçu 2\u00a0:",
+    "title": "Exemple de reçu 2\u00a0",
     "alt": "Exemple de reçu officiel. Le numéro de dossier est entouré dans la partie supérieure gauche du reçu, au-dessus d'un code-barres.",
     "src": "/Receipt2_FR.png",
-    "descriptive-text": "Exemple d'un reçu où le numéro de dossier est entouré."
+    "descriptive-text": "<strong>Exemple d'un reçu officiel et bordereau de cueillette. Le numéro de dossier est encerclé en haut à gauche du reçu, au-dessus d'un code-barres.</strong>"
   }
 }
