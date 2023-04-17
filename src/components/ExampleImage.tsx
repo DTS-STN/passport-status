@@ -11,7 +11,7 @@ export interface ImageProps {
 }
 
 export interface ExampleImageProps {
-  title: string
+  title?: string
   imageProps: ImageProps
   descriptionKey: string
   descriptionNamespace: string
@@ -25,9 +25,11 @@ const ExampleImage: FC<ExampleImageProps> = ({
 }) => {
   return (
     <>
-      <p>
-        <strong>{title}</strong>
-      </p>
+      {title ?? (
+        <p>
+          <strong>{title}</strong>
+        </p>
+      )}
       <figure className="mb-6 rounded-lg border bg-white p-1 drop-shadow-lg md:w-3/5">
         <Image
           key={imageProps.src}

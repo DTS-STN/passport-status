@@ -35,7 +35,7 @@ const Landing: FC = () => {
             id="with-esrf"
           />
         </div>
-        <div className="w-full lg:w-4/12 xl:w-3/12">
+        <div className="w-full lg:w-4/12 xl:w-3/12 mb-8">
           <LinkButton
             href="/email"
             text={t('without-esrf')}
@@ -44,17 +44,17 @@ const Landing: FC = () => {
           />
         </div>
       </div>
-      <Collapse title={t('collapse-file-number-title')}>
+      <h2 className="h3">{t('collapse-file-number-title')}</h2>
+      <p>
+        <Trans
+          i18nKey="receipt-explanation"
+          ns="landing"
+          components={{ Link: <Link href="/email" /> }}
+        />
+      </p>
+      <Collapse title={t('receipt-image-1.title')}>
         <div className="mt-3 max-w-prose border-t p-3">
-          <p>
-            <Trans
-              i18nKey="receipt-explanation"
-              ns="landing"
-              components={{ Link: <Link href="/email" /> }}
-            />
-          </p>
           <ExampleImage
-            title={t('receipt-image-1.title')}
             descriptionKey="receipt-image-1.descriptive-text"
             descriptionNamespace="landing"
             imageProps={{
@@ -64,8 +64,11 @@ const Landing: FC = () => {
               height: 550,
             }}
           />
+        </div>
+      </Collapse>
+      <Collapse title={t('receipt-image-2.title')}>
+        <div className="mt-3 max-w-prose border-t p-3">
           <ExampleImage
-            title={t('receipt-image-2.title')}
             descriptionKey="receipt-image-2.descriptive-text"
             descriptionNamespace="landing"
             imageProps={{
