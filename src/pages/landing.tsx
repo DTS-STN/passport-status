@@ -75,10 +75,6 @@ const Landing: FC = () => {
       <Collapse title={t('receipt-image-2.title')}>
         <div className="mt-3 max-w-prose border-t p-3">
           <ExampleImage
-<<<<<<< HEAD
-=======
-            title={t('receipt-image-2.title')}
->>>>>>> 94ecb8b9 (Example receipt 1 changes)
             descriptionKey="receipt-image-2.descriptive-text"
             descriptionNamespace="landing"
             imageProps={{
