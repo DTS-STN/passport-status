@@ -6,15 +6,15 @@
   "collapse-file-number-title": "Can't find your file number?",
   "receipt-explanation": "The file number is used to identify your passport application. The file number can be found on the receipt you were given if you applied for the passport in person. If you applied by mail, or don't have a file number, you can <Link>request to receive it</Link>.",
   "receipt-image-1": {
-    "title": "Example Receipt 1:",
-    "alt": "An example of an official receipt. The file number is circled in the centre of the receipt.",
+    "title": "Example Receipt 1",
+    "alt": "An example of an official receipt only. The file number is circled in the centre of the receipt.",
     "src": "/Receipt1_EN.png",
-    "descriptive-text": "<strong>An example of an official receipt only.</strong> The file number is circled in the center of the receipt."
+    "descriptive-text": "<strong>An example of an official receipt only. The file number is circled in the centre of the receipt.</strong>"
   },
   "receipt-image-2": {
-    "title": "Example Receipt 2:",
-    "alt": "An example of an official receipt. The file number is circled in the upper left-hand side of the receipt, above a barcode.",
+    "title": "Example Receipt 2",
+    "alt": "An example of an official receipt and pick-up slip. The file number is circled in the upper left-hand side of the receipt, above a barcode.",
     "src": "/Receipt2_EN.png",
-    "descriptive-text": "Example of a receipt where the file number is circled."
+    "descriptive-text": "<strong>An example of an official receipt and pick-up slip. The file number is circled in the upper left-hand side of the receipt, above a barcode.</strong>"
   }
 }
