@@ -14,7 +14,7 @@
     "error": {
       "required": "The file number is required."
     },
-    "help": "If you can't find your file number, you can <Link>request to receive it</Link>.",
+    "help": "If you can't find your file number, you can <Link>request to receive it(opens in a new tab)</Link>.",
     "label": "File number"
   },
   "given-name": {
@@ -25,7 +25,7 @@
   },
   "previous": "Check the status of another application",
   "reset": "Check the status of another application",
-  "header": "Check the status of your passport application",
+  "header": "Get the status of your passport application",
   "status": {
     "1": {
       "label": "Being processed",
@@ -122,13 +122,13 @@
   },
   "status-check-call": "Call us toll free at <strong>{{phoneNumber}}</strong> if you don't receive your documents within 4 weeks of receiving your passport.",
   "header-messages": {
-    "matches": "<strong>Make sure your information matches your proof of citizenship and supporting ID.</strong> Your proof of citizenship could be one of the following:",
+    "matches": "<strong>Make sure your information matches the proof of citizenship and supporting ID used when you applied for a passport.</strong> Your proof of citizenship could be one of the following:",
     "list": {
       "item-1": "birth certificate",
       "item-2": "citizenship certificate",
-      "item-3": "citizenship card <strong>or</strong>",
+      "item-3": "citizenship card or",
       "item-4": "other documents, like a naturalization certificate"
     },
-    "for-child-application": "<strong>For child applications,</strong> use the child's given name(s) and surname and date of birth, exactly as provided on their proof of citizenship."
+    "for-child-application": "<strong>For a child application,</strong> use the child's given name(s) and surname and date of birth, exactly as provided on their proof of citizenship."
   }
 }

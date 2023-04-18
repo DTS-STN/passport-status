@@ -14,7 +14,7 @@
     "error": {
       "required": "Le numéro de dossier est obligatoire."
     },
-    "help": "Si vous ne pouvez pas trouver votre numéro de dossier, <Link>vous pouvez l'en demander</Link>.",
+    "help": "Si vous ne pouvez pas trouver votre numéro de dossier, <Link>vous pouvez demander à le recevoir (s’ouvre dans un nouvel onglet)</Link>.",
     "label": "Numéro de dossier"
   },
   "given-name": {
@@ -25,7 +25,7 @@
   },
   "previous": "Vérifier l'état d'une autre demande",
   "reset": "Vérifier l'état d'une autre demande",
-  "header": "Vérifiez l'état de votre demande de passeport",
+  "header": "Obtenez l'état de votre demande de passeport",
   "status": {
     "1": {
       "label": "Être en cours de traitement",
@@ -122,13 +122,13 @@
   },
   "status-check-call": "Appelez-nous sans frais au <strong>{{phoneNumber}}</strong> si vous ne recevez pas vos documents dans les 4 semaines suivant la réception du passeport.",
   "header-messages": {
-    "matches": "<strong>Assurez-vous que vos informations correspondent à votre preuve de citoyenneté et à votre pièce d'identité.</strong> Votre preuve de citoyenneté pourrait être l'une des suivantes\u00a0:",
+    "matches": "<strong>Assurez-vous que vos informations correspondent à la preuve de citoyenneté et à la pièce d'identité utilisée lors de votre demande de passeport.</strong> Votre preuve de citoyenneté pourrait être l'une des suivantes\u00a0:",
     "list": {
       "item-1": "un certificat de naissance",
       "item-2": "un certificat de citoyenneté",
-      "item-3": "une carte de citoyenneté <strong>ou</strong>",
+      "item-3": "une carte de citoyenneté ou",
       "item-4": "d'autres documents, comme un certificat de naturalisation"
     },
-    "for-child-application": "<strong>Pour les demandes de passeport pour enfants,</strong> utilisez le(s) prénom(s), nom de famille et date de naissance de l'enfant, exactement tels qu'ils figurent sur sa preuve de citoyenneté."
+    "for-child-application": "<strong>Pour les demandes de passeport pour enfants,</strong> veuillez utiliser le(s) prénom(s), nom de famille et date de naissance de l'enfant, exactement tels qu'ils figurent sur sa preuve de citoyenneté."
   }
 }
