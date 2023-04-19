@@ -47,22 +47,26 @@ const Index = () => {
               <section className="w-36" lang="en">
                 <h2 className="sr-only">Government of Canada</h2>
                 <LinkButton
-                  href="/en/expectations"
-                  text="English"
+                  href="/expectations"
                   id="english-button"
                   style="primary"
                   fullWidth
-                />
+                  locale="en"
+                >
+                  English
+                </LinkButton>
               </section>
               <section className="w-36" lang="fr">
                 <h2 className="sr-only">Gouvernement du Canada</h2>
                 <LinkButton
-                  href="/fr/expectations"
-                  text="Français"
+                  href="/expectations"
                   id="french-button"
                   style="primary"
                   fullWidth
-                />
+                  locale="fr"
+                >
+                  Français
+                </LinkButton>
               </section>
             </div>
           </div>
