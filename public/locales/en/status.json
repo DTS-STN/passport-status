@@ -90,12 +90,13 @@
     "not-available": "The passport will not be available before the pick-up date printed on your receipt"
   },
   "shipped-canada-post": {
-    "header": "The passport has been printed and mailed",
+    "header": "Your passport has been printed and mailed",
     "mailing": "We're mailing it to you by Canada Post.",
     "supporting-documents": "We may send your supporting documents back separately."
   },
   "shipped-fedex": {
-    "header": "The passport has been printed and sent to the United States",
+    "header": "Your passport has been printed and mailed",
+    "header-2": "The passport has been printed and sent to the United States",
     "mailing": "We're sending it to you by FedEx.",
     "supporting-documents": "You'll receive the passport and supporting documents in the same envelope."
   },
@@ -120,7 +121,7 @@
       "fedex": "https://www.fedex.com/fedextrack/?action=track&cntry_code=ca&locale=en_ca&trackingnumber={{trackingNumber}}"
     }
   },
-  "status-check-call": "Call us toll free at <strong>{{phoneNumber}}</strong> if you don't receive your documents within 4 weeks of receiving your passport.",
+  "status-check-call": "<Link>Contact us(opens in a new tab)</Link> if you don't receive your documents within 4 weeks of receiving your passport.",
   "header-messages": {
     "matches": "<strong>Make sure your information matches the proof of citizenship and supporting ID used when you applied for a passport.</strong> Your proof of citizenship could be one of the following:",
     "list": {
