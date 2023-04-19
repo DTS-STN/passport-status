@@ -170,9 +170,6 @@ const Status: FC = () => {
         additionalMetaTags={[getDCTermsTitle(en('header'), fr('header'))]}
       />
       <IdleTimeout />
-      <h1 ref={headingRef} className="h1" tabIndex={-1}>
-        {t('header')}
-      </h1>
       {checkStatusResponse !== undefined ? (
         <CheckStatusInfo
           id={
@@ -186,105 +183,110 @@ const Status: FC = () => {
           checkStatusResponse={checkStatusResponse}
         />
       ) : (
-        <form onSubmit={handleFormikSubmit} id="form-get-status">
-          <p>
-            <Trans i18nKey="header-messages.matches" ns="status" />
-          </p>
-          <ul className="mb-5 list-disc space-y-2 pl-10">
-            <li>{t('header-messages.list.item-1')}</li>
-            <li>{t('header-messages.list.item-2')}</li>
-            <li>
-              <Trans i18nKey="header-messages.list.item-3" ns="status" />
-            </li>
-            <li>{t('header-messages.list.item-4')}</li>
-          </ul>
-          <div className="mb-5 rounded border border-gray-300 bg-gray-100 p-5">
-            <p className="m-0">
-              <Trans
-                i18nKey="header-messages.for-child-application"
-                ns="status"
-              />
+        <>
+          <h1 ref={headingRef} className="h1" tabIndex={-1}>
+            {t('header')}
+          </h1>
+          <form onSubmit={handleFormikSubmit} id="form-get-status">
+            <p>
+              <Trans i18nKey="header-messages.matches" ns="status" />
             </p>
-          </div>
-
-          {errorSummaryItems.length > 0 && (
-            <ErrorSummary
-              id="error-summary-get-status"
-              summary={t('common:found-errors', {
-                count: errorSummaryItems.length,
-              })}
-              errors={errorSummaryItems}
-            />
-          )}
-
-          <InputField
-            id="esrf"
-            name="esrf"
-            label={t('esrf.label')}
-            onChange={handleOnESRFChange}
-            value={formikValues.esrf}
-            errorMessage={formikErrors.esrf && t(formikErrors.esrf)}
-            textRequired={t('common:required')}
-            required
-            helpMessage={
-              <p>
+            <ul className="mb-5 list-disc space-y-2 pl-10">
+              <li>{t('header-messages.list.item-1')}</li>
+              <li>{t('header-messages.list.item-2')}</li>
+              <li>
+                <Trans i18nKey="header-messages.list.item-3" ns="status" />
+              </li>
+              <li>{t('header-messages.list.item-4')}</li>
+            </ul>
+            <div className="mb-5 rounded border border-gray-300 bg-gray-100 p-5">
+              <p className="m-0">
                 <Trans
-                  i18nKey="esrf.help"
+                  i18nKey="header-messages.for-child-application"
                   ns="status"
-                  components={{
-                    Link: <Link href="/email" />,
-                  }}
                 />
               </p>
-            }
-          />
-          <InputField
-            id="givenName"
-            name="givenName"
-            label={t('given-name.label')}
-            onChange={handleFormikChange}
-            value={formikValues.givenName}
-            errorMessage={formikErrors.givenName && t(formikErrors.givenName)}
-            textRequired={t('common:required')}
-            required
-          />
-          <InputField
-            id="surname"
-            name="surname"
-            label={t('surname.label')}
-            onChange={handleFormikChange}
-            value={formikValues.surname}
-            errorMessage={formikErrors.surname && t(formikErrors.surname)}
-            textRequired={t('common:required')}
-            required
-          />
-          <DateSelectField
-            id="dateOfBirth"
-            label={t('date-of-birth.label')}
-            onChange={handleOnDateOfBirthChange}
-            value={formikValues.dateOfBirth}
-            errorMessage={
-              formikErrors.dateOfBirth && t(formikErrors.dateOfBirth)
-            }
-            textRequired={t('common:required')}
-            required
-          />
-          <div className="mt-8 flex flex-wrap gap-2">
-            <ActionButton
-              id="btn-submit"
-              disabled={isCheckStatusLoading}
-              type="submit"
-              text={t('check-status')}
-              style="primary"
+            </div>
+
+            {errorSummaryItems.length > 0 && (
+              <ErrorSummary
+                id="error-summary-get-status"
+                summary={t('common:found-errors', {
+                  count: errorSummaryItems.length,
+                })}
+                errors={errorSummaryItems}
+              />
+            )}
+
+            <InputField
+              id="esrf"
+              name="esrf"
+              label={t('esrf.label')}
+              onChange={handleOnESRFChange}
+              value={formikValues.esrf}
+              errorMessage={formikErrors.esrf && t(formikErrors.esrf)}
+              textRequired={t('common:required')}
+              required
+              helpMessage={
+                <p>
+                  <Trans
+                    i18nKey="esrf.help"
+                    ns="status"
+                    components={{
+                      Link: <Link href="/email" />,
+                    }}
+                  />
+                </p>
+              }
             />
-            <ActionButton
-              id="btn-cancel"
-              disabled={isCheckStatusLoading}
-              text={t('common:modal-go-back.cancel-button')}
-              onClick={handleOnCancelClick}
+            <InputField
+              id="givenName"
+              name="givenName"
+              label={t('given-name.label')}
+              onChange={handleFormikChange}
+              value={formikValues.givenName}
+              errorMessage={formikErrors.givenName && t(formikErrors.givenName)}
+              textRequired={t('common:required')}
+              required
             />
-          </div>
-        </form>
+            <InputField
+              id="surname"
+              name="surname"
+              label={t('surname.label')}
+              onChange={handleFormikChange}
+              value={formikValues.surname}
+              errorMessage={formikErrors.surname && t(formikErrors.surname)}
+              textRequired={t('common:required')}
+              required
+            />
+            <DateSelectField
+              id="dateOfBirth"
+              label={t('date-of-birth.label')}
+              onChange={handleOnDateOfBirthChange}
+              value={formikValues.dateOfBirth}
+              errorMessage={
+                formikErrors.dateOfBirth && t(formikErrors.dateOfBirth)
+              }
+              textRequired={t('common:required')}
+              required
+            />
+            <div className="mt-8 flex flex-wrap gap-2">
+              <ActionButton
+                id="btn-submit"
+                disabled={isCheckStatusLoading}
+                type="submit"
+                text={t('check-status')}
+                style="primary"
+              />
+              <ActionButton
+                id="btn-cancel"
+                disabled={isCheckStatusLoading}
+                text={t('common:modal-go-back.cancel-button')}
+                onClick={handleOnCancelClick}
+              />
+            </div>
+          </form>
+        </>
       )}
       <Modal
         open={modalOpen}

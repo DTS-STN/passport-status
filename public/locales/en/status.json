@@ -100,9 +100,9 @@
     "supporting-documents": "You'll receive the passport and supporting documents in the same envelope."
   },
   "not-acceptable": {
-    "cannot-process": "We have reviewed your application and can't process it further",
+    "cannot-process": "We've reviewed your application and can't process it further",
     "explanation": "We're sending you a letter explaining why and will return your supporting documents at the same time.",
-    "call-us": "For more information, call us toll free at <strong>{{phoneNumber}}</strong>."
+    "call-us": "For more information, <Link>contact us(opens in a new tab)</Link>."
   },
   "status-check-contact": {
     "call-us": "Call us toll free at <strong>{{phoneNumber}}</strong> if your application is taking longer than the <Link>service standard</Link>",
