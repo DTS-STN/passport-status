@@ -102,7 +102,7 @@
   "not-acceptable": {
     "cannot-process": "Nous avons examiné votre demande et ne pouvons pas la traiter davantage",
     "explanation": "Nous vous envoyons une lettre expliquant pourquoi et nous vous renverrons vos documents justificatifs par la même occasion.",
-    "call-us": "Pour plus d'informations, appelez-nous sans frais au <strong>{{phoneNumber}}</strong>."
+    "call-us": "Pour plus d'informations, <Link>veuillez nous contacter (s’ouvre dans un nouvel onglet)</Link>."
   },
   "status-check-contact": {
     "call-us": "Appelez-nous sans frais au <strong>{{phoneNumber}}</strong> si votre demande prend plus de temps que la <Link>norme de service</Link>",
