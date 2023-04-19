@@ -99,7 +99,6 @@
   },
   "shipped-canada-post": {
     "header": "Your passport has been printed and mailed",
-<<<<<<< HEAD
     "mailing": "We're mailing it to you by Canada Post",
     "supporting-documents": "We may send your supporting documents back separately."
   },
