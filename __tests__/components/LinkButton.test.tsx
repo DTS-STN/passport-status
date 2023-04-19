@@ -8,7 +8,7 @@ import LinkButton from '../../src/components/LinkButton'
 expect.extend(toHaveNoViolations)
 
 describe('LinkButton', () => {
-  const sut = <LinkButton href={'/'} text="text" />
+  const sut = <LinkButton href="/">text</LinkButton>
 
   it('renders', () => {
     render(sut)

@@ -27,21 +27,14 @@ const Landing: FC = () => {
       <p>{t('description')}</p>
       <div className="mb-4 flex flex-wrap gap-4 md:flex-nowrap">
         <div className="w-full lg:w-4/12 xl:w-3/12">
-          <LinkButton
-            href="/status"
-            text={t('with-esrf')}
-            fullWidth
-            style="primary"
-            id="with-esrf"
-          />
+          <LinkButton href="/status" fullWidth style="primary" id="with-esrf">
+            {t('with-esrf')}
+          </LinkButton>
         </div>
         <div className="w-full lg:w-4/12 xl:w-3/12">
-          <LinkButton
-            href="/email"
-            text={t('without-esrf')}
-            fullWidth
-            id="without-esrf"
-          />
+          <LinkButton href="/email" fullWidth id="without-esrf">
+            {t('without-esrf')}
+          </LinkButton>
         </div>
       </div>
       <Collapse title={t('collapse-file-number-title')}>

@@ -1,20 +1,19 @@
 import { FC } from 'react'
 
-import Link from 'next/link'
+import Link, { LinkProps } from 'next/link'
 
 export type LinkButtonSize = 'xs' | 'sm' | 'md' | 'lg'
 
 export type LinkButtonStyle = 'default' | 'primary'
 
-export interface LinkButtonProps {
+export interface LinkButtonProps extends LinkProps {
+  children?: React.ReactNode
   external?: boolean
   fullWidth?: boolean
-  href: string
   id?: string
   lang?: string
   size?: LinkButtonSize
   style?: LinkButtonStyle
-  text: string
 }
 
 const sizes = {
@@ -30,14 +29,15 @@ const styles = {
 }
 
 const LinkButton: FC<LinkButtonProps> = ({
+  children,
   external,
   fullWidth,
   href,
   id,
+  locale,
   lang,
   size,
   style,
-  text,
 }) => {
   const baseClasses =
     'align-middle border font-display inline-flex items-center justify-center no-underline shadow-sm text-center focus:ring-1 focus:ring-black focus:ring-offset-2'
@@ -52,9 +52,10 @@ const LinkButton: FC<LinkButtonProps> = ({
       rel={external ? 'noopener noreferrer' : undefined}
       id={id}
       lang={lang}
+      locale={locale}
       className={`${baseClasses} ${fullWidthClasses} ${sizeClasses} ${styleClasses}`}
     >
-      {text}
+      {children}
     </Link>
   )
 }
