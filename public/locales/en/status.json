@@ -91,14 +91,14 @@
   },
   "shipped-canada-post": {
     "header": "Your passport has been printed and mailed",
-    "mailing": "We're mailing it to you by Canada Post.",
+    "mailing": "We're mailing it to you by Canada Post",
     "supporting-documents": "We may send your supporting documents back separately."
   },
   "shipped-fedex": {
-    "header": "Your passport has been printed and mailed",
-    "header-2": "The passport has been printed and sent to the United States",
-    "mailing": "We're sending it to you by FedEx.",
-    "supporting-documents": "You'll receive the passport and supporting documents in the same envelope."
+    "header": "Your passport has been printed and sent to the United States",
+    "mailing": "We're sending it to you by FedEx\u00AE",
+    "supporting-documents": "You'll receive your passport and supporting documents in the same envelope.",
+    "contact-us": "If you don't receive your passport and supporting documents, <Link>contact us(opens in a new tab)</Link>"
   },
   "not-acceptable": {
     "cannot-process": "We've reviewed your application and can't process it further",
@@ -115,7 +115,7 @@
   },
   "status-check-tracking": {
     "number": "Your tracking number is <strong>{{trackingNumber}}</strong>.",
-    "can-track": "You can track the package online",
+    "can-track": "You can track the package online(opens in a new tab)",
     "link": {
       "canada-post": "https://www.canadapost-postescanada.ca/track-reperage/en?referenceNumber={{trackingNumber}}#/details/{{trackingNumber}}",
       "fedex": "https://www.fedex.com/fedextrack/?action=track&cntry_code=ca&locale=en_ca&trackingnumber={{trackingNumber}}"
