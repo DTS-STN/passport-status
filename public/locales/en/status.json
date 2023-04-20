@@ -85,9 +85,10 @@
     "we-will-contact": "If we need more information, we'll contact you by email or telephone. We will <strong>never</strong> use text or instant messages to contact you about your passport application."
   },
   "ready-for-pickup": {
-    "has-been-printed": "The passport has been printed",
-    "check-receipt": "The passport is on its way to the pick-up location. Check your receipt to confirm the date and location",
-    "not-available": "The passport will not be available before the pick-up date printed on your receipt"
+    "has-been-printed": "Your passport has been printed",
+    "check-receipt": "Check your receipt for pick-up instructions",
+    "receipt-details": "Your receipt details the date and location that you should pick-up your passport",
+    "not-available": "Your passport will not be available before the pick-up date printed on your receipt"
   },
   "shipped-canada-post": {
     "header": "Your passport has been printed and mailed",
