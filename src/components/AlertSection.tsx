@@ -6,15 +6,9 @@ export interface AlertSectionProps {
   type: AlertType
 }
 
-const color = (type: AlertType): string => {
-  switch (type) {
-    case 'success':
-      return 'green-500'
-    case 'warning':
-      return 'orange-500'
-  }
-
-  return 'orange-500'
+const borderColors = {
+  warning: 'border-orange-500',
+  success: 'border-green-500',
 }
 
 const svg = (type: AlertType) => {
@@ -50,12 +44,12 @@ const AlertSection: FC<PropsWithChildren<AlertSectionProps>> = ({
   children,
   type,
 }) => {
+  const borderColor = borderColors[type]
+
   return (
     <div>
       <div className="bg-white -ml-4 -mb-6">{svg(type)}</div>
-      <section className={`border-l-8 border-${color(type)}`}>
-        {children}
-      </section>
+      <section className={`border-l-8 ${borderColor}`}>{children}</section>
     </div>
   )
 }
