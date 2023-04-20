@@ -7,6 +7,7 @@ export interface AlertSectionProps {
 }
 
 const borderColors = {
+<<<<<<< HEAD
   warning: 'border-accent-warning',
   success: 'border-green-500',
   info: 'border-accent-info',
@@ -16,6 +17,10 @@ const svgStyles = {
   warning: '-translate-x-3 translate-y-10',
   success: '-translate-x-3 translate-y-10',
   info: '-translate-x-3 translate-y-10',
+=======
+  warning: 'border-orange-500',
+  success: 'border-green-500',
+>>>>>>> bea3ed08 (Ready for pickup changs, alert fix)
 }
 
 const svg = (type: AlertType) => {
