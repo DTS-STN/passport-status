@@ -47,7 +47,9 @@ export const CheckStatusNoRecord: FC<{}> = () => {
         />
       </p>
       <AlertSection type="info">
-        <p className="h3">{t('strike-notice.notice')}</p>
+        <p>
+          <b>{t('strike-notice.notice')}</b>
+        </p>
         <p>{t('strike-notice.no-record.labour-disruption')}</p>
         <p>
           <Trans

@@ -16,7 +16,9 @@ export const CheckStatusReadyForPickup: FC<{}> = () => {
         <li>{t('ready-for-pickup.not-available')}</li>
       </ul>
       <AlertSection type="info">
-        <p className="h3">{t('strike-notice.notice')}</p>
+        <p>
+          <b>{t('strike-notice.notice')}</b>
+        </p>
         <p>{t('strike-notice.ready-for-pickup.non-essential')}</p>
       </AlertSection>
     </>
