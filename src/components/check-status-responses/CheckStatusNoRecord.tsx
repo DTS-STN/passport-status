@@ -23,29 +23,6 @@ export const CheckStatusNoRecord: FC<{}> = () => {
         <li>{t('no-record.cannot-give-status.list.item-2')}</li>
       </ul>
       <p>{t('no-record.double-check')}</p>
-      <p>
-        <Trans
-          i18nKey={'no-record.contact-us'}
-          ns="status"
-          tOptions={{ phoneNumber: t('common:phone-number') }}
-          components={{
-            Link: <ExternalLink href={t('no-record.service-standard-link')} />,
-          }}
-        />
-      </p>
-      <p>
-        <Trans
-          i18nKey={'status-check-urgent.description'}
-          ns="status"
-          components={{
-            Link: (
-              <ExternalLink
-                href={t('status-check-urgent.express-services-href')}
-              />
-            ),
-          }}
-        />
-      </p>
       <AlertSection type="info">
         <p>
           <b>{t('strike-notice.notice')}</b>
