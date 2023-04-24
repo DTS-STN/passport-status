@@ -28,7 +28,12 @@ export const CheckStatusFileBeingProcessed: FC<{}> = () => {
           <li>{t('strike-notice.being-processed.criteria.list.item-3')}</li>
           <li>{t('strike-notice.being-processed.criteria.list.item-4')}</li>
         </ul>
-        <p>{t('strike-notice.being-processed.meet-criteria')}</p>
+        <p>
+          <Trans
+            i18nKey={'strike-notice.being-processed.meet-criteria'}
+            ns="status"
+          />
+        </p>
         <p>
           <Trans
             i18nKey={'strike-notice.being-processed.more-info'}
