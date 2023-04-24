@@ -130,5 +130,31 @@
       "item-4": "other documents, like a naturalization certificate"
     },
     "for-child-application": "<strong>For child applications,</strong> use the child's given name(s) and surname and date of birth, exactly as provided on their proof of citizenship."
+  },
+  "strike-notice": {
+    "disruption-impact-link": "https://www.canada.ca/en/employment-social-development/corporate/notices/labour-disruption.html",
+    "notice": "NOTICE:",
+    "no-record": {
+      "labour-disruption": "Due to labour disruption, the processing of passport applications is only available for clients experiencing humanitarian or emergency situations. Passport applications that do not meet these criteria would not be processed on any given day when employees are striking.",
+      "more-info": "For more information, please visit <Link>Potential labour disruption impact at Employment and Social Development Canada and Service Canada.</Link>"
+    },
+    "ready-for-pickup": {
+      "non-essential": "Any non-essential application printed prior to April 18th, 2023 will be available for pick-up during the labour disruption. Please ensure you confirm the pick-up date and location printed on your receipt."
+    },
+    "being-processed": {
+      "labour-disruption": "Due to labour disruption, the processing of passport applications is only available for clients experiencing humanitarian or emergency situations.",
+      "do-not-meet-criteria": "Passport applications that do not meet these criteria would not be processed on any given day when employees are striking.",
+      "criteria": {
+        "defined-as": "Humanitarian and/or emergency situations are defined as:",
+        "list": {
+          "item-1": "Passport clients at risk of financial hardship.",
+          "item-2": "Passport clients who rely on travel as a source of employment, and their income security will be jeopardized.",
+          "item-3": "Passport clients who must travel for medical reasons, or have had a death or illness in the family.",
+          "item-4": "Passport clients whose situation is deemed urgent on compassionate grounds."
+        }
+      },
+      "meet-criteria": "If you meet the criteria for humanitarian or emergency situations contact the Passport Call Centre Toll free at 1‑800‑567‑6868 to determine next steps.",
+      "more-info": "For more information, please visit <Link>Potential labour disruption impact at Employment and Social Development Canada and Service Canada.</Link>"
+    }
   }
 }

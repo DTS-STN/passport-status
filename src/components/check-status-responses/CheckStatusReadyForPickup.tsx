@@ -2,6 +2,8 @@ import { FC } from 'react'
 
 import { useTranslation } from 'next-i18next'
 
+import AlertSection from '../AlertSection'
+
 export const CheckStatusReadyForPickup: FC<{}> = () => {
   const { t } = useTranslation('status')
   return (
@@ -13,6 +15,10 @@ export const CheckStatusReadyForPickup: FC<{}> = () => {
         <li>{t('ready-for-pickup.check-receipt')}</li>
         <li>{t('ready-for-pickup.not-available')}</li>
       </ul>
+      <AlertSection type="info">
+        <p className="h3">{t('strike-notice.notice')}</p>
+        <p>{t('strike-notice.ready-for-pickup.non-essential')}</p>
+      </AlertSection>
     </>
   )
 }

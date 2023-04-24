@@ -2,6 +2,7 @@ import { FC } from 'react'
 
 import { Trans, useTranslation } from 'next-i18next'
 
+import AlertSection from '../AlertSection'
 import ExternalLink from '../ExternalLink'
 
 export const CheckStatusNoRecord: FC<{}> = () => {
@@ -45,6 +46,23 @@ export const CheckStatusNoRecord: FC<{}> = () => {
           }}
         />
       </p>
+      <AlertSection type="info">
+        <p className="h3">{t('strike-notice.notice')}</p>
+        <p>{t('strike-notice.no-record.labour-disruption')}</p>
+        <p>
+          <Trans
+            i18nKey={'strike-notice.no-record.more-info'}
+            ns="status"
+            components={{
+              Link: (
+                <ExternalLink
+                  href={t('strike-notice.disruption-impact-link')}
+                />
+              ),
+            }}
+          />
+        </p>
+      </AlertSection>
     </>
   )
 }

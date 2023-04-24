@@ -81,7 +81,7 @@
     "double-check": "Revérifiez vos renseignements et essayez à nouveau. Si nous ne trouvons pas votre dossier, vous pouvez réessayer demain. Nous mettons à jour nos dossiers chaque jour."
   },
   "being-processed": {
-    "received": "Nous avons reçu votre demande et nous sommes en train de la traiter",
+    "received": "Nous avons reçu votre demande",
     "we-will-contact": "Si nous avons besoin de plus amples renseignements, nous communiquerons avec vous par courriel ou par téléphone. Nous n'utiliserons <strong>jamais</strong> de messages textes ou de programmes de messagerie instantanée pour vous contacter au sujet de votre demande de passeport."
   },
   "ready-for-pickup": {
@@ -130,5 +130,31 @@
       "item-4": "d'autres documents, comme un certificat de naturalisation"
     },
     "for-child-application": "<strong>Pour les demandes de passeport pour enfants,</strong> utilisez le(s) prénom(s), nom de famille et date de naissance de l'enfant, exactement tels qu'ils figurent sur sa preuve de citoyenneté."
+  },
+  "strike-notice": {
+    "disruption-impact-link": "https://www.canada.ca/fr/emploi-developpement-social/ministere/perturbation-travail.html",
+    "notice": "AVIS:",
+    "no-record": {
+      "labour-disruption": "En raison de la perturbation de travail, le traitement des demandes de passeport est seulement disponible pour les clients qui vivent une situation humanitaire ou d’urgence. Les demandes de passeport qui ne rencontrent pas ces critères ne seraient pas traitées les jours où les employés sont en grève.",
+      "more-info": "Pour plus d’information, veuillez consulter <Link>Répercutions de la perturbation du travail à Emploi et Développement social Canada et à Service Canada</Link>"
+    },
+    "ready-for-pickup": {
+      "non-essential": "Toute demande non essentielle qui a été imprimée avant le 18 avril 2023 sera disponible pour la cueillette pendant la perturbation de travail. Veuillez vous assurer de confirmer la date et le lieu de cueillette inscrits sur votre reçu."
+    },
+    "being-processed": {
+      "labour-disruption": "En raison de la perturbation de travail, le traitement des demandes de passeport est seulement disponible pour les clients qui vivent une situation humanitaire ou d’urgence.",
+      "do-not-meet-criteria": "Les demandes de passeport qui ne rencontrent pas ces critères ne seraient pas traitées les jours où les employés sont en grève.",
+      "criteria": {
+        "defined-as": "Les situations humanitaires ou d’urgence sont définis comme suit :",
+        "list": {
+          "item-1": "Les clients de passeport qui risquent de rencontrer des difficultés financières.",
+          "item-2": "Les clients qui comptent sur les voyages comme source d'emploi et dont la sécurité du revenu est menacée.",
+          "item-3": "Les clients qui doivent voyager pour des raisons médicales, ou qui ont eu un décès ou une maladie dans leur famille.",
+          "item-4": "Les clients dont la situation est jugée urgente pour des raisons humanitaires."
+        }
+      },
+      "meet-criteria": "Si vous rencontrez les critères pour les situations humanitaires ou d‘urgence, contactez sans frais le Centre d’appel de passeport au 1-800-567-6868 pour déterminer les prochaines étapes.",
+      "more-info": "Pour plus d’information, veuillez consulter <Link>Répercutions de la perturbation du travail à Emploi et Développement social Canada et à Service Canada</Link>"
+    }
   }
 }

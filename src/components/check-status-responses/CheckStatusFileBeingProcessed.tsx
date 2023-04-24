@@ -2,6 +2,7 @@ import { FC } from 'react'
 
 import { Trans, useTranslation } from 'next-i18next'
 
+import AlertSection from '../AlertSection'
 import ExternalLink from '../ExternalLink'
 
 export const CheckStatusFileBeingProcessed: FC<{}> = () => {
@@ -43,6 +44,32 @@ export const CheckStatusFileBeingProcessed: FC<{}> = () => {
           />
         </li>
       </ul>
+      <AlertSection type="info">
+        <p className="h3">{t('strike-notice.notice')}</p>
+        <p>{t('strike-notice.being-processed.labour-disruption')}</p>
+        <p>{t('strike-notice.being-processed.do-not-meet-criteria')}</p>
+        <p>{t('strike-notice.being-processed.criteria.defined-as')}</p>
+        <ul className="mb-5 list-disc space-y-2 pl-10">
+          <li>{t('strike-notice.being-processed.criteria.item-1')}</li>
+          <li>{t('strike-notice.being-processed.criteria.item-2')}</li>
+          <li>{t('strike-notice.being-processed.criteria.item-3')}</li>
+          <li>{t('strike-notice.being-processed.criteria.item-4')}</li>
+        </ul>
+        <p>{t('strike-notice.being-processed.meet-criteria')}</p>
+        <p>
+          <Trans
+            i18nKey={'strike-notice.being-processed.more-info'}
+            ns="status"
+            components={{
+              Link: (
+                <ExternalLink
+                  href={t('strike-notice.disruption-impact-link')}
+                />
+              ),
+            }}
+          />
+        </p>
+      </AlertSection>
     </>
   )
 }
