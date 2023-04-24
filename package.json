@@ -54,7 +54,7 @@
     "cypress-axe": "^1.4.0",
     "cypress-multi-reporters": "^1.6.3",
     "eslint": "8.38.0",
-    "eslint-config-next": "^13.3.0",
+    "eslint-config-next": "^13.3.1",
     "husky": "^8.0.3",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^29.5.0",
