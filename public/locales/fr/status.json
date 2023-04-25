@@ -82,7 +82,12 @@
   },
   "being-processed": {
     "received": "Nous avons reçu votre demande et nous sommes en train de la traiter",
-    "we-will-contact": "Si nous avons besoin de plus amples renseignements, nous communiquerons avec vous par courriel ou par téléphone. Nous n'utiliserons <strong>jamais</strong> de messages textes ou de programmes de messagerie instantanée pour vous contacter au sujet de votre demande de passeport."
+    "we-will-contact": "Si nous avons besoin de plus amples renseignements, nous communiquerons avec vous par téléphone ou par courriel. Nous n'utiliserons <strong>jamais</strong> de messages textes ou de programmes de messagerie instantanée pour vous contacter au sujet de votre demande de passeport.",
+    "ready-within": "Le passeport devrait être prêt dans les limites de nos <Link>normes de service (s’ouvre dans un nouvel onglet)</Link>.",
+    "need-faster": "Si vous avez besoin du passeport plus rapidement",
+    "get-urgent": "Apprenez comment obtenir <Link>des services urgents ou express pour votre application existante (s'ouvre dans un nouvel onglet)</Link> si vous avez besoin du passeport dans un délai de 10 jours ouvrables. Des frais supplémentaires peuvent s’appliquer.",
+    "dont-meet-standards": "Si nous ne respectons pas nos normes de service",
+    "may-be-eligible": "Vous pourriez avoir droit à un remboursement partiel si nous ne respectons pas nos <Link>normes de service (s’ouvre dans un nouvel onglet)</Link>."
   },
   "ready-for-pickup": {
     "has-been-printed": "Votre passeport a été imprimé",

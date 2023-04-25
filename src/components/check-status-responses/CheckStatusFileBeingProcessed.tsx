@@ -8,41 +8,49 @@ export const CheckStatusFileBeingProcessed: FC<{}> = () => {
   const { t } = useTranslation(['status', 'common'])
   return (
     <>
-      <h2 data-testid="being-processed" className="h2">
+      <h1 data-testid="being-processed" className="h1">
         {t('being-processed.received')}
-      </h2>
+      </h1>
+      <p>{t('being-processed.we-will-contact')}</p>
+      <Trans
+        i18nKey={'being-processed.ready-within'}
+        ns="status"
+        components={{
+          Link: (
+            <ExternalLink
+              href={t('status-check-contact.service-standard-href')}
+            />
+          ),
+        }}
+      />
+      <p className="h3">{t('being-processed.need-faster')}</p>
       <p>
-        <Trans i18nKey={'being-processed.we-will-contact'} ns="status" />
+        <Trans
+          i18nKey={'being-processed.get-urgent'}
+          ns="status"
+          components={{
+            Link: (
+              <ExternalLink
+                href={t('status-check-urgent.express-services-href')}
+              />
+            ),
+          }}
+        />
       </p>
-      <ul className="mb-5 list-disc space-y-2 pl-10">
-        <li>
-          <Trans
-            i18nKey={'status-check-contact.call-us'}
-            ns="status"
-            tOptions={{ phoneNumber: t('common:phone-number') }}
-            components={{
-              Link: (
-                <ExternalLink
-                  href={t('status-check-contact.service-standard-href')}
-                />
-              ),
-            }}
-          />
-        </li>
-        <li>
-          <Trans
-            i18nKey={'status-check-urgent.description'}
-            ns="status"
-            components={{
-              Link: (
-                <ExternalLink
-                  href={t('status-check-urgent.express-services-href')}
-                />
-              ),
-            }}
-          />
-        </li>
-      </ul>
+      <p className="h3">{t('being-processed.dont-meet-standards')}</p>
+      <p>
+        <Trans
+          i18nKey={'being-processed.may-be-eligible'}
+          ns="status"
+          components={{
+            Link: (
+              <ExternalLink
+                href={t('status-check-contact.service-standard-href')}
+              />
+            ),
+          }}
+        />
+      </p>
     </>
   )
 }
