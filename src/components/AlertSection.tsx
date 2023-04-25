@@ -60,7 +60,7 @@ const AlertSection: FC<PropsWithChildren<AlertSectionProps>> = ({
 
   return (
     <div>
-      <div className="bg-white -ml-4 -mb-2">{svg(type)}</div>
+      <div className="-ml-4 -mb-6">{svg(type)}</div>
       <section className={`border-l-8 ${borderColor}`}>
         <div className="ml-4">{children}</div>
       </section>

@@ -82,7 +82,12 @@
   },
   "being-processed": {
     "received": "We have received your application and are now processing it",
-    "we-will-contact": "If we need more information, we'll contact you by email or telephone. We will <strong>never</strong> use text or instant messages to contact you about your passport application."
+    "we-will-contact": "If we need more information, we'll contact you by telephone, mail, or email. We will <strong>never</strong> use text or instant messages to contact you about your passport application.",
+    "ready-within": "The passport should be ready within our <Link>service standards(opens in a new tab)</Link>.",
+    "need-faster": "If you need the passport faster",
+    "get-urgent": "Find out how to get <Link>urgent or express service for existing applications(opens in a new tab)</Link> if you need the passport within 10 business days. Extra fees may apply.",
+    "dont-meet-standards": "If we don’t meet our service standards",
+    "may-be-eligible": "You may be eligible for a partial refund if we don’t meet our <Link>service standards(opens in a new tab)</Link>."
   },
   "ready-for-pickup": {
     "has-been-printed": "Your passport has been printed",
