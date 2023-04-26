@@ -70,15 +70,17 @@
   "no-record": {
     "cannot-give-status": {
       "description": "Nous ne pouvons pas vous donner l'état de votre demande pour le moment",
-      "because": "Ceci est dû au fait que\u00a0:",
+      "because": "L’état de votre passeport n’est pas disponible dû au fait que :",
       "list": {
         "item-1": "les renseignements que vous nous avez fournis ne correspondent pas à ceux de notre système <strong>ou</strong>",
         "item-2": "nous avons reçu votre demande, mais n'avons pas encore commencé à la traiter"
       }
     },
-    "contact-us": "Si vous ne pouvez pas obtenir l'état de votre demande à l'aide de cet outil, ou si votre demande prend plus de temps que la <Link>norme de service</Link>, appelez-nous sans frais au <strong>{{phoneNumber}}</strong>.",
-    "service-standard-link": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens/delais-traitement.html",
-    "double-check": "Revérifiez vos renseignements et essayez à nouveau. Si nous ne trouvons pas votre dossier, vous pouvez réessayer demain. Nous mettons à jour nos dossiers chaque jour."
+    "contact-us": "Si vous ne pouvez pas obtenir l'état de votre demande à l'aide de cet outil, ou si votre demande prend plus de temps que la <Link>norme de service (s'ouvre dans un nouvel onglet)</Link>, <Link2>veuillez nous contacter (s’ouvre dans un nouvel onglet)</Link2>.",
+    "can-review": "Vous pouvez revérifiez vos renseignements et essayez à nouveau.",
+    "cant-find-file": "Si nous ne trouvons toujours pas votre dossier, vous pouvez réessayer demain. Nous mettons à jour nos dossiers chaque jour.",
+    "need-faster": "Si vous avez besoin du passeport plus rapidement",
+    "get-urgent": "Apprenez comment obtenir <Link>des services urgents ou express pour votre application existante (s’ouvre dans un nouvel onglet)</Link> si vous avez besoin du passeport dans un délai de 10 jours ouvrables. Des frais supplémentaires peuvent s’appliquer."
   },
   "being-processed": {
     "received": "Nous avons reçu votre demande et nous sommes en train de la traiter",
