@@ -11,18 +11,22 @@ export const CheckStatusFileBeingProcessed: FC<{}> = () => {
       <h1 data-testid="being-processed" className="h1">
         {t('being-processed.received')}
       </h1>
-      <p>{t('being-processed.we-will-contact')}</p>
-      <Trans
-        i18nKey={'being-processed.ready-within'}
-        ns="status"
-        components={{
-          Link: (
-            <ExternalLink
-              href={t('status-check-contact.service-standard-href')}
-            />
-          ),
-        }}
-      />
+      <p>
+        <Trans i18nKey={'being-processed.we-will-contact'} ns="status" />
+      </p>
+      <p>
+        <Trans
+          i18nKey={'being-processed.ready-within'}
+          ns="status"
+          components={{
+            Link: (
+              <ExternalLink
+                href={t('status-check-contact.service-standard-href')}
+              />
+            ),
+          }}
+        />
+      </p>
       <p className="h3">{t('being-processed.need-faster')}</p>
       <p>
         <Trans

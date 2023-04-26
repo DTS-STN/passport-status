@@ -69,16 +69,18 @@
   },
   "no-record": {
     "cannot-give-status": {
-      "description": "We can't give you your application status right now",
-      "because": "This is because:",
+      "description": "We can't give you the application status right now",
+      "because": "The status of your passport is not available because:",
       "list": {
-        "item-1": "the information you gave us doesn't match the information in our system <strong>or</strong>",
-        "item-2": "we received your application, but haven't started processing it yet"
+        "item-1": "the information you gave us doesn't match the information in our system or",
+        "item-2": "we received the application, but haven't started processing it yet"
       }
     },
-    "contact-us": "If you can't get your application status using this tool, or if your application is taking longer than the <Link>service standard</Link>, please call us toll free at <strong>{{phoneNumber}}</strong>.",
-    "service-standard-link": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/processing-times.html",
-    "double-check": "Double-check your information and try again. If we still can't find your file, you can try again tomorrow. We update our records daily."
+    "contact-us": "If you can't get the application status using this tool, or if the application is taking longer than the <Link>service standard(opens in a new tab)</Link>, please <Link2>contact us(opens in a new tab)</Link2>.",
+    "can-review": "You can review your the information you entered and try again.",
+    "cant-find-file": "If we still can't find the file, you can try again tomorrow. We update our records daily.",
+    "need-faster": "If you need the passport faster",
+    "get-urgent": "Find out how to get <Link>urgent or express service for existing applications(opens in a new tab)</Link> if you need the passport within 10 business days. Extra fees may apply."
   },
   "being-processed": {
     "received": "We have received your application and are now processing it",
