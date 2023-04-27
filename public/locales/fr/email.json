@@ -28,7 +28,7 @@
     },
     "label": "Date de naissance du requérant"
   },
-  "email-esrf": "Envoyez-moi mon numéro de dossier",
+  "email-esrf": "Envoyez-moi le numéro de dossier",
   "email-sent-confirmation": "Un courriel a été envoyé s'il y avait une correspondance dans nos dossiers avec le numéro de dossier (FEDS).",
   "email-confirmation-msg": {
     "request-received": "Votre demande pour obtenir le numéro de dossier a été reçue",
@@ -41,18 +41,19 @@
     "button": "Conditions de confidentialité et de courriel"
   },
   "help-message": {
-    "email": "Fournissez votre adresse courriel complète, exactement comme indiqué sur le formulaire de demande de passeport.",
-    "for-child-application": "<strong>Pour les demandes de passeport pour enfants,</strong> indiquez l'adresse courriel complète du parent ou du tuteur légal du requérant, telle qu'elle figure sur la demande de passeport."
+    "email": "Indiquez votre adresse courriel telle qu’elle figure sur votre formulaire de demande de passeport.",
+    "for-child-application": "<strong>Pour les demandes pour enfants,</strong> indiquez l'adresse courriel complète du parent ou du tuteur légal du requérant, telle qu'elle figure sur la demande de passeport."
   },
   "header-messages": {
-    "matches": "<strong>Assurez-vous que vos informations correspondent à votre preuve de citoyenneté et à votre pièce d'identité.</strong> Votre preuve de citoyenneté pourrait être l'une des suivantes\u00a0:",
+    "matches": "<strong>Assurez-vous que vos informations correspondent à votre preuve de citoyenneté et à votre pièce d'identité lors de votre demande de passeport.</strong> Votre preuve de citoyenneté pourrait être l'une des suivantes :",
     "list": {
       "item-1": "un certificat de naissance",
       "item-2": "un certificat de citoyenneté",
       "item-3": "une carte de citoyenneté <strong>ou</strong>",
       "item-4": "d'autres documents, comme un certificat de naturalisation"
     },
-    "for-child-application": "<strong>Pour les demandes de passeport pour enfants,</strong> utilisez le(s) prénom(s), nom de famille et date de naissance de l'enfant, exactement tels qu'ils figurent sur sa preuve de citoyenneté."
+    "child-applications": "Les demandes de passeport pour enfants",
+    "for-child-application": "Utilisez le(s) prénom(s), nom de famille et date de naissance de l'enfant, exactement tels qu'ils figurent sur sa preuve de citoyenneté."
   },
   "request-another": "Obtenir un autre numéro de dossier"
 }
