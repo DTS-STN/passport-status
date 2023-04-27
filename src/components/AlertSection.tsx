@@ -18,6 +18,12 @@ const svgStyles = {
   info: '-translate-x-3 translate-y-10',
 }
 
+const svgMargins = {
+  warning: '-ml-4 -mb-6',
+  success: '-ml-4 -mb-6',
+  info: '-ml-3 -mb-2',
+}
+
 const svg = (type: AlertType) => {
   switch (type) {
     case 'success': {

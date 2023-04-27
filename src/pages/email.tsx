@@ -196,6 +196,7 @@ const Email: FC = () => {
           </div>
         </div>
       ) : (
+<<<<<<< HEAD
         <>
           <h1 ref={headingRef} className="h1" tabIndex={-1}>
             {t('header')}
@@ -221,6 +222,29 @@ const Email: FC = () => {
                 />
               </p>
             </AlertSection>
+=======
+        <form onSubmit={handleFormikSubmit} id="form-email-esrf">
+          <p>
+            <Trans i18nKey="header-messages.matches" ns="email" />
+          </p>
+          <ul className="mb-5 list-disc space-y-2 pl-10">
+            <li>{t('header-messages.list.item-1')}</li>
+            <li>{t('header-messages.list.item-2')}</li>
+            <li>
+              <Trans i18nKey="header-messages.list.item-3" ns="email" />
+            </li>
+            <li>{t('header-messages.list.item-4')}</li>
+          </ul>
+          <AlertSection type="info">
+            <p className="h3">{t('header-messages.child-applications')}</p>
+            <p>
+              <Trans
+                i18nKey="header-messages.for-child-application"
+                ns="email"
+              />
+            </p>
+          </AlertSection>
+>>>>>>> 9f93799f (Email form changes, alert section spacing fix)
 
             {errorSummaryItems.length > 0 && (
               <ErrorSummary
