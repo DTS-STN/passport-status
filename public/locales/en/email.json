@@ -32,8 +32,18 @@
   "email-sent-confirmation": "An email has been sent if there was a match in our records with the file number (ESRF).",
   "email-confirmation-msg": {
     "request-received": "Your request has been received",
-    "if-exists": "If we can find the file with the information you gave us, we'll email you the file number. If you don't receive the confirmation message in your inbox, check your junk email folder.",
-    "please-contact": "If you don't receive it, call us toll free at <strong>{{phoneNumber}}</strong>."
+    "if-exists": "If we can find the file with the information you gave us, <strong>we'll email you the file number</strong>. If you don't receive the email in your inbox, check your junk folder.",
+    "may-not-receive": "You may not receive an email if:",
+    "may-not-receive-list": {
+      "item-1": "the information you gave us doesn't match the information in our system <strong>or</strong>",
+      "item-2": "we received the application, but haven't started processing it yet"
+    },
+    "dont-receive": "If you don't receive an email, you can:",
+    "dont-receive-list": {
+      "item-1": "review the information you entered and try again <strong>or</strong>",
+      "item-2": "try again tomorrow - we update our records daily"
+    },
+    "please-contact": "If you still don't receive it, <Link>contact us(opens in a new tab)</Link>."
   },
   "page-unauth": {
     "header": "Page Unauthorized",
