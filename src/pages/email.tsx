@@ -16,6 +16,7 @@ import { useRouter } from 'next/router'
 import * as Yup from 'yup'
 
 import ActionButton from '../components/ActionButton'
+import AlertSection from '../components/AlertSection'
 import DateSelectField, {
   DateSelectFieldOnChangeEvent,
 } from '../components/DateSelectField'
@@ -185,14 +186,15 @@ const Email: FC = () => {
             </li>
             <li>{t('header-messages.list.item-4')}</li>
           </ul>
-          <div className="mb-5 rounded border border-gray-300 bg-gray-100 p-5">
-            <p className="m-0">
+          <AlertSection type="info">
+            <p className="h3">{t('header-messages.child-applications')}</p>
+            <p>
               <Trans
                 i18nKey="header-messages.for-child-application"
                 ns="email"
               />
             </p>
-          </div>
+          </AlertSection>
 
           {errorSummaryItems.length > 0 && (
             <ErrorSummary

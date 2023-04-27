@@ -12,6 +12,12 @@ const borderColors = {
   info: 'border-blue-500',
 }
 
+const svgMargins = {
+  warning: '-ml-4 -mb-6',
+  success: '-ml-4 -mb-6',
+  info: '-ml-3 -mb-2',
+}
+
 const svg = (type: AlertType) => {
   switch (type) {
     case 'success': {
@@ -41,7 +47,7 @@ const svg = (type: AlertType) => {
     case 'info': {
       return (
         <svg
-          className="fill-blue-500 w-10 h-10"
+          className="fill-blue-500 w-8 h-8"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 512 512"
         >
@@ -60,7 +66,7 @@ const AlertSection: FC<PropsWithChildren<AlertSectionProps>> = ({
 
   return (
     <div>
-      <div className="-ml-4 -mb-6">{svg(type)}</div>
+      <div className={`${svgMargins[type]}`}>{svg(type)}</div>
       <section className={`border-l-8 ${borderColor}`}>
         <div className="ml-4">{children}</div>
       </section>
