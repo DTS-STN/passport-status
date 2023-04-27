@@ -197,11 +197,15 @@ const Email: FC = () => {
         </div>
       ) : (
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> e016cd02 (Email request received changes)
         <>
           <h1 ref={headingRef} className="h1" tabIndex={-1}>
             {t('header')}
           </h1>
           <form onSubmit={handleFormikSubmit} id="form-email-esrf">
+<<<<<<< HEAD
             <p>
               <Trans i18nKey="header-messages.matches" ns="email" />
             </p>
@@ -237,14 +241,33 @@ const Email: FC = () => {
           </ul>
           <AlertSection type="info">
             <p className="h3">{t('header-messages.child-applications')}</p>
+=======
+>>>>>>> e016cd02 (Email request received changes)
             <p>
-              <Trans
-                i18nKey="header-messages.for-child-application"
-                ns="email"
-              />
+              <Trans i18nKey="header-messages.matches" ns="email" />
             </p>
+<<<<<<< HEAD
           </AlertSection>
 >>>>>>> 9f93799f (Email form changes, alert section spacing fix)
+=======
+            <ul className="mb-5 list-disc space-y-2 pl-10">
+              <li>{t('header-messages.list.item-1')}</li>
+              <li>{t('header-messages.list.item-2')}</li>
+              <li>
+                <Trans i18nKey="header-messages.list.item-3" ns="email" />
+              </li>
+              <li>{t('header-messages.list.item-4')}</li>
+            </ul>
+            <AlertSection type="info">
+              <p className="h3">{t('header-messages.child-applications')}</p>
+              <p>
+                <Trans
+                  i18nKey="header-messages.for-child-application"
+                  ns="email"
+                />
+              </p>
+            </AlertSection>
+>>>>>>> e016cd02 (Email request received changes)
 
             {errorSummaryItems.length > 0 && (
               <ErrorSummary
