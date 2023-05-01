@@ -64,6 +64,19 @@ const Landing: FC = () => {
               height: 550,
             }}
           />
+          <p>{t('receipt-will-find.text')}</p>
+          <ul className="mb-5 list-disc pl-10">
+            <li>{t('receipt-will-find.list.item-1')}</li>
+            <li>{t('receipt-will-find.list.item-2')}</li>
+            <li>{t('receipt-will-find.list.item-13')}</li>
+            <li>{t('receipt-will-find.list.item-4')}</li>
+            <li>{t('receipt-will-find.list.item-6')}</li>
+            <li>{t('receipt-will-find.list.item-8')}</li>
+            <li>{t('receipt-will-find.list.item-9')}</li>
+            <li>{t('receipt-will-find.list.item-10')}</li>
+            <li>{t('receipt-will-find.list.item-11')}</li>
+            <li>{t('receipt-will-find.list.item-12')}</li>
+          </ul>
         </div>
       </Collapse>
       <Collapse title={t('receipt-image-2.title')}>
@@ -78,6 +91,41 @@ const Landing: FC = () => {
               height: 550,
             }}
           />
+          <p>{t('receipt-will-find.text')}</p>
+          <ul className="mb-5 list-disc pl-10">
+            <li>{t('receipt-will-find.list.item-1')}</li>
+            <li>{t('receipt-will-find.list.item-2')}</li>
+            <li>{t('receipt-will-find.list.item-3')}</li>
+            <li>{t('receipt-will-find.list.item-4')}</li>
+            <li>{t('receipt-will-find.list.item-5')}</li>
+            <li>{t('receipt-will-find.list.item-6')}</li>
+            <li>{t('receipt-will-find.list.item-7')}</li>
+            <li>{t('receipt-will-find.list.item-8')}</li>
+            <li>{t('receipt-will-find.list.item-9')}</li>
+            <li>{t('receipt-will-find.list.item-10')}</li>
+            <li>{t('receipt-will-find.list.item-11')}</li>
+            <li>{t('receipt-will-find.list.item-12')}</li>
+          </ul>
+          <p>{t('receipt-pickup-instructions.text')}</p>
+          <ul className="mb-5 list-disc pl-10">
+            <li>{t('receipt-pickup-instructions.list.item-1')}</li>
+            <li>
+              {t('receipt-pickup-instructions.list.item-2.text')}
+              <ul className="list-disc pl-10">
+                <li>
+                  <Trans
+                    i18nKey="receipt-pickup-instructions.list.item-2.list.item-1"
+                    ns="landing"
+                  />
+                </li>
+                <li>
+                  {t('receipt-pickup-instructions.list.item-2.list.item-2')}
+                </li>
+              </ul>
+            </li>
+            <li>{t('receipt-pickup-instructions.list.item-3')}</li>
+            <li>{t('receipt-pickup-instructions.list.item-4')}</li>
+          </ul>
         </div>
       </Collapse>
     </Layout>
