@@ -90,7 +90,7 @@
     "has-been-printed": "The passport has been printed",
     "check-receipt": "The passport is on its way to the pick-up location. Check your receipt to confirm the date and location",
     "not-available": "The passport will not be available before the pick-up date printed on your receipt",
-    "labour-dispute": "If your pick-up date has passed, you can go in anytime to pick up your passport."
+    "labour-disruption": "If your pick-up date has passed, you can go in anytime to pick up your passport."
   },
   "shipped-canada-post": {
     "header": "The passport has been printed and mailed",

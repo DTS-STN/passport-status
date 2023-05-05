@@ -90,7 +90,7 @@
     "has-been-printed": "Le passeport a été imprimé",
     "check-receipt": "Le passeport est en route vers le lieu de retrait. Vérifiez votre reçu pour confirmer la date et le lieu de retrait du passeport",
     "not-available": "Le passeport ne sera pas disponible avant la date de retrait imprimée sur votre reçu",
-    "labour-dispute": "Si votre date de cueillette est passée, vous pouvez récupérer votre passeport à tout moment."
+    "labour-disruption": "Si votre date de cueillette est passée, vous pouvez récupérer votre passeport à tout moment."
   },
   "shipped-canada-post": {
     "header": "Le passeport a été imprimé et envoyé par la poste",

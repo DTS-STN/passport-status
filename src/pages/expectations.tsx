@@ -31,7 +31,7 @@ const Expectations: FC = () => {
         <h1 className="h1">{t('header')}</h1>
         <h2 className="h2">{t('header-avoid-waiting')}</h2>
         <p>{t('available-after.description')}</p>
-        <ul className="mb-5 list-disc space-y-2 pl-10">
+        <ul className="list-disc space-y-2 pl-10">
           <li>
             <Trans i18nKey={'available-after.list.item-1'} ns="expectations" />
           </li>
