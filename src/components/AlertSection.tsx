@@ -13,9 +13,9 @@ const borderColors = {
 }
 
 const svgStyles = {
-  warning: '-translate-x-4 translate-y-8',
-  success: '-translate-x-3 translate-y-8',
-  info: '-translate-x-3 translate-y-8',
+  warning: '-translate-x-3 translate-y-10',
+  success: '-translate-x-3 translate-y-10',
+  info: '-translate-x-3 translate-y-10',
 }
 
 const svg = (type: AlertType) => {
@@ -23,7 +23,7 @@ const svg = (type: AlertType) => {
     case 'success': {
       return (
         <svg
-          className="bg-white pb-1 fill-green-500 w-8 h-8"
+          className="bg-white p-1 fill-green-500 w-8 h-8"
           viewBox="0 0 512 512"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -34,7 +34,7 @@ const svg = (type: AlertType) => {
     case 'warning': {
       return (
         <svg
-          className="bg-white fill-accent-warning w-10 h-10"
+          className="bg-white p-1 fill-accent-warning w-8 h-8"
           viewBox="0 0 24 24"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -47,7 +47,7 @@ const svg = (type: AlertType) => {
     case 'info': {
       return (
         <svg
-          className="bg-white pb-1 fill-accent-info w-8 h-8"
+          className="bg-white p-1 fill-accent-info w-8 h-8"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 512 512"
         >
@@ -67,7 +67,7 @@ const AlertSection: FC<PropsWithChildren<AlertSectionProps>> = ({
   return (
     <div>
       <div className={`${svgStyles[type]}`}>{svg(type)}</div>
-      <section className={`border-l-8 ${borderColor}`}>
+      <section className={`pb-0.5 pt-2 border-l-8 ${borderColor}`}>
         <div className="ml-8">{children}</div>
       </section>
     </div>
