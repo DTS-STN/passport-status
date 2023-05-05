@@ -47,7 +47,7 @@ const svg = (type: AlertType) => {
     case 'info': {
       return (
         <svg
-          className="fill-blue-500 w-8 h-8"
+          className="fill-teal-500 w-8 h-8"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 512 512"
         >
