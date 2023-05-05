@@ -9,7 +9,7 @@ export interface AlertSectionProps {
 const borderColors = {
   warning: 'border-orange-500',
   success: 'border-green-500',
-  info: 'border-blue-500',
+  info: 'border-teal-500',
 }
 
 const svgMargins = {
