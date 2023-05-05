@@ -14,7 +14,7 @@
     "error": {
       "required": "Le numéro de dossier est obligatoire."
     },
-    "help": "Si vous ne pouvez pas trouver votre numéro de dossier, <Link>vous pouvez l'en demander</Link>.",
+    "help": "Si vous ne pouvez pas trouver votre numéro de dossier, <Link>vous pouvez demander à le recevoir</Link>.",
     "label": "Numéro de dossier"
   },
   "given-name": {
@@ -78,16 +78,19 @@
     },
     "contact-us": "Si vous ne pouvez pas obtenir l'état de votre demande à l'aide de cet outil, ou si votre demande prend plus de temps que la <Link>norme de service</Link>, appelez-nous sans frais au <strong>{{phoneNumber}}</strong>.",
     "service-standard-link": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens/delais-traitement.html",
-    "double-check": "Revérifiez vos renseignements et essayez à nouveau. Si nous ne trouvons pas votre dossier, vous pouvez réessayer demain. Nous mettons à jour nos dossiers chaque jour."
+    "double-check": "Revérifiez vos renseignements et essayez à nouveau. Si nous ne trouvons pas votre dossier, vous pouvez réessayer demain. Nous mettons à jour nos dossiers chaque jour.",
+    "labour-dispute": "Si vous avez déposé votre demande juste avant ou pendant la récente perturbation du travail, il se peut que vous deviez attendre quelques jours de plus avant que le statut de votre demande ne soit disponible."
   },
   "being-processed": {
     "received": "Nous avons reçu votre demande et nous sommes en train de la traiter",
-    "we-will-contact": "Si nous avons besoin de plus amples renseignements, nous communiquerons avec vous par courriel ou par téléphone. Nous n'utiliserons <strong>jamais</strong> de messages textes ou de programmes de messagerie instantanée pour vous contacter au sujet de votre demande de passeport."
+    "we-will-contact": "Si nous avons besoin de plus amples renseignements, nous communiquerons avec vous par courriel ou par téléphone. Nous n'utiliserons <strong>jamais</strong> de messages textes ou de programmes de messagerie instantanée pour vous contacter au sujet de votre demande de passeport.",
+    "labour-dispute": "Si vous avez déposé une demande juste avant ou pendant la récente perturbation du travail, votre demande pourrait prendre plus de temps que la <Link>norme de service</Link>"
   },
   "ready-for-pickup": {
     "has-been-printed": "Le passeport a été imprimé",
     "check-receipt": "Le passeport est en route vers le lieu de retrait. Vérifiez votre reçu pour confirmer la date et le lieu de retrait du passeport",
-    "not-available": "Le passeport ne sera pas disponible avant la date de retrait imprimée sur votre reçu"
+    "not-available": "Le passeport ne sera pas disponible avant la date de retrait imprimée sur votre reçu",
+    "labour-dispute": "Si votre date de cueillette est passée, vous pouvez récupérer votre passeport à tout moment."
   },
   "shipped-canada-post": {
     "header": "Le passeport a été imprimé et envoyé par la poste",

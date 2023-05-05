@@ -2,6 +2,7 @@ import { FC } from 'react'
 
 import { Trans, useTranslation } from 'next-i18next'
 
+import AlertSection from '../AlertSection'
 import ExternalLink from '../ExternalLink'
 
 export const CheckStatusNoRecord: FC<{}> = () => {
@@ -45,6 +46,9 @@ export const CheckStatusNoRecord: FC<{}> = () => {
           }}
         />
       </p>
+      <AlertSection type="info">
+        <p>{t('no-record.labour-dispute')}</p>
+      </AlertSection>
     </>
   )
 }

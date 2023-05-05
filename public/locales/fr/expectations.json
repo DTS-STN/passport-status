@@ -40,5 +40,6 @@
   "do-not-travel": "Vous ne devez pas finaliser vos plans de voyage avant d'avoir le passeport. Nous ne sommes pas responsables des pertes si vous ne le recevez pas à temps pour votre voyage.",
   "meta": {
     "description": "Évitez d'attendre au téléphone et demandez l'état de votre demande en ligne."
-  }
+  },
+  "labour-disruption": "Si vous avez déposé votre demande juste avant ou pendant la récente perturbation du travail, il se peut que vous deviez attendre quelques jours de plus avant que le statut de votre demande ne soit disponible."
 }

@@ -40,5 +40,6 @@
   "do-not-travel": "You should not finalize any travel plans until you have the passport. We are not liable for any losses if you do not receive it in time for your travel.",
   "meta": {
     "description": "Avoid waiting on the phone and request the status of your application online."
-  }
+  },
+  "labour-disruption": "If you applied just before or during the recent labour disruption, it may take a few extra days before the status of your application is available."
 }

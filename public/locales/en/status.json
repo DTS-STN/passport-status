@@ -78,16 +78,19 @@
     },
     "contact-us": "If you can't get your application status using this tool, or if your application is taking longer than the <Link>service standard</Link>, please call us toll free at <strong>{{phoneNumber}}</strong>.",
     "service-standard-link": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/processing-times.html",
-    "double-check": "Double-check your information and try again. If we still can't find your file, you can try again tomorrow. We update our records daily."
+    "double-check": "Double-check your information and try again. If we still can't find your file, you can try again tomorrow. We update our records daily.",
+    "labour-dispute": "If you applied just before or during the recent labour disruption, it may take a few extra days before the status of your application is available."
   },
   "being-processed": {
     "received": "We have received your application and are now processing it",
-    "we-will-contact": "If we need more information, we'll contact you by email or telephone. We will <strong>never</strong> use text or instant messages to contact you about your passport application."
+    "we-will-contact": "If we need more information, we'll contact you by email or telephone. We will <strong>never</strong> use text or instant messages to contact you about your passport application.",
+    "labour-dispute": "If you applied just before or during the recent labour disruption, your application may take longer than the <Link>service standard</Link>"
   },
   "ready-for-pickup": {
     "has-been-printed": "The passport has been printed",
     "check-receipt": "The passport is on its way to the pick-up location. Check your receipt to confirm the date and location",
-    "not-available": "The passport will not be available before the pick-up date printed on your receipt"
+    "not-available": "The passport will not be available before the pick-up date printed on your receipt",
+    "labour-dispute": "If your pick-up date has passed, you can go in anytime to pick up your passport."
   },
   "shipped-canada-post": {
     "header": "The passport has been printed and mailed",

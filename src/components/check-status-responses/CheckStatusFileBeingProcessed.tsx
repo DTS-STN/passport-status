@@ -2,6 +2,7 @@ import { FC } from 'react'
 
 import { Trans, useTranslation } from 'next-i18next'
 
+import AlertSection from '../AlertSection'
 import ExternalLink from '../ExternalLink'
 
 export const CheckStatusFileBeingProcessed: FC<{}> = () => {
@@ -43,6 +44,19 @@ export const CheckStatusFileBeingProcessed: FC<{}> = () => {
           />
         </li>
       </ul>
+      <AlertSection type="info">
+        <Trans
+          i18nKey={'being-processed.labour-dispute'}
+          ns="status"
+          components={{
+            Link: (
+              <ExternalLink
+                href={t('status-check-contact.service-standard-href')}
+              />
+            ),
+          }}
+        />
+      </AlertSection>
     </>
   )
 }
