@@ -37,9 +37,11 @@ const Expectations: FC = () => {
           </li>
           <li>{t('available-after.list.item-2')}</li>
         </ul>
-        <AlertSection type="info">
-          <p>{t('labour-disruption')}</p>
-        </AlertSection>
+        <div className="pb-4">
+          <AlertSection type="info">
+            <p>{t('labour-disruption')}</p>
+          </AlertSection>
+        </div>
         <p>
           <strong>{t('available-after.updated-status')}</strong>
         </p>
