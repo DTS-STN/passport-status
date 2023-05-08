@@ -1,6 +1,5 @@
 import { FC, PropsWithChildren } from 'react'
 
-import { Trans } from 'next-i18next'
 import Image from 'next/image'
 
 export interface ImageProps {
@@ -10,7 +9,7 @@ export interface ImageProps {
   height: number
 }
 
-export interface ExampleImageProps {
+export interface ExampleImageProps extends PropsWithChildren {
   title?: string
   imageProps: ImageProps
 }
