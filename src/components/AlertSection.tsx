@@ -4,6 +4,7 @@ export type AlertType = 'success' | 'warning' | 'info'
 
 export interface AlertSectionProps {
   type: AlertType
+  className?: string
 }
 
 const borderColors = {
@@ -16,12 +17,6 @@ const svgStyles = {
   warning: '-translate-x-3 translate-y-10',
   success: '-translate-x-3 translate-y-10',
   info: '-translate-x-3 translate-y-10',
-}
-
-const svgMargins = {
-  warning: '-ml-4 -mb-6',
-  success: '-ml-4 -mb-6',
-  info: '-ml-3 -mb-2',
 }
 
 const svg = (type: AlertType) => {
@@ -67,11 +62,12 @@ const svg = (type: AlertType) => {
 const AlertSection: FC<PropsWithChildren<AlertSectionProps>> = ({
   children,
   type,
+  className,
 }) => {
   const borderColor = borderColors[type]
 
   return (
-    <div>
+    <div className={className}>
       <div className={`${svgStyles[type]}`}>{svg(type)}</div>
       <section className={`pb-0.5 pt-2 border-l-8 ${borderColor}`}>
         <div className="ml-8">{children}</div>

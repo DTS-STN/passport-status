@@ -25,7 +25,7 @@ const ExampleImage: FC<ExampleImageProps> = ({
 }) => {
   return (
     <>
-      {title ?? (
+      {title && (
         <p>
           <strong>{title}</strong>
         </p>
