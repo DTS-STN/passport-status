@@ -11,19 +11,20 @@ describe('ExampleImage', () => {
   const sut = (
     <ExampleImage
       title="title"
-      description="content"
       imageProps={{
         src: '/Receipt1_EN.png',
         alt: 'This is an image',
         width: 350,
         height: 350,
       }}
-    />
+    >
+      <p>{'description'}</p>
+    </ExampleImage>
   )
 
   it('renders', async () => {
     render(sut)
-    const screenText = screen.getByText('content')
+    const screenText = screen.getByText('description')
     expect(screenText).toBeInTheDocument()
     await waitFor(() => {
       const img = screen.getByAltText('This is an image')

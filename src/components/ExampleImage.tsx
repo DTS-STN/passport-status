@@ -1,6 +1,5 @@
-import { FC } from 'react'
+import { FC, PropsWithChildren } from 'react'
 
-import { Trans } from 'next-i18next'
 import Image from 'next/image'
 
 export interface ImageProps {
@@ -10,18 +9,15 @@ export interface ImageProps {
   height: number
 }
 
-export interface ExampleImageProps {
+export interface ExampleImageProps extends PropsWithChildren {
   title?: string
   imageProps: ImageProps
-  descriptionKey: string
-  descriptionNamespace: string
 }
 
 const ExampleImage: FC<ExampleImageProps> = ({
+  children,
   title,
   imageProps,
-  descriptionKey,
-  descriptionNamespace,
 }) => {
   return (
     <>
@@ -39,9 +35,7 @@ const ExampleImage: FC<ExampleImageProps> = ({
           width={imageProps.width}
           height={imageProps.height}
         />
-        <figcaption className="px-5 py-3 text-lg">
-          <Trans i18nKey={descriptionKey} ns={descriptionNamespace} />
-        </figcaption>
+        <figcaption className="px-5 py-3 text-lg">{children}</figcaption>
       </figure>
     </>
   )
