@@ -62,10 +62,10 @@ const Expectations: FC = () => {
           <li>{t('cannot-check.list.item-2')}</li>
         </ul>
         <AlertSection type="warning">
-          <p className="m-4">
+          <p className="mb-4">
             <strong>{t('do-not-travel')}</strong>
           </p>
-          <p className="m-4">{t('not-liable')}</p>
+          <p>{t('not-liable')}</p>
         </AlertSection>
         <h2 className="h2">{t('header-privacy')}</h2>
         <p>
