@@ -18,27 +18,31 @@ export const CheckStatusShippingFedex: FC<CheckStatusShippingFedexProps> = ({
       <h1 data-testid="shipped-fedex" className="h1">
         {t('shipped-fedex.header')}
       </h1>
-      {trackingNumber && (
-        <AlertSection type="success">
-          <h2 data-testid="shipped-fedex-mailing" className="h2">
-            {t('shipped-fedex.mailing')}
-            <Trans
-              i18nKey="status-check-tracking.number"
-              ns="status"
-              tOptions={{ trackingNumber }}
-            />
-          </h2>
-          <p>
-            <ExternalLink
-              href={t('status-check-tracking.link.fedex', {
-                trackingNumber,
-              })}
-            >
-              {t('status-check-tracking.can-track')}
-            </ExternalLink>
-          </p>
-        </AlertSection>
-      )}
+      <AlertSection type="success">
+        <h2 data-testid="shipped-fedex-mailing" className="h2">
+          {t('shipped-fedex.mailing')}
+        </h2>
+        {trackingNumber && (
+          <>
+            <p>
+              <Trans
+                i18nKey="status-check-tracking.number"
+                ns="status"
+                tOptions={{ trackingNumber }}
+              />
+            </p>
+            <p>
+              <ExternalLink
+                href={t('status-check-tracking.link.fedex', {
+                  trackingNumber,
+                })}
+              >
+                {t('status-check-tracking.can-track')}
+              </ExternalLink>
+            </p>
+          </>
+        )}
+      </AlertSection>
       <p className="mt-6">{t('shipped-fedex.supporting-documents')}</p>
       <p className="mt-6">
         <Trans
