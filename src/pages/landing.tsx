@@ -48,15 +48,15 @@ const Landing: FC = () => {
       <Collapse title={t('receipt-image-1.title')}>
         <div className="mt-3 max-w-prose border-t p-3">
           <ExampleImage
-            descriptionKey="receipt-image-1.descriptive-text"
-            descriptionNamespace="landing"
             imageProps={{
               src: t('receipt-image-1.src'),
               alt: t('receipt-image-1.alt'),
               width: 350,
               height: 550,
             }}
-          />
+          >
+            <Trans i18nKey="receipt-image-1.descriptive-text" ns="landing" />
+          </ExampleImage>
           <p>{t('receipt-will-find.text')}</p>
           <ul className="mb-5 list-disc pl-10">
             <li>{t('receipt-will-find.list.item-1')}</li>
@@ -75,15 +75,15 @@ const Landing: FC = () => {
       <Collapse title={t('receipt-image-2.title')}>
         <div className="mt-3 max-w-prose border-t p-3">
           <ExampleImage
-            descriptionKey="receipt-image-2.descriptive-text"
-            descriptionNamespace="landing"
             imageProps={{
               src: t('receipt-image-2.src'),
               alt: t('receipt-image-2.alt'),
               width: 350,
               height: 550,
             }}
-          />
+          >
+            <Trans i18nKey="receipt-image-2.descriptive-text" ns="landing" />
+          </ExampleImage>
           <p>{t('receipt-will-find.text')}</p>
           <ul className="mb-5 list-disc pl-10">
             <li>{t('receipt-will-find.list.item-1')}</li>
