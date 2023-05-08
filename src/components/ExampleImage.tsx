@@ -14,7 +14,7 @@ export interface ExampleImageProps extends PropsWithChildren {
   imageProps: ImageProps
 }
 
-const ExampleImage: FC<PropsWithChildren<ExampleImageProps>> = ({
+const ExampleImage: FC<ExampleImageProps> = ({
   children,
   title,
   imageProps,
