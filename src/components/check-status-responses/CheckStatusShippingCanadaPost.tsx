@@ -22,29 +22,26 @@ export const CheckStatusShippingCanadaPost: FC<
       <h2 data-testid="shipped-canada-post" className="h2">
         {t('shipped-canada-post.mailing')}
       </h2>
-      <AlertSection type="success">
-        <p>
-          {trackingNumber && (
-            <>
-              {' '}
-              <Trans
-                i18nKey="status-check-tracking.number"
-                ns="status"
-                tOptions={{ trackingNumber }}
-              />
-            </>
-          )}
-        </p>
-        <p>
-          <ExternalLink
-            href={t('status-check-tracking.link.canada-post', {
-              trackingNumber,
-            })}
-          >
-            {t('status-check-tracking.can-track')}
-          </ExternalLink>
-        </p>
-      </AlertSection>
+      {trackingNumber && (
+        <AlertSection type="success">
+          <p>
+            <Trans
+              i18nKey="status-check-tracking.number"
+              ns="status"
+              tOptions={{ trackingNumber }}
+            />
+          </p>
+          <p>
+            <ExternalLink
+              href={t('status-check-tracking.link.canada-post', {
+                trackingNumber,
+              })}
+            >
+              {t('status-check-tracking.can-track')}
+            </ExternalLink>
+          </p>
+        </AlertSection>
+      )}
       <h3 className="h3 mt-6">
         {t('shipped-canada-post.supporting-documents')}
       </h3>
