@@ -31,7 +31,7 @@ const Landing: FC = () => {
             {t('with-esrf')}
           </LinkButton>
         </div>
-        <div className="w-full lg:w-4/12 xl:w-3/12">
+        <div className="w-full lg:w-4/12 xl:w-3/12 mb-8">
           <LinkButton href="/email" fullWidth id="without-esrf">
             {t('without-esrf')}
           </LinkButton>

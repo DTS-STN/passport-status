@@ -11,19 +11,6 @@ export const CheckStatusFileBeingProcessed: FC<{}> = () => {
       <h1 data-testid="being-processed" className="h1">
         {t('being-processed.received')}
       </h1>
-      <p>
-        <Trans
-          i18nKey={'being-processed.get-urgent'}
-          ns="status"
-          components={{
-            Link: (
-              <ExternalLink
-                href={t('status-check-urgent.express-services-href')}
-              />
-            ),
-          }}
-        />
-      </p>
       <p className="h3">{t('being-processed.dont-meet-standards')}</p>
       <p>
         <Trans
@@ -60,20 +47,6 @@ export const CheckStatusFileBeingProcessed: FC<{}> = () => {
             Link: (
               <ExternalLink
                 href={t('status-check-urgent.express-services-href')}
-              />
-            ),
-          }}
-        />
-      </p>
-      <p className="h3">{t('being-processed.dont-meet-standards')}</p>
-      <p>
-        <Trans
-          i18nKey={'being-processed.may-be-eligible'}
-          ns="status"
-          components={{
-            Link: (
-              <ExternalLink
-                href={t('status-check-contact.service-standard-href')}
               />
             ),
           }}

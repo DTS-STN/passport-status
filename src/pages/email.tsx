@@ -230,7 +230,6 @@ const Email: FC = () => {
                 errors={errorSummaryItems}
               />
             )}
-
             <InputField
               id="email"
               name="email"
