@@ -8,9 +8,9 @@ export const CheckStatusNoRecord: FC<{}> = () => {
   const { t } = useTranslation(['status', 'common'])
   return (
     <>
-      <h2 data-testid="no-record" className="h2">
+      <h1 data-testid="no-record" className="h1">
         {t('no-record.cannot-give-status.description')}
-      </h2>
+      </h1>
       <p>{t('no-record.cannot-give-status.because')}</p>
       <ul className="mb-5 list-disc space-y-2 pl-10">
         <li>
@@ -21,20 +21,25 @@ export const CheckStatusNoRecord: FC<{}> = () => {
         </li>
         <li>{t('no-record.cannot-give-status.list.item-2')}</li>
       </ul>
-      <p>{t('no-record.double-check')}</p>
+      <p>{t('no-record.can-review')}</p>
       <p>
         <Trans
           i18nKey={'no-record.contact-us'}
           ns="status"
-          tOptions={{ phoneNumber: t('common:phone-number') }}
           components={{
-            Link: <ExternalLink href={t('no-record.service-standard-link')} />,
+            Link: (
+              <ExternalLink
+                href={t('status-check-contact.service-standard-href')}
+              />
+            ),
+            Link2: <ExternalLink href={t('common:contact-us-link')} />,
           }}
         />
       </p>
+      <p className="h3">{t('no-record.need-faster')}</p>
       <p>
         <Trans
-          i18nKey={'status-check-urgent.description'}
+          i18nKey={'no-record.get-urgent'}
           ns="status"
           components={{
             Link: (

@@ -1,7 +1,7 @@
 import { FC } from 'react'
 
 export interface InputLabelProps {
-  htmlFor: string
+  htmlFor?: string
   id: string
   label: string
   required?: boolean

@@ -28,12 +28,22 @@
     },
     "label": "Date de naissance du requérant"
   },
-  "email-esrf": "Envoyez-moi mon numéro de dossier",
+  "email-esrf": "Envoyez-moi le numéro de dossier",
   "email-sent-confirmation": "Un courriel a été envoyé s'il y avait une correspondance dans nos dossiers avec le numéro de dossier (FEDS).",
   "email-confirmation-msg": {
-    "request-received": "Votre demande pour obtenir le numéro de dossier a été reçue",
-    "if-exists": "Si nous pouvons trouver le dossier avec les informations que vous nous avez fournies, nous vous enverrons le numéro de dossier par courriel. Si vous ne recevez pas le message de confirmation dans votre boîte de réception, vérifiez votre dossier de courriel indésirable.",
-    "please-contact": "Si vous ne le recevez pas, appelez-nous sans frais au <strong>{{phoneNumber}}</strong>."
+    "request-received": "Votre demande a été reçue",
+    "if-exists": "Si nous pouvons trouver le dossier avec les informations que vous nous avez fournies, <strong>nous vous enverrons le numéro de dossier par courriel</strong>. Si vous ne recevez pas le message de confirmation dans votre boîte de réception, vérifiez votre dossier de courriel indésirable.",
+    "may-not-receive": "Il se pourrait que vous ne receviez pas de courriel si :",
+    "may-not-receive-list": {
+      "item-1": "les renseignements que vous nous avez fournis ne correspondent pas à ceux de notre système <strong>ou</strong>",
+      "item-2": "nous avons reçu votre demande, mais n'avons pas encore commencé à la traiter"
+    },
+    "dont-receive": "Si vous ne recevez pas de courriel, vous pouvez :",
+    "dont-receive-list": {
+      "item-1": "revérifiez vos renseignements et essayez à nouveau, <strong>ou</strong>",
+      "item-2": "réessayer demain - nous mettons à jour nos dossiers chaque jour."
+    },
+    "please-contact": "Si vous n’obtenez toujours pas le courriel, <Link>veuillez nous contacter (s’ouvre dans un nouvel onglet)</Link>."
   },
   "page-unauth": {
     "header": "Page non-autorisée",
@@ -41,18 +51,19 @@
     "button": "Conditions de confidentialité et de courriel"
   },
   "help-message": {
-    "email": "Fournissez votre adresse courriel complète, exactement comme indiqué sur le formulaire de demande de passeport.",
-    "for-child-application": "<strong>Pour les demandes de passeport pour enfants,</strong> indiquez l'adresse courriel complète du parent ou du tuteur légal du requérant, telle qu'elle figure sur la demande de passeport."
+    "email": "Indiquez votre adresse courriel telle qu’elle figure sur votre formulaire de demande de passeport.",
+    "for-child-application": "<strong>Pour les demandes pour enfants,</strong> indiquez l'adresse courriel complète du parent ou du tuteur légal du requérant, telle qu'elle figure sur la demande de passeport."
   },
   "header-messages": {
-    "matches": "<strong>Assurez-vous que vos informations correspondent à votre preuve de citoyenneté et à votre pièce d'identité.</strong> Votre preuve de citoyenneté pourrait être l'une des suivantes\u00a0:",
+    "matches": "<strong>Assurez-vous que vos informations correspondent à votre preuve de citoyenneté et à votre pièce d'identité lors de votre demande de passeport.</strong> Votre preuve de citoyenneté pourrait être l'une des suivantes :",
     "list": {
       "item-1": "un certificat de naissance",
       "item-2": "un certificat de citoyenneté",
       "item-3": "une carte de citoyenneté <strong>ou</strong>",
       "item-4": "d'autres documents, comme un certificat de naturalisation"
     },
-    "for-child-application": "<strong>Pour les demandes de passeport pour enfants,</strong> utilisez le(s) prénom(s), nom de famille et date de naissance de l'enfant, exactement tels qu'ils figurent sur sa preuve de citoyenneté."
+    "child-applications": "Les demandes de passeport pour enfants",
+    "for-child-application": "Utilisez le(s) prénom(s), nom de famille et date de naissance de l'enfant, exactement tels qu'ils figurent sur sa preuve de citoyenneté."
   },
   "request-another": "Obtenir un autre numéro de dossier"
 }

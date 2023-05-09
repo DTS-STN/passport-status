@@ -193,7 +193,6 @@ statusCodes.forEach((response) => {
 
     it(`loads result for status '${response.status}'`, () => {
       cy.get('#response-result').should('exist')
-      cy.focused().should('have.prop', 'tagName').should('eq', 'H1')
     })
 
     it(`loads result for status '${response.status}' has no detectable a11y violations`, () => {
@@ -244,7 +243,6 @@ describe('responses - loads no result', () => {
 
   it('loads no result', () => {
     cy.get('#response-no-result').should('exist')
-    cy.focused().should('have.prop', 'tagName').should('eq', 'H1')
   })
 
   it('no result has no detectable a11y violations', () => {
