@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, PropsWithChildren } from 'react'
 
 import Image from 'next/image'
 
@@ -9,22 +9,23 @@ export interface ImageProps {
   height: number
 }
 
-export interface ExampleImageProps {
-  title: string
+export interface ExampleImageProps extends PropsWithChildren {
+  title?: string
   imageProps: ImageProps
-  description: string
 }
 
 const ExampleImage: FC<ExampleImageProps> = ({
+  children,
   title,
   imageProps,
-  description,
 }) => {
   return (
     <>
-      <p>
-        <strong>{title}</strong>
-      </p>
+      {title && (
+        <p>
+          <strong>{title}</strong>
+        </p>
+      )}
       <figure className="mb-6 rounded-lg border bg-white p-1 drop-shadow-lg md:w-3/5">
         <Image
           key={imageProps.src}
@@ -34,9 +35,7 @@ const ExampleImage: FC<ExampleImageProps> = ({
           width={imageProps.width}
           height={imageProps.height}
         />
-        <figcaption className="px-5 py-3 text-lg">
-          <strong>{description}</strong>
-        </figcaption>
+        <figcaption className="px-5 py-3 text-lg">{children}</figcaption>
       </figure>
     </>
   )

@@ -4,17 +4,50 @@
   "with-esrf": "I have my file number",
   "without-esrf": "I don't have my file number",
   "collapse-file-number-title": "Can't find your file number?",
-  "receipt-explanation": "The file number is used to identify the passport application. The file number can be found on the receipt you were given if you applied for the passport in person. If you applied by mail, or don't have a file number, you can <Link>request to receive it</Link>.",
+  "receipt-explanation": "The file number is used to identify your passport application. The file number can be found on the receipt you were given if you applied for the passport in person. If you applied by mail, or don't have a file number, you can <Link>request to receive it</Link>.",
   "receipt-image-1": {
-    "title": "Example Receipt 1:",
-    "alt": "An example of an official receipt. The file number is circled in the centre of the receipt.",
+    "title": "Example Receipt 1",
+    "alt": "An example of an official receipt only. The file number is circled in the centre of the receipt.",
     "src": "/Receipt1_EN.png",
-    "descriptive-text": "Example of a receipt where the file number is circled."
+    "descriptive-text": "<strong>An example of an official receipt only. The file number is circled in the centre of the receipt.</strong>"
   },
   "receipt-image-2": {
-    "title": "Example Receipt 2:",
-    "alt": "An example of an official receipt. The file number is circled in the upper left-hand side of the receipt, above a barcode.",
+    "title": "Example Receipt 2",
+    "alt": "An example of an official receipt and pick-up slip. The file number is circled in the upper left-hand side of the receipt, above a barcode.",
     "src": "/Receipt2_EN.png",
-    "descriptive-text": "Example of a receipt where the file number is circled."
+    "descriptive-text": "<strong>An example of an official receipt and pick-up slip. The file number is circled in the upper left-hand side of the receipt, above a barcode.</strong>"
+  },
+  "receipt-will-find": {
+    "text": "On a receipt where the file number is circled you will find:",
+    "list": {
+      "item-1": "Title of receipt: Official Receipt and Pick-up Slip",
+      "item-2": "Name of passport office",
+      "item-3": "Date for Pickup",
+      "item-4": "Applicant name",
+      "item-5": "File number (circled in red ink)",
+      "item-6": "Date/Time",
+      "item-7": "Barcode",
+      "item-8": "Fees for services",
+      "item-9": "Total amount due",
+      "item-10": "Tendered",
+      "item-11": "Total Tendered",
+      "item-12": "Balance Due",
+      "item-13": "Mail-out date"
+    }
+  },
+  "receipt-pickup-instructions": {
+    "text": "At the bottom of the receipt, there are also Pickup Instructions:",
+    "list": {
+      "item-1": "Statement to remind individuals to please present this pickup slip and personal identification.",
+      "item-2": {
+        "text": "There are 2 checkboxes (you must check one):",
+        "list": {
+          "item-1": "Personal appearance of applicant required, <strong>or</strong>",
+          "item-2": "I authorize (insert name of person) to pick up my Travel Document. Authorized person must be over 16 years of age and must show Personal identification."
+        }
+      },
+      "item-3": "(Signature of Applicant)",
+      "item-4": "Statement to remind individuals to please ensure your passport is picked up within 30 days."
+    }
   }
 }

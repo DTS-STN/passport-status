@@ -14,7 +14,7 @@
     "error": {
       "required": "The file number is required."
     },
-    "help": "If you can't find your file number, you can <Link>request to receive it</Link>.",
+    "help": "If you can't find your file number, you can <Link>request to receive it(opens in a new tab)</Link>.",
     "label": "File number"
   },
   "given-name": {
@@ -25,7 +25,7 @@
   },
   "previous": "Check the status of another application",
   "reset": "Check the status of another application",
-  "header": "Check the status of your passport application",
+  "header": "Get the status of your passport application",
   "status": {
     "1": {
       "label": "Being processed",
@@ -69,40 +69,49 @@
   },
   "no-record": {
     "cannot-give-status": {
-      "description": "We can't give you your application status right now",
-      "because": "This is because:",
+      "description": "We can't give you the application status right now",
+      "because": "The status of your passport is not available because:",
       "list": {
-        "item-1": "the information you gave us doesn't match the information in our system <strong>or</strong>",
-        "item-2": "we received your application, but haven't started processing it yet"
+        "item-1": "the information you gave us doesn't match the information in our system or",
+        "item-2": "we received the application, but haven't started processing it yet"
       }
     },
-    "contact-us": "If you can't get your application status using this tool, or if your application is taking longer than the <Link>service standard</Link>, please call us toll free at <strong>{{phoneNumber}}</strong>.",
-    "service-standard-link": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/processing-times.html",
-    "double-check": "Double-check your information and try again. If we still can't find your file, you can try again tomorrow. We update our records daily."
+    "contact-us": "If you can't get the application status using this tool, or if the application is taking longer than the <Link>service standard(opens in a new tab)</Link>, please <Link2>contact us(opens in a new tab)</Link2>.",
+    "can-review": "You can review your the information you entered and try again.",
+    "cant-find-file": "If we still can't find the file, you can try again tomorrow. We update our records daily.",
+    "need-faster": "If you need the passport faster",
+    "get-urgent": "Find out how to get <Link>urgent or express service for existing applications(opens in a new tab)</Link> if you need the passport within 10 business days. Extra fees may apply."
   },
   "being-processed": {
     "received": "We have received your application and are now processing it",
-    "we-will-contact": "If we need more information, we'll contact you by email or telephone. We will <strong>never</strong> use text or instant messages to contact you about your passport application."
+    "we-will-contact": "If we need more information, we'll contact you by telephone, mail, or email. We will <strong>never</strong> use text or instant messages to contact you about your passport application.",
+    "ready-within": "The passport should be ready within our <Link>service standards(opens in a new tab)</Link>.",
+    "need-faster": "If you need the passport faster",
+    "get-urgent": "Find out how to get <Link>urgent or express service for existing applications(opens in a new tab)</Link> if you need the passport within 10 business days. Extra fees may apply.",
+    "dont-meet-standards": "If we don’t meet our service standards",
+    "may-be-eligible": "You may be eligible for a partial refund if we don’t meet our <Link>service standards(opens in a new tab)</Link>."
   },
   "ready-for-pickup": {
-    "has-been-printed": "The passport has been printed",
-    "check-receipt": "The passport is on its way to the pick-up location. Check your receipt to confirm the date and location",
-    "not-available": "The passport will not be available before the pick-up date printed on your receipt"
+    "has-been-printed": "Your passport has been printed",
+    "check-receipt": "Check your receipt for pick-up instructions",
+    "receipt-details": "Your receipt details the date and location that you should pick-up your passport",
+    "not-available": "Your passport will not be available before the pick-up date printed on your receipt"
   },
   "shipped-canada-post": {
-    "header": "The passport has been printed and mailed",
-    "mailing": "We're mailing it to you by Canada Post.",
+    "header": "Your passport has been printed and mailed",
+    "mailing": "We're mailing it to you by Canada Post",
     "supporting-documents": "We may send your supporting documents back separately."
   },
   "shipped-fedex": {
-    "header": "The passport has been printed and sent to the United States",
-    "mailing": "We're sending it to you by FedEx.",
-    "supporting-documents": "You'll receive the passport and supporting documents in the same envelope."
+    "header": "Your passport has been printed and sent to the United States",
+    "mailing": "We're sending it to you by FedEx\u00AE",
+    "supporting-documents": "You'll receive your passport and supporting documents in the same envelope.",
+    "contact-us": "If you don't receive your passport and supporting documents, <Link>contact us(opens in a new tab)</Link>"
   },
   "not-acceptable": {
-    "cannot-process": "We have reviewed your application and can't process it further",
+    "cannot-process": "We've reviewed your application and can't process it further",
     "explanation": "We're sending you a letter explaining why and will return your supporting documents at the same time.",
-    "call-us": "For more information, call us toll free at <strong>{{phoneNumber}}</strong>."
+    "call-us": "For more information, <Link>contact us(opens in a new tab)</Link>."
   },
   "status-check-contact": {
     "call-us": "Call us toll free at <strong>{{phoneNumber}}</strong> if your application is taking longer than the <Link>service standard</Link>",
@@ -114,21 +123,21 @@
   },
   "status-check-tracking": {
     "number": "Your tracking number is <strong>{{trackingNumber}}</strong>.",
-    "can-track": "You can track the package online",
+    "can-track": "You can track the package online(opens in a new tab)",
     "link": {
       "canada-post": "https://www.canadapost-postescanada.ca/track-reperage/en?referenceNumber={{trackingNumber}}#/details/{{trackingNumber}}",
       "fedex": "https://www.fedex.com/fedextrack/?action=track&cntry_code=ca&locale=en_ca&trackingnumber={{trackingNumber}}"
     }
   },
-  "status-check-call": "Call us toll free at <strong>{{phoneNumber}}</strong> if you don't receive your documents within 4 weeks of receiving your passport.",
+  "status-check-call": "<Link>Contact us(opens in a new tab)</Link> if you don't receive your documents within 4 weeks of receiving your passport.",
   "header-messages": {
-    "matches": "<strong>Make sure your information matches your proof of citizenship and supporting ID.</strong> Your proof of citizenship could be one of the following:",
+    "matches": "<strong>Make sure your information matches the proof of citizenship and supporting ID used when you applied for a passport.</strong> Your proof of citizenship could be one of the following:",
     "list": {
       "item-1": "birth certificate",
       "item-2": "citizenship certificate",
-      "item-3": "citizenship card <strong>or</strong>",
+      "item-3": "citizenship card or",
       "item-4": "other documents, like a naturalization certificate"
     },
-    "for-child-application": "<strong>For child applications,</strong> use the child's given name(s) and surname and date of birth, exactly as provided on their proof of citizenship."
+    "for-child-application": "<strong>For a child application,</strong> use the child's given name(s) and surname and date of birth, exactly as provided on their proof of citizenship."
   }
 }

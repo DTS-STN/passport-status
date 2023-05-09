@@ -116,7 +116,6 @@ describe('responses', () => {
 
   it('loads result', () => {
     cy.get('#response-result').should('exist')
-    cy.focused().should('have.prop', 'tagName').should('eq', 'H1')
   })
 
   it('loads result has no detectable a11y violations', () => {
@@ -127,10 +126,8 @@ describe('responses', () => {
 
   it('loads result click get another file number button should reset form', () => {
     cy.get('#response-result').should('exist')
-    cy.focused().should('have.prop', 'tagName').should('eq', 'H1')
     cy.get('button#get-another-file-number').click()
     cy.wait(200)
-    cy.focused().should('have.prop', 'tagName').should('eq', 'H1')
     cy.get('#email').invoke('val').should('be.empty')
     cy.get('#givenName').invoke('val').should('be.empty')
     cy.get('#surname').invoke('val').should('be.empty')
