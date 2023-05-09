@@ -385,7 +385,9 @@
 <a name='L320'></a><a href='#L320'>320</a>
 <a name='L321'></a><a href='#L321'>321</a>
 <a name='L322'></a><a href='#L322'>322</a>
-<a name='L323'></a><a href='#L323'>323</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L323'></a><a href='#L323'>323</a>
+<a name='L324'></a><a href='#L324'>324</a>
+<a name='L325'></a><a href='#L325'>325</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -551,6 +553,8 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -879,9 +883,6 @@ const Status: FC = () =&gt; {
         additionalMetaTags={[getDCTermsTitle(en('header'), fr('header'))]}
       /&gt;
       &lt;IdleTimeout /&gt;
-      &lt;h1 ref={headingRef} className="h1" tabIndex={-1}&gt;
-        {t('header')}
-      &lt;/h1&gt;
       {checkStatusResponse !== undefined ? (
 <span class="branch-0 cbranch-no" title="branch not covered" >        &lt;CheckStatusInfo</span>
           id={
@@ -895,105 +896,110 @@ const Status: FC = () =&gt; {
           checkStatusResponse={checkStatusResponse}
         /&gt;
       ) : (
-        &lt;form onSubmit={handleFormikSubmit} id="form-get-status"&gt;
-          &lt;p&gt;
-            &lt;Trans i18nKey="header-messages.matches" ns="status" /&gt;
-          &lt;/p&gt;
-          &lt;ul className="mb-5 list-disc space-y-2 pl-10"&gt;
-            &lt;li&gt;{t('header-messages.list.item-1')}&lt;/li&gt;
-            &lt;li&gt;{t('header-messages.list.item-2')}&lt;/li&gt;
-            &lt;li&gt;
-              &lt;Trans i18nKey="header-messages.list.item-3" ns="status" /&gt;
-            &lt;/li&gt;
-            &lt;li&gt;{t('header-messages.list.item-4')}&lt;/li&gt;
-          &lt;/ul&gt;
-          &lt;div className="mb-5 rounded border border-gray-300 bg-gray-100 p-5"&gt;
-            &lt;p className="m-0"&gt;
-              &lt;Trans
-                i18nKey="header-messages.for-child-application"
-                ns="status"
-              /&gt;
+        &lt;&gt;
+          &lt;h1 ref={headingRef} className="h1" tabIndex={-1}&gt;
+            {t('header')}
+          &lt;/h1&gt;
+          &lt;form onSubmit={handleFormikSubmit} id="form-get-status"&gt;
+            &lt;p&gt;
+              &lt;Trans i18nKey="header-messages.matches" ns="status" /&gt;
             &lt;/p&gt;
-          &lt;/div&gt;
-&nbsp;
-          {errorSummaryItems.length &gt; 0 &amp;&amp; (
-<span class="branch-1 cbranch-no" title="branch not covered" >            &lt;ErrorSummary</span>
-              id="error-summary-get-status"
-              summary={t('common:found-errors', {
-                count: errorSummaryItems.length,
-              })}
-              errors={errorSummaryItems}
-            /&gt;
-          )}
-&nbsp;
-          &lt;InputField
-            id="esrf"
-            name="esrf"
-            label={t('esrf.label')}
-            onChange={handleOnESRFChange}
-            value={formikValues.esrf}
-            errorMessage={formikErrors.esrf &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >t(formikErrors.esrf)}</span>
-            textRequired={t('common:required')}
-            required
-            helpMessage={
-              &lt;p&gt;
+            &lt;ul className="mb-5 list-disc space-y-2 pl-10"&gt;
+              &lt;li&gt;{t('header-messages.list.item-1')}&lt;/li&gt;
+              &lt;li&gt;{t('header-messages.list.item-2')}&lt;/li&gt;
+              &lt;li&gt;
+                &lt;Trans i18nKey="header-messages.list.item-3" ns="status" /&gt;
+              &lt;/li&gt;
+              &lt;li&gt;{t('header-messages.list.item-4')}&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;div className="mb-5 rounded border border-gray-300 bg-gray-100 p-5"&gt;
+              &lt;p className="m-0"&gt;
                 &lt;Trans
-                  i18nKey="esrf.help"
+                  i18nKey="header-messages.for-child-application"
                   ns="status"
-                  components={{
-                    Link: &lt;Link href="/email" /&gt;,
-                  }}
                 /&gt;
               &lt;/p&gt;
-            }
-          /&gt;
-          &lt;InputField
-            id="givenName"
-            name="givenName"
-            label={t('given-name.label')}
-            onChange={handleFormikChange}
-            value={formikValues.givenName}
-            errorMessage={formikErrors.givenName &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >t(formikErrors.givenName)}</span>
-            textRequired={t('common:required')}
-            required
-          /&gt;
-          &lt;InputField
-            id="surname"
-            name="surname"
-            label={t('surname.label')}
-            onChange={handleFormikChange}
-            value={formikValues.surname}
-            errorMessage={formikErrors.surname &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >t(formikErrors.surname)}</span>
-            textRequired={t('common:required')}
-            required
-          /&gt;
-          &lt;DateSelectField
-            id="dateOfBirth"
-            label={t('date-of-birth.label')}
-            onChange={handleOnDateOfBirthChange}
-            value={formikValues.dateOfBirth}
-            errorMessage={
-              formikErrors.dateOfBirth &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >t(formikErrors.dateOfBirth)</span>
-            }
-            textRequired={t('common:required')}
-            required
-          /&gt;
-          &lt;div className="mt-8 flex flex-wrap gap-2"&gt;
-            &lt;ActionButton
-              id="btn-submit"
-              disabled={isCheckStatusLoading}
-              type="submit"
-              text={t('check-status')}
-              style="primary"
+            &lt;/div&gt;
+&nbsp;
+            {errorSummaryItems.length &gt; 0 &amp;&amp; (
+<span class="branch-1 cbranch-no" title="branch not covered" >              &lt;ErrorSummary</span>
+                id="error-summary-get-status"
+                summary={t('common:found-errors', {
+                  count: errorSummaryItems.length,
+                })}
+                errors={errorSummaryItems}
+              /&gt;
+            )}
+&nbsp;
+            &lt;InputField
+              id="esrf"
+              name="esrf"
+              label={t('esrf.label')}
+              onChange={handleOnESRFChange}
+              value={formikValues.esrf}
+              errorMessage={formikErrors.esrf &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >t(formikErrors.esrf)}</span>
+              textRequired={t('common:required')}
+              required
+              helpMessage={
+                &lt;p&gt;
+                  &lt;Trans
+                    i18nKey="esrf.help"
+                    ns="status"
+                    components={{
+                      Link: &lt;Link href="/email" /&gt;,
+                    }}
+                  /&gt;
+                &lt;/p&gt;
+              }
             /&gt;
-            &lt;ActionButton
-              id="btn-cancel"
-              disabled={isCheckStatusLoading}
-              text={t('common:modal-go-back.cancel-button')}
-              onClick={handleOnCancelClick}
+            &lt;InputField
+              id="givenName"
+              name="givenName"
+              label={t('given-name.label')}
+              onChange={handleFormikChange}
+              value={formikValues.givenName}
+              errorMessage={formikErrors.givenName &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >t(formikErrors.givenName)}</span>
+              textRequired={t('common:required')}
+              required
             /&gt;
-          &lt;/div&gt;
-        &lt;/form&gt;
+            &lt;InputField
+              id="surname"
+              name="surname"
+              label={t('surname.label')}
+              onChange={handleFormikChange}
+              value={formikValues.surname}
+              errorMessage={formikErrors.surname &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >t(formikErrors.surname)}</span>
+              textRequired={t('common:required')}
+              required
+            /&gt;
+            &lt;DateSelectField
+              id="dateOfBirth"
+              label={t('date-of-birth.label')}
+              onChange={handleOnDateOfBirthChange}
+              value={formikValues.dateOfBirth}
+              errorMessage={
+                formikErrors.dateOfBirth &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >t(formikErrors.dateOfBirth)</span>
+              }
+              textRequired={t('common:required')}
+              required
+            /&gt;
+            &lt;div className="mt-8 flex flex-wrap gap-2"&gt;
+              &lt;ActionButton
+                id="btn-submit"
+                disabled={isCheckStatusLoading}
+                type="submit"
+                text={t('check-status')}
+                style="primary"
+              /&gt;
+              &lt;ActionButton
+                id="btn-cancel"
+                disabled={isCheckStatusLoading}
+                text={t('common:modal-go-back.cancel-button')}
+                onClick={handleOnCancelClick}
+              /&gt;
+            &lt;/div&gt;
+          &lt;/form&gt;
+        &lt;/&gt;
       )}
       &lt;Modal
         open={modalOpen}
@@ -1036,7 +1042,7 @@ export default Status
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-09T10:03:36.009Z
+                at 2023-05-09T12:40:32.507Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

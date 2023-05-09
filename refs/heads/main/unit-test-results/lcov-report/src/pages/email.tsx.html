@@ -373,7 +373,38 @@
 <a name='L308'></a><a href='#L308'>308</a>
 <a name='L309'></a><a href='#L309'>309</a>
 <a name='L310'></a><a href='#L310'>310</a>
-<a name='L311'></a><a href='#L311'>311</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L311'></a><a href='#L311'>311</a>
+<a name='L312'></a><a href='#L312'>312</a>
+<a name='L313'></a><a href='#L313'>313</a>
+<a name='L314'></a><a href='#L314'>314</a>
+<a name='L315'></a><a href='#L315'>315</a>
+<a name='L316'></a><a href='#L316'>316</a>
+<a name='L317'></a><a href='#L317'>317</a>
+<a name='L318'></a><a href='#L318'>318</a>
+<a name='L319'></a><a href='#L319'>319</a>
+<a name='L320'></a><a href='#L320'>320</a>
+<a name='L321'></a><a href='#L321'>321</a>
+<a name='L322'></a><a href='#L322'>322</a>
+<a name='L323'></a><a href='#L323'>323</a>
+<a name='L324'></a><a href='#L324'>324</a>
+<a name='L325'></a><a href='#L325'>325</a>
+<a name='L326'></a><a href='#L326'>326</a>
+<a name='L327'></a><a href='#L327'>327</a>
+<a name='L328'></a><a href='#L328'>328</a>
+<a name='L329'></a><a href='#L329'>329</a>
+<a name='L330'></a><a href='#L330'>330</a>
+<a name='L331'></a><a href='#L331'>331</a>
+<a name='L332'></a><a href='#L332'>332</a>
+<a name='L333'></a><a href='#L333'>333</a>
+<a name='L334'></a><a href='#L334'>334</a>
+<a name='L335'></a><a href='#L335'>335</a>
+<a name='L336'></a><a href='#L336'>336</a>
+<a name='L337'></a><a href='#L337'>337</a>
+<a name='L338'></a><a href='#L338'>338</a>
+<a name='L339'></a><a href='#L339'>339</a>
+<a name='L340'></a><a href='#L340'>340</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -516,6 +547,33 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -701,6 +759,7 @@ import { useRouter } from 'next/router'
 import * as Yup from 'yup'
 &nbsp;
 import ActionButton from '../components/ActionButton'
+import AlertSection from '../components/AlertSection'
 import DateSelectField, {
   DateSelectFieldOnChangeEvent,
 } from '../components/DateSelectField'
@@ -709,6 +768,7 @@ import ErrorSummary, {
   getErrorSummaryItems,
   goToErrorSummary,
 } from '../components/ErrorSummary'
+import ExternalLink from '../components/ExternalLink'
 import IdleTimeout from '../components/IdleTimeout'
 import InputField from '../components/InputField'
 import Layout from '../components/Layout'
@@ -832,19 +892,40 @@ const Email: FC = () =&gt; {
         additionalMetaTags={[getDCTermsTitle(en('header'), fr('header'))]}
       /&gt;
       &lt;IdleTimeout /&gt;
-      &lt;h1 ref={headingRef} className="h1" tabIndex={-1}&gt;
-        {t('header')}
-      &lt;/h1&gt;
 &nbsp;
       {isEmailEsrfSuccess ? (
 <span class="branch-0 cbranch-no" title="branch not covered" >        &lt;div id="response-result"&gt;</span>
-          &lt;h2 className="h2"&gt;{t('email-confirmation-msg.request-received')}&lt;/h2&gt;
-          &lt;p&gt;{t('email-confirmation-msg.if-exists')}&lt;/p&gt;
+          &lt;h1 className="h1"&gt;{t('email-confirmation-msg.request-received')}&lt;/h1&gt;
+          &lt;p&gt;
+            &lt;Trans i18nKey="email-confirmation-msg.if-exists" ns="email" /&gt;
+          &lt;/p&gt;
+          &lt;p&gt;{t('email-confirmation-msg.may-not-receive')}&lt;/p&gt;
+          &lt;ul className="mb-5 list-disc space-y-2 pl-10"&gt;
+            &lt;li&gt;
+              &lt;Trans
+                i18nKey="email-confirmation-msg.may-not-receive-list.item-1"
+                ns="email"
+              /&gt;
+            &lt;/li&gt;
+            &lt;li&gt;{t('email-confirmation-msg.may-not-receive-list.item-2')}&lt;/li&gt;
+          &lt;/ul&gt;
+          &lt;p&gt;{t('email-confirmation-msg.dont-receive')}&lt;/p&gt;
+          &lt;ul className="mb-5 list-disc space-y-2 pl-10"&gt;
+            &lt;li&gt;
+              &lt;Trans
+                i18nKey="email-confirmation-msg.dont-receive-list.item-1"
+                ns="email"
+              /&gt;
+            &lt;/li&gt;
+            &lt;li&gt;{t('email-confirmation-msg.dont-receive-list.item-2')}&lt;/li&gt;
+          &lt;/ul&gt;
           &lt;p&gt;
             &lt;Trans
-              i18nKey="email-confirmation-msg.please-contact"
+              i18nKey={'email-confirmation-msg.please-contact'}
               ns="email"
-              tOptions={{ phoneNumber: t('common:phone-number') }}
+              components={{
+                Link: &lt;ExternalLink href={t('common:contact-us-link')} /&gt;,
+              }}
             /&gt;
           &lt;/p&gt;
           &lt;div className="my-8"&gt;
@@ -858,106 +939,112 @@ const Email: FC = () =&gt; {
           &lt;/div&gt;
         &lt;/div&gt;
       ) : (
-        &lt;form onSubmit={handleFormikSubmit} id="form-email-esrf"&gt;
-          &lt;p&gt;
-            &lt;Trans i18nKey="header-messages.matches" ns="email" /&gt;
-          &lt;/p&gt;
-          &lt;ul className="mb-5 list-disc space-y-2 pl-10"&gt;
-            &lt;li&gt;{t('header-messages.list.item-1')}&lt;/li&gt;
-            &lt;li&gt;{t('header-messages.list.item-2')}&lt;/li&gt;
-            &lt;li&gt;
-              &lt;Trans i18nKey="header-messages.list.item-3" ns="email" /&gt;
-            &lt;/li&gt;
-            &lt;li&gt;{t('header-messages.list.item-4')}&lt;/li&gt;
-          &lt;/ul&gt;
-          &lt;div className="mb-5 rounded border border-gray-300 bg-gray-100 p-5"&gt;
-            &lt;p className="m-0"&gt;
-              &lt;Trans
-                i18nKey="header-messages.for-child-application"
-                ns="email"
-              /&gt;
+        &lt;&gt;
+          &lt;h1 ref={headingRef} className="h1" tabIndex={-1}&gt;
+            {t('header')}
+          &lt;/h1&gt;
+          &lt;form onSubmit={handleFormikSubmit} id="form-email-esrf"&gt;
+            &lt;p&gt;
+              &lt;Trans i18nKey="header-messages.matches" ns="email" /&gt;
             &lt;/p&gt;
-          &lt;/div&gt;
+            &lt;ul className="mb-5 list-disc space-y-2 pl-10"&gt;
+              &lt;li&gt;{t('header-messages.list.item-1')}&lt;/li&gt;
+              &lt;li&gt;{t('header-messages.list.item-2')}&lt;/li&gt;
+              &lt;li&gt;
+                &lt;Trans i18nKey="header-messages.list.item-3" ns="email" /&gt;
+              &lt;/li&gt;
+              &lt;li&gt;{t('header-messages.list.item-4')}&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;AlertSection className="mb-8" type="info"&gt;
+              &lt;p className="h3"&gt;{t('header-messages.child-applications')}&lt;/p&gt;
+              &lt;p&gt;
+                &lt;Trans
+                  i18nKey="header-messages.for-child-application"
+                  ns="email"
+                /&gt;
+              &lt;/p&gt;
+            &lt;/AlertSection&gt;
 &nbsp;
-          {errorSummaryItems.length &gt; 0 &amp;&amp; (
-<span class="branch-1 cbranch-no" title="branch not covered" >            &lt;ErrorSummary</span>
-              id="error-summary-email-esrf"
-              summary={t('common:found-errors', {
-                count: errorSummaryItems.length,
-              })}
-              errors={errorSummaryItems}
-            /&gt;
-          )}
+            {errorSummaryItems.length &gt; 0 &amp;&amp; (
+<span class="branch-1 cbranch-no" title="branch not covered" >              &lt;ErrorSummary</span>
+                id="error-summary-email-esrf"
+                summary={t('common:found-errors', {
+                  count: errorSummaryItems.length,
+                })}
+                errors={errorSummaryItems}
+              /&gt;
+            )}
 &nbsp;
-          &lt;InputField
-            id="email"
-            name="email"
-            type="email"
-            label={t('email.label')}
-            onChange={handleFormikChange}
-            value={formikValues.email}
-            errorMessage={formikErrors.email &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >t(formikErrors.email)}</span>
-            textRequired={t('common:required')}
-            required
-            helpMessage={
-              &lt;&gt;
-                &lt;p&gt;{t('help-message.email')} &lt;/p&gt;
-                &lt;p&gt;
-                  &lt;Trans
-                    i18nKey="help-message.for-child-application"
-                    ns="email"
-                  /&gt;
-                &lt;/p&gt;
-              &lt;/&gt;
-            }
-          /&gt;
-          &lt;InputField
-            id="givenName"
-            name="givenName"
-            label={t('given-name.label')}
-            onChange={handleFormikChange}
-            value={formikValues.givenName}
-            errorMessage={formikErrors.givenName &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >t(formikErrors.givenName)}</span>
-            textRequired={t('common:required')}
-            required
-          /&gt;
-          &lt;InputField
-            id="surname"
-            name="surname"
-            label={t('surname.label')}
-            onChange={handleFormikChange}
-            value={formikValues.surname}
-            errorMessage={formikErrors.surname &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >t(formikErrors.surname)}</span>
-            textRequired={t('common:required')}
-            required
-          /&gt;
-          &lt;DateSelectField
-            id="dateOfBirth"
-            label={t('date-of-birth.label')}
-            onChange={handleOnDateOfBirthChange}
-            value={formikValues.dateOfBirth}
-            errorMessage={
-              formikErrors.dateOfBirth &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >t(formikErrors.dateOfBirth)</span>
-            }
-            textRequired={t('common:required')}
-            required
-          /&gt;
-          &lt;div className="mt-8 flex flex-wrap gap-2"&gt;
-            &lt;ActionButton
-              id="btn-submit"
-              disabled={isEmailEsrfLoading}
-              type="submit"
-              text={t('email-esrf')}
-              style="primary"
+            &lt;InputField
+              id="email"
+              name="email"
+              type="email"
+              label={t('email.label')}
+              onChange={handleFormikChange}
+              value={formikValues.email}
+              errorMessage={formikErrors.email &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >t(formikErrors.email)}</span>
+              textRequired={t('common:required')}
+              required
+              helpMessage={
+                &lt;&gt;
+                  &lt;p&gt;{t('help-message.email')}&lt;/p&gt;
+                  &lt;p&gt;
+                    &lt;Trans
+                      i18nKey="help-message.for-child-application"
+                      ns="email"
+                    /&gt;
+                  &lt;/p&gt;
+                &lt;/&gt;
+              }
             /&gt;
-            &lt;ActionButton
-              id="btn-cancel"
-              disabled={isEmailEsrfLoading}
-              text={t('common:modal-go-back.cancel-button')}
-              onClick={handleOnCancelClick}
+            &lt;InputField
+              id="givenName"
+              name="givenName"
+              label={t('given-name.label')}
+              onChange={handleFormikChange}
+              value={formikValues.givenName}
+              errorMessage={formikErrors.givenName &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >t(formikErrors.givenName)}</span>
+              textRequired={t('common:required')}
+              required
             /&gt;
-          &lt;/div&gt;
-        &lt;/form&gt;
+            &lt;InputField
+              id="surname"
+              name="surname"
+              label={t('surname.label')}
+              onChange={handleFormikChange}
+              value={formikValues.surname}
+              errorMessage={formikErrors.surname &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >t(formikErrors.surname)}</span>
+              textRequired={t('common:required')}
+              required
+            /&gt;
+            &lt;DateSelectField
+              id="dateOfBirth"
+              label={t('date-of-birth.label')}
+              onChange={handleOnDateOfBirthChange}
+              value={formikValues.dateOfBirth}
+              errorMessage={
+                formikErrors.dateOfBirth &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >t(formikErrors.dateOfBirth)</span>
+              }
+              textRequired={t('common:required')}
+              required
+            /&gt;
+            &lt;div className="mt-8 flex flex-wrap gap-2"&gt;
+              &lt;ActionButton
+                id="btn-submit"
+                disabled={isEmailEsrfLoading}
+                type="submit"
+                text={t('email-esrf')}
+                style="primary"
+              /&gt;
+              &lt;ActionButton
+                id="btn-cancel"
+                disabled={isEmailEsrfLoading}
+                text={t('common:modal-go-back.cancel-button')}
+                onClick={handleOnCancelClick}
+              /&gt;
+            &lt;/div&gt;
+          &lt;/form&gt;
+        &lt;/&gt;
       )}
       &lt;Modal
         open={modalOpen}
@@ -1000,7 +1087,7 @@ export default Email
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-09T10:03:36.009Z
+                at 2023-05-09T12:40:32.507Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
