@@ -7,7 +7,7 @@
   "receipt-explanation": "The file number is used to identify your passport application. The file number can be found on the receipt you were given if you applied for the passport in person. If you applied by mail, or don't have a file number, you can <Link>request to receive it</Link>.",
   "receipt-image-1": {
     "title": "Example Receipt 1",
-    "alt": "An example of an official receipt only. The file number is circled in the centre of the receipt.",
+    "alt": "An example of an official receipt. The file number is circled in the centre of the receipt.",
     "src": "/Receipt1_EN.png",
     "descriptive-text": "<strong>An example of an official receipt only. The file number is circled in the centre of the receipt.</strong>"
   },
@@ -20,7 +20,7 @@
   "receipt-will-find": {
     "text": "On a receipt where the file number is circled you will find:",
     "list": {
-      "item-1": "Title of receipt: Official Receipt and Pick-up Slip",
+      "item-1": "Title of receipt: Official Receipt",
       "item-2": "Name of passport office",
       "item-3": "Date for Pickup",
       "item-4": "Applicant name",

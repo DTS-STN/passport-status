@@ -17,7 +17,7 @@ export const CheckStatusNotAcceptable: FC<{}> = () => {
           i18nKey="not-acceptable.contact-us"
           ns="status"
           components={{
-            Link: <ExternalLink href={t('common.contact-us-link')} />,
+            Link: <ExternalLink href={t('common:contact-us-link')} />,
           }}
         />
       </p>

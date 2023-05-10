@@ -11,13 +11,16 @@ export const CheckStatusReadyForPickup: FC<{}> = () => {
       <h1 data-testid="ready-for-pickup" className="h1">
         {t('ready-for-pickup.has-been-printed')}
       </h1>
-      <AlertSection type="success">
-        <h2 data-testid="check-receipt">
+      <AlertSection type="success" className="mb-8">
+        <h2 data-testid="check-receipt" className="h2 mt-0">
           {t('ready-for-pickup.check-receipt')}
         </h2>
         <p>{t('ready-for-pickup.receipt-details')}</p>
       </AlertSection>
       <p>{t('ready-for-pickup.not-available')}</p>
+      <AlertSection type="info">
+        <p className="h3">{t('ready-for-pickup.date-passed')}</p>
+      </AlertSection>
     </>
   )
 }

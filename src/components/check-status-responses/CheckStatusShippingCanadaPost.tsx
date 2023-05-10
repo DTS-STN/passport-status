@@ -20,10 +20,10 @@ export const CheckStatusShippingCanadaPost: FC<
         {t('shipped-canada-post.header')}
       </h1>
       <AlertSection type="success">
-        <h2 data-testid="shipped-canada-post" className="h2">
+        <h2 data-testid="shipped-canada-post" className="h2 mt-0">
           {t('shipped-canada-post.mailing')}
         </h2>
-        {trackingNumber && (
+        {trackingNumber ? (
           <>
             <p>
               <Trans
@@ -42,17 +42,20 @@ export const CheckStatusShippingCanadaPost: FC<
               </ExternalLink>
             </p>
           </>
+        ) : (
+          <>
+            <p>{t('shipped-canada-post.take-up-to')}</p>
+            <p>{t('shipped-canada-post.remote-area')}</p>
+          </>
         )}
       </AlertSection>
-      <h3 className="h3 mt-6">
-        {t('shipped-canada-post.supporting-documents')}
-      </h3>
-      <p>
+      <p className="h3 mt-6">{t('shipped-canada-post.supporting-documents')}</p>
+      <p className="mt-6">
         <Trans
           i18nKey="status-check-call"
           ns="status"
           components={{
-            Link: <ExternalLink href={t('common.contact-us-link')} />,
+            Link: <ExternalLink href={t('common:contact-us-link')} />,
           }}
         />
       </p>
