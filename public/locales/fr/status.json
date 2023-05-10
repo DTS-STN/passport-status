@@ -14,7 +14,7 @@
     "error": {
       "required": "Le numéro de dossier est obligatoire."
     },
-    "help": "Si vous ne pouvez pas trouver votre numéro de dossier, <Link>vous pouvez demander à le recevoir (s’ouvre dans un nouvel onglet)</Link>.",
+    "help": "Si vous ne pouvez pas trouver votre numéro de dossier, <Link>vous pouvez demander à le recevoir</Link>.",
     "label": "Numéro de dossier"
   },
   "given-name": {
@@ -76,42 +76,46 @@
         "item-2": "nous avons reçu votre demande, mais n'avons pas encore commencé à la traiter"
       }
     },
-    "contact-us": "Si vous ne pouvez pas obtenir l'état de votre demande à l'aide de cet outil, ou si votre demande prend plus de temps que la <Link>norme de service (s'ouvre dans un nouvel onglet)</Link>, <Link2>veuillez nous contacter (s’ouvre dans un nouvel onglet)</Link2>.",
+    "contact-us": "Si vous ne pouvez pas obtenir l'état de votre demande à l'aide de cet outil, ou si votre demande prend plus de temps que la <Link>norme de service</Link>, <Link2>veuillez nous contacter</Link2>.",
     "can-review": "Vous pouvez revérifiez vos renseignements et essayez à nouveau.",
     "cant-find-file": "Si nous ne trouvons toujours pas votre dossier, vous pouvez réessayer demain. Nous mettons à jour nos dossiers chaque jour.",
     "need-faster": "Si vous avez besoin du passeport plus rapidement",
-    "get-urgent": "Apprenez comment obtenir <Link>des services urgents ou express pour votre application existante (s’ouvre dans un nouvel onglet)</Link> si vous avez besoin du passeport dans un délai de 10 jours ouvrables. Des frais supplémentaires peuvent s’appliquer."
+    "get-urgent": "Apprenez comment obtenir <Link>des services urgents ou express pour votre application existante</Link> si vous avez besoin du passeport dans un délai de 10 jours ouvrables. Des frais supplémentaires peuvent s’appliquer."
   },
   "being-processed": {
     "received": "Nous avons reçu votre demande et nous sommes en train de la traiter",
     "we-will-contact": "Si nous avons besoin de plus amples renseignements, nous communiquerons avec vous par téléphone ou par courriel. Nous n'utiliserons <strong>jamais</strong> de messages textes ou de programmes de messagerie instantanée pour vous contacter au sujet de votre demande de passeport.",
-    "ready-within": "Le passeport devrait être prêt dans les limites de nos <Link>normes de service (s’ouvre dans un nouvel onglet)</Link>.",
+    "ready-within": "Le passeport devrait être prêt dans les limites de nos <Link>normes de service</Link>.",
     "need-faster": "Si vous avez besoin du passeport plus rapidement",
-    "get-urgent": "Apprenez comment obtenir <Link>des services urgents ou express pour votre application existante (s'ouvre dans un nouvel onglet)</Link> si vous avez besoin du passeport dans un délai de 10 jours ouvrables. Des frais supplémentaires peuvent s’appliquer.",
+    "get-urgent": "Apprenez comment obtenir <Link>des services urgents ou express pour votre application existante</Link> si vous avez besoin du passeport dans un délai de 10 jours ouvrables. Des frais supplémentaires peuvent s’appliquer.",
     "dont-meet-standards": "Si nous ne respectons pas nos normes de service",
-    "may-be-eligible": "Vous pourriez avoir droit à un remboursement partiel si nous ne respectons pas nos <Link>normes de service (s’ouvre dans un nouvel onglet)</Link>."
+    "may-be-eligible": "Vous pourriez avoir droit à un remboursement partiel si nous ne respectons pas nos <Link>normes de service</Link>."
   },
   "ready-for-pickup": {
     "has-been-printed": "Votre passeport a été imprimé",
     "check-receipt": "Vérifiez votre reçu pour les instructions de cueillette",
     "receipt-details": "Votre reçu indique la date et le lieu de retrait de votre passeport",
-    "not-available": "Le passeport ne sera pas disponible avant la date de retrait imprimée sur votre reçu"
+    "not-available": "Le passeport ne sera pas disponible avant la date de retrait imprimée sur votre reçu",
+    "date-passed": "[FR]If your pick-up date has passed, you can go in anytime to pick up your passport."
   },
   "shipped-canada-post": {
     "header": "Votre passeport a été imprimé et envoyé par la poste",
     "mailing": "Nous vous l'envoyons par Postes Canada.",
+    "take-up-to": "[FR]It can take up to 2 to 3 business days to arrive.",
+    "remote-area": "[FR]If you live in a northern or remote area, it may take up to 8 business days to arrive.",
     "supporting-documents": "Nous pourrions renvoyer vos documents justificatifs séparément."
   },
   "shipped-fedex": {
     "header": "Votre passeport a été imprimé et envoyé aux États-Unis",
     "mailing": "Nous vous l'envoyons par FedEx.",
     "supporting-documents": "Vous recevrez le passeport et les documents justificatifs dans la même enveloppe.",
-    "contact-us": "Si vous ne recevez pas votre passeport et vos documents, <Link>veuillez nous contacter(s’ouvre dans on nouvel onglet)</Link>."
+    "take-up-to": "[FR]It can take up to 5 to 7 business days to arrive.",
+    "contact-us": "Si vous ne recevez pas votre passeport et vos documents, <Link>veuillez nous contacter</Link>."
   },
   "not-acceptable": {
     "cannot-process": "Nous avons examiné votre demande et ne pouvons pas la traiter davantage",
     "explanation": "Nous vous envoyons une lettre expliquant pourquoi et nous vous renverrons vos documents justificatifs par la même occasion.",
-    "call-us": "Pour plus d'informations, <Link>veuillez nous contacter (s’ouvre dans un nouvel onglet)</Link>."
+    "contact-us": "Pour plus d'informations, <Link>veuillez nous contacter</Link>."
   },
   "status-check-contact": {
     "call-us": "Appelez-nous sans frais au <strong>{{phoneNumber}}</strong> si votre demande prend plus de temps que la <Link>norme de service</Link>",
@@ -123,13 +127,13 @@
   },
   "status-check-tracking": {
     "number": "Votre numéro de repérage est <strong>{{trackingNumber}}</strong>.",
-    "can-track": "Vous pouvez faire le suivi de l'envoi en ligne(s'ouvre dans un nouvel onglet)",
+    "can-track": "Vous pouvez faire le <Link>suivi de l'envoi en ligne</Link>",
     "link": {
       "canada-post": "https://www.canadapost-postescanada.ca/track-reperage/fr?referenceNumber={{trackingNumber}}#/details/{{trackingNumber}}",
       "fedex": "https://www.fedex.com/fedextrack/?action=track&cntry_code=ca&locale=fr_ca&trackingnumber={{trackingNumber}}"
     }
   },
-  "status-check-call": "<Link>Veuillez nous contacter(s’ouvre dans un nouvel onglet)</Link> si vous ne recevez pas vos documents dans les 4 semaines suivant la réception du passeport.",
+  "status-check-call": "<Link>Veuillez nous contacter</Link> si vous ne recevez pas vos documents dans les 4 semaines suivant la réception du passeport.",
   "header-messages": {
     "matches": "<strong>Assurez-vous que vos informations correspondent à la preuve de citoyenneté et à la pièce d'identité utilisée lors de votre demande de passeport.</strong> Votre preuve de citoyenneté pourrait être l'une des suivantes\u00a0:",
     "list": {

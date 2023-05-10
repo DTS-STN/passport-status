@@ -19,7 +19,7 @@ export const CheckStatusShippingFedex: FC<CheckStatusShippingFedexProps> = ({
         {t('shipped-fedex.header')}
       </h1>
       <AlertSection type="success">
-        <h2 data-testid="shipped-fedex-mailing" className="h2">
+        <h2 data-testid="shipped-fedex-mailing" className="h2 mt-0">
           {t('shipped-fedex.mailing')}
         </h2>
         {trackingNumber && (
@@ -42,14 +42,15 @@ export const CheckStatusShippingFedex: FC<CheckStatusShippingFedexProps> = ({
             </p>
           </>
         )}
+        <p>{t('shipped-fedex.take-up-to')}</p>
       </AlertSection>
-      <p className="mt-6">{t('shipped-fedex.supporting-documents')}</p>
+      <p className="h3 mt-6">{t('shipped-fedex.supporting-documents')}</p>
       <p className="mt-6">
         <Trans
           i18nKey="shipped-fedex.contact-us"
           ns="status"
           components={{
-            Link: <ExternalLink href={t('common.contact-us-link')} />,
+            Link: <ExternalLink href={t('common:contact-us-link')} />,
           }}
         />
       </p>
