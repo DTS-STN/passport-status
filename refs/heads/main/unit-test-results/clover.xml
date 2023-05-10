@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1683636032485" clover="3.2.0">
-  <project timestamp="1683636032485" name="All files">
+<coverage generated="1683750868170" clover="3.2.0">
+  <project timestamp="1683750868170" name="All files">
     <metrics statements="487" coveredstatements="341" conditionals="284" coveredconditionals="141" methods="136" coveredmethods="82" elements="907" coveredelements="564" complexity="0" loc="487" ncloc="487" packages="10" files="51" classes="51"/>
     <package name="src">
       <metrics statements="28" coveredstatements="14" conditionals="26" coveredconditionals="8" methods="7" coveredmethods="6"/>
@@ -58,13 +58,13 @@
         <line num="10" count="6" type="stmt"/>
         <line num="16" count="6" type="stmt"/>
         <line num="22" count="6" type="stmt"/>
-        <line num="23" count="8" type="cond" truecount="3" falsecount="0"/>
+        <line num="23" count="10" type="cond" truecount="3" falsecount="0"/>
         <line num="25" count="4" type="stmt"/>
         <line num="36" count="2" type="stmt"/>
-        <line num="49" count="2" type="stmt"/>
+        <line num="49" count="4" type="stmt"/>
         <line num="62" count="6" type="stmt"/>
-        <line num="67" count="8" type="stmt"/>
-        <line num="69" count="8" type="stmt"/>
+        <line num="67" count="10" type="stmt"/>
+        <line num="69" count="10" type="stmt"/>
       </file>
       <file name="ApplicationNameBar.tsx" path="/home/runner/work/passport-status/passport-status/src/components/ApplicationNameBar.tsx">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
