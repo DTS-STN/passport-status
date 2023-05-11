@@ -34,7 +34,7 @@ export const CheckStatusShippingFedex: FC<CheckStatusShippingFedexProps> = ({
             <p>
               <ExternalLink
                 href={t('status-check-tracking.link.fedex', {
-                  trackingNumber,
+                  trackingNumber: encodeURIComponent(trackingNumber),
                 })}
               >
                 {t('status-check-tracking.can-track')}
