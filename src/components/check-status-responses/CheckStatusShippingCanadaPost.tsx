@@ -34,6 +34,7 @@ export const CheckStatusShippingCanadaPost: FC<
             </p>
             <p>
               <ExternalLink
+                data-gc-analytics-exempt={true}
                 href={t('status-check-tracking.link.canada-post', {
                   trackingNumber: encodeURIComponent(trackingNumber),
                 })}
