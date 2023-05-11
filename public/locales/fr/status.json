@@ -129,7 +129,7 @@
     "number": "Votre numéro de repérage est <strong>{{trackingNumber}}</strong>.",
     "can-track": "Vous pouvez faire le <Link>suivi de l'envoi en ligne</Link>",
     "link": {
-      "canada-post": "https://www.canadapost-postescanada.ca/track-reperage/fr?referenceNumber={{trackingNumber}}#/details/{{trackingNumber}}",
+      "canada-post": "https://www.canadapost-postescanada.ca/track-reperage/fr#/details/{{trackingNumber}}",
       "fedex": "https://www.fedex.com/fedextrack/?action=track&cntry_code=ca&locale=fr_ca&trackingnumber={{trackingNumber}}"
     }
   },
