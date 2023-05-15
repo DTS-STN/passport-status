@@ -72,50 +72,51 @@
       "description": "Nous ne pouvons pas vous donner l'état de votre demande pour le moment",
       "because": "L’état de votre passeport n’est pas disponible dû au fait que :",
       "list": {
-        "item-1": "les renseignements que vous nous avez fournis ne correspondent pas à ceux de notre système <strong>ou</strong>",
+        "item-1": "les renseignements que vous nous avez fournis ne correspondent pas à ceux de notre système ou",
         "item-2": "nous avons reçu votre demande, mais n'avons pas encore commencé à la traiter"
       }
     },
-    "contact-us": "Si vous ne pouvez pas obtenir l'état de votre demande à l'aide de cet outil, ou si votre demande prend plus de temps que la <Link>norme de service</Link>, <Link2>veuillez nous contacter</Link2>.",
+    "contact-us": "Si vous ne pouvez pas obtenir l'état de votre demande à l'aide de cet outil, ou si votre demande prend plus de temps que la <Link>norme de service</Link>, veuillez <Link2>nous contacter</Link2>.",
     "can-review": "Vous pouvez revérifiez vos renseignements et essayez à nouveau.",
     "cant-find-file": "Si nous ne trouvons toujours pas votre dossier, vous pouvez réessayer demain. Nous mettons à jour nos dossiers chaque jour.",
     "need-faster": "Si vous avez besoin du passeport plus rapidement",
-    "get-urgent": "Apprenez comment obtenir <Link>des services urgents ou express pour votre application existante</Link> si vous avez besoin du passeport dans un délai de 10 jours ouvrables. Des frais supplémentaires peuvent s’appliquer."
+    "get-urgent": "Apprenez comment obtenir <Link>des services urgents ou express pour votre demande existante</Link> si vous avez besoin du passeport dans un délai de 10 jours ouvrables. Des frais supplémentaires peuvent s’appliquer."
   },
   "being-processed": {
     "received": "Nous avons reçu votre demande et nous sommes en train de la traiter",
-    "we-will-contact": "Si nous avons besoin de plus amples renseignements, nous communiquerons avec vous par téléphone ou par courriel. Nous n'utiliserons <strong>jamais</strong> de messages textes ou de programmes de messagerie instantanée pour vous contacter au sujet de votre demande de passeport.",
-    "ready-within": "Le passeport devrait être prêt dans les limites de nos <Link>normes de service</Link>.",
+    "we-will-contact": "Si nous avons besoin de plus amples renseignements, nous communiquerons avec vous par téléphone, par la poste, ou par courriel. Nous n'utiliserons <strong>jamais</strong> de messages textes ou de programmes de messagerie instantanée pour vous contacter au sujet de votre demande de passeport.",
+    "ready-within": "Si votre demande a été dûment remplie, votre passeport devrait être prêt selon nos <Link>normes de service</Link>.",
+    "incomplete": "Les demandes incomplétes ne pourront pas être traités et seront retournés dés que possible.",
     "need-faster": "Si vous avez besoin du passeport plus rapidement",
-    "get-urgent": "Apprenez comment obtenir <Link>des services urgents ou express pour votre application existante</Link> si vous avez besoin du passeport dans un délai de 10 jours ouvrables. Des frais supplémentaires peuvent s’appliquer.",
+    "get-urgent": "Apprenez comment obtenir <Link>des services urgents ou express pour votre demande existante</Link> si vous avez besoin du passeport dans un délai de 10 jours ouvrables. Des frais supplémentaires peuvent s’appliquer.",
     "dont-meet-standards": "Si nous ne respectons pas nos normes de service",
     "may-be-eligible": "Vous pourriez avoir droit à un remboursement partiel si nous ne respectons pas nos <Link>normes de service</Link>."
   },
   "ready-for-pickup": {
     "has-been-printed": "Votre passeport a été imprimé",
-    "check-receipt": "Vérifiez votre reçu pour les instructions de cueillette",
+    "check-receipt": "Vérifiez votre reçu pour les instructions de retrait en personne",
     "receipt-details": "Votre reçu indique la date et le lieu de retrait de votre passeport",
     "not-available": "Le passeport ne sera pas disponible avant la date de retrait imprimée sur votre reçu",
-    "date-passed": "[FR]If your pick-up date has passed, you can go in anytime to pick up your passport."
+    "date-passed": "Si votre date de retrait en personne est passée, vous aller chercher votre passeport à tout moment."
   },
   "shipped-canada-post": {
     "header": "Votre passeport a été imprimé et envoyé par la poste",
     "mailing": "Nous vous l'envoyons par Postes Canada.",
-    "take-up-to": "[FR]It can take up to 2 to 3 business days to arrive.",
-    "remote-area": "[FR]If you live in a northern or remote area, it may take up to 8 business days to arrive.",
+    "take-up-to": "Cela peut prendre jusqu'à 2 à 3 jours ouvrables pour arriver.",
+    "remote-area": "Si vous vivez dans une région au nord ou éloignée, cela peut prendre jusqu'à 8 jours ouvrables pour arriver.",
     "supporting-documents": "Nous pourrions renvoyer vos documents justificatifs séparément."
   },
   "shipped-fedex": {
-    "header": "Votre passeport a été imprimé et envoyé aux États-Unis",
-    "mailing": "Nous vous l'envoyons par FedEx.",
+    "header": "Votre passeport a été imprimé et envoyé au service de messagerie",
+    "mailing": "Nous vous l'envoyons par FedEx\u00AE",
     "supporting-documents": "Vous recevrez le passeport et les documents justificatifs dans la même enveloppe.",
-    "take-up-to": "[FR]It can take up to 5 to 7 business days to arrive.",
+    "take-up-to": "Cela peut prendre jusqu'à 5 à 7 jours ouvrables pour arriver.",
     "contact-us": "Si vous ne recevez pas votre passeport et vos documents, <Link>veuillez nous contacter</Link>."
   },
   "not-acceptable": {
     "cannot-process": "Nous avons examiné votre demande et ne pouvons pas la traiter davantage",
-    "explanation": "Nous vous envoyons une lettre expliquant pourquoi et nous vous renverrons vos documents justificatifs par la même occasion.",
-    "contact-us": "Pour plus d'informations, <Link>veuillez nous contacter</Link>."
+    "explanation": "Nous vous envoyons une lettre expliquant pourquoi et nous vous retournerons vos documents justificatifs par la même occasion.",
+    "contact-us": "<Link>Pour plus d'informations, contactez-nous</Link>."
   },
   "status-check-contact": {
     "call-us": "Appelez-nous sans frais au <strong>{{phoneNumber}}</strong> si votre demande prend plus de temps que la <Link>norme de service</Link>",
@@ -141,7 +142,10 @@
       "item-2": "un certificat de citoyenneté",
       "item-3": "une carte de citoyenneté ou",
       "item-4": "d'autres documents, comme un certificat de naturalisation"
-    },
-    "for-child-application": "<strong>Pour les demandes de passeport pour enfants,</strong> veuillez utiliser le(s) prénom(s), nom de famille et date de naissance de l'enfant, exactement tels qu'ils figurent sur sa preuve de citoyenneté."
+    }
+  },
+  "child-applications": {
+    "header": "Pour les demandes de passeport pour enfants",
+    "description": "Veuillez utiliser le(s) prénom(s), nom de famille et date de naissance de l'enfant, exactement tels qu'ils figurent sur sa preuve de citoyenneté."
   }
 }

@@ -18,6 +18,7 @@ import { useRouter } from 'next/router'
 import * as Yup from 'yup'
 
 import ActionButton from '../components/ActionButton'
+import AlertSection from '../components/AlertSection'
 import CheckStatusInfo from '../components/CheckStatusInfo'
 import DateSelectField, {
   DateSelectFieldOnChangeEvent,
@@ -199,14 +200,11 @@ const Status: FC = () => {
               </li>
               <li>{t('header-messages.list.item-4')}</li>
             </ul>
-            <div className="mb-5 rounded border border-gray-300 bg-gray-100 p-5">
-              <p className="m-0">
-                <Trans
-                  i18nKey="header-messages.for-child-application"
-                  ns="status"
-                />
-              </p>
-            </div>
+
+            <AlertSection type="info" className="mb-4">
+              <p className="h3">{t('child-applications.header')}</p>
+              <p>{t('child-applications.description')}</p>
+            </AlertSection>
 
             {errorSummaryItems.length > 0 && (
               <ErrorSummary
