@@ -37,7 +37,7 @@
     "yup": "^1.1.1"
   },
   "devDependencies": {
-    "@faker-js/faker": "^7.6.0",
+    "@faker-js/faker": "^8.0.1",
     "@tailwindcss/typography": "^0.5.9",
     "@testing-library/dom": "^9.2.0",
     "@testing-library/jest-dom": "^5.16.5",
