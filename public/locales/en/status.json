@@ -85,7 +85,8 @@
   "being-processed": {
     "received": "We have received your application and are now processing it",
     "we-will-contact": "If we need more information, we'll contact you by telephone, mail, or email. We will <strong>never</strong> use text or instant messages to contact you about your passport application.",
-    "ready-within": "The passport should be ready within our <Link>service standards</Link>.",
+    "ready-within": "If your application has been duly completed, your passport should be ready within our <Link>service standards</Link>.",
+    "incomplete": "Incomplete applications cannot be processed and will be returned to you as soon as possible.",
     "need-faster": "If you need the passport faster",
     "get-urgent": "Find out how to get <Link>urgent or express service for existing applications</Link> if you need the passport within 10 business days. Extra fees may apply.",
     "dont-meet-standards": "If we don’t meet our service standards",
@@ -141,7 +142,10 @@
       "item-2": "citizenship certificate",
       "item-3": "citizenship card or",
       "item-4": "other documents, like a naturalization certificate"
-    },
-    "for-child-application": "<strong>For a child application,</strong> use the child's given name(s) and surname and date of birth, exactly as provided on their proof of citizenship."
+    }
+  },
+  "child-applications": {
+    "header": "Child application",
+    "description": "Use the child's given name(s) and surname and date of birth, exactly as provided on their proof of citizenship."
   }
 }

@@ -35,12 +35,12 @@
     "if-exists": "If we can find the file with the information you gave us, <strong>we'll email you the file number</strong>. If you don't receive the email in your inbox, check your junk folder.",
     "may-not-receive": "You may not receive an email if:",
     "may-not-receive-list": {
-      "item-1": "the information you gave us doesn't match the information in our system <strong>or</strong>",
+      "item-1": "the information you gave us doesn't match the information in our system or",
       "item-2": "we received the application, but haven't started processing it yet"
     },
     "dont-receive": "If you don't receive an email, you can:",
     "dont-receive-list": {
-      "item-1": "review the information you entered and try again <strong>or</strong>",
+      "item-1": "review the information you entered and try again or",
       "item-2": "try again tomorrow - we update our records daily"
     },
     "please-contact": "If you still don't receive it, <Link>contact us(opens in a new tab)</Link>."
@@ -59,7 +59,7 @@
     "list": {
       "item-1": "birth certificate",
       "item-2": "citizenship certificate",
-      "item-3": "citizenship card <strong>or</strong>",
+      "item-3": "citizenship card or",
       "item-4": "other documents, like a naturalization certificate"
     },
     "child-applications": "Child applications",

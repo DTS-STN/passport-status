@@ -42,7 +42,7 @@
       "item-2": {
         "text": "There are 2 checkboxes (you must check one):",
         "list": {
-          "item-1": "Personal appearance of applicant required, <strong>or</strong>",
+          "item-1": "Personal appearance of applicant required, or",
           "item-2": "I authorize (insert name of person) to pick up my Travel Document. Authorized person must be over 16 years of age and must show Personal identification."
         }
       },

@@ -32,18 +32,18 @@
   "email-sent-confirmation": "Un courriel a été envoyé s'il y avait une correspondance dans nos dossiers avec le numéro de dossier (FEDS).",
   "email-confirmation-msg": {
     "request-received": "Votre demande a été reçue",
-    "if-exists": "Si nous pouvons trouver le dossier avec les informations que vous nous avez fournies, <strong>nous vous enverrons le numéro de dossier par courriel</strong>. Si vous ne recevez pas le message de confirmation dans votre boîte de réception, vérifiez votre dossier de courriel indésirable.",
+    "if-exists": "Si nous pouvons trouver le dossier avec les renseignements que vous nous avez fournies, <strong>nous vous enverrons le numéro de dossier par courriel</strong>. Si vous ne recevez pas le message de confirmation dans votre boîte de réception, vérifiez votre dossier de courriel indésirable.",
     "may-not-receive": "Il se pourrait que vous ne receviez pas de courriel si :",
     "may-not-receive-list": {
-      "item-1": "les renseignements que vous nous avez fournis ne correspondent pas à ceux de notre système <strong>ou</strong>",
+      "item-1": "les renseignements que vous nous avez fournis ne correspondent pas à ceux de notre système ou",
       "item-2": "nous avons reçu votre demande, mais n'avons pas encore commencé à la traiter"
     },
     "dont-receive": "Si vous ne recevez pas de courriel, vous pouvez :",
     "dont-receive-list": {
-      "item-1": "revérifiez vos renseignements et essayez à nouveau, <strong>ou</strong>",
-      "item-2": "réessayer demain - nous mettons à jour nos dossiers chaque jour."
+      "item-1": "revérifiez vos renseignements et essayez à nouveau, ou",
+      "item-2": "essayer de nouveau demain - nous mettons à jour nos dossiers chaque jour."
     },
-    "please-contact": "Si vous n’obtenez toujours pas le courriel, <Link>veuillez nous contacter (s’ouvre dans un nouvel onglet)</Link>."
+    "please-contact": "Si vous n’obtenez toujours pas le courriel, <Link>veuillez nous contacter</Link>."
   },
   "page-unauth": {
     "header": "Page non-autorisée",
@@ -59,7 +59,7 @@
     "list": {
       "item-1": "un certificat de naissance",
       "item-2": "un certificat de citoyenneté",
-      "item-3": "une carte de citoyenneté <strong>ou</strong>",
+      "item-3": "une carte de citoyenneté ou",
       "item-4": "d'autres documents, comme un certificat de naturalisation"
     },
     "child-applications": "Les demandes de passeport pour enfants",
