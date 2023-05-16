@@ -133,5 +133,12 @@
       "item-4": "d'autres documents, comme un certificat de naturalisation"
     },
     "for-child-application": "<strong>Pour les demandes de passeport pour enfants,</strong> utilisez le(s) prénom(s), nom de famille et date de naissance de l'enfant, exactement tels qu'ils figurent sur sa preuve de citoyenneté."
+  },
+  "wild-fires": {
+    "header": "Des inondations et des feux de forêt pourraient nuire à la livraison des passeports dans certaines parties du Canada",
+    "no-access": "Si vous n’avez pas accès à votre courrier, que vous avez demandé qu’on vous livre un passeport et que vous en avez besoin de façon urgente, <Link>communiquez avec nous</Link>.",
+    "contact-us-link": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens/communiquer-programme-passeport.html",
+    "learn-more": "Informez-vous sur les <Link>interruptions de service de Postes Canada</Link>.",
+    "learn-more-link": "https://www.canadapost-postescanada.ca/scp/fr/notre-entreprise/nouvelles-et-medias/nouvelles-de-la-societe/fermetures-interruptions-liste.page"
   }
 }

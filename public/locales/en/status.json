@@ -133,5 +133,12 @@
       "item-4": "other documents, like a naturalization certificate"
     },
     "for-child-application": "<strong>For child applications,</strong> use the child's given name(s) and surname and date of birth, exactly as provided on their proof of citizenship."
+  },
+  "wild-fires": {
+    "header": "Flooding and wildfires may affect the delivery of passports in parts of Canada",
+    "no-access": "If you don’t have access to your mail and you’ve asked to have your passport delivered to you, <Link>contact us</Link> if you need it urgently.",
+    "contact-us-link": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/contact-passport-program.html",
+    "learn-more": "Learn more about the <Link>Canada Post service interruptions</Link>.",
+    "learn-more-link": "https://www.canadapost-postescanada.ca/cpc/en/our-company/news-and-media/corporate-news/closures-and-service-interruptions-list.page"
   }
 }

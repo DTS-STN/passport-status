@@ -2,6 +2,7 @@ import { FC } from 'react'
 
 import { Trans, useTranslation } from 'next-i18next'
 
+import AlertSection from '../AlertSection'
 import ExternalLink from '../ExternalLink'
 
 export interface CheckStatusShippingCanadaPostProps {
@@ -22,32 +23,54 @@ export const CheckStatusShippingCanadaPost: FC<
         {t('shipped-canada-post.mailing')}
         {trackingNumber && (
           <>
-            {' '}
-            <Trans
-              i18nKey="status-check-tracking.number"
-              ns="status"
-              tOptions={{ trackingNumber }}
-            />
+            <p>
+              <Trans
+                i18nKey="status-check-tracking.number"
+                ns="status"
+                tOptions={{ trackingNumber }}
+              />
+            </p>
+            <p>
+              <ExternalLink
+                href={t('status-check-tracking.link.canada-post', {
+                  trackingNumber,
+                })}
+              >
+                {t('status-check-tracking.can-track')}
+              </ExternalLink>
+            </p>
           </>
         )}
       </p>
-      <p>
-        <ExternalLink
-          href={t('status-check-tracking.link.canada-post', {
-            trackingNumber,
-          })}
-        >
-          {t('status-check-tracking.can-track')}
-        </ExternalLink>
-      </p>
       <p className="mt-6">{t('shipped-canada-post.supporting-documents')}</p>
-      <p>
+      <p className="mt-6">
         <Trans
           i18nKey="status-check-call"
           ns="status"
           tOptions={{ phoneNumber: t('common:phone-number') }}
         />
       </p>
+      <AlertSection type="warning">
+        <h3 className="h3 mb-4">{t('wild-fires.header')}</h3>
+        <p>
+          <Trans
+            i18nKey={'wild-fires.no-access'}
+            ns="status"
+            components={{
+              Link: <ExternalLink href={t('wild-fires.contact-us-link')} />,
+            }}
+          />
+        </p>
+        <p>
+          <Trans
+            i18nKey={'wild-fires.learn-more'}
+            ns="status"
+            components={{
+              Link: <ExternalLink href={t('wild-fires.learn-more-link')} />,
+            }}
+          />
+        </p>
+      </AlertSection>
     </>
   )
 }
