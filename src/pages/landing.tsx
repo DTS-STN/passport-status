@@ -57,18 +57,19 @@ const Landing: FC = () => {
           >
             <Trans i18nKey="receipt-image-1.descriptive-text" ns="landing" />
           </ExampleImage>
-          <p>{t('receipt-will-find.text')}</p>
+          <p>{t('receipt-1-will-find.text')}</p>
           <ul className="mb-5 list-disc pl-10">
-            <li>{t('receipt-will-find.list.item-1')}</li>
-            <li>{t('receipt-will-find.list.item-2')}</li>
-            <li>{t('receipt-will-find.list.item-13')}</li>
-            <li>{t('receipt-will-find.list.item-4')}</li>
-            <li>{t('receipt-will-find.list.item-6')}</li>
-            <li>{t('receipt-will-find.list.item-8')}</li>
-            <li>{t('receipt-will-find.list.item-9')}</li>
-            <li>{t('receipt-will-find.list.item-10')}</li>
-            <li>{t('receipt-will-find.list.item-11')}</li>
-            <li>{t('receipt-will-find.list.item-12')}</li>
+            <li>{t('receipt-1-will-find.list.item-1')}</li>
+            <li>{t('receipt-1-will-find.list.item-2')}</li>
+            <li>{t('receipt-1-will-find.list.item-3')}</li>
+            <li>{t('receipt-1-will-find.list.item-4')}</li>
+            <li>{t('receipt-1-will-find.list.item-5')}</li>
+            <li>{t('receipt-1-will-find.list.item-6')}</li>
+            <li>{t('receipt-1-will-find.list.item-7')}</li>
+            <li>{t('receipt-1-will-find.list.item-8')}</li>
+            <li>{t('receipt-1-will-find.list.item-9')}</li>
+            <li>{t('receipt-1-will-find.list.item-10')}</li>
+            <li>{t('receipt-1-will-find.list.item-11')}</li>
           </ul>
         </div>
       </Collapse>
@@ -84,20 +85,20 @@ const Landing: FC = () => {
           >
             <Trans i18nKey="receipt-image-2.descriptive-text" ns="landing" />
           </ExampleImage>
-          <p>{t('receipt-will-find.text')}</p>
+          <p>{t('receipt-2-will-find.text')}</p>
           <ul className="mb-5 list-disc pl-10">
-            <li>{t('receipt-will-find.list.item-1')}</li>
-            <li>{t('receipt-will-find.list.item-2')}</li>
-            <li>{t('receipt-will-find.list.item-3')}</li>
-            <li>{t('receipt-will-find.list.item-4')}</li>
-            <li>{t('receipt-will-find.list.item-5')}</li>
-            <li>{t('receipt-will-find.list.item-6')}</li>
-            <li>{t('receipt-will-find.list.item-7')}</li>
-            <li>{t('receipt-will-find.list.item-8')}</li>
-            <li>{t('receipt-will-find.list.item-9')}</li>
-            <li>{t('receipt-will-find.list.item-10')}</li>
-            <li>{t('receipt-will-find.list.item-11')}</li>
-            <li>{t('receipt-will-find.list.item-12')}</li>
+            <li>{t('receipt-2-will-find.list.item-1')}</li>
+            <li>{t('receipt-2-will-find.list.item-2')}</li>
+            <li>{t('receipt-2-will-find.list.item-3')}</li>
+            <li>{t('receipt-2-will-find.list.item-4')}</li>
+            <li>{t('receipt-2-will-find.list.item-5')}</li>
+            <li>{t('receipt-2-will-find.list.item-6')}</li>
+            <li>{t('receipt-2-will-find.list.item-7')}</li>
+            <li>{t('receipt-2-will-find.list.item-8')}</li>
+            <li>{t('receipt-2-will-find.list.item-9')}</li>
+            <li>{t('receipt-2-will-find.list.item-10')}</li>
+            <li>{t('receipt-2-will-find.list.item-11')}</li>
+            <li>{t('receipt-2-will-find.list.item-12')}</li>
           </ul>
           <p>{t('receipt-pickup-instructions.text')}</p>
           <ul className="mb-5 list-disc pl-10">
