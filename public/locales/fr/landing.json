@@ -50,7 +50,7 @@
       "item-12": "Solde"
     }
   },
-  "pickup-instructions": {
+  "receipt-pickup-instructions": {
     "text": "Au bas du reçu, il y a aussi des instructions de cueillette :",
     "list": {
       "item-1": "Déclaration rappelant aux personnes de présenter ce bordereau de cueillette et une pièce d'identité.",
