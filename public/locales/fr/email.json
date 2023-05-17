@@ -55,7 +55,7 @@
     "for-child-application": "<strong>Pour les demandes pour enfants,</strong> indiquez l'adresse courriel complète du parent ou du tuteur légal du requérant, telle qu'elle figure sur la demande de passeport."
   },
   "header-messages": {
-    "matches": "<strong>Assurez-vous que vos informations correspondent à votre preuve de citoyenneté et à votre pièce d'identité lors de votre demande de passeport.</strong> Votre preuve de citoyenneté pourrait être l'une des suivantes :",
+    "matches": "<strong>Assurez-vous que vos renseignements correspondent à votre preuve de citoyenneté et à votre pièce d'identité utilisèe lorsque vous avez présenté votre demande de passeport.</strong> Votre preuve de citoyenneté pourrait être l'une des suivantes :",
     "list": {
       "item-1": "un certificat de naissance",
       "item-2": "un certificat de citoyenneté",
