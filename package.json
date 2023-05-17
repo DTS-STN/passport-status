@@ -45,7 +45,7 @@
     "@trivago/prettier-plugin-sort-imports": "^4.1.1",
     "@types/jest": "^29.5.1",
     "@types/jest-axe": "^3.5.5",
-    "@types/node": "^20.1.0",
+    "@types/node": "^20.1.4",
     "@types/react": "^18.2.6",
     "autoprefixer": "^10.4.14",
     "axe-core": "^4.7.1",
