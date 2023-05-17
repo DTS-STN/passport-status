@@ -9,7 +9,7 @@
     "title": "Exemple de reçu 1",
     "alt": "Un exemple de reçu officiel. Le numéro de dossier est entouré au centre du reçu.",
     "src": "/Receipt1_FR.png",
-    "descriptive-text": "<strong>Exemple de reçu officiel unique. Le numéro de dossier est encerclé au centre du reçu.</strong>"
+    "descriptive-text": "<strong>Exemple de reçu officiel. Le numéro de dossier est encerclé au centre du reçu.</strong>"
   },
   "receipt-image-2": {
     "title": "Exemple de reçu 2",
@@ -17,10 +17,26 @@
     "src": "/Receipt2_FR.png",
     "descriptive-text": "<strong>Exemple d'un reçu officiel et bordereau de cueillette. Le numéro de dossier est encerclé en haut à gauche du reçu, au-dessus d'un code-barres.</strong>"
   },
-  "receipt-will-find": {
+  "receipt-1-will-find": {
     "text": "Sur un reçu, sur lequel le numéro de dossier est encerclé, vous trouverez :",
     "list": {
       "item-1": "Titre du reçu : Reçu officiel",
+      "item-2": "Nom du bureau de passeport",
+      "item-3": "Date d'envoi",
+      "item-4": "Nom du requérant",
+      "item-5": "Numéro de dossier (encerclé à l'encre rouge)",
+      "item-6": "Date/Heure",
+      "item-7": "Droit de service",
+      "item-8": "Montant dû",
+      "item-9": "Perçu",
+      "item-10": "Somme totale perçu",
+      "item-11": "Solde"
+    }
+  },
+  "receipt-2-will-find": {
+    "text": "Sur un reçu, sur lequel le numéro de dossier est encerclé, vous trouverez :",
+    "list": {
+      "item-1": "Titre du reçu : Reçu officiel et bordereau de cueillette",
       "item-2": "Nom du bureau de passeport",
       "item-3": "Date de cueillette",
       "item-4": "Nom du requérant",
@@ -31,8 +47,7 @@
       "item-9": "Montant dû",
       "item-10": "Perçu",
       "item-11": "Somme totale perçu",
-      "item-12": "Solde",
-      "item-13": "Date d'envoi"
+      "item-12": "Solde"
     }
   },
   "pickup-instructions": {
