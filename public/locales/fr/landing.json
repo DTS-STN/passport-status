@@ -20,7 +20,7 @@
   "receipt-1-will-find": {
     "text": "Sur un reçu, sur lequel le numéro de dossier est encerclé, vous trouverez\u00a0:",
     "list": {
-      "item-1": "Titre du reçu : Reçu officiel",
+      "item-1": "Titre du reçu\u00a0: Reçu officiel",
       "item-2": "Nom du bureau de passeport",
       "item-3": "Date d'envoi",
       "item-4": "Nom du requérant",
@@ -36,7 +36,7 @@
   "receipt-2-will-find": {
     "text": "Sur un reçu, sur lequel le numéro de dossier est encerclé, vous trouverez\u00a0:",
     "list": {
-      "item-1": "Titre du reçu : Reçu officiel et bordereau de cueillette",
+      "item-1": "Titre du reçu\u00a0: Reçu officiel et bordereau de cueillette",
       "item-2": "Nom du bureau de passeport",
       "item-3": "Date de cueillette",
       "item-4": "Nom du requérant",
