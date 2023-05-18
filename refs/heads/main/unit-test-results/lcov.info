@@ -820,8 +820,8 @@ DA:15,2
 DA:16,2
 LF:3
 LH:3
-BRDA:25,0,0,2
-BRDA:25,0,1,0
+BRDA:25,0,0,0
+BRDA:25,0,1,2
 BRF:2
 BRH:1
 end_of_record
