@@ -32,7 +32,7 @@
   "email-sent-confirmation": "Un courriel a été envoyé s'il y avait une correspondance dans nos dossiers avec le numéro de dossier (FEDS).",
   "email-confirmation-msg": {
     "request-received": "Votre demande a été reçue",
-    "if-exists": "Si nous pouvons trouver le dossier avec les renseignements que vous nous avez fournies, <strong>nous vous enverrons le numéro de dossier par courriel</strong>. Si vous ne recevez pas le message de confirmation dans votre boîte de réception, vérifiez votre dossier de courriel indésirable.",
+    "if-exists": "Si nous pouvons trouver le dossier avec les renseignements que vous nous avez fournis, <strong>nous vous enverrons le numéro de dossier par courriel</strong>. Si vous ne recevez pas le message de confirmation dans votre boîte de réception, vérifiez votre dossier de courriel indésirable.",
     "may-not-receive": "Il se pourrait que vous ne receviez pas de courriel si :",
     "may-not-receive-list": {
       "item-1": "les renseignements que vous nous avez fournis ne correspondent pas à ceux de notre système ou",

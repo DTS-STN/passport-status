@@ -43,7 +43,7 @@
       "item-1": "review the information you entered and try again or",
       "item-2": "try again tomorrow - we update our records daily"
     },
-    "please-contact": "If you still don't receive it, <Link>contact us(opens in a new tab)</Link>."
+    "please-contact": "If you still don't receive it, <Link>contact us</Link>."
   },
   "page-unauth": {
     "header": "Page Unauthorized",

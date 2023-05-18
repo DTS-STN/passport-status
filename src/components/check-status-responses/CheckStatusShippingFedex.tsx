@@ -22,7 +22,7 @@ export const CheckStatusShippingFedex: FC<CheckStatusShippingFedexProps> = ({
         <h2 data-testid="shipped-fedex-mailing" className="h2 mt-0">
           {t('shipped-fedex.mailing')}
         </h2>
-        {trackingNumber && (
+        {trackingNumber ? (
           <>
             <p>
               <Trans
@@ -42,8 +42,9 @@ export const CheckStatusShippingFedex: FC<CheckStatusShippingFedexProps> = ({
               </ExternalLink>
             </p>
           </>
+        ) : (
+          <p>{t('shipped-fedex.take-up-to')}</p>
         )}
-        <p>{t('shipped-fedex.take-up-to')}</p>
       </AlertSection>
       <p className="h3 mt-6">{t('shipped-fedex.supporting-documents')}</p>
       <p className="mt-6">

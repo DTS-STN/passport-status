@@ -100,8 +100,8 @@
     "date-passed": "If your pick-up date has passed, you can go in anytime to pick up your passport."
   },
   "shipped-canada-post": {
-    "header": "Your passport has been printed and is being mailed to you",
-    "mailing": "We're sending it to you by Canada Post",
+    "header": "Your passport has been printed and mailed",
+    "mailing": "We're mailing it to you by Canada Post",
     "take-up-to": "It can take up to 2 to 3 business days to arrive.",
     "remote-area": "If you live in a northern or remote area, it may take up to 8 business days to arrive.",
     "supporting-documents": "We may send your supporting documents back separately."
@@ -145,7 +145,7 @@
     }
   },
   "child-applications": {
-    "header": "Child application",
+    "header": "Child applications",
     "description": "Use the child's given name(s) and surname and date of birth, exactly as provided on their proof of citizenship."
   }
 }
