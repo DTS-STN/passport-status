@@ -18,9 +18,9 @@
     "descriptive-text": "<strong>Exemple d'un reçu officiel et bordereau de cueillette. Le numéro de dossier est encerclé en haut à gauche du reçu, au-dessus d'un code-barres.</strong>"
   },
   "receipt-1-will-find": {
-    "text": "Sur un reçu, sur lequel le numéro de dossier est encerclé, vous trouverez :",
+    "text": "Sur un reçu, sur lequel le numéro de dossier est encerclé, vous trouverez\u00a0:",
     "list": {
-      "item-1": "Titre du reçu : Reçu officiel",
+      "item-1": "Titre du reçu\u00a0: Reçu officiel",
       "item-2": "Nom du bureau de passeport",
       "item-3": "Date d'envoi",
       "item-4": "Nom du requérant",
@@ -34,13 +34,13 @@
     }
   },
   "receipt-2-will-find": {
-    "text": "Sur un reçu, sur lequel le numéro de dossier est encerclé, vous trouverez :",
+    "text": "Sur un reçu, sur lequel le numéro de dossier est encerclé, vous trouverez\u00a0:",
     "list": {
-      "item-1": "Titre du reçu : Reçu officiel et bordereau de cueillette",
+      "item-1": "Titre du reçu\u00a0: Reçu officiel et bordereau de cueillette",
       "item-2": "Nom du bureau de passeport",
       "item-3": "Date de cueillette",
       "item-4": "Nom du requérant",
-      "item-5": "Numéro de dossier (encerclé à l'encre rouge) ",
+      "item-5": "Numéro de dossier (encerclé à l'encre rouge)",
       "item-6": "Date/Heure",
       "item-7": "Code barre",
       "item-8": "Droit de service",
@@ -51,11 +51,11 @@
     }
   },
   "receipt-pickup-instructions": {
-    "text": "Au bas du reçu, il y a aussi des instructions de cueillette :",
+    "text": "Au bas du reçu, il y a aussi des instructions de cueillette\u00a0:",
     "list": {
       "item-1": "Déclaration rappelant aux personnes de présenter ce bordereau de cueillette et une pièce d'identité.",
       "item-2": {
-        "text": "Il y a 2 cases à cocher (vous devez en cocher une) :",
+        "text": "Il y a 2 cases à cocher (vous devez en cocher une)\u00a0:",
         "list": {
           "item-1": "Apparition personnelle du requérant requise, ou",
           "item-2": "J'autorise (insérer le nom de la personne) à retirer mon document de voyage. La personne autorisée doit être âgée de plus de 16 ans et doit présenter une pièce d'identité."
