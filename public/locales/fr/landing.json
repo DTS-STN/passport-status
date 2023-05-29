@@ -3,7 +3,7 @@
   "description": "Avez-vous le numéro de votre dossier de demande de passeport?",
   "with-esrf": "J'ai mon numéro de dossier",
   "without-esrf": "Je n'ai pas mon numéro de dossier",
-  "collapse-file-number-title": "Vous ne trouvez pas trouver votre numéro de dossier?",
+  "collapse-file-number-title": "Trouvez votre numéro de dossier",
   "receipt-explanation": "Le numéro de dossier sert à identifier votre demande de passeport. Le numéro de dossier figure sur le reçu qui vous a été remis si vous avez déposé votre demande de passeport en personne. Si vous avez déposé votre demande par la poste, ou si vous n’avez pas de numéro de dossier, <Link>vous pouvez demander à le recevoir</Link>.",
   "receipt-image-1": {
     "title": "Exemple de reçu 1",
