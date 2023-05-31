@@ -146,6 +146,6 @@
   },
   "child-applications": {
     "header": "Pour les demandes de passeport pour enfants",
-    "description": "Veuillez utiliser le(s) prénom(s), nom de famille et date de naissance de l'enfant, exactement tels qu'ils figurent sur sa preuve de citoyenneté."
+    "description": "Utilisez le(s) prénom(s), nom de famille et date de naissance de l'enfant, exactement tels qu'ils figurent sur sa preuve de citoyenneté."
   }
 }

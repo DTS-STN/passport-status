@@ -202,7 +202,7 @@ const Status: FC = () => {
             </ul>
 
             <AlertSection type="info" className="mb-4">
-              <p className="h3">{t('child-applications.header')}</p>
+              <h2 className="h2 mt-0">{t('child-applications.header')}</h2>
               <p>{t('child-applications.description')}</p>
             </AlertSection>
 

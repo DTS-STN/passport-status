@@ -3,7 +3,7 @@
   "description": "Do you have your passport application file number?",
   "with-esrf": "I have my file number",
   "without-esrf": "I don't have my file number",
-  "collapse-file-number-title": "Can't find your file number?",
+  "collapse-file-number-title": "Find your file number",
   "receipt-explanation": "The file number is used to identify your passport application. The file number can be found on the receipt you were given if you applied for the passport in person. If you applied by mail, or don't have a file number, you can <Link>request to receive it</Link>.",
   "receipt-image-1": {
     "title": "Example Receipt 1",

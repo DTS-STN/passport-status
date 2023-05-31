@@ -213,7 +213,9 @@ const Email: FC = () => {
               <li>{t('header-messages.list.item-4')}</li>
             </ul>
             <AlertSection className="mb-8" type="info">
-              <p className="h3">{t('header-messages.child-applications')}</p>
+              <h2 className="h2 mt-0">
+                {t('header-messages.child-applications')}
+              </h2>
               <p>
                 <Trans
                   i18nKey="header-messages.for-child-application"
