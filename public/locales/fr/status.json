@@ -25,7 +25,7 @@
   },
   "previous": "Vérifier l'état d'une autre demande",
   "reset": "Vérifier l'état d'une autre demande",
-  "header": "Obtenez l'état de votre demande de passeport",
+  "header": "Obtenir l'état de votre demande de passeport",
   "status": {
     "1": {
       "label": "Être en cours de traitement",
