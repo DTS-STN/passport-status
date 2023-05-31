@@ -27,6 +27,7 @@ export const CheckStatusFileBeingProcessed: FC<{}> = () => {
           }}
         />
       </p>
+      <p>{t('being-processed.incomplete')}</p>
       <p className="h3">{t('being-processed.need-faster')}</p>
       <p>
         <Trans
