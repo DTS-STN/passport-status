@@ -1,6 +1,6 @@
 import { FC, PropsWithChildren } from 'react'
 
-export type AlertType = 'success' | 'warning' | 'info'
+import { AlertType } from '../lib/types'
 
 export interface AlertSectionProps {
   type: AlertType

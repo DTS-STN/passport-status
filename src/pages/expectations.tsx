@@ -1,4 +1,4 @@
-import { FC, MouseEventHandler, useCallback } from 'react'
+import { FC, MouseEventHandler, useCallback, useEffect, useState } from 'react'
 
 import { setCookie } from 'cookies-next'
 import { GetServerSideProps } from 'next'
@@ -11,6 +11,8 @@ import AlertSection from '../components/AlertSection'
 import ExternalLink from '../components/ExternalLink'
 import Layout from '../components/Layout'
 import { pageWithServerSideTranslations } from '../lib/utils/next-i18next-utils'
+import { Alert } from '../lib/types'
+import { useAlerts } from '../lib/useAlert'
 import { getDCTermsTitle } from '../lib/utils/seo-utils'
 
 const Expectations: FC = () => {
@@ -25,13 +27,28 @@ const Expectations: FC = () => {
     []
   )
 
+  const [alerts, setAlerts] = useState<Alert[]>()
+
+  const {
+    data: alertResponse,
+    error: alertError,
+    isLoading: isAlertLoading,
+  } = useAlerts()
+
+  console.log('LOADING: ', isAlertLoading)
+
+  useEffect(() => {
+    setAlerts(alertResponse?.alerts)
+    console.log('ALERTS: ', JSON.stringify(alerts))
+  }, [isAlertLoading, alertResponse?.alerts, alerts])
+
   return (
     <>
       <NextSeo
         description={t('meta.description')}
         additionalMetaTags={[getDCTermsTitle(t('header'))]}
       />
-      <Layout>
+      <Layout alerts={alerts}>
         <h1 className="h1">{t('header')}</h1>
         <h2 className="h2">{t('header-avoid-waiting')}</h2>
         <p>{t('available-after.description')}</p>

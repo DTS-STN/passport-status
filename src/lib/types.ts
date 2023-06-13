@@ -2,6 +2,39 @@ export type AdobeDataLayer = { push?: (object: Record<string, string>) => void }
 export type AppWindow = Window &
   typeof globalThis & { adobeDataLayer?: AdobeDataLayer }
 
+export enum AlertPage {
+  EXPECTATIONS,
+  LANDING,
+  STATUS,
+  STATUS_NOT_FOUND,
+  STATUS_INVALID,
+  STATUS_PROCESSING,
+  STATUS_READY_PICKUP,
+  STATUS_SHIPPED_CANADA,
+  STATUS_SHIPPED_FEDEX,
+}
+
+export type AlertPosition = 'bottom' | 'top'
+
+export type AlertType = 'info' | 'warning' | 'success'
+
+export interface AlertApiResponse {
+  alerts: Alert[]
+}
+
+export interface Alert {
+  position: AlertPosition
+  textEn: string
+  textFr: string
+  type: AlertType
+}
+
+export interface AlertJson extends Alert {
+  pages: AlertPage[]
+  validFrom: Date
+  validTo: Date
+}
+
 export interface CheckStatusApiRequestQuery {
   dateOfBirth: string
   esrf: string
