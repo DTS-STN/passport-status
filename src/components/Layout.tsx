@@ -2,14 +2,19 @@ import { FC, ReactNode } from 'react'
 
 import { useTranslation } from 'next-i18next'
 
+import { Alert, AlertPosition } from '../lib/types'
+import AlertSection from './AlertSection'
 import Footer from './Footer'
 import Header from './Header'
 
 export interface LayoutProps {
+  alerts: Alert[] | undefined
   children: ReactNode
 }
 
-const Layout: FC<LayoutProps> = ({ children }) => {
+// TODO: Replace key with alert ID
+
+const Layout: FC<LayoutProps> = ({ alerts, children }) => {
   const { t } = useTranslation('common')
   return (
     <div className="flex min-h-screen flex-col">
@@ -17,6 +22,14 @@ const Layout: FC<LayoutProps> = ({ children }) => {
         skipToMainText={t('header.skip-to-main')}
         gocLink={t('header.goc-link')}
       />
+      {(alerts != undefined && alerts.length > 0) ??
+        alerts!
+          .filter((alert) => alert.position == 'top')
+          .map((alert) => (
+            <AlertSection key={alert.textEn} type={alert.type}>
+              <p>{alert.textEn}</p>
+            </AlertSection>
+          ))}
       <main
         role="main"
         id="mainContent"
@@ -24,7 +37,14 @@ const Layout: FC<LayoutProps> = ({ children }) => {
       >
         {children}
       </main>
-
+      {(alerts != undefined && alerts.length > 0) ??
+        alerts!
+          .filter((alert) => alert.position == 'bottom')
+          .map((alert) => (
+            <AlertSection key={alert.textEn} type={alert.type}>
+              <p>{alert.textEn}</p>
+            </AlertSection>
+          ))}
       <Footer
         dateModifiedText={t('footer.date-modified-text')}
         footerHeader={t('footer.header')}
