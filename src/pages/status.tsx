@@ -53,9 +53,7 @@ const validationSchema = Yup.object({
 })
 
 const Status: FC = () => {
-  const { t, i18n } = useTranslation('status')
-  const en = i18n.getFixedT('en', 'status')
-  const fr = i18n.getFixedT('fr', 'status')
+  const { t } = useTranslation('status')
 
   const router = useRouter()
   const headingRef = useRef<HTMLHeadingElement>(null)
@@ -156,10 +154,9 @@ const Status: FC = () => {
 
   const handleOnModalClose = useCallback(() => setModalOpen(false), [])
 
-  const handleOnModalYesButtonClick = useCallback(
-    () => router.push('/landing'),
-    [router]
-  )
+  const handleOnModalYesButtonClick = useCallback(() => {
+    router.push('/landing')
+  }, [router])
 
   //if the api failed, fail hard to show error page
   if (checkStatusError) throw checkStatusError
@@ -168,7 +165,7 @@ const Status: FC = () => {
     <Layout>
       <NextSeo
         title={t('header')}
-        additionalMetaTags={[getDCTermsTitle(en('header'), fr('header'))]}
+        additionalMetaTags={[getDCTermsTitle(t('header'))]}
       />
       <IdleTimeout />
       {checkStatusResponse !== undefined ? (
@@ -310,12 +307,10 @@ const Status: FC = () => {
 
 export const getServerSideProps: GetServerSideProps = async ({ locale }) => ({
   props: {
-    ...(await serverSideTranslations(
-      locale ?? 'default',
-      ['common', 'status'],
-      null,
-      ['en', 'fr']
-    )),
+    ...(await serverSideTranslations(locale ?? 'default', [
+      'common',
+      'status',
+    ])),
   },
 })
 

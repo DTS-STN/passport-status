@@ -1,8 +1,8 @@
 import { MetaTag } from 'next-seo/lib/types'
 
-export type GetDCTermsTitle = (contentEn: string, contentFr: string) => MetaTag
+export type GetDCTermsTitle = (content: string) => MetaTag
 
-export const getDCTermsTitle: GetDCTermsTitle = (contentEn, contentFr) => ({
+export const getDCTermsTitle: GetDCTermsTitle = (content) => ({
   name: 'dcterms.title',
-  content: `${contentEn} - ${contentFr}`,
+  content,
 })

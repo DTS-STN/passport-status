@@ -14,9 +14,7 @@ import Layout from '../components/Layout'
 import { getDCTermsTitle } from '../lib/utils/seo-utils'
 
 const Expectations: FC = () => {
-  const { t, i18n } = useTranslation('expectations')
-  const en = i18n.getFixedT('en', 'expectations')
-  const fr = i18n.getFixedT('fr', 'expectations')
+  const { t } = useTranslation('expectations')
 
   const handleOnAgreeClick: MouseEventHandler<HTMLButtonElement> = useCallback(
     (e) => {
@@ -31,7 +29,7 @@ const Expectations: FC = () => {
     <>
       <NextSeo
         description={t('meta.description')}
-        additionalMetaTags={[getDCTermsTitle(en('header'), fr('header'))]}
+        additionalMetaTags={[getDCTermsTitle(t('header'))]}
       />
       <Layout>
         <h1 className="h1">{t('header')}</h1>
@@ -115,12 +113,10 @@ const Expectations: FC = () => {
 
 export const getServerSideProps: GetServerSideProps = async ({ locale }) => ({
   props: {
-    ...(await serverSideTranslations(
-      locale ?? 'default',
-      ['common', 'expectations'],
-      null,
-      ['en', 'fr']
-    )),
+    ...(await serverSideTranslations(locale ?? 'default', [
+      'common',
+      'expectations',
+    ])),
   },
 })
 

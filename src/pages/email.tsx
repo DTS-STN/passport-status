@@ -54,9 +54,7 @@ const validationSchema = Yup.object({
 })
 
 const Email: FC = () => {
-  const { t, i18n } = useTranslation('email')
-  const en = i18n.getFixedT('en', 'email')
-  const fr = i18n.getFixedT('fr', 'email')
+  const { t } = useTranslation('email')
 
   const router = useRouter()
   const headingRef = useRef<HTMLHeadingElement>(null)
@@ -123,10 +121,9 @@ const Email: FC = () => {
 
   const handleOnModalClose = useCallback(() => setModalOpen(false), [])
 
-  const handleOnModalYesButtonClick = useCallback(
-    () => router.push('/landing'),
-    [router]
-  )
+  const handleOnModalYesButtonClick = useCallback(() => {
+    router.push('/landing')
+  }, [router])
 
   const handleOnNewFileRequest: MouseEventHandler<HTMLButtonElement> =
     useCallback(
@@ -146,7 +143,7 @@ const Email: FC = () => {
     <Layout>
       <NextSeo
         title={t('header')}
-        additionalMetaTags={[getDCTermsTitle(en('header'), fr('header'))]}
+        additionalMetaTags={[getDCTermsTitle(t('header'))]}
       />
       <IdleTimeout />
 
@@ -329,12 +326,7 @@ const Email: FC = () => {
 
 export const getServerSideProps: GetServerSideProps = async ({ locale }) => ({
   props: {
-    ...(await serverSideTranslations(
-      locale ?? 'default',
-      ['common', 'email'],
-      null,
-      ['en', 'fr']
-    )),
+    ...(await serverSideTranslations(locale ?? 'default', ['common', 'email'])),
   },
 })
 
