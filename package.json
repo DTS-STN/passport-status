@@ -33,6 +33,8 @@
     "react-focus-on": "^3.8.1",
     "react-i18next": "^13.0.1",
     "react-idle-timer": "^5.7.2",
+    "remark": "^14.0.3",
+    "remark-html": "^15.0.2",
     "sharp": "^0.32.1",
     "yup": "^1.2.0"
   },

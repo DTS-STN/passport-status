@@ -3,7 +3,7 @@ import { NextApiRequest, NextApiResponse } from 'next'
 import {
   Alert,
   AlertApiResponse,
-  AlertJson,
+  AlertMeta,
   AlertPage,
   AlertPosition,
   AlertType,
@@ -28,10 +28,11 @@ export default async function handler(
 
   // let res = await fetch(JSON_URL)
 
-  let jsonAlerts: AlertJson[] = [
+  let jsonAlerts: AlertMeta[] = [
     {
-      pages: [AlertPage.STATUS, AlertPage.LANDING],
-      position: 'top',
+      uid: '12345',
+      pages: [AlertPage.EXPECTATIONS, AlertPage.LANDING],
+      position: 'bottom',
       textEn: 'TEST ALERT',
       textFr: '[FR] TEST ALERT',
       type: 'info',
@@ -43,15 +44,14 @@ export default async function handler(
   let alerts: Alert[] = jsonAlerts
     .filter((alert) => alert.validFrom <= today && alert.validTo >= today)
     .map((alert) => ({
+      uid: alert.uid,
       position: alert.position,
       textEn: alert.textEn,
       textFr: alert.textFr,
       type: alert.type,
     }))
 
-  console.log('Alerts:', JSON.stringify(alerts))
-
-  res.status(200).json({
+  return res.status(200).json({
     alerts,
   })
 }

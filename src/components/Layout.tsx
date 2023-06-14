@@ -8,34 +8,39 @@ import Footer from './Footer'
 import Header from './Header'
 
 export interface LayoutProps {
-  alerts: Alert[] | undefined
+  alerts?: Alert[]
   children: ReactNode
 }
 
-// TODO: Replace key with alert ID
-
 const Layout: FC<LayoutProps> = ({ alerts, children }) => {
   const { t } = useTranslation('common')
+
   return (
     <div className="flex min-h-screen flex-col">
       <Header
         skipToMainText={t('header.skip-to-main')}
         gocLink={t('header.goc-link')}
       />
-      {(alerts != undefined && alerts.length > 0) ??
-        alerts!
-          .filter((alert) => alert.position == 'top')
-          .map((alert) => (
-            <AlertSection key={alert.textEn} type={alert.type}>
-              <p>{alert.textEn}</p>
-            </AlertSection>
-          ))}
       <main
         role="main"
         id="mainContent"
         className="container mx-auto mt-5 flex-1 px-4 pb-8"
       >
+        {alerts
+          ?.filter((alert) => alert.position == 'top')
+          .map((alert) => (
+            <AlertSection key={alert.textEn} type={alert.type}>
+              <p>{alert.textEn}</p>
+            </AlertSection>
+          ))}
         {children}
+        {alerts
+          ?.filter((alert) => alert.position == 'bottom')
+          .map((alert) => (
+            <AlertSection key={alert.textEn} type={alert.type}>
+              <p>{alert.textEn}</p>
+            </AlertSection>
+          ))}
       </main>
       {(alerts != undefined && alerts.length > 0) ??
         alerts!

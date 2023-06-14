@@ -23,13 +23,14 @@ export interface AlertApiResponse {
 }
 
 export interface Alert {
+  uid: string
   position: AlertPosition
   textEn: string
   textFr: string
   type: AlertType
 }
 
-export interface AlertJson extends Alert {
+export interface AlertMeta extends Alert {
   pages: AlertPage[]
   validFrom: Date
   validTo: Date
