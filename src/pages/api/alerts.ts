@@ -32,6 +32,26 @@ export default async function handler(
       validFrom: fromDate,
       validTo: toDate,
     },
+    {
+      uid: '12346',
+      pages: ['expectations', 'landing'],
+      position: 'top',
+      textEn: '# **TEST**\n## [ALERT 2](https://www.canada.ca)',
+      textFr: '[FR] TEST ALERT 2',
+      type: 'warning',
+      validFrom: fromDate,
+      validTo: toDate,
+    },
+    {
+      uid: '12347',
+      pages: ['expectations', 'landing'],
+      position: 'bottom',
+      textEn: 'ALERT __as well__',
+      textFr: '[FR] TEST ALERT',
+      type: 'success',
+      validFrom: fromDate,
+      validTo: toDate,
+    },
   ]
 
   let alerts: Alert[] = jsonAlerts
