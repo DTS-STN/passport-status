@@ -1,13 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 
-import {
-  Alert,
-  AlertApiResponse,
-  AlertMeta,
-  AlertPage,
-  AlertPosition,
-  AlertType,
-} from '../../lib/types'
+import { Alert, AlertApiResponse, AlertMeta } from '../../lib/types'
 
 export default async function handler(
   req: NextApiRequest,
@@ -31,9 +24,9 @@ export default async function handler(
   let jsonAlerts: AlertMeta[] = [
     {
       uid: '12345',
-      pages: [AlertPage.EXPECTATIONS, AlertPage.LANDING],
+      pages: ['expectations', 'landing'],
       position: 'bottom',
-      textEn: 'TEST ALERT',
+      textEn: '**TEST** ALERT',
       textFr: '[FR] TEST ALERT',
       type: 'info',
       validFrom: fromDate,

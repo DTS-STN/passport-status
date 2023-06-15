@@ -8,6 +8,7 @@ import { NextSeo } from 'next-seo'
 import Router from 'next/router'
 
 import ActionButton from '../components/ActionButton'
+import AlertBlock from '../components/AlertBlock'
 import AlertSection from '../components/AlertSection'
 import ExternalLink from '../components/ExternalLink'
 import Layout from '../components/Layout'
@@ -38,13 +39,7 @@ const Expectations: FC = () => {
       />
       <Layout>
         <h1 className="h1">{t('header')}</h1>
-        {alertResponse?.alerts
-          .filter((alert) => alert.position == 'top')
-          .map((alert) => (
-            <AlertSection key={alert.uid} type={alert.type}>
-              <p>{alert.textEn}</p>
-            </AlertSection>
-          ))}
+        <AlertBlock position="top" alerts={alertResponse?.alerts} />
         <h2 className="h2">{t('header-avoid-waiting')}</h2>
         <p>{t('available-after.description')}</p>
         <ul className="mb-5 list-disc space-y-2 pl-10">
@@ -110,13 +105,7 @@ const Expectations: FC = () => {
             }}
           />
         </p>
-        {alertResponse?.alerts
-          .filter((alert) => alert.position == 'bottom')
-          .map((alert) => (
-            <AlertSection key={alert.uid} type={alert.type}>
-              <p>{alert.textEn}</p>
-            </AlertSection>
-          ))}
+        <AlertBlock position="bottom" alerts={alertResponse?.alerts} />
         <div className="mt-8">
           <ActionButton
             id="btn-agree"
