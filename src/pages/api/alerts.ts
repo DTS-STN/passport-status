@@ -27,7 +27,7 @@ export default async function handler(
   let jsonAlerts: AlertMeta[] = [
     {
       uid: '12345',
-      pages: ['expectations', 'landing'],
+      pages: ['all', 'expectations', 'landing'],
       position: 'bottom',
       textEn: '**TEST** ALERT',
       textFr: '[FR] TEST ALERT',
@@ -60,7 +60,9 @@ export default async function handler(
   let alerts: Alert[] = jsonAlerts
     .filter(
       (alert) =>
-        alert.pages.find((alertPage) => alertPage === page) &&
+        alert.pages.find(
+          (alertPage) => alertPage === 'all' || alertPage === page
+        ) &&
         alert.validFrom <= today &&
         alert.validTo >= today
     )
