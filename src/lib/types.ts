@@ -3,6 +3,7 @@ export type AppWindow = Window &
   typeof globalThis & { adobeDataLayer?: AdobeDataLayer }
 
 export type AlertPage =
+  | 'email'
   | 'expectations'
   | 'landing'
   | 'status'
