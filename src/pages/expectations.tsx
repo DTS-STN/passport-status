@@ -12,7 +12,6 @@ import AlertBlock from '../components/AlertBlock'
 import AlertSection from '../components/AlertSection'
 import ExternalLink from '../components/ExternalLink'
 import Layout from '../components/Layout'
-import { useAlerts } from '../lib/useAlert'
 import { getDCTermsTitle } from '../lib/utils/seo-utils'
 
 const Expectations: FC = () => {
@@ -29,8 +28,6 @@ const Expectations: FC = () => {
     []
   )
 
-  const { data: alertResponse } = useAlerts()
-
   return (
     <>
       <NextSeo
@@ -39,7 +36,7 @@ const Expectations: FC = () => {
       />
       <Layout>
         <h1 className="h1">{t('header')}</h1>
-        <AlertBlock position="top" alerts={alertResponse?.alerts} />
+        <AlertBlock page="expectations" position="top" />
         <h2 className="h2">{t('header-avoid-waiting')}</h2>
         <p>{t('available-after.description')}</p>
         <ul className="mb-5 list-disc space-y-2 pl-10">
@@ -105,7 +102,7 @@ const Expectations: FC = () => {
             }}
           />
         </p>
-        <AlertBlock position="bottom" alerts={alertResponse?.alerts} />
+        <AlertBlock page="expectations" position="bottom" />
         <div className="mt-8">
           <ActionButton
             id="btn-agree"

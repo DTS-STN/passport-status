@@ -11,6 +11,9 @@ export default async function handler(
     return
   }
 
+  const query = req.query
+  const { page } = query
+
   let fromDate = new Date()
   fromDate.setDate(fromDate.getDate() - 1)
 
@@ -28,7 +31,7 @@ export default async function handler(
       position: 'bottom',
       textEn: '**TEST** ALERT',
       textFr: '[FR] TEST ALERT',
-      type: 'info',
+      type: 'danger',
       validFrom: fromDate,
       validTo: toDate,
     },
@@ -38,13 +41,13 @@ export default async function handler(
       position: 'top',
       textEn: '# **TEST**\n## [ALERT 2](https://www.canada.ca)',
       textFr: '[FR] TEST ALERT 2',
-      type: 'warning',
+      type: 'danger',
       validFrom: fromDate,
       validTo: toDate,
     },
     {
       uid: '12347',
-      pages: ['expectations', 'landing'],
+      pages: ['expectations'],
       position: 'bottom',
       textEn: 'ALERT __as well__',
       textFr: '[FR] TEST ALERT',
@@ -55,7 +58,12 @@ export default async function handler(
   ]
 
   let alerts: Alert[] = jsonAlerts
-    .filter((alert) => alert.validFrom <= today && alert.validTo >= today)
+    .filter(
+      (alert) =>
+        alert.pages.find((alertPage) => alertPage === page) &&
+        alert.validFrom <= today &&
+        alert.validTo >= today
+    )
     .map((alert) => ({
       uid: alert.uid,
       position: alert.position,
