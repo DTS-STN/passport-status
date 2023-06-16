@@ -13,15 +13,13 @@ import LinkButton from '../components/LinkButton'
 import { getDCTermsTitle } from '../lib/utils/seo-utils'
 
 const Landing: FC = () => {
-  const { t, i18n } = useTranslation('landing')
-  const en = i18n.getFixedT('en', 'landing')
-  const fr = i18n.getFixedT('fr', 'landing')
+  const { t } = useTranslation('landing')
 
   return (
     <Layout>
       <NextSeo
         title={t('header')}
-        additionalMetaTags={[getDCTermsTitle(en('header'), fr('header'))]}
+        additionalMetaTags={[getDCTermsTitle(t('header'))]}
       />
       <h1 className="h1">{t('header')}</h1>
       <p>{t('description')}</p>
@@ -128,12 +126,10 @@ const Landing: FC = () => {
 
 export const getServerSideProps: GetServerSideProps = async ({ locale }) => ({
   props: {
-    ...(await serverSideTranslations(
-      locale ?? 'default',
-      ['common', 'landing'],
-      null,
-      ['en', 'fr']
-    )),
+    ...(await serverSideTranslations(locale ?? 'default', [
+      'common',
+      'landing',
+    ])),
   },
 })
 
