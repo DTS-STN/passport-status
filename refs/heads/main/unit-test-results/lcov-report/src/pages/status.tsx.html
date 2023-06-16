@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">46.93% </span>
+                <span class="strong">44.68% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>23/49</span>
+                <span class='fraction'>21/47</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">52.27% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>23/44</span>
+                <span class='fraction'>21/42</span>
             </div>
         
             
@@ -380,12 +380,7 @@
 <a name='L315'></a><a href='#L315'>315</a>
 <a name='L316'></a><a href='#L316'>316</a>
 <a name='L317'></a><a href='#L317'>317</a>
-<a name='L318'></a><a href='#L318'>318</a>
-<a name='L319'></a><a href='#L319'>319</a>
-<a name='L320'></a><a href='#L320'>320</a>
-<a name='L321'></a><a href='#L321'>321</a>
-<a name='L322'></a><a href='#L322'>322</a>
-<a name='L323'></a><a href='#L323'>323</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L318'></a><a href='#L318'>318</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -441,8 +436,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
@@ -545,7 +538,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -696,8 +688,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -762,9 +752,7 @@ const validationSchema = Yup.object({
 })
 &nbsp;
 const Status: FC = () =&gt; {
-  const { t, i18n } = useTranslation('status')
-  const en = i18n.getFixedT('en', 'status')
-  const fr = i18n.getFixedT('fr', 'status')
+  const { t } = useTranslation('status')
 &nbsp;
   const router = useRouter()
   const headingRef = useRef&lt;HTMLHeadingElement&gt;(null)
@@ -865,10 +853,9 @@ const Status: FC = () =&gt; {
 &nbsp;
   const handleOnModalClose = useCallback(<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >setModalOpen(false),</span> [])
 &nbsp;
-  const handleOnModalYesButtonClick = useCallback(
-<span class="fstat-no" title="function not covered" >    ()</span> =&gt; <span class="cstat-no" title="statement not covered" >router.push('/landing'),</span>
-    [router]
-  )
+  const handleOnModalYesButtonClick = useCallback(<span class="fstat-no" title="function not covered" >()</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >    router.push('/landing')</span>
+  }, [router])
 &nbsp;
   //if the api failed, fail hard to show error page
   <span class="missing-if-branch" title="if path not taken" >I</span>if (checkStatusError) <span class="cstat-no" title="statement not covered" >throw checkStatusError</span>
@@ -877,7 +864,7 @@ const Status: FC = () =&gt; {
     &lt;Layout&gt;
       &lt;NextSeo
         title={t('header')}
-        additionalMetaTags={[getDCTermsTitle(en('header'), fr('header'))]}
+        additionalMetaTags={[getDCTermsTitle(t('header'))]}
       /&gt;
       &lt;IdleTimeout /&gt;
       {checkStatusResponse !== undefined ? (
@@ -1019,12 +1006,10 @@ const Status: FC = () =&gt; {
 &nbsp;
 export const getServerSideProps: GetServerSideProps = <span class="fstat-no" title="function not covered" >as</span>ync ({ locale }) =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
   props: {
-    ...(await serverSideTranslations(
-      locale ?? 'default',
-      ['common', 'status'],
-      null,
-      ['en', 'fr']
-    )),
+    ...(await serverSideTranslations(locale ?? 'default', [
+      'common',
+      'status',
+    ])),
   },
 })
 &nbsp;
@@ -1036,7 +1021,7 @@ export default Status
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-16T13:37:22.241Z
+                at 2023-06-16T13:38:19.574Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
