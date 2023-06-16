@@ -15,7 +15,11 @@ export type AlertPage =
 
 export type AlertPosition = 'bottom' | 'top'
 
-export type AlertType = 'info' | 'warning' | 'success'
+export type AlertType = 'danger' | 'info' | 'warning' | 'success'
+
+export interface AlertApiRequestQuery {
+  page: AlertPage
+}
 
 export interface AlertApiResponse {
   alerts: Alert[]

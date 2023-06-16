@@ -1,12 +1,16 @@
 import { useQuery } from '@tanstack/react-query'
 import { ApiError } from 'next/dist/server/api-utils'
 
-import { AlertApiResponse } from './types'
+import { AlertApiRequestQuery, AlertApiResponse } from './types'
 
 export const fetchAlerts = async (
+  alertQuery: AlertApiRequestQuery,
   init?: RequestInit
 ): Promise<AlertApiResponse | null> => {
-  const response = await fetch('/api/alerts', init)
+  const query = new URLSearchParams({
+    ...alertQuery,
+  }).toString()
+  const response = await fetch('/api/alerts?' + query, init)
   if (response.ok) {
     return response.json()
   }
@@ -14,12 +18,14 @@ export const fetchAlerts = async (
   throw new ApiError(response.status, response.statusText)
 }
 
-export const useAlerts = () => {
+export const useAlerts = (alertQuery: AlertApiRequestQuery) => {
   const query = useQuery<
     AlertApiResponse | null,
     ApiError,
     AlertApiResponse | null
-  >(['ps:api:alerts'], ({ signal }) => fetchAlerts({ signal }))
+  >(['ps:api:alerts', alertQuery], ({ signal }) =>
+    fetchAlerts(alertQuery, { signal })
+  )
 
   // fix isLoading with disabled: false
   // see: https://github.com/TanStack/query/issues/3584#issuecomment-1256986636

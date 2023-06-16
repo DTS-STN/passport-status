@@ -5,6 +5,7 @@ import { Trans, useTranslation } from 'next-i18next'
 import { NextSeo } from 'next-seo'
 import Link from 'next/link'
 
+import AlertBlock from '../components/AlertBlock'
 import Collapse from '../components/Collapse'
 import ExampleImage from '../components/ExampleImage'
 import Layout from '../components/Layout'
@@ -22,6 +23,7 @@ const Landing: FC = () => {
         additionalMetaTags={[getDCTermsTitle(t('header'))]}
       />
       <h1 className="h1">{t('header')}</h1>
+      <AlertBlock page="landing" position="top" />
       <p>{t('description')}</p>
       <div className="mb-4 flex flex-wrap gap-4 md:flex-nowrap">
         <div className="w-full lg:w-4/12 xl:w-3/12">
@@ -120,6 +122,7 @@ const Landing: FC = () => {
           </ul>
         </div>
       </Collapse>
+      <AlertBlock page="landing" position="bottom" />
     </Layout>
   )
 }
