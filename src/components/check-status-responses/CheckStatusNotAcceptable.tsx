@@ -2,6 +2,7 @@ import { FC } from 'react'
 
 import { Trans, useTranslation } from 'next-i18next'
 
+import AlertBlock from '../AlertBlock'
 import ExternalLink from '../ExternalLink'
 
 export const CheckStatusNotAcceptable: FC<{}> = () => {
@@ -11,6 +12,7 @@ export const CheckStatusNotAcceptable: FC<{}> = () => {
       <h1 data-testid="not-acceptable" className="h1">
         {t('not-acceptable.cannot-process')}
       </h1>
+      <AlertBlock page="status-invalid" position="top" />
       <p>{t('not-acceptable.explanation')}</p>
       <p>
         <Trans
@@ -21,6 +23,7 @@ export const CheckStatusNotAcceptable: FC<{}> = () => {
           }}
         />
       </p>
+      <AlertBlock page="status-invalid" position="bottom" />
     </>
   )
 }

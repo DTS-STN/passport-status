@@ -18,6 +18,7 @@ import { useRouter } from 'next/router'
 import * as Yup from 'yup'
 
 import ActionButton from '../components/ActionButton'
+import AlertBlock from '../components/AlertBlock'
 import AlertSection from '../components/AlertSection'
 import CheckStatusInfo from '../components/CheckStatusInfo'
 import DateSelectField, {
@@ -188,6 +189,7 @@ const Status: FC = () => {
           <h1 ref={headingRef} className="h1" tabIndex={-1}>
             {t('header')}
           </h1>
+          <AlertBlock page="status" position="top" />
           <form onSubmit={handleFormikSubmit} id="form-get-status">
             <p>
               <Trans i18nKey="header-messages.matches" ns="status" />
@@ -268,6 +270,7 @@ const Status: FC = () => {
               textRequired={t('common:required')}
               required
             />
+            <AlertBlock page="status" position="bottom" />
             <div className="mt-8 flex flex-wrap gap-2">
               <ActionButton
                 id="btn-submit"
