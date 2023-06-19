@@ -4,13 +4,12 @@ import { ApiError } from 'next/dist/server/api-utils'
 import { AlertApiRequestQuery, AlertApiResponse } from './types'
 
 export const fetchAlerts = async (
-  alertQuery: AlertApiRequestQuery,
-  init?: RequestInit
+  alertQuery: AlertApiRequestQuery
 ): Promise<AlertApiResponse | null> => {
   const query = new URLSearchParams({
     ...alertQuery,
   }).toString()
-  const response = await fetch('/api/alerts?' + query, init)
+  const response = await fetch('/api/alerts?' + query, { cache: 'no-store' })
   if (response.ok) {
     return response.json()
   }
@@ -23,14 +22,9 @@ export const useAlerts = (alertQuery: AlertApiRequestQuery) => {
     AlertApiResponse | null,
     ApiError,
     AlertApiResponse | null
-  >(['ps:api:alerts', alertQuery], ({ signal }) =>
-    fetchAlerts(alertQuery, { signal })
-  )
+  >(['ps:api:alerts', alertQuery], async () => await fetchAlerts(alertQuery))
 
-  // fix isLoading with disabled: false
-  // see: https://github.com/TanStack/query/issues/3584#issuecomment-1256986636
   return {
     ...query,
-    isLoading: query.isLoading && query.fetchStatus !== 'idle',
   }
 }
