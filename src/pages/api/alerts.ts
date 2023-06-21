@@ -1,11 +1,21 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 
-import { Alert, AlertApiResponse, AlertMeta } from '../../lib/types'
+import { Alert, AlertJsonResponse } from '../../lib/types'
+import { getLogger } from '../../logging/log-util'
+
+const logger = getLogger('get-alerts')
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<AlertApiResponse | string>
+  res: NextApiResponse<Alert[] | string>
 ) {
+  if (!process.env.ALERT_JSON_URI) {
+    logger.error('ALERT_JSON_URI must not be undefined, null or empty')
+    throw Error(
+      'process.env.ALERT_JSON_URI must not be undefined, null or empty'
+    )
+  }
+
   if (req.method !== 'GET') {
     res.status(405).send(`Invalid request method ${req.method}`)
     return
@@ -14,67 +24,31 @@ export default async function handler(
   const query = req.query
   const { page } = query
 
-  let fromDate = new Date()
-  fromDate.setDate(fromDate.getDate() - 1)
+  let now = new Date()
 
-  let toDate = new Date()
-  toDate.setDate(toDate.getDate() + 1)
+  try {
+    const alertJson = await fetch(process.env.ALERT_JSON_URI)
+    const alertData: AlertJsonResponse = await alertJson.json()
 
-  let today = new Date()
+    let alerts: Alert[] = alertData?.jsonAlerts
+      .filter(
+        (alert) =>
+          alert.pages.find((alertPage) => alertPage === page) &&
+          new Date(alert.validFrom) <= now &&
+          new Date(alert.validTo) >= now
+      )
+      .map((alert) => ({
+        uid: alert.uid,
+        textEn: alert.textEn,
+        textFr: alert.textFr,
+        type: alert.type,
+      }))
 
-  // let res = await fetch(JSON_URL)
-
-  let jsonAlerts: AlertMeta[] = [
-    {
-      uid: '12345',
-      pages: ['all', 'expectations', 'landing'],
-      position: 'bottom',
-      textEn: '**TEST** ALERT',
-      textFr: '[FR] TEST ALERT',
-      type: 'danger',
-      validFrom: fromDate,
-      validTo: toDate,
-    },
-    {
-      uid: '12346',
-      pages: ['expectations', 'landing'],
-      position: 'top',
-      textEn: '# **TEST**\n## [ALERT 2](https://www.canada.ca)',
-      textFr: '[FR] TEST ALERT 2',
-      type: 'danger',
-      validFrom: fromDate,
-      validTo: toDate,
-    },
-    {
-      uid: '12347',
-      pages: ['expectations'],
-      position: 'bottom',
-      textEn: 'ALERT __as well__',
-      textFr: '[FR] TEST ALERT',
-      type: 'success',
-      validFrom: fromDate,
-      validTo: toDate,
-    },
-  ]
-
-  let alerts: Alert[] = jsonAlerts
-    .filter(
-      (alert) =>
-        alert.pages.find(
-          (alertPage) => alertPage === 'all' || alertPage === page
-        ) &&
-        alert.validFrom <= today &&
-        alert.validTo >= today
-    )
-    .map((alert) => ({
-      uid: alert.uid,
-      position: alert.position,
-      textEn: alert.textEn,
-      textFr: alert.textFr,
-      type: alert.type,
-    }))
-
-  return res.status(200).json({
-    alerts,
-  })
+    return res.status(200).json(alerts)
+  } catch (error) {
+    // For alerts we want to silently fail, shouldn't show as a failure to the user.
+    // We'll catch it in the logs, but to them it should just look like there are no alerts.
+    logger.error(error, 'Failed to fetch alerts')
+    res.status(200).json([])
+  }
 }

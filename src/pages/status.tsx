@@ -186,7 +186,7 @@ const Status: FC = () => {
           <h1 ref={headingRef} className="h1" tabIndex={-1}>
             {t('header')}
           </h1>
-          <AlertBlock page="status" position="top" />
+          <AlertBlock page="status" />
           <form onSubmit={handleFormikSubmit} id="form-get-status">
             <p>
               <Trans i18nKey="header-messages.matches" ns="status" />
@@ -271,7 +271,6 @@ const Status: FC = () => {
               textRequired={t('common:required')}
               required
             />
-            <AlertBlock page="status" position="bottom" />
             <div className="mt-8 flex flex-wrap gap-2">
               <ActionButton
                 id="btn-submit"

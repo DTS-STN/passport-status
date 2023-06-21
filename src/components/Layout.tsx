@@ -2,17 +2,15 @@ import { FC, ReactNode } from 'react'
 
 import { useTranslation } from 'next-i18next'
 
-import { Alert, AlertPosition } from '../lib/types'
-import AlertSection from './AlertSection'
+import AlertBlock from './AlertBlock'
 import Footer from './Footer'
 import Header from './Header'
 
 export interface LayoutProps {
-  alerts?: Alert[]
   children: ReactNode
 }
 
-const Layout: FC<LayoutProps> = ({ alerts, children }) => {
+const Layout: FC<LayoutProps> = ({ children }) => {
   const { t } = useTranslation('common')
 
   return (
@@ -26,30 +24,9 @@ const Layout: FC<LayoutProps> = ({ alerts, children }) => {
         id="mainContent"
         className="container mx-auto mt-5 flex-1 px-4 pb-8"
       >
-        {alerts
-          ?.filter((alert) => alert.position == 'top')
-          .map((alert) => (
-            <AlertSection key={alert.textEn} type={alert.type}>
-              <p>{alert.textEn}</p>
-            </AlertSection>
-          ))}
+        <AlertBlock page="all" />
         {children}
-        {alerts
-          ?.filter((alert) => alert.position == 'bottom')
-          .map((alert) => (
-            <AlertSection key={alert.textEn} type={alert.type}>
-              <p>{alert.textEn}</p>
-            </AlertSection>
-          ))}
       </main>
-      {(alerts != undefined && alerts.length > 0) ??
-        alerts!
-          .filter((alert) => alert.position == 'bottom')
-          .map((alert) => (
-            <AlertSection key={alert.textEn} type={alert.type}>
-              <p>{alert.textEn}</p>
-            </AlertSection>
-          ))}
       <Footer
         dateModifiedText={t('footer.date-modified-text')}
         footerHeader={t('footer.header')}

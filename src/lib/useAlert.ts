@@ -1,11 +1,11 @@
 import { useQuery } from '@tanstack/react-query'
 import { ApiError } from 'next/dist/server/api-utils'
 
-import { AlertApiRequestQuery, AlertApiResponse } from './types'
+import { Alert, AlertApiRequestQuery } from './types'
 
 export const fetchAlerts = async (
   alertQuery: AlertApiRequestQuery
-): Promise<AlertApiResponse | null> => {
+): Promise<Alert[] | null> => {
   const query = new URLSearchParams({
     ...alertQuery,
   }).toString()
@@ -18,11 +18,10 @@ export const fetchAlerts = async (
 }
 
 export const useAlerts = (alertQuery: AlertApiRequestQuery) => {
-  const query = useQuery<
-    AlertApiResponse | null,
-    ApiError,
-    AlertApiResponse | null
-  >(['ps:api:alerts', alertQuery], async () => await fetchAlerts(alertQuery))
+  const query = useQuery<Alert[] | null, ApiError, Alert[] | null>(
+    ['ps:api:alerts', alertQuery],
+    async () => await fetchAlerts(alertQuery)
+  )
 
   return {
     ...query,
