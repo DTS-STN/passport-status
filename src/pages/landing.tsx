@@ -25,7 +25,7 @@ const Landing: FC = () => {
         additionalMetaTags={[getDCTermsTitle(en('header'), fr('header'))]}
       />
       <h1 className="h1">{t('header')}</h1>
-      <AlertBlock page="landing" position="top" />
+      <AlertBlock page="landing" />
       <p>{t('description')}</p>
       <div className="mb-4 flex flex-wrap gap-4 md:flex-nowrap">
         <div className="w-full lg:w-4/12 xl:w-3/12">
@@ -124,7 +124,6 @@ const Landing: FC = () => {
           </ul>
         </div>
       </Collapse>
-      <AlertBlock page="landing" position="bottom" />
     </Layout>
   )
 }

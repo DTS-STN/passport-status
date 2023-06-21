@@ -12,7 +12,7 @@ export const CheckStatusNotAcceptable: FC<{}> = () => {
       <h1 data-testid="not-acceptable" className="h1">
         {t('not-acceptable.cannot-process')}
       </h1>
-      <AlertBlock page="status-invalid" position="top" />
+      <AlertBlock page="status-invalid" />
       <p>{t('not-acceptable.explanation')}</p>
       <p>
         <Trans
@@ -23,7 +23,6 @@ export const CheckStatusNotAcceptable: FC<{}> = () => {
           }}
         />
       </p>
-      <AlertBlock page="status-invalid" position="bottom" />
     </>
   )
 }

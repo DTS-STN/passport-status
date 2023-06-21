@@ -20,7 +20,7 @@ export const CheckStatusShippingCanadaPost: FC<
       <h1 data-testid="printed-and-mailed" className="h1">
         {t('shipped-canada-post.header')}
       </h1>
-      <AlertBlock page="status-shipped-canada" position="top" />
+      <AlertBlock page="status-shipped-canada" />
       <AlertSection type="success">
         <h2 data-testid="shipped-canada-post" className="h2 mt-0">
           {t('shipped-canada-post.mailing')}
@@ -62,7 +62,6 @@ export const CheckStatusShippingCanadaPost: FC<
           }}
         />
       </p>
-      <AlertBlock page="status-shipped-canada" position="bottom" />
     </>
   )
 }

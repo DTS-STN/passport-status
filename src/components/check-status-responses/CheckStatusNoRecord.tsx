@@ -12,7 +12,7 @@ export const CheckStatusNoRecord: FC<{}> = () => {
       <h1 data-testid="no-record" className="h1">
         {t('no-record.cannot-give-status.description')}
       </h1>
-      <AlertBlock page="status-not-found" position="top" />
+      <AlertBlock page="status-not-found" />
       <p>{t('no-record.cannot-give-status.because')}</p>
       <ul className="mb-5 list-disc space-y-2 pl-10">
         <li>
@@ -52,7 +52,6 @@ export const CheckStatusNoRecord: FC<{}> = () => {
           }}
         />
       </p>
-      <AlertBlock page="status-not-found" position="bottom" />
     </>
   )
 }

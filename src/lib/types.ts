@@ -15,21 +15,18 @@ export type AlertPage =
   | 'status-shipped-canada'
   | 'status-shipped-fedex'
 
-export type AlertPosition = 'bottom' | 'top'
-
 export type AlertType = 'danger' | 'info' | 'warning' | 'success'
 
 export interface AlertApiRequestQuery {
   page: AlertPage
 }
 
-export interface AlertApiResponse {
-  alerts: Alert[]
+export interface AlertJsonResponse {
+  jsonAlerts: AlertMeta[]
 }
 
 export interface Alert {
   uid: string
-  position: AlertPosition
   textEn: string
   textFr: string
   type: AlertType

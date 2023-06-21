@@ -36,7 +36,7 @@ const Expectations: FC = () => {
       />
       <Layout>
         <h1 className="h1">{t('header')}</h1>
-        <AlertBlock page="expectations" position="top" />
+        <AlertBlock page="expectations" />
         <h2 className="h2">{t('header-avoid-waiting')}</h2>
         <p>{t('available-after.description')}</p>
         <ul className="mb-5 list-disc space-y-2 pl-10">
@@ -102,7 +102,6 @@ const Expectations: FC = () => {
             }}
           />
         </p>
-        <AlertBlock page="expectations" position="bottom" />
         <div className="mt-8">
           <ActionButton
             id="btn-agree"
