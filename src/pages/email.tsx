@@ -54,7 +54,7 @@ const validationSchema = Yup.object({
 })
 
 const Email: FC = () => {
-  const { t } = useTranslation('email')
+  const { t } = useTranslation(['email', 'common'])
 
   const router = useRouter()
   const headingRef = useRef<HTMLHeadingElement>(null)
@@ -238,7 +238,7 @@ const Email: FC = () => {
               label={t('email.label')}
               onChange={handleFormikChange}
               value={formikValues.email}
-              errorMessage={formikErrors.email && t(formikErrors.email)}
+              errorMessage={formikErrors.email && t(formikErrors.email as any)}
               textRequired={t('common:required')}
               required
               helpMessage={
@@ -259,7 +259,9 @@ const Email: FC = () => {
               label={t('given-name.label')}
               onChange={handleFormikChange}
               value={formikValues.givenName}
-              errorMessage={formikErrors.givenName && t(formikErrors.givenName)}
+              errorMessage={
+                formikErrors.givenName && t(formikErrors.givenName as any)
+              }
               textRequired={t('common:required')}
               required
             />
@@ -269,7 +271,9 @@ const Email: FC = () => {
               label={t('surname.label')}
               onChange={handleFormikChange}
               value={formikValues.surname}
-              errorMessage={formikErrors.surname && t(formikErrors.surname)}
+              errorMessage={
+                formikErrors.surname && t(formikErrors.surname as any)
+              }
               textRequired={t('common:required')}
               required
             />
@@ -279,7 +283,7 @@ const Email: FC = () => {
               onChange={handleOnDateOfBirthChange}
               value={formikValues.dateOfBirth}
               errorMessage={
-                formikErrors.dateOfBirth && t(formikErrors.dateOfBirth)
+                formikErrors.dateOfBirth && t(formikErrors.dateOfBirth as any)
               }
               textRequired={t('common:required')}
               required
