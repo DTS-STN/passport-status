@@ -2,7 +2,6 @@ import { FC } from 'react'
 
 import { GetServerSideProps } from 'next'
 import { Trans, useTranslation } from 'next-i18next'
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { NextSeo } from 'next-seo'
 import Link from 'next/link'
 
@@ -10,6 +9,7 @@ import Collapse from '../components/Collapse'
 import ExampleImage from '../components/ExampleImage'
 import Layout from '../components/Layout'
 import LinkButton from '../components/LinkButton'
+import { pageWithServerSideTranslations } from '../lib/utils/next-i18next-utils'
 import { getDCTermsTitle } from '../lib/utils/seo-utils'
 
 const Landing: FC = () => {
@@ -126,10 +126,7 @@ const Landing: FC = () => {
 
 export const getServerSideProps: GetServerSideProps = async ({ locale }) => ({
   props: {
-    ...(await serverSideTranslations(locale ?? 'default', [
-      'common',
-      'landing',
-    ])),
+    ...(await pageWithServerSideTranslations(locale, 'landing')),
   },
 })
 

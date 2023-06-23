@@ -11,7 +11,6 @@ import {
 import { useFormik, validateYupSchema, yupToFormErrors } from 'formik'
 import { GetServerSideProps } from 'next'
 import { Trans, useTranslation } from 'next-i18next'
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { NextSeo } from 'next-seo'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -34,6 +33,7 @@ import Layout from '../components/Layout'
 import Modal from '../components/Modal'
 import { CheckStatusApiRequestQuery } from '../lib/types'
 import { useCheckStatus } from '../lib/useCheckStatus'
+import { pageWithServerSideTranslations } from '../lib/utils/next-i18next-utils'
 import { getDCTermsTitle } from '../lib/utils/seo-utils'
 
 const initialValues: CheckStatusApiRequestQuery = {
@@ -311,10 +311,7 @@ const Status: FC = () => {
 
 export const getServerSideProps: GetServerSideProps = async ({ locale }) => ({
   props: {
-    ...(await serverSideTranslations(locale ?? 'default', [
-      'common',
-      'status',
-    ])),
+    ...(await pageWithServerSideTranslations(locale, 'status')),
   },
 })
 

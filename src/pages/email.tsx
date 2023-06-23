@@ -10,7 +10,6 @@ import {
 import { useFormik, validateYupSchema, yupToFormErrors } from 'formik'
 import { GetServerSideProps } from 'next'
 import { Trans, useTranslation } from 'next-i18next'
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { NextSeo } from 'next-seo'
 import { useRouter } from 'next/router'
 import * as Yup from 'yup'
@@ -32,6 +31,7 @@ import Layout from '../components/Layout'
 import Modal from '../components/Modal'
 import { EmailEsrfApiRequestBody } from '../lib/types'
 import useEmailEsrf from '../lib/useEmailEsrf'
+import { pageWithServerSideTranslations } from '../lib/utils/next-i18next-utils'
 import { getDCTermsTitle } from '../lib/utils/seo-utils'
 
 const initialValues: EmailEsrfApiRequestBody = {
@@ -330,7 +330,7 @@ const Email: FC = () => {
 
 export const getServerSideProps: GetServerSideProps = async ({ locale }) => ({
   props: {
-    ...(await serverSideTranslations(locale ?? 'default', ['common', 'email'])),
+    ...(await pageWithServerSideTranslations(locale, 'email')),
   },
 })
 
