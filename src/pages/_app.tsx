@@ -8,6 +8,7 @@ import getConfig from 'next/config'
 import Head from 'next/head'
 import Script from 'next/script'
 
+import nextI18NextConfig from '../../next-i18next.config.js'
 import { AppWindow } from '../lib/types'
 import { getNextSEOConfig } from '../next-seo.config'
 import '../styles/globals.css'
@@ -75,4 +76,4 @@ const MyApp = ({ Component, pageProps, router }: AppProps) => {
   )
 }
 
-export default appWithTranslation(MyApp)
+export default appWithTranslation(MyApp, nextI18NextConfig)
