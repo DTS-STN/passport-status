@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1687529000622" clover="3.2.0">
-  <project timestamp="1687529000622" name="All files">
-    <metrics statements="480" coveredstatements="333" conditionals="284" coveredconditionals="141" methods="136" coveredmethods="82" elements="900" coveredelements="556" complexity="0" loc="480" ncloc="480" packages="11" files="53" classes="53"/>
+<coverage generated="1687529396330" clover="3.2.0">
+  <project timestamp="1687529396330" name="All files">
+    <metrics statements="491" coveredstatements="336" conditionals="286" coveredconditionals="141" methods="138" coveredmethods="82" elements="915" coveredelements="559" complexity="0" loc="491" ncloc="491" packages="11" files="54" classes="54"/>
     <package name="src">
       <metrics statements="28" coveredstatements="14" conditionals="26" coveredconditionals="8" methods="7" coveredmethods="6"/>
       <file name="middleware.ts" path="/home/runner/work/passport-status/passport-status/src/middleware.ts">
@@ -440,7 +440,21 @@
       </file>
     </package>
     <package name="src.lib.utils">
-      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <metrics statements="12" coveredstatements="4" conditionals="8" coveredconditionals="0" methods="3" coveredmethods="1"/>
+      <file name="next-i18next-utils.ts" path="/home/runner/work/passport-status/passport-status/src/lib/utils/next-i18next-utils.ts">
+        <metrics statements="11" coveredstatements="3" conditionals="8" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="9" count="4" type="stmt"/>
+        <line num="17" count="4" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="26" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="30" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="44" count="4" type="stmt"/>
+        <line num="51" count="0" type="stmt"/>
+      </file>
       <file name="seo-utils.ts" path="/home/runner/work/passport-status/passport-status/src/lib/utils/seo-utils.ts">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="5" count="9" type="stmt"/>
@@ -460,7 +474,7 @@
       </file>
     </package>
     <package name="src.pages">
-      <metrics statements="121" coveredstatements="76" conditionals="63" coveredconditionals="21" methods="42" coveredmethods="12"/>
+      <metrics statements="121" coveredstatements="76" conditionals="57" coveredconditionals="21" methods="42" coveredmethods="12"/>
       <file name="_app.tsx" path="/home/runner/work/passport-status/passport-status/src/pages/_app.tsx">
         <metrics statements="19" coveredstatements="19" conditionals="4" coveredconditionals="4" methods="4" coveredmethods="4"/>
         <line num="17" count="1" type="stmt"/>
@@ -499,7 +513,7 @@
         <line num="17" count="0" type="stmt"/>
       </file>
       <file name="email.tsx" path="/home/runner/work/passport-status/passport-status/src/pages/email.tsx">
-        <metrics statements="36" coveredstatements="20" conditionals="20" coveredconditionals="7" methods="13" coveredmethods="2"/>
+        <metrics statements="36" coveredstatements="20" conditionals="18" coveredconditionals="7" methods="13" coveredmethods="2"/>
         <line num="37" count="1" type="stmt"/>
         <line num="45" count="1" type="stmt"/>
         <line num="56" count="1" type="stmt"/>
@@ -555,14 +569,14 @@
         <line num="112" count="1" type="stmt"/>
       </file>
       <file name="landing.tsx" path="/home/runner/work/passport-status/passport-status/src/pages/landing.tsx">
-        <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="1"/>
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
         <line num="15" count="1" type="stmt"/>
         <line num="16" count="2" type="stmt"/>
         <line num="18" count="2" type="stmt"/>
         <line num="127" count="1" type="stmt"/>
       </file>
       <file name="status.tsx" path="/home/runner/work/passport-status/passport-status/src/pages/status.tsx">
-        <metrics statements="42" coveredstatements="21" conditionals="26" coveredconditionals="8" methods="14" coveredmethods="2"/>
+        <metrics statements="42" coveredstatements="21" conditionals="24" coveredconditionals="8" methods="14" coveredmethods="2"/>
         <line num="39" count="1" type="stmt"/>
         <line num="46" count="1" type="stmt"/>
         <line num="55" count="1" type="stmt"/>
