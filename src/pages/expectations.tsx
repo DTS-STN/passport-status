@@ -3,7 +3,6 @@ import { FC, MouseEventHandler, useCallback } from 'react'
 import { setCookie } from 'cookies-next'
 import { GetServerSideProps } from 'next'
 import { Trans, useTranslation } from 'next-i18next'
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { NextSeo } from 'next-seo'
 import Router from 'next/router'
 
@@ -11,6 +10,7 @@ import ActionButton from '../components/ActionButton'
 import AlertSection from '../components/AlertSection'
 import ExternalLink from '../components/ExternalLink'
 import Layout from '../components/Layout'
+import { pageWithServerSideTranslations } from '../lib/utils/next-i18next-utils'
 import { getDCTermsTitle } from '../lib/utils/seo-utils'
 
 const Expectations: FC = () => {
@@ -113,10 +113,10 @@ const Expectations: FC = () => {
 
 export const getServerSideProps: GetServerSideProps = async ({ locale }) => ({
   props: {
-    ...(await serverSideTranslations(locale ?? 'default', [
-      'common',
-      'expectations',
-    ])),
+    ...(await pageWithServerSideTranslations(
+      locale ?? 'default',
+      'expectations'
+    )),
   },
 })
 
