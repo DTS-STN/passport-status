@@ -50,7 +50,7 @@
     "autoprefixer": "^10.4.14",
     "axe-core": "^4.7.2",
     "babel-jest": "^29.5.0",
-    "cypress": "^12.15.0",
+    "cypress": "^12.16.0",
     "cypress-axe": "^1.4.0",
     "cypress-multi-reporters": "^1.6.3",
     "eslint": "8.43.0",
