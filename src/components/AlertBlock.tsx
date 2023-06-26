@@ -3,7 +3,7 @@ import { FC } from 'react'
 import { useTranslation } from 'next-i18next'
 
 import { AlertPage } from '../lib/types'
-import { useAlerts } from '../lib/useAlert'
+import { useAlerts } from '../lib/useAlerts'
 import AlertSection from './AlertSection'
 import MarkdownContent from './MarkdownContent'
 
