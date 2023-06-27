@@ -118,7 +118,9 @@
 <a name='L53'></a><a href='#L53'>53</a>
 <a name='L54'></a><a href='#L54'>54</a>
 <a name='L55'></a><a href='#L55'>55</a>
-<a name='L56'></a><a href='#L56'>56</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -133,11 +135,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -165,7 +162,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -175,7 +179,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { FC } from 'react'
 &nbsp;
-import ReactMarkdown from 'react-markdown'
+import Markdown from 'markdown-to-jsx'
 &nbsp;
 import ExternalLink from './ExternalLink'
 &nbsp;
@@ -185,46 +189,48 @@ export type MarkdownContentProps = {
 }
 &nbsp;
 const MarkdownContent: FC&lt;MarkdownContentProps&gt; = <span class="fstat-no" title="function not covered" >({</span> markdown, header }) =&gt; (
-<span class="cstat-no" title="statement not covered" >  &lt;ReactMarkdown</span>
-    components={{
-      h1: <span class="fstat-no" title="function not covered" >({</span> node, ...props }) =&gt;
-<span class="cstat-no" title="statement not covered" >        header ? (</span>
-          &lt;h1 {...props} className="h2 mt-0" /&gt;
-        ) : (
-          &lt;h2 {...props} className="h2 mt-0" /&gt;
+<span class="cstat-no" title="statement not covered" >  &lt;Markdown</span>
+    options={{
+      overrides: {
+        h1: <span class="fstat-no" title="function not covered" >({</span> node, ...props }) =&gt;
+<span class="cstat-no" title="statement not covered" >          header ? (</span>
+            &lt;h1 {...props} className="h2 mt-0" /&gt;
+          ) : (
+            &lt;h2 {...props} className="h2 mt-0" /&gt;
+          ),
+        h2: <span class="fstat-no" title="function not covered" >({</span> node, ...props }) =&gt;
+<span class="cstat-no" title="statement not covered" >          header ? (</span>
+            &lt;h2 {...props} className="h3 mt-0" /&gt;
+          ) : (
+            &lt;h3 {...props} className="h3 mt-0" /&gt;
+          ),
+        h3: <span class="fstat-no" title="function not covered" >({</span> node, ...props }) =&gt;
+<span class="cstat-no" title="statement not covered" >          header ? (</span>
+            &lt;h3 {...props} className="h4 mt-0" /&gt;
+          ) : (
+            &lt;h4 {...props} className="h4 mt-0" /&gt;
+          ),
+        h4: <span class="fstat-no" title="function not covered" >({</span> node, ...props }) =&gt;
+<span class="cstat-no" title="statement not covered" >          header ? (</span>
+            &lt;h4 {...props} className="h5 mt-0" /&gt;
+          ) : (
+            &lt;h5 {...props} className="h5 mt-0" /&gt;
+          ),
+        h5: <span class="fstat-no" title="function not covered" >({</span> node, ...props }) =&gt;
+<span class="cstat-no" title="statement not covered" >          header ? (</span>
+            &lt;h5 {...props} className="h6 mt-0" /&gt;
+          ) : (
+            &lt;h6 {...props} className="h6 mt-0" /&gt;
+          ),
+        a: <span class="fstat-no" title="function not covered" >({</span> children, href }) =&gt; (
+<span class="cstat-no" title="statement not covered" >          &lt;ExternalLink href={href ?? ''}&gt;{children}&lt;/ExternalLink&gt;</span>
         ),
-      h2: <span class="fstat-no" title="function not covered" >({</span> node, ...props }) =&gt;
-<span class="cstat-no" title="statement not covered" >        header ? (</span>
-          &lt;h2 {...props} className="h3 mt-0" /&gt;
-        ) : (
-          &lt;h3 {...props} className="h3 mt-0" /&gt;
-        ),
-      h3: <span class="fstat-no" title="function not covered" >({</span> node, ...props }) =&gt;
-<span class="cstat-no" title="statement not covered" >        header ? (</span>
-          &lt;h3 {...props} className="h4 mt-0" /&gt;
-        ) : (
-          &lt;h4 {...props} className="h4 mt-0" /&gt;
-        ),
-      h4: <span class="fstat-no" title="function not covered" >({</span> node, ...props }) =&gt;
-<span class="cstat-no" title="statement not covered" >        header ? (</span>
-          &lt;h4 {...props} className="h5 mt-0" /&gt;
-        ) : (
-          &lt;h5 {...props} className="h5 mt-0" /&gt;
-        ),
-      h5: <span class="fstat-no" title="function not covered" >({</span> node, ...props }) =&gt;
-<span class="cstat-no" title="statement not covered" >        header ? (</span>
-          &lt;h5 {...props} className="h6 mt-0" /&gt;
-        ) : (
-          &lt;h6 {...props} className="h6 mt-0" /&gt;
-        ),
-      a: <span class="fstat-no" title="function not covered" >({</span> children, href }) =&gt; (
-<span class="cstat-no" title="statement not covered" >        &lt;ExternalLink href={href ?? ''}&gt;{children}&lt;/ExternalLink&gt;</span>
-      ),
-      ul: <span class="fstat-no" title="function not covered" >({</span> children }) =&gt; <span class="cstat-no" title="statement not covered" >&lt;ul className="list-disc ml-8"&gt;{children}&lt;/ul&gt;,</span>
+        ul: <span class="fstat-no" title="function not covered" >({</span> children }) =&gt; <span class="cstat-no" title="statement not covered" >&lt;ul className="list-disc ml-8"&gt;{children}&lt;/ul&gt;,</span>
+      },
     }}
   &gt;
     {markdown}
-  &lt;/ReactMarkdown&gt;
+  &lt;/Markdown&gt;
 )
 &nbsp;
 export default MarkdownContent
@@ -235,7 +241,7 @@ export default MarkdownContent
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-26T17:55:24.489Z
+                at 2023-06-27T13:43:18.555Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

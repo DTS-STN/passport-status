@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1687802124462" clover="3.2.0">
-  <project timestamp="1687802124463" name="All files">
+<coverage generated="1687873398509" clover="3.2.0">
+  <project timestamp="1687873398509" name="All files">
     <metrics statements="536" coveredstatements="341" conditionals="312" coveredconditionals="141" methods="155" coveredmethods="83" elements="1003" coveredelements="565" complexity="0" loc="536" ncloc="536" packages="11" files="58" classes="58"/>
     <package name="src">
       <metrics statements="28" coveredstatements="14" conditionals="26" coveredconditionals="8" methods="7" coveredmethods="6"/>
@@ -327,13 +327,13 @@
         <metrics statements="9" coveredstatements="1" conditionals="12" coveredconditionals="0" methods="8" coveredmethods="0"/>
         <line num="12" count="13" type="stmt"/>
         <line num="13" count="0" type="stmt"/>
-        <line num="16" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="22" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="28" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="34" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="40" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="46" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="48" count="0" type="stmt"/>
+        <line num="17" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="23" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="29" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="35" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="41" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="47" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="49" count="0" type="stmt"/>
       </file>
       <file name="Modal.tsx" path="/home/runner/work/passport-status/passport-status/src/components/Modal.tsx">
         <metrics statements="14" coveredstatements="13" conditionals="2" coveredconditionals="1" methods="5" coveredmethods="5"/>
