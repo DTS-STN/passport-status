@@ -7,6 +7,14 @@ import CheckStatusShippingFedex from '../../../src/components/check-status-respo
 
 expect.extend(toHaveNoViolations)
 
+jest.mock('../../../src/lib/useAlerts', () => ({
+  useAlerts: () => ({
+    isLoading: false,
+    error: undefined,
+    data: undefined,
+  }),
+}))
+
 describe('CheckStatusShippingFedex', () => {
   const sut = <CheckStatusShippingFedex />
 

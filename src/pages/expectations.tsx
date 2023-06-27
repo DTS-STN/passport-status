@@ -7,6 +7,7 @@ import { NextSeo } from 'next-seo'
 import Router from 'next/router'
 
 import ActionButton from '../components/ActionButton'
+import AlertBlock from '../components/AlertBlock'
 import AlertSection from '../components/AlertSection'
 import ExternalLink from '../components/ExternalLink'
 import Layout from '../components/Layout'
@@ -33,6 +34,7 @@ const Expectations: FC = () => {
       />
       <Layout>
         <h1 className="h1">{t('header')}</h1>
+        <AlertBlock page="expectations" />
         <h2 className="h2">{t('header-avoid-waiting')}</h2>
         <p>{t('available-after.description')}</p>
         <ul className="mb-5 list-disc space-y-2 pl-10">

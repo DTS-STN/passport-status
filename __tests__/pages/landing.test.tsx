@@ -13,6 +13,13 @@ expect.extend(toHaveNoViolations)
 jest.mock('../../src/components/ExampleImage')
 jest.mock('../../src/components/Layout')
 jest.mock('../../src/components/LinkButton')
+jest.mock('../../src/lib/useAlerts', () => ({
+  useAlerts: () => ({
+    isLoading: false,
+    error: undefined,
+    data: undefined,
+  }),
+}))
 
 describe('landing page', () => {
   it('should render the page', () => {

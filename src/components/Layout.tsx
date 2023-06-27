@@ -2,6 +2,7 @@ import { FC, ReactNode } from 'react'
 
 import { useTranslation } from 'next-i18next'
 
+import AlertBlock from './AlertBlock'
 import Footer from './Footer'
 import Header from './Header'
 
@@ -11,6 +12,7 @@ export interface LayoutProps {
 
 const Layout: FC<LayoutProps> = ({ children }) => {
   const { t } = useTranslation('common')
+
   return (
     <div className="flex min-h-screen flex-col">
       <Header
@@ -22,9 +24,9 @@ const Layout: FC<LayoutProps> = ({ children }) => {
         id="mainContent"
         className="container mx-auto mt-5 flex-1 px-4 pb-8"
       >
+        <AlertBlock page="all" />
         {children}
       </main>
-
       <Footer
         dateModifiedText={t('footer.date-modified-text')}
         footerHeader={t('footer.header')}

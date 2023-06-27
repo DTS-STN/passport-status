@@ -11,6 +11,14 @@ import Layout from '../../src/components/Layout'
 jest.mock('../../src/components/Header')
 jest.mock('../../src/components/Footer')
 
+jest.mock('../../src/lib/useAlerts', () => ({
+  useAlerts: () => ({
+    isLoading: false,
+    error: undefined,
+    data: undefined,
+  }),
+}))
+
 expect.extend(toHaveNoViolations)
 
 describe('Layout with default text', () => {
