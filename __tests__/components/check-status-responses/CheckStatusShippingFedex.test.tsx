@@ -7,6 +7,14 @@ import CheckStatusFileBeingProcessed from '../../../src/components/check-status-
 
 expect.extend(toHaveNoViolations)
 
+jest.mock('../../../src/lib/useAlerts', () => ({
+  useAlerts: () => ({
+    isLoading: false,
+    error: undefined,
+    data: undefined,
+  }),
+}))
+
 describe('CheckStatusFileBeingProcessed', () => {
   const sut = <CheckStatusFileBeingProcessed />
 

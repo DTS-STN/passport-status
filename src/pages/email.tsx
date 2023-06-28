@@ -15,6 +15,7 @@ import { useRouter } from 'next/router'
 import * as Yup from 'yup'
 
 import ActionButton from '../components/ActionButton'
+import AlertBlock from '../components/AlertBlock'
 import AlertSection from '../components/AlertSection'
 import DateSelectField, {
   DateSelectFieldOnChangeEvent,
@@ -150,6 +151,7 @@ const Email: FC = () => {
       {isEmailEsrfSuccess ? (
         <div id="response-result">
           <h1 className="h1">{t('email-confirmation-msg.request-received')}</h1>
+          <AlertBlock page="email" />
           <p>
             <Trans i18nKey="email-confirmation-msg.if-exists" ns="email" />
           </p>
@@ -197,6 +199,7 @@ const Email: FC = () => {
           <h1 ref={headingRef} className="h1" tabIndex={-1}>
             {t('header')}
           </h1>
+          <AlertBlock page="email" />
           <form onSubmit={handleFormikSubmit} id="form-email-esrf">
             <p>
               <Trans i18nKey="header-messages.matches" ns="email" />

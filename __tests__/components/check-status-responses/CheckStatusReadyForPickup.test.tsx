@@ -7,6 +7,14 @@ import CheckStatusReadyForPickup from '../../../src/components/check-status-resp
 
 expect.extend(toHaveNoViolations)
 
+jest.mock('../../../src/lib/useAlerts', () => ({
+  useAlerts: () => ({
+    isLoading: false,
+    error: undefined,
+    data: undefined,
+  }),
+}))
+
 describe('CheckStatusReadyForPickup', () => {
   const sut = <CheckStatusReadyForPickup />
 
