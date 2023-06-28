@@ -29,6 +29,13 @@ jest.mock('../../src/lib/useCheckStatus', () => ({
     remove: jest.fn(),
   }),
 }))
+jest.mock('../../src/lib/useAlerts', () => ({
+  useAlerts: () => ({
+    isLoading: false,
+    error: undefined,
+    data: undefined,
+  }),
+}))
 
 describe('Check status page', () => {
   it('should render the page', () => {

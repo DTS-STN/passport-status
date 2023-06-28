@@ -2,6 +2,7 @@ import { FC } from 'react'
 
 import { useTranslation } from 'next-i18next'
 
+import AlertBlock from '../AlertBlock'
 import AlertSection from '../AlertSection'
 
 export const CheckStatusReadyForPickup: FC<{}> = () => {
@@ -11,6 +12,7 @@ export const CheckStatusReadyForPickup: FC<{}> = () => {
       <h1 data-testid="ready-for-pickup" className="h1">
         {t('ready-for-pickup.has-been-printed')}
       </h1>
+      <AlertBlock page="status-ready-pickup" />
       <AlertSection type="success" className="mb-8">
         <h2 data-testid="check-receipt" className="h2 mt-0">
           {t('ready-for-pickup.check-receipt')}

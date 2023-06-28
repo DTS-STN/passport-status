@@ -25,6 +25,7 @@ module.exports = {
           warning: '#ee7100',
           info: '#269abc',
           selected: '#333',
+          success: '#278400',
         },
         red: {
           light: '#f3e9e8',

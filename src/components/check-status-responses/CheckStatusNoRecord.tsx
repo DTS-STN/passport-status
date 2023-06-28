@@ -2,6 +2,7 @@ import { FC } from 'react'
 
 import { Trans, useTranslation } from 'next-i18next'
 
+import AlertBlock from '../AlertBlock'
 import ExternalLink from '../ExternalLink'
 
 export const CheckStatusNoRecord: FC<{}> = () => {
@@ -11,6 +12,7 @@ export const CheckStatusNoRecord: FC<{}> = () => {
       <h1 data-testid="no-record" className="h1">
         {t('no-record.cannot-give-status.description')}
       </h1>
+      <AlertBlock page="status-not-found" />
       <p>{t('no-record.cannot-give-status.because')}</p>
       <ul className="mb-5 list-disc space-y-2 pl-10">
         <li>

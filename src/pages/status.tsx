@@ -17,6 +17,7 @@ import { useRouter } from 'next/router'
 import * as Yup from 'yup'
 
 import ActionButton from '../components/ActionButton'
+import AlertBlock from '../components/AlertBlock'
 import AlertSection from '../components/AlertSection'
 import CheckStatusInfo from '../components/CheckStatusInfo'
 import DateSelectField, {
@@ -185,6 +186,7 @@ const Status: FC = () => {
           <h1 ref={headingRef} className="h1" tabIndex={-1}>
             {t('header')}
           </h1>
+          <AlertBlock page="status" />
           <form onSubmit={handleFormikSubmit} id="form-get-status">
             <p>
               <Trans i18nKey="header-messages.matches" ns="status" />

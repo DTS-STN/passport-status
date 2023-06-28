@@ -14,6 +14,10 @@ const config: Config = {
     /* Handle image imports
       https://jestjs.io/docs/webpack#handling-static-assets */
     '^.+\\.(jpg|jpeg|png|gif|webp|svg)$': '<rootDir>/__mocks__/fileMock.js',
+
+    /* Handle React markdown not being pre-compiled */
+    'react-markdown':
+      '<rootDir>/node_modules/react-markdown/react-markdown.min.js',
   },
   coverageReporters: [
     'clover',

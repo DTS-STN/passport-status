@@ -9,6 +9,14 @@ expect.extend(toHaveNoViolations)
 
 jest.mock('../../src/components/ActionButton')
 
+jest.mock('../../src/lib/useAlerts', () => ({
+  useAlerts: () => ({
+    isLoading: false,
+    error: undefined,
+    data: undefined,
+  }),
+}))
+
 describe('StatusInfo', () => {
   const handleOnGoBackClick = jest.fn()
   const sut = (
