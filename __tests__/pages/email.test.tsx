@@ -28,6 +28,14 @@ jest.mock('../../src/lib/useEmailEsrf', () => {
   }))
 })
 
+jest.mock('../../src/lib/useAlerts', () => ({
+  useAlerts: () => ({
+    isLoading: false,
+    error: undefined,
+    data: undefined,
+  }),
+}))
+
 describe('Check email page', () => {
   it('should render the page', () => {
     render(<Email />)

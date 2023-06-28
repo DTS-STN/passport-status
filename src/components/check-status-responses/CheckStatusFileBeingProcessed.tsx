@@ -2,6 +2,7 @@ import { FC } from 'react'
 
 import { Trans, useTranslation } from 'next-i18next'
 
+import AlertBlock from '../AlertBlock'
 import ExternalLink from '../ExternalLink'
 
 export const CheckStatusFileBeingProcessed: FC<{}> = () => {
@@ -11,6 +12,7 @@ export const CheckStatusFileBeingProcessed: FC<{}> = () => {
       <h1 data-testid="being-processed" className="h1">
         {t('being-processed.received')}
       </h1>
+      <AlertBlock page="status-processing" />
       <p>
         <Trans i18nKey={'being-processed.we-will-contact'} ns="status" />
       </p>
