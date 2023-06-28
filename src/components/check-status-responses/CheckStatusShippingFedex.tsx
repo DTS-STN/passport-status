@@ -2,6 +2,7 @@ import { FC } from 'react'
 
 import { Trans, useTranslation } from 'next-i18next'
 
+import AlertBlock from '../AlertBlock'
 import AlertSection from '../AlertSection'
 import ExternalLink from '../ExternalLink'
 
@@ -18,6 +19,7 @@ export const CheckStatusShippingFedex: FC<CheckStatusShippingFedexProps> = ({
       <h1 data-testid="shipped-fedex" className="h1">
         {t('shipped-fedex.header')}
       </h1>
+      <AlertBlock page="status-shipped-fedex" />
       <AlertSection type="success">
         <h2 data-testid="shipped-fedex-mailing" className="h2 mt-0">
           {t('shipped-fedex.mailing')}

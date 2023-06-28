@@ -7,6 +7,14 @@ import CheckStatusNoRecord from '../../../src/components/check-status-responses/
 
 expect.extend(toHaveNoViolations)
 
+jest.mock('../../../src/lib/useAlerts', () => ({
+  useAlerts: () => ({
+    isLoading: false,
+    error: undefined,
+    data: undefined,
+  }),
+}))
+
 describe('CheckStatusNoRecord', () => {
   const sut = <CheckStatusNoRecord />
 
