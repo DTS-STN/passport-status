@@ -1,68 +1,103 @@
 {
-  "header": "Numéro de dossier de demande de passeport",
-  "description": "Avez-vous le numéro de votre dossier de demande de passeport?",
-  "with-esrf": "J'ai mon numéro de dossier",
-  "without-esrf": "Je n'ai pas mon numéro de dossier",
-  "collapse-file-number-title": "Trouver votre numéro de dossier",
-  "receipt-explanation": "Le numéro de dossier sert à identifier votre demande de passeport. Le numéro de dossier figure sur le reçu qui vous a été remis si vous avez déposé votre demande de passeport en personne. Si vous avez déposé votre demande par la poste, ou si vous n’avez pas de numéro de dossier, <Link>vous pouvez demander à le recevoir</Link>.",
+  "header": "Numéro de dossier de demande de passeport ou numéro de référence",
+  "description": "Avez-vous le numéro de dossier de votre demande de passeport ou votre numéro de référence?",
+  "with-esrf": "J'ai mon numéro de dossier ou mon numéro de référence",
+  "without-esrf": "Je n'ai pas mon numéro de dossier ou mon numéro de référence",
+  "collapse-file-number-title": "Trouver votre numéro de dossier ou numéro de référence",
+  "receipt-explanation": "Le numéro de dossier ou le numéro de référence sert à identifier votre demande de passeport. Le numéro de dossier ou le numéro de référence figure sur le reçu qui vous a été remis si vous avez déposé votre demande de passeport en personne. Si vous avez déposé votre demande par la poste, ou si vous n’avez pas de numéro de dossier ou le numéro de référence, <Link>vous pouvez demander à le recevoir</Link>.",
   "receipt-image-1": {
-    "title": "Exemple de reçu 1",
+    "title": "Exemple de reçu avec un numéro de dossier 1",
     "alt": "Un exemple de reçu officiel. Le numéro de dossier est entouré au centre du reçu.",
     "src": "/Receipt1_FR.png",
     "descriptive-text": "<strong>Exemple de reçu officiel. Le numéro de dossier est encerclé au centre du reçu.</strong>"
   },
-  "receipt-image-2": {
-    "title": "Exemple de reçu 2",
-    "alt": "Exemple de reçu officiel et bourdereau de cueillette. Le numéro de dossier est entouré dans la partie supérieure gauche du reçu, au-dessus d'un code-barres.",
-    "src": "/Receipt2_FR.png",
-    "descriptive-text": "<strong>Exemple d'un reçu officiel et bordereau de cueillette. Le numéro de dossier est encerclé en haut à gauche du reçu, au-dessus d'un code-barres.</strong>"
-  },
   "receipt-1-will-find": {
     "text": "Sur un reçu, sur lequel le numéro de dossier est encerclé, vous trouverez\u00a0:",
     "list": {
-      "item-1": "Titre du reçu\u00a0: Reçu officiel",
-      "item-2": "Nom du bureau de passeport",
-      "item-3": "Date d'envoi",
-      "item-4": "Nom du requérant",
-      "item-5": "Numéro de dossier (encerclé à l'encre rouge)",
-      "item-6": "Date/Heure",
-      "item-7": "Droit de service",
-      "item-8": "Montant dû",
-      "item-9": "Perçu",
-      "item-10": "Somme totale perçu",
-      "item-11": "Solde"
+      "item-1": "titre du reçu\u00a0: reçu officiel",
+      "item-2": "nom du bureau de passeport",
+      "item-3": "date d’envoi",
+      "item-4": "nom du requérant",
+      "item-5": "numéro de dossier (encerclé en rouge)",
+      "item-6": "date/heure",
+      "item-7": "droit de service",
+      "item-8": "montant dû",
+      "item-9": "perçu",
+      "item-10": "somme totale perçu",
+      "item-11": "solde"
     }
+  },
+  "receipt-image-2": {
+    "title": "Exemple de reçu avec un numéro de dossier 2",
+    "alt": "Exemple d’un reçu officiel et bordereau de cueillette. Le numéro de dossier est encerclé en haut à gauche du reçu, au-dessus d’un code-barres.",
+    "src": "/Receipt2_FR.png",
+    "descriptive-text": "<strong>Exemple d’un reçu officiel et bordereau de cueillette. Le numéro de dossier est encerclé en haut à gauche du reçu, au-dessus d’un code-barres.</strong>"
   },
   "receipt-2-will-find": {
     "text": "Sur un reçu, sur lequel le numéro de dossier est encerclé, vous trouverez\u00a0:",
     "list": {
-      "item-1": "Titre du reçu\u00a0: Reçu officiel et bordereau de cueillette",
-      "item-2": "Nom du bureau de passeport",
-      "item-3": "Date de cueillette",
-      "item-4": "Nom du requérant",
-      "item-5": "Numéro de dossier (encerclé à l'encre rouge)",
-      "item-6": "Date/Heure",
-      "item-7": "Code barre",
-      "item-8": "Droit de service",
-      "item-9": "Montant dû",
-      "item-10": "Perçu",
-      "item-11": "Somme totale perçu",
-      "item-12": "Solde"
+      "item-1": "titre du reçu\u00a0: reçu officiel et bordereau de cueillette",
+      "item-2": "nom du bureau de passeport",
+      "item-3": "date de cueillette",
+      "item-4": "nom du requérant",
+      "item-5": "numéro de dossier (encerclé en rouge)",
+      "item-6": "date/heure",
+      "item-7": "code à barre",
+      "item-8": "droit de service",
+      "item-9": "montant dû",
+      "item-10": "perçu",
+      "item-11": "somme totale perçu",
+      "item-12": "solde"
     }
   },
-  "receipt-pickup-instructions": {
+  "receipt-2-pickup-instructions": {
     "text": "Au bas du reçu, il y a aussi des instructions de cueillette\u00a0:",
     "list": {
-      "item-1": "Déclaration rappelant aux personnes de présenter ce bordereau de cueillette et une pièce d'identité.",
+      "item-1": "déclaration rappelant aux personnes de présenter ce bordereau de cueillette et une pièce d'identité.",
       "item-2": {
-        "text": "Il y a 2 cases à cocher (vous devez en cocher une)\u00a0:",
+        "text": "il y a 2 cases à cocher (vous devez en cocher une)\u00a0:",
         "list": {
-          "item-1": "Apparition personnelle du requérant requise, ou",
-          "item-2": "J'autorise (insérer le nom de la personne) à retirer mon document de voyage. La personne autorisée doit être âgée de plus de 16 ans et doit présenter une pièce d'identité."
+          "item-1": "apparition personnelle du requérant requise, ou",
+          "item-2": "j’autorise (insérer le nom de la personne) à retirer mon document de voyage. La personne autorisée doit être âgée de plus de 16 ans et doit présenter une pièce d’identité."
         }
       },
-      "item-3": "(Signature du requérant)",
-      "item-4": "Déclaration pour rappeler aux personnes de s'assurer que leur passeport est retiré en moins de 30 jours."
+      "item-3": "(signature du requérant)",
+      "item-4": "déclaration pour rappeler aux personnes de s’assurer que leur passeport est retiré en moins de 30 jours."
+    }
+  },
+  "receipt-image-3": {
+    "title": "Exemple de reçu avec un numéro de référence",
+    "alt": "Un exemple de reçu officiel. Le numéro de référence est encerclé au centre du reçu, au-dessus d’un code-barres.",
+    "src": "/Receipt3_FR.png",
+    "descriptive-text": "<strong>Un exemple de reçu officiel. Le numéro de référence est encerclé au centre du reçu, au-dessus d’un code-barres.</strong>"
+  },
+  "receipt-3-will-find": {
+    "text": "Sur un reçu officiel où le numéro de référence est encerclé, vous trouverez\u00a0:",
+    "list": {
+      "item-1": "titre du reç\u00a0: reçu officiel",
+      "item-2": "nom et adresse du bureau de passeport",
+      "item-3": "date et heure",
+      "item-4": "nom du requérant",
+      "item-5": "numéro de référence (encerclé en rouge)",
+      "item-6": "code à barre",
+      "item-7": "frais relatifs aux services",
+      "item-8": "frais pour services consulaires",
+      "item-9": "type de document de voyage",
+      "item-10": "montant total dû",
+      "item-11": "mode de paiement",
+      "item-12": "nom du bénéficiaire",
+      "item-13": "date du paiement",
+      "item-14": "montant total du paiement",
+      "item-15": "solde"
+    }
+  },
+  "receipt-3-next-steps": {
+    "text": "Au bas du reçu, il y a des instructions pour les prochaines étapes et la livraison\u00a0:",
+    "list": {
+      "item-1": "déclaration indiquant que la demande a été reçue",
+      "item-2": "instructions pour les prochaines étapes du traitement du passeport",
+      "item-3": "déclaration indiquant que le passeport sera envoyé à l’adresse postale fournie",
+      "item-4": "date d’envoi prévue"
     }
   }
 }
