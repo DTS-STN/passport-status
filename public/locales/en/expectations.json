@@ -27,7 +27,7 @@
   },
   "description-privacy": {
     "1": "The information provided is collected under section 5.1(1)(a)(i) of the <em>Department of Employment and Social Development Act</em> and/or section 12(e) of the <em>Canadian Passport Order</em> for the purpose of providing you with the status of your passport application. Refusing to provide information will result in not being able to view the status of your passport application.",
-    "2": "In addition, Employment and Social Development Canada (ESDC) collects your email address only if you require us to send your passport application file number by email. Without your email address, ESDC cannot send your passport application number electronically.",
+    "2": "In addition, Employment and Social Development Canada (ESDC) collects your email address only if you require us to send your passport application file number or reference number by email. Without your email address, ESDC cannot send your passport application number electronically.",
     "3": "Your personal information may also be used to improve services through evaluations, reports, and research. In addition, your information may be shared with Immigration, Refugees and Citizenship Canada for program integrity purposes and to improve services through evaluations, reports, and research.",
     "4": "This application uses services from third-party provider Microsoft Corporation, which may be subject to foreign laws. For more information, see <Link>Microsoft Data Privacy Policy & Privacy Principles</Link>.",
     "4-link": "https://www.microsoft.com/en-ca/trust-center/privacy",
