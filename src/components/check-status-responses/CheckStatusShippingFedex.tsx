@@ -34,14 +34,20 @@ export const CheckStatusShippingFedex: FC<CheckStatusShippingFedexProps> = ({
               />
             </p>
             <p>
-              <ExternalLink
-                data-gc-analytics-exempt={true}
-                href={t('status-check-tracking.link.fedex', {
-                  trackingNumber: encodeURIComponent(trackingNumber),
-                })}
-              >
-                {t('status-check-tracking.can-track')}
-              </ExternalLink>
+              <Trans
+                i18nKey={'status-check-tracking.can-track'}
+                ns="status"
+                components={{
+                  Link: (
+                    <ExternalLink
+                      data-gc-analytics-exempt={true}
+                      href={t('status-check-tracking.link.fedex', {
+                        trackingNumber: encodeURIComponent(trackingNumber),
+                      })}
+                    />
+                  ),
+                }}
+              />
             </p>
           </>
         ) : (

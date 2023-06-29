@@ -14,8 +14,8 @@
     "error": {
       "required": "The file number is required."
     },
-    "help": "If you can't find your file number, you can <Link>request to receive it</Link>.",
-    "label": "File number"
+    "help": "If you can't find your file number or reference number, you can <Link>request to receive it</Link>.",
+    "label": "File number or reference number"
   },
   "given-name": {
     "error": {
@@ -111,7 +111,7 @@
     "mailing": "We're sending it to you by FedEx\u00AE",
     "supporting-documents": "You'll receive your passport and supporting documents in the same envelope.",
     "take-up-to": "It can take up to 5 to 7 business days to arrive.",
-    "contact-us": "If you don't receive your passport and supporting documents, <Link>contact us</Link>"
+    "contact-us": "If you don't receive your passport and supporting documents, <Link>contact us</Link>."
   },
   "not-acceptable": {
     "cannot-process": "We've reviewed your application and can't process it further",
@@ -128,7 +128,7 @@
   },
   "status-check-tracking": {
     "number": "Your tracking number is <strong>{{trackingNumber}}</strong>.",
-    "can-track": "You can track the package online",
+    "can-track": "You can <Link>track the package online</Link>",
     "link": {
       "canada-post": "https://www.canadapost-postescanada.ca/track-reperage/en#/details/{{trackingNumber}}",
       "fedex": "https://www.fedex.com/fedextrack/?action=track&cntry_code=ca&locale=en_ca&trackingnumber={{trackingNumber}}"
@@ -146,6 +146,6 @@
   },
   "child-applications": {
     "header": "Child applications",
-    "description": "Use the child's given name(s) and surname and date of birth, exactly as provided on their proof of citizenship."
+    "description": "Use the child's given name(s), surname and date of birth, exactly as provided on their proof of citizenship."
   }
 }

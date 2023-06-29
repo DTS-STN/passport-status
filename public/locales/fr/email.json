@@ -1,11 +1,10 @@
 {
-  "header": "Obtenir le numéro de dossier de ma demande de passeport",
-  "description": "Remplissez les champs ci-dessous pour obtenir votre numéro de dossier. Assurez-vous que vos informations correspondent à votre formulaire de demande de passeport. Nous enverrons ensuite le numéro de dossier par courriel à l'adresse courriel enregistrée.",
+  "header": "Obtenir le numéro de dossier de ma demande de passeport ou mon numéro de référence",
   "email": {
     "label": "Adresse courriel",
     "error": {
-      "required": "L'adresse courriel est obligatoire.",
-      "valid": "L'adresse courriel doit être valide."
+      "required": "L’adresse courriel est obligatoire.",
+      "valid": "L’adresse courriel doit être valide."
     }
   },
   "given-name": {
@@ -28,20 +27,20 @@
     },
     "label": "Date de naissance du requérant"
   },
-  "email-esrf": "Envoyez-moi le numéro de dossier",
+  "email-esrf": "Envoyez-moi par courriel le numéro de dossier ou numéro de référence",
   "email-sent-confirmation": "Un courriel a été envoyé s'il y avait une correspondance dans nos dossiers avec le numéro de dossier (FEDS).",
   "email-confirmation-msg": {
     "request-received": "Votre demande a été reçue",
-    "if-exists": "Si nous pouvons trouver le dossier avec les renseignements que vous nous avez fournis, <strong>nous vous enverrons le numéro de dossier par courriel</strong>. Si vous ne recevez pas le message de confirmation dans votre boîte de réception, vérifiez votre dossier de courriel indésirable.",
+    "if-exists": "Si nous pouvons trouver le dossier avec les renseignements que vous nous avez fournis, <strong>nous vous enverrons le numéro de dossier ou le numéro de référence par courriel</strong>. Si vous ne recevez pas le message de confirmation dans votre boîte de réception, vérifiez votre dossier de courriel indésirable.",
     "may-not-receive": "Il se pourrait que vous ne receviez pas de courriel si\u00a0:",
     "may-not-receive-list": {
-      "item-1": "les renseignements que vous nous avez fournis ne correspondent pas à ceux de notre système ou",
+      "item-1": "les renseignements que vous nous avez fournis ne correspondent pas à ceux de notre système, ou",
       "item-2": "nous avons reçu votre demande, mais n'avons pas encore commencé à la traiter"
     },
     "dont-receive": "Si vous ne recevez pas de courriel, vous pouvez\u00a0:",
     "dont-receive-list": {
       "item-1": "revérifiez vos renseignements et essayez à nouveau, ou",
-      "item-2": "essayer de nouveau demain - nous mettons à jour nos dossiers chaque jour."
+      "item-2": "essayer encore demain — nous mettons à jour nos dossiers chaque jour."
     },
     "please-contact": "Si vous n’obtenez toujours pas le courriel, <Link>veuillez nous contacter</Link>."
   },
@@ -52,18 +51,18 @@
   },
   "help-message": {
     "email": "Indiquez votre adresse courriel telle qu’elle figure sur votre formulaire de demande de passeport.",
-    "for-child-application": "<strong>Pour les demandes pour enfants,</strong> indiquez l'adresse courriel complète du parent ou du tuteur légal du requérant, telle qu'elle figure sur la demande de passeport."
+    "for-child-application": "<strong>Pour les demandes pour enfants,</strong> indiquez l’adresse courriel complète du parent ou du tuteur légal du requérant, telle qu’elle figure sur la demande de passeport."
   },
   "header-messages": {
-    "matches": "<strong>Assurez-vous que vos renseignements correspondent à votre preuve de citoyenneté et à votre pièce d'identité utilisée lorsque vous avez présenté votre demande de passeport.</strong> Votre preuve de citoyenneté pourrait être l'une des suivantes\u00a0:",
+    "matches": "<strong>Assurez-vous que vos renseignements correspondent à votre preuve de citoyenneté et à votre pièce d’identité utilisée lorsque vous avez présenté votre demande de passeport.</strong> Votre preuve de citoyenneté pourrait être l’une des suivantes\u00a0:",
     "list": {
       "item-1": "un certificat de naissance",
       "item-2": "un certificat de citoyenneté",
       "item-3": "une carte de citoyenneté ou",
-      "item-4": "d'autres documents, comme un certificat de naturalisation"
+      "item-4": "d’autres documents, comme un certificat de naturalisation"
     },
     "child-applications": "Les demandes de passeport pour enfants",
-    "for-child-application": "Utilisez le(s) prénom(s), nom de famille et date de naissance de l'enfant, exactement tels qu'ils figurent sur sa preuve de citoyenneté."
+    "for-child-application": "Utilisez le(s) prénom(s), nom de famille et date de naissance de l’enfant, exactement tels qu’ils figurent sur sa preuve de citoyenneté."
   },
-  "request-another": "Obtenir un autre numéro de dossier"
+  "request-another": "Obtenir un autre numéro de dossier ou numéro de référence"
 }
