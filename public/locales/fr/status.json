@@ -14,8 +14,8 @@
     "error": {
       "required": "Le numéro de dossier est obligatoire."
     },
-    "help": "Si vous ne pouvez pas trouver votre numéro de dossier, <Link>vous pouvez demander à le recevoir</Link>.",
-    "label": "Numéro de dossier"
+    "help": "Si vous ne pouvez pas trouver votre numéro de dossier ou numéro de référence, <Link>vous pouvez demander à le recevoir</Link>.",
+    "label": "Numéro de dossier ou numéro de référence"
   },
   "given-name": {
     "error": {
@@ -70,9 +70,9 @@
   "no-record": {
     "cannot-give-status": {
       "description": "Nous ne pouvons pas vous donner l'état de votre demande pour le moment",
-      "because": "L’état de votre passeport n’est pas disponible pour les rasions suivantes\u00a0:",
+      "because": "L’état de votre passeport n’est pas disponible pour les raisons suivantes\u00a0:",
       "list": {
-        "item-1": "les renseignements que vous nous avez fournis ne correspondent pas à ceux de notre système ou",
+        "item-1": "les renseignements que vous nous avez fournis ne correspondent pas à ceux de notre système, ou",
         "item-2": "nous avons reçu votre demande, mais n'avons pas encore commencé à la traiter"
       }
     },
@@ -103,7 +103,7 @@
     "header": "Votre passeport a été imprimé et envoyé par la poste",
     "mailing": "Nous vous l'envoyons par Postes Canada.",
     "take-up-to": "Cela peut prendre jusqu'à 2 à 3 jours ouvrables pour arriver.",
-    "remote-area": "Si vous vivez dans une région au nord ou éloignée, cela peut prendre jusqu'à 8 jours ouvrables pour arriver.",
+    "remote-area": "Si vous vivez dans une région au nord ou éloignée, cela pourrait prendre jusqu'à 8 jours ouvrables pour arriver.",
     "supporting-documents": "Nous pourrions renvoyer vos documents justificatifs séparément."
   },
   "shipped-fedex": {
@@ -128,7 +128,7 @@
   },
   "status-check-tracking": {
     "number": "Votre numéro de repérage est <strong>{{trackingNumber}}</strong>.",
-    "can-track": "Vous pouvez faire le suivi de l'envoi en ligne",
+    "can-track": "Vous pouvez <Link>faire le suivi de l'envoi en ligne</Link>",
     "link": {
       "canada-post": "https://www.canadapost-postescanada.ca/track-reperage/fr#/details/{{trackingNumber}}",
       "fedex": "https://www.fedex.com/fedextrack/?action=track&cntry_code=ca&locale=fr_ca&trackingnumber={{trackingNumber}}"
@@ -136,11 +136,11 @@
   },
   "status-check-call": "<Link>Veuillez nous contacter</Link> si vous ne recevez pas vos documents dans les 4 semaines suivant la réception du passeport.",
   "header-messages": {
-    "matches": "<strong>Assurez-vous que vos informations correspondent à la preuve de citoyenneté et à la pièce d'identité utilisée lors de votre demande de passeport.</strong> Votre preuve de citoyenneté pourrait être l'une des suivantes\u00a0:",
+    "matches": "<strong>Assurez-vous que vos informations correspondent à la preuve de citoyenneté et à la pièce d'identité utilisées lors de votre demande de passeport.</strong> Votre preuve de citoyenneté pourrait être l'une des suivantes\u00a0:",
     "list": {
       "item-1": "un certificat de naissance",
       "item-2": "un certificat de citoyenneté",
-      "item-3": "une carte de citoyenneté ou",
+      "item-3": "une carte de citoyenneté, ou",
       "item-4": "d'autres documents, comme un certificat de naturalisation"
     }
   },

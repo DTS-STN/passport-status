@@ -35,14 +35,20 @@ export const CheckStatusShippingCanadaPost: FC<
               />
             </p>
             <p>
-              <ExternalLink
-                data-gc-analytics-exempt={true}
-                href={t('status-check-tracking.link.canada-post', {
-                  trackingNumber: encodeURIComponent(trackingNumber),
-                })}
-              >
-                {t('status-check-tracking.can-track')}
-              </ExternalLink>
+              <Trans
+                i18nKey={'status-check-tracking.can-track'}
+                ns="status"
+                components={{
+                  Link: (
+                    <ExternalLink
+                      data-gc-analytics-exempt={true}
+                      href={t('status-check-tracking.link.canada-post', {
+                        trackingNumber: encodeURIComponent(trackingNumber),
+                      })}
+                    />
+                  ),
+                }}
+              />
             </p>
           </>
         ) : (
