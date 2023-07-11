@@ -3,7 +3,6 @@ export type AppWindow = Window &
   typeof globalThis & { adobeDataLayer?: AdobeDataLayer }
 
 export type AlertPage =
-  | 'all'
   | 'email'
   | 'expectations'
   | 'landing'
@@ -18,7 +17,7 @@ export type AlertPage =
 export type AlertType = 'danger' | 'info' | 'warning' | 'success'
 
 export interface AlertApiRequestQuery {
-  page: AlertPage
+  page?: AlertPage
 }
 
 export interface AlertJsonResponse {
@@ -33,7 +32,7 @@ export interface Alert {
 }
 
 export interface AlertMeta extends Alert {
-  pages: AlertPage[]
+  pages?: AlertPage[]
   validFrom: Date
   validTo: Date
 }

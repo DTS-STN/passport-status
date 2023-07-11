@@ -24,7 +24,7 @@ const Layout: FC<LayoutProps> = ({ children }) => {
         id="mainContent"
         className="container mx-auto mt-5 flex-1 px-4 pb-8"
       >
-        <AlertBlock page="all" />
+        <AlertBlock />
         {children}
       </main>
       <Footer

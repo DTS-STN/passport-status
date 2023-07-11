@@ -9,7 +9,10 @@ export const fetchAlerts = async (
   const query = new URLSearchParams({
     ...alertQuery,
   }).toString()
-  const response = await fetch('/api/alerts?' + query, { cache: 'no-store' })
+  let uri = alertQuery.page ? `/api/alerts?${query}` : `/api/alerts`
+  const response = await fetch(uri, {
+    headers: { 'Cache-Control': 'max-age=600' },
+  })
   if (response.ok) {
     return response.json()
   }
