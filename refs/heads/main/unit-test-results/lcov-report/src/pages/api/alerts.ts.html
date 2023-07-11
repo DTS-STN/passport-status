@@ -25,28 +25,28 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/20</span>
+                <span class='fraction'>0/24</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/7</span>
+                <span class='fraction'>0/10</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>0/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/19</span>
+                <span class='fraction'>0/22</span>
             </div>
         
             
@@ -117,7 +117,14 @@
 <a name='L52'></a><a href='#L52'>52</a>
 <a name='L53'></a><a href='#L53'>53</a>
 <a name='L54'></a><a href='#L54'>54</a>
-<a name='L55'></a><a href='#L55'>55</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -131,6 +138,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -146,14 +154,21 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -164,7 +179,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -182,47 +196,54 @@ export default async function <span class="fstat-no" title="function not covered
   req: NextApiRequest,
   res: NextApiResponse&lt;Alert[] | string&gt;
 ) {
-<span class="cstat-no" title="statement not covered" >  if (!process.env.ALERT_JSON_URI) {</span>
-<span class="cstat-no" title="statement not covered" >    logger.error('ALERT_JSON_URI must not be undefined, null or empty')</span>
-<span class="cstat-no" title="statement not covered" >    throw Error(</span>
-      'process.env.ALERT_JSON_URI must not be undefined, null or empty'
-    )
-  }
-&nbsp;
-<span class="cstat-no" title="statement not covered" >  if (req.method !== 'GET') {</span>
-<span class="cstat-no" title="statement not covered" >    res.status(405).send(`Invalid request method ${req.method}`)</span>
-<span class="cstat-no" title="statement not covered" >    return</span>
-  }
-&nbsp;
-  const query = <span class="cstat-no" title="statement not covered" >req.query</span>
-  const { page } = <span class="cstat-no" title="statement not covered" >query</span>
-&nbsp;
-  let now = <span class="cstat-no" title="statement not covered" >new Date()</span>
-&nbsp;
 <span class="cstat-no" title="statement not covered" >  try {</span>
-    const alertJson = <span class="cstat-no" title="statement not covered" >await fetch(process.env.ALERT_JSON_URI)</span>
+<span class="cstat-no" title="statement not covered" >    if (!process.env.ALERT_JSON_URI) {</span>
+<span class="cstat-no" title="statement not covered" >      logger.error('ALERT_JSON_URI must not be undefined, null or empty')</span>
+<span class="cstat-no" title="statement not covered" >      throw Error(</span>
+        'process.env.ALERT_JSON_URI must not be undefined, null or empty'
+      )
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    if (req.method !== 'GET') {</span>
+<span class="cstat-no" title="statement not covered" >      res.status(405).send(`Invalid request method ${req.method}`)</span>
+<span class="cstat-no" title="statement not covered" >      return</span>
+    }
+&nbsp;
+    const query = <span class="cstat-no" title="statement not covered" >req.query</span>
+    const { page } = <span class="cstat-no" title="statement not covered" >query</span>
+&nbsp;
+    const now = <span class="cstat-no" title="statement not covered" >new Date()</span>
+&nbsp;
+    const alertJson = <span class="cstat-no" title="statement not covered" >await fetch(process.env.ALERT_JSON_URI, {</span>
+      headers: { 'Cache-Control': 'max-age=600' },
+    })
     const alertData: AlertJsonResponse = <span class="cstat-no" title="statement not covered" >await alertJson.json()</span>
 &nbsp;
-    let alerts: Alert[] = <span class="cstat-no" title="statement not covered" >alertData?.jsonAlerts</span>
-      .filter(
-<span class="fstat-no" title="function not covered" >        (a</span>lert) =&gt;
-<span class="cstat-no" title="statement not covered" >          alert.pages.find(<span class="fstat-no" title="function not covered" >(a</span>lertPage) =&gt; <span class="cstat-no" title="statement not covered" >alertPage === page)</span> &amp;&amp;</span>
-          new Date(alert.validFrom) &lt;= now &amp;&amp;
-          new Date(alert.validTo) &gt;= now
-      )
-      .map(<span class="fstat-no" title="function not covered" >(a</span>lert) =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
-        uid: alert.uid,
-        textEn: alert.textEn,
-        textFr: alert.textFr,
-        type: alert.type,
-      }))
+    const validAlerts = <span class="cstat-no" title="statement not covered" >alertData?.jsonAlerts.filter(</span>
+<span class="fstat-no" title="function not covered" >      (a</span>lert) =&gt;
+<span class="cstat-no" title="statement not covered" >        new Date(alert.validFrom) &lt;= now &amp;&amp; new Date(alert.validTo) &gt;= now</span>
+    )
+&nbsp;
+    const pageAlerts = <span class="cstat-no" title="statement not covered" >page</span>
+      ? validAlerts.filter(<span class="fstat-no" title="function not covered" >(a</span>lert) =&gt;
+<span class="cstat-no" title="statement not covered" >          alert.pages?.find(<span class="fstat-no" title="function not covered" >(a</span>lertPage) =&gt; <span class="cstat-no" title="statement not covered" >alertPage === page)</span></span>
+        )
+      : validAlerts.filter(
+<span class="fstat-no" title="function not covered" >          (a</span>lert) =&gt; <span class="cstat-no" title="statement not covered" >alert.pages === undefined || alert.pages?.length === 0</span>
+        )
+&nbsp;
+    const alerts: Alert[] = <span class="cstat-no" title="statement not covered" >pageAlerts.map(<span class="fstat-no" title="function not covered" >(a</span>lert) =&gt; (<span class="cstat-no" title="statement not covered" >{</span></span>
+      uid: alert.uid,
+      textEn: alert.textEn,
+      textFr: alert.textFr,
+      type: alert.type,
+    }))
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    return res.status(200).json(alerts)</span>
   } catch (error) {
-    // For alerts we want to silently fail, shouldn't show as a failure to the user.
-    // We'll catch it in the logs, but to them it should just look like there are no alerts.
+    // If there's a problem with the alerts, we return 500 but with an empty list
 <span class="cstat-no" title="statement not covered" >    logger.error(error, 'Failed to fetch alerts')</span>
-<span class="cstat-no" title="statement not covered" >    res.status(200).json([])</span>
+<span class="cstat-no" title="statement not covered" >    return res.status(500).json([])</span>
   }
 }
 &nbsp;</pre></td></tr></table></pre>
@@ -232,7 +253,7 @@ export default async function <span class="fstat-no" title="function not covered
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-07-11T10:02:40.348Z
+                at 2023-07-11T17:31:30.369Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
