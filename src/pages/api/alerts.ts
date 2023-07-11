@@ -25,7 +25,7 @@ export default async function handler(
     const query = req.query
     const { page } = query
 
-    let now = new Date()
+    const now = new Date()
 
     const alertJson = await fetch(process.env.ALERT_JSON_URI, {
       headers: { 'Cache-Control': 'max-age=600' },
