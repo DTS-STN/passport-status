@@ -27,28 +27,35 @@ export default async function handler(
   let now = new Date()
 
   try {
-    const alertJson = await fetch(process.env.ALERT_JSON_URI)
+    const alertJson = await fetch(process.env.ALERT_JSON_URI, {
+      headers: { 'Cache-Control': 'max-age=600' },
+    })
     const alertData: AlertJsonResponse = await alertJson.json()
 
-    let alerts: Alert[] = alertData?.jsonAlerts
-      .filter(
-        (alert) =>
-          alert.pages.find((alertPage) => alertPage === page) &&
-          new Date(alert.validFrom) <= now &&
-          new Date(alert.validTo) >= now
-      )
-      .map((alert) => ({
-        uid: alert.uid,
-        textEn: alert.textEn,
-        textFr: alert.textFr,
-        type: alert.type,
-      }))
+    let validAlerts = alertData?.jsonAlerts.filter(
+      (alert) =>
+        new Date(alert.validFrom) <= now && new Date(alert.validTo) >= now
+    )
+
+    let pageAlerts = page
+      ? validAlerts.filter((alert) =>
+          alert.pages?.find((alertPage) => alertPage === page)
+        )
+      : validAlerts.filter(
+          (alert) => alert.pages === undefined || alert.pages?.length === 0
+        )
+
+    let alerts: Alert[] = pageAlerts.map((alert) => ({
+      uid: alert.uid,
+      textEn: alert.textEn,
+      textFr: alert.textFr,
+      type: alert.type,
+    }))
 
     return res.status(200).json(alerts)
   } catch (error) {
-    // For alerts we want to silently fail, shouldn't show as a failure to the user.
-    // We'll catch it in the logs, but to them it should just look like there are no alerts.
+    // If there's a problem with the alerts, we return 500 but with an empty list
     logger.error(error, 'Failed to fetch alerts')
-    res.status(200).json([])
+    res.status(500).json([])
   }
 }

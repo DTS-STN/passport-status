@@ -8,7 +8,7 @@ import AlertSection from './AlertSection'
 import MarkdownContent from './MarkdownContent'
 
 export interface AlertBlockProps {
-  page: AlertPage
+  page?: AlertPage
   className?: string
 }
 
@@ -23,7 +23,7 @@ const AlertBlock: FC<AlertBlockProps> = ({ page, className }) => {
           <AlertSection key={alert.uid} type={alert.type} className="mt-4 mb-4">
             <MarkdownContent
               markdown={i18n.language === 'fr' ? alert.textFr : alert.textEn}
-              header={page === 'all'}
+              header={page === undefined}
             />
           </AlertSection>
         )
