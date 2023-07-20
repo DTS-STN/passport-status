@@ -1,7 +1,7 @@
 import { FC, useEffect } from 'react'
 
-import { FormikErrors } from 'formik'
-import { TFunction } from 'next-i18next'
+import { FormikErrors, FormikValues } from 'formik'
+import { Namespace, TFunction } from 'i18next'
 
 export interface ErrorSummaryItem {
   feildId: string
@@ -22,18 +22,13 @@ export const getErrorSummaryItem = (
   errorMessage,
 })
 
-export const getErrorSummaryItems = <T extends unknown>(
+export const getErrorSummaryItems = <T extends FormikValues>(
   formErrors: FormikErrors<T>,
-  t: TFunction
+  t: TFunction<Namespace, undefined>
 ) => {
   return Object.keys(formErrors)
-    .filter((key) => !!formErrors[key as keyof typeof formErrors])
-    .map((key) =>
-      getErrorSummaryItem(
-        key,
-        t(formErrors[key as keyof typeof formErrors] as string)
-      )
-    )
+    .filter((key) => !!formErrors[key])
+    .map((key) => getErrorSummaryItem(key, t(formErrors[key] as any)))
 }
 
 export const goToErrorSummary = (errorSummaryId: string) => {
