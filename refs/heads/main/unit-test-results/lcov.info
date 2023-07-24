@@ -917,9 +917,9 @@ SF:src/components/error-pages/Error404Page.tsx
 FN:8,(anonymous_0)
 FNF:1
 FNH:1
-FNDA:1,(anonymous_0)
+FNDA:2,(anonymous_0)
 DA:8,1
-DA:9,1
+DA:9,2
 LF:2
 LH:2
 BRF:0
@@ -1138,8 +1138,8 @@ SF:src/lib/utils/seo-utils.ts
 FN:5,(anonymous_0)
 FNF:1
 FNH:1
-FNDA:9,(anonymous_0)
-DA:5,9
+FNDA:10,(anonymous_0)
+DA:5,10
 LF:1
 LH:1
 BRF:0
@@ -1378,10 +1378,10 @@ FN:8,(anonymous_0)
 FN:112,(anonymous_1)
 FNF:2
 FNH:1
-FNDA:1,(anonymous_0)
+FNDA:2,(anonymous_0)
 FNDA:0,(anonymous_1)
 DA:8,1
-DA:9,1
+DA:9,2
 DA:112,1
 LF:3
 LH:3
