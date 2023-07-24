@@ -14,7 +14,7 @@
     "error": {
       "required": "Le numéro de dossier est obligatoire."
     },
-    "help": "Si vous ne pouvez pas trouver votre numéro de dossier ou numéro de référence, <Link>vous pouvez demander à le recevoir</Link>.",
+    "help": "Si vous ne pouvez pas trouver votre numéro de dossier ou votre numéro de référence, <Link>vous pouvez demander à le recevoir</Link>.",
     "label": "Numéro de dossier ou numéro de référence"
   },
   "given-name": {
@@ -128,7 +128,7 @@
   },
   "status-check-tracking": {
     "number": "Votre numéro de repérage est <strong>{{trackingNumber}}</strong>.",
-    "can-track": "Vous pouvez <Link>faire le suivi de l'envoi en ligne</Link>",
+    "can-track": "Vous pouvez <Link>faire le suivi de l'envoi en ligne</Link>.",
     "link": {
       "canada-post": "https://www.canadapost-postescanada.ca/track-reperage/fr#/details/{{trackingNumber}}",
       "fedex": "https://www.fedex.com/fedextrack/?action=track&cntry_code=ca&locale=fr_ca&trackingnumber={{trackingNumber}}"
