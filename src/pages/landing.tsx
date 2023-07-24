@@ -51,8 +51,8 @@ const Landing: FC = () => {
             imageProps={{
               src: t('receipt-image-1.src'),
               alt: t('receipt-image-1.alt'),
-              width: 350,
-              height: 550,
+              width: 500,
+              height: 785,
             }}
           >
             <Trans i18nKey="receipt-image-1.descriptive-text" ns="landing" />
@@ -79,8 +79,8 @@ const Landing: FC = () => {
             imageProps={{
               src: t('receipt-image-2.src'),
               alt: t('receipt-image-2.alt'),
-              width: 350,
-              height: 550,
+              width: 500,
+              height: 785,
             }}
           >
             <Trans i18nKey="receipt-image-2.descriptive-text" ns="landing" />
@@ -128,8 +128,8 @@ const Landing: FC = () => {
             imageProps={{
               src: t('receipt-image-3.src'),
               alt: t('receipt-image-3.alt'),
-              width: 350,
-              height: 550,
+              width: 500,
+              height: 785,
             }}
           >
             <Trans i18nKey="receipt-image-3.descriptive-text" ns="landing" />

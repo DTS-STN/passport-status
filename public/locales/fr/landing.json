@@ -4,7 +4,7 @@
   "with-esrf": "J'ai mon numéro de dossier ou mon numéro de référence",
   "without-esrf": "Je n'ai pas mon numéro de dossier ou mon numéro de référence",
   "collapse-file-number-title": "Trouver votre numéro de dossier ou numéro de référence",
-  "receipt-explanation": "Le numéro de dossier ou le numéro de référence sert à identifier votre demande de passeport. Le numéro de dossier ou le numéro de référence figure sur le reçu qui vous a été remis si vous avez déposé votre demande de passeport en personne. Si vous avez déposé votre demande par la poste, ou si vous n’avez pas de numéro de dossier ou le numéro de référence, <Link>vous pouvez demander à le recevoir</Link>.",
+  "receipt-explanation": "Le numéro de dossier ou le numéro de référence sert à identifier votre demande de passeport. Le numéro de dossier ou le numéro de référence figure sur le reçu qui vous a été remis si vous avez déposé votre demande de passeport en personne. Si vous avez déposé votre demande par la poste, ou si vous n’avez pas de numéro de dossier ou de numéro de référence, <Link>vous pouvez demander à le recevoir</Link>.",
   "receipt-image-1": {
     "title": "Exemple de reçu avec un numéro de dossier 1",
     "alt": "Un exemple de reçu officiel. Le numéro de dossier est entouré au centre du reçu.",
@@ -74,7 +74,7 @@
   "receipt-3-will-find": {
     "text": "Sur un reçu officiel où le numéro de référence est encerclé, vous trouverez\u00a0:",
     "list": {
-      "item-1": "titre du reç\u00a0: reçu officiel",
+      "item-1": "titre du reçu\u00a0: reçu officiel",
       "item-2": "nom et adresse du bureau de passeport",
       "item-3": "date et heure",
       "item-4": "nom du requérant",
