@@ -1,7 +1,6 @@
 import {
   AnchorHTMLAttributes,
   DetailedHTMLProps,
-  FC,
   PropsWithChildren,
 } from 'react'
 
@@ -16,11 +15,11 @@ export interface ExternalLinkProps
   href: string
 }
 
-export const ExternalLink: FC<ExternalLinkProps> = ({
+export const ExternalLink = ({
   children,
   href,
   ...rest
-}) => {
+}: ExternalLinkProps) => {
   const { t } = useTranslation(['common'])
   return (
     <a {...rest} href={href} target="_blank" rel="noopener noreferrer">

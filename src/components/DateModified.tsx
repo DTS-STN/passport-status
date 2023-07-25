@@ -1,5 +1,3 @@
-import { FC } from 'react'
-
 export interface DateModifiedProps {
   // text to be displayed
   text?: string
@@ -11,7 +9,7 @@ export interface DateModifiedProps {
 /**
  * Contains build time stamp
  */
-const DateModified: FC<DateModifiedProps> = ({ id, text }) => {
+const DateModified = ({ id, text }: DateModifiedProps) => {
   return (
     <dl id={id} className="container mx-auto py-8 px-4">
       <dt className="inline">{text}</dt>

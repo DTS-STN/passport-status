@@ -1,11 +1,11 @@
-import { FC, useId } from 'react'
+import { useId } from 'react'
 
 export interface CollapseProps {
   title: string
   children?: React.ReactNode
 }
 
-const Collapse: FC<CollapseProps> = ({ title, children }) => {
+const Collapse = ({ title, children }: CollapseProps) => {
   const id = useId()
   return (
     <details

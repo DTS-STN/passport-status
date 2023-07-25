@@ -12,7 +12,7 @@ const logger = getLogger('check-status')
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<CheckStatusApiResponse | string>
+  res: NextApiResponse<CheckStatusApiResponse | string>,
 ) {
   if (req.method !== 'GET') {
     logger.debug(`error 405: Invalid request method ${req.method}`)
@@ -43,14 +43,14 @@ export default async function handler(
  */
 export const searchPassportStatusApi = async (
   res: NextApiResponse<CheckStatusApiResponse | string>,
-  checkStatusApiRequestQuery: CheckStatusApiRequestQuery
+  checkStatusApiRequestQuery: CheckStatusApiRequestQuery,
 ) => {
   if (!process.env.PASSPORT_STATUS_API_BASE_URI) {
     logger.error(
-      'PASSPORT_STATUS_API_BASE_URI must not be undefined, null or empty'
+      'PASSPORT_STATUS_API_BASE_URI must not be undefined, null or empty',
     )
     throw Error(
-      'process.env.PASSPORT_STATUS_API_BASE_URI must not be undefined, null or empty'
+      'process.env.PASSPORT_STATUS_API_BASE_URI must not be undefined, null or empty',
     )
   }
 
@@ -72,19 +72,19 @@ export const searchPassportStatusApi = async (
 
     if (GetCertificateApplicationResponse.length === 0) {
       logger.debug(
-        'error 404: searchResult._embedded is empty, passport status not found'
+        'error 404: searchResult._embedded is empty, passport status not found',
       )
       return res.status(404).send('Passport Status Not Found')
     }
 
     return res.send(
-      mapToCheckStatusApiResponse(GetCertificateApplicationResponse[0])
+      mapToCheckStatusApiResponse(GetCertificateApplicationResponse[0]),
     )
   }
 
   if (response.status === 404 || response.status === 422) {
     logger.debug(
-      `Check status returned not OK - error ${response.status}: ${response.body}`
+      `Check status returned not OK - error ${response.status}: ${response.body}`,
     )
     // 404 and 422 responses should both be handled as
     // `not found` results to mitigate data probing attacks

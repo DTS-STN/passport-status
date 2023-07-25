@@ -1,4 +1,4 @@
-import { FC, PropsWithChildren } from 'react'
+import { PropsWithChildren } from 'react'
 
 import Image from 'next/image'
 
@@ -14,11 +14,7 @@ export interface ExampleImageProps extends PropsWithChildren {
   imageProps: ImageProps
 }
 
-const ExampleImage: FC<ExampleImageProps> = ({
-  children,
-  title,
-  imageProps,
-}) => {
+const ExampleImage = ({ children, title, imageProps }: ExampleImageProps) => {
   return (
     <>
       {title && (

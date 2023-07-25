@@ -1,4 +1,4 @@
-import { FC, MouseEventHandler, useCallback } from 'react'
+import { MouseEventHandler, useCallback } from 'react'
 
 import { setCookie } from 'cookies-next'
 import { GetServerSideProps } from 'next'
@@ -14,7 +14,7 @@ import Layout from '../components/Layout'
 import { pageWithServerSideTranslations } from '../lib/utils/next-i18next-utils'
 import { getDCTermsTitle } from '../lib/utils/seo-utils'
 
-const Expectations: FC = () => {
+const Expectations = () => {
   const { t } = useTranslation('expectations')
 
   const handleOnAgreeClick: MouseEventHandler<HTMLButtonElement> = useCallback(
@@ -23,7 +23,7 @@ const Expectations: FC = () => {
       setCookie('agreed-to-email-esrf-terms', 'true', { sameSite: true })
       Router.push('/landing')
     },
-    []
+    [],
   )
 
   return (
@@ -117,7 +117,7 @@ export const getServerSideProps: GetServerSideProps = async ({ locale }) => ({
   props: {
     ...(await pageWithServerSideTranslations(
       locale ?? 'default',
-      'expectations'
+      'expectations',
     )),
   },
 })

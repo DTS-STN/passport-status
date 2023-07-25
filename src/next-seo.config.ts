@@ -11,7 +11,7 @@ export interface LanguageAlternate {
 
 export const getLanguageAlternates = (
   appBaseUri: string,
-  router: NextSEORouter
+  router: NextSEORouter,
 ): ReadonlyArray<LanguageAlternate> | undefined => {
   if (!appBaseUri) return
   return [
@@ -27,7 +27,7 @@ export const getLanguageAlternates = (
 }
 
 export const getOpenGraphImages = (
-  appBaseUri: string
+  appBaseUri: string,
 ): ReadonlyArray<OpenGraphMedia> | undefined => {
   if (!appBaseUri) return
   return [
@@ -41,7 +41,7 @@ export const getOpenGraphImages = (
 
 export type GetNextSEOConfig = (
   appBaseUri: string,
-  router: NextSEORouter
+  router: NextSEORouter,
 ) => DefaultSeoProps
 
 export const getDefaultConfig: GetNextSEOConfig = (appBaseUri, router) => ({

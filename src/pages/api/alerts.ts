@@ -7,13 +7,13 @@ const logger = getLogger('get-alerts')
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Alert[] | string>
+  res: NextApiResponse<Alert[] | string>,
 ) {
   try {
     if (!process.env.ALERT_JSON_URI) {
       logger.error('ALERT_JSON_URI must not be undefined, null or empty')
       throw Error(
-        'process.env.ALERT_JSON_URI must not be undefined, null or empty'
+        'process.env.ALERT_JSON_URI must not be undefined, null or empty',
       )
     }
 
@@ -34,15 +34,15 @@ export default async function handler(
 
     const validAlerts = alertData?.jsonAlerts.filter(
       (alert) =>
-        new Date(alert.validFrom) <= now && new Date(alert.validTo) >= now
+        new Date(alert.validFrom) <= now && new Date(alert.validTo) >= now,
     )
 
     const pageAlerts = page
-      ? validAlerts.filter((alert) =>
-          alert.pages?.find((alertPage) => alertPage === page)
+      ? validAlerts.filter(
+          (alert) => alert.pages?.find((alertPage) => alertPage === page),
         )
       : validAlerts.filter(
-          (alert) => alert.pages === undefined || alert.pages?.length === 0
+          (alert) => alert.pages === undefined || alert.pages?.length === 0,
         )
 
     const alerts: Alert[] = pageAlerts.map((alert) => ({

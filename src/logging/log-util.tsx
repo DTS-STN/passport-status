@@ -3,7 +3,7 @@ import pino, { Logger, stdTimeFunctions } from 'pino'
 import logLevelData from './log-level'
 
 const logLevels = new Map<string, string | undefined>(
-  Object.entries(logLevelData)
+  Object.entries(logLevelData),
 )
 
 export function getLogLevel(logger: string): string {

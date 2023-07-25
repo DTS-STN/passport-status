@@ -1,5 +1,3 @@
-import { FC } from 'react'
-
 import Link from 'next/link'
 
 export interface ApplicationNameBarProps {
@@ -7,7 +5,7 @@ export interface ApplicationNameBarProps {
   href: string
 }
 
-const ApplicationNameBar: FC<ApplicationNameBarProps> = ({ text, href }) => {
+const ApplicationNameBar = ({ text, href }: ApplicationNameBarProps) => {
   return (
     <div id="app-bar" className="bg-blue-dark">
       <section className="container mx-auto p-4">

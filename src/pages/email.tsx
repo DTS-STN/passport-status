@@ -1,5 +1,4 @@
 import {
-  FC,
   MouseEventHandler,
   useCallback,
   useMemo,
@@ -54,7 +53,7 @@ const validationSchema = Yup.object({
     .max(new Date(), 'date-of-birth.error.current'),
 })
 
-const Email: FC = () => {
+const Email = () => {
   const { t } = useTranslation(['email', 'common'])
 
   const router = useRouter()
@@ -108,14 +107,14 @@ const Email: FC = () => {
         // field id should target the year select input
         return { ...item, feildId: 'dateOfBirth-year' }
       }),
-    [formikErrors, t]
+    [formikErrors, t],
   )
 
   const handleOnDateOfBirthChange: DateSelectFieldOnChangeEvent = useCallback(
     (dateString) => {
       setFormikFieldValue('dateOfBirth', dateString)
     },
-    [setFormikFieldValue]
+    [setFormikFieldValue],
   )
 
   const handleOnCancelClick = useCallback(() => setModalOpen(true), [])
@@ -134,7 +133,7 @@ const Email: FC = () => {
         resetEmailEsrf()
         scrollToHeading()
       },
-      [resetEmailEsrf, resetFormik, scrollToHeading]
+      [resetEmailEsrf, resetFormik, scrollToHeading],
     )
 
   //if the api failed, fail hard to show error page

@@ -1,11 +1,9 @@
-import { FC } from 'react'
-
 import { useTranslation } from 'next-i18next'
 
 import AlertBlock from '../AlertBlock'
 import AlertSection from '../AlertSection'
 
-export const CheckStatusReadyForPickup: FC<{}> = () => {
+export const CheckStatusReadyForPickup = () => {
   const { t } = useTranslation('status')
   return (
     <>

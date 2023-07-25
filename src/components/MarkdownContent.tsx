@@ -1,5 +1,3 @@
-import { FC } from 'react'
-
 import Markdown from 'markdown-to-jsx'
 
 import ExternalLink from './ExternalLink'
@@ -9,7 +7,7 @@ export type MarkdownContentProps = {
   header: boolean
 }
 
-const MarkdownContent: FC<MarkdownContentProps> = ({ markdown, header }) => (
+const MarkdownContent = ({ markdown, header }: MarkdownContentProps) => (
   <Markdown
     options={{
       overrides: {

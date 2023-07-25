@@ -6,14 +6,14 @@ const logger = (() => {
         console.error(
           '%c Error:',
           'background: red; color: white;',
-          ...messages
+          ...messages,
         )
         break
       case 'warn':
         console.warn(
           '%c Warning:',
           'background: orange; color: white;',
-          ...messages
+          ...messages,
         )
         break
       case 'info':

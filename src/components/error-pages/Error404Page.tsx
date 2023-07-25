@@ -1,11 +1,9 @@
-import { FC } from 'react'
-
 import { NextSeo } from 'next-seo'
 import Link from 'next/link'
 
 import ErrorLayout from '../ErrorLayout'
 
-const Error404Page: FC = () => {
+const Error404Page = () => {
   return (
     <ErrorLayout>
       <NextSeo

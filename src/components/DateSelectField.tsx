@@ -1,4 +1,4 @@
-import { FC, useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 
 import { getDaysInMonth, isExists } from 'date-fns'
 import { useTranslation } from 'next-i18next'
@@ -32,7 +32,7 @@ interface DateSelectState {
   yearValue: string
 }
 
-const DateSelectField: FC<DateSelectFieldProps> = ({
+const DateSelectField = ({
   errorMessage,
   firstYear,
   helpMessage,
@@ -43,7 +43,7 @@ const DateSelectField: FC<DateSelectFieldProps> = ({
   required,
   textRequired,
   value,
-}) => {
+}: DateSelectFieldProps) => {
   const { t } = useTranslation()
 
   const [state, setState] = useState<DateSelectState & { changeCount: number }>(
@@ -53,7 +53,7 @@ const DateSelectField: FC<DateSelectFieldProps> = ({
       monthValue: '',
       yearValue: '',
       changeCount: 0, // HACK: Use this state as a dependency of the `useEffect` below so that `onChange` is called only when it should be.
-    }
+    },
   )
 
   const dateSelectErrorMessageId = `date-select-${id}-error`
@@ -126,7 +126,7 @@ const DateSelectField: FC<DateSelectFieldProps> = ({
         }
       })
     },
-    []
+    [],
   )
 
   // Sync from the state to the upper component through onChange when necessary.
@@ -239,7 +239,7 @@ const padZero = (value: number, maxLength: number): string => {
 }
 
 const parseDateString = (
-  dateString: string
+  dateString: string,
 ): {
   year: string
   month: string

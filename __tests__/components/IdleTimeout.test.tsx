@@ -1,12 +1,10 @@
-import { FC } from 'react'
-
 import '@testing-library/jest-dom/extend-expect'
 import { render, screen, waitFor } from '@testing-library/react'
 
 import IdleTimeout from '../../src/components/IdleTimeout'
 import { ModalProps } from '../../src/components/Modal'
 
-const ModalMock: FC<ModalProps> = ({ open }: ModalProps) => {
+const ModalMock = ({ open }: ModalProps) => {
   return <div data-testid="modal">{open ? 'modal-opened' : 'modal-closed'}</div>
 }
 
@@ -31,7 +29,7 @@ describe('IdleTimeout', () => {
         expect(modal).toBeInTheDocument()
         expect(modal.textContent).toMatch('modal-opened')
       },
-      { timeout: 3000 }
+      { timeout: 3000 },
     )
   })
 })

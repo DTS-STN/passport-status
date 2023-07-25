@@ -1,4 +1,4 @@
-import { FC, useEffect } from 'react'
+import { useEffect } from 'react'
 
 import { FormikErrors, FormikValues } from 'formik'
 import { Namespace, TFunction } from 'i18next'
@@ -16,7 +16,7 @@ export interface ErrorSummaryProps {
 
 export const getErrorSummaryItem = (
   feildId: string,
-  errorMessage: string
+  errorMessage: string,
 ): ErrorSummaryItem => ({
   feildId,
   errorMessage,
@@ -24,7 +24,7 @@ export const getErrorSummaryItem = (
 
 export const getErrorSummaryItems = <T extends FormikValues>(
   formErrors: FormikErrors<T>,
-  t: TFunction<Namespace, undefined>
+  t: TFunction<Namespace, undefined>,
 ) => {
   return Object.keys(formErrors)
     .filter((key) => !!formErrors[key])
@@ -33,13 +33,13 @@ export const getErrorSummaryItems = <T extends FormikValues>(
 
 export const goToErrorSummary = (errorSummaryId: string) => {
   const errorSummaryEl = document.querySelector<HTMLElement>(
-    `#${errorSummaryId}`
+    `#${errorSummaryId}`,
   )
   errorSummaryEl?.scrollIntoView({ behavior: 'smooth', block: 'center' })
   errorSummaryEl?.focus()
 }
 
-const ErrorSummary: FC<ErrorSummaryProps> = ({ id, errors, summary }) => {
+const ErrorSummary = ({ id, errors, summary }: ErrorSummaryProps) => {
   useEffect(() => {
     goToErrorSummary(id)
   }, [id])

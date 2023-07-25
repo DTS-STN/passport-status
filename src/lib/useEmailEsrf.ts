@@ -4,7 +4,7 @@ import { ApiError } from 'next/dist/server/api-utils'
 import { EmailEsrfApiRequestBody } from './types'
 
 const useEmailEsrf = (
-  options?: UseMutationOptions<void, ApiError, EmailEsrfApiRequestBody>
+  options?: UseMutationOptions<void, ApiError, EmailEsrfApiRequestBody>,
 ) => {
   return useMutation<void, ApiError, EmailEsrfApiRequestBody>(async (body) => {
     const response = await fetch('/api/email-esrf', {

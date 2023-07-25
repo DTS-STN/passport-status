@@ -1,24 +1,23 @@
-import { FC, ReactNode, useEffect, useId, useRef } from 'react'
+import { PropsWithChildren, useEffect, useId, useRef } from 'react'
 
 import { FocusOn } from 'react-focus-on'
 
 import ActionButton, { ActionButtonProps } from './ActionButton'
 
-export interface ModalProps {
+export interface ModalProps extends PropsWithChildren {
   actionButtons: ActionButtonProps[]
-  children: ReactNode
   header: string
   onClose: EventListener
   open: boolean
 }
 
-const Modal: FC<ModalProps> = ({
+const Modal = ({
   actionButtons,
   children,
   header,
   onClose,
   open,
-}) => {
+}: ModalProps) => {
   const dialogRef = useRef<HTMLDialogElement>(null)
   const id = useId()
 

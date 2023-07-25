@@ -1,4 +1,4 @@
-import { FC, ReactNode } from 'react'
+import { PropsWithChildren } from 'react'
 
 import { useTranslation } from 'next-i18next'
 
@@ -6,11 +6,9 @@ import AlertBlock from './AlertBlock'
 import Footer from './Footer'
 import Header from './Header'
 
-export interface LayoutProps {
-  children: ReactNode
-}
+export interface LayoutProps extends PropsWithChildren {}
 
-const Layout: FC<LayoutProps> = ({ children }) => {
+const Layout = ({ children }: LayoutProps) => {
   const { t } = useTranslation('common')
 
   return (

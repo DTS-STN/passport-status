@@ -1,11 +1,9 @@
-import { FC } from 'react'
-
 import { Trans, useTranslation } from 'next-i18next'
 
 import AlertBlock from '../AlertBlock'
 import ExternalLink from '../ExternalLink'
 
-export const CheckStatusFileBeingProcessed: FC<{}> = () => {
+export const CheckStatusFileBeingProcessed = () => {
   const { t } = useTranslation(['status', 'common'])
   return (
     <>

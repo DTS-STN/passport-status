@@ -1,7 +1,6 @@
-import { FC, MouseEventHandler } from 'react'
+import { MouseEventHandler } from 'react'
 
-import { CheckStatusApiResponse } from '../lib/types'
-import { StatusCode } from '../lib/types'
+import { CheckStatusApiResponse, StatusCode } from '../lib/types'
 import ActionButton, { ActionButtonStyle } from './ActionButton'
 import CheckStatusFileBeingProcessed from './check-status-responses/CheckStatusFileBeingProcessed'
 import CheckStatusNoRecord from './check-status-responses/CheckStatusNoRecord'
@@ -18,13 +17,13 @@ export interface CheckStatusInfoProps {
   checkStatusResponse?: CheckStatusApiResponse | null
 }
 
-export const CheckStatusInfo: FC<CheckStatusInfoProps> = ({
+export const CheckStatusInfo = ({
   goBackText,
   id,
   onGoBackClick,
   goBackStyle,
   checkStatusResponse,
-}) => {
+}: CheckStatusInfoProps) => {
   //Determine which status response to render
   let statusComponent
   switch (checkStatusResponse?.status) {

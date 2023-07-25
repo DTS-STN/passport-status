@@ -1,5 +1,3 @@
-import { FC } from 'react'
-
 import { useTranslation } from 'next-i18next'
 
 import { AlertPage } from '../lib/types'
@@ -12,7 +10,7 @@ export interface AlertBlockProps {
   className?: string
 }
 
-const AlertBlock: FC<AlertBlockProps> = ({ page, className }) => {
+const AlertBlock = ({ page, className }: AlertBlockProps) => {
   const { data } = useAlerts({ page })
   const { i18n } = useTranslation()
 
