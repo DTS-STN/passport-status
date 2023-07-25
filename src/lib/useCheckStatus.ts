@@ -5,7 +5,7 @@ import { CheckStatusApiRequestQuery, CheckStatusApiResponse } from './types'
 
 export const fetchCheckStatus = async (
   checkStatusApiRequestQuery: CheckStatusApiRequestQuery,
-  init?: RequestInit
+  init?: RequestInit,
 ): Promise<CheckStatusApiResponse | null> => {
   const query = new URLSearchParams({
     ...checkStatusApiRequestQuery,
@@ -22,7 +22,7 @@ export const useCheckStatus = (
     CheckStatusApiResponse | null,
     ApiError,
     CheckStatusApiResponse | null
-  >
+  >,
 ) => {
   const query = useQuery<
     CheckStatusApiResponse | null,
@@ -31,7 +31,7 @@ export const useCheckStatus = (
   >(
     ['ps:api:check-status', checkStatusApiRequestQuery],
     ({ signal }) => fetchCheckStatus(checkStatusApiRequestQuery, { signal }),
-    { ...(queryOptions ?? {}) }
+    { ...(queryOptions ?? {}) },
   )
 
   // fix isLoading with disabled: false

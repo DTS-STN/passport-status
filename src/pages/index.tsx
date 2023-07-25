@@ -13,7 +13,7 @@ const Index = () => {
         titleTemplate="%s - Canada.ca"
         additionalMetaTags={[
           getDCTermsTitle(
-            "Passport Application Status Checker - Vérificateur de l'état d'une demande de passeport"
+            "Passport Application Status Checker - Vérificateur de l'état d'une demande de passeport",
           ),
         ]}
       />

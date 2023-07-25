@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { PropsWithChildren } from 'react'
 
 import Link, { LinkProps } from 'next/link'
 
@@ -6,8 +6,7 @@ export type LinkButtonSize = 'xs' | 'sm' | 'md' | 'lg'
 
 export type LinkButtonStyle = 'default' | 'primary'
 
-export interface LinkButtonProps extends LinkProps {
-  children?: React.ReactNode
+export interface LinkButtonProps extends LinkProps, PropsWithChildren {
   external?: boolean
   fullWidth?: boolean
   id?: string
@@ -28,7 +27,7 @@ const styles = {
   primary: `bg-blue-dark border-blue-dark text-basic-white active:bg-blue-active focus:bg-blue-normal focus:text-basic-white hover:bg-blue-normal hover:text-basic-white visited:text-basic-white`,
 }
 
-const LinkButton: FC<LinkButtonProps> = ({
+const LinkButton = ({
   children,
   external,
   fullWidth,
@@ -38,7 +37,7 @@ const LinkButton: FC<LinkButtonProps> = ({
   lang,
   size,
   style,
-}) => {
+}: LinkButtonProps) => {
   const baseClasses =
     'align-middle border font-display inline-flex items-center justify-center no-underline shadow-sm text-center focus:ring-1 focus:ring-black focus:ring-offset-2'
   const fullWidthClasses = fullWidth ? 'w-full' : undefined

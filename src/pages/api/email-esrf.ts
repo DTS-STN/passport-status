@@ -7,7 +7,7 @@ const logger = getLogger('email-esrf')
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<string>
+  res: NextApiResponse<string>,
 ) {
   if (req.method !== 'POST') {
     logger.debug(`Status 405: Invalid request method ${req.method}`)
@@ -16,7 +16,7 @@ export default async function handler(
 
   if (req.headers['content-type'] !== 'application/json') {
     logger.debug(
-      `Status 415: Invalid media type ${req.headers['content-type']}`
+      `Status 415: Invalid media type ${req.headers['content-type']}`,
     )
     return res
       .status(415)
@@ -35,11 +35,11 @@ export default async function handler(
 
 const emailEsrfApi = async (
   res: NextApiResponse<string>,
-  emailEsrfApiRequestBody: EmailEsrfApiRequestBody
+  emailEsrfApiRequestBody: EmailEsrfApiRequestBody,
 ) => {
   if (!process.env.PASSPORT_STATUS_API_BASE_URI) {
     throw Error(
-      'process.env.PASSPORT_STATUS_API_BASE_URI must not be undefined, null or empty'
+      'process.env.PASSPORT_STATUS_API_BASE_URI must not be undefined, null or empty',
     )
   }
 
@@ -70,7 +70,7 @@ const emailEsrfApi = async (
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(body),
-    }
+    },
   )
   logger.debug(`Status ${response.status}: ${response.statusText}`)
   res.status(response.status).send(response.statusText)

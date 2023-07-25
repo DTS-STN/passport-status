@@ -1,12 +1,10 @@
-import { FC } from 'react'
+import { PropsWithChildren } from 'react'
 
 import Image from 'next/image'
 
-export interface ErrorLayoutProps {
-  children?: React.ReactNode
-}
+export interface ErrorLayoutProps extends PropsWithChildren {}
 
-const ErrorLayout: FC<ErrorLayoutProps> = ({ children }) => {
+const ErrorLayout = ({ children }: ErrorLayoutProps) => {
   return (
     <div className="flex min-h-screen flex-col">
       <header className="container mx-auto my-6 px-4">

@@ -1,5 +1,3 @@
-import React, { FC } from 'react'
-
 import { useTranslation } from 'next-i18next'
 import getConfig from 'next/config'
 import Image from 'next/image'
@@ -14,7 +12,7 @@ export interface HeaderProps {
   skipToMainText: string
 }
 
-const Header: FC<HeaderProps> = ({ gocLink, skipToMainText }) => {
+const Header = ({ gocLink, skipToMainText }: HeaderProps) => {
   const config = getConfig()
   const { locale, asPath } = useRouter()
   const { t } = useTranslation('common')

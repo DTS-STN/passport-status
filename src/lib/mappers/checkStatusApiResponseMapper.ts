@@ -11,11 +11,11 @@ import {
  * @returns Frontend check status object
  */
 export const mapToCheckStatusApiResponse = (
-  getCertificateApplicationResponse: PassportStatusesGetCertificateApplicationResponse
+  getCertificateApplicationResponse: PassportStatusesGetCertificateApplicationResponse,
 ): CheckStatusApiResponse => ({
   manifestNumber: getManifestNumber(
     getCertificateApplicationResponse.CertificateApplication
-      .CertificateApplicationIdentification
+      .CertificateApplicationIdentification,
   ),
   status:
     getCertificateApplicationResponse.CertificateApplication
@@ -27,11 +27,11 @@ export const mapToCheckStatusApiResponse = (
  * where category text is equals to "Manifest Number", and undefined otherwise
  */
 export const getManifestNumber = (
-  identifications?: PassportStatusesCertificateApplicationIdentification[]
+  identifications?: PassportStatusesCertificateApplicationIdentification[],
 ): string | undefined => {
   return identifications?.find(
     (x) =>
       x.IdentificationCategoryText.toLowerCase() ===
-      'Manifest Number'.toLowerCase()
+      'Manifest Number'.toLowerCase(),
   )?.IdentificationID
 }

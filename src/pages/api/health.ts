@@ -4,7 +4,7 @@ import { HealthApiResponse } from '../../lib/types'
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<HealthApiResponse | string>
+  res: NextApiResponse<HealthApiResponse | string>,
 ) {
   if (req.method !== 'GET') {
     res.status(405).send(`Invalid request method ${req.method}`)

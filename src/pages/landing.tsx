@@ -1,5 +1,3 @@
-import { FC } from 'react'
-
 import { GetServerSideProps } from 'next'
 import { Trans, useTranslation } from 'next-i18next'
 import { NextSeo } from 'next-seo'
@@ -13,7 +11,7 @@ import LinkButton from '../components/LinkButton'
 import { pageWithServerSideTranslations } from '../lib/utils/next-i18next-utils'
 import { getDCTermsTitle } from '../lib/utils/seo-utils'
 
-const Landing: FC = () => {
+const Landing = () => {
   const { t } = useTranslation('landing')
 
   return (

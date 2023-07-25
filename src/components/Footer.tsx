@@ -1,5 +1,3 @@
-import { FC } from 'react'
-
 import Image from 'next/image'
 
 import DateModified from './DateModified'
@@ -43,7 +41,7 @@ export interface FooterProps {
 /**
  * footer element for all pages
  */
-const Footer: FC<FooterProps> = ({
+const Footer = ({
   dateModifiedText,
   footerHeader,
   footerLogo,

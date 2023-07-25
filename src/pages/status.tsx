@@ -1,6 +1,5 @@
 import {
   ChangeEventHandler,
-  FC,
   MouseEventHandler,
   useCallback,
   useMemo,
@@ -53,7 +52,7 @@ const validationSchema = Yup.object({
     .max(new Date(), 'date-of-birth.error.current'),
 })
 
-const Status: FC = () => {
+const Status = () => {
   const { t } = useTranslation(['status', 'common'])
 
   const router = useRouter()
@@ -104,7 +103,7 @@ const Status: FC = () => {
     {
       enabled: formikStatus === 'submitted',
       onSuccess: () => scrollToHeading(),
-    }
+    },
   )
 
   const errorSummaryItems = useMemo<ErrorSummaryItem[]>(
@@ -114,7 +113,7 @@ const Status: FC = () => {
         // field id should target the year select input
         return { ...item, feildId: 'dateOfBirth-year' }
       }),
-    [formikErrors, t]
+    [formikErrors, t],
   )
 
   const handleOnGoBackClick: MouseEventHandler<HTMLButtonElement> = useCallback(
@@ -134,21 +133,21 @@ const Status: FC = () => {
       removeCheckStatusResponse,
       scrollToHeading,
       router,
-    ]
+    ],
   )
 
   const handleOnESRFChange: ChangeEventHandler<HTMLInputElement> = useCallback(
     ({ target }) => {
       setFormikFieldValue(target.name, target.value.replace(/[^a-z0-9]/gi, ''))
     },
-    [setFormikFieldValue]
+    [setFormikFieldValue],
   )
 
   const handleOnDateOfBirthChange: DateSelectFieldOnChangeEvent = useCallback(
     (dateString) => {
       setFormikFieldValue('dateOfBirth', dateString)
     },
-    [setFormikFieldValue]
+    [setFormikFieldValue],
   )
 
   const handleOnCancelClick = useCallback(() => setModalOpen(true), [])

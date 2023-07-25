@@ -1,5 +1,3 @@
-import { FC } from 'react'
-
 import { NextSeo } from 'next-seo'
 import Link from 'next/link'
 
@@ -9,7 +7,7 @@ export interface ErrorPageProps {
   statusCode?: number
 }
 
-const ErrorPage: FC<ErrorPageProps> = ({ statusCode }) => {
+const ErrorPage = ({ statusCode }: ErrorPageProps) => {
   return (
     <ErrorLayout>
       <NextSeo

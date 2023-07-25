@@ -1,5 +1,3 @@
-import { FC } from 'react'
-
 import { Trans, useTranslation } from 'next-i18next'
 
 import AlertBlock from '../AlertBlock'
@@ -10,9 +8,9 @@ export interface CheckStatusShippingFedexProps {
   trackingNumber?: string
 }
 
-export const CheckStatusShippingFedex: FC<CheckStatusShippingFedexProps> = ({
+export const CheckStatusShippingFedex = ({
   trackingNumber,
-}) => {
+}: CheckStatusShippingFedexProps) => {
   const { t } = useTranslation(['status', 'common'])
   return (
     <>

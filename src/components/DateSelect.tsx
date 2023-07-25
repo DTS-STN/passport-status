@@ -1,5 +1,3 @@
-import { FC } from 'react'
-
 export interface DateSelectOption {
   value: string
   label: string
@@ -9,7 +7,7 @@ export type DateSelectType = 'year' | 'month' | 'day'
 
 export type DateSelectOnChangeEvent = (
   e: React.ChangeEvent<HTMLSelectElement>,
-  type: DateSelectType
+  type: DateSelectType,
 ) => void
 
 export interface DateSelectProps {
@@ -25,7 +23,7 @@ export interface DateSelectProps {
   value: string
 }
 
-const DateSelect: FC<DateSelectProps> = ({
+const DateSelect = ({
   ariaDescribedby,
   dateSelectLabelId,
   error,
@@ -36,9 +34,9 @@ const DateSelect: FC<DateSelectProps> = ({
   required,
   type,
   value,
-}) => {
+}: DateSelectProps) => {
   const handleOnSelectChange: React.ChangeEventHandler<HTMLSelectElement> = (
-    e
+    e,
   ) => onChange(e, type)
 
   return (

@@ -18,7 +18,7 @@ export const getNamespaces = (
   namespacesRequired:
     | Readonly<FlatNamespace>
     | ReadonlyArray<FlatNamespace>
-    | undefined = undefined
+    | undefined = undefined,
 ) => {
   // default with namespaces to always needed
   const namespaces: Array<FlatNamespace> = defaultNamespaces
@@ -46,11 +46,11 @@ export const pageWithServerSideTranslations = async (
   namespacesRequired:
     | FlatNamespace
     | Array<FlatNamespace>
-    | undefined = undefined
+    | undefined = undefined,
 ) => {
   return serverSideTranslations(
     locale ?? nextI18nextConfig.i18n.defaultLocale,
     getNamespaces(namespacesRequired),
-    nextI18nextConfig
+    nextI18nextConfig,
   )
 }

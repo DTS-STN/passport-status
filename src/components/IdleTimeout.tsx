@@ -1,4 +1,4 @@
-import { FC, useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 
 import { deleteCookie } from 'cookies-next'
 import { useTranslation } from 'next-i18next'
@@ -11,7 +11,7 @@ export interface IdleTimeoutProps
   extends Pick<IIdleTimerProps, 'promptBeforeIdle'>,
     Pick<IIdleTimerProps, 'timeout'> {}
 
-const IdleTimeout: FC<IdleTimeoutProps> = ({ promptBeforeIdle, timeout }) => {
+const IdleTimeout = ({ promptBeforeIdle, timeout }: IdleTimeoutProps) => {
   const { t } = useTranslation('common')
   const router = useRouter()
   const [modalOpen, setModalOpen] = useState(false)
@@ -38,7 +38,7 @@ const IdleTimeout: FC<IdleTimeoutProps> = ({ promptBeforeIdle, timeout }) => {
     const minutes = Math.floor(getRemainingTime() / 60000)
     const seconds = Math.floor((getRemainingTime() / 1000) % 60).toFixed(0)
     setTimeRemaining(
-      minutes + ':' + (parseInt(seconds) < 10 ? '0' : '') + seconds
+      minutes + ':' + (parseInt(seconds) < 10 ? '0' : '') + seconds,
     )
   }, [getRemainingTime])
 

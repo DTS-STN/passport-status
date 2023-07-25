@@ -4,7 +4,7 @@ import { ApiError } from 'next/dist/server/api-utils'
 import { Alert, AlertApiRequestQuery } from './types'
 
 export const fetchAlerts = async (
-  alertQuery: AlertApiRequestQuery
+  alertQuery: AlertApiRequestQuery,
 ): Promise<Alert[] | null> => {
   const query = new URLSearchParams({
     ...alertQuery,
@@ -23,7 +23,7 @@ export const fetchAlerts = async (
 export const useAlerts = (alertQuery: AlertApiRequestQuery) => {
   const query = useQuery<Alert[] | null, ApiError, Alert[] | null>(
     ['ps:api:alerts', alertQuery],
-    async () => await fetchAlerts(alertQuery)
+    async () => await fetchAlerts(alertQuery),
   )
 
   return {

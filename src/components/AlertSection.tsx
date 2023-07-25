@@ -1,8 +1,8 @@
-import { FC, PropsWithChildren } from 'react'
+import { PropsWithChildren } from 'react'
 
 import { AlertType } from '../lib/types'
 
-export interface AlertSectionProps {
+export interface AlertSectionProps extends PropsWithChildren {
   type: AlertType
   className?: string
 }
@@ -72,11 +72,7 @@ const svg = (type: AlertType) => {
   }
 }
 
-const AlertSection: FC<PropsWithChildren<AlertSectionProps>> = ({
-  children,
-  type,
-  className,
-}) => {
+const AlertSection = ({ children, type, className }: AlertSectionProps) => {
   const borderColor = borderColors[type]
 
   return (

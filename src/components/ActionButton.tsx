@@ -1,4 +1,4 @@
-import { FC, MouseEventHandler } from 'react'
+import { MouseEventHandler } from 'react'
 
 export type ActionButtonSize = 'xs' | 'sm' | 'md' | 'lg'
 
@@ -29,7 +29,7 @@ const styles = {
     'border-blue-dark bg-blue-dark text-basic-white hover:bg-blue-normal active:bg-blue-active focus:bg-blue-normal focus:text-basic-white',
 }
 
-const ActionButton: FC<ActionButtonProps> = ({
+const ActionButton = ({
   disabled,
   fullWidth,
   id,
@@ -38,7 +38,7 @@ const ActionButton: FC<ActionButtonProps> = ({
   style,
   text,
   type,
-}) => {
+}: ActionButtonProps) => {
   const baseClasses =
     'align-middle border font-display inline-flex items-center justify-center shadow-sm disabled:cursor-not-allowed disabled:opacity-70 disabled:pointer-events-none disabled:shadow-none focus:ring-1 focus:ring-black focus:ring-offset-2'
   const fullWidthClasses = fullWidth ? 'w-full' : undefined

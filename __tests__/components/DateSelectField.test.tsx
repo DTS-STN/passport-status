@@ -1,5 +1,3 @@
-import { FC } from 'react'
-
 import '@testing-library/jest-dom/extend-expect'
 import { render, screen } from '@testing-library/react'
 
@@ -10,7 +8,7 @@ import DateSelectField from '../../src/components/DateSelectField'
 
 expect.extend(toHaveNoViolations)
 
-const DateSelectMock: FC<DateSelectProps> = ({ label }: DateSelectProps) => {
+const DateSelectMock = ({ label }: DateSelectProps) => {
   return <div data-testid="date-selector">{label}</div>
 }
 
