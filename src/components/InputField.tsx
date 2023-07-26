@@ -2,34 +2,37 @@ import InputErrorMessage from './InputErrorMessage'
 import InputLabel from './InputLabel'
 
 export interface InputFieldProps {
-  id: string
-  name: string
-  label: string
-  required?: boolean
-  helpMessage?: React.ReactNode
-  textRequired?: string
   errorMessage?: string
+  helpMessage?: React.ReactNode
+  helpMessageSecondary?: React.ReactNode
+  id: string
+  label: string
+  max?: string
+  name: string
+  onChange?: React.ChangeEventHandler<HTMLInputElement>
+  required?: boolean
+  textRequired?: string
   type?: React.HTMLInputTypeAttribute
   value?: string | number | readonly string[]
-  max?: string
-  onChange?: React.ChangeEventHandler<HTMLInputElement>
 }
 
 const InputField = ({
+  errorMessage,
+  helpMessage,
+  helpMessageSecondary,
   id,
   label,
+  max,
   name,
-  errorMessage,
   onChange,
   required,
   textRequired,
   type,
   value,
-  max,
-  helpMessage,
 }: InputFieldProps) => {
   const inputErrorMessageId = `input-${id}-error`
   const inputHelpMessageId = `input-${id}-help`
+  const inputHelpMessageSecondaryId = `input-${id}-help-secondary`
   const inputWrapperId = `input-${id}`
   const inputLabelId = `input-${id}-label`
 
@@ -37,6 +40,7 @@ const InputField = ({
     const ariaDescribedby: string[] = []
     if (errorMessage) ariaDescribedby.push(inputErrorMessageId)
     if (helpMessage) ariaDescribedby.push(inputHelpMessageId)
+    if (helpMessageSecondary) ariaDescribedby.push(inputHelpMessageSecondaryId)
     return ariaDescribedby.length > 0 ? ariaDescribedby.join(' ') : undefined
   }
 
@@ -51,6 +55,14 @@ const InputField = ({
       />
       {errorMessage && (
         <InputErrorMessage id={inputErrorMessageId} message={errorMessage} />
+      )}
+      {helpMessage && (
+        <div
+          className="max-w-prose text-base text-gray-600 mb-1.5"
+          id={inputHelpMessageId}
+        >
+          {helpMessage}
+        </div>
       )}
       <input
         aria-describedby={getAriaDescribedby()}
@@ -67,12 +79,12 @@ const InputField = ({
         type={type}
         value={value ?? ''}
       />
-      {helpMessage && (
+      {helpMessageSecondary && (
         <div
           className="mt-1.5 max-w-prose text-base text-gray-600"
-          id={inputHelpMessageId}
+          id={inputHelpMessageSecondaryId}
         >
-          {helpMessage}
+          {helpMessageSecondary}
         </div>
       )}
     </div>
