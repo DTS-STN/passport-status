@@ -70,7 +70,7 @@
   "no-record": {
     "cannot-give-status": {
       "description": "Nous ne pouvons pas vous donner l'état de votre demande pour le moment",
-      "because": "L’état de votre passeport n’est pas disponible pour les raisons suivantes\u00a0:",
+      "because": "L'état de votre passeport n'est pas disponible pour les raisons suivantes\u00a0:",
       "list": {
         "item-1": "les renseignements que vous nous avez fournis ne correspondent pas à ceux de notre système, ou",
         "item-2": "nous avons reçu votre demande, mais n'avons pas encore commencé à la traiter"
@@ -80,7 +80,7 @@
     "can-review": "Vous pouvez revérifiez vos renseignements et essayez à nouveau.",
     "cant-find-file": "Si nous ne trouvons toujours pas votre dossier, vous pouvez réessayer demain. Nous mettons à jour nos dossiers chaque jour.",
     "need-faster": "Si vous avez besoin du passeport plus rapidement",
-    "get-urgent": "Apprenez comment obtenir <Link>des services urgents ou express pour votre demande existante</Link> si vous avez besoin du passeport dans un délai de 10 jours ouvrables. Des frais supplémentaires peuvent s’appliquer."
+    "get-urgent": "Apprenez comment obtenir <Link>des services urgents ou express pour votre demande existante</Link> si vous avez besoin du passeport dans un délai de 10 jours ouvrables. Des frais supplémentaires peuvent s'appliquer."
   },
   "being-processed": {
     "received": "Nous avons reçu votre demande et nous sommes en train de la traiter",
@@ -88,7 +88,7 @@
     "ready-within": "Si votre demande a été dûment remplie, votre passeport devrait être prêt selon nos <Link>normes de service</Link>.",
     "incomplete": "Les demandes incomplètes ne pourront pas être traitées et seront retournées dès que possible.",
     "need-faster": "Si vous avez besoin du passeport plus rapidement",
-    "get-urgent": "Apprenez comment obtenir <Link>des services urgents ou express pour votre demande existante</Link> si vous avez besoin du passeport dans un délai de 10 jours ouvrables. Des frais supplémentaires peuvent s’appliquer.",
+    "get-urgent": "Apprenez comment obtenir <Link>des services urgents ou express pour votre demande existante</Link> si vous avez besoin du passeport dans un délai de 10 jours ouvrables. Des frais supplémentaires peuvent s'appliquer.",
     "dont-meet-standards": "Si nous ne respectons pas nos normes de service",
     "may-be-eligible": "Vous pourriez avoir droit à un remboursement partiel si nous ne respectons pas nos <Link>normes de service</Link>."
   },

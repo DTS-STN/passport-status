@@ -212,10 +212,10 @@ const Email = () => {
               <li>{t('header-messages.list.item-4')}</li>
             </ul>
             <AlertSection className="mb-8" type="info">
-              <h2 className="h2 mt-0">
+              <h2 className="h3 mb-3">
                 {t('header-messages.child-applications')}
               </h2>
-              <p>
+              <p className="m-0">
                 <Trans
                   i18nKey="header-messages.for-child-application"
                   ns="email"
@@ -243,16 +243,9 @@ const Email = () => {
               errorMessage={formikErrors.email && t(formikErrors.email as any)}
               textRequired={t('common:required')}
               required
-              helpMessage={
-                <>
-                  <p>{t('help-message.email')}</p>
-                  <p>
-                    <Trans
-                      i18nKey="help-message.for-child-application"
-                      ns="email"
-                    />
-                  </p>
-                </>
+              helpMessage={t('email.help-message')}
+              helpMessageSecondary={
+                <Trans i18nKey="email.help-message-secondary" ns="email" />
               }
             />
             <InputField
@@ -266,6 +259,7 @@ const Email = () => {
               }
               textRequired={t('common:required')}
               required
+              helpMessage={t('given-name.help-message')}
             />
             <InputField
               id="surname"
@@ -278,6 +272,7 @@ const Email = () => {
               }
               textRequired={t('common:required')}
               required
+              helpMessage={t('surname.help-message')}
             />
             <DateSelectField
               id="dateOfBirth"

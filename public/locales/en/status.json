@@ -89,8 +89,8 @@
     "incomplete": "Incomplete applications cannot be processed and will be returned to you as soon as possible.",
     "need-faster": "If you need the passport faster",
     "get-urgent": "Find out how to get <Link>urgent or express service for existing applications</Link> if you need the passport within 10 business days. Extra fees may apply.",
-    "dont-meet-standards": "If we don’t meet our service standards",
-    "may-be-eligible": "You may be eligible for a partial refund if we don’t meet our <Link>service standards</Link>."
+    "dont-meet-standards": "If we don't meet our service standards",
+    "may-be-eligible": "You may be eligible for a partial refund if we don't meet our <Link>service standards</Link>."
   },
   "ready-for-pickup": {
     "has-been-printed": "Your passport has been printed",

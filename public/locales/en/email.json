@@ -5,27 +5,31 @@
     "error": {
       "required": "The email address is required.",
       "valid": "The email address must be valid."
-    }
+    },
+    "help-message": "Enter it exactly as provided on your passport application form.",
+    "help-message-secondary": "<strong>For child applications,</strong> provide the full email address for the applicant parent or legal guardian exactly as provided on the passport application."
   },
   "given-name": {
     "error": {
-      "required": "The given name(s) of applicant is required."
+      "required": "The given name(s) is required."
     },
-    "label": "Given name(s) of applicant"
+    "label": "Given name(s), as you detailed on the application",
+    "help-message": "Enter first name(s) and any middle name(s)."
   },
   "surname": {
     "error": {
-      "required": "The surname of applicant is required."
+      "required": "The surname is required."
     },
-    "label": "Surname of applicant"
+    "label": "Surname, as you detailed on the application",
+    "help-message": "Enter last name."
   },
   "date-of-birth": {
     "error": {
-      "current": "The applicant date of birth must be in the past.",
-      "invalid": "The applicant date of birth must be valid in the following format: YYYY-MM-DD (Year-Month-Day).",
-      "required": "The applicant date of birth is required."
+      "current": "The date of birth must be in the past.",
+      "invalid": "The date of birth must be valid in the following format: YYYY-MM-DD (Year-Month-Day).",
+      "required": "The date of birth is required."
     },
-    "label": "Applicant date of birth"
+    "label": "Date of birth, as you detailed on the application"
   },
   "email-esrf": "Email me the file number or reference number",
   "email-sent-confirmation": "An email has been sent if there was a match in our records with the file number (ESRF).",
@@ -48,10 +52,6 @@
     "header": "Page Unauthorized",
     "desc": "Please accept the Privacy and Email terms as well as give your consent before getting your file number (ESRF)",
     "button": "Privacy and Email terms"
-  },
-  "help-message": {
-    "email": "Enter it exactly as provided on your passport application form.",
-    "for-child-application": "<strong>For child applications,</strong> provide the full email address for the applicant parent or legal guardian exactly as provided on their passport application."
   },
   "header-messages": {
     "matches": "<strong>Make sure your information matches the proof of citizenship and supporting ID used when you applied for a passport.</strong> Your proof of citizenship could be one of the following:",

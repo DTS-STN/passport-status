@@ -3,29 +3,33 @@
   "email": {
     "label": "Adresse courriel",
     "error": {
-      "required": "L’adresse courriel est obligatoire.",
-      "valid": "L’adresse courriel doit être valide."
-    }
+      "required": "L'adresse courriel est obligatoire.",
+      "valid": "L'adresse courriel doit être valide."
+    },
+    "help-message": "Indiquez votre adresse courriel telle qu'elle figure sur votre formulaire de demande de passeport.",
+    "help-message-secondary": "<strong>Pour les demandes pour enfants,</strong> indiquez l'adresse courriel complète du parent ou du tuteur légal, telle qu'elle figure sur la demande de passeport."
   },
   "given-name": {
     "error": {
-      "required": "Le(s) prénom(s) du requérant est(sont) obligatoire(s)."
+      "required": "Le(s) prénom(s) est(sont) obligatoire(s)."
     },
-    "label": "Prénom(s) du requérant"
+    "label": "Prénom(s), comme vous l'avez indiqué sur la demande",
+    "help-message": "Entrez le(s) prénom(s) et le(s) deuxième(s) prénom(s)."
   },
   "surname": {
     "error": {
-      "required": "Le nom de famille du requérant est obligatoire."
+      "required": "Le nom de famille est obligatoire."
     },
-    "label": "Nom de famille du requérant"
+    "label": "Nom de famille, comme vous l'avez indiqué sur la demande",
+    "help-message": "Entrez le nom de famille."
   },
   "date-of-birth": {
     "error": {
-      "current": "La date de naissance du requérant doit être dans le passé.",
-      "invalid": "La date de naissance du requérant doit être valide selon le format suivant\u00a0: aaaa-MM-jj (Année-Mois-Jour).",
-      "required": "La date de naissance du requérant est obligatoire."
+      "current": "La date de naissance doit être dans le passé.",
+      "invalid": "La date de naissance doit être valide selon le format suivant\u00a0: aaaa-MM-jj (Année-Mois-Jour).",
+      "required": "La date de naissance est obligatoire."
     },
-    "label": "Date de naissance du requérant"
+    "label": "Date de naissance, comme vous l'avez indiqué sur la demande"
   },
   "email-esrf": "Envoyez-moi par courriel le numéro de dossier ou numéro de référence",
   "email-sent-confirmation": "Un courriel a été envoyé s'il y avait une correspondance dans nos dossiers avec le numéro de dossier (FEDS).",
@@ -42,27 +46,23 @@
       "item-1": "revérifiez vos renseignements et essayez à nouveau, ou",
       "item-2": "essayer encore demain — nous mettons à jour nos dossiers chaque jour."
     },
-    "please-contact": "Si vous n’obtenez toujours pas le courriel, <Link>veuillez nous contacter</Link>."
+    "please-contact": "Si vous n'obtenez toujours pas le courriel, <Link>veuillez nous contacter</Link>."
   },
   "page-unauth": {
     "header": "Page non-autorisée",
     "desc": "Veuillez accepter les conditions de confidentialité et de courriel et donner votre consentement avant de recevoir votre numéro de dossier (FEDS).",
     "button": "Conditions de confidentialité et de courriel"
   },
-  "help-message": {
-    "email": "Indiquez votre adresse courriel telle qu’elle figure sur votre formulaire de demande de passeport.",
-    "for-child-application": "<strong>Pour les demandes pour enfants,</strong> indiquez l’adresse courriel complète du parent ou du tuteur légal du requérant, telle qu’elle figure sur la demande de passeport."
-  },
   "header-messages": {
-    "matches": "<strong>Assurez-vous que vos renseignements correspondent à votre preuve de citoyenneté et à votre pièce d’identité utilisée lorsque vous avez présenté votre demande de passeport.</strong> Votre preuve de citoyenneté pourrait être l’une des suivantes\u00a0:",
+    "matches": "<strong>Assurez-vous que vos renseignements correspondent à votre preuve de citoyenneté et à votre pièce d'identité utilisée lorsque vous avez présenté votre demande de passeport.</strong> Votre preuve de citoyenneté pourrait être l'une des suivantes\u00a0:",
     "list": {
       "item-1": "un certificat de naissance",
       "item-2": "un certificat de citoyenneté",
       "item-3": "une carte de citoyenneté ou",
-      "item-4": "d’autres documents, comme un certificat de naturalisation"
+      "item-4": "d'autres documents, comme un certificat de naturalisation"
     },
     "child-applications": "Les demandes de passeport pour enfants",
-    "for-child-application": "Utilisez le(s) prénom(s), nom de famille et date de naissance de l’enfant, exactement tels qu’ils figurent sur sa preuve de citoyenneté."
+    "for-child-application": "Utilisez le(s) prénom(s), nom de famille et date de naissance de l'enfant, exactement tels qu'ils figurent sur sa preuve de citoyenneté."
   },
   "request-another": "Obtenir un autre numéro de dossier ou numéro de référence"
 }
