@@ -5,7 +5,7 @@
       "invalid": "La date de naissance doit être valide selon le format suivant\u00a0: aaaa-MM-jj (Année-Mois-Jour).",
       "required": "La date de naissance est obligatoire."
     },
-    "label": "Date de naissance telle qu'indiquée sur la demande"
+    "label": "Date de naissance comme vous l'avez précisé sur la demande"
   },
   "check-again": "Vérifier l'état d'une autre demande",
   "check-status": "Vérifiez l'état",
@@ -21,7 +21,7 @@
     "error": {
       "required": "Le(s) prénom(s) est(sont) obligatoire(s)."
     },
-    "label": "Prénom(s) tel qu'indiqué sur la demande",
+    "label": "Prénom(s) comme vous l'avez précisé sur la demande",
     "help-message": "Entrez le(s) prénom(s) et le(s) deuxième(s) prénom(s)."
   },
   "previous": "Vérifier l'état d'une autre demande",
@@ -60,7 +60,7 @@
     "error": {
       "required": "Le nom de famille est obligatoire."
     },
-    "label": "Nom de famille tel qu'indiqué sur la demande",
+    "label": "Nom de famille comme vous l'avez précisé sur la demande",
     "help-message": "Entrez le nom de famille."
   },
   "cannot-provide-result": {
