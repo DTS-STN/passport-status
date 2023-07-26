@@ -1,11 +1,11 @@
 {
   "date-of-birth": {
     "error": {
-      "current": "The applicant date of birth must be in the past.",
-      "invalid": "The applicant date of birth must be valid in the following format: YYYY-MM-DD (Year-Month-Day).",
-      "required": "The applicant date of birth is required."
+      "current": "The date of birth must be in the past.",
+      "invalid": "The date of birth must be valid in the following format: YYYY-MM-DD (Year-Month-Day).",
+      "required": "The date of birth is required."
     },
-    "label": "Applicant date of birth"
+    "label": "Date of birth, as you detailed on the application"
   },
   "check-again": "Check the status of another application",
   "check-status": "Check Status",
@@ -14,14 +14,15 @@
     "error": {
       "required": "The file number is required."
     },
-    "help": "If you can't find your file number or reference number, you can <Link>request to receive it</Link>.",
+    "help-message": "If you can't find your file number or reference number, you can <Link>request to receive it</Link>.",
     "label": "File number or reference number"
   },
   "given-name": {
     "error": {
-      "required": "The given name(s) of applicant is required."
+      "required": "The given name(s) is required."
     },
-    "label": "Given name(s) of applicant"
+    "label": "Given name(s), as you detailed on the application",
+    "help-message": "Enter first name(s) and any middle name(s)."
   },
   "previous": "Check the status of another application",
   "reset": "Check the status of another application",
@@ -57,9 +58,10 @@
   "status-is": "The latest status of your application according to our records is:",
   "surname": {
     "error": {
-      "required": "The surname of applicant is required."
+      "required": "The surname is required."
     },
-    "label": "Surname of applicant"
+    "label": "Surname, as you detailed on the application",
+    "help-message": "Enter last name."
   },
   "cannot-provide-result": {
     "title": "We cannot provide a result at this time because:",
