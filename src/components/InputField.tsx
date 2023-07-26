@@ -58,7 +58,7 @@ const InputField = ({
       )}
       {helpMessage && (
         <div
-          className="max-w-prose text-base text-gray-600 mb-1.5"
+          className="mb-1.5 max-w-prose text-base text-gray-600"
           id={inputHelpMessageId}
         >
           {helpMessage}
@@ -69,7 +69,7 @@ const InputField = ({
         aria-invalid={errorMessage ? true : undefined}
         aria-labelledby={inputLabelId}
         aria-required={required ? true : undefined}
-        className={`block h-9 rounded border py-1.5 px-3 ${
+        className={`block h-9 rounded border px-3 py-1.5 ${
           errorMessage ? 'border-accent-error' : 'border-neutral-400'
         } focus:border-sky-500 focus:outline-none focus:ring-sky-500`}
         id={id}

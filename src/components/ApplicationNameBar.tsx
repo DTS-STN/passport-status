@@ -11,7 +11,7 @@ const ApplicationNameBar = ({ text, href }: ApplicationNameBarProps) => {
       <section className="container mx-auto p-4">
         <Link
           href={href}
-          className="font-body md:text-[28px] text-lg font-bold text-white hover:underline"
+          className="font-body text-lg font-bold text-white hover:underline md:text-[28px]"
         >
           {text}
         </Link>

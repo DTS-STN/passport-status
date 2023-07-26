@@ -56,7 +56,7 @@ const DateSelect = ({
         aria-invalid={error ? true : undefined}
         aria-labelledby={`${dateSelectLabelId} date-select-${id}-${type}-label`}
         aria-required={required ? true : undefined}
-        className={`w-40 rounded border py-1 px-3 ${
+        className={`w-40 rounded border px-3 py-1 ${
           error ? 'border-accent-error' : 'border-neutral-400'
         } bg-white focus:border-sky-500 focus:outline-none focus:ring-sky-500`}
       >

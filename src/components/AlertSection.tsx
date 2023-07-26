@@ -26,7 +26,7 @@ const svg = (type: AlertType) => {
     case 'danger': {
       return (
         <svg
-          className="bg-white p-1 fill-accent-error w-8 h-8"
+          className="h-8 w-8 bg-white fill-accent-error p-1"
           viewBox="0 0 100 100"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -37,7 +37,7 @@ const svg = (type: AlertType) => {
     case 'success': {
       return (
         <svg
-          className="bg-white p-1 fill-accent-success w-8 h-8"
+          className="h-8 w-8 bg-white fill-accent-success p-1"
           viewBox="0 0 512 512"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -48,7 +48,7 @@ const svg = (type: AlertType) => {
     case 'warning': {
       return (
         <svg
-          className="bg-white p-1 fill-accent-warning w-8 h-8"
+          className="h-8 w-8 bg-white fill-accent-warning p-1"
           viewBox="0 0 24 24"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -61,7 +61,7 @@ const svg = (type: AlertType) => {
     case 'info': {
       return (
         <svg
-          className="bg-white p-1 fill-accent-info w-8 h-8"
+          className="h-8 w-8 bg-white fill-accent-info p-1"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 512 512"
         >
@@ -78,8 +78,8 @@ const AlertSection = ({ children, type, className }: AlertSectionProps) => {
   return (
     <div className={className}>
       <div className={`${svgStyles[type]} -mt-8`}>{svg(type)}</div>
-      <section className={`pb-0.5 pt-2 border-l-8 ${borderColor}`}>
-        <div className="ml-4 mb-2">{children}</div>
+      <section className={`border-l-8 pb-0.5 pt-2 ${borderColor}`}>
+        <div className="mb-2 ml-4">{children}</div>
       </section>
     </div>
   )
