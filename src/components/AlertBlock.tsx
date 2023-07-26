@@ -18,7 +18,7 @@ const AlertBlock = ({ page, className }: AlertBlockProps) => {
     <div className={className}>
       {data?.map((alert) => {
         return (
-          <AlertSection key={alert.uid} type={alert.type} className="mt-4 mb-4">
+          <AlertSection key={alert.uid} type={alert.type} className="mb-4 mt-4">
             <MarkdownContent
               markdown={i18n.language === 'fr' ? alert.textFr : alert.textEn}
               header={page === undefined}

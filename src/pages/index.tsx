@@ -42,7 +42,7 @@ const Index = () => {
                 / <span lang="fr">Gouvernement du Canada</span>
               </span>
             </div>
-            <div className="mt-9 mb-2 flex justify-center gap-8">
+            <div className="mb-2 mt-9 flex justify-center gap-8">
               <section className="w-36" lang="en">
                 <h2 className="sr-only">Government of Canada</h2>
                 <LinkButton

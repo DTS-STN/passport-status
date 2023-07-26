@@ -52,14 +52,14 @@ const Footer = ({
     <footer>
       <h2 className="sr-only">{footerHeader}</h2>
       <DateModified text={dateModifiedText} />
-      <div className="bg-gray-light pt-6 pb-8">
+      <div className="bg-gray-light pb-8 pt-6">
         <div className="container mx-auto px-4">
           <div role="navigation" aria-labelledby="footerNav">
             <h3 className="sr-only" id="footerNav">
               {footerNavHeader}
             </h3>
-            <div className="flex justify-between items-end md:items-center">
-              <ul className="list-none md:list-disc md:list-inside flex flex-wrap flex-col space-y-3 md:space-y-0 md:flex-row md:items-center marker:text-xs">
+            <div className="flex items-end justify-between md:items-center">
+              <ul className="flex list-none flex-col flex-wrap space-y-3 marker:text-xs md:list-inside md:list-disc md:flex-row md:items-center md:space-y-0">
                 {links.map(({ link, linkText }) => (
                   <li key={link} className="first:list-none md:mr-4">
                     <a

@@ -11,7 +11,7 @@ export interface DateModifiedProps {
  */
 const DateModified = ({ id, text }: DateModifiedProps) => {
   return (
-    <dl id={id} className="container mx-auto py-8 px-4">
+    <dl id={id} className="container mx-auto px-4 py-8">
       <dt className="inline">{text}</dt>
       <dd className="inline">
         <time>{process.env.NEXT_PUBLIC_BUILD_DATE}</time>
