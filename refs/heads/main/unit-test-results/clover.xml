@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1690377470735" clover="3.2.0">
-  <project timestamp="1690377470735" name="All files">
-    <metrics statements="547" coveredstatements="348" conditionals="315" coveredconditionals="141" methods="157" coveredmethods="83" elements="1019" coveredelements="572" complexity="0" loc="547" ncloc="547" packages="11" files="58" classes="58"/>
+<coverage generated="1690382707320" clover="3.2.0">
+  <project timestamp="1690382707321" name="All files">
+    <metrics statements="549" coveredstatements="350" conditionals="319" coveredconditionals="143" methods="157" coveredmethods="83" elements="1025" coveredelements="576" complexity="0" loc="549" ncloc="549" packages="11" files="58" classes="58"/>
     <package name="src">
       <metrics statements="28" coveredstatements="14" conditionals="26" coveredconditionals="8" methods="7" coveredmethods="6"/>
       <file name="middleware.ts" path="/home/runner/work/passport-status/passport-status/src/middleware.ts">
@@ -50,7 +50,7 @@
       </file>
     </package>
     <package name="src.components">
-      <metrics statements="236" coveredstatements="191" conditionals="132" coveredconditionals="79" methods="71" coveredmethods="51"/>
+      <metrics statements="238" coveredstatements="193" conditionals="136" coveredconditionals="81" methods="71" coveredmethods="51"/>
       <file name="ActionButton.tsx" path="/home/runner/work/passport-status/passport-status/src/components/ActionButton.tsx">
         <metrics statements="9" coveredstatements="9" conditionals="6" coveredconditionals="4" methods="1" coveredmethods="1"/>
         <line num="18" count="6" type="stmt"/>
@@ -287,19 +287,21 @@
         <line num="7" count="2" type="stmt"/>
       </file>
       <file name="InputField.tsx" path="/home/runner/work/passport-status/passport-status/src/components/InputField.tsx">
-        <metrics statements="12" coveredstatements="12" conditionals="18" coveredconditionals="17" methods="2" coveredmethods="2"/>
-        <line num="18" count="3" type="stmt"/>
-        <line num="31" count="2" type="stmt"/>
-        <line num="32" count="2" type="stmt"/>
+        <metrics statements="14" coveredstatements="14" conditionals="22" coveredconditionals="19" methods="2" coveredmethods="2"/>
+        <line num="19" count="3" type="stmt"/>
         <line num="33" count="2" type="stmt"/>
         <line num="34" count="2" type="stmt"/>
+        <line num="35" count="2" type="stmt"/>
         <line num="36" count="2" type="stmt"/>
         <line num="37" count="2" type="stmt"/>
-        <line num="38" count="2" type="cond" truecount="2" falsecount="0"/>
-        <line num="39" count="2" type="cond" truecount="2" falsecount="0"/>
-        <line num="40" count="2" type="cond" truecount="2" falsecount="0"/>
-        <line num="43" count="2" type="stmt"/>
-        <line num="82" count="3" type="stmt"/>
+        <line num="39" count="2" type="stmt"/>
+        <line num="40" count="2" type="stmt"/>
+        <line num="41" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="42" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="43" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="44" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="47" count="2" type="stmt"/>
+        <line num="94" count="3" type="stmt"/>
       </file>
       <file name="InputLabel.tsx" path="/home/runner/work/passport-status/passport-status/src/components/InputLabel.tsx">
         <metrics statements="2" coveredstatements="2" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
@@ -592,7 +594,7 @@
         <line num="134" count="0" type="stmt"/>
         <line num="140" count="2" type="cond" truecount="1" falsecount="1"/>
         <line num="142" count="2" type="stmt"/>
-        <line num="333" count="1" type="stmt"/>
+        <line num="328" count="1" type="stmt"/>
       </file>
       <file name="expectations.tsx" path="/home/runner/work/passport-status/passport-status/src/pages/expectations.tsx">
         <metrics statements="8" coveredstatements="5" conditionals="2" coveredconditionals="0" methods="3" coveredmethods="1"/>

@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">94.11% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>14/14</span>
+                <span class='fraction'>16/17</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">94.44% </span>
+                <span class="strong">86.36% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>17/18</span>
+                <span class='fraction'>19/22</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>12/12</span>
+                <span class='fraction'>14/14</span>
             </div>
         
             
@@ -149,7 +149,20 @@
 <a name='L84'></a><a href='#L84'>84</a>
 <a name='L85'></a><a href='#L85'>85</a>
 <a name='L86'></a><a href='#L86'>86</a>
-<a name='L87'></a><a href='#L87'>87</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a>
+<a name='L99'></a><a href='#L99'>99</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -179,10 +192,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
@@ -190,8 +199,23 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -239,34 +263,37 @@
 import InputLabel from './InputLabel'
 &nbsp;
 export interface InputFieldProps {
-  id: string
-  name: string
-  label: string
-  required?: boolean
-  helpMessage?: React.ReactNode
-  textRequired?: string
   errorMessage?: string
+  helpMessage?: React.ReactNode
+  helpMessageSecondary?: React.ReactNode
+  id: string
+  label: string
+  max?: string
+  name: string
+  onChange?: React.ChangeEventHandler&lt;HTMLInputElement&gt;
+  required?: boolean
+  textRequired?: string
   type?: React.HTMLInputTypeAttribute
   value?: string | number | readonly string[]
-  max?: string
-  onChange?: React.ChangeEventHandler&lt;HTMLInputElement&gt;
 }
 &nbsp;
 const InputField = ({
+  errorMessage,
+  helpMessage,
+  helpMessageSecondary,
   id,
   label,
+  max,
   name,
-  errorMessage,
   onChange,
   required,
   textRequired,
   type,
   value,
-  max,
-  helpMessage,
 }: InputFieldProps) =&gt; {
   const inputErrorMessageId = `input-${id}-error`
   const inputHelpMessageId = `input-${id}-help`
+  const inputHelpMessageSecondaryId = `input-${id}-help-secondary`
   const inputWrapperId = `input-${id}`
   const inputLabelId = `input-${id}-label`
 &nbsp;
@@ -274,6 +301,7 @@ const InputField = ({
     const ariaDescribedby: string[] = []
     if (errorMessage) ariaDescribedby.push(inputErrorMessageId)
     if (helpMessage) ariaDescribedby.push(inputHelpMessageId)
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (helpMessageSecondary) <span class="cstat-no" title="statement not covered" >ariaDescribedby.push(inputHelpMessageSecondaryId)</span>
     return ariaDescribedby.length &gt; 0 ? ariaDescribedby.join(' ') : undefined
   }
 &nbsp;
@@ -288,6 +316,14 @@ const InputField = ({
       /&gt;
       {errorMessage &amp;&amp; (
         &lt;InputErrorMessage id={inputErrorMessageId} message={errorMessage} /&gt;
+      )}
+      {helpMessage &amp;&amp; (
+        &lt;div
+          className="max-w-prose text-base text-gray-600 mb-1.5"
+          id={inputHelpMessageId}
+        &gt;
+          {helpMessage}
+        &lt;/div&gt;
       )}
       &lt;input
         aria-describedby={getAriaDescribedby()}
@@ -304,12 +340,12 @@ const InputField = ({
         type={type}
         value={value ?? ''}
       /&gt;
-      {helpMessage &amp;&amp; (
-        &lt;div
+      {helpMessageSecondary &amp;&amp; (
+<span class="branch-1 cbranch-no" title="branch not covered" >        &lt;div</span>
           className="mt-1.5 max-w-prose text-base text-gray-600"
-          id={inputHelpMessageId}
+          id={inputHelpMessageSecondaryId}
         &gt;
-          {helpMessage}
+          {helpMessageSecondary}
         &lt;/div&gt;
       )}
     &lt;/div&gt;
@@ -328,7 +364,7 @@ export default InputField
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-07-26T13:17:50.757Z
+                at 2023-07-26T14:45:07.339Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
