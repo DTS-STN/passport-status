@@ -200,7 +200,7 @@ const Status = () => {
             </ul>
 
             <AlertSection type="info" className="mb-4">
-              <h2 className="h2 mt-0">{t('child-applications.header')}</h2>
+              <h2 className="h3 mb-3">{t('child-applications.header')}</h2>
               <p>{t('child-applications.description')}</p>
             </AlertSection>
 
@@ -224,15 +224,13 @@ const Status = () => {
               textRequired={t('common:required')}
               required
               helpMessage={
-                <p>
-                  <Trans
-                    i18nKey="esrf.help"
-                    ns="status"
-                    components={{
-                      Link: <Link href="/email" />,
-                    }}
-                  />
-                </p>
+                <Trans
+                  i18nKey="esrf.help-message"
+                  ns="status"
+                  components={{
+                    Link: <Link href="/email" />,
+                  }}
+                />
               }
             />
             <InputField
@@ -246,6 +244,7 @@ const Status = () => {
               }
               textRequired={t('common:required')}
               required
+              helpMessage={t('given-name.help-message')}
             />
             <InputField
               id="surname"
@@ -258,6 +257,7 @@ const Status = () => {
               }
               textRequired={t('common:required')}
               required
+              helpMessage={t('surname.help-message')}
             />
             <DateSelectField
               id="dateOfBirth"
