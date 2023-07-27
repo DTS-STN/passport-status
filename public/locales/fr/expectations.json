@@ -1,6 +1,6 @@
 {
   "available-after": {
-    "description": "L'état de votre demande est disponible après\u00A0:",
+    "description": "L'état de votre demande est disponible après\u00a0:",
     "list": {
       "item-1": "5 jours ouvrables si vous avez présenté votre demande en personne ou",
       "item-2": "10 jours ouvrables si vous avez envoyé votre demande par la poste"
@@ -9,14 +9,14 @@
   },
   "button-agree": "J'ai lu et j'accepte",
   "can-check": {
-    "description": "Vous <strong>pouvez obtenir l'état</strong> de votre demande en ligne si vous avez présenté votre demande de passeport soit\u00A0:",
+    "description": "Vous <strong>pouvez obtenir l'état</strong> de votre demande en ligne si vous avez présenté votre demande de passeport soit\u00a0:",
     "list": {
       "item-1": "en personne ou par la poste au Canada, ou",
       "item-2": "par la poste des États-Unis"
     }
   },
   "cannot-check": {
-    "description": "Vous <strong>ne pouvez pas obtenir l'état</strong> d'une demande en ligne si vous en avez fait la demande\u00A0:",
+    "description": "Vous <strong>ne pouvez pas obtenir l'état</strong> d'une demande en ligne si vous en avez fait la demande\u00a0:",
     "list": {
       "item-1": "dans un consulat ou une ambassade à l'étranger, ou",
       "item-2": "pour les affaires officielles du gouvernement (passeports spéciaux ou diplomatiques)"

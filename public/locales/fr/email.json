@@ -2,7 +2,7 @@
   "date-of-birth": {
     "error": {
       "current": "La date de naissance doit être dans le passé.",
-      "invalid": "La date de naissance doit être valide selon le format suivant\u00A0: aaaa-MM-jj (Année-Mois-Jour).",
+      "invalid": "La date de naissance doit être valide selon le format suivant\u00a0: aaaa-MM-jj (Année-Mois-Jour).",
       "required": "La date de naissance est obligatoire."
     },
     "label": "Date de naissance comme vous l'avez précisé sur la demande"
@@ -17,13 +17,13 @@
     "label": "Adresse courriel"
   },
   "email-confirmation-msg": {
-    "dont-receive": "Si vous ne recevez pas de courriel, vous pouvez\u00A0:",
+    "dont-receive": "Si vous ne recevez pas de courriel, vous pouvez\u00a0:",
     "dont-receive-list": {
       "item-1": "revérifiez vos renseignements et essayez à nouveau, ou",
       "item-2": "essayer encore demain — nous mettons à jour nos dossiers chaque jour."
     },
     "if-exists": "Si nous pouvons trouver le dossier avec les renseignements que vous nous avez fournis, <strong>nous vous enverrons le numéro de dossier ou le numéro de référence par courriel</strong>. Si vous ne recevez pas le message de confirmation dans votre boîte de réception, vérifiez votre dossier de courriel indésirable.",
-    "may-not-receive": "Il se pourrait que vous ne receviez pas de courriel si\u00A0:",
+    "may-not-receive": "Il se pourrait que vous ne receviez pas de courriel si\u00a0:",
     "may-not-receive-list": {
       "item-1": "les renseignements que vous nous avez fournis ne correspondent pas à ceux de notre système, ou",
       "item-2": "nous avons reçu votre demande, mais n'avons pas encore commencé à la traiter"
@@ -32,7 +32,6 @@
     "request-received": "Votre demande a été reçue"
   },
   "email-esrf": "Envoyez-moi par courriel le numéro de dossier ou numéro de référence",
-  "email-sent-confirmation": "Un courriel a été envoyé s'il y avait une correspondance dans nos dossiers avec le numéro de dossier (FEDS).",
   "given-name": {
     "error": {
       "required": "Le(s) prénom(s) est(sont) obligatoire(s)."
@@ -50,12 +49,7 @@
       "item-3": "une carte de citoyenneté ou",
       "item-4": "d'autres documents, comme un certificat de naturalisation"
     },
-    "matches": "<strong>Assurez-vous que vos renseignements correspondent à votre preuve de citoyenneté et à votre pièce d'identité utilisée lorsque vous avez présenté votre demande de passeport.</strong> Votre preuve de citoyenneté pourrait être l'une des suivantes\u00A0:"
-  },
-  "page-unauth": {
-    "button": "Conditions de confidentialité et de courriel",
-    "desc": "Veuillez accepter les conditions de confidentialité et de courriel et donner votre consentement avant de recevoir votre numéro de dossier (FEDS).",
-    "header": "Page non-autorisée"
+    "matches": "<strong>Assurez-vous que vos renseignements correspondent à votre preuve de citoyenneté et à votre pièce d'identité utilisée lorsque vous avez présenté votre demande de passeport.</strong> Votre preuve de citoyenneté pourrait être l'une des suivantes\u00a0:"
   },
   "request-another": "Obtenir un autre numéro de dossier ou numéro de référence",
   "surname": {

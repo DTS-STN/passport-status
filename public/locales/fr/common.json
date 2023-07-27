@@ -4,17 +4,15 @@
     "alert": "Lieu de test",
     "description": "Vous ne pouvez pas vérifier l'état de votre demande de passeport via ce site de test. Certaines parties de ce site peuvent ne pas fonctionner et seront modifiées."
   },
-  "contact-us": "Nous contacter",
   "contact-us-link": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens/communiquer-programme-passeport.html",
   "date-select-field": {
     "day": "Jour",
     "month": "Mois",
     "year": "Année"
   },
-  "english": "English",
   "footer": {
     "canada-ca-alt-text": "Symbole du gouvernement du Canada",
-    "date-modified-text": "Date de modification\u00A0: ",
+    "date-modified-text": "Date de modification\u00a0: ",
     "header": "À propos de ce site",
     "links": {
       "about-canada-ca": "À propos de Canada.ca",
@@ -30,16 +28,12 @@
     },
     "nav-header": "Organisation du gouvernement du Canada"
   },
-  "found-errors_one": "L'erreur suivante a été trouvée dans le formulaire\u00A0: ",
-  "found-errors_other": "Les {{count}} erreurs suivantes ont été trouvées dans le formulaire\u00A0: ",
-  "francais": "Français",
-  "goc": "Governement du Canada",
+  "found-errors_one": "L'erreur suivante a été trouvée dans le formulaire\u00a0: ",
+  "found-errors_other": "Les {{count}} erreurs suivantes ont été trouvées dans le formulaire\u00a0: ",
   "header": {
     "goc-link": "https://www.canada.ca/fr.html",
     "skip-to-main": "Passer au contenu principal"
   },
-  "language-selection": "Sélection de la langue",
-  "login": "Connexion",
   "modal-go-back": {
     "cancel-button": "Annuler",
     "description": "Êtes-vous sûr de vouloir revenir en arrière?",
@@ -54,14 +48,5 @@
     "header": "Avertissement d'expiration de la session"
   },
   "opens-in-new-tab": "(s'ouvre dans un nouvel onglet)",
-  "phone-number": "1\u2011800\u2011567\u20116868",
-  "required": "(obligatoire)",
-  "service-and-benefits": "Service et avantages",
-  "skip-to": {
-    "about-government": "Passer à «\u00A0Au sujet du gouvernement\u00A0»"
-  },
-  "title": "accueil",
-  "tools": "Outils",
-  "top-of-page": "Haut de la page",
-  "welcome": "Bienvenue à"
+  "required": "(obligatoire)"
 }

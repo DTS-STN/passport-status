@@ -4,7 +4,7 @@
   "header": "Numéro de dossier de demande de passeport ou numéro de référence",
   "receipt-1-will-find": {
     "list": {
-      "item-1": "titre du reçu\u00A0: reçu officiel",
+      "item-1": "titre du reçu\u00a0: reçu officiel",
       "item-10": "somme totale perçu",
       "item-11": "solde",
       "item-2": "nom du bureau de passeport",
@@ -16,7 +16,7 @@
       "item-8": "montant dû",
       "item-9": "perçu"
     },
-    "text": "Sur un reçu, sur lequel le numéro de dossier est encerclé, vous trouverez\u00A0:"
+    "text": "Sur un reçu, sur lequel le numéro de dossier est encerclé, vous trouverez\u00a0:"
   },
   "receipt-2-pickup-instructions": {
     "list": {
@@ -26,16 +26,16 @@
           "item-1": "apparition personnelle du requérant requise, ou",
           "item-2": "j'autorise (insérer le nom de la personne) à retirer mon document de voyage. La personne autorisée doit être âgée de plus de 16 ans et doit présenter une pièce d'identité."
         },
-        "text": "il y a 2 cases à cocher (vous devez en cocher une)\u00A0:"
+        "text": "il y a 2 cases à cocher (vous devez en cocher une)\u00a0:"
       },
       "item-3": "(signature du requérant)",
       "item-4": "déclaration pour rappeler aux personnes de s'assurer que leur passeport est retiré en moins de 30 jours."
     },
-    "text": "Au bas du reçu, il y a aussi des instructions de cueillette\u00A0:"
+    "text": "Au bas du reçu, il y a aussi des instructions de cueillette\u00a0:"
   },
   "receipt-2-will-find": {
     "list": {
-      "item-1": "titre du reçu\u00A0: reçu officiel et bordereau de cueillette",
+      "item-1": "titre du reçu\u00a0: reçu officiel et bordereau de cueillette",
       "item-10": "perçu",
       "item-11": "somme totale perçu",
       "item-12": "solde",
@@ -48,7 +48,7 @@
       "item-8": "droit de service",
       "item-9": "montant dû"
     },
-    "text": "Sur un reçu, sur lequel le numéro de dossier est encerclé, vous trouverez\u00A0:"
+    "text": "Sur un reçu, sur lequel le numéro de dossier est encerclé, vous trouverez\u00a0:"
   },
   "receipt-3-next-steps": {
     "list": {
@@ -57,11 +57,11 @@
       "item-3": "déclaration indiquant que le passeport sera envoyé à l'adresse postale fournie",
       "item-4": "date d'envoi prévue"
     },
-    "text": "Au bas du reçu, il y a des instructions pour les prochaines étapes et la livraison\u00A0:"
+    "text": "Au bas du reçu, il y a des instructions pour les prochaines étapes et la livraison\u00a0:"
   },
   "receipt-3-will-find": {
     "list": {
-      "item-1": "titre du reçu\u00A0: reçu officiel",
+      "item-1": "titre du reçu\u00a0: reçu officiel",
       "item-10": "montant total dû",
       "item-11": "mode de paiement",
       "item-12": "nom du bénéficiaire",
@@ -77,7 +77,7 @@
       "item-8": "frais pour services consulaires",
       "item-9": "type de document de voyage"
     },
-    "text": "Sur un reçu officiel où le numéro de référence est encerclé, vous trouverez\u00A0:"
+    "text": "Sur un reçu officiel où le numéro de référence est encerclé, vous trouverez\u00a0:"
   },
   "receipt-explanation": "Le numéro de dossier ou le numéro de référence sert à identifier votre demande de passeport. Le numéro de dossier ou le numéro de référence figure sur le reçu qui vous a été remis si vous avez déposé votre demande de passeport en personne. Si vous avez déposé votre demande par la poste, ou si vous n'avez pas de numéro de dossier ou de numéro de référence, <Link>vous pouvez demander à le recevoir</Link>.",
   "receipt-image-1": {
