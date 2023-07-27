@@ -108,10 +108,9 @@
   },
   "shipped-fedex": {
     "header": "Your passport has been printed and couriered to you",
-    "mailing": "We're sending it to you by FedEx\u00AE",
+    "mailing": "Your passport should arrive in 5 to 7 business days",
     "supporting-documents": "You'll receive your passport and supporting documents in the same envelope.",
-    "take-up-to": "It can take up to 5 to 7 business days to arrive.",
-    "contact-us": "If you don't receive your passport and supporting documents, <Link>contact us</Link>"
+    "contact-us": "If you would like a tracking number, or if you don’t receive your passport and supporting documents after the 5-7 business days, <Link>contact us</Link>."
   },
   "not-acceptable": {
     "cannot-process": "We've reviewed your application and can't process it further",

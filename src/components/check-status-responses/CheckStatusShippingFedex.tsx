@@ -43,19 +43,18 @@ export const CheckStatusShippingFedex: FC<CheckStatusShippingFedexProps> = ({
             </p>
           </>
         ) : (
-          <p>{t('shipped-fedex.take-up-to')}</p>
+          <p>
+            <Trans
+              i18nKey="shipped-fedex.contact-us"
+              ns="status"
+              components={{
+                Link: <ExternalLink href={t('common:contact-us-link')} />,
+              }}
+            />
+          </p>
         )}
       </AlertSection>
       <p className="h3 mt-6">{t('shipped-fedex.supporting-documents')}</p>
-      <p className="mt-6">
-        <Trans
-          i18nKey="shipped-fedex.contact-us"
-          ns="status"
-          components={{
-            Link: <ExternalLink href={t('common:contact-us-link')} />,
-          }}
-        />
-      </p>
     </>
   )
 }
