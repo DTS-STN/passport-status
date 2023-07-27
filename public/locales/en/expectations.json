@@ -1,21 +1,18 @@
 {
-  "header": "Passport Application Status Checker",
-  "header-avoid-waiting": "Avoid waiting on the phone and get the status of your passport application online",
-  "header-who-can-check": "Who can check their status online",
-  "header-privacy": "Privacy notice statement",
+  "available-after": {
+    "description": "The status of your application is available after:",
+    "list": {
+      "item-1": "5 business days if you applied in person or",
+      "item-2": "10 business days if you applied by mail"
+    },
+    "updated-status": "We update the status of applications daily."
+  },
+  "button-agree": "I have read and understand",
   "can-check": {
     "description": "You <strong>can get the status</strong> of your application online if you submitted your passport application either:",
     "list": {
       "item-1": "in person or by mail in Canada or",
       "item-2": "by mail from the United States"
-    }
-  },
-  "available-after": {
-    "description": "The status of your application is available after:",
-    "updated-status": "We update the status of applications daily.",
-    "list": {
-      "item-1": "5 business days if you applied in person or",
-      "item-2": "10 business days if you applied by mail"
     }
   },
   "cannot-check": {
@@ -30,16 +27,19 @@
     "2": "In addition, Employment and Social Development Canada (ESDC) collects your email address only if you require us to send your passport application file number or reference number by email. Without your email address, ESDC cannot send your passport application number electronically.",
     "3": "Your personal information may also be used to improve services through evaluations, reports, and research. In addition, your information may be shared with Immigration, Refugees and Citizenship Canada for program integrity purposes and to improve services through evaluations, reports, and research.",
     "4": "This application uses services from third-party provider Microsoft Corporation, which may be subject to foreign laws. For more information, see <Link>Microsoft Data Privacy Policy & Privacy Principles</Link>.",
-    "4-link": "https://www.microsoft.com/en-ca/trust-center/privacy",
-    "5": "Your personal information is administered in accordance with the <em>Department of Employment and Social Development Act</em>, <em>Privacy Act</em>, and other applicable laws. You have the right of access to and protection of your personal information, which is described in Personal Information Bank – Passport Program (ESDC PPU 708). Instructions for obtaining this information are outlined in the government publication titled, <Link>Information about Programs and Information Holdings</Link>.",
-    "5-link": "https://www.canada.ca/en/employment-social-development/corporate/transparency/access-information/reports/infosource.html",
+    "5": "Your personal information is administered in accordance with the <em>Department of Employment and Social Development Act</em>, <em>Privacy Act</em>, and other applicable laws. You have the right of access to and protection of your personal information, which is described in Personal Information Bank \u2013 Passport Program (ESDC PPU 708). Instructions for obtaining this information are outlined in the government publication titled, <Link>Information about Programs and Information Holdings</Link>.",
     "6": "If you are not satisfied with ESDC's response to your privacy concerns, you have the right to <Link>file a complaint</Link> with the Privacy Commissioner of Canada regarding ESDC's handling of your personal information.",
+    "4-link": "https://www.microsoft.com/en-ca/trust-center/privacy",
+    "5-link": "https://www.canada.ca/en/employment-social-development/corporate/transparency/access-information/reports/infosource.html",
     "6-link": "https://www.priv.gc.ca/en/report-a-concern"
   },
-  "button-agree": "I have read and understand",
   "do-not-travel": "Don't finalize travel plans without a passport",
-  "not-liable": "We're not liable for any losses if you do not receive it in time for travel.",
+  "header": "Passport Application Status Checker",
+  "header-avoid-waiting": "Avoid waiting on the phone and get the status of your passport application online",
+  "header-privacy": "Privacy notice statement",
+  "header-who-can-check": "Who can check their status online",
   "meta": {
     "description": "Avoid waiting on the phone and request the status of your application online."
-  }
+  },
+  "not-liable": "We're not liable for any losses if you do not receive it in time for travel."
 }

@@ -1,4 +1,9 @@
 {
+  "application-name-bar": "Passport application status checker",
+  "banner": {
+    "alert": "Test site",
+    "description": "You cannot check the status of your passport application through this test site. Parts of this site may not work and will change."
+  },
   "contact-us": "Contact us",
   "contact-us-link": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/contact-passport-program.html",
   "date-select-field": {
@@ -8,10 +13,9 @@
   },
   "english": "English",
   "footer": {
-    "date-modified-text": "Date Modified: ",
     "canada-ca-alt-text": "Symbol of the Government of Canada",
+    "date-modified-text": "Date Modified: ",
     "header": "About this Site",
-    "nav-header": "Government of Canada Corporate",
     "links": {
       "about-canada-ca": "About Canada.ca",
       "about-canada-ca-url": "https://www.canada.ca/en/government/about.html",
@@ -23,7 +27,8 @@
       "social-media-url": "https://www.canada.ca/en/social.html",
       "terms-and-condition": "Terms and conditions",
       "terms-and-condition-url": "https://www.canada.ca/en/transparency/terms.html"
-    }
+    },
+    "nav-header": "Government of Canada Corporate"
   },
   "found-errors_one": "The following error was found in the form:",
   "found-errors_other": "The following {{count}} errors were found in the form:",
@@ -35,6 +40,21 @@
   },
   "language-selection": "Language selection",
   "login": "Login",
+  "modal-go-back": {
+    "cancel-button": "Cancel",
+    "description": "Are you sure you want to go back?",
+    "header": "Return to the home page",
+    "no-button": "No",
+    "yes-button": "Yes"
+  },
+  "modal-idle-timeout": {
+    "continue-session": "Continue session",
+    "description": "You have been inactive for 10 minutes and your session is set to expire in {{timeRemaining}}. Select \"Continue Session\" to continue your session.",
+    "end-session": "End session",
+    "header": "Session timeout warning"
+  },
+  "opens-in-new-tab": "(opens in a new tab)",
+  "phone-number": "1\u2011800\u2011567\u20116868",
   "required": "(required)",
   "service-and-benefits": "Service and Benefits",
   "skip-to": {
@@ -43,25 +63,5 @@
   "title": "home",
   "tools": "Tools",
   "top-of-page": "Top of Page",
-  "welcome": "Welcome to",
-  "modal-go-back": {
-    "cancel-button": "Cancel",
-    "yes-button": "Yes",
-    "no-button": "No",
-    "header": "Return to the home page",
-    "description": "Are you sure you want to go back?"
-  },
-  "modal-idle-timeout": {
-    "header": "Session timeout warning",
-    "description": "You have been inactive for 10 minutes and your session is set to expire in {{timeRemaining}}. Select \"Continue Session\" to continue your session.",
-    "continue-session": "Continue session",
-    "end-session": "End session"
-  },
-  "phone-number": "1\u2011800\u2011567\u20116868",
-  "opens-in-new-tab": "(opens in a new tab)",
-  "banner": {
-    "alert": "Test site",
-    "description": "You cannot check the status of your passport application through this test site. Parts of this site may not work and will change."
-  },
-  "application-name-bar": "Passport application status checker"
+  "welcome": "Welcome to"
 }

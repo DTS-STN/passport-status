@@ -1,28 +1,4 @@
 {
-  "header": "Get my passport application file number or reference number",
-  "email": {
-    "label": "Email address",
-    "error": {
-      "required": "The email address is required.",
-      "valid": "The email address must be valid."
-    },
-    "help-message": "Enter it exactly as provided on your passport application form.",
-    "help-message-secondary": "<strong>For child applications,</strong> provide the full email address for the applicant parent or legal guardian exactly as provided on the passport application."
-  },
-  "given-name": {
-    "error": {
-      "required": "The given name(s) is required."
-    },
-    "label": "Given name(s), as you detailed on the application",
-    "help-message": "Enter first name(s) and any middle name(s)."
-  },
-  "surname": {
-    "error": {
-      "required": "The surname is required."
-    },
-    "label": "Surname, as you detailed on the application",
-    "help-message": "Enter last name."
-  },
   "date-of-birth": {
     "error": {
       "current": "The date of birth must be in the past.",
@@ -31,38 +7,62 @@
     },
     "label": "Date of birth, as you detailed on the application"
   },
-  "email-esrf": "Email me the file number or reference number",
-  "email-sent-confirmation": "An email has been sent if there was a match in our records with the file number (ESRF).",
+  "email": {
+    "error": {
+      "required": "The email address is required.",
+      "valid": "The email address must be valid."
+    },
+    "help-message": "Enter it exactly as provided on your passport application form.",
+    "help-message-secondary": "<strong>For child applications,</strong> provide the full email address for the applicant parent or legal guardian exactly as provided on the passport application.",
+    "label": "Email address"
+  },
   "email-confirmation-msg": {
-    "request-received": "Your request has been received",
+    "dont-receive": "If you don't receive an email, you can:",
+    "dont-receive-list": {
+      "item-1": "review the information you entered and try again or",
+      "item-2": "try again tomorrow — we update our records daily"
+    },
     "if-exists": "If we can find the file with the information you gave us, <strong>we'll email you the file number or reference number</strong>. If you don't receive the email in your inbox, check your junk folder.",
     "may-not-receive": "You may not receive an email if:",
     "may-not-receive-list": {
       "item-1": "the information you gave us doesn't match the information in our system or",
       "item-2": "we received the application, but haven't started processing it yet"
     },
-    "dont-receive": "If you don't receive an email, you can:",
-    "dont-receive-list": {
-      "item-1": "review the information you entered and try again or",
-      "item-2": "try again tomorrow — we update our records daily"
+    "please-contact": "If you still don't receive it, <Link>contact us</Link>.",
+    "request-received": "Your request has been received"
+  },
+  "email-esrf": "Email me the file number or reference number",
+  "email-sent-confirmation": "An email has been sent if there was a match in our records with the file number (ESRF).",
+  "given-name": {
+    "error": {
+      "required": "The given name(s) is required."
     },
-    "please-contact": "If you still don't receive it, <Link>contact us</Link>."
+    "help-message": "Enter first name(s) and any middle name(s).",
+    "label": "Given name(s), as you detailed on the application"
   },
-  "page-unauth": {
-    "header": "Page Unauthorized",
-    "desc": "Please accept the Privacy and Email terms as well as give your consent before getting your file number (ESRF)",
-    "button": "Privacy and Email terms"
-  },
+  "header": "Get my passport application file number or reference number",
   "header-messages": {
-    "matches": "<strong>Make sure your information matches the proof of citizenship and supporting ID used when you applied for a passport.</strong> Your proof of citizenship could be one of the following:",
+    "child-applications": "Child applications",
+    "for-child-application": "Use the child's given name(s) and surname and date of birth, exactly as provided on their proof of citizenship.",
     "list": {
       "item-1": "birth certificate",
       "item-2": "citizenship certificate",
       "item-3": "citizenship card or",
       "item-4": "other documents, like a naturalization certificate"
     },
-    "child-applications": "Child applications",
-    "for-child-application": "Use the child's given name(s) and surname and date of birth, exactly as provided on their proof of citizenship."
+    "matches": "<strong>Make sure your information matches the proof of citizenship and supporting ID used when you applied for a passport.</strong> Your proof of citizenship could be one of the following:"
   },
-  "request-another": "Request another file number or reference number"
+  "page-unauth": {
+    "button": "Privacy and Email terms",
+    "desc": "Please accept the Privacy and Email terms as well as give your consent before getting your file number (ESRF)",
+    "header": "Page Unauthorized"
+  },
+  "request-another": "Request another file number or reference number",
+  "surname": {
+    "error": {
+      "required": "The surname is required."
+    },
+    "help-message": "Enter last name.",
+    "label": "Surname, as you detailed on the application"
+  }
 }
