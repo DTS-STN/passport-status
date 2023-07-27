@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1690395682970" clover="3.2.0">
-  <project timestamp="1690395682970" name="All files">
-    <metrics statements="549" coveredstatements="350" conditionals="319" coveredconditionals="143" methods="157" coveredmethods="83" elements="1025" coveredelements="576" complexity="0" loc="549" ncloc="549" packages="11" files="58" classes="58"/>
+<coverage generated="1690463862927" clover="3.2.0">
+  <project timestamp="1690463862927" name="All files">
+    <metrics statements="551" coveredstatements="350" conditionals="319" coveredconditionals="143" methods="157" coveredmethods="83" elements="1027" coveredelements="576" complexity="0" loc="551" ncloc="551" packages="11" files="59" classes="59"/>
     <package name="src">
       <metrics statements="28" coveredstatements="14" conditionals="26" coveredconditionals="8" methods="7" coveredmethods="6"/>
       <file name="middleware.ts" path="/home/runner/work/passport-status/passport-status/src/middleware.ts">
@@ -485,7 +485,12 @@
       </file>
     </package>
     <package name="src.lib.utils">
-      <metrics statements="12" coveredstatements="4" conditionals="8" coveredconditionals="0" methods="3" coveredmethods="1"/>
+      <metrics statements="14" coveredstatements="4" conditionals="8" coveredconditionals="0" methods="3" coveredmethods="1"/>
+      <file name="fonts.ts" path="/home/runner/work/passport-status/passport-status/src/lib/utils/fonts.ts">
+        <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+      </file>
       <file name="next-i18next-utils.ts" path="/home/runner/work/passport-status/passport-status/src/lib/utils/next-i18next-utils.ts">
         <metrics statements="11" coveredstatements="3" conditionals="8" coveredconditionals="0" methods="2" coveredmethods="0"/>
         <line num="9" count="4" type="stmt"/>
@@ -522,25 +527,25 @@
       <metrics statements="121" coveredstatements="76" conditionals="57" coveredconditionals="21" methods="42" coveredmethods="12"/>
       <file name="_app.tsx" path="/home/runner/work/passport-status/passport-status/src/pages/_app.tsx">
         <metrics statements="19" coveredstatements="19" conditionals="4" coveredconditionals="4" methods="4" coveredmethods="4"/>
-        <line num="17" count="1" type="stmt"/>
-        <line num="22" count="1" type="stmt"/>
-        <line num="24" count="1" type="stmt"/>
-        <line num="25" count="2" type="stmt"/>
-        <line num="27" count="2" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="26" count="2" type="stmt"/>
         <line num="28" count="2" type="stmt"/>
         <line num="29" count="2" type="stmt"/>
-        <line num="34" count="2" type="stmt"/>
+        <line num="30" count="2" type="stmt"/>
         <line num="35" count="2" type="stmt"/>
-        <line num="37" count="2" type="cond" truecount="2" falsecount="0"/>
-        <line num="38" count="1" type="stmt"/>
+        <line num="36" count="2" type="stmt"/>
+        <line num="38" count="2" type="cond" truecount="2" falsecount="0"/>
         <line num="39" count="1" type="stmt"/>
-        <line num="43" count="2" type="stmt"/>
+        <line num="40" count="1" type="stmt"/>
         <line num="44" count="2" type="stmt"/>
         <line num="45" count="2" type="stmt"/>
         <line num="46" count="2" type="stmt"/>
         <line num="47" count="2" type="stmt"/>
         <line num="48" count="2" type="stmt"/>
-        <line num="52" count="2" type="stmt"/>
+        <line num="49" count="2" type="stmt"/>
+        <line num="53" count="2" type="stmt"/>
       </file>
       <file name="_document.tsx" path="/home/runner/work/passport-status/passport-status/src/pages/_document.tsx">
         <metrics statements="3" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="2" coveredmethods="0"/>
