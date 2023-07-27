@@ -1,20 +1,12 @@
 {
-  "header": "Passport application file number or reference number",
-  "description": "Do you have your passport application file number or reference number?",
-  "with-esrf": "I have my file number or reference number",
-  "without-esrf": "I don't have my file number or reference number",
   "collapse-file-number-title": "Find your file number or reference number",
-  "receipt-explanation": "The file number or reference number is used to identify your passport application. The file number or reference number can be found on the receipt you were given if you applied for the passport in person. If you applied by mail, or don't have a file number or reference number, you can <Link>request to receive it</Link>.",
-  "receipt-image-1": {
-    "title": "File number example receipt 1",
-    "alt": "An example of an official receipt. The file number is circled in the centre of the receipt.",
-    "src": "/Receipt1_EN.png",
-    "descriptive-text": "<strong>An example of an official receipt. The file number is circled in the centre of the receipt.</strong>"
-  },
+  "description": "Do you have your passport application file number or reference number?",
+  "header": "Passport application file number or reference number",
   "receipt-1-will-find": {
-    "text": "On a receipt where the file number is circled you will find:",
     "list": {
       "item-1": "title of receipt: Official Receipt",
+      "item-10": "total tendered",
+      "item-11": "balance due",
       "item-2": "name of passport office",
       "item-3": "mail-out date",
       "item-4": "applicant name",
@@ -22,21 +14,31 @@
       "item-6": "file number (circled in red)",
       "item-7": "fees for services",
       "item-8": "total amount due",
-      "item-9": "tendered",
-      "item-10": "total tendered",
-      "item-11": "balance due"
-    }
+      "item-9": "tendered"
+    },
+    "text": "On a receipt where the file number is circled you will find:"
   },
-  "receipt-image-2": {
-    "title": "File number example receipt 2",
-    "alt": "An example of an official receipt and pick-up slip. The file number is circled in the upper left-hand side of the receipt, above a barcode.",
-    "src": "/Receipt2_EN.png",
-    "descriptive-text": "<strong>An example of an official receipt and pick-up slip. The file number is circled in the upper left-hand side of the receipt, above a barcode.</strong>"
+  "receipt-2-pickup-instructions": {
+    "list": {
+      "item-1": "statement to remind individuals to please present this pickup slip and personal identification.",
+      "item-2": {
+        "list": {
+          "item-1": "personal appearance of applicant required, or",
+          "item-2": "I authorize (insert name of person) to pick up my Travel Document. Authorized person must be over 16 years of age and must show personal identification."
+        },
+        "text": "there are 2 checkboxes (you must check one):"
+      },
+      "item-3": "(signature of applicant)",
+      "item-4": "statement to remind individuals to please ensure your passport is picked up within 30 days."
+    },
+    "text": "At the bottom of the receipt, there are also pickup instructions:"
   },
   "receipt-2-will-find": {
-    "text": "On a receipt where the file number is circled you will find:",
     "list": {
       "item-1": "title of receipt: official receipt and pick-up slip",
+      "item-10": "tendered",
+      "item-11": "total tendered",
+      "item-12": "balance due",
       "item-2": "name of passport office",
       "item-3": "date for pickup",
       "item-4": "applicant name",
@@ -44,37 +46,28 @@
       "item-6": "date/time",
       "item-7": "barcode",
       "item-8": "fees for services",
-      "item-9": "total amount due",
-      "item-10": "tendered",
-      "item-11": "total tendered",
-      "item-12": "balance due"
-    }
+      "item-9": "total amount due"
+    },
+    "text": "On a receipt where the file number is circled you will find:"
   },
-  "receipt-2-pickup-instructions": {
-    "text": "At the bottom of the receipt, there are also pickup instructions:",
+  "receipt-3-next-steps": {
     "list": {
-      "item-1": "statement to remind individuals to please present this pickup slip and personal identification.",
-      "item-2": {
-        "text": "there are 2 checkboxes (you must check one):",
-        "list": {
-          "item-1": "personal appearance of applicant required, or",
-          "item-2": "I authorize (insert name of person) to pick up my Travel Document. Authorized person must be over 16 years of age and must show personal identification."
-        }
-      },
-      "item-3": "(signature of applicant)",
-      "item-4": "statement to remind individuals to please ensure your passport is picked up within 30 days."
-    }
-  },
-  "receipt-image-3": {
-    "title": "Reference number example receipt",
-    "alt": "An example of an official receipt. The reference number is circled in the middle of the receipt, above a barcode.",
-    "src": "/Receipt3_EN.png",
-    "descriptive-text": "<strong>An example of an official receipt. The reference number is circled in the middle of the receipt, above a barcode.</strong>"
+      "item-1": "statement to indicate that the application has been received ",
+      "item-2": "instructions for the next steps on processing the passport",
+      "item-3": "statement to indicate that the passport will be mailed to the provided mailing address",
+      "item-4": "anticipated mailing date"
+    },
+    "text": "At the bottom of the receipt, there are instructions for next steps and delivery:"
   },
   "receipt-3-will-find": {
-    "text": "On an official receipt where the reference number is circled you will find:",
     "list": {
       "item-1": "title of receipt: official receipt",
+      "item-10": "total amount due",
+      "item-11": "method of payment",
+      "item-12": "payer name",
+      "item-13": "payment date",
+      "item-14": "payment total",
+      "item-15": "balance",
       "item-2": "name and address of the passport office",
       "item-3": "date and time",
       "item-4": "applicant name",
@@ -82,22 +75,29 @@
       "item-6": "barcode",
       "item-7": "fees for services",
       "item-8": "consular fee",
-      "item-9": "type of travel document",
-      "item-10": "total amount due",
-      "item-11": "method of payment",
-      "item-12": "payer name",
-      "item-13": "payment date",
-      "item-14": "payment total",
-      "item-15": "balance"
-    }
+      "item-9": "type of travel document"
+    },
+    "text": "On an official receipt where the reference number is circled you will find:"
   },
-  "receipt-3-next-steps": {
-    "text": "At the bottom of the receipt, there are instructions for next steps and delivery:",
-    "list": {
-      "item-1": "statement to indicate that the application has been received ",
-      "item-2": "instructions for the next steps on processing the passport",
-      "item-3": "statement to indicate that the passport will be mailed to the provided mailing address",
-      "item-4": "anticipated mailing date"
-    }
-  }
+  "receipt-explanation": "The file number or reference number is used to identify your passport application. The file number or reference number can be found on the receipt you were given if you applied for the passport in person. If you applied by mail, or don't have a file number or reference number, you can <Link>request to receive it</Link>.",
+  "receipt-image-1": {
+    "alt": "An example of an official receipt. The file number is circled in the centre of the receipt.",
+    "descriptive-text": "<strong>An example of an official receipt. The file number is circled in the centre of the receipt.</strong>",
+    "src": "/Receipt1_EN.png",
+    "title": "File number example receipt 1"
+  },
+  "receipt-image-2": {
+    "alt": "An example of an official receipt and pick-up slip. The file number is circled in the upper left-hand side of the receipt, above a barcode.",
+    "descriptive-text": "<strong>An example of an official receipt and pick-up slip. The file number is circled in the upper left-hand side of the receipt, above a barcode.</strong>",
+    "src": "/Receipt2_EN.png",
+    "title": "File number example receipt 2"
+  },
+  "receipt-image-3": {
+    "alt": "An example of an official receipt. The reference number is circled in the middle of the receipt, above a barcode.",
+    "descriptive-text": "<strong>An example of an official receipt. The reference number is circled in the middle of the receipt, above a barcode.</strong>",
+    "src": "/Receipt3_EN.png",
+    "title": "Reference number example receipt"
+  },
+  "with-esrf": "I have my file number or reference number",
+  "without-esrf": "I don't have my file number or reference number"
 }

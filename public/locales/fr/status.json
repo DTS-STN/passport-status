@@ -1,4 +1,19 @@
 {
+  "being-processed": {
+    "dont-meet-standards": "Si nous ne respectons pas nos normes de service",
+    "get-urgent": "Apprenez comment obtenir <Link>des services urgents ou express pour votre demande existante</Link> si vous avez besoin du passeport dans un délai de 10 jours ouvrables. Des frais supplémentaires peuvent s'appliquer.",
+    "incomplete": "Les demandes incomplètes ne pourront pas être traitées et seront retournées dès que possible.",
+    "may-be-eligible": "Vous pourriez avoir droit à un remboursement partiel si nous ne respectons pas nos <Link>normes de service</Link>.",
+    "need-faster": "Si vous avez besoin du passeport plus rapidement",
+    "ready-within": "Si votre demande a été dûment remplie, votre passeport devrait être prêt selon nos <Link>normes de service</Link>.",
+    "received": "Nous avons reçu votre demande et nous sommes en train de la traiter",
+    "we-will-contact": "Si nous avons besoin de plus amples renseignements, nous communiquerons avec vous par téléphone, par la poste, ou par courriel. Nous n'utiliserons <strong>jamais</strong> de messages textes ou de programmes de messagerie instantanée pour vous contacter au sujet de votre demande de passeport."
+  },
+  "check-status": "Vérifiez l'état",
+  "child-applications": {
+    "description": "Utilisez le(s) prénom(s), nom de famille et date de naissance de l'enfant, exactement tels qu'ils figurent sur sa preuve de citoyenneté.",
+    "header": "Pour les demandes de passeport pour enfants"
+  },
   "date-of-birth": {
     "error": {
       "current": "La date de naissance doit être dans le passé.",
@@ -7,9 +22,6 @@
     },
     "label": "Date de naissance comme vous l'avez précisé sur la demande"
   },
-  "check-again": "Vérifier l'état d'une autre demande",
-  "check-status": "Vérifiez l'état",
-  "description": "Remplissez les champs ci-dessous pour vérifier l'état de votre demande de passeport. Assurez-vous que vos informations correspondent à votre formulaire de demande de passeport.",
   "esrf": {
     "error": {
       "required": "Le numéro de dossier est obligatoire."
@@ -21,133 +33,81 @@
     "error": {
       "required": "Le(s) prénom(s) est(sont) obligatoire(s)."
     },
-    "label": "Prénom(s) comme vous l'avez précisé sur la demande",
-    "help-message": "Entrez le(s) prénom(s) et le(s) deuxième(s) prénom(s)."
+    "help-message": "Entrez le(s) prénom(s) et le(s) deuxième(s) prénom(s).",
+    "label": "Prénom(s) comme vous l'avez précisé sur la demande"
   },
-  "previous": "Vérifier l'état d'une autre demande",
-  "reset": "Vérifier l'état d'une autre demande",
   "header": "Obtenir l'état de votre demande de passeport",
-  "status": {
-    "1": {
-      "label": "Être en cours de traitement",
-      "description": "Votre demande a été reçue et est en cours. Si de plus amples informations sont nécessaires, nous vous contacterons."
+  "header-messages": {
+    "list": {
+      "item-1": "un certificat de naissance",
+      "item-2": "un certificat de citoyenneté",
+      "item-3": "une carte de citoyenneté, ou",
+      "item-4": "d'autres documents, comme un certificat de naturalisation"
     },
-    "2": {
-      "label": "Émis et prêt pour le ramassage",
-      "description": "Votre passeport sera délivré et prêt à être récupéré à la date de ramassage prévue. Vous devez attendre la date de retrait prévue pour récupérer votre passeport. La date de retrait de votre passeport apparaîtra sur votre reçu de retrait."
-    },
-    "3": {
-      "label": "Émission et expédition Postes Canada",
-      "description": "Votre passeport a été délivré et expédié par Postes Canada. Veuillez noter que tous les documents que vous avez fournis à l'appui de votre demande de passeport vous seront expédiés séparément.",
-      "tracking": "Vous pouvez suivre cet envoi sur le site Web de Postes Canada en utilisant le code de suivi\u00a0:"
-    },
-    "4": {
-      "label": "Émission et expédition Fedex",
-      "description": "Votre passeport a été délivré et expédié par FedEx. Veuillez noter que tous les documents que vous avez fournis à l'appui de votre demande de passeport vous seront expédiés séparément.",
-      "tracking": "Vous pouvez suivre cet envoi sur le site Web de FedEx en utilisant le code de suivi\u00a0:"
-    },
-    "5": {
-      "label": "Non acceptable pour le traitement",
-      "description": "Nous avons examiné votre demande et vous recevrez d'autres communications par courrier ou par téléphone du Programme Passeport."
-    },
-    "99": {
-      "label": "L'application ne répond plus aux critères d'utilisation",
-      "description": "Si vous voyez cela, c'est que quelque chose s'est mal passé."
-    }
-  },
-  "status-is": "L'état le plus récent de votre demande selon nos dossiers est\u00a0:",
-  "surname": {
-    "error": {
-      "required": "Le nom de famille est obligatoire."
-    },
-    "label": "Nom de famille comme vous l'avez précisé sur la demande",
-    "help-message": "Entrez le nom de famille."
-  },
-  "cannot-provide-result": {
-    "title": "Nous ne pouvons pas fournir de résultat pour le moment car:",
-    "reason1": "les informations que vous avez fournies ne correspondent pas à celles qui se trouvent dans notre système;",
-    "reason2": "nous n'avons pas encore reçu votre demande; ",
-    "reason3": "nous avons reçu votre demande mais n'avons pas encore commencé à la traiter."
+    "matches": "<strong>Assurez-vous que vos informations correspondent à la preuve de citoyenneté et à la pièce d'identité utilisées lors de votre demande de passeport.</strong> Votre preuve de citoyenneté pourrait être l'une des suivantes\u00a0:"
   },
   "no-record": {
+    "can-review": "Vous pouvez revérifiez vos renseignements et essayez à nouveau.",
     "cannot-give-status": {
-      "description": "Nous ne pouvons pas vous donner l'état de votre demande pour le moment",
       "because": "L'état de votre passeport n'est pas disponible pour les raisons suivantes\u00a0:",
+      "description": "Nous ne pouvons pas vous donner l'état de votre demande pour le moment",
       "list": {
         "item-1": "les renseignements que vous nous avez fournis ne correspondent pas à ceux de notre système, ou",
         "item-2": "nous avons reçu votre demande, mais n'avons pas encore commencé à la traiter"
       }
     },
     "contact-us": "Si vous ne pouvez pas obtenir l'état de votre demande à l'aide de cet outil, ou si votre demande prend plus de temps que la <Link>norme de service</Link>, veuillez <Link2>nous contacter</Link2>.",
-    "can-review": "Vous pouvez revérifiez vos renseignements et essayez à nouveau.",
-    "cant-find-file": "Si nous ne trouvons toujours pas votre dossier, vous pouvez réessayer demain. Nous mettons à jour nos dossiers chaque jour.",
-    "need-faster": "Si vous avez besoin du passeport plus rapidement",
-    "get-urgent": "Apprenez comment obtenir <Link>des services urgents ou express pour votre demande existante</Link> si vous avez besoin du passeport dans un délai de 10 jours ouvrables. Des frais supplémentaires peuvent s'appliquer."
-  },
-  "being-processed": {
-    "received": "Nous avons reçu votre demande et nous sommes en train de la traiter",
-    "we-will-contact": "Si nous avons besoin de plus amples renseignements, nous communiquerons avec vous par téléphone, par la poste, ou par courriel. Nous n'utiliserons <strong>jamais</strong> de messages textes ou de programmes de messagerie instantanée pour vous contacter au sujet de votre demande de passeport.",
-    "ready-within": "Si votre demande a été dûment remplie, votre passeport devrait être prêt selon nos <Link>normes de service</Link>.",
-    "incomplete": "Les demandes incomplètes ne pourront pas être traitées et seront retournées dès que possible.",
-    "need-faster": "Si vous avez besoin du passeport plus rapidement",
     "get-urgent": "Apprenez comment obtenir <Link>des services urgents ou express pour votre demande existante</Link> si vous avez besoin du passeport dans un délai de 10 jours ouvrables. Des frais supplémentaires peuvent s'appliquer.",
-    "dont-meet-standards": "Si nous ne respectons pas nos normes de service",
-    "may-be-eligible": "Vous pourriez avoir droit à un remboursement partiel si nous ne respectons pas nos <Link>normes de service</Link>."
-  },
-  "ready-for-pickup": {
-    "has-been-printed": "Votre passeport a été imprimé",
-    "check-receipt": "Vérifiez votre reçu pour les instructions de retrait en personne",
-    "receipt-details": "Votre reçu indique la date et le lieu de retrait de votre passeport.",
-    "not-available": "Le passeport ne sera pas disponible avant la date de retrait imprimée sur votre reçu.",
-    "date-passed": "Si votre date de retrait en personne est passée, vous pouvez aller chercher votre passeport à tout moment."
-  },
-  "shipped-canada-post": {
-    "header": "Votre passeport a été imprimé et envoyé par la poste",
-    "mailing": "Nous vous l'envoyons par Postes Canada.",
-    "take-up-to": "Cela peut prendre jusqu'à 2 à 3 jours ouvrables pour arriver.",
-    "remote-area": "Si vous vivez dans une région au nord ou éloignée, cela pourrait prendre jusqu'à 8 jours ouvrables pour arriver.",
-    "supporting-documents": "Nous pourrions renvoyer vos documents justificatifs séparément."
-  },
-  "shipped-fedex": {
-    "header": "Votre passeport a été imprimé et envoyé au service de messagerie",
-    "mailing": "Nous vous l'envoyons par FedEx\u00AE",
-    "supporting-documents": "Vous recevrez le passeport et les documents justificatifs dans la même enveloppe.",
-    "take-up-to": "Cela peut prendre jusqu'à 5 à 7 jours ouvrables pour arriver.",
-    "contact-us": "Si vous ne recevez pas votre passeport et vos documents, <Link>veuillez nous contacter</Link>."
+    "need-faster": "Si vous avez besoin du passeport plus rapidement"
   },
   "not-acceptable": {
     "cannot-process": "Nous avons examiné votre demande et ne pouvons pas la traiter davantage",
-    "explanation": "Nous vous envoyons une lettre expliquant pourquoi et nous vous retournerons vos documents justificatifs par la même occasion.",
-    "contact-us": "<Link>Pour plus d'informations, contactez-nous</Link>."
+    "contact-us": "<Link>Pour plus d'informations, contactez-nous</Link>.",
+    "explanation": "Nous vous envoyons une lettre expliquant pourquoi et nous vous retournerons vos documents justificatifs par la même occasion."
   },
+  "previous": "Vérifier l'état d'une autre demande",
+  "ready-for-pickup": {
+    "check-receipt": "Vérifiez votre reçu pour les instructions de retrait en personne",
+    "date-passed": "Si votre date de retrait en personne est passée, vous pouvez aller chercher votre passeport à tout moment.",
+    "has-been-printed": "Votre passeport a été imprimé",
+    "not-available": "Le passeport ne sera pas disponible avant la date de retrait imprimée sur votre reçu.",
+    "receipt-details": "Votre reçu indique la date et le lieu de retrait de votre passeport."
+  },
+  "reset": "Vérifier l'état d'une autre demande",
+  "shipped-canada-post": {
+    "header": "Votre passeport a été imprimé et envoyé par la poste",
+    "mailing": "Nous vous l'envoyons par Postes Canada.",
+    "remote-area": "Si vous vivez dans une région au nord ou éloignée, cela pourrait prendre jusqu'à 8 jours ouvrables pour arriver.",
+    "supporting-documents": "Nous pourrions renvoyer vos documents justificatifs séparément.",
+    "take-up-to": "Cela peut prendre jusqu'à 2 à 3 jours ouvrables pour arriver."
+  },
+  "shipped-fedex": {
+    "contact-us": "Si vous ne recevez pas votre passeport et vos documents, <Link>veuillez nous contacter</Link>.",
+    "header": "Votre passeport a été imprimé et envoyé au service de messagerie",
+    "mailing": "Nous vous l'envoyons par FedEx\u00AE",
+    "supporting-documents": "Vous recevrez le passeport et les documents justificatifs dans la même enveloppe.",
+    "take-up-to": "Cela peut prendre jusqu'à 5 à 7 jours ouvrables pour arriver."
+  },
+  "status-check-call": "<Link>Veuillez nous contacter</Link> si vous ne recevez pas vos documents dans les 4 semaines suivant la réception du passeport.",
   "status-check-contact": {
-    "call-us": "Appelez-nous sans frais au <strong>{{phoneNumber}}</strong> si votre demande prend plus de temps que la <Link>norme de service</Link>",
     "service-standard-href": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens/delais-traitement.html"
   },
-  "status-check-urgent": {
-    "description": "Si vous avez besoin du passeport dans un délai de 10 jours ouvrables, apprenez <Link>comment obtenir des services urgents ou express pour votre application existante</Link>",
-    "express-services-href": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens/passeport-urgent-express.html"
-  },
   "status-check-tracking": {
-    "number": "Votre numéro de repérage est <strong>{{trackingNumber}}</strong>.",
     "can-track": "Vous pouvez <Link>faire le suivi de l'envoi en ligne</Link>.",
     "link": {
       "canada-post": "https://www.canadapost-postescanada.ca/track-reperage/fr#/details/{{trackingNumber}}",
       "fedex": "https://www.fedex.com/fedextrack/?action=track&cntry_code=ca&locale=fr_ca&trackingnumber={{trackingNumber}}"
-    }
+    },
+    "number": "Votre numéro de repérage est <strong>{{trackingNumber}}</strong>."
   },
-  "status-check-call": "<Link>Veuillez nous contacter</Link> si vous ne recevez pas vos documents dans les 4 semaines suivant la réception du passeport.",
-  "header-messages": {
-    "matches": "<strong>Assurez-vous que vos informations correspondent à la preuve de citoyenneté et à la pièce d'identité utilisées lors de votre demande de passeport.</strong> Votre preuve de citoyenneté pourrait être l'une des suivantes\u00a0:",
-    "list": {
-      "item-1": "un certificat de naissance",
-      "item-2": "un certificat de citoyenneté",
-      "item-3": "une carte de citoyenneté, ou",
-      "item-4": "d'autres documents, comme un certificat de naturalisation"
-    }
+  "status-check-urgent": {
+    "express-services-href": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens/passeport-urgent-express.html"
   },
-  "child-applications": {
-    "header": "Pour les demandes de passeport pour enfants",
-    "description": "Utilisez le(s) prénom(s), nom de famille et date de naissance de l'enfant, exactement tels qu'ils figurent sur sa preuve de citoyenneté."
+  "surname": {
+    "error": {
+      "required": "Le nom de famille est obligatoire."
+    },
+    "help-message": "Entrez le nom de famille.",
+    "label": "Nom de famille comme vous l'avez précisé sur la demande"
   }
 }

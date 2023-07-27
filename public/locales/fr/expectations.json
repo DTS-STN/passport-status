@@ -1,21 +1,18 @@
 {
-  "header": "Vérificateur de l'état d'une demande de passeport",
-  "header-avoid-waiting": "Évitez d'attendre au téléphone et obtenez l'état de votre demande de passeport en ligne",
-  "header-who-can-check": "Qui peut vérifier l'état de sa demande en ligne",
-  "header-privacy": "Avis de confidentialité",
+  "available-after": {
+    "description": "L'état de votre demande est disponible après\u00a0:",
+    "list": {
+      "item-1": "5 jours ouvrables si vous avez présenté votre demande en personne ou",
+      "item-2": "10 jours ouvrables si vous avez envoyé votre demande par la poste"
+    },
+    "updated-status": "Nous actualisons quotidiennement l'état des demandes."
+  },
+  "button-agree": "J'ai lu et j'accepte",
   "can-check": {
     "description": "Vous <strong>pouvez obtenir l'état</strong> de votre demande en ligne si vous avez présenté votre demande de passeport soit\u00a0:",
     "list": {
       "item-1": "en personne ou par la poste au Canada, ou",
       "item-2": "par la poste des États-Unis"
-    }
-  },
-  "available-after": {
-    "description": "L'état de votre demande est disponible après\u00a0:",
-    "updated-status": "Nous actualisons quotidiennement l'état des demandes.",
-    "list": {
-      "item-1": "5 jours ouvrables si vous avez présenté votre demande en personne ou",
-      "item-2": "10 jours ouvrables si vous avez envoyé votre demande par la poste"
     }
   },
   "cannot-check": {
@@ -30,16 +27,19 @@
     "2": "De plus, Emploi et Développement social Canada (EDSC) ne recueille votre adresse courriel que si vous nous demandez de vous envoyer votre numéro de dossier de demande de passeport ou votre numéro de référence par courriel. Sans votre adresse courriel, EDSC ne peut pas envoyer votre numéro de demande de passeport par voie électronique.",
     "3": "Vos renseignements personnels peuvent également être utilisés pour améliorer les services au moyen d'évaluations, de rapports et de recherches. De plus, vos informations peuvent être partagées avec Immigration, Réfugiés et Citoyenneté Canada à des fins d'intégrité du programme et pour améliorer les services au moyen d'évaluations, de rapports et de recherches.",
     "4": "Cette application utilise les services du fournisseur tiers, Microsoft Corporation, qui peuvent être soumis à des lois étrangères. Pour plus d'information, voir la <Link>Politique de confidentialité de Microsoft</Link>.",
-    "4-link": "https://www.microsoft.com/fr-ca/trust-center/privacy",
     "5": "Vos renseignements personnels sont administrés conformément à la <em>Loi sur le ministère de l'Emploi et du Développement social</em>, à la <em>Loi sur la protection des renseignements personnels</em> et aux autres lois applicables. Vous avez le droit d'accéder à vos renseignements personnels et de les protéger, ce qui est décrit dans le fichier de renseignements personnels - Programme de passeport (EDSC PPU 708). Les instructions pour obtenir ces informations sont décrites dans la publication gouvernementale intitulée <Link>Renseignements sur les programmes et les fonds de renseignements</Link>.",
-    "5-link": "https://www.canada.ca/fr/emploi-developpement-social/ministere/transparence/aai/rapports/infosource.html",
     "6": "Si vous n'êtes pas satisfait de la réponse d'EDSC à vos préoccupations en matière de confidentialité, vous avez le droit de <Link>déposer une plainte</Link> auprès du Commissariat à la protection de la vie privée du Canada concernant le traitement de vos renseignements personnels par EDSC.",
+    "4-link": "https://www.microsoft.com/fr-ca/trust-center/privacy",
+    "5-link": "https://www.canada.ca/fr/emploi-developpement-social/ministere/transparence/aai/rapports/infosource.html",
     "6-link": "https://www.priv.gc.ca/fr/signaler-un-probleme"
   },
-  "button-agree": "J'ai lu et j'accepte",
   "do-not-travel": "Ne finalisez pas vos plans de voyage sans passeport",
-  "not-liable": "Nous ne sommes pas responsables des pertes si vous ne le recevez pas à temps pour le voyage.",
+  "header": "Vérificateur de l'état d'une demande de passeport",
+  "header-avoid-waiting": "Évitez d'attendre au téléphone et obtenez l'état de votre demande de passeport en ligne",
+  "header-privacy": "Avis de confidentialité",
+  "header-who-can-check": "Qui peut vérifier l'état de sa demande en ligne",
   "meta": {
     "description": "Évitez d'attendre au téléphone et demandez l'état de votre demande en ligne."
-  }
+  },
+  "not-liable": "Nous ne sommes pas responsables des pertes si vous ne le recevez pas à temps pour le voyage."
 }
