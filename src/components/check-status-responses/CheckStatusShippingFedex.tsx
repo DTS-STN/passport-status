@@ -15,10 +15,10 @@ export const CheckStatusShippingFedex: FC<CheckStatusShippingFedexProps> = ({
   const { t } = useTranslation(['status', 'common'])
   return (
     <>
-      <h1 data-testid="shipped-fedex" className="h1">
+      <h1 data-testid="shipped-fedex" className="h1 mb-0">
         {t('shipped-fedex.header')}
       </h1>
-      <AlertSection type="success">
+      <AlertSection className="mt-0" type="success">
         <h2 data-testid="shipped-fedex-mailing" className="h2 mt-0">
           {t('shipped-fedex.mailing')}
         </h2>
@@ -43,18 +43,20 @@ export const CheckStatusShippingFedex: FC<CheckStatusShippingFedexProps> = ({
             </p>
           </>
         ) : (
-          <p>
-            <Trans
-              i18nKey="shipped-fedex.contact-us"
-              ns="status"
-              components={{
-                Link: <ExternalLink href={t('common:contact-us-link')} />,
-              }}
-            />
-          </p>
+          <>
+            <p>
+              <Trans
+                i18nKey="shipped-fedex.contact-us"
+                ns="status"
+                components={{
+                  Link: <ExternalLink href={t('common:contact-us-link')} />,
+                }}
+              />
+            </p>
+          </>
         )}
+        <p>{t('shipped-fedex.supporting-documents')}</p>
       </AlertSection>
-      <p className="h3 mt-6">{t('shipped-fedex.supporting-documents')}</p>
     </>
   )
 }
