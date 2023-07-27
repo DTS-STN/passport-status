@@ -10,6 +10,7 @@ import Script from 'next/script'
 
 import nextI18NextConfig from '../../next-i18next.config.js'
 import { AppWindow } from '../lib/types'
+import { lato, notoSans } from '../lib/utils/fonts'
 import { getNextSEOConfig } from '../next-seo.config'
 import '../styles/globals.css'
 
@@ -56,6 +57,13 @@ const MyApp = ({ Component, pageProps, router }: AppProps) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      <style jsx global>{`
+        :root {
+          --font-lato: ${lato.style.fontFamily};
+          --font-noto-sans: ${notoSans.style.fontFamily};
+        }
+      `}</style>
 
       {adobeAnalyticsScriptSrc && (
         <>
