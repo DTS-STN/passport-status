@@ -18,6 +18,19 @@ const mockGetConfig = jest.fn().mockImplementation(() => ({
 
 jest.mock('next/config', () => () => mockGetConfig())
 
+jest.mock('../../src/lib/utils/fonts', () => ({
+  lato: {
+    style: {
+      fontFamily: 'Lato',
+    },
+  },
+  notoSans: {
+    style: {
+      fontFamily: '"Noto Sans"',
+    },
+  },
+}))
+
 const MockComponent = jest
   .fn()
   .mockImplementation(() => <h1>Mock Component</h1>)
@@ -36,15 +49,15 @@ describe('custom `app`', () => {
           },
         }}
         router={{ events: { on: jest.fn(), off: jest.fn() } } as any}
-      />
+      />,
     )
 
     const heading = screen.getByRole('heading', { level: 1 })
     const aaScript = document.querySelector(
-      `script[src="${adobeAnalyticsScriptSrc}"]`
+      `script[src="${adobeAnalyticsScriptSrc}"]`,
     )
     const jQueryScript = document.querySelector(
-      `script[src="${jQueryScriptSrc}"]`
+      `script[src="${jQueryScriptSrc}"]`,
     )
     expect(heading).toBeInTheDocument()
     expect(aaScript).not.toBeInTheDocument()
@@ -71,15 +84,15 @@ describe('custom `app`', () => {
           },
         }}
         router={{ events: { on: jest.fn(), off: jest.fn() } } as any}
-      />
+      />,
     )
 
     const heading = screen.getByRole('heading', { level: 1 })
     const aaScript = document.querySelector(
-      `script[src="${adobeAnalyticsScriptSrc}"]`
+      `script[src="${adobeAnalyticsScriptSrc}"]`,
     )
     const jQueryScript = document.querySelector(
-      `script[src="${jQueryScriptSrc}"]`
+      `script[src="${jQueryScriptSrc}"]`,
     )
     expect(heading).toBeInTheDocument()
     expect(aaScript).toBeInTheDocument()
