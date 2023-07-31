@@ -32,7 +32,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-focus-on": "^3.9.1",
-    "react-i18next": "^13.0.2",
+    "react-i18next": "^13.0.3",
     "react-idle-timer": "^5.7.2",
     "sharp": "^0.32.4",
     "yup": "^1.2.0"
