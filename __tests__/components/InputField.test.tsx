@@ -1,4 +1,4 @@
-import '@testing-library/jest-dom/extend-expect'
+import '@testing-library/jest-dom'
 import { render, screen } from '@testing-library/react'
 
 import { axe, toHaveNoViolations } from 'jest-axe'
@@ -15,7 +15,7 @@ describe('InputField', () => {
       label="label"
       onChange={() => {}}
       value=""
-    />
+    />,
   )
 
   it('renders', () => {
@@ -39,15 +39,15 @@ describe('InputField', () => {
         onChange={() => {}}
         errorMessage="Error Message"
         helpMessage="Help Message"
-      />
+      />,
     )
     const sut = getByTestId('accessible-description')
     expect(sut).toBeInTheDocument()
     expect(sut.querySelector('input')).toHaveAccessibleDescription(
-      expect.stringContaining('Error Message')
+      expect.stringContaining('Error Message'),
     )
     expect(sut.querySelector('input')).toHaveAccessibleDescription(
-      expect.stringContaining('Help Message')
+      expect.stringContaining('Help Message'),
     )
   })
 })

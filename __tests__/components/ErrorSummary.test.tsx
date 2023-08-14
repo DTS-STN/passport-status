@@ -1,4 +1,4 @@
-import '@testing-library/jest-dom/extend-expect'
+import '@testing-library/jest-dom'
 import { render, screen } from '@testing-library/react'
 
 import { axe, toHaveNoViolations } from 'jest-axe'
@@ -18,7 +18,7 @@ describe('ErrorSummary', () => {
       id="id"
       summary="summary"
       errors={[{ feildId: 'id', errorMessage: 'error' }]}
-    />
+    />,
   )
 
   it('renders', () => {
