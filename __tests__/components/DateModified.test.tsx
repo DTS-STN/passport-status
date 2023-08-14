@@ -1,4 +1,4 @@
-import '@testing-library/jest-dom/extend-expect'
+import '@testing-library/jest-dom'
 import { render } from '@testing-library/react'
 
 import { axe, toHaveNoViolations } from 'jest-axe'
@@ -22,7 +22,7 @@ describe('DateModified', () => {
 
   it('renders dateModified', () => {
     const { container } = render(
-      <DateModified id="date-modified" text="Date Modified" />
+      <DateModified id="date-modified" text="Date Modified" />,
     )
     const dl = container.querySelector('#date-modified')
     const dt = dl?.querySelector('dt')
@@ -35,7 +35,7 @@ describe('DateModified', () => {
 
   it('has no a11y violations', async () => {
     const { container } = render(
-      <DateModified id="date-modified" text="Date Modified" />
+      <DateModified id="date-modified" text="Date Modified" />,
     )
     const results = await axe(container)
     expect(results).toHaveNoViolations()

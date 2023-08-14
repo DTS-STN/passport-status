@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom'
-import '@testing-library/jest-dom/extend-expect'
+import '@testing-library/jest-dom'
 import { render, screen } from '@testing-library/react'
 
 import { axe, toHaveNoViolations } from 'jest-axe'
@@ -39,7 +39,7 @@ describe('Footer', () => {
             linkText: 'some-link-4',
           },
         ]}
-      />
+      />,
     )
     const footerLink = screen.getByText('some-link-4')
     expect(footerLink).toBeInTheDocument()
@@ -63,7 +63,7 @@ describe('Footer', () => {
           },
         ]}
         footerNavHeader="testFooterNavHeader"
-      />
+      />,
     )
     const results = await axe(container)
     expect(results).toHaveNoViolations()

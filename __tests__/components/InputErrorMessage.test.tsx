@@ -1,4 +1,4 @@
-import '@testing-library/jest-dom/extend-expect'
+import '@testing-library/jest-dom'
 import { render, screen } from '@testing-library/react'
 
 import { axe, toHaveNoViolations } from 'jest-axe'
@@ -9,7 +9,7 @@ expect.extend(toHaveNoViolations)
 
 describe('InputErrorMessage', () => {
   const { container } = render(
-    <InputErrorMessage message="error message here" />
+    <InputErrorMessage message="error message here" />,
   )
 
   it('renders', () => {

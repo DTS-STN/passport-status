@@ -1,4 +1,4 @@
-import '@testing-library/jest-dom/extend-expect'
+import '@testing-library/jest-dom'
 import { render, screen } from '@testing-library/react'
 
 import { axe, toHaveNoViolations } from 'jest-axe'
@@ -9,19 +9,19 @@ expect.extend(toHaveNoViolations)
 
 //Mocks for dialog element until PR containing fix for TypeError is merged into jsdom
 HTMLDialogElement.prototype.show = jest.fn(function mock(
-  this: HTMLDialogElement
+  this: HTMLDialogElement,
 ) {
   this.open = true
 })
 
 HTMLDialogElement.prototype.showModal = jest.fn(function mock(
-  this: HTMLDialogElement
+  this: HTMLDialogElement,
 ) {
   this.open = true
 })
 
 HTMLDialogElement.prototype.close = jest.fn(function mock(
-  this: HTMLDialogElement
+  this: HTMLDialogElement,
 ) {
   this.open = false
 })
@@ -35,7 +35,7 @@ describe('Modal', () => {
       header={'header'}
     >
       <p>description</p>
-    </Modal>
+    </Modal>,
   )
 
   it('renders', () => {
