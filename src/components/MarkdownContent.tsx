@@ -6,12 +6,7 @@ import ExternalLink from './ExternalLink'
 
 export type MarkdownContentProps = {
   markdown: string
-  header: boolean
 }
-
-const Heading1 = ({ children, ...props }: PropsWithChildren) => (
-  <h1 {...props}>{children}</h1>
-)
 
 const Heading2 = ({ children, ...props }: PropsWithChildren) => (
   <h2 {...props}>{children}</h2>
@@ -37,28 +32,28 @@ const Link = ({ children, ...props }: PropsWithChildren<{ href: string }>) => (
   <ExternalLink {...props}>{children}</ExternalLink>
 )
 
-const MarkdownContent = ({ markdown, header }: MarkdownContentProps) => (
+const MarkdownContent = ({ markdown }: MarkdownContentProps) => (
   <Markdown
     options={{
       overrides: {
         h1: {
-          component: header ? Heading1 : Heading2,
+          component: Heading2,
           props: { className: 'h2 mt-0' },
         },
         h2: {
-          component: header ? Heading2 : Heading3,
+          component: Heading3,
           props: { className: 'h3 mt-0' },
         },
         h3: {
-          component: header ? Heading3 : Heading4,
+          component: Heading4,
           props: { className: 'h4 mt-0' },
         },
         h4: {
-          component: header ? Heading4 : Heading5,
+          component: Heading5,
           props: { className: 'h5 mt-0' },
         },
         h5: {
-          component: header ? Heading5 : Heading6,
+          component: Heading6,
           props: { className: 'h6 mt-0' },
         },
         a: { component: Link },

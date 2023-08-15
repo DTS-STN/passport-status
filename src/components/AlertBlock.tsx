@@ -21,7 +21,6 @@ const AlertBlock = ({ page, className }: AlertBlockProps) => {
           <AlertSection key={alert.uid} type={alert.type} className="mb-4 mt-4">
             <MarkdownContent
               markdown={i18n.language === 'fr' ? alert.textFr : alert.textEn}
-              header={page === undefined}
             />
           </AlertSection>
         )
