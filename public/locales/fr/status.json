@@ -33,7 +33,7 @@
     "error": {
       "required": "Le(s) prénom(s) est(sont) obligatoire(s)."
     },
-    "help-message": "Inscrivez le(s) prénom(s) et le(s) deuxième(s) prénom(s).",
+    "help-message": "Indiquez le(s) prénom(s) et le(s) deuxième(s) prénom(s).",
     "label": "Prénom(s) comme vous l'avez précisé sur la demande"
   },
   "header": "Obtenir l'état de votre demande de passeport",
@@ -47,7 +47,7 @@
     "matches": "<strong>Assurez-vous que vos informations correspondent à la preuve de citoyenneté et à la pièce d'identité utilisées lors de votre demande de passeport.</strong> Votre preuve de citoyenneté pourrait être l'une des suivantes\u00a0:"
   },
   "no-record": {
-    "can-review": "Vous pouvez revérifier vos renseignements et essayez à nouveau.",
+    "can-review": "Vous pouvez revérifier vos renseignements et essayer à nouveau.",
     "cannot-give-status": {
       "because": "L'état de votre passeport n'est pas disponible pour les raisons suivantes\u00a0:",
       "description": "Nous ne pouvons pas vous donner l'état de votre demande pour le moment",
@@ -107,7 +107,7 @@
     "error": {
       "required": "Le nom de famille est obligatoire."
     },
-    "help-message": "Inscrivez le nom de famille.",
+    "help-message": "Indiquez le nom de famille.",
     "label": "Nom de famille comme vous l'avez précisé sur la demande"
   }
 }
