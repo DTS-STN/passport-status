@@ -77,7 +77,7 @@ const AlertSection = ({ children, type, className }: AlertSectionProps) => {
 
   return (
     <div className={className}>
-      <div className={`${svgStyles[type]} -mt-8`}>{svg(type)}</div>
+      <div className={`${svgStyles[type]} -mt-8 w-8`}>{svg(type)}</div>
       <section className={`border-l-8 pb-0.5 pt-2 ${borderColor}`}>
         <div className="mb-2 ml-4">{children}</div>
       </section>
