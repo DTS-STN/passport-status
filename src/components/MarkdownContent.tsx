@@ -8,26 +8,6 @@ export type MarkdownContentProps = {
   markdown: string
 }
 
-const Heading2 = ({ children, ...props }: PropsWithChildren) => (
-  <h2 {...props}>{children}</h2>
-)
-
-const Heading3 = ({ children, ...props }: PropsWithChildren) => (
-  <h3 {...props}>{children}</h3>
-)
-
-const Heading4 = ({ children, ...props }: PropsWithChildren) => (
-  <h4 {...props}>{children}</h4>
-)
-
-const Heading5 = ({ children, ...props }: PropsWithChildren) => (
-  <h5 {...props}>{children}</h5>
-)
-
-const Heading6 = ({ children, ...props }: PropsWithChildren) => (
-  <h6 {...props}>{children}</h6>
-)
-
 const Link = ({ children, ...props }: PropsWithChildren<{ href: string }>) => (
   <ExternalLink {...props}>{children}</ExternalLink>
 )
@@ -37,23 +17,23 @@ const MarkdownContent = ({ markdown }: MarkdownContentProps) => (
     options={{
       overrides: {
         h1: {
-          component: Heading2,
+          component: 'h2',
           props: { className: 'h2 mt-0' },
         },
         h2: {
-          component: Heading3,
+          component: 'h3',
           props: { className: 'h3 mt-0' },
         },
         h3: {
-          component: Heading4,
+          component: 'h4',
           props: { className: 'h4 mt-0' },
         },
         h4: {
-          component: Heading5,
+          component: 'h5',
           props: { className: 'h5 mt-0' },
         },
         h5: {
-          component: Heading6,
+          component: 'h6',
           props: { className: 'h6 mt-0' },
         },
         a: { component: Link },
