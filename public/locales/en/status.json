@@ -82,9 +82,13 @@
     "take-up-to": "It can take up to 2 to 3 business days to arrive."
   },
   "shipped-fedex": {
+    "bermuda": {
+      "title": "Special instructions for applicants from Bermuda",
+      "applied-from": "If you applied for a passport from Bermuda, it will be sent to you via FedEx."
+    },
     "contact-us": "If you don't receive your passport and supporting documents, <Link>contact us</Link>.",
-    "header": "Your passport has been printed and couriered to you",
-    "mailing": "We're sending it to you by FedEx\u00AE",
+    "header": "Your passport has been printed and mailed to you",
+    "mailing": "We're sending it to you by Canada Post and the United States Postal Service",
     "supporting-documents": "You'll receive your passport and supporting documents in the same envelope.",
     "take-up-to": "It can take up to 5 to 7 business days to arrive."
   },
