@@ -10,17 +10,14 @@
     "we-will-contact": "Si nous avons besoin de plus amples renseignements, nous communiquerons avec vous par téléphone, par la poste, ou par courriel. Nous n'utiliserons <strong>jamais</strong> de messages textes ou de programmes de messagerie instantanée pour vous contacter au sujet de votre demande de passeport."
   },
   "check-status": "Vérifiez l'état",
-  "child-applications": {
-    "description": "Utilisez le(s) prénom(s), nom de famille et date de naissance de l'enfant, exactement tels qu'ils figurent sur sa preuve de citoyenneté.",
-    "header": "Pour les demandes de passeport pour enfants"
-  },
   "date-of-birth": {
     "error": {
       "current": "La date de naissance doit être dans le passé.",
       "invalid": "La date de naissance doit être valide selon le format suivant\u00a0: aaaa-MM-jj (Année-Mois-Jour).",
       "required": "La date de naissance est obligatoire."
     },
-    "label": "Date de naissance comme vous l'avez précisé sur la demande"
+    "help-message": "Indiquez la date de naissance de la personne à qui le passeport est destiné.",
+    "label": "Date de naissance sur la demande"
   },
   "esrf": {
     "error": {
@@ -33,8 +30,8 @@
     "error": {
       "required": "Le(s) prénom(s) est(sont) obligatoire(s)."
     },
-    "help-message": "Indiquez le(s) prénom(s) et le(s) deuxième(s) prénom(s).",
-    "label": "Prénom(s) comme vous l'avez précisé sur la demande"
+    "help-message": "Indiquez le(s) prénom(s) et le(s) deuxième(s) prénom(s) de la personne à qui le passeport est destiné.",
+    "label": "Prénom(s) sur la demande"
   },
   "header": "Obtenir l'état de votre demande de passeport",
   "header-messages": {
@@ -111,7 +108,7 @@
     "error": {
       "required": "Le nom de famille est obligatoire."
     },
-    "help-message": "Indiquez le nom de famille.",
-    "label": "Nom de famille comme vous l'avez précisé sur la demande"
+    "help-message": "Indiquez le nom de famille de la personne à qui le passeport est destiné.",
+    "label": "Nom de famille sur la demande"
   }
 }

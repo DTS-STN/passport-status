@@ -5,7 +5,8 @@
       "invalid": "La date de naissance doit être valide selon le format suivant\u00a0: aaaa-MM-jj (Année-Mois-Jour).",
       "required": "La date de naissance est obligatoire."
     },
-    "label": "Date de naissance comme vous l'avez précisé sur la demande"
+    "help-message": "Indiquez la date de naissance de la personne à qui le passeport est destiné.",
+    "label": "Date de naissance sur la demande"
   },
   "email": {
     "error": {
@@ -36,13 +37,11 @@
     "error": {
       "required": "Le(s) prénom(s) est(sont) obligatoire(s)."
     },
-    "help-message": "Indiquez le(s) prénom(s) et deuxième(s) prénom(s).",
-    "label": "Prénom(s) comme vous l'avez précisé sur la demande"
+    "help-message": "Indiquez le(s) prénom(s) et deuxième(s) prénom(s) de la personne à qui le passeport est destiné.",
+    "label": "Prénom(s) sur la demande"
   },
   "header": "Obtenir le numéro de dossier de ma demande de passeport ou mon numéro de référence",
   "header-messages": {
-    "child-applications": "Les demandes de passeport pour enfants",
-    "for-child-application": "Utilisez le(s) prénom(s), nom de famille et date de naissance de l'enfant, exactement tels qu'ils figurent sur sa preuve de citoyenneté.",
     "list": {
       "item-1": "un certificat de naissance",
       "item-2": "un certificat de citoyenneté",
@@ -56,7 +55,7 @@
     "error": {
       "required": "Le nom de famille est obligatoire."
     },
-    "help-message": "Indiquez le nom de famille.",
-    "label": "Nom de famille comme vous l'avez précisé sur la demande"
+    "help-message": "Indiquez le nom de famille de la personne à qui le passeport est destiné.",
+    "label": "Nom de famille sur la demande"
   }
 }

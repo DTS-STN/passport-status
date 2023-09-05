@@ -17,7 +17,6 @@ import * as Yup from 'yup'
 
 import ActionButton from '../components/ActionButton'
 import AlertBlock from '../components/AlertBlock'
-import AlertSection from '../components/AlertSection'
 import CheckStatusInfo from '../components/CheckStatusInfo'
 import DateSelectField, {
   DateSelectFieldOnChangeEvent,
@@ -199,11 +198,6 @@ const Status = () => {
               <li>{t('header-messages.list.item-4')}</li>
             </ul>
 
-            <AlertSection type="info" className="mb-4">
-              <h2 className="h3 mb-3">{t('child-applications.header')}</h2>
-              <p>{t('child-applications.description')}</p>
-            </AlertSection>
-
             {errorSummaryItems.length > 0 && (
               <ErrorSummary
                 id="error-summary-get-status"
@@ -269,6 +263,7 @@ const Status = () => {
               }
               textRequired={t('common:required')}
               required
+              helpMessage={t('date-of-birth.help-message')}
             />
             <div className="mt-8 flex flex-wrap gap-2">
               <ActionButton

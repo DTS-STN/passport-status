@@ -5,7 +5,8 @@
       "invalid": "The date of birth must be valid in the following format: YYYY-MM-DD (Year-Month-Day).",
       "required": "The date of birth is required."
     },
-    "label": "Date of birth, as you detailed on the application"
+    "help-message": "Enter the birthdate of the person who the passport is for.",
+    "label": "Date of birth on the application"
   },
   "email": {
     "error": {
@@ -36,13 +37,11 @@
     "error": {
       "required": "The given name(s) is required."
     },
-    "help-message": "Enter first name(s) and any middle name(s).",
-    "label": "Given name(s), as you detailed on the application"
+    "help-message": "Enter first name(s) and any middle name(s) of the person who the passport is for.",
+    "label": "Given name(s) on the application"
   },
   "header": "Get my passport application file number or reference number",
   "header-messages": {
-    "child-applications": "Child applications",
-    "for-child-application": "Use the child's given name(s) and surname and date of birth, exactly as provided on their proof of citizenship.",
     "list": {
       "item-1": "birth certificate",
       "item-2": "citizenship certificate",
@@ -56,7 +55,7 @@
     "error": {
       "required": "The surname is required."
     },
-    "help-message": "Enter last name.",
-    "label": "Surname, as you detailed on the application"
+    "help-message": "Enter last name of the person who the passport is for.",
+    "label": "Surname on the application"
   }
 }
