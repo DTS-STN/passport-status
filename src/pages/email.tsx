@@ -15,7 +15,6 @@ import * as Yup from 'yup'
 
 import ActionButton from '../components/ActionButton'
 import AlertBlock from '../components/AlertBlock'
-import AlertSection from '../components/AlertSection'
 import DateSelectField, {
   DateSelectFieldOnChangeEvent,
 } from '../components/DateSelectField'
@@ -211,17 +210,6 @@ const Email = () => {
               </li>
               <li>{t('header-messages.list.item-4')}</li>
             </ul>
-            <AlertSection className="mb-8" type="info">
-              <h2 className="h3 mb-3">
-                {t('header-messages.child-applications')}
-              </h2>
-              <p className="m-0">
-                <Trans
-                  i18nKey="header-messages.for-child-application"
-                  ns="email"
-                />
-              </p>
-            </AlertSection>
 
             {errorSummaryItems.length > 0 && (
               <ErrorSummary
@@ -284,6 +272,7 @@ const Email = () => {
               }
               textRequired={t('common:required')}
               required
+              helpMessage={t('date-of-birth.help-message')}
             />
             <div className="mt-8 flex flex-wrap gap-2">
               <ActionButton

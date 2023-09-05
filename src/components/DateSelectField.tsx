@@ -180,6 +180,14 @@ const DateSelectField = ({
             message={errorMessage}
           />
         )}
+        {helpMessage && (
+          <div
+            className="mt-1.5 max-w-prose text-base text-gray-600"
+            id={dateSelectHelpMessageId}
+          >
+            {helpMessage}
+          </div>
+        )}
         <div className="flex flex-col space-y-2 sm:flex-row sm:space-x-2 sm:space-y-0">
           <DateSelect
             ariaDescribedby={getAriaDescribedby()}
@@ -219,14 +227,6 @@ const DateSelectField = ({
           />
         </div>
       </fieldset>
-      {helpMessage && (
-        <div
-          className="mt-1.5 max-w-prose text-base text-gray-600"
-          id={dateSelectHelpMessageId}
-        >
-          {helpMessage}
-        </div>
-      )}
     </div>
   )
 }
