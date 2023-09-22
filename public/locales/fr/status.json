@@ -79,13 +79,9 @@
     "take-up-to": "Cela peut prendre jusqu'à 2 à 3 jours ouvrables pour arriver."
   },
   "shipped-fedex": {
-    "bermuda": {
-      "title": "Instructions spéciales pour les demandeurs des Bermudes",
-      "applied-from": "Si vous avez demandé votre passeport des Bermudes, il vous sera envoyé via FedEx."
-    },
     "contact-us": "Si vous ne recevez pas votre passeport et vos documents, <Link>veuillez nous contacter</Link>.",
     "header": "Votre passeport a été imprimé et envoyé par la poste",
-    "mailing": "Nous vous l'envoyons par Postes Canada et le Service Postal des États-Unis",
+    "mailing": "Nous vous l'envoyons par FedEx",
     "supporting-documents": "Vous recevrez le passeport et les documents justificatifs dans la même enveloppe.",
     "take-up-to": "Cela peut prendre jusqu'à 5 à 7 jours ouvrables pour arriver."
   },
