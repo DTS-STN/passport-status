@@ -13,7 +13,7 @@ jest.mock('../../src/components/Footer')
 
 jest.mock('../../src/lib/useAlerts', () => ({
   useAlerts: () => ({
-    isLoading: false,
+    isPending: false,
     error: undefined,
     data: undefined,
   }),

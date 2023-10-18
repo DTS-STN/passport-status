@@ -14,7 +14,7 @@ jest.mock('../../src/components/Layout')
 jest.mock('../../src/components/LinkButton')
 jest.mock('../../src/lib/useAlerts', () => ({
   useAlerts: () => ({
-    isLoading: false,
+    isPending: false,
     error: undefined,
     data: undefined,
   }),

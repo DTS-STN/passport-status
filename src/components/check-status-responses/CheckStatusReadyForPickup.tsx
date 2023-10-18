@@ -7,7 +7,7 @@ export const CheckStatusReadyForPickup = () => {
   const { t } = useTranslation('status')
   return (
     <>
-      <h1 data-testid="ready-for-pickup" className="h1">
+      <h1 data-testid="ready-for-pickup" className="h1" tabIndex={-1}>
         {t('ready-for-pickup.has-been-printed')}
       </h1>
       <AlertBlock page="status-ready-pickup" />

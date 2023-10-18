@@ -7,7 +7,7 @@ export const CheckStatusNotAcceptable = () => {
   const { t } = useTranslation(['status', 'common'])
   return (
     <>
-      <h1 data-testid="not-acceptable" className="h1">
+      <h1 data-testid="not-acceptable" className="h1" tabIndex={-1}>
         {t('not-acceptable.cannot-process')}
       </h1>
       <AlertBlock page="status-invalid" />

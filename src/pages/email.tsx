@@ -1,10 +1,4 @@
-import {
-  MouseEventHandler,
-  useCallback,
-  useMemo,
-  useRef,
-  useState,
-} from 'react'
+import { MouseEventHandler, useCallback, useMemo, useState } from 'react'
 
 import { useFormik, validateYupSchema, yupToFormErrors } from 'formik'
 import { GetServerSideProps } from 'next'
@@ -52,21 +46,25 @@ const validationSchema = Yup.object({
     .max(new Date(), 'date-of-birth.error.current'),
 })
 
+const scrollToHeading = () => {
+  setTimeout(() => {
+    const heading =
+      document.querySelector<HTMLHeadingElement>('h1[tabIndex="-1"]')
+    if (!heading) return
+    heading.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    heading.focus()
+  }, 300)
+}
+
 const Email = () => {
   const { t } = useTranslation(['email', 'common'])
 
   const router = useRouter()
-  const headingRef = useRef<HTMLHeadingElement>(null)
   const [modalOpen, setModalOpen] = useState(false)
-
-  const scrollToHeading = useCallback(() => {
-    headingRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
-    headingRef.current?.focus()
-  }, [headingRef])
 
   const {
     error: emailEsrfError,
-    isLoading: isEmailEsrfLoading,
+    isPending: isEmailEsrfPending,
     isSuccess: isEmailEsrfSuccess,
     mutate: emailEsrf,
     reset: resetEmailEsrf,
@@ -132,7 +130,7 @@ const Email = () => {
         resetEmailEsrf()
         scrollToHeading()
       },
-      [resetEmailEsrf, resetFormik, scrollToHeading],
+      [resetEmailEsrf, resetFormik],
     )
 
   //if the api failed, fail hard to show error page
@@ -148,7 +146,9 @@ const Email = () => {
 
       {isEmailEsrfSuccess ? (
         <div id="response-result">
-          <h1 className="h1">{t('email-confirmation-msg.request-received')}</h1>
+          <h1 className="h1" tabIndex={-1}>
+            {t('email-confirmation-msg.request-received')}
+          </h1>
           <AlertBlock page="email" />
           <p>
             <Trans i18nKey="email-confirmation-msg.if-exists" ns="email" />
@@ -194,7 +194,7 @@ const Email = () => {
         </div>
       ) : (
         <>
-          <h1 ref={headingRef} className="h1" tabIndex={-1}>
+          <h1 className="h1" tabIndex={-1}>
             {t('header')}
           </h1>
           <AlertBlock page="email" />
@@ -277,14 +277,14 @@ const Email = () => {
             <div className="mt-8 flex flex-wrap gap-2">
               <ActionButton
                 id="btn-submit"
-                disabled={isEmailEsrfLoading}
+                disabled={isEmailEsrfPending}
                 type="submit"
                 text={t('email-esrf')}
                 style="primary"
               />
               <ActionButton
                 id="btn-cancel"
-                disabled={isEmailEsrfLoading}
+                disabled={isEmailEsrfPending}
                 text={t('common:modal-go-back.cancel-button')}
                 onClick={handleOnCancelClick}
               />
