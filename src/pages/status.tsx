@@ -4,7 +4,6 @@ import {
   useCallback,
   useEffect,
   useMemo,
-  useRef,
   useState,
 } from 'react'
 
@@ -54,18 +53,22 @@ const validationSchema = Yup.object({
     .max(new Date(), 'date-of-birth.error.current'),
 })
 
+const scrollToHeading = () => {
+  setTimeout(() => {
+    const heading =
+      document.querySelector<HTMLHeadingElement>('h1[tabIndex="-1"]')
+    if (!heading) return
+    heading.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    heading.focus()
+  }, 300)
+}
+
 const Status = () => {
   const { t } = useTranslation(['status', 'common'])
 
   const router = useRouter()
-  const headingRef = useRef<HTMLHeadingElement>(null)
   const [modalOpen, setModalOpen] = useState(false)
   const queryClient = useQueryClient()
-
-  const scrollToHeading = useCallback(() => {
-    headingRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
-    headingRef.current?.focus()
-  }, [headingRef])
 
   const {
     errors: formikErrors,
@@ -109,11 +112,10 @@ const Status = () => {
   )
 
   useEffect(() => {
-    console.log({ isCheckStatusSuccess })
     if (isCheckStatusSuccess) {
       scrollToHeading()
     }
-  }, [isCheckStatusSuccess, scrollToHeading])
+  }, [isCheckStatusSuccess])
 
   const errorSummaryItems = useMemo<ErrorSummaryItem[]>(
     () =>
@@ -136,13 +138,7 @@ const Status = () => {
       removeCheckStatus(queryClient)
       scrollToHeading()
     },
-    [
-      checkStatusResponse,
-      setFormikStatus,
-      removeCheckStatus,
-      scrollToHeading,
-      router,
-    ],
+    [checkStatusResponse, setFormikStatus, queryClient, router],
   )
 
   const handleOnESRFChange: ChangeEventHandler<HTMLInputElement> = useCallback(
