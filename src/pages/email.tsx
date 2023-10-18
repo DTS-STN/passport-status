@@ -66,7 +66,7 @@ const Email = () => {
 
   const {
     error: emailEsrfError,
-    isLoading: isEmailEsrfLoading,
+    isPending: isEmailEsrfPending,
     isSuccess: isEmailEsrfSuccess,
     mutate: emailEsrf,
     reset: resetEmailEsrf,
@@ -277,14 +277,14 @@ const Email = () => {
             <div className="mt-8 flex flex-wrap gap-2">
               <ActionButton
                 id="btn-submit"
-                disabled={isEmailEsrfLoading}
+                disabled={isEmailEsrfPending}
                 type="submit"
                 text={t('email-esrf')}
                 style="primary"
               />
               <ActionButton
                 id="btn-cancel"
-                disabled={isEmailEsrfLoading}
+                disabled={isEmailEsrfPending}
                 text={t('common:modal-go-back.cancel-button')}
                 onClick={handleOnCancelClick}
               />

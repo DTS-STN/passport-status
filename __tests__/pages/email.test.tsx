@@ -21,7 +21,7 @@ jest.mock('../../src/components/Layout')
 jest.mock('../../src/components/Modal')
 jest.mock('../../src/lib/useEmailEsrf', () => {
   return jest.fn(() => ({
-    isLoading: false,
+    isPending: false,
     isSuccess: false,
     error: undefined,
     mutate: jest.fn(),
@@ -30,7 +30,7 @@ jest.mock('../../src/lib/useEmailEsrf', () => {
 
 jest.mock('../../src/lib/useAlerts', () => ({
   useAlerts: () => ({
-    isLoading: false,
+    isPending: false,
     error: undefined,
     data: undefined,
   }),

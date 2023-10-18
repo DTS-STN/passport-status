@@ -2,11 +2,13 @@ import {
   ChangeEventHandler,
   MouseEventHandler,
   useCallback,
+  useEffect,
   useMemo,
   useRef,
   useState,
 } from 'react'
 
+import { useQueryClient } from '@tanstack/react-query'
 import { useFormik, validateYupSchema, yupToFormErrors } from 'formik'
 import { GetServerSideProps } from 'next'
 import { Trans, useTranslation } from 'next-i18next'
@@ -30,6 +32,7 @@ import IdleTimeout from '../components/IdleTimeout'
 import InputField from '../components/InputField'
 import Layout from '../components/Layout'
 import Modal from '../components/Modal'
+import { removeCheckStatus } from '../lib/removeCheckStatus'
 import { CheckStatusApiRequestQuery } from '../lib/types'
 import { useCheckStatus } from '../lib/useCheckStatus'
 import { pageWithServerSideTranslations } from '../lib/utils/next-i18next-utils'
@@ -57,6 +60,7 @@ const Status = () => {
   const router = useRouter()
   const headingRef = useRef<HTMLHeadingElement>(null)
   const [modalOpen, setModalOpen] = useState(false)
+  const queryClient = useQueryClient()
 
   const scrollToHeading = useCallback(() => {
     headingRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
@@ -95,15 +99,21 @@ const Status = () => {
   const {
     data: checkStatusResponse,
     error: checkStatusError,
-    isLoading: isCheckStatusLoading,
-    remove: removeCheckStatusResponse,
+    isPending: isCheckStatusPending,
+    isSuccess: isCheckStatusSuccess,
   } = useCheckStatus(
     formikStatus === 'submitted' ? formikValues : initialValues,
     {
       enabled: formikStatus === 'submitted',
-      onSuccess: () => scrollToHeading(),
     },
   )
+
+  useEffect(() => {
+    console.log({ isCheckStatusSuccess })
+    if (isCheckStatusSuccess) {
+      scrollToHeading()
+    }
+  }, [isCheckStatusSuccess, scrollToHeading])
 
   const errorSummaryItems = useMemo<ErrorSummaryItem[]>(
     () =>
@@ -123,13 +133,13 @@ const Status = () => {
         return
       }
       setFormikStatus(undefined)
-      removeCheckStatusResponse()
+      removeCheckStatus(queryClient)
       scrollToHeading()
     },
     [
       checkStatusResponse,
       setFormikStatus,
-      removeCheckStatusResponse,
+      removeCheckStatus,
       scrollToHeading,
       router,
     ],
@@ -181,7 +191,7 @@ const Status = () => {
         />
       ) : (
         <>
-          <h1 ref={headingRef} className="h1" tabIndex={-1}>
+          <h1 className="h1" tabIndex={-1}>
             {t('header')}
           </h1>
           <AlertBlock page="status" />
@@ -268,14 +278,14 @@ const Status = () => {
             <div className="mt-8 flex flex-wrap gap-2">
               <ActionButton
                 id="btn-submit"
-                disabled={isCheckStatusLoading}
+                disabled={isCheckStatusPending}
                 type="submit"
                 text={t('check-status')}
                 style="primary"
               />
               <ActionButton
                 id="btn-cancel"
-                disabled={isCheckStatusLoading}
+                disabled={isCheckStatusPending}
                 text={t('common:modal-go-back.cancel-button')}
                 onClick={handleOnCancelClick}
               />

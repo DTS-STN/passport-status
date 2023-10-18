@@ -9,7 +9,7 @@ expect.extend(toHaveNoViolations)
 
 jest.mock('../../../src/lib/useAlerts', () => ({
   useAlerts: () => ({
-    isLoading: false,
+    isPending: false,
     error: undefined,
     data: undefined,
   }),

@@ -18,26 +18,30 @@ export const fetchCheckStatus = async (
 
 export const useCheckStatus = (
   checkStatusApiRequestQuery: CheckStatusApiRequestQuery,
-  queryOptions?: UseQueryOptions<
-    CheckStatusApiResponse | null,
-    ApiError,
-    CheckStatusApiResponse | null
+  queryOptions?: Omit<
+    UseQueryOptions<
+      CheckStatusApiResponse | null,
+      ApiError,
+      CheckStatusApiResponse | null
+    >,
+    'queryKey' | 'queryFn'
   >,
 ) => {
   const query = useQuery<
     CheckStatusApiResponse | null,
     ApiError,
     CheckStatusApiResponse | null
-  >(
-    ['ps:api:check-status', checkStatusApiRequestQuery],
-    ({ signal }) => fetchCheckStatus(checkStatusApiRequestQuery, { signal }),
-    { ...(queryOptions ?? {}) },
-  )
+  >({
+    ...(queryOptions ?? {}),
+    queryKey: ['ps:api:check-status', checkStatusApiRequestQuery],
+    queryFn: ({ signal }) =>
+      fetchCheckStatus(checkStatusApiRequestQuery, { signal }),
+  })
 
-  // fix isLoading with disabled: false
+  // fix isPending with disabled: false
   // see: https://github.com/TanStack/query/issues/3584#issuecomment-1256986636
   return {
     ...query,
-    isLoading: query.isLoading && query.fetchStatus !== 'idle',
+    isPending: query.isPending && query.fetchStatus !== 'idle',
   }
 }
