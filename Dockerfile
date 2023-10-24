@@ -51,7 +51,7 @@ COPY --from=builder /app/next-i18next.config.js ./next-i18next.config.js
 
 # install next.js
 COPY --from=builder /app/package*.json ./
-RUN npm install --no-save next
+RUN npm ci --omit=dev
 
 USER nextjs
 
