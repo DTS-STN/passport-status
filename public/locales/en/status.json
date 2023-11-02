@@ -62,6 +62,7 @@
     "contact-us": "For more information, <Link>contact us</Link>.",
     "explanation": "We're sending you a letter explaining why and will return your supporting documents at the same time."
   },
+  "one-name": "Applicants with <strong>only one name</strong> (single or multiple names entered all in one field) must call us at 1‑800‑567‑6868 to get the status of their application.",
   "previous": "Check the status of another application",
   "ready-for-pickup": {
     "check-receipt": "Check your receipt for pick-up instructions",

@@ -50,6 +50,7 @@
     },
     "matches": "<strong>Make sure your information matches the proof of citizenship and supporting ID used when you applied for a passport.</strong> Your proof of citizenship could be one of the following:"
   },
+  "one-name": "Applicants with <strong>only one name</strong> (single or multiple names entered all in one field) must call us at 1‑800‑567‑6868 to get the status of their application.",
   "request-another": "Request another file number or reference number",
   "surname": {
     "error": {

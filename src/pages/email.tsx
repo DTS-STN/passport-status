@@ -193,13 +193,13 @@ const Email = () => {
           </div>
         </div>
       ) : (
-        <>
+        <div>
           <h1 className="h1" tabIndex={-1}>
             {t('header')}
           </h1>
           <AlertBlock page="email" />
           <form onSubmit={handleFormikSubmit} id="form-email-esrf">
-            <p>
+            <p className="max-w-prose">
               <Trans i18nKey="header-messages.matches" ns="email" />
             </p>
             <ul className="mb-5 list-disc space-y-2 pl-10">
@@ -261,6 +261,7 @@ const Email = () => {
               textRequired={t('common:required')}
               required
               helpMessage={t('surname.help-message')}
+              helpMessageSecondary={<Trans i18nKey="one-name" ns="email" />}
             />
             <DateSelectField
               id="dateOfBirth"
@@ -290,7 +291,7 @@ const Email = () => {
               />
             </div>
           </form>
-        </>
+        </div>
       )}
       <Modal
         open={modalOpen}
