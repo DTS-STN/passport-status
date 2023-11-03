@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1698945780940" clover="3.2.0">
-  <project timestamp="1698945780941" name="All files">
+<coverage generated="1699015321143" clover="3.2.0">
+  <project timestamp="1699015321144" name="All files">
     <metrics statements="547" coveredstatements="347" conditionals="325" coveredconditionals="149" methods="154" coveredmethods="84" elements="1026" coveredelements="580" complexity="0" loc="547" ncloc="547" packages="11" files="60" classes="60"/>
     <package name="src">
       <metrics statements="28" coveredstatements="14" conditionals="26" coveredconditionals="8" methods="7" coveredmethods="6"/>
@@ -593,7 +593,7 @@
         <line num="131" count="0" type="stmt"/>
         <line num="137" count="2" type="cond" truecount="1" falsecount="1"/>
         <line num="139" count="2" type="stmt"/>
-        <line num="317" count="1" type="stmt"/>
+        <line num="318" count="1" type="stmt"/>
       </file>
       <file name="expectations.tsx" path="/home/runner/work/passport-status/passport-status/src/pages/expectations.tsx">
         <metrics statements="8" coveredstatements="5" conditionals="2" coveredconditionals="0" methods="3" coveredmethods="1"/>
@@ -667,7 +667,7 @@
         <line num="163" count="0" type="stmt"/>
         <line num="167" count="2" type="cond" truecount="1" falsecount="1"/>
         <line num="169" count="2" type="stmt"/>
-        <line num="314" count="1" type="stmt"/>
+        <line num="316" count="1" type="stmt"/>
       </file>
     </package>
     <package name="src.pages.api">
