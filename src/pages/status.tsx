@@ -18,6 +18,7 @@ import * as Yup from 'yup'
 
 import ActionButton from '../components/ActionButton'
 import AlertBlock from '../components/AlertBlock'
+import AlertSection from '../components/AlertSection'
 import CheckStatusInfo from '../components/CheckStatusInfo'
 import DateSelectField, {
   DateSelectFieldOnChangeEvent,
@@ -205,6 +206,12 @@ const Status = () => {
               <li>{t('header-messages.list.item-4')}</li>
             </ul>
 
+            <AlertSection type="info" className="mb-5 max-w-prose">
+              <p>
+                <Trans i18nKey="one-name" ns="status" />
+              </p>
+            </AlertSection>
+
             {errorSummaryItems.length > 0 && (
               <ErrorSummary
                 id="error-summary-get-status"
@@ -259,7 +266,6 @@ const Status = () => {
               textRequired={t('common:required')}
               required
               helpMessage={t('surname.help-message')}
-              helpMessageSecondary={<Trans i18nKey="one-name" ns="status" />}
             />
             <DateSelectField
               id="dateOfBirth"
