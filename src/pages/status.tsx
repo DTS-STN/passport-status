@@ -192,9 +192,10 @@ const Status = () => {
           </h1>
           <AlertBlock page="status" />
           <form onSubmit={handleFormikSubmit} id="form-get-status">
-            <p>
+            <p className="max-w-prose">
               <Trans i18nKey="header-messages.matches" ns="status" />
             </p>
+
             <ul className="mb-5 list-disc space-y-2 pl-10">
               <li>{t('header-messages.list.item-1')}</li>
               <li>{t('header-messages.list.item-2')}</li>
@@ -258,6 +259,7 @@ const Status = () => {
               textRequired={t('common:required')}
               required
               helpMessage={t('surname.help-message')}
+              helpMessageSecondary={<Trans i18nKey="one-name" ns="status" />}
             />
             <DateSelectField
               id="dateOfBirth"
