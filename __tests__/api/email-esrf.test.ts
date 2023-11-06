@@ -32,17 +32,17 @@ describe('api/email-esrf', () => {
       async () =>
         ({
           status: 202,
-        } as Response)
+        }) as Response,
     )
     global.fetch = fetchMock
 
-    const givenName = faker.name.firstName()
-    const surname = faker.name.lastName()
-    const email = faker.internet.email(
-      givenName,
-      surname,
-      'example.fakerjs.dev'
-    )
+    const givenName = faker.person.firstName()
+    const surname = faker.person.lastName()
+    const email = faker.internet.email({
+      firstName: givenName,
+      lastName: surname,
+      provider: 'example.fakerjs.dev',
+    })
     const dateOfBirth = faker.date.past()
     const year = dateOfBirth.getFullYear().toString().padStart(4, '0')
     const month = (dateOfBirth.getMonth() + 1).toString().padStart(2, '0')
@@ -79,7 +79,7 @@ describe('api/email-esrf', () => {
         body: `{"Client":{"BirthDate":{"Date":"${body.dateOfBirth}"},"PersonContactInformation":{"ContactEmailID":"${body.email}"},"PersonName":{"PersonGivenName":["${body.givenName}"],"PersonSurName":"${body.surname}"},"PersonPreferredLanguage":{"LanguageName":"ENGLISH"}}}`,
         headers: { 'Content-Type': 'application/json' },
         method: 'POST',
-      }
+      },
     )
 
     fetchMock.mockClear()

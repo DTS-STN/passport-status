@@ -18,7 +18,7 @@ describe('email page loads', () => {
       .then((text) => {
         cy.title().should(
           'eq',
-          `${text} - Passport Application Status Checker - Canada.ca`
+          `${text} - Passport Application Status Checker - Canada.ca`,
         )
       })
   })
@@ -32,7 +32,7 @@ describe('email page loads', () => {
       .then((text) => {
         cy.title().should(
           'eq',
-          `${text} - Vérificateur de l'état d'une demande de passeport - Canada.ca`
+          `${text} - Vérificateur de l'état d'une demande de passeport - Canada.ca`,
         )
       })
   })
@@ -67,13 +67,13 @@ describe('email page loads', () => {
 
 describe('responses', () => {
   beforeEach(() => {
-    const givenName = faker.name.firstName()
-    const surname = faker.name.lastName()
-    const email = faker.internet.email(
-      givenName,
-      surname,
-      'example.fakerjs.dev'
-    )
+    const givenName = faker.person.firstName()
+    const surname = faker.person.lastName()
+    const email = faker.internet.email({
+      firstName: givenName,
+      lastName: surname,
+      provider: 'example.fakerjs.dev',
+    })
     const dateOfBirth = faker.date.past()
     const year = dateOfBirth.getFullYear().toString().padStart(4, '0')
     const month = (dateOfBirth.getMonth() + 1).toString().padStart(2, '0')
@@ -90,7 +90,7 @@ describe('responses', () => {
       {
         statusCode: 202,
         body: 'Email sent if found',
-      }
+      },
     ).as('email-esrf')
 
     cy.get('#email').type(email)
@@ -108,7 +108,7 @@ describe('responses', () => {
       cy.wrap(interception.request.body.surname).should('eq', surname)
       cy.wrap(interception.request.body.dateOfBirth).should(
         'eq',
-        `${year}-${month}-${day}`
+        `${year}-${month}-${day}`,
       )
       cy.wrap(interception.request.body.locale).should('eq', 'en')
     })

@@ -20,7 +20,7 @@ describe('status page loads', () => {
       .then((text) => {
         cy.title().should(
           'eq',
-          `${text} - Passport Application Status Checker - Canada.ca`
+          `${text} - Passport Application Status Checker - Canada.ca`,
         )
       })
   })
@@ -34,7 +34,7 @@ describe('status page loads', () => {
       .then((text) => {
         cy.title().should(
           'eq',
-          `${text} - Vérificateur de l'état d'une demande de passeport - Canada.ca`
+          `${text} - Vérificateur de l'état d'une demande de passeport - Canada.ca`,
         )
       })
   })
@@ -82,7 +82,7 @@ describe('ESRF field validation', () => {
 
 describe('givenName field validation', () => {
   it('validates valid givenName', () => {
-    cy.get('#givenName').type(faker.name.firstName())
+    cy.get('#givenName').type(faker.person.firstName())
     cy.get('#btn-submit').click()
     cy.get('#input-givenName-error').should('not.exist')
   })
@@ -95,7 +95,7 @@ describe('givenName field validation', () => {
 
 describe('surname field validation', () => {
   it('validates valid surname', () => {
-    cy.get('#surname').type(faker.name.lastName())
+    cy.get('#surname').type(faker.person.lastName())
     cy.get('#btn-submit').click()
     cy.get('#input-surname-error').should('not.exist')
   })
@@ -156,8 +156,8 @@ statusCodes.forEach((response) => {
   describe(`responses- loads result - '${response.status}'`, () => {
     beforeEach(() => {
       const esrf = faker.helpers.replaceSymbols('?#######')
-      const givenName = faker.name.firstName()
-      const surname = faker.name.lastName()
+      const givenName = faker.person.firstName()
+      const surname = faker.person.lastName()
       const dateOfBirth = faker.date.past()
       const year = dateOfBirth.getFullYear().toString().padStart(4, '0')
       const month = (dateOfBirth.getMonth() + 1).toString().padStart(2, '0')
@@ -177,7 +177,7 @@ statusCodes.forEach((response) => {
         {
           statusCode: 200,
           body: response,
-        }
+        },
       ).as('check-status')
 
       cy.get('#esrf').type(esrf)
@@ -206,8 +206,8 @@ statusCodes.forEach((response) => {
 describe('responses - loads no result', () => {
   beforeEach(() => {
     const esrf = faker.helpers.replaceSymbols('?#######')
-    const givenName = faker.name.firstName()
-    const surname = faker.name.lastName()
+    const givenName = faker.person.firstName()
+    const surname = faker.person.lastName()
     const dateOfBirth = faker.date.past()
     const year = dateOfBirth.getFullYear().toString().padStart(4, '0')
     const month = (dateOfBirth.getMonth() + 1).toString().padStart(2, '0')
@@ -227,7 +227,7 @@ describe('responses - loads no result', () => {
       {
         statusCode: 404,
         body: 'Passport Status Not Found',
-      }
+      },
     ).as('check-status')
 
     cy.get('#esrf').type(esrf)
