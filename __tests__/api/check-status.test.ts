@@ -35,13 +35,13 @@ describe('api/check-status', () => {
       async () =>
         ({
           status: 200,
-        } as Response)
+        }) as Response,
     )
     global.fetch = fetchMock
 
     const esrf = faker.helpers.replaceSymbols('?#######')
-    const givenName = faker.name.firstName()
-    const surname = faker.name.lastName()
+    const givenName = faker.person.firstName()
+    const surname = faker.person.lastName()
     const dateOfBirth = faker.date.past()
     const year = dateOfBirth.getFullYear().toString().padStart(4, '0')
     const month = (dateOfBirth.getMonth() + 1).toString().padStart(2, '0')
@@ -68,7 +68,7 @@ describe('api/check-status', () => {
       surname: checkStatusApiRequestQuery.surname,
     }).toString()
     expect(fetchMock).toHaveBeenCalledWith(
-      `http://localhost:8080/api/v1/passport-statuses/_search?${apiSearchQuery}`
+      `http://localhost:8080/api/v1/passport-statuses/_search?${apiSearchQuery}`,
     )
 
     fetchMock.mockClear()
@@ -80,13 +80,13 @@ describe('api/check-status', () => {
       async () =>
         ({
           status: 404,
-        } as Response)
+        }) as Response,
     )
     global.fetch = fetchMock
 
     const esrf = faker.helpers.replaceSymbols('?#######')
-    const givenName = faker.name.firstName()
-    const surname = faker.name.lastName()
+    const givenName = faker.person.firstName()
+    const surname = faker.person.lastName()
     const dateOfBirth = faker.date.past()
     const year = dateOfBirth.getFullYear().toString().padStart(4, '0')
     const month = (dateOfBirth.getMonth() + 1).toString().padStart(2, '0')
@@ -113,7 +113,7 @@ describe('api/check-status', () => {
       surname: checkStatusApiRequestQuery.surname,
     }).toString()
     expect(fetchMock).toHaveBeenCalledWith(
-      `http://localhost:8080/api/v1/passport-statuses/_search?${apiSearchQuery}`
+      `http://localhost:8080/api/v1/passport-statuses/_search?${apiSearchQuery}`,
     )
 
     fetchMock.mockClear()
