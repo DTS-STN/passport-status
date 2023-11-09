@@ -1,4 +1,4 @@
-import { FC, PropsWithChildren } from 'react'
+import { PropsWithChildren } from 'react'
 
 import Markdown from 'markdown-to-jsx'
 
@@ -13,7 +13,7 @@ export type MarkdownContentProps = {
   disableParsingRawHTML?: boolean
 }
 
-export const MarkdownContent: FC<MarkdownContentProps> = ({
+export const MarkdownContent = ({
   markdown,
   disableParsingRawHTML = true,
 }: MarkdownContentProps) => (
