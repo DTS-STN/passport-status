@@ -1,20 +1,25 @@
-import { PropsWithChildren } from 'react'
+import { FC, PropsWithChildren } from 'react'
 
 import Markdown from 'markdown-to-jsx'
 
 import ExternalLink from './ExternalLink'
 
-export type MarkdownContentProps = {
-  markdown: string
-}
-
 const Link = ({ children, ...props }: PropsWithChildren<{ href: string }>) => (
   <ExternalLink {...props}>{children}</ExternalLink>
 )
 
-const MarkdownContent = ({ markdown }: MarkdownContentProps) => (
+export type MarkdownContentProps = {
+  markdown: string
+  disableParsingRawHTML?: boolean
+}
+
+export const MarkdownContent: FC<MarkdownContentProps> = ({
+  markdown,
+  disableParsingRawHTML = true,
+}: MarkdownContentProps) => (
   <Markdown
     options={{
+      disableParsingRawHTML,
       overrides: {
         h1: {
           component: 'h2',
@@ -46,5 +51,3 @@ const MarkdownContent = ({ markdown }: MarkdownContentProps) => (
     {markdown}
   </Markdown>
 )
-
-export default MarkdownContent
