@@ -58,9 +58,9 @@ export interface EmailEsrfApiRequestBody {
 }
 
 export interface HealthApiResponse {
-  appBaseUri: string
-  buildDate: string
-  environment: string
+  appBaseUri: string | null
+  buildDate: string | null
+  environment: string | null
   status: string
   uptime: string
 }

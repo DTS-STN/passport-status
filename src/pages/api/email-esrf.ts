@@ -11,16 +11,16 @@ export default async function handler(
 ) {
   if (req.method !== 'POST') {
     logger.debug(`Status 405: Invalid request method ${req.method}`)
-    return res.status(405).send(`Invalid request method ${req.method}`)
+    res.status(405).send(`Invalid request method ${req.method}`)
+    return
   }
 
   if (req.headers['content-type'] !== 'application/json') {
     logger.debug(
       `Status 415: Invalid media type ${req.headers['content-type']}`,
     )
-    return res
-      .status(415)
-      .send(`Invalid media type ${req.headers['content-type']}`)
+    res.status(415).send(`Invalid media type ${req.headers['content-type']}`)
+    return
   }
 
   const body = req.body as EmailEsrfApiRequestBody
@@ -72,6 +72,7 @@ const emailEsrfApi = async (
       body: JSON.stringify(body),
     },
   )
+
   logger.debug(`Status ${response.status}: ${response.statusText}`)
   res.status(response.status).send(response.statusText)
 }
