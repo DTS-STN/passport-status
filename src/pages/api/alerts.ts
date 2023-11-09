@@ -18,8 +18,8 @@ export default async function handler(
     }
 
     if (req.method !== 'GET') {
-      res.status(405).send(`Invalid request method ${req.method}`)
-      return
+      logger.debug(`error 405: Invalid request method ${req.method}`)
+      return res.status(405).send(`Invalid request method ${req.method}`)
     }
 
     const query = req.query

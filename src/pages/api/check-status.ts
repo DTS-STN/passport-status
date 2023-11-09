@@ -16,7 +16,8 @@ export default async function handler(
 ) {
   if (req.method !== 'GET') {
     logger.debug(`error 405: Invalid request method ${req.method}`)
-    return res.status(405).send(`Invalid request method ${req.method}`)
+    res.status(405).send(`Invalid request method ${req.method}`)
+    return
   }
 
   const { searchParams } = new URL(req.url ?? '', `http://${req.headers.host}`)
@@ -77,7 +78,7 @@ export const searchPassportStatusApi = async (
       return res.status(404).send('Passport Status Not Found')
     }
 
-    return res.send(
+    return res.json(
       mapToCheckStatusApiResponse(GetCertificateApplicationResponse[0]),
     )
   }
