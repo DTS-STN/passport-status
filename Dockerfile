@@ -38,11 +38,8 @@ ENV NODE_ENV production
 # Uncomment the following line in case you want to disable telemetry during runtime.
 ENV NEXT_TELEMETRY_DISABLED 1
 
-RUN addgroup --system --gid 1001 nodejs
-RUN adduser --system --uid 1001 nextjs
-
 COPY --from=builder /app/public ./public
-COPY --from=builder --chown=nextjs:nodejs /app/.next ./.next
+COPY --from=builder --chown=node:node /app/.next ./.next
 
 # next-i18next
 # https://github.com/i18next/next-i18next#docker
@@ -53,7 +50,7 @@ COPY --from=builder /app/next-i18next.config.js ./next-i18next.config.js
 COPY --from=builder /app/package*.json ./
 RUN npm ci --omit=dev --ignore-scripts
 
-USER nextjs
+USER node
 
 EXPOSE 3000
 
