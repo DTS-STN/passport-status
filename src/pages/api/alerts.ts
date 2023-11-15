@@ -10,16 +10,17 @@ export default async function handler(
   res: NextApiResponse<Alert[] | string>,
 ) {
   try {
-    if (!process.env.ALERT_JSON_URI) {
-      logger.error('ALERT_JSON_URI must not be undefined, null or empty')
-      throw Error(
-        'process.env.ALERT_JSON_URI must not be undefined, null or empty',
-      )
-    }
-
     if (req.method !== 'GET') {
       logger.debug(`error 405: Invalid request method ${req.method}`)
       return res.status(405).send(`Invalid request method ${req.method}`)
+    }
+
+    if (!process.env.ALERT_JSON_URI?.trim()) {
+      logger.warn(
+        'ALERT_JSON_URI is either undefined, null, or an empty string. Consequently, an empty array is being returned.',
+      )
+      res.status(200).json([])
+      return
     }
 
     const query = req.query
@@ -52,10 +53,10 @@ export default async function handler(
       type: alert.type,
     }))
 
-    return res.status(200).json(alerts)
+    res.status(200).json(alerts)
   } catch (error) {
     // If there's a problem with the alerts, we return 500 but with an empty list
     logger.error(error, 'Failed to fetch alerts')
-    return res.status(500).json([])
+    res.status(500).json([])
   }
 }

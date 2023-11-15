@@ -16,6 +16,7 @@ export default async function handler(
   }
 
   res.status(200).json({
+    adobeAnalyticsScriptSrc: process.env.ADOBE_ANALYTICS_SCRIPT_SRC ?? null,
     appBaseUri: process.env.APP_BASE_URI ?? null,
     buildDate: process.env.NEXT_PUBLIC_BUILD_DATE ?? null,
     environment: process.env.ENVIRONMENT ?? null,
