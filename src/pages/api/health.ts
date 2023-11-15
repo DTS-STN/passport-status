@@ -16,9 +16,10 @@ export default async function handler(
   }
 
   res.status(200).json({
-    appBaseUri: process.env.NEXT_PUBLIC_APP_BASE_URI ?? null,
+    appBaseUri: process.env.APP_BASE_URI ?? null,
     buildDate: process.env.NEXT_PUBLIC_BUILD_DATE ?? null,
-    environment: process.env.NEXT_PUBLIC_ENVIRONMENT ?? null,
+    environment: process.env.ENVIRONMENT ?? null,
+    loggingLevel: process.env.LOGGING_LEVEL ?? null,
     status: 'UP',
     uptime: `${process.uptime()} seconds`,
   })

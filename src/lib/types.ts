@@ -61,6 +61,7 @@ export interface HealthApiResponse {
   appBaseUri: string | null
   buildDate: string | null
   environment: string | null
+  loggingLevel: string | null
   status: string
   uptime: string
 }

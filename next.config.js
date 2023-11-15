@@ -52,13 +52,12 @@ const securityHeaders = [
 const nextConfig = {
   env: {
     NEXT_PUBLIC_BUILD_DATE: builddate,
-    LOGGING_LEVEL: process.env.LOGGING_LEVEL ?? 'info',
   },
   publicRuntimeConfig: {
-    adobeAnalyticsScriptSrc:
-      process.env.NEXT_PUBLIC_ADOBE_ANALYTICS_SCRIPT_SRC ?? undefined,
-    appBaseUri: process.env.NEXT_PUBLIC_APP_BASE_URI ?? '',
-    environment: process.env.NEXT_PUBLIC_ENVIRONMENT ?? '',
+    adobeAnalyticsScriptSrc: process.env.ADOBE_ANALYTICS_SCRIPT_SRC,
+    appBaseUri: process.env.APP_BASE_URI ?? '',
+    environment: process.env.ENVIRONMENT ?? '',
+    loggingLevel: process.env.LOGGING_LEVEL,
   },
   generateBuildId: async () => {
     return process.env.BUILD_ID ?? 'local'
