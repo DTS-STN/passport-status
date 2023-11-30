@@ -1,4 +1,4 @@
-FROM node:20.9.0-bookworm-slim AS base
+FROM node:20.10.0-bookworm-slim AS base
 
 # Install dependencies only when needed
 FROM base AS deps
