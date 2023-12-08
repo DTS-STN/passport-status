@@ -67,7 +67,7 @@
   "ready-for-pickup": {
     "check-receipt": "Check your receipt for pick-up instructions",
     "date-passed": "If your pick-up date has passed, you can go in anytime to pick up your passport.",
-    "has-been-printed": "Your passport has been printed",
+    "has-been-printed": "Your application is approved. Your passport will be available for pick-up on the date indicated on your receipt.",
     "not-available": "Your passport will not be available before the pick-up date printed on your receipt.",
     "receipt-details": "Your receipt details the date and location that you should pick-up your passport."
   },

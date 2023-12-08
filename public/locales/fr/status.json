@@ -67,7 +67,7 @@
   "ready-for-pickup": {
     "check-receipt": "Vérifiez votre reçu pour les instructions de retrait en personne",
     "date-passed": "Si votre date de retrait en personne est passée, vous pouvez aller chercher votre passeport à tout moment.",
-    "has-been-printed": "Votre passeport a été imprimé",
+    "has-been-printed": "Votre demande est approuvée. Votre passeport sera disponible pour retrait à la date indiquée sur votre reçu.",
     "not-available": "Le passeport ne sera pas disponible avant la date de retrait imprimée sur votre reçu.",
     "receipt-details": "Votre reçu indique la date et le lieu de retrait de votre passeport."
   },
