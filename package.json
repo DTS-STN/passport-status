@@ -47,7 +47,7 @@
     "@types/jest": "29.5.10",
     "@types/jest-axe": "3.5.9",
     "@types/node": "20.10.4",
-    "@types/react": "18.2.39",
+    "@types/react": "18.2.45",
     "autoprefixer": "10.4.16",
     "axe-core": "4.8.2",
     "babel-jest": "29.7.0",
