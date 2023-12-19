@@ -53,7 +53,7 @@ jobs:
           CI: true
 
       - name: Store Results
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: unit-test-results
           path: coverage
@@ -96,7 +96,7 @@ jobs:
         run: npm run report:generate
 
       - name: Store Results
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: e2e-test-report
           path: report
