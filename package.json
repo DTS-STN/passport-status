@@ -49,7 +49,7 @@
     "@types/node": "20.10.4",
     "@types/react": "18.2.45",
     "autoprefixer": "10.4.16",
-    "axe-core": "4.8.2",
+    "axe-core": "4.8.3",
     "babel-jest": "29.7.0",
     "cypress": "13.6.1",
     "cypress-axe": "1.5.0",
