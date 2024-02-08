@@ -10,6 +10,7 @@ export const CheckStatusReadyForPickup = () => {
       <h1 data-testid="ready-for-pickup" className="h1" tabIndex={-1}>
         {t('ready-for-pickup.has-been-printed')}
       </h1>
+      <p>{t('ready-for-pickup.has-been-printed')}.</p>
       <AlertBlock page="status-ready-pickup" />
       <AlertSection type="success" className="mb-8">
         <h2 data-testid="check-receipt" className="h2 mt-0">
