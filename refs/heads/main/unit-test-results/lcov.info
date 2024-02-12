@@ -875,8 +875,8 @@ DA:14,0
 DA:16,0
 LF:3
 LH:1
-BRDA:26,0,0,0
-BRDA:26,0,1,0
+BRDA:27,0,0,0
+BRDA:27,0,1,0
 BRF:2
 BRH:0
 end_of_record
@@ -891,8 +891,8 @@ DA:14,2
 DA:15,2
 LF:3
 LH:3
-BRDA:25,0,0,0
-BRDA:25,0,1,2
+BRDA:26,0,0,0
+BRDA:26,0,1,2
 BRF:2
 BRH:1
 end_of_record
