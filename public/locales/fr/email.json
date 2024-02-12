@@ -23,7 +23,7 @@
       "item-1": "revérifiez vos renseignements et essayez à nouveau, ou",
       "item-2": "essayer encore demain — nous mettons à jour nos dossiers chaque jour."
     },
-    "if-exists": "Si nous pouvons trouver le dossier avec les renseignements que vous nous avez fournis, <strong>nous vous enverrons le numéro de dossier ou le numéro de référence par courriel</strong>. Si vous ne recevez pas le message de confirmation dans votre boîte de réception, vérifiez votre dossier de courriel indésirable.",
+    "if-exists": "Votre demande a été reçue. Si nous pouvons trouver le dossier avec les renseignements que vous nous avez fournis, <strong>nous vous enverrons le numéro de dossier ou le numéro de référence par courriel</strong>. Si vous ne recevez pas le message de confirmation dans votre boîte de réception, vérifiez votre dossier de courriel indésirable.",
     "may-not-receive": "Il se pourrait que vous ne receviez pas de courriel si\u00a0:",
     "may-not-receive-list": {
       "item-1": "les renseignements que vous nous avez fournis ne correspondent pas à ceux de notre système, ou",

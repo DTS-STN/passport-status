@@ -7,7 +7,7 @@
     "need-faster": "If you need the passport faster",
     "ready-within": "If your application has been duly completed, your passport should be ready within our <Link>service standards</Link>.",
     "received": "We have received your application and are now processing it",
-    "we-will-contact": "If we need more information, we'll contact you by telephone, mail, or email. We will <strong>never</strong> use text or instant messages to contact you about your passport application."
+    "we-will-contact": "We have received your application and are now processing it. If we need more information, we'll contact you by telephone, mail, or email. We will <strong>never</strong> use text or instant messages to contact you about your passport application."
   },
   "check-status": "Check Status",
   "date-of-birth": {
@@ -46,7 +46,7 @@
   "no-record": {
     "can-review": "You can review the information you entered and try again.",
     "cannot-give-status": {
-      "because": "The status of your passport is not available because:",
+      "because": "We can't give you the application status right now. The status of your passport is not available because:",
       "description": "We can't give you the application status right now",
       "list": {
         "item-1": "the information you gave us doesn't match the information in our system or",
@@ -60,7 +60,7 @@
   "not-acceptable": {
     "cannot-process": "We've reviewed your application and can't process it further",
     "contact-us": "For more information, <Link>contact us</Link>.",
-    "explanation": "We're sending you a letter explaining why and will return your supporting documents at the same time."
+    "explanation": "We've reviewed your application and can't process it further. We're sending you a letter explaining why and will return your supporting documents at the same time."
   },
   "one-name": "Applicants with <strong>only one name</strong> (single or multiple names entered all in one field) must call us at 1‑800‑567‑6868 to get the status of their application.",
   "previous": "Check the status of another application",

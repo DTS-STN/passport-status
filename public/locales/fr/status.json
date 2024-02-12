@@ -7,7 +7,7 @@
     "need-faster": "Si vous avez besoin du passeport plus rapidement",
     "ready-within": "Si votre demande a été dûment remplie, votre passeport devrait être prêt selon nos <Link>normes de service</Link>.",
     "received": "Nous avons reçu votre demande et nous sommes en train de la traiter",
-    "we-will-contact": "Si nous avons besoin de plus amples renseignements, nous communiquerons avec vous par téléphone, par la poste, ou par courriel. Nous n'utiliserons <strong>jamais</strong> de messages textes ou de programmes de messagerie instantanée pour vous contacter au sujet de votre demande de passeport."
+    "we-will-contact": "Nous avons reçu votre demande et nous sommes en train de la traiter. Si nous avons besoin de plus amples renseignements, nous communiquerons avec vous par téléphone, par la poste, ou par courriel. Nous n'utiliserons <strong>jamais</strong> de messages textes ou de programmes de messagerie instantanée pour vous contacter au sujet de votre demande de passeport."
   },
   "check-status": "Vérifiez l'état",
   "date-of-birth": {
@@ -46,7 +46,7 @@
   "no-record": {
     "can-review": "Vous pouvez revérifier vos renseignements et essayer à nouveau.",
     "cannot-give-status": {
-      "because": "L'état de votre passeport n'est pas disponible pour les raisons suivantes\u00a0:",
+      "because": "Nous ne pouvons pas vous donner l'état de votre demande pour le moment. L'état de votre passeport n'est pas disponible pour les raisons suivantes\u00a0:",
       "description": "Nous ne pouvons pas vous donner l'état de votre demande pour le moment",
       "list": {
         "item-1": "les renseignements que vous nous avez fournis ne correspondent pas à ceux de notre système, ou",
@@ -60,7 +60,7 @@
   "not-acceptable": {
     "cannot-process": "Nous avons examiné votre demande et ne pouvons pas la traiter davantage",
     "contact-us": "<Link>Pour plus d'informations, contactez-nous</Link>.",
-    "explanation": "Nous vous envoyons une lettre expliquant pourquoi et nous vous retournerons vos documents justificatifs par la même occasion."
+    "explanation": "Nous avons examiné votre demande et ne pouvons pas la traiter davantage. Nous vous envoyons une lettre expliquant pourquoi et nous vous retournerons vos documents justificatifs par la même occasion."
   },
   "one-name": "Les requérants n'ayant <strong>qu'un seul nom</strong> (un ou plusieurs noms inscrits dans un seul champ) doivent nous appeler au 1-800-567-6868 pour connaître l'état de leur demande.",
   "previous": "Vérifier l'état d'une autre demande",

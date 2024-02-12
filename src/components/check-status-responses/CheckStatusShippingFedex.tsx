@@ -18,6 +18,7 @@ export const CheckStatusShippingFedex = ({
         {t('shipped-fedex.header')}
       </h1>
       <AlertBlock page="status-shipped-fedex" />
+      <p>{t('shipped-fedex.header')}.</p>
       <AlertSection type="success">
         <h2 data-testid="shipped-fedex-mailing" className="h2 mt-0">
           {t('shipped-fedex.mailing')}
