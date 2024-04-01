@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "@faker-js/faker": "8.4.1",
-    "@tailwindcss/typography": "0.5.11",
+    "@tailwindcss/typography": "0.5.12",
     "@testing-library/dom": "9.3.4",
     "@testing-library/jest-dom": "6.4.2",
     "@testing-library/react": "14.2.2",
