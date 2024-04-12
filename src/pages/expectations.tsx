@@ -62,9 +62,7 @@ const Expectations = () => {
           <li>{t('cannot-check.list.item-2')}</li>
         </ul>
         <h2 className="h2">{t('additional-info.header')}</h2>
-        <p>
-          <strong>{t('additional-info.documents-separately')}</strong>
-        </p>
+        <p>{t('additional-info.documents-separately')}</p>
         <p>
           <Trans
             i18nKey="additional-info.contact-us"
