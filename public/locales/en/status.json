@@ -86,7 +86,7 @@
     "supporting-documents": "You'll receive your passport and supporting documents in the same envelope.",
     "take-up-to": "It can take up to 5 to 7 business days to arrive."
   },
-  "status-check-call": "<Link>Contact us</Link> if you don't receive your documents within 4 weeks of receiving your passport.",
+  "status-check-call": "<Link>Contact us</Link> if you don't receive your documents within 6 weeks of receiving your passport.",
   "status-check-contact": {
     "service-standard-href": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/processing-times.html"
   },
