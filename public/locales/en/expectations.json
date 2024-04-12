@@ -1,4 +1,9 @@
 {
+  "additional-info": {
+    "contact-us": "<Link>Contact us</Link> only if you don’t receive your documents within 6 weeks of receiving your passport.",
+    "documents-separately": "We may send your supporting documents back separately.",
+    "header": "Additional information"
+  },
   "available-after": {
     "description": "The status of your application is available after:",
     "list": {

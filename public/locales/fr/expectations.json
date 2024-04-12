@@ -1,4 +1,9 @@
 {
+  "additional-info": {
+    "contact-us": "<Link>Communiquez avec nous</Link> seulement si vous ne recevez pas vos documents dans les six semaines suivant la réception de votre passeport.",
+    "documents-separately": "Nous pourrions renvoyer vos documents fournis en support de la demande séparément.",
+    "header": "Renseignements supplémentaires"
+  },
   "available-after": {
     "description": "L'état de votre demande est disponible après\u00a0:",
     "list": {

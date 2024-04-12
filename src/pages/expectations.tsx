@@ -15,7 +15,7 @@ import { pageWithServerSideTranslations } from '../lib/utils/next-i18next-utils'
 import { getDCTermsTitle } from '../lib/utils/seo-utils'
 
 const Expectations = () => {
-  const { t } = useTranslation('expectations')
+  const { t } = useTranslation(['expectations', 'common'])
 
   const handleOnAgreeClick: MouseEventHandler<HTMLButtonElement> = useCallback(
     (e) => {
@@ -61,7 +61,20 @@ const Expectations = () => {
           </li>
           <li>{t('cannot-check.list.item-2')}</li>
         </ul>
-        <AlertSection type="warning">
+        <h2 className="h2">{t('additional-info.header')}</h2>
+        <p>
+          <strong>{t('additional-info.documents-separately')}</strong>
+        </p>
+        <p>
+          <Trans
+            i18nKey="additional-info.contact-us"
+            ns="expectations"
+            components={{
+              Link: <ExternalLink href={t('common:contact-us-link')} />,
+            }}
+          />
+        </p>
+        <AlertSection className="mt-8" type="warning">
           <p className="mb-4">
             <strong>{t('do-not-travel')}</strong>
           </p>

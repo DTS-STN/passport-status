@@ -86,7 +86,7 @@
     "supporting-documents": "Vous recevrez le passeport et les documents justificatifs dans la même enveloppe.",
     "take-up-to": "Cela peut prendre jusqu'à 5 à 7 jours ouvrables pour arriver."
   },
-  "status-check-call": "<Link>Veuillez nous contacter</Link> si vous ne recevez pas vos documents dans les 4 semaines suivant la réception du passeport.",
+  "status-check-call": "<Link>Veuillez nous contacter</Link> si vous ne recevez pas vos documents dans les 6 semaines suivant la réception du passeport.",
   "status-check-contact": {
     "service-standard-href": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens/delais-traitement.html"
   },
