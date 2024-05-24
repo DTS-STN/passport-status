@@ -2,6 +2,7 @@ import { Trans, useTranslation } from 'next-i18next'
 
 import AlertBlock from '../AlertBlock'
 import AlertSection from '../AlertSection'
+import Collapse from '../Collapse'
 import ExternalLink from '../ExternalLink'
 
 export interface CheckStatusShippingCanadaPostProps {
@@ -20,7 +21,7 @@ export const CheckStatusShippingCanadaPost = ({
       </h1>
       <AlertBlock page="status-shipped-canada" />
       <p>{t('shipped-canada-post.header')}.</p>
-      <AlertSection type="success">
+      <AlertSection className="mb-4" type="success">
         <h2 data-testid="shipped-canada-post" className="h2 mt-0">
           {t('shipped-canada-post.mailing')}
         </h2>
@@ -57,6 +58,56 @@ export const CheckStatusShippingCanadaPost = ({
           </>
         )}
       </AlertSection>
+      <Collapse title={t('shipped-canada-post.united-states.title')}>
+        <div className="mt-3 border-t">
+          <p className="mt-3">
+            {t('shipped-canada-post.united-states.mailed-us')}
+          </p>
+          {trackingNumber ? (
+            <>
+              <p>
+                <Trans
+                  i18nKey="status-check-tracking.number"
+                  ns="status"
+                  tOptions={{ trackingNumber }}
+                />
+              </p>
+              <p>
+                <Trans
+                  i18nKey={'status-check-tracking.can-track'}
+                  ns="status"
+                  components={{
+                    Link: (
+                      <ExternalLink
+                        data-gc-analytics-exempt={true}
+                        href={t('status-check-tracking.link.fedex', {
+                          trackingNumber: encodeURIComponent(trackingNumber),
+                        })}
+                      />
+                    ),
+                  }}
+                />
+              </p>
+            </>
+          ) : (
+            <></>
+          )}
+          <p>
+            <strong>
+              {t('shipped-canada-post.united-states.supporting-documents')}
+            </strong>
+          </p>
+          <p>
+            <Trans
+              i18nKey="shipped-canada-post.united-states.contact-us"
+              ns="status"
+              components={{
+                Link: <ExternalLink href={t('common:contact-us-link')} />,
+              }}
+            />
+          </p>
+        </div>
+      </Collapse>
       <p className="h3 mt-6">{t('shipped-canada-post.supporting-documents')}</p>
       <p className="mt-6">
         <Trans
