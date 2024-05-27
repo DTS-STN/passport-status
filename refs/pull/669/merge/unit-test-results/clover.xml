@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1716613919347" clover="3.2.0">
-  <project timestamp="1716613919347" name="All files">
+<coverage generated="1716821643198" clover="3.2.0">
+  <project timestamp="1716821643198" name="All files">
     <metrics statements="543" coveredstatements="353" conditionals="323" coveredconditionals="150" methods="153" coveredmethods="85" elements="1019" coveredelements="588" complexity="0" loc="543" ncloc="543" packages="11" files="59" classes="59"/>
     <package name="src">
       <metrics statements="28" coveredstatements="14" conditionals="26" coveredconditionals="8" methods="7" coveredmethods="6"/>
@@ -552,9 +552,9 @@
         <line num="55" count="0" type="stmt"/>
         <line num="56" count="0" type="stmt"/>
         <line num="60" count="1" type="stmt"/>
-        <line num="61" count="2" type="stmt"/>
-        <line num="63" count="2" type="stmt"/>
-        <line num="64" count="2" type="stmt"/>
+        <line num="61" count="3" type="stmt"/>
+        <line num="63" count="3" type="stmt"/>
+        <line num="64" count="3" type="stmt"/>
         <line num="72" count="2" type="stmt"/>
         <line num="81" count="2" type="stmt"/>
         <line num="84" count="0" type="cond" truecount="0" falsecount="2"/>
@@ -585,8 +585,8 @@
       <file name="expectations.tsx" path="/home/runner/work/passport-status/passport-status/src/pages/expectations.tsx">
         <metrics statements="8" coveredstatements="5" conditionals="2" coveredconditionals="0" methods="3" coveredmethods="1"/>
         <line num="17" count="1" type="stmt"/>
-        <line num="18" count="2" type="stmt"/>
-        <line num="20" count="2" type="stmt"/>
+        <line num="18" count="3" type="stmt"/>
+        <line num="20" count="3" type="stmt"/>
         <line num="22" count="0" type="stmt"/>
         <line num="23" count="0" type="stmt"/>
         <line num="24" count="0" type="stmt"/>
@@ -617,9 +617,9 @@
         <line num="62" count="0" type="stmt"/>
         <line num="63" count="0" type="stmt"/>
         <line num="67" count="1" type="stmt"/>
-        <line num="68" count="2" type="stmt"/>
-        <line num="70" count="2" type="stmt"/>
-        <line num="71" count="2" type="stmt"/>
+        <line num="68" count="3" type="stmt"/>
+        <line num="70" count="3" type="stmt"/>
+        <line num="71" count="3" type="stmt"/>
         <line num="72" count="2" type="stmt"/>
         <line num="82" count="2" type="stmt"/>
         <line num="85" count="0" type="stmt"/>
