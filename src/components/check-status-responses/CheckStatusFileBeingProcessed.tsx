@@ -12,6 +12,18 @@ export const CheckStatusFileBeingProcessed = () => {
       </h1>
       <AlertBlock page="status-processing" />
       <p>
+        <Trans
+          i18nKey={'being-processed.received-will-not-change'}
+          ns="status"
+        />
+      </p>
+      <p>
+        <Trans i18nKey={'being-processed.applied-in-person'} ns="status" />
+      </p>
+      <p>
+        <Trans i18nKey={'being-processed.applied-by-mail'} ns="status" />
+      </p>
+      <p>
         <Trans i18nKey={'being-processed.we-will-contact'} ns="status" />
       </p>
       <p>
