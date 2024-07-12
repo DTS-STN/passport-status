@@ -1,13 +1,16 @@
 {
   "being-processed": {
+    "applied-by-mail": "If you applied by mail or at a Service Canada Centre offering 20-day passport services, it may take up to 20 business days for us to complete the review.",
+    "applied-in-person": "If you applied in person at a passport office or a Service Canada Centre offering 10-day passport service, it may take up to 10 business days for us to complete the review.",
     "dont-meet-standards": "If we don't meet our service standards",
     "get-urgent": "Find out how to get <Link>urgent or express service for existing applications</Link> if you need the passport within 10 business days. Extra fees may apply.",
-    "incomplete": "Incomplete applications cannot be processed and will be returned to you as soon as possible.",
+    "incomplete": "In some cases, we may not be able to process an incomplete application and will return it to you as soon as possible. You will receive a letter by mail explaining why we cannot process the application as well as your supporting documents.",
     "may-be-eligible": "You may be eligible for a partial refund if we don't meet our <Link>service standards</Link>.",
     "need-faster": "If you need the passport faster",
-    "ready-within": "If your application has been duly completed, your passport should be ready within our <Link>service standards</Link>.",
-    "received": "We have received your application and are now processing it",
-    "we-will-contact": "We have received your application and are now processing it. If we need more information, we'll contact you by telephone, mail, or email. We will <strong>never</strong> use text or instant messages to contact you about your passport application."
+    "ready-within": "If your application has been duly completed, your passport should be ready within our <Link>service standards</Link>. However, it may take a bit longer to process an application during peak periods.",
+    "received": "We have received your application and are now reviewing it",
+    "received-will-not-change": "We have received your application and are now reviewing it. Your status will not change as we are reviewing the application.",
+    "we-will-contact": "If we need more information, we'll contact you by telephone, mail, or email. If we contact you by telephone, the call may show up as a blocked number. We will <strong>never</strong> contact you by text message or instant message."
   },
   "check-status": "Check Status",
   "date-of-birth": {
