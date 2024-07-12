@@ -10,7 +10,7 @@
     "ready-within": "If your application has been duly completed, your passport should be ready within our <Link>service standards</Link>. However, it may take a bit longer to process an application during peak periods.",
     "received": "We have received your application and are now reviewing it",
     "received-will-not-change": "We have received your application and are now reviewing it. Your status will not change as we are reviewing the application.",
-    "we-will-contact": "If we need more information, we’ll contact you by telephone, mail, or email. If we contact you by telephone, the call may show up as a blocked number. We will <strong>never</strong> contact you by text message or instant message."
+    "we-will-contact": "If we need more information, we'll contact you by telephone, mail, or email. If we contact you by telephone, the call may show up as a blocked number. We will <strong>never</strong> contact you by text message or instant message."
   },
   "check-status": "Check Status",
   "date-of-birth": {
