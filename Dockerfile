@@ -1,4 +1,5 @@
-FROM node:22.7.0-bookworm-slim AS base
+ARG BASE_IMAGE=docker.io/node:20.17.0-bookworm-slim
+FROM $BASE_IMAGE AS base
 
 # Install dependencies only when needed
 FROM base AS deps
@@ -56,4 +57,4 @@ EXPOSE 3000
 
 ENV PORT 3000
 
-CMD npm run start
+CMD ["npm", "run", "start"]
