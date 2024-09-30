@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: OWASP ZAP FULL Scan
-        uses: zaproxy/action-full-scan@v0.10.0
+        uses: zaproxy/action-full-scan@v0.11.0
         with:
           target: "https://passport-status-main.dev-rhp.dts-stn.com/"
           fail_action: "false"
