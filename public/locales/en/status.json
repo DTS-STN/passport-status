@@ -80,13 +80,7 @@
     "mailing": "We're mailing it to you by Canada Post",
     "remote-area": "If you live in a northern or remote area, it may take up to 8 business days to arrive.",
     "supporting-documents": "We may send your supporting documents back separately.",
-    "take-up-to": "It can take up to 2 to 3 business days to arrive.",
-    "united-states": {
-      "title": "Special instructions for applicants residing in the United States",
-      "mailed-us": "If your passport is being mailed to the United States, it will be sent to you via FedEx.",
-      "supporting-documents": "You'll receive your passport and supporting documents in the same envelope.",
-      "contact-us": "If you don't receive your passport and supporting documents, <Link>contact us</Link>."
-    }
+    "take-up-to": "It can take up to 2 to 3 business days to arrive."
   },
   "shipped-fedex": {
     "contact-us": "If you don't receive your passport and supporting documents, <Link>contact us</Link>.",
