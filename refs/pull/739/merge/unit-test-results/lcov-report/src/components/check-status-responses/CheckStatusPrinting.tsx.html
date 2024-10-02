@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for src/components/check-status-responses/CheckStatusReadyForPickup.tsx</title>
+    <title>Code coverage report for src/components/check-status-responses/CheckStatusPrinting.tsx</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../../prettify.css" />
     <link rel="stylesheet" href="../../../base.css" />
@@ -19,7 +19,7 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../../index.html">All files</a> / <a href="index.html">src/components/check-status-responses</a> CheckStatusReadyForPickup.tsx</h1>
+        <h1><a href="../../../index.html">All files</a> / <a href="index.html">src/components/check-status-responses</a> CheckStatusPrinting.tsx</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
@@ -82,18 +82,7 @@
 <a name='L17'></a><a href='#L17'>17</a>
 <a name='L18'></a><a href='#L18'>18</a>
 <a name='L19'></a><a href='#L19'>19</a>
-<a name='L20'></a><a href='#L20'>20</a>
-<a name='L21'></a><a href='#L21'>21</a>
-<a name='L22'></a><a href='#L22'>22</a>
-<a name='L23'></a><a href='#L23'>23</a>
-<a name='L24'></a><a href='#L24'>24</a>
-<a name='L25'></a><a href='#L25'>25</a>
-<a name='L26'></a><a href='#L26'>26</a>
-<a name='L27'></a><a href='#L27'>27</a>
-<a name='L28'></a><a href='#L28'>28</a>
-<a name='L29'></a><a href='#L29'>29</a>
-<a name='L30'></a><a href='#L30'>30</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L20'></a><a href='#L20'>20</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -112,44 +101,25 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useTranslation } from 'next-i18next'
 &nbsp;
 import AlertBlock from '../AlertBlock'
-import AlertSection from '../AlertSection'
 &nbsp;
-export const CheckStatusReadyForPickup = () =&gt; {
+export const CheckStatusPrinting = () =&gt; {
   const { t } = useTranslation('status')
   return (
     &lt;&gt;
-      &lt;h1 data-testid="ready-for-pickup" className="h1" tabIndex={-1}&gt;
-        {t('ready-for-pickup.has-been-printed')}
+      &lt;h1 data-testid="printing" className="h1" tabIndex={-1}&gt;
+        {t('printing.in-printing')}
       &lt;/h1&gt;
-      &lt;p&gt;{t('ready-for-pickup.has-been-printed')}&lt;/p&gt;
       &lt;AlertBlock page="status-ready-pickup" /&gt;
-      &lt;AlertSection type="success" className="mb-8"&gt;
-        &lt;h2 data-testid="check-receipt" className="h2 mt-0"&gt;
-          {t('ready-for-pickup.check-receipt')}
-        &lt;/h2&gt;
-        &lt;p&gt;{t('ready-for-pickup.receipt-details')}&lt;/p&gt;
-      &lt;/AlertSection&gt;
-      &lt;p&gt;{t('ready-for-pickup.not-available')}&lt;/p&gt;
-      &lt;AlertSection type="info"&gt;
-        &lt;p className="h3"&gt;{t('ready-for-pickup.date-passed')}&lt;/p&gt;
-      &lt;/AlertSection&gt;
+      &lt;p&gt;{t('printing.reviewed-printing')}&lt;/p&gt;
+      &lt;p&gt;{t('printing.print-update')}&lt;/p&gt;
     &lt;/&gt;
   )
 }
 &nbsp;
-export default CheckStatusReadyForPickup
+export default CheckStatusPrinting
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
