@@ -67,6 +67,11 @@
   },
   "one-name": "Les requérants n'ayant <strong>qu'un seul nom</strong> (un ou plusieurs noms inscrits dans un seul champ) doivent nous appeler au 1-800-567-6868 pour connaître l'état de leur demande.",
   "previous": "Vérifier l'état d'une autre demande",
+  "printing": {
+    "in-printing": "Nous imprimons votre passeport",
+    "reviewed-printing": "Votre demande a été examinée et votre passeport est prêt à être imprimé. Sachez que l'impression peut prendre quelques jours ouvrables.",
+    "print-update": "Une fois votre passeport imprimé, l'état de votre demande sera mis à jour."
+  },
   "ready-for-pickup": {
     "check-receipt": "Vérifiez votre reçu pour les instructions de retrait en personne",
     "date-passed": "Si votre date de retrait en personne est passée, vous pouvez aller chercher votre passeport à tout moment.",

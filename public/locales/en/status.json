@@ -67,6 +67,11 @@
   },
   "one-name": "Applicants with <strong>only one name</strong> (single or multiple names entered all in one field) must call us at 1‑800‑567‑6868 to get the status of their application.",
   "previous": "Check the status of another application",
+  "printing": {
+    "in-printing": "We are printing your passport",
+    "reviewed-printing": "Your application has been reviewed and your passport is ready for printing. Be aware that printing can take a few business days.",
+    "print-update": "Once your passport has been printed, your status will be updated."
+  },
   "ready-for-pickup": {
     "check-receipt": "Check your receipt for pick-up instructions",
     "date-passed": "If your pick-up date has passed, you can go in anytime to pick up your passport.",
