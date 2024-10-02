@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1727881366468" clover="3.2.0">
-  <project timestamp="1727881366468" name="All files">
-    <metrics statements="548" coveredstatements="356" conditionals="324" coveredconditionals="150" methods="154" coveredmethods="86" elements="1026" coveredelements="592" complexity="0" loc="548" ncloc="548" packages="11" files="60" classes="60"/>
+<coverage generated="1727882377745" clover="3.2.0">
+  <project timestamp="1727882377745" name="All files">
+    <metrics statements="548" coveredstatements="356" conditionals="322" coveredconditionals="150" methods="154" coveredmethods="86" elements="1024" coveredelements="592" complexity="0" loc="548" ncloc="548" packages="11" files="60" classes="60"/>
     <package name="src">
       <metrics statements="28" coveredstatements="14" conditionals="26" coveredconditionals="8" methods="7" coveredmethods="6"/>
       <file name="middleware.ts" path="/home/runner/work/passport-status/passport-status/src/middleware.ts">
@@ -119,7 +119,7 @@
       </file>
       <file name="Collapse.tsx" path="/home/runner/work/passport-status/passport-status/src/components/Collapse.tsx">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="8" count="4" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
         <line num="9" count="8" type="stmt"/>
         <line num="10" count="8" type="stmt"/>
       </file>
@@ -355,7 +355,7 @@
       </file>
     </package>
     <package name="src.components.check-status-responses">
-      <metrics statements="21" coveredstatements="19" conditionals="6" coveredconditionals="1" methods="7" coveredmethods="6"/>
+      <metrics statements="21" coveredstatements="19" conditionals="4" coveredconditionals="1" methods="7" coveredmethods="6"/>
       <file name="CheckStatusFileBeingProcessed.tsx" path="/home/runner/work/passport-status/passport-status/src/components/check-status-responses/CheckStatusFileBeingProcessed.tsx">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="6" count="4" type="stmt"/>
@@ -387,10 +387,10 @@
         <line num="8" count="2" type="stmt"/>
       </file>
       <file name="CheckStatusShippingCanadaPost.tsx" path="/home/runner/work/passport-status/passport-status/src/components/check-status-responses/CheckStatusShippingCanadaPost.tsx">
-        <metrics statements="3" coveredstatements="1" conditionals="4" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="12" count="2" type="stmt"/>
-        <line num="15" count="0" type="stmt"/>
-        <line num="17" count="0" type="stmt"/>
+        <metrics statements="3" coveredstatements="1" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
       </file>
       <file name="CheckStatusShippingFedex.tsx" path="/home/runner/work/passport-status/passport-status/src/components/check-status-responses/CheckStatusShippingFedex.tsx">
         <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
