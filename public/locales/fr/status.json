@@ -85,13 +85,7 @@
     "mailing": "Nous vous l'envoyons par Postes Canada.",
     "remote-area": "Si vous vivez dans une région au nord ou éloignée, cela pourrait prendre jusqu'à 8 jours ouvrables pour arriver.",
     "supporting-documents": "Nous pourrions renvoyer vos documents fournis en support de la demande séparément.",
-    "take-up-to": "Cela peut prendre jusqu'à 2 à 3 jours ouvrables pour arriver.",
-    "united-states": {
-      "title": "Instructions spéciales pour les requérants résidant aux États-Unis.",
-      "mailed-us": "Si votre passeport est envoyé aux États-Unis, il vous sera envoyé via FedEx.",
-      "supporting-documents": "Vous recevrez le passeport et les documents justificatifs dans la même enveloppe.",
-      "contact-us": "Si vous ne recevez pas votre passeport et vos documents, <Link>veuillez nous contacter</Link>."
-    }
+    "take-up-to": "Cela peut prendre jusqu'à 2 à 3 jours ouvrables pour arriver."
   },
   "shipped-fedex": {
     "contact-us": "Si vous ne recevez pas votre passeport et vos documents, <Link>veuillez nous contacter</Link>.",
