@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">33.33% </span>
+                <span class="strong">29.41% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>5/15</span>
+                <span class='fraction'>5/17</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">16.66% </span>
+                <span class="strong">14.28% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1/6</span>
+                <span class='fraction'>1/7</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">33.33% </span>
+                <span class="strong">29.41% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5/15</span>
+                <span class='fraction'>5/17</span>
             </div>
         
             
@@ -134,7 +134,11 @@
 <a name='L69'></a><a href='#L69'>69</a>
 <a name='L70'></a><a href='#L70'>70</a>
 <a name='L71'></a><a href='#L71'>71</a>
-<a name='L72'></a><a href='#L72'>72</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -145,6 +149,16 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -155,14 +169,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -212,6 +220,7 @@ import ActionButton, { ActionButtonStyle } from './ActionButton'
 import CheckStatusFileBeingProcessed from './check-status-responses/CheckStatusFileBeingProcessed'
 import CheckStatusNoRecord from './check-status-responses/CheckStatusNoRecord'
 import CheckStatusNotAcceptable from './check-status-responses/CheckStatusNotAcceptable'
+import CheckStatusPrinting from './check-status-responses/CheckStatusPrinting'
 import CheckStatusReadyForPickup from './check-status-responses/CheckStatusReadyForPickup'
 import CheckStatusShippingCanadaPost from './check-status-responses/CheckStatusShippingCanadaPost'
 import CheckStatusShippingFedex from './check-status-responses/CheckStatusShippingFedex'
@@ -240,21 +249,24 @@ export const CheckStatusInfo = ({
 <span class="branch-1 cbranch-no" title="branch not covered" >    case StatusCode.PASSPORT_ISSUED_READY_FOR_PICKUP:</span>
 <span class="cstat-no" title="statement not covered" >      statusComponent = &lt;CheckStatusReadyForPickup /&gt;</span>
 <span class="cstat-no" title="statement not covered" >      break</span>
-<span class="branch-2 cbranch-no" title="branch not covered" >    case StatusCode.PASSPORT_ISSUED_SHIPPING_CANADA_POST:</span>
+<span class="branch-2 cbranch-no" title="branch not covered" >    case StatusCode.PASSPORT_IS_PRINTING:</span>
+<span class="cstat-no" title="statement not covered" >      statusComponent = &lt;CheckStatusPrinting /&gt;</span>
+<span class="cstat-no" title="statement not covered" >      break</span>
+<span class="branch-3 cbranch-no" title="branch not covered" >    case StatusCode.PASSPORT_ISSUED_SHIPPING_CANADA_POST:</span>
 <span class="cstat-no" title="statement not covered" >      statusComponent = (</span>
         &lt;CheckStatusShippingCanadaPost
           trackingNumber={checkStatusResponse.manifestNumber}
         /&gt;
       )
 <span class="cstat-no" title="statement not covered" >      break</span>
-<span class="branch-3 cbranch-no" title="branch not covered" >    case StatusCode.PASSPORT_ISSUED_SHIPPING_FEDEX:</span>
+<span class="branch-4 cbranch-no" title="branch not covered" >    case StatusCode.PASSPORT_ISSUED_SHIPPING_FEDEX:</span>
 <span class="cstat-no" title="statement not covered" >      statusComponent = (</span>
         &lt;CheckStatusShippingFedex
           trackingNumber={checkStatusResponse.manifestNumber}
         /&gt;
       )
 <span class="cstat-no" title="statement not covered" >      break</span>
-<span class="branch-4 cbranch-no" title="branch not covered" >    case StatusCode.NOT_ACCEPTABLE_FOR_PROCESSING:</span>
+<span class="branch-5 cbranch-no" title="branch not covered" >    case StatusCode.NOT_ACCEPTABLE_FOR_PROCESSING:</span>
 <span class="cstat-no" title="statement not covered" >      statusComponent = &lt;CheckStatusNotAcceptable /&gt;</span>
 <span class="cstat-no" title="statement not covered" >      break</span>
     default:
@@ -283,7 +295,7 @@ export default CheckStatusInfo
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-09-25T09:44:44.939Z
+                at 2024-10-02T15:02:46.483Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
