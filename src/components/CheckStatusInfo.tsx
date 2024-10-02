@@ -5,6 +5,7 @@ import ActionButton, { ActionButtonStyle } from './ActionButton'
 import CheckStatusFileBeingProcessed from './check-status-responses/CheckStatusFileBeingProcessed'
 import CheckStatusNoRecord from './check-status-responses/CheckStatusNoRecord'
 import CheckStatusNotAcceptable from './check-status-responses/CheckStatusNotAcceptable'
+import CheckStatusPrinting from './check-status-responses/CheckStatusPrinting'
 import CheckStatusReadyForPickup from './check-status-responses/CheckStatusReadyForPickup'
 import CheckStatusShippingCanadaPost from './check-status-responses/CheckStatusShippingCanadaPost'
 import CheckStatusShippingFedex from './check-status-responses/CheckStatusShippingFedex'
@@ -32,6 +33,9 @@ export const CheckStatusInfo = ({
       break
     case StatusCode.PASSPORT_ISSUED_READY_FOR_PICKUP:
       statusComponent = <CheckStatusReadyForPickup />
+      break
+    case StatusCode.PASSPORT_IS_PRINTING:
+      statusComponent = <CheckStatusPrinting />
       break
     case StatusCode.PASSPORT_ISSUED_SHIPPING_CANADA_POST:
       statusComponent = (
