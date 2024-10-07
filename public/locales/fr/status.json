@@ -20,31 +20,27 @@
       "required": "La date de naissance est obligatoire."
     },
     "help-message": "Indiquez la date de naissance de la personne à qui le passeport est destiné.",
-    "label": "Date de naissance sur la demande"
+    "label": "Date de naissance"
   },
   "esrf": {
     "error": {
       "required": "Le numéro de dossier est obligatoire."
     },
     "help-message": "Si vous ne pouvez pas trouver le numéro de dossier ou le numéro de référence, <Link>vous pouvez demander à le recevoir</Link>.",
-    "label": "Numéro de dossier ou numéro de référence"
+    "label": "Numéro de référence"
   },
   "given-name": {
+    "title": "Si le requérant a un seul nom légal.",
     "error": {
       "required": "Le(s) prénom(s) est(sont) obligatoire(s)."
     },
-    "help-message": "Indiquez le(s) prénom(s) et le(s) deuxième(s) prénom(s) de la personne à qui le passeport est destiné.",
-    "label": "Prénom(s) sur la demande"
+    "help-message": "Indiquez le(s) prénom(s) <strong>et le(s) deuxième(s) prénom(s)</strong> de la personne à qui le passeport est destiné.",
+    "label": "Prénom(s)"
   },
   "header": "Obtenir l'état de votre demande de passeport",
   "header-messages": {
-    "list": {
-      "item-1": "un certificat de naissance",
-      "item-2": "un certificat de citoyenneté",
-      "item-3": "une carte de citoyenneté, ou",
-      "item-4": "d'autres documents, comme un certificat de naturalisation"
-    },
-    "matches": "<strong>Assurez-vous que vos informations correspondent à la preuve de citoyenneté et à la pièce d'identité utilisées lors de votre demande de passeport.</strong> Votre preuve de citoyenneté pourrait être l'une des suivantes\u00a0:"
+    "matches": "<strong>Assurez-vous que les informations que vous indiquez ici correspondent à votre demande de passeport.</strong>",
+    "required": "<em>Tous les champs sont obligatoires.</em>"
   },
   "no-record": {
     "can-review": "Vous pouvez revérifier vos renseignements et essayer à nouveau.",
@@ -114,6 +110,6 @@
       "required": "Le nom de famille est obligatoire."
     },
     "help-message": "Indiquez le nom de famille de la personne à qui le passeport est destiné.",
-    "label": "Nom de famille sur la demande"
+    "label": "Nom de famille"
   }
 }

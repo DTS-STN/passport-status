@@ -3,10 +3,10 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { getDaysInMonth, isExists } from 'date-fns'
 import { useTranslation } from 'next-i18next'
 
-import DateSelect, {
-  DateSelectOnChangeEvent,
+import DateInput, {
+  DateInputOnChangeEvent,
   DateSelectOption,
-} from './DateSelect'
+} from './DateInput'
 import InputErrorMessage from './InputErrorMessage'
 import InputLabel from './InputLabel'
 
@@ -68,36 +68,14 @@ const DateSelectField = ({
     return ariaDescribedby.length > 0 ? ariaDescribedby.join(' ') : undefined
   }
 
-  const yearOptions = useMemo(() => {
-    const first = firstYear ?? 1900
-    const last = Math.max(first, lastYear ?? new Date().getFullYear())
-    const years = last - first + 1
-    return [...Array(years).keys()].reverse().map<DateSelectOption>((i) => {
-      const value = padZero(i + first, 4)
-      return { label: value, value }
-    })
-  }, [firstYear, lastYear])
-
   const monthOptions = useMemo(() => {
     return [...Array(12).keys()].map<DateSelectOption>((i) => {
       const value = padZero(i + 1, 2)
-      return { label: value, value }
+      return { label: t(`date-months.` + value), value }
     })
-  }, [])
+  }, [t])
 
-  const dayOptions = useMemo(() => {
-    const year = parseInt(state.yearValue)
-    const month = parseInt(state.monthValue)
-    const days = isExists(year, month - 1, 1)
-      ? getDaysInMonth(new Date(year, month - 1))
-      : 31
-    return [...Array(days).keys()].map<DateSelectOption>((i) => {
-      const value = padZero(i + 1, 2)
-      return { label: value, value }
-    })
-  }, [state.monthValue, state.yearValue])
-
-  const handleOnDateSelectChange: DateSelectOnChangeEvent = useCallback(
+  const handleOnDateSelectChange: DateInputOnChangeEvent = useCallback(
     (event, type) => {
       const newValue = event.target.value
       setState((curState) => {
@@ -182,26 +160,14 @@ const DateSelectField = ({
         )}
         {helpMessage && (
           <div
-            className="mt-1.5 max-w-prose text-base text-gray-600"
+            className="mb-1.5 max-w-prose text-base text-gray-600"
             id={dateSelectHelpMessageId}
           >
             {helpMessage}
           </div>
         )}
         <div className="flex flex-col space-y-2 sm:flex-row sm:space-x-2 sm:space-y-0">
-          <DateSelect
-            ariaDescribedby={getAriaDescribedby()}
-            dateSelectLabelId={dateSelectLabelId}
-            error={!!errorMessage}
-            id={`${id}-year`}
-            label={t('common:date-select-field.year')}
-            onChange={handleOnDateSelectChange}
-            options={yearOptions}
-            required={required}
-            type="year"
-            value={state.yearValue}
-          />
-          <DateSelect
+          <DateInput
             ariaDescribedby={getAriaDescribedby()}
             dateSelectLabelId={dateSelectLabelId}
             error={!!errorMessage}
@@ -213,17 +179,47 @@ const DateSelectField = ({
             type="month"
             value={state.monthValue}
           />
-          <DateSelect
+          <DateInput
             ariaDescribedby={getAriaDescribedby()}
             dateSelectLabelId={dateSelectLabelId}
             error={!!errorMessage}
             id={`${id}-day`}
             label={t('common:date-select-field.day')}
             onChange={handleOnDateSelectChange}
-            options={dayOptions}
             required={required}
             type="day"
             value={state.dayValue}
+            max={
+              isExists(
+                parseInt(state.yearValue),
+                parseInt(state.monthValue) - 1,
+                1,
+              )
+                ? getDaysInMonth(
+                    new Date(
+                      parseInt(state.yearValue),
+                      parseInt(state.monthValue) - 1,
+                    ),
+                  )
+                : 31
+            }
+            min={1}
+          />
+          <DateInput
+            ariaDescribedby={getAriaDescribedby()}
+            dateSelectLabelId={dateSelectLabelId}
+            error={!!errorMessage}
+            id={`${id}-year`}
+            label={t('common:date-select-field.year')}
+            onChange={handleOnDateSelectChange}
+            required={required}
+            type="year"
+            value={state.yearValue}
+            max={firstYear ?? 1900}
+            min={Math.max(
+              firstYear ?? 1900,
+              lastYear ?? new Date().getFullYear(),
+            )}
           />
         </div>
       </fieldset>

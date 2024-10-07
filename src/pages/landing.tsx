@@ -43,7 +43,11 @@ const Landing = () => {
           components={{ Link: <Link href="/email" /> }}
         />
       </p>
-      <Collapse title={t('receipt-image-1.title')}>
+      <Collapse
+        title={t('receipt-image-1.title')}
+        detailProps="rounded border"
+        summaryProps="hover:underline focus:underline"
+      >
         <div className="mt-3 max-w-prose border-t p-3">
           <ExampleImage
             imageProps={{
@@ -71,7 +75,11 @@ const Landing = () => {
           </ul>
         </div>
       </Collapse>
-      <Collapse title={t('receipt-image-2.title')}>
+      <Collapse
+        title={t('receipt-image-2.title')}
+        detailProps="rounded border"
+        summaryProps="hover:underline focus:underline"
+      >
         <div className="mt-3 max-w-prose border-t p-3">
           <ExampleImage
             imageProps={{
@@ -120,7 +128,11 @@ const Landing = () => {
           </ul>
         </div>
       </Collapse>
-      <Collapse title={t('receipt-image-3.title')}>
+      <Collapse
+        title={t('receipt-image-3.title')}
+        detailProps="rounded border"
+        summaryProps="hover:underline focus:underline"
+      >
         <div className="mt-3 max-w-prose border-t p-3">
           <ExampleImage
             imageProps={{
