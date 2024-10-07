@@ -81,9 +81,9 @@ const DateSelectField = ({
   const monthOptions = useMemo(() => {
     return [...Array(12).keys()].map<DateSelectOption>((i) => {
       const value = padZero(i + 1, 2)
-      return { label: value, value }
+      return { label: t(`date-months.` + value), value }
     })
-  }, [])
+  }, [t])
 
   const dayOptions = useMemo(() => {
     const year = parseInt(state.yearValue)
@@ -113,7 +113,7 @@ const DateSelectField = ({
           isNaN(yearNumber) || isNaN(monthNumber)
             ? true
             : isExists(yearNumber, monthNumber - 1, parseInt(day))
-        const dayValue = isDayExists ? day : ''
+        const dayValue = isDayExists ? day.padStart(2, '0') : ''
 
         const dateString = toDateStringOrEmpty(yearValue, monthValue, dayValue)
         return {
@@ -182,25 +182,13 @@ const DateSelectField = ({
         )}
         {helpMessage && (
           <div
-            className="mt-1.5 max-w-prose text-base text-gray-600"
+            className="mb-1.5 max-w-prose text-base text-gray-600"
             id={dateSelectHelpMessageId}
           >
             {helpMessage}
           </div>
         )}
         <div className="flex flex-col space-y-2 sm:flex-row sm:space-x-2 sm:space-y-0">
-          <DateSelect
-            ariaDescribedby={getAriaDescribedby()}
-            dateSelectLabelId={dateSelectLabelId}
-            error={!!errorMessage}
-            id={`${id}-year`}
-            label={t('common:date-select-field.year')}
-            onChange={handleOnDateSelectChange}
-            options={yearOptions}
-            required={required}
-            type="year"
-            value={state.yearValue}
-          />
           <DateSelect
             ariaDescribedby={getAriaDescribedby()}
             dateSelectLabelId={dateSelectLabelId}
@@ -224,6 +212,18 @@ const DateSelectField = ({
             required={required}
             type="day"
             value={state.dayValue}
+          />
+          <DateSelect
+            ariaDescribedby={getAriaDescribedby()}
+            dateSelectLabelId={dateSelectLabelId}
+            error={!!errorMessage}
+            id={`${id}-year`}
+            label={t('common:date-select-field.year')}
+            onChange={handleOnDateSelectChange}
+            options={yearOptions}
+            required={required}
+            type="year"
+            value={state.yearValue}
           />
         </div>
       </fieldset>

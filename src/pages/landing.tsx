@@ -51,7 +51,11 @@ const Landing = () => {
           {t('where-to-find.applied-in-person.header')}
         </h3>
         <p>{t('where-to-find.applied-in-person.text')}</p>
-        <Collapse title={t('receipt-image-1.title')}>
+        <Collapse
+          title={t('receipt-image-1.title')}
+          detailProps="rounded border"
+          summaryProps="hover:underline focus:underline"
+        >
           <div className="mt-3 max-w-prose border-t p-3">
             <ExampleImage
               imageProps={{
@@ -79,7 +83,11 @@ const Landing = () => {
             </ul>
           </div>
         </Collapse>
-        <Collapse title={t('receipt-image-2.title')}>
+        <Collapse
+          title={t('receipt-image-2.title')}
+          detailProps="rounded border"
+          summaryProps="hover:underline focus:underline"
+        >
           <div className="mt-3 max-w-prose border-t p-3">
             <ExampleImage
               imageProps={{
@@ -128,7 +136,11 @@ const Landing = () => {
             </ul>
           </div>
         </Collapse>
-        <Collapse title={t('receipt-image-3.title')}>
+        <Collapse
+          title={t('receipt-image-3.title')}
+          detailProps="rounded border"
+          summaryProps="hover:underline focus:underline"
+        >
           <div className="mt-3 max-w-prose border-t p-3">
             <ExampleImage
               imageProps={{
@@ -166,7 +178,7 @@ const Landing = () => {
               <li>{t('receipt-3-next-steps.list.item-4')}</li>
             </ul>
           </div>
-        </Collapse>
+        </Collapse>  
         <h3 className="h3 mb-2 mt-8">{t('if-lost.header')}</h3>
         <p>
           <Trans

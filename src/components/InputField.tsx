@@ -14,6 +14,7 @@ export interface InputFieldProps {
   textRequired?: string
   type?: React.HTMLInputTypeAttribute
   value?: string | number | readonly string[]
+  extraContent?: React.ReactNode
 }
 
 const InputField = ({
@@ -29,6 +30,7 @@ const InputField = ({
   textRequired,
   type,
   value,
+  extraContent,
 }: InputFieldProps) => {
   const inputErrorMessageId = `input-${id}-error`
   const inputHelpMessageId = `input-${id}-help`
@@ -64,6 +66,7 @@ const InputField = ({
           {helpMessage}
         </div>
       )}
+      {extraContent}
       <input
         aria-describedby={getAriaDescribedby()}
         aria-invalid={errorMessage ? true : undefined}

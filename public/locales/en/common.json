@@ -10,6 +10,20 @@
     "month": "Month",
     "year": "Year"
   },
+  "date-months": {
+    "01": "January",
+    "02": "February",
+    "03": "March",
+    "04": "April",
+    "05": "May",
+    "06": "June",
+    "07": "July",
+    "08": "August",
+    "09": "September",
+    "10": "October",
+    "11": "November",
+    "12": "December"
+  },
   "footer": {
     "canada-ca-alt-text": "Symbol of the Government of Canada",
     "date-modified-text": "Date Modified: ",
@@ -35,6 +49,7 @@
     "skip-to-main": "Skip to main content"
   },
   "modal-go-back": {
+    "back-button": "Back",
     "cancel-button": "Cancel",
     "description": "Are you sure you want to go back?",
     "header": "Return to the home page",
