@@ -215,11 +215,11 @@ const DateSelectField = ({
             required={required}
             type="year"
             value={state.yearValue}
-            max={firstYear ?? 1900}
-            min={Math.max(
+            max={Math.max(
               firstYear ?? 1900,
               lastYear ?? new Date().getFullYear(),
             )}
+            min={firstYear ?? 1900}
           />
         </div>
       </fieldset>
