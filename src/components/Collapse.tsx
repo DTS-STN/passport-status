@@ -3,18 +3,28 @@ import { useId } from 'react'
 export interface CollapseProps {
   title: string
   children?: React.ReactNode
+  detailProps?: string
+  summaryProps?: string
 }
 
-const Collapse = ({ title, children }: CollapseProps) => {
+const Collapse = ({
+  title,
+  children,
+  detailProps,
+  summaryProps,
+}: CollapseProps) => {
   const id = useId()
   return (
     <details
       aria-describedby={`${id}-details-summary`}
-      className="mb-3 max-w-prose rounded border p-3"
+      className={'mb-3 max-w-prose p-3 ' + detailProps}
     >
       <summary
         id={`${id}-details-summary`}
-        className="cursor-pointer text-blue-light hover:text-link-selected hover:underline focus:text-link-selected focus:underline"
+        className={
+          'cursor-pointer text-blue-light hover:text-link-selected focus:text-link-selected ' +
+          summaryProps
+        }
       >
         {title}
       </summary>
