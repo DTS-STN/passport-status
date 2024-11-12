@@ -6,15 +6,18 @@
       "required": "The date of birth is required."
     },
     "help-message": "Enter the birthdate of the person who the passport is for.",
-    "label": "Date of birth on the application"
+    "label": "Date of birth"
   },
   "email": {
     "error": {
       "required": "The email address is required.",
       "valid": "The email address must be valid."
     },
-    "help-message": "Enter it exactly as provided on your passport application form.",
-    "help-message-secondary": "<strong>For child applications,</strong> provide the full email address for the applicant parent or legal guardian exactly as provided on the passport application.",
+    "help-message": "Enter the email address you provided on your passport application form.",
+    "for-child": {
+      "title": "For child applications",
+      "help-message": "For child applications, enter the email address of the applicant's parent or legal guardian provided on the passport application."
+    },
     "label": "Email address"
   },
   "email-confirmation-msg": {
@@ -32,13 +35,13 @@
     "please-contact": "If you still don't receive it, <Link>contact us</Link>.",
     "request-received": "Your request has been received"
   },
-  "email-esrf": "Email me the file number or reference number",
+  "email-esrf": "Email me the reference number",
   "given-name": {
     "title": "If the applicant has a single legal name.",
     "error": {
       "required": "The given name(s) is required."
     },
-    "help-message": "Enter first name(s) and any middle name(s) of the person who the passport is for.",
+    "help-message": "Enter first name(s) <strong>and any middle name(s)</strong> of the person who the passport is for.",
     "label": "Given name(s)"
   },
   "header": "Get my passport application file number or reference number",
@@ -53,6 +56,6 @@
       "required": "The surname is required."
     },
     "help-message": "Enter last name of the person who the passport is for.",
-    "label": "Surname on the application"
+    "label": "Surname"
   }
 }

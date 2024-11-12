@@ -9,7 +9,6 @@ import * as Yup from 'yup'
 
 import ActionButton from '../components/ActionButton'
 import AlertBlock from '../components/AlertBlock'
-import AlertSection from '../components/AlertSection'
 import Collapse from '../components/Collapse'
 import DateSelectField, {
   DateSelectFieldOnChangeEvent,
@@ -208,12 +207,6 @@ const Email = () => {
               <Trans i18nKey="header-messages.required" ns="email" />
             </p>
 
-            <AlertSection type="info" className="mb-5 max-w-prose">
-              <p>
-                <Trans i18nKey="one-name" ns="email" />
-              </p>
-            </AlertSection>
-
             {errorSummaryItems.length > 0 && (
               <ErrorSummary
                 id="error-summary-email-esrf"
@@ -233,19 +226,16 @@ const Email = () => {
               value={formikValues.email}
               errorMessage={formikErrors.email && t(formikErrors.email as any)}
               textRequired={t('common:required')}
-              required
+              required={!!formikErrors.email}
               helpMessage={t('email.help-message')}
-              helpMessageSecondary={
-                <Trans i18nKey="email.help-message-secondary" ns="email" />
-              }
               extraContent={
                 <Collapse
-                  title={t('given-name.title')}
+                  title={t('email.for-child.title')}
                   detailProps="text-base"
                   summaryProps="underline"
                 >
                   <p className="mt-4 border-l-[6px] border-gray-400 pl-6 text-base text-gray-600">
-                    <Trans i18nKey="one-name" ns="status" />
+                    <Trans i18nKey="email.for-child.help-message" ns="email" />
                   </p>
                 </Collapse>
               }
@@ -260,8 +250,10 @@ const Email = () => {
                 formikErrors.givenName && t(formikErrors.givenName as any)
               }
               textRequired={t('common:required')}
-              required
-              helpMessage={t('given-name.help-message')}
+              required={!!formikErrors.givenName}
+              helpMessage={
+                <Trans i18nKey="given-name.help-message" ns="email" />
+              }
               extraContent={
                 <Collapse
                   title={t('given-name.title')}
@@ -284,7 +276,7 @@ const Email = () => {
                 formikErrors.surname && t(formikErrors.surname as any)
               }
               textRequired={t('common:required')}
-              required
+              required={!!formikErrors.surname}
               helpMessage={t('surname.help-message')}
             />
             <DateSelectField
@@ -296,7 +288,7 @@ const Email = () => {
                 formikErrors.dateOfBirth && t(formikErrors.dateOfBirth as any)
               }
               textRequired={t('common:required')}
-              required
+              required={!!formikErrors.dateOfBirth}
               helpMessage={t('date-of-birth.help-message')}
             />
             <div className="mt-8 flex flex-wrap gap-2">
