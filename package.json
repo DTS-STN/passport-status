@@ -67,7 +67,7 @@
     "mochawesome-merge": "4.3.0",
     "mochawesome-report-generator": "6.2.0",
     "node-mocks-http": "1.16.1",
-    "pino-pretty": "11.3.0",
+    "pino-pretty": "13.0.0",
     "postcss": "8.4.48",
     "prettier": "3.3.3",
     "prettier-plugin-tailwindcss": "0.6.8",
