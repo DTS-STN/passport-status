@@ -69,8 +69,8 @@
   "previous": "Check the status of another application",
   "printing": {
     "in-printing": "We are printing your passport",
-    "reviewed-printing": "Your application has been reviewed and your passport is ready for printing. Be aware that printing can take a few business days.",
-    "print-update": "Once your passport has been printed, your status will be updated."
+    "reviewed-printing": "Your application has been reviewed, and your passport is now ready for printing. Please note that the printing process may take a few business days.",
+    "print-update": "Once your passport has been printed, the status of your application will be updated accordingly."
   },
   "ready-for-pickup": {
     "check-receipt": "Check your receipt for pick-up instructions",
