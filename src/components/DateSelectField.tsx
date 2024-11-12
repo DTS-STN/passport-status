@@ -113,7 +113,7 @@ const DateSelectField = ({
           isNaN(yearNumber) || isNaN(monthNumber)
             ? true
             : isExists(yearNumber, monthNumber - 1, parseInt(day))
-        const dayValue = isDayExists ? day.padStart(2, '0') : ''
+        const dayValue = isDayExists ? day : ''
 
         const dateString = toDateStringOrEmpty(yearValue, monthValue, dayValue)
         return {
