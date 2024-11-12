@@ -34,6 +34,7 @@
   },
   "email-esrf": "Envoyez-moi par courriel le numéro de dossier ou numéro de référence",
   "given-name": {
+    "title": "Si le requérant a un seul nom légal.",
     "error": {
       "required": "Le(s) prénom(s) est(sont) obligatoire(s)."
     },
@@ -42,13 +43,8 @@
   },
   "header": "Obtenir le numéro de dossier de ma demande de passeport ou mon numéro de référence",
   "header-messages": {
-    "list": {
-      "item-1": "un certificat de naissance",
-      "item-2": "un certificat de citoyenneté",
-      "item-3": "une carte de citoyenneté ou",
-      "item-4": "d'autres documents, comme un certificat de naturalisation"
-    },
-    "matches": "<strong>Assurez-vous que vos renseignements correspondent à votre preuve de citoyenneté et à votre pièce d'identité utilisée lorsque vous avez présenté votre demande de passeport.</strong> Votre preuve de citoyenneté pourrait être l'une des suivantes\u00a0:"
+    "matches": "<strong>Assurez-vous que les informations que vous indiquez ici correspondent à votre demande de passeport.</strong>",
+    "required": "<em>Tous les champs sont obligatoires.</em>"
   },
   "one-name": "Les requérants n'ayant <strong>qu'un seul nom</strong> (un ou plusieurs noms inscrits dans un seul champ) doivent nous appeler au 1-800-567-6868 pour connaître l'état de leur demande.",
   "request-another": "Obtenir un autre numéro de dossier ou numéro de référence",
