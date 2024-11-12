@@ -10,6 +10,7 @@ import * as Yup from 'yup'
 import ActionButton from '../components/ActionButton'
 import AlertBlock from '../components/AlertBlock'
 import AlertSection from '../components/AlertSection'
+import Collapse from '../components/Collapse'
 import DateSelectField, {
   DateSelectFieldOnChangeEvent,
 } from '../components/DateSelectField'
@@ -203,14 +204,9 @@ const Email = () => {
             <p className="max-w-prose">
               <Trans i18nKey="header-messages.matches" ns="email" />
             </p>
-            <ul className="mb-5 list-disc space-y-2 pl-10">
-              <li>{t('header-messages.list.item-1')}</li>
-              <li>{t('header-messages.list.item-2')}</li>
-              <li>
-                <Trans i18nKey="header-messages.list.item-3" ns="email" />
-              </li>
-              <li>{t('header-messages.list.item-4')}</li>
-            </ul>
+            <p>
+              <Trans i18nKey="header-messages.required" ns="email" />
+            </p>
 
             <AlertSection type="info" className="mb-5 max-w-prose">
               <p>
@@ -242,6 +238,17 @@ const Email = () => {
               helpMessageSecondary={
                 <Trans i18nKey="email.help-message-secondary" ns="email" />
               }
+              extraContent={
+                <Collapse
+                  title={t('given-name.title')}
+                  detailProps="text-base"
+                  summaryProps="underline"
+                >
+                  <p className="mt-4 border-l-[6px] border-gray-400 pl-6 text-base text-gray-600">
+                    <Trans i18nKey="one-name" ns="status" />
+                  </p>
+                </Collapse>
+              }
             />
             <InputField
               id="givenName"
@@ -255,6 +262,17 @@ const Email = () => {
               textRequired={t('common:required')}
               required
               helpMessage={t('given-name.help-message')}
+              extraContent={
+                <Collapse
+                  title={t('given-name.title')}
+                  detailProps="text-base"
+                  summaryProps="underline"
+                >
+                  <p className="mt-4 border-l-[6px] border-gray-400 pl-6 text-base text-gray-600">
+                    <Trans i18nKey="one-name" ns="email" />
+                  </p>
+                </Collapse>
+              }
             />
             <InputField
               id="surname"
