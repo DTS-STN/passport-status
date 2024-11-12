@@ -44,7 +44,7 @@
     "help-message": "Indiquez le(s) prénom(s) <strong>et le(s) deuxième(s) prénom(s)</strong> de la personne à qui le passeport est destiné.",
     "label": "Prénom(s) sur la demande"
   },
-  "header": "Obtenir le numéro de dossier de ma demande de passeport ou mon numéro de référence",
+  "header": "Obtenir votre numéro de référence",
   "header-messages": {
     "matches": "<strong>Assurez-vous que les informations que vous indiquez ici correspondent à votre demande de passeport.</strong>",
     "required": "<em>Tous les champs sont obligatoires.</em>"

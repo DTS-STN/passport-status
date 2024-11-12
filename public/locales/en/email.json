@@ -44,7 +44,7 @@
     "help-message": "Enter first name(s) <strong>and any middle name(s)</strong> of the person who the passport is for.",
     "label": "Given name(s)"
   },
-  "header": "Get my passport application file number or reference number",
+  "header": "Get your reference number",
   "header-messages": {
     "matches": "<strong>Make sure the information you enter here matches your passport application.</strong>",
     "required": "<em>All fields are required.</em>"
