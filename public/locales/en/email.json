@@ -6,15 +6,18 @@
       "required": "The date of birth is required."
     },
     "help-message": "Enter the birthdate of the person who the passport is for.",
-    "label": "Date of birth on the application"
+    "label": "Date of birth"
   },
   "email": {
     "error": {
       "required": "The email address is required.",
       "valid": "The email address must be valid."
     },
-    "help-message": "Enter it exactly as provided on your passport application form.",
-    "help-message-secondary": "<strong>For child applications,</strong> provide the full email address for the applicant parent or legal guardian exactly as provided on the passport application.",
+    "help-message": "Enter the email address you provided on your passport application form.",
+    "for-child": {
+      "title": "For child applications",
+      "help-message": "For child applications, enter the email address of the applicant's parent or legal guardian provided on the passport application."
+    },
     "label": "Email address"
   },
   "email-confirmation-msg": {
@@ -32,23 +35,19 @@
     "please-contact": "If you still don't receive it, <Link>contact us</Link>.",
     "request-received": "Your request has been received"
   },
-  "email-esrf": "Email me the file number or reference number",
+  "email-esrf": "Email me the reference number",
   "given-name": {
+    "title": "If the applicant has a single legal name.",
     "error": {
       "required": "The given name(s) is required."
     },
-    "help-message": "Enter first name(s) and any middle name(s) of the person who the passport is for.",
-    "label": "Given name(s) on the application"
+    "help-message": "Enter first name(s) <strong>and any middle name(s)</strong> of the person who the passport is for.",
+    "label": "Given name(s)"
   },
-  "header": "Get my passport application file number or reference number",
+  "header": "Get your reference number",
   "header-messages": {
-    "list": {
-      "item-1": "birth certificate",
-      "item-2": "citizenship certificate",
-      "item-3": "citizenship card or",
-      "item-4": "other documents, like a naturalization certificate"
-    },
-    "matches": "<strong>Make sure your information matches the proof of citizenship and supporting ID used when you applied for a passport.</strong> Your proof of citizenship could be one of the following:"
+    "matches": "<strong>Make sure the information you enter here matches your passport application.</strong>",
+    "required": "<em>All fields are required.</em>"
   },
   "one-name": "Applicants with <strong>only one name</strong> (single or multiple names entered all in one field) must call us at 1‑800‑567‑6868 to get the status of their application.",
   "request-another": "Request another file number or reference number",
@@ -57,6 +56,6 @@
       "required": "The surname is required."
     },
     "help-message": "Enter last name of the person who the passport is for.",
-    "label": "Surname on the application"
+    "label": "Surname"
   }
 }
