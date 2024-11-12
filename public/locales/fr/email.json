@@ -6,15 +6,18 @@
       "required": "La date de naissance est obligatoire."
     },
     "help-message": "Indiquez la date de naissance de la personne à qui le passeport est destiné.",
-    "label": "Date de naissance sur la demande"
+    "label": "Date de naissance"
   },
   "email": {
     "error": {
       "required": "L'adresse courriel est obligatoire.",
       "valid": "L'adresse courriel doit être valide."
     },
-    "help-message": "Indiquez votre adresse courriel telle qu'elle figure sur votre formulaire de demande de passeport.",
-    "help-message-secondary": "<strong>Pour les demandes pour enfants,</strong> indiquez l'adresse courriel complète du parent ou du tuteur légal du requérant, telle qu'elle figure sur la demande de passeport.",
+    "help-message": "Indiquez l'adresse courriel que vous avez fournie sur votre formulaire de demande de passeport.",
+    "for-child": {
+      "title": "Pour les demandes pour enfants",
+      "help-message": "Pour les demandes pour enfants, indiquez l'adresse courriel du parent ou du tuteur légal fournie sur la demande de passeport."
+    },
     "label": "Adresse courriel"
   },
   "email-confirmation-msg": {
@@ -32,13 +35,13 @@
     "please-contact": "Si vous n'obtenez toujours pas le courriel, <Link>veuillez nous contacter</Link>.",
     "request-received": "Votre demande a été reçue"
   },
-  "email-esrf": "Envoyez-moi par courriel le numéro de dossier ou numéro de référence",
+  "email-esrf": "Envoyez-moi par courriel le numéro de référence",
   "given-name": {
     "title": "Si le requérant a un seul nom légal.",
     "error": {
       "required": "Le(s) prénom(s) est(sont) obligatoire(s)."
     },
-    "help-message": "Indiquez le(s) prénom(s) et deuxième(s) prénom(s) de la personne à qui le passeport est destiné.",
+    "help-message": "Indiquez le(s) prénom(s) <strong>et le(s) deuxième(s) prénom(s)</strong> de la personne à qui le passeport est destiné.",
     "label": "Prénom(s) sur la demande"
   },
   "header": "Obtenir le numéro de dossier de ma demande de passeport ou mon numéro de référence",
@@ -53,6 +56,6 @@
       "required": "Le nom de famille est obligatoire."
     },
     "help-message": "Indiquez le nom de famille de la personne à qui le passeport est destiné.",
-    "label": "Nom de famille sur la demande"
+    "label": "Nom de famille"
   }
 }
