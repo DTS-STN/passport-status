@@ -1,7 +1,10 @@
 {
-  "collapse-file-number-title": "Find your file number or reference number",
-  "description": "Do you have your passport application file number or reference number?",
-  "header": "Passport application file number or reference number",
+  "do-you-have": {
+    "question": "Do you have a passport application reference number?",
+    "with-reference": "Yes, I have my reference number",
+    "without-reference": "No, I don’t have my reference number"
+  },
+  "header": "Reference number",
   "receipt-1-will-find": {
     "list": {
       "item-1": "title of receipt: Official Receipt",
@@ -79,25 +82,37 @@
     },
     "text": "On an official receipt where the reference number is circled you will find:"
   },
-  "receipt-explanation": "The file number or reference number is used to identify your passport application. The file number or reference number can be found on the receipt you were given if you applied for the passport in person. If you applied by mail, or don't have a file number or reference number, you can <Link>request to receive it</Link>.",
   "receipt-image-1": {
     "alt": "An example of an official receipt. The file number is circled in the centre of the receipt.",
     "descriptive-text": "<strong>An example of an official receipt. The file number is circled in the centre of the receipt.</strong>",
     "src": "/Receipt1_EN.png",
-    "title": "File number example receipt 1"
+    "title": "Example receipt 1"
   },
   "receipt-image-2": {
     "alt": "An example of an official receipt and pick-up slip. The file number is circled in the upper left-hand side of the receipt, above a barcode.",
     "descriptive-text": "<strong>An example of an official receipt and pick-up slip. The file number is circled in the upper left-hand side of the receipt, above a barcode.</strong>",
     "src": "/Receipt2_EN.png",
-    "title": "File number example receipt 2"
+    "title": "Example receipt 2"
   },
   "receipt-image-3": {
     "alt": "An example of an official receipt. The reference number is circled in the middle of the receipt, above a barcode.",
     "descriptive-text": "<strong>An example of an official receipt. The reference number is circled in the middle of the receipt, above a barcode.</strong>",
     "src": "/Receipt3_EN.png",
-    "title": "Reference number example receipt"
+    "title": "Example receipt 3"
   },
-  "with-esrf": "I have my file number or reference number",
-  "without-esrf": "I don't have my file number or reference number"
+  "where-to-find": {
+    "header": "Where to find your reference number",
+    "applied-by-mail": {
+      "header": "If you applied by mail",
+      "text": "If you applied for your passport by mail, you will need to <Link>request your reference number</Link>. We will email the reference number to you."
+    },
+    "applied-in-person": {
+      "header": "If you applied in person",
+      "text": "If you applied for your passport in person, the reference number can be found on the receipt you were given. Here are some examples of receipts, and where they contain the reference number:"
+    }
+  },
+  "if-lost": {
+    "header": "If you lost your reference number",
+    "text": "If you lost or misplaced your reference number, you will need to <Link>request your reference number</Link>. We will email the reference number to you."
+  }
 }

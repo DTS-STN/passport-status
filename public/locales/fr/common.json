@@ -1,5 +1,5 @@
 {
-  "application-name-bar": "Vérificateur de l'état de la demande de passeport",
+  "application-name-bar": "Vérificateur de l'état d'une demande de passeport",
   "banner": {
     "alert": "Lieu de test",
     "description": "Vous ne pouvez pas vérifier l'état de votre demande de passeport via ce site de test. Certaines parties de ce site peuvent ne pas fonctionner et seront modifiées."
