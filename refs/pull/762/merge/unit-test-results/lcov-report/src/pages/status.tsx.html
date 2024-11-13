@@ -391,7 +391,15 @@
 <a name='L326'></a><a href='#L326'>326</a>
 <a name='L327'></a><a href='#L327'>327</a>
 <a name='L328'></a><a href='#L328'>328</a>
-<a name='L329'></a><a href='#L329'>329</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L329'></a><a href='#L329'>329</a>
+<a name='L330'></a><a href='#L330'>330</a>
+<a name='L331'></a><a href='#L331'>331</a>
+<a name='L332'></a><a href='#L332'>332</a>
+<a name='L333'></a><a href='#L333'>333</a>
+<a name='L334'></a><a href='#L334'>334</a>
+<a name='L335'></a><a href='#L335'>335</a>
+<a name='L336'></a><a href='#L336'>336</a>
+<a name='L337'></a><a href='#L337'>337</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -561,6 +569,14 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -739,8 +755,8 @@ import * as Yup from 'yup'
 &nbsp;
 import ActionButton from '../components/ActionButton'
 import AlertBlock from '../components/AlertBlock'
-import AlertSection from '../components/AlertSection'
 import CheckStatusInfo from '../components/CheckStatusInfo'
+import Collapse from '../components/Collapse'
 import DateSelectField, {
   DateSelectFieldOnChangeEvent,
 } from '../components/DateSelectField'
@@ -877,7 +893,7 @@ const Status = () =&gt; {
     [setFormikFieldValue],
   )
 &nbsp;
-  const handleOnCancelClick = useCallback(<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >setModalOpen(true),</span> [])
+  const handleOnBackClick = useCallback(<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >setModalOpen(true),</span> [])
 &nbsp;
   const handleOnModalClose = useCallback(<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >setModalOpen(false),</span> [])
 &nbsp;
@@ -917,21 +933,9 @@ const Status = () =&gt; {
             &lt;p className="max-w-prose"&gt;
               &lt;Trans i18nKey="header-messages.matches" ns="status" /&gt;
             &lt;/p&gt;
-&nbsp;
-            &lt;ul className="mb-5 list-disc space-y-2 pl-10"&gt;
-              &lt;li&gt;{t('header-messages.list.item-1')}&lt;/li&gt;
-              &lt;li&gt;{t('header-messages.list.item-2')}&lt;/li&gt;
-              &lt;li&gt;
-                &lt;Trans i18nKey="header-messages.list.item-3" ns="status" /&gt;
-              &lt;/li&gt;
-              &lt;li&gt;{t('header-messages.list.item-4')}&lt;/li&gt;
-            &lt;/ul&gt;
-&nbsp;
-            &lt;AlertSection type="info" className="mb-5 max-w-prose"&gt;
-              &lt;p&gt;
-                &lt;Trans i18nKey="one-name" ns="status" /&gt;
-              &lt;/p&gt;
-            &lt;/AlertSection&gt;
+            &lt;p&gt;
+              &lt;Trans i18nKey="header-messages.required" ns="status" /&gt;
+            &lt;/p&gt;
 &nbsp;
             {errorSummaryItems.length &gt; 0 &amp;&amp; (
 <span class="branch-1 cbranch-no" title="branch not covered" >              &lt;ErrorSummary</span>
@@ -942,64 +946,84 @@ const Status = () =&gt; {
                 errors={errorSummaryItems}
               /&gt;
             )}
-&nbsp;
-            &lt;InputField
-              id="esrf"
-              name="esrf"
-              label={t('esrf.label')}
-              onChange={handleOnESRFChange}
-              value={formikValues.esrf}
-              errorMessage={formikErrors.esrf &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >t(formikErrors.esrf as any)}</span>
-              textRequired={t('common:required')}
-              required
-              helpMessage={
-                &lt;Trans
-                  i18nKey="esrf.help-message"
-                  ns="status"
-                  components={{
-                    Link: &lt;Link href="/email" /&gt;,
-                  }}
-                /&gt;
-              }
-            /&gt;
-            &lt;InputField
-              id="givenName"
-              name="givenName"
-              label={t('given-name.label')}
-              onChange={handleFormikChange}
-              value={formikValues.givenName}
-              errorMessage={
-                formikErrors.givenName &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >t(formikErrors.givenName as any)</span>
-              }
-              textRequired={t('common:required')}
-              required
-              helpMessage={t('given-name.help-message')}
-            /&gt;
-            &lt;InputField
-              id="surname"
-              name="surname"
-              label={t('surname.label')}
-              onChange={handleFormikChange}
-              value={formikValues.surname}
-              errorMessage={
-                formikErrors.surname &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >t(formikErrors.surname as any)</span>
-              }
-              textRequired={t('common:required')}
-              required
-              helpMessage={t('surname.help-message')}
-            /&gt;
-            &lt;DateSelectField
-              id="dateOfBirth"
-              label={t('date-of-birth.label')}
-              onChange={handleOnDateOfBirthChange}
-              value={formikValues.dateOfBirth}
-              errorMessage={
-                formikErrors.dateOfBirth &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >t(formikErrors.dateOfBirth as any)</span>
-              }
-              textRequired={t('common:required')}
-              required
-              helpMessage={t('date-of-birth.help-message')}
-            /&gt;
+            &lt;div className="mt-8"&gt;
+              &lt;InputField
+                id="esrf"
+                name="esrf"
+                label={t('esrf.label')}
+                onChange={handleOnESRFChange}
+                value={formikValues.esrf}
+                errorMessage={formikErrors.esrf &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >t(formikErrors.esrf as any)}</span>
+                textRequired={t('common:required')}
+                required={!!formikErrors.esrf}
+                helpMessage={
+                  &lt;Trans
+                    i18nKey="esrf.help-message"
+                    ns="status"
+                    components={{
+                      Link: &lt;Link href="/email" /&gt;,
+                    }}
+                  /&gt;
+                }
+              /&gt;
+            &lt;/div&gt;
+            &lt;div className="mt-8"&gt;
+              &lt;InputField
+                id="givenName"
+                name="givenName"
+                label={t('given-name.label')}
+                onChange={handleFormikChange}
+                value={formikValues.givenName}
+                errorMessage={
+                  formikErrors.givenName &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >t(formikErrors.givenName as any)</span>
+                }
+                textRequired={t('common:required')}
+                required={!!formikErrors.givenName}
+                helpMessage={
+                  &lt;Trans i18nKey="given-name.help-message" ns="status" /&gt;
+                }
+                extraContent={
+                  &lt;Collapse
+                    title={t('given-name.title')}
+                    detailProps="text-base"
+                    summaryProps="underline"
+                  &gt;
+                    &lt;p className="mt-4 border-l-[6px] border-gray-400 pl-6 text-base text-gray-600"&gt;
+                      &lt;Trans i18nKey="one-name" ns="status" /&gt;
+                    &lt;/p&gt;
+                  &lt;/Collapse&gt;
+                }
+              /&gt;
+            &lt;/div&gt;
+            &lt;div className="mt-8"&gt;
+              &lt;InputField
+                id="surname"
+                name="surname"
+                label={t('surname.label')}
+                onChange={handleFormikChange}
+                value={formikValues.surname}
+                errorMessage={
+                  formikErrors.surname &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >t(formikErrors.surname as any)</span>
+                }
+                textRequired={t('common:required')}
+                required={!!formikErrors.surname}
+                helpMessage={t('surname.help-message')}
+              /&gt;
+            &lt;/div&gt;
+            &lt;div className="mt-8"&gt;
+              &lt;DateSelectField
+                id="dateOfBirth"
+                label={t('date-of-birth.label')}
+                onChange={handleOnDateOfBirthChange}
+                value={formikValues.dateOfBirth}
+                errorMessage={
+                  formikErrors.dateOfBirth &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >t(formikErrors.dateOfBirth as any)</span>
+                }
+                textRequired={t('common:required')}
+                required={!!formikErrors.dateOfBirth}
+                helpMessage={t('date-of-birth.help-message')}
+              /&gt;
+            &lt;/div&gt;
             &lt;div className="mt-8 flex flex-wrap gap-2"&gt;
               &lt;ActionButton
                 id="btn-submit"
@@ -1009,10 +1033,10 @@ const Status = () =&gt; {
                 style="primary"
               /&gt;
               &lt;ActionButton
-                id="btn-cancel"
+                id="btn-back"
                 disabled={isCheckStatusPending}
-                text={t('common:modal-go-back.cancel-button')}
-                onClick={handleOnCancelClick}
+                text={t('common:modal-go-back.back-button')}
+                onClick={handleOnBackClick}
               /&gt;
             &lt;/div&gt;
           &lt;/form&gt;
@@ -1054,7 +1078,7 @@ export default Status
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-11-12T18:12:08.939Z
+                at 2024-11-13T14:27:57.837Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
