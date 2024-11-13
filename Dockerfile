@@ -1,4 +1,4 @@
-ARG BASE_IMAGE=docker.io/node:20.17.0-bookworm-slim
+ARG BASE_IMAGE=docker.io/node:22.11.0-bookworm-slim
 FROM $BASE_IMAGE AS base
 
 # Install dependencies only when needed
