@@ -254,7 +254,7 @@ describe('responses - loads no result', () => {
 
 describe('cancel check status', () => {
   beforeEach(() => {
-    cy.get('#btn-cancel').click()
+    cy.get('#btn-back').click()
   })
 
   it('cancel check status should loads dialog', () => {

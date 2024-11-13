@@ -8,7 +8,7 @@ import Router from 'next/router'
 
 import ActionButton from '../components/ActionButton'
 import AlertBlock from '../components/AlertBlock'
-import AlertSection from '../components/AlertSection'
+import Collapse from '../components/Collapse'
 import ExternalLink from '../components/ExternalLink'
 import Layout from '../components/Layout'
 import { pageWithServerSideTranslations } from '../lib/utils/next-i18next-utils'
@@ -29,95 +29,67 @@ const Expectations = () => {
   return (
     <>
       <NextSeo
+        title={t('header')}
         description={t('meta.description')}
         additionalMetaTags={[getDCTermsTitle(t('header'))]}
       />
       <Layout>
         <h1 className="h1">{t('header')}</h1>
         <AlertBlock page="expectations" />
-        <h2 className="h2">{t('header-avoid-waiting')}</h2>
-        <p>{t('available-after.description')}</p>
-        <ul className="mb-5 list-disc space-y-2 pl-10">
-          <li>{t('available-after.list.item-1')}</li>
-          <li>{t('available-after.list.item-2')}</li>
-        </ul>
-        <p>
-          <strong>{t('available-after.updated-status')}</strong>
-        </p>
-        <h2 className="h2">{t('header-who-can-check')}</h2>
-        <p>
-          <Trans i18nKey={'can-check.description'} ns="expectations" />
-        </p>
-        <ul className="mb-5 list-disc space-y-2 pl-10">
-          <li>{t('can-check.list.item-1')}</li>
-          <li>{t('can-check.list.item-2')}</li>
-        </ul>
-        <p>
-          <Trans i18nKey={'cannot-check.description'} ns="expectations" />
-        </p>
-        <ul className="mb-5 list-disc space-y-2 pl-10">
-          <li>
-            <Trans i18nKey={'cannot-check.list.item-1'} ns="expectations" />
-          </li>
-          <li>{t('cannot-check.list.item-2')}</li>
-        </ul>
-        <h2 className="h2">{t('additional-info.header')}</h2>
-        <p>{t('additional-info.documents-separately')}</p>
-        <p>
-          <Trans
-            i18nKey="additional-info.contact-us"
-            ns="expectations"
-            components={{
-              Link: <ExternalLink href={t('common:contact-us-link')} />,
-            }}
-          />
-        </p>
-        <AlertSection className="mt-8" type="warning">
-          <p className="mb-4">
-            <strong>{t('do-not-travel')}</strong>
+        <div className="max-w-prose">
+          <p>
+            <Trans i18nKey="thank-you" ns="expectations" />
           </p>
+          <h2 className="h2 mb-4">{t('do-not-travel')}</h2>
           <p>{t('not-liable')}</p>
-        </AlertSection>
-        <h2 className="h2">{t('header-privacy')}</h2>
-        <p>
-          <Trans i18nKey={'description-privacy.1'} ns="expectations" />
-        </p>
-        <p>{t('description-privacy.2')}</p>
-        <p>{t('description-privacy.3')}</p>
-        <p>
-          <Trans
-            i18nKey={'description-privacy.4'}
-            ns="expectations"
-            components={{
-              Link: <ExternalLink href={t('description-privacy.4-link')} />,
-            }}
-          />
-        </p>
-        <p>
-          <Trans
-            i18nKey={'description-privacy.5'}
-            ns="expectations"
-            components={{
-              Link: <ExternalLink href={t('description-privacy.5-link')} />,
-            }}
-          />
-        </p>
-        <p>
-          <Trans
-            i18nKey={'description-privacy.6'}
-            ns="expectations"
-            components={{
-              Link: <ExternalLink href={t('description-privacy.6-link')} />,
-            }}
-          />
-        </p>
-        <div className="mt-8">
-          <ActionButton
-            id="btn-agree"
-            style="primary"
-            text={t('button-agree')}
-            onClick={handleOnAgreeClick}
-          />
+          <h2 className="h2">{t('header-privacy')}</h2>
+          <p>{t('privacy-description')}</p>
+          <Collapse
+            title={t('header-privacy')}
+            detailProps="rounded border"
+            summaryProps="hover:underline focus:underline"
+          >
+            <p>
+              <Trans i18nKey={'description-privacy.1'} ns="expectations" />
+            </p>
+            <p>{t('description-privacy.2')}</p>
+            <p>{t('description-privacy.3')}</p>
+            <p>
+              <Trans
+                i18nKey={'description-privacy.4'}
+                ns="expectations"
+                components={{
+                  Link: <ExternalLink href={t('description-privacy.4-link')} />,
+                }}
+              />
+            </p>
+            <p>
+              <Trans
+                i18nKey={'description-privacy.5'}
+                ns="expectations"
+                components={{
+                  Link: <ExternalLink href={t('description-privacy.5-link')} />,
+                }}
+              />
+            </p>
+            <p>
+              <Trans
+                i18nKey={'description-privacy.6'}
+                ns="expectations"
+                components={{
+                  Link: <ExternalLink href={t('description-privacy.6-link')} />,
+                }}
+              />
+            </p>
+          </Collapse>
+          <div className="mt-8">
+            <ActionButton
+              id="btn-agree"
+              style="primary"
+              text={t('button-agree')}
+              onClick={handleOnAgreeClick}
+            />
+          </div>
         </div>
       </Layout>
     </>

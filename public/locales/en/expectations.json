@@ -1,32 +1,5 @@
 {
-  "additional-info": {
-    "contact-us": "<Link>Contact us</Link> only if you don't receive your documents within 6 weeks of receiving your passport.",
-    "documents-separately": "We may send your supporting documents back separately.",
-    "header": "Additional information"
-  },
-  "available-after": {
-    "description": "The status of your application is available after:",
-    "list": {
-      "item-1": "5 business days if you applied in person or",
-      "item-2": "10 business days if you applied by mail"
-    },
-    "updated-status": "We update the status of applications daily."
-  },
-  "button-agree": "I have read and understand",
-  "can-check": {
-    "description": "You <strong>can get the status</strong> of your application online if you submitted your passport application either:",
-    "list": {
-      "item-1": "in person or by mail in Canada or",
-      "item-2": "by mail from the United States"
-    }
-  },
-  "cannot-check": {
-    "description": "You <strong>can't get the status</strong> of an application online if you applied for a passport:",
-    "list": {
-      "item-1": "at a consulate or embassy abroad or",
-      "item-2": "for official government business (special or diplomatic passports)"
-    }
-  },
+  "button-agree": "Agree and continue",
   "description-privacy": {
     "1": "The information provided is collected under section 5.1(1)(a)(i) of the <em>Department of Employment and Social Development Act</em> and/or section 12(e) of the <em>Canadian Passport Order</em> for the purpose of providing you with the status of your passport application. Refusing to provide information will result in not being able to view the status of your passport application.",
     "2": "In addition, Employment and Social Development Canada (ESDC) collects your email address only if you require us to send your passport application file number or reference number by email. Without your email address, ESDC cannot send your passport application number electronically.",
@@ -39,12 +12,12 @@
     "6-link": "https://www.priv.gc.ca/en/report-a-concern"
   },
   "do-not-travel": "Don't finalize travel plans without a passport",
-  "header": "Passport Application Status Checker",
-  "header-avoid-waiting": "Avoid waiting on the phone and get the status of your passport application online",
+  "header": "Important information and privacy statement",
   "header-privacy": "Privacy notice statement",
-  "header-who-can-check": "Who can check their status online",
   "meta": {
     "description": "Avoid waiting on the phone and request the status of your application online."
   },
-  "not-liable": "We're not liable for any losses if you do not receive it in time for travel."
+  "not-liable": "We're not liable for any losses if you do not receive it in time for travel.",
+  "privacy-description": "By using the Passport Application Status Checker, you agree to the privacy notice statement.",
+  "thank-you": "Thank you for using the passport status checker. <strong>We update the status of applications every day.</strong>"
 }

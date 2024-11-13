@@ -1,7 +1,10 @@
 {
-  "collapse-file-number-title": "Trouver votre numéro de dossier ou numéro de référence",
-  "description": "Avez-vous le numéro de dossier de votre demande de passeport ou votre numéro de référence?",
-  "header": "Numéro de dossier de demande de passeport ou numéro de référence",
+  "do-you-have": {
+    "question": "Avez-vous un numéro de référence pour votre demande de passeport?",
+    "with-reference": "Oui, j'ai mon numéro de référence.",
+    "without-reference": "Non, je n'ai pas mon numéro de référence"
+  },
+  "header": "Numéro de référence",
   "receipt-1-will-find": {
     "list": {
       "item-1": "titre du reçu\u00a0: reçu officiel",
@@ -79,25 +82,37 @@
     },
     "text": "Sur un reçu officiel où le numéro de référence est encerclé, vous trouverez\u00a0:"
   },
-  "receipt-explanation": "Le numéro de dossier ou le numéro de référence sert à identifier votre demande de passeport. Le numéro de dossier ou le numéro de référence figure sur le reçu qui vous a été remis si vous avez déposé votre demande de passeport en personne. Si vous avez déposé votre demande par la poste, ou si vous n'avez pas de numéro de dossier ou de numéro de référence, <Link>vous pouvez demander à le recevoir</Link>.",
   "receipt-image-1": {
     "alt": "Un exemple de reçu officiel. Le numéro de dossier est entouré au centre du reçu.",
     "descriptive-text": "<strong>Exemple de reçu officiel. Le numéro de dossier est encerclé au centre du reçu.</strong>",
     "src": "/Receipt1_FR.png",
-    "title": "Exemple de reçu avec un numéro de dossier 1"
+    "title": "Example de reçu 1"
   },
   "receipt-image-2": {
     "alt": "Exemple d'un reçu officiel et bordereau de cueillette. Le numéro de dossier est encerclé en haut à gauche du reçu, au-dessus d'un code-barres.",
     "descriptive-text": "<strong>Exemple d'un reçu officiel et bordereau de cueillette. Le numéro de dossier est encerclé en haut à gauche du reçu, au-dessus d'un code-barres.</strong>",
     "src": "/Receipt2_FR.png",
-    "title": "Exemple de reçu avec un numéro de dossier 2"
+    "title": "Example de reçu 2"
   },
   "receipt-image-3": {
     "alt": "Un exemple de reçu officiel. Le numéro de référence est encerclé au centre du reçu, au-dessus d'un code-barres.",
     "descriptive-text": "<strong>Un exemple de reçu officiel. Le numéro de référence est encerclé au centre du reçu, au-dessus d'un code-barres.</strong>",
     "src": "/Receipt3_FR.png",
-    "title": "Exemple de reçu avec un numéro de référence"
+    "title": "Example de reçu 3"
   },
-  "with-esrf": "J'ai mon numéro de dossier ou mon numéro de référence",
-  "without-esrf": "Je n'ai pas mon numéro de dossier ou mon numéro de référence"
+  "where-to-find": {
+    "header": "Où trouver votre numéro de référence",
+    "applied-by-mail": {
+      "header": "Si vous avez présenté votre demande par la poste",
+      "text": "Si vous avez présenté votre demande par la poste, vous devrez <Link>demander votre numéro de référence</Link>. Nous vous enverrons le numéro de référence par courriel."
+    },
+    "applied-in-person": {
+      "header": "Si vous avez présenté votre demande en personne",
+      "text": "Si vous avez présenté votre demande en personne, le numéro de référence se trouve sur le reçu qui vous a été remis. Voici quelques exemples de reçus et les endroits où ils contiennent le numéro de référence\u00a0:"
+    }
+  },
+  "if-lost": {
+    "header": "Si vous avez perdu votre numéro de référence",
+    "text": "Si vous avez perdu ou égaré votre numéro de référence, vous devrez <Link>le demander</Link>. Nous vous enverrons le numéro de référence par courriel."
+  }
 }
