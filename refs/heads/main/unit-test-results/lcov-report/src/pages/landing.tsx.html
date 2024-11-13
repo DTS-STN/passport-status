@@ -247,7 +247,24 @@
 <a name='L182'></a><a href='#L182'>182</a>
 <a name='L183'></a><a href='#L183'>183</a>
 <a name='L184'></a><a href='#L184'>184</a>
-<a name='L185'></a><a href='#L185'>185</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L185'></a><a href='#L185'>185</a>
+<a name='L186'></a><a href='#L186'>186</a>
+<a name='L187'></a><a href='#L187'>187</a>
+<a name='L188'></a><a href='#L188'>188</a>
+<a name='L189'></a><a href='#L189'>189</a>
+<a name='L190'></a><a href='#L190'>190</a>
+<a name='L191'></a><a href='#L191'>191</a>
+<a name='L192'></a><a href='#L192'>192</a>
+<a name='L193'></a><a href='#L193'>193</a>
+<a name='L194'></a><a href='#L194'>194</a>
+<a name='L195'></a><a href='#L195'>195</a>
+<a name='L196'></a><a href='#L196'>196</a>
+<a name='L197'></a><a href='#L197'>197</a>
+<a name='L198'></a><a href='#L198'>198</a>
+<a name='L199'></a><a href='#L199'>199</a>
+<a name='L200'></a><a href='#L200'>200</a>
+<a name='L201'></a><a href='#L201'>201</a>
+<a name='L202'></a><a href='#L202'>202</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -264,6 +281,23 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -455,155 +489,172 @@ const Landing = () =&gt; {
       /&gt;
       &lt;h1 className="h1"&gt;{t('header')}&lt;/h1&gt;
       &lt;AlertBlock page="landing" /&gt;
-      &lt;p&gt;{t('description')}&lt;/p&gt;
-      &lt;div className="mb-4 flex flex-wrap gap-4 md:flex-nowrap"&gt;
-        &lt;div className="w-full lg:w-4/12 xl:w-3/12"&gt;
-          &lt;LinkButton href="/status" fullWidth style="primary" id="with-esrf"&gt;
-            {t('with-esrf')}
-          &lt;/LinkButton&gt;
+      &lt;div className="max-w-prose"&gt;
+        &lt;p&gt;
+          &lt;strong&gt;{t('do-you-have.question')}&lt;/strong&gt;
+        &lt;/p&gt;
+        &lt;div className="mb-4 flex flex-wrap gap-6 md:flex-nowrap"&gt;
+          &lt;div className="w-full"&gt;
+            &lt;LinkButton href="/status" fullWidth style="primary" id="with-esrf"&gt;
+              {t('do-you-have.with-reference')}
+            &lt;/LinkButton&gt;
+          &lt;/div&gt;
+          &lt;div className="mb-8 w-full"&gt;
+            &lt;LinkButton href="/email" fullWidth id="without-esrf"&gt;
+              {t('do-you-have.without-reference')}
+            &lt;/LinkButton&gt;
+          &lt;/div&gt;
         &lt;/div&gt;
-        &lt;div className="mb-8 w-full lg:w-4/12 xl:w-3/12"&gt;
-          &lt;LinkButton href="/email" fullWidth id="without-esrf"&gt;
-            {t('without-esrf')}
-          &lt;/LinkButton&gt;
-        &lt;/div&gt;
+        &lt;h2 className="h2 mb-6"&gt;{t('where-to-find.header')}&lt;/h2&gt;
+        &lt;h3 className="h3 mb-2"&gt;{t('where-to-find.applied-by-mail.header')}&lt;/h3&gt;
+        &lt;p&gt;
+          &lt;Trans
+            i18nKey="where-to-find.applied-by-mail.text"
+            ns="landing"
+            components={{ Link: &lt;Link href="/email" /&gt; }}
+          /&gt;
+        &lt;/p&gt;
+        &lt;h3 className="h3 mb-2 mt-8"&gt;
+          {t('where-to-find.applied-in-person.header')}
+        &lt;/h3&gt;
+        &lt;p&gt;{t('where-to-find.applied-in-person.text')}&lt;/p&gt;
+        &lt;Collapse
+          title={t('receipt-image-1.title')}
+          detailProps="rounded border"
+          summaryProps="hover:underline focus:underline"
+        &gt;
+          &lt;div className="mt-3 max-w-prose border-t p-3"&gt;
+            &lt;ExampleImage
+              imageProps={{
+                src: t('receipt-image-1.src'),
+                alt: t('receipt-image-1.alt'),
+                width: 500,
+                height: 785,
+              }}
+            &gt;
+              &lt;Trans i18nKey="receipt-image-1.descriptive-text" ns="landing" /&gt;
+            &lt;/ExampleImage&gt;
+            &lt;p&gt;{t('receipt-1-will-find.text')}&lt;/p&gt;
+            &lt;ul className="mb-5 list-disc pl-10"&gt;
+              &lt;li&gt;{t('receipt-1-will-find.list.item-1')}&lt;/li&gt;
+              &lt;li&gt;{t('receipt-1-will-find.list.item-2')}&lt;/li&gt;
+              &lt;li&gt;{t('receipt-1-will-find.list.item-3')}&lt;/li&gt;
+              &lt;li&gt;{t('receipt-1-will-find.list.item-4')}&lt;/li&gt;
+              &lt;li&gt;{t('receipt-1-will-find.list.item-5')}&lt;/li&gt;
+              &lt;li&gt;{t('receipt-1-will-find.list.item-6')}&lt;/li&gt;
+              &lt;li&gt;{t('receipt-1-will-find.list.item-7')}&lt;/li&gt;
+              &lt;li&gt;{t('receipt-1-will-find.list.item-8')}&lt;/li&gt;
+              &lt;li&gt;{t('receipt-1-will-find.list.item-9')}&lt;/li&gt;
+              &lt;li&gt;{t('receipt-1-will-find.list.item-10')}&lt;/li&gt;
+              &lt;li&gt;{t('receipt-1-will-find.list.item-11')}&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/div&gt;
+        &lt;/Collapse&gt;
+        &lt;Collapse
+          title={t('receipt-image-2.title')}
+          detailProps="rounded border"
+          summaryProps="hover:underline focus:underline"
+        &gt;
+          &lt;div className="mt-3 max-w-prose border-t p-3"&gt;
+            &lt;ExampleImage
+              imageProps={{
+                src: t('receipt-image-2.src'),
+                alt: t('receipt-image-2.alt'),
+                width: 500,
+                height: 785,
+              }}
+            &gt;
+              &lt;Trans i18nKey="receipt-image-2.descriptive-text" ns="landing" /&gt;
+            &lt;/ExampleImage&gt;
+            &lt;p&gt;{t('receipt-2-will-find.text')}&lt;/p&gt;
+            &lt;ul className="mb-5 list-disc pl-10"&gt;
+              &lt;li&gt;{t('receipt-2-will-find.list.item-1')}&lt;/li&gt;
+              &lt;li&gt;{t('receipt-2-will-find.list.item-2')}&lt;/li&gt;
+              &lt;li&gt;{t('receipt-2-will-find.list.item-3')}&lt;/li&gt;
+              &lt;li&gt;{t('receipt-2-will-find.list.item-4')}&lt;/li&gt;
+              &lt;li&gt;{t('receipt-2-will-find.list.item-5')}&lt;/li&gt;
+              &lt;li&gt;{t('receipt-2-will-find.list.item-6')}&lt;/li&gt;
+              &lt;li&gt;{t('receipt-2-will-find.list.item-7')}&lt;/li&gt;
+              &lt;li&gt;{t('receipt-2-will-find.list.item-8')}&lt;/li&gt;
+              &lt;li&gt;{t('receipt-2-will-find.list.item-9')}&lt;/li&gt;
+              &lt;li&gt;{t('receipt-2-will-find.list.item-10')}&lt;/li&gt;
+              &lt;li&gt;{t('receipt-2-will-find.list.item-11')}&lt;/li&gt;
+              &lt;li&gt;{t('receipt-2-will-find.list.item-12')}&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;p&gt;{t('receipt-2-pickup-instructions.text')}&lt;/p&gt;
+            &lt;ul className="mb-5 list-disc pl-10"&gt;
+              &lt;li&gt;{t('receipt-2-pickup-instructions.list.item-1')}&lt;/li&gt;
+              &lt;li&gt;
+                {t('receipt-2-pickup-instructions.list.item-2.text')}
+                &lt;ul className="list-disc pl-10"&gt;
+                  &lt;li&gt;
+                    &lt;Trans
+                      i18nKey="receipt-2-pickup-instructions.list.item-2.list.item-1"
+                      ns="landing"
+                    /&gt;
+                  &lt;/li&gt;
+                  &lt;li&gt;
+                    {t('receipt-2-pickup-instructions.list.item-2.list.item-2')}
+                  &lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/li&gt;
+              &lt;li&gt;{t('receipt-2-pickup-instructions.list.item-3')}&lt;/li&gt;
+              &lt;li&gt;{t('receipt-2-pickup-instructions.list.item-4')}&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/div&gt;
+        &lt;/Collapse&gt;
+        &lt;Collapse
+          title={t('receipt-image-3.title')}
+          detailProps="rounded border"
+          summaryProps="hover:underline focus:underline"
+        &gt;
+          &lt;div className="mt-3 max-w-prose border-t p-3"&gt;
+            &lt;ExampleImage
+              imageProps={{
+                src: t('receipt-image-3.src'),
+                alt: t('receipt-image-3.alt'),
+                width: 500,
+                height: 785,
+              }}
+            &gt;
+              &lt;Trans i18nKey="receipt-image-3.descriptive-text" ns="landing" /&gt;
+            &lt;/ExampleImage&gt;
+            &lt;p&gt;{t('receipt-3-will-find.text')}&lt;/p&gt;
+            &lt;ul className="mb-5 list-disc pl-10"&gt;
+              &lt;li&gt;{t('receipt-3-will-find.list.item-1')}&lt;/li&gt;
+              &lt;li&gt;{t('receipt-3-will-find.list.item-2')}&lt;/li&gt;
+              &lt;li&gt;{t('receipt-3-will-find.list.item-3')}&lt;/li&gt;
+              &lt;li&gt;{t('receipt-3-will-find.list.item-4')}&lt;/li&gt;
+              &lt;li&gt;{t('receipt-3-will-find.list.item-5')}&lt;/li&gt;
+              &lt;li&gt;{t('receipt-3-will-find.list.item-6')}&lt;/li&gt;
+              &lt;li&gt;{t('receipt-3-will-find.list.item-7')}&lt;/li&gt;
+              &lt;li&gt;{t('receipt-3-will-find.list.item-8')}&lt;/li&gt;
+              &lt;li&gt;{t('receipt-3-will-find.list.item-9')}&lt;/li&gt;
+              &lt;li&gt;{t('receipt-3-will-find.list.item-10')}&lt;/li&gt;
+              &lt;li&gt;{t('receipt-3-will-find.list.item-11')}&lt;/li&gt;
+              &lt;li&gt;{t('receipt-3-will-find.list.item-12')}&lt;/li&gt;
+              &lt;li&gt;{t('receipt-3-will-find.list.item-13')}&lt;/li&gt;
+              &lt;li&gt;{t('receipt-3-will-find.list.item-14')}&lt;/li&gt;
+              &lt;li&gt;{t('receipt-3-will-find.list.item-15')}&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;p&gt;{t('receipt-3-next-steps.text')}&lt;/p&gt;
+            &lt;ul className="mb-5 list-disc pl-10"&gt;
+              &lt;li&gt;{t('receipt-3-next-steps.list.item-1')}&lt;/li&gt;
+              &lt;li&gt;{t('receipt-3-next-steps.list.item-2')}&lt;/li&gt;
+              &lt;li&gt;{t('receipt-3-next-steps.list.item-3')}&lt;/li&gt;
+              &lt;li&gt;{t('receipt-3-next-steps.list.item-4')}&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/div&gt;
+        &lt;/Collapse&gt;  
+        &lt;h3 className="h3 mb-2 mt-8"&gt;{t('if-lost.header')}&lt;/h3&gt;
+        &lt;p&gt;
+          &lt;Trans
+            i18nKey="if-lost.text"
+            ns="landing"
+            components={{ Link: &lt;Link href="/email" /&gt; }}
+          /&gt;
+        &lt;/p&gt;
       &lt;/div&gt;
-      &lt;h2 className="h3"&gt;{t('collapse-file-number-title')}&lt;/h2&gt;
-      &lt;p&gt;
-        &lt;Trans
-          i18nKey="receipt-explanation"
-          ns="landing"
-          components={{ Link: &lt;Link href="/email" /&gt; }}
-        /&gt;
-      &lt;/p&gt;
-      &lt;Collapse
-        title={t('receipt-image-1.title')}
-        detailProps="rounded border"
-        summaryProps="hover:underline focus:underline"
-      &gt;
-        &lt;div className="mt-3 max-w-prose border-t p-3"&gt;
-          &lt;ExampleImage
-            imageProps={{
-              src: t('receipt-image-1.src'),
-              alt: t('receipt-image-1.alt'),
-              width: 500,
-              height: 785,
-            }}
-          &gt;
-            &lt;Trans i18nKey="receipt-image-1.descriptive-text" ns="landing" /&gt;
-          &lt;/ExampleImage&gt;
-          &lt;p&gt;{t('receipt-1-will-find.text')}&lt;/p&gt;
-          &lt;ul className="mb-5 list-disc pl-10"&gt;
-            &lt;li&gt;{t('receipt-1-will-find.list.item-1')}&lt;/li&gt;
-            &lt;li&gt;{t('receipt-1-will-find.list.item-2')}&lt;/li&gt;
-            &lt;li&gt;{t('receipt-1-will-find.list.item-3')}&lt;/li&gt;
-            &lt;li&gt;{t('receipt-1-will-find.list.item-4')}&lt;/li&gt;
-            &lt;li&gt;{t('receipt-1-will-find.list.item-5')}&lt;/li&gt;
-            &lt;li&gt;{t('receipt-1-will-find.list.item-6')}&lt;/li&gt;
-            &lt;li&gt;{t('receipt-1-will-find.list.item-7')}&lt;/li&gt;
-            &lt;li&gt;{t('receipt-1-will-find.list.item-8')}&lt;/li&gt;
-            &lt;li&gt;{t('receipt-1-will-find.list.item-9')}&lt;/li&gt;
-            &lt;li&gt;{t('receipt-1-will-find.list.item-10')}&lt;/li&gt;
-            &lt;li&gt;{t('receipt-1-will-find.list.item-11')}&lt;/li&gt;
-          &lt;/ul&gt;
-        &lt;/div&gt;
-      &lt;/Collapse&gt;
-      &lt;Collapse
-        title={t('receipt-image-2.title')}
-        detailProps="rounded border"
-        summaryProps="hover:underline focus:underline"
-      &gt;
-        &lt;div className="mt-3 max-w-prose border-t p-3"&gt;
-          &lt;ExampleImage
-            imageProps={{
-              src: t('receipt-image-2.src'),
-              alt: t('receipt-image-2.alt'),
-              width: 500,
-              height: 785,
-            }}
-          &gt;
-            &lt;Trans i18nKey="receipt-image-2.descriptive-text" ns="landing" /&gt;
-          &lt;/ExampleImage&gt;
-          &lt;p&gt;{t('receipt-2-will-find.text')}&lt;/p&gt;
-          &lt;ul className="mb-5 list-disc pl-10"&gt;
-            &lt;li&gt;{t('receipt-2-will-find.list.item-1')}&lt;/li&gt;
-            &lt;li&gt;{t('receipt-2-will-find.list.item-2')}&lt;/li&gt;
-            &lt;li&gt;{t('receipt-2-will-find.list.item-3')}&lt;/li&gt;
-            &lt;li&gt;{t('receipt-2-will-find.list.item-4')}&lt;/li&gt;
-            &lt;li&gt;{t('receipt-2-will-find.list.item-5')}&lt;/li&gt;
-            &lt;li&gt;{t('receipt-2-will-find.list.item-6')}&lt;/li&gt;
-            &lt;li&gt;{t('receipt-2-will-find.list.item-7')}&lt;/li&gt;
-            &lt;li&gt;{t('receipt-2-will-find.list.item-8')}&lt;/li&gt;
-            &lt;li&gt;{t('receipt-2-will-find.list.item-9')}&lt;/li&gt;
-            &lt;li&gt;{t('receipt-2-will-find.list.item-10')}&lt;/li&gt;
-            &lt;li&gt;{t('receipt-2-will-find.list.item-11')}&lt;/li&gt;
-            &lt;li&gt;{t('receipt-2-will-find.list.item-12')}&lt;/li&gt;
-          &lt;/ul&gt;
-          &lt;p&gt;{t('receipt-2-pickup-instructions.text')}&lt;/p&gt;
-          &lt;ul className="mb-5 list-disc pl-10"&gt;
-            &lt;li&gt;{t('receipt-2-pickup-instructions.list.item-1')}&lt;/li&gt;
-            &lt;li&gt;
-              {t('receipt-2-pickup-instructions.list.item-2.text')}
-              &lt;ul className="list-disc pl-10"&gt;
-                &lt;li&gt;
-                  &lt;Trans
-                    i18nKey="receipt-2-pickup-instructions.list.item-2.list.item-1"
-                    ns="landing"
-                  /&gt;
-                &lt;/li&gt;
-                &lt;li&gt;
-                  {t('receipt-2-pickup-instructions.list.item-2.list.item-2')}
-                &lt;/li&gt;
-              &lt;/ul&gt;
-            &lt;/li&gt;
-            &lt;li&gt;{t('receipt-2-pickup-instructions.list.item-3')}&lt;/li&gt;
-            &lt;li&gt;{t('receipt-2-pickup-instructions.list.item-4')}&lt;/li&gt;
-          &lt;/ul&gt;
-        &lt;/div&gt;
-      &lt;/Collapse&gt;
-      &lt;Collapse
-        title={t('receipt-image-3.title')}
-        detailProps="rounded border"
-        summaryProps="hover:underline focus:underline"
-      &gt;
-        &lt;div className="mt-3 max-w-prose border-t p-3"&gt;
-          &lt;ExampleImage
-            imageProps={{
-              src: t('receipt-image-3.src'),
-              alt: t('receipt-image-3.alt'),
-              width: 500,
-              height: 785,
-            }}
-          &gt;
-            &lt;Trans i18nKey="receipt-image-3.descriptive-text" ns="landing" /&gt;
-          &lt;/ExampleImage&gt;
-          &lt;p&gt;{t('receipt-3-will-find.text')}&lt;/p&gt;
-          &lt;ul className="mb-5 list-disc pl-10"&gt;
-            &lt;li&gt;{t('receipt-3-will-find.list.item-1')}&lt;/li&gt;
-            &lt;li&gt;{t('receipt-3-will-find.list.item-2')}&lt;/li&gt;
-            &lt;li&gt;{t('receipt-3-will-find.list.item-3')}&lt;/li&gt;
-            &lt;li&gt;{t('receipt-3-will-find.list.item-4')}&lt;/li&gt;
-            &lt;li&gt;{t('receipt-3-will-find.list.item-5')}&lt;/li&gt;
-            &lt;li&gt;{t('receipt-3-will-find.list.item-6')}&lt;/li&gt;
-            &lt;li&gt;{t('receipt-3-will-find.list.item-7')}&lt;/li&gt;
-            &lt;li&gt;{t('receipt-3-will-find.list.item-8')}&lt;/li&gt;
-            &lt;li&gt;{t('receipt-3-will-find.list.item-9')}&lt;/li&gt;
-            &lt;li&gt;{t('receipt-3-will-find.list.item-10')}&lt;/li&gt;
-            &lt;li&gt;{t('receipt-3-will-find.list.item-11')}&lt;/li&gt;
-            &lt;li&gt;{t('receipt-3-will-find.list.item-12')}&lt;/li&gt;
-            &lt;li&gt;{t('receipt-3-will-find.list.item-13')}&lt;/li&gt;
-            &lt;li&gt;{t('receipt-3-will-find.list.item-14')}&lt;/li&gt;
-            &lt;li&gt;{t('receipt-3-will-find.list.item-15')}&lt;/li&gt;
-          &lt;/ul&gt;
-          &lt;p&gt;{t('receipt-3-next-steps.text')}&lt;/p&gt;
-          &lt;ul className="mb-5 list-disc pl-10"&gt;
-            &lt;li&gt;{t('receipt-3-next-steps.list.item-1')}&lt;/li&gt;
-            &lt;li&gt;{t('receipt-3-next-steps.list.item-2')}&lt;/li&gt;
-            &lt;li&gt;{t('receipt-3-next-steps.list.item-3')}&lt;/li&gt;
-            &lt;li&gt;{t('receipt-3-next-steps.list.item-4')}&lt;/li&gt;
-          &lt;/ul&gt;
-        &lt;/div&gt;
-      &lt;/Collapse&gt;
     &lt;/Layout&gt;
   )
 }
@@ -622,7 +673,7 @@ export default Landing
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-11-12T20:45:29.249Z
+                at 2024-11-13T10:48:37.912Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
