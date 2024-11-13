@@ -12,7 +12,10 @@ describe('expectations page loads', () => {
       .filter(':visible')
       .invoke('text')
       .then((text) => {
-        cy.title().should('eq', `${text} - Canada.ca`)
+        cy.title().should(
+          'eq',
+          `${text} - Passport Application Status Checker - Canada.ca`,
+        )
       })
   })
 
@@ -23,7 +26,10 @@ describe('expectations page loads', () => {
       .filter(':visible')
       .invoke('text')
       .then((text) => {
-        cy.title().should('eq', `${text} - Canada.ca`)
+        cy.title().should(
+          'eq',
+          `${text} - Vérificateur de l'état d'une demande de passeport - Canada.ca`,
+        )
       })
   })
 
