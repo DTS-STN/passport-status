@@ -403,7 +403,24 @@
 <a name='L338'></a><a href='#L338'>338</a>
 <a name='L339'></a><a href='#L339'>339</a>
 <a name='L340'></a><a href='#L340'>340</a>
-<a name='L341'></a><a href='#L341'>341</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L341'></a><a href='#L341'>341</a>
+<a name='L342'></a><a href='#L342'>342</a>
+<a name='L343'></a><a href='#L343'>343</a>
+<a name='L344'></a><a href='#L344'>344</a>
+<a name='L345'></a><a href='#L345'>345</a>
+<a name='L346'></a><a href='#L346'>346</a>
+<a name='L347'></a><a href='#L347'>347</a>
+<a name='L348'></a><a href='#L348'>348</a>
+<a name='L349'></a><a href='#L349'>349</a>
+<a name='L350'></a><a href='#L350'>350</a>
+<a name='L351'></a><a href='#L351'>351</a>
+<a name='L352'></a><a href='#L352'>352</a>
+<a name='L353'></a><a href='#L353'>353</a>
+<a name='L354'></a><a href='#L354'>354</a>
+<a name='L355'></a><a href='#L355'>355</a>
+<a name='L356'></a><a href='#L356'>356</a>
+<a name='L357'></a><a href='#L357'>357</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -543,6 +560,21 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -767,6 +799,7 @@ import ExternalLink from '../components/ExternalLink'
 import IdleTimeout from '../components/IdleTimeout'
 import InputField from '../components/InputField'
 import Layout from '../components/Layout'
+import LinkButton from '../components/LinkButton'
 import Modal from '../components/Modal'
 import { EmailEsrfApiRequestBody } from '../lib/types'
 import useEmailEsrf from '../lib/useEmailEsrf'
@@ -893,49 +926,64 @@ const Email = () =&gt; {
       {isEmailEsrfSuccess ? (
 <span class="branch-0 cbranch-no" title="branch not covered" >        &lt;div id="response-result"&gt;</span>
           &lt;h1 className="h1" tabIndex={-1}&gt;
-            {t('email-confirmation-msg.request-received')}
+            {t('email-confirmation-msg.request-received.header')}
           &lt;/h1&gt;
           &lt;AlertBlock page="email" /&gt;
-          &lt;p&gt;
-            &lt;Trans i18nKey="email-confirmation-msg.if-exists" ns="email" /&gt;
-          &lt;/p&gt;
-          &lt;p&gt;{t('email-confirmation-msg.may-not-receive')}&lt;/p&gt;
-          &lt;ul className="mb-5 list-disc space-y-2 pl-10"&gt;
-            &lt;li&gt;
+          &lt;div className="max-w-prose"&gt;
+            &lt;p&gt;
               &lt;Trans
-                i18nKey="email-confirmation-msg.may-not-receive-list.item-1"
+                i18nKey="email-confirmation-msg.request-received.will-email"
                 ns="email"
               /&gt;
-            &lt;/li&gt;
-            &lt;li&gt;{t('email-confirmation-msg.may-not-receive-list.item-2')}&lt;/li&gt;
-          &lt;/ul&gt;
-          &lt;p&gt;{t('email-confirmation-msg.dont-receive')}&lt;/p&gt;
-          &lt;ul className="mb-5 list-disc space-y-2 pl-10"&gt;
-            &lt;li&gt;
+            &lt;/p&gt;
+            &lt;p&gt;
               &lt;Trans
-                i18nKey="email-confirmation-msg.dont-receive-list.item-1"
+                i18nKey="email-confirmation-msg.request-received.once-received"
                 ns="email"
               /&gt;
-            &lt;/li&gt;
-            &lt;li&gt;{t('email-confirmation-msg.dont-receive-list.item-2')}&lt;/li&gt;
-          &lt;/ul&gt;
-          &lt;p&gt;
-            &lt;Trans
-              i18nKey={'email-confirmation-msg.please-contact'}
-              ns="email"
-              components={{
-                Link: &lt;ExternalLink href={t('common:contact-us-link')} /&gt;,
-              }}
-            /&gt;
-          &lt;/p&gt;
-          &lt;div className="my-8"&gt;
-            &lt;ActionButton
-              id="get-another-file-number"
-              type="button"
-              text={t('request-another')}
-              onClick={handleOnNewFileRequest}
-              style="primary"
-            /&gt;
+            &lt;/p&gt;
+            &lt;div className="my-8 sm:w-full md:w-fit"&gt;
+              &lt;LinkButton
+                href="/status"
+                fullWidth
+                id="enter-reference-number"
+                style="primary"
+              &gt;
+                {t('enter-reference-number')}
+              &lt;/LinkButton&gt;
+            &lt;/div&gt;
+            &lt;h2 className="h2 mt-16"&gt;
+              {t('email-confirmation-msg.dont-receive-header')}
+            &lt;/h2&gt;
+            &lt;p&gt;{t('email-confirmation-msg.dont-receive')}&lt;/p&gt;
+            &lt;ul className="mb-5 list-disc space-y-2 pl-10"&gt;
+              &lt;li&gt;
+                &lt;Trans
+                  i18nKey="email-confirmation-msg.dont-receive-list.item-1"
+                  ns="email"
+                /&gt;
+              &lt;/li&gt;
+              &lt;li&gt;{t('email-confirmation-msg.dont-receive-list.item-2')}&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;div className="my-8 sm:w-full md:w-fit"&gt;
+              &lt;ActionButton
+                id="get-another-file-number"
+                type="button"
+                text={t('request-another')}
+                onClick={handleOnNewFileRequest}
+                fullWidth
+              /&gt;
+            &lt;/div&gt;
+            &lt;p className="mt-16"&gt;{t('email-confirmation-msg.may-take')}&lt;/p&gt;
+            &lt;p&gt;
+              &lt;Trans
+                i18nKey={'email-confirmation-msg.please-contact'}
+                ns="email"
+                components={{
+                  Link: &lt;ExternalLink href={t('common:contact-us-link')} /&gt;,
+                }}
+              /&gt;
+            &lt;/p&gt;
           &lt;/div&gt;
         &lt;/div&gt;
       ) : (
@@ -1090,7 +1138,7 @@ export default Email
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-11-13T14:31:38.853Z
+                at 2024-11-13T16:56:01.076Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
