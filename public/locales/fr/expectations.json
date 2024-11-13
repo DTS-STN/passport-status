@@ -1,32 +1,5 @@
 {
-  "additional-info": {
-    "contact-us": "<Link>Communiquez avec nous</Link> seulement si vous ne recevez pas vos documents dans les six semaines suivant la réception de votre passeport.",
-    "documents-separately": "Nous pourrions renvoyer vos documents fournis en support de la demande séparément.",
-    "header": "Renseignements supplémentaires"
-  },
-  "available-after": {
-    "description": "L'état de votre demande est disponible après\u00a0:",
-    "list": {
-      "item-1": "5 jours ouvrables si vous avez présenté votre demande en personne ou",
-      "item-2": "10 jours ouvrables si vous avez envoyé votre demande par la poste"
-    },
-    "updated-status": "Nous actualisons quotidiennement l'état des demandes."
-  },
-  "button-agree": "J'ai lu et j'accepte",
-  "can-check": {
-    "description": "Vous <strong>pouvez obtenir l'état</strong> de votre demande en ligne si vous avez présenté votre demande de passeport soit\u00a0:",
-    "list": {
-      "item-1": "en personne ou par la poste au Canada, ou",
-      "item-2": "par la poste des États-Unis"
-    }
-  },
-  "cannot-check": {
-    "description": "Vous <strong>ne pouvez pas obtenir l'état</strong> d'une demande en ligne si vous en avez fait la demande\u00a0:",
-    "list": {
-      "item-1": "dans un consulat ou une ambassade à l'étranger, ou",
-      "item-2": "pour les affaires officielles du gouvernement (passeports spéciaux ou diplomatiques)"
-    }
-  },
+  "button-agree": "Accepter et continuer",
   "description-privacy": {
     "1": "Les renseignements fournis sont recueillis en vertu de l'article 5.1(1)(a)(i) de la <em>Loi sur le ministère de l'Emploi et du Développement social</em> et/ou de l'article 12(e) du <em>Décret sur les passeports canadiens</em> dans le but de vous fournir l'état de votre demande de passeport. Si vous refusez de fournir des renseignements, vous ne serez pas en mesure de consulter l'état de votre demande de passeport.",
     "2": "De plus, Emploi et Développement social Canada (EDSC) ne recueille votre adresse courriel que si vous nous demandez de vous envoyer votre numéro de dossier de demande de passeport ou votre numéro de référence par courriel. Sans votre adresse courriel, EDSC ne peut pas envoyer votre numéro de demande de passeport par voie électronique.",
@@ -39,12 +12,12 @@
     "6-link": "https://www.priv.gc.ca/fr/signaler-un-probleme"
   },
   "do-not-travel": "Ne finalisez pas vos plans de voyage sans passeport",
-  "header": "Vérificateur de l'état d'une demande de passeport",
-  "header-avoid-waiting": "Évitez d'attendre au téléphone et obtenez l'état de votre demande de passeport en ligne",
-  "header-privacy": "Avis de confidentialité",
-  "header-who-can-check": "Qui peut vérifier l'état de sa demande en ligne",
+  "header": "Informations importantes et énoncé de confidentialité",
+  "header-privacy": "Énoncé de confidentialité",
   "meta": {
     "description": "Évitez d'attendre au téléphone et demandez l'état de votre demande en ligne."
   },
-  "not-liable": "Nous ne sommes pas responsables des pertes si vous ne le recevez pas à temps pour le voyage."
+  "not-liable": "Nous ne sommes pas responsables des pertes si vous ne le recevez pas à temps pour le voyage.",
+  "privacy-description": "En utilisant le vérificateur de l'état d'une demande de passeport, vous acceptez l'énoncé de confidentialité.",
+  "thank-you": "Merci d'utiliser le vérificateur de l'état d'une demande de passeport. <strong>Nous mettons à jour l'état des demandes quotidiennement.<strong>"
 }
