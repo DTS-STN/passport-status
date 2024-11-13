@@ -48,9 +48,8 @@
   .h1::after {
     content: '';
     display: block;
-    width: 100%;
     @apply pt-2;
-    border-bottom: 0.09em solid #af3c43;
+    border-bottom: 0.05em solid #af3c43;
   }
 
   p {
