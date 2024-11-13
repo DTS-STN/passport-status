@@ -86,19 +86,19 @@
     "alt": "Un exemple de reçu officiel. Le numéro de dossier est entouré au centre du reçu.",
     "descriptive-text": "<strong>Exemple de reçu officiel. Le numéro de dossier est encerclé au centre du reçu.</strong>",
     "src": "/Receipt1_FR.png",
-    "title": "Example de reçu 1"
+    "title": "Exemple de reçu 1"
   },
   "receipt-image-2": {
     "alt": "Exemple d'un reçu officiel et bordereau de cueillette. Le numéro de dossier est encerclé en haut à gauche du reçu, au-dessus d'un code-barres.",
     "descriptive-text": "<strong>Exemple d'un reçu officiel et bordereau de cueillette. Le numéro de dossier est encerclé en haut à gauche du reçu, au-dessus d'un code-barres.</strong>",
     "src": "/Receipt2_FR.png",
-    "title": "Example de reçu 2"
+    "title": "Exemple de reçu 2"
   },
   "receipt-image-3": {
     "alt": "Un exemple de reçu officiel. Le numéro de référence est encerclé au centre du reçu, au-dessus d'un code-barres.",
     "descriptive-text": "<strong>Un exemple de reçu officiel. Le numéro de référence est encerclé au centre du reçu, au-dessus d'un code-barres.</strong>",
     "src": "/Receipt3_FR.png",
-    "title": "Example de reçu 3"
+    "title": "Exemple de reçu 3"
   },
   "where-to-find": {
     "header": "Où trouver votre numéro de référence",

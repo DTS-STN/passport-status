@@ -21,21 +21,23 @@
     "label": "Adresse courriel"
   },
   "email-confirmation-msg": {
-    "dont-receive": "Si vous ne recevez pas de courriel, vous pouvez\u00a0:",
+    "dont-receive": "Si vous n'avez pas reçu le courriel contenant votre numéro de référence\u00a0:",
+    "dont-receive-header": "Si vous n'avez pas reçu de courriel",
     "dont-receive-list": {
-      "item-1": "revérifiez vos renseignements et essayez à nouveau, ou",
-      "item-2": "essayer encore demain — nous mettons à jour nos dossiers chaque jour."
+      "item-1": "vérifiez votre dossier de courriel indésirable",
+      "item-2": "si vous pensez avoir saisi des renseignements différents de ceux figurant sur votre demande de passeport, essayez à nouveau en cliquant sur le bouton ci-dessous"
     },
     "if-exists": "Votre demande a été reçue. Si nous pouvons trouver le dossier avec les renseignements que vous nous avez fournis, <strong>nous vous enverrons le numéro de dossier ou le numéro de référence par courriel</strong>. Si vous ne recevez pas le message de confirmation dans votre boîte de réception, vérifiez votre dossier de courriel indésirable.",
-    "may-not-receive": "Il se pourrait que vous ne receviez pas de courriel si\u00a0:",
-    "may-not-receive-list": {
-      "item-1": "les renseignements que vous nous avez fournis ne correspondent pas à ceux de notre système, ou",
-      "item-2": "nous avons reçu votre demande, mais n'avons pas encore commencé à la traiter"
-    },
-    "please-contact": "Si vous n'obtenez toujours pas le courriel, <Link>veuillez nous contacter</Link>.",
-    "request-received": "Votre demande a été reçue"
+    "may-take": "Il peut falloir 5 à 10 jours ouvrables pour que votre demande apparaisse dans notre système. Réessayez demain, car nous mettons à jour notre système quotidiennement.",
+    "please-contact": "Si vous ne recevez toujours pas le courriel, <Link>contactez-nous</Link>.",
+    "request-received": {
+      "header": "Nous avons reçu votre demande",
+      "will-email": "Nous avons reçu votre demande de numéro de référence. Si les renseignements que vous avez fournis correspondent à nos dossiers, <strong>nous vous enverrons un courriel</strong> dans les 30 minutes.",
+      "once-received": "Une fois que vous avez reçu le courriel, veuillez continuer en cliquant sur le bouton ci-dessous."
+    }
   },
   "email-esrf": "Envoyez-moi par courriel le numéro de référence",
+  "enter-reference-number": "Entrer mon numéro de référence",
   "given-name": {
     "title": "Si le requérant a un seul nom légal.",
     "error": {
@@ -50,7 +52,7 @@
     "required": "<em>Tous les champs sont obligatoires.</em>"
   },
   "one-name": "Les requérants n'ayant <strong>qu'un seul nom</strong> (un ou plusieurs noms inscrits dans un seul champ) doivent nous appeler au 1-800-567-6868 pour connaître l'état de leur demande.",
-  "request-another": "Obtenir un autre numéro de dossier ou numéro de référence",
+  "request-another": "Demander à nouveau le numéro de référence",
   "surname": {
     "error": {
       "required": "Le nom de famille est obligatoire."

@@ -49,7 +49,6 @@
     "skip-to-main": "Skip to main content"
   },
   "modal-go-back": {
-    "back-button": "Back",
     "cancel-button": "Cancel",
     "description": "Are you sure you want to go back?",
     "header": "Return to the home page",

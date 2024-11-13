@@ -298,7 +298,7 @@ const Status = () => {
               <ActionButton
                 id="btn-back"
                 disabled={isCheckStatusPending}
-                text={t('common:modal-go-back.back-button')}
+                text={t('back-button')}
                 onClick={handleOnBackClick}
               />
             </div>

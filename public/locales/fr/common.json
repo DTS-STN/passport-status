@@ -49,7 +49,6 @@
     "skip-to-main": "Passer au contenu principal"
   },
   "modal-go-back": {
-    "back-button": "Back",
     "cancel-button": "Retour",
     "description": "Êtes-vous sûr de vouloir revenir en arrière?",
     "header": "Retournez à la page d'accueil",

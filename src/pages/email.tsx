@@ -22,6 +22,7 @@ import ExternalLink from '../components/ExternalLink'
 import IdleTimeout from '../components/IdleTimeout'
 import InputField from '../components/InputField'
 import Layout from '../components/Layout'
+import LinkButton from '../components/LinkButton'
 import Modal from '../components/Modal'
 import { EmailEsrfApiRequestBody } from '../lib/types'
 import useEmailEsrf from '../lib/useEmailEsrf'
@@ -148,49 +149,64 @@ const Email = () => {
       {isEmailEsrfSuccess ? (
         <div id="response-result">
           <h1 className="h1" tabIndex={-1}>
-            {t('email-confirmation-msg.request-received')}
+            {t('email-confirmation-msg.request-received.header')}
           </h1>
           <AlertBlock page="email" />
-          <p>
-            <Trans i18nKey="email-confirmation-msg.if-exists" ns="email" />
-          </p>
-          <p>{t('email-confirmation-msg.may-not-receive')}</p>
-          <ul className="mb-5 list-disc space-y-2 pl-10">
-            <li>
+          <div className="max-w-prose">
+            <p>
               <Trans
-                i18nKey="email-confirmation-msg.may-not-receive-list.item-1"
+                i18nKey="email-confirmation-msg.request-received.will-email"
                 ns="email"
               />
-            </li>
-            <li>{t('email-confirmation-msg.may-not-receive-list.item-2')}</li>
-          </ul>
-          <p>{t('email-confirmation-msg.dont-receive')}</p>
-          <ul className="mb-5 list-disc space-y-2 pl-10">
-            <li>
+            </p>
+            <p>
               <Trans
-                i18nKey="email-confirmation-msg.dont-receive-list.item-1"
+                i18nKey="email-confirmation-msg.request-received.once-received"
                 ns="email"
               />
-            </li>
-            <li>{t('email-confirmation-msg.dont-receive-list.item-2')}</li>
-          </ul>
-          <p>
-            <Trans
-              i18nKey={'email-confirmation-msg.please-contact'}
-              ns="email"
-              components={{
-                Link: <ExternalLink href={t('common:contact-us-link')} />,
-              }}
-            />
-          </p>
-          <div className="my-8">
-            <ActionButton
-              id="get-another-file-number"
-              type="button"
-              text={t('request-another')}
-              onClick={handleOnNewFileRequest}
-              style="primary"
-            />
+            </p>
+            <div className="my-8 sm:w-full md:w-fit">
+              <LinkButton
+                href="/status"
+                fullWidth
+                id="enter-reference-number"
+                style="primary"
+              >
+                {t('enter-reference-number')}
+              </LinkButton>
+            </div>
+            <h2 className="h2 mt-16">
+              {t('email-confirmation-msg.dont-receive-header')}
+            </h2>
+            <p>{t('email-confirmation-msg.dont-receive')}</p>
+            <ul className="mb-5 list-disc space-y-2 pl-10">
+              <li>
+                <Trans
+                  i18nKey="email-confirmation-msg.dont-receive-list.item-1"
+                  ns="email"
+                />
+              </li>
+              <li>{t('email-confirmation-msg.dont-receive-list.item-2')}</li>
+            </ul>
+            <div className="my-8 sm:w-full md:w-fit">
+              <ActionButton
+                id="get-another-file-number"
+                type="button"
+                text={t('request-another')}
+                onClick={handleOnNewFileRequest}
+                fullWidth
+              />
+            </div>
+            <p className="mt-16">{t('email-confirmation-msg.may-take')}</p>
+            <p>
+              <Trans
+                i18nKey={'email-confirmation-msg.please-contact'}
+                ns="email"
+                components={{
+                  Link: <ExternalLink href={t('common:contact-us-link')} />,
+                }}
+              />
+            </p>
           </div>
         </div>
       ) : (
