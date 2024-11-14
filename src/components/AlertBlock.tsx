@@ -26,7 +26,7 @@ const AlertBlock = ({ page, className }: AlertBlockProps) => {
       })}
     </div>
   ) : (
-    <div />
+    <></>
   )
 }
 
