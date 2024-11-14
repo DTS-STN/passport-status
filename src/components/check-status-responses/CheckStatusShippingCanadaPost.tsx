@@ -15,10 +15,10 @@ export const CheckStatusShippingCanadaPost = ({
 
   return (
     <>
+      <AlertBlock page="status-shipped-canada" />
       <h1 data-testid="printed-and-mailed" className="h1" tabIndex={-1}>
         {t('shipped-canada-post.header')}
       </h1>
-      <AlertBlock page="status-shipped-canada" />
       <p>{t('shipped-canada-post.header')}.</p>
       <AlertSection className="mb-4" type="success">
         <h2 data-testid="shipped-canada-post" className="h2 mt-0">

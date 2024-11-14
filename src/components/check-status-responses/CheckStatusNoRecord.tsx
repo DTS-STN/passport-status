@@ -7,10 +7,10 @@ export const CheckStatusNoRecord = () => {
   const { t } = useTranslation(['status', 'common'])
   return (
     <>
+      <AlertBlock page="status-not-found" />
       <h1 data-testid="no-record" className="h1" tabIndex={-1}>
         {t('no-record.cannot-give-status.description')}
       </h1>
-      <AlertBlock page="status-not-found" />
       <p>{t('no-record.cannot-give-status.because')}</p>
       <ul className="mb-5 list-disc space-y-2 pl-10">
         <li>

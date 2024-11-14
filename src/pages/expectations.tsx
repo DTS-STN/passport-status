@@ -34,8 +34,8 @@ const Expectations = () => {
         additionalMetaTags={[getDCTermsTitle(t('header'))]}
       />
       <Layout>
-        <h1 className="h1">{t('header')}</h1>
         <AlertBlock page="expectations" />
+        <h1 className="h1">{t('header')}</h1>
         <div className="max-w-prose">
           <p>
             <Trans i18nKey="thank-you" ns="expectations" />

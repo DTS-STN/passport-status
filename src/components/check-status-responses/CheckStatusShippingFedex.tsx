@@ -14,10 +14,10 @@ export const CheckStatusShippingFedex = ({
   const { t } = useTranslation(['status', 'common'])
   return (
     <>
+      <AlertBlock page="status-shipped-fedex" />
       <h1 data-testid="shipped-fedex" className="h1" tabIndex={-1}>
         {t('shipped-fedex.header')}
       </h1>
-      <AlertBlock page="status-shipped-fedex" />
       <p>{t('shipped-fedex.header')}.</p>
       <AlertSection type="success">
         <h2 data-testid="shipped-fedex-mailing" className="h2 mt-0">
