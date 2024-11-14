@@ -7,10 +7,10 @@ export const CheckStatusFileBeingProcessed = () => {
   const { t } = useTranslation(['status', 'common'])
   return (
     <>
+      <AlertBlock page="status-processing" />
       <h1 data-testid="being-processed" className="h1" tabIndex={-1}>
         {t('being-processed.received')}
       </h1>
-      <AlertBlock page="status-processing" />
       <p>
         <Trans
           i18nKey={'being-processed.received-will-not-change'}

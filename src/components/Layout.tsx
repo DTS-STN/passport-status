@@ -20,7 +20,7 @@ const Layout = ({ children }: LayoutProps) => {
       <main
         role="main"
         id="mainContent"
-        className="container mx-auto mt-5 flex-1 px-4 pb-8"
+        className="container mx-auto flex-1 px-4 pb-8"
       >
         <AlertBlock />
         {children}

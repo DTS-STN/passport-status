@@ -20,8 +20,8 @@ const Landing = () => {
         title={t('header')}
         additionalMetaTags={[getDCTermsTitle(t('header'))]}
       />
-      <h1 className="h1">{t('header')}</h1>
       <AlertBlock page="landing" />
+      <h1 className="h1">{t('header')}</h1>
       <div className="max-w-prose">
         <p>
           <strong>{t('do-you-have.question')}</strong>
@@ -178,7 +178,7 @@ const Landing = () => {
               <li>{t('receipt-3-next-steps.list.item-4')}</li>
             </ul>
           </div>
-        </Collapse>  
+        </Collapse>
         <h3 className="h3 mb-2 mt-8">{t('if-lost.header')}</h3>
         <p>
           <Trans
