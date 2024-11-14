@@ -30,9 +30,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">37.5% </span>
+                <span class="strong">33.33% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>3/8</span>
+                <span class='fraction'>6/18</span>
             </div>
         
             
@@ -165,7 +165,20 @@
 <a name='L100'></a><a href='#L100'>100</a>
 <a name='L101'></a><a href='#L101'>101</a>
 <a name='L102'></a><a href='#L102'>102</a>
-<a name='L103'></a><a href='#L103'>103</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L103'></a><a href='#L103'>103</a>
+<a name='L104'></a><a href='#L104'>104</a>
+<a name='L105'></a><a href='#L105'>105</a>
+<a name='L106'></a><a href='#L106'>106</a>
+<a name='L107'></a><a href='#L107'>107</a>
+<a name='L108'></a><a href='#L108'>108</a>
+<a name='L109'></a><a href='#L109'>109</a>
+<a name='L110'></a><a href='#L110'>110</a>
+<a name='L111'></a><a href='#L111'>111</a>
+<a name='L112'></a><a href='#L112'>112</a>
+<a name='L113'></a><a href='#L113'>113</a>
+<a name='L114'></a><a href='#L114'>114</a>
+<a name='L115'></a><a href='#L115'>115</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -191,6 +204,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -250,11 +267,18 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">14x</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -276,6 +300,7 @@ import { AlertType } from '../lib/types'
 export interface AlertSectionProps extends PropsWithChildren {
   type: AlertType
   className?: string
+  background?: boolean
 }
 &nbsp;
 const borderColors = {
@@ -286,18 +311,22 @@ const borderColors = {
 }
 &nbsp;
 const svgStyles = {
-  danger: '-translate-x-3 translate-y-10',
-  warning: '-translate-x-3 translate-y-10',
-  success: '-translate-x-3 translate-y-10',
-  info: '-translate-x-3 translate-y-10',
+  danger: '-translate-x-3 translate-y-3',
+  warning: '-translate-x-3 translate-y-3',
+  success: '-translate-x-3 translate-y-3',
+  info: '-translate-x-3 translate-y-3',
 }
 &nbsp;
-const SVG = (type: AlertType, lang: string) =&gt; {
+const SVG = (
+  type: AlertType,
+  lang: string,
+  background: boolean | undefined,
+) =&gt; {
   switch (type) {
 <span class="branch-0 cbranch-no" title="branch not covered" >    case 'danger': {</span>
 <span class="cstat-no" title="statement not covered" >      return (</span>
         &lt;svg
-          className="h-8 w-8 bg-white fill-accent-error p-1"
+          className={`${background ? 'bg-slate-100' : 'bg-white'} h-8 w-8 fill-accent-error p-1`}
           viewBox="0 0 100 100"
           xmlns="http://www.w3.org/2000/svg"
           role="img"
@@ -310,7 +339,7 @@ const SVG = (type: AlertType, lang: string) =&gt; {
     case 'success': {
       return (
         &lt;svg
-          className="h-8 w-8 bg-white fill-accent-success p-1"
+          className={`${background ? <span class="branch-0 cbranch-no" title="branch not covered" >'bg-slate-100' </span>: 'bg-white'} h-8 w-8 fill-accent-success p-1`}
           viewBox="0 0 512 512"
           xmlns="http://www.w3.org/2000/svg"
           role="img"
@@ -323,7 +352,7 @@ const SVG = (type: AlertType, lang: string) =&gt; {
 <span class="branch-2 cbranch-no" title="branch not covered" >    case 'warning': {</span>
 <span class="cstat-no" title="statement not covered" >      return (</span>
         &lt;svg
-          className="h-8 w-8 bg-white fill-accent-warning p-1"
+          className={`${background ? 'bg-slate-100' : 'bg-white'} h-8 w-8 fill-accent-warning p-1`}
           viewBox="0 0 24 24"
           xmlns="http://www.w3.org/2000/svg"
           role="img"
@@ -338,7 +367,7 @@ const SVG = (type: AlertType, lang: string) =&gt; {
     case 'info': {
       return (
         &lt;svg
-          className="h-8 w-8 bg-white fill-accent-info p-1"
+          className={`${background ? <span class="branch-0 cbranch-no" title="branch not covered" >'bg-slate-100' </span>: 'bg-white'} h-8 w-8 fill-accent-info p-1`}
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 512 512"
           role="img"
@@ -351,18 +380,25 @@ const SVG = (type: AlertType, lang: string) =&gt; {
   }
 }
 &nbsp;
-const AlertSection = ({ children, type, className }: AlertSectionProps) =&gt; {
+const AlertSection = ({
+  children,
+  type,
+  className,
+  background,
+}: AlertSectionProps) =&gt; {
   const { i18n } = useTranslation()
 &nbsp;
   const borderColor = borderColors[type]
 &nbsp;
   return (
-    &lt;div className={`${className} pl-2`}&gt;
-      &lt;div className={`${svgStyles[type]} -mt-8 w-8`}&gt;
-        {SVG(type, i18n.language)}
+    &lt;div
+      className={`${className} pl-4 ${background ? <span class="branch-0 cbranch-no" title="branch not covered" >'bg-slate-100' </span>: 'bg-white'}`}
+    &gt;
+      &lt;div className={`${svgStyles[type]} w-8 bg-transparent`}&gt;
+        {SVG(type, i18n.language, background)}
       &lt;/div&gt;
-      &lt;section className={`border-l-8 pb-0.5 pt-2 ${borderColor}`}&gt;
-        &lt;div className="mb-2 ml-4"&gt;{children}&lt;/div&gt;
+      &lt;section className={`-mt-8 border-l-8 pb-0.5 pt-2 ${borderColor}`}&gt;
+        &lt;div className="ml-4"&gt;{children}&lt;/div&gt;
       &lt;/section&gt;
     &lt;/div&gt;
   )
@@ -376,7 +412,7 @@ export default AlertSection
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-11-13T17:05:44.123Z
+                at 2024-11-14T19:44:47.609Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
