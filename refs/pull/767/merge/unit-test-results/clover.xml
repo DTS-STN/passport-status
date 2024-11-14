@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1731613046342" clover="3.2.0">
-  <project timestamp="1731613046342" name="All files">
-    <metrics statements="548" coveredstatements="355" conditionals="337" coveredconditionals="150" methods="154" coveredmethods="86" elements="1039" coveredelements="591" complexity="0" loc="548" ncloc="548" packages="11" files="60" classes="60"/>
+<coverage generated="1731613313256" clover="3.2.0">
+  <project timestamp="1731613313256" name="All files">
+    <metrics statements="548" coveredstatements="355" conditionals="336" coveredconditionals="150" methods="154" coveredmethods="86" elements="1038" coveredelements="591" complexity="0" loc="548" ncloc="548" packages="11" files="60" classes="60"/>
     <package name="src">
       <metrics statements="28" coveredstatements="14" conditionals="26" coveredconditionals="8" methods="7" coveredmethods="6"/>
       <file name="middleware.ts" path="/home/runner/work/passport-status/passport-status/src/middleware.ts">
@@ -50,7 +50,7 @@
       </file>
     </package>
     <package name="src.components">
-      <metrics statements="230" coveredstatements="187" conditionals="147" coveredconditionals="86" methods="65" coveredmethods="51"/>
+      <metrics statements="230" coveredstatements="187" conditionals="146" coveredconditionals="86" methods="65" coveredmethods="51"/>
       <file name="ActionButton.tsx" path="/home/runner/work/passport-status/passport-status/src/components/ActionButton.tsx">
         <metrics statements="9" coveredstatements="9" conditionals="6" coveredconditionals="4" methods="1" coveredmethods="1"/>
         <line num="18" count="6" type="stmt"/>
@@ -64,11 +64,11 @@
         <line num="61" count="6" type="stmt"/>
       </file>
       <file name="AlertBlock.tsx" path="/home/runner/work/passport-status/passport-status/src/components/AlertBlock.tsx">
-        <metrics statements="6" coveredstatements="4" conditionals="7" coveredconditionals="2" methods="2" coveredmethods="1"/>
+        <metrics statements="6" coveredstatements="4" conditionals="6" coveredconditionals="2" methods="2" coveredmethods="1"/>
         <line num="13" count="14" type="stmt"/>
         <line num="14" count="26" type="stmt"/>
         <line num="15" count="26" type="stmt"/>
-        <line num="17" count="26" type="cond" truecount="2" falsecount="3"/>
+        <line num="17" count="26" type="cond" truecount="2" falsecount="2"/>
         <line num="20" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="21" count="0" type="stmt"/>
       </file>
