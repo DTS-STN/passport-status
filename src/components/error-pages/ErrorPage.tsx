@@ -19,7 +19,7 @@ const ErrorPage = ({ statusCode }: ErrorPageProps) => {
         }
         titleTemplate="%s - Canada.ca"
       />
-      <h1 className="sr-only" lang="en">
+      <h1 id="main-header" className="sr-only" lang="en" tabIndex={-1}>
         {statusCode === 500 ? 'Internal Server Error' : 'Service Unavailable'}
       </h1>
       <span className="sr-only">

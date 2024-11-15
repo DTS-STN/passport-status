@@ -8,7 +8,7 @@ export const CheckStatusNoRecord = () => {
   return (
     <>
       <AlertBlock page="status-not-found" />
-      <h1 data-testid="no-record" className="h1" tabIndex={-1}>
+      <h1 id="main-header" data-testid="no-record" className="h1" tabIndex={-1}>
         {t('no-record.cannot-give-status.description')}
       </h1>
       <p>{t('no-record.cannot-give-status.because')}</p>

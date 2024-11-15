@@ -8,7 +8,12 @@ export const CheckStatusNotAcceptable = () => {
   return (
     <>
       <AlertBlock page="status-invalid" />
-      <h1 data-testid="not-acceptable" className="h1" tabIndex={-1}>
+      <h1
+        id="main-header"
+        data-testid="not-acceptable"
+        className="h1"
+        tabIndex={-1}
+      >
         {t('not-acceptable.cannot-process')}
       </h1>
       <p>{t('not-acceptable.explanation')}</p>

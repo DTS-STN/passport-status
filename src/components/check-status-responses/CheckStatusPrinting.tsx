@@ -7,7 +7,7 @@ export const CheckStatusPrinting = () => {
   return (
     <>
       <AlertBlock page="status-ready-pickup" />
-      <h1 data-testid="printing" className="h1" tabIndex={-1}>
+      <h1 id="main-header" data-testid="printing" className="h1" tabIndex={-1}>
         {t('printing.in-printing')}
       </h1>
       <p>{t('printing.reviewed-printing')}</p>

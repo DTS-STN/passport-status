@@ -21,7 +21,11 @@ describe('CheckStatusFileBeingProcessed', () => {
   //TODO: add test for when phone number is visible and when it isn't
   it('renders', () => {
     render(sut)
+    const heading = screen.getByRole('heading', { level: 1 })
+
     expect(screen.getByTestId('being-processed')).toBeInTheDocument()
+    expect(heading).toBeInTheDocument()
+    expect(heading).toHaveAttribute('id', 'main-header')
   })
 
   it('meets a11y', async () => {

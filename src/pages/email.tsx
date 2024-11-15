@@ -149,7 +149,7 @@ const Email = () => {
       {isEmailEsrfSuccess ? (
         <div id="response-result">
           <AlertBlock page="email" />
-          <h1 className="h1" tabIndex={-1}>
+          <h1 id="main-header" className="h1" tabIndex={-1}>
             {t('email-confirmation-msg.request-received.header')}
           </h1>
           <div className="max-w-prose">
@@ -212,7 +212,7 @@ const Email = () => {
       ) : (
         <div>
           <AlertBlock page="email" />
-          <h1 className="h1" tabIndex={-1}>
+          <h1 id="main-header" className="h1" tabIndex={-1}>
             {t('header')}
           </h1>
           <form onSubmit={handleFormikSubmit} id="form-email-esrf">

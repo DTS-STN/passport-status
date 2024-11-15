@@ -21,7 +21,12 @@ describe('CheckStatusNoRecord', () => {
   //TODO: add test for when phone number is visible and when it isn't
   it('renders', () => {
     render(sut)
+
+    const heading = screen.getByRole('heading', { level: 1 })
+
     expect(screen.getByTestId('no-record')).toBeInTheDocument()
+    expect(heading).toBeInTheDocument()
+    expect(heading).toHaveAttribute('id', 'main-header')
   })
 
   it('meets a11y', async () => {

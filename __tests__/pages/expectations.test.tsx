@@ -24,7 +24,11 @@ describe('expectations page', () => {
   it('should render the page', () => {
     render(<Expectations />)
     const button = screen.getByRole('button')
+    const heading = screen.getByRole('heading', { level: 1 })
+
     expect(button).toBeInTheDocument()
+    expect(heading).toBeInTheDocument()
+    expect(heading).toHaveAttribute('id', 'main-header')
   })
 
   it('should be accessable', async () => {

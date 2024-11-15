@@ -35,7 +35,9 @@ const Expectations = () => {
       />
       <Layout>
         <AlertBlock page="expectations" />
-        <h1 className="h1">{t('header')}</h1>
+        <h1 id="main-header" className="h1" tabIndex={-1}>
+          {t('header')}
+        </h1>
         <div className="max-w-prose">
           <p>
             <Trans i18nKey="thank-you" ns="expectations" />
