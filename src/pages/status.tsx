@@ -246,10 +246,7 @@ const Status = () => {
                   <Trans i18nKey="given-name.help-message" ns="status" />
                 }
                 extraContent={
-                  <Collapse
-                    title={t('given-name.title')}
-                    detailProps="text-base"
-                  >
+                  <Collapse title={t('given-name.title')} variant="slim">
                     <p className="mt-4 border-l-[6px] border-gray-400 pl-6 text-base text-gray-600">
                       <Trans i18nKey="one-name" ns="status" />
                     </p>

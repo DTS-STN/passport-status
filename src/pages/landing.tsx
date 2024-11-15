@@ -53,11 +53,7 @@ const Landing = () => {
           {t('where-to-find.applied-in-person.header')}
         </h3>
         <p>{t('where-to-find.applied-in-person.text')}</p>
-        <Collapse
-          title={t('receipt-image-1.title')}
-          detailProps="rounded border"
-          summaryProps="hover:underline focus:underline"
-        >
+        <Collapse title={t('receipt-image-1.title')}>
           <div className="mt-3 max-w-prose border-t p-3">
             <ExampleImage
               imageProps={{
@@ -85,11 +81,7 @@ const Landing = () => {
             </ul>
           </div>
         </Collapse>
-        <Collapse
-          title={t('receipt-image-2.title')}
-          detailProps="rounded border"
-          summaryProps="hover:underline focus:underline"
-        >
+        <Collapse title={t('receipt-image-2.title')}>
           <div className="mt-3 max-w-prose border-t p-3">
             <ExampleImage
               imageProps={{
@@ -138,11 +130,7 @@ const Landing = () => {
             </ul>
           </div>
         </Collapse>
-        <Collapse
-          title={t('receipt-image-3.title')}
-          detailProps="rounded border"
-          summaryProps="hover:underline focus:underline"
-        >
+        <Collapse title={t('receipt-image-3.title')}>
           <div className="mt-3 max-w-prose border-t p-3">
             <ExampleImage
               imageProps={{
