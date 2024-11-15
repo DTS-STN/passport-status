@@ -40,7 +40,7 @@ const ActionButton = ({
   type,
 }: ActionButtonProps) => {
   const baseClasses =
-    'align-middle border font-display inline-flex items-center justify-center shadow-sm disabled:cursor-not-allowed disabled:opacity-70 disabled:pointer-events-none disabled:shadow-none focus:ring-1 focus:ring-black focus:ring-offset-2'
+    'align-middle border font-display inline-flex items-center justify-center shadow-sm disabled:cursor-not-allowed disabled:opacity-70 disabled:pointer-events-none disabled:shadow-none focus:ring-2 focus:ring-black focus:ring-offset-2'
   const fullWidthClasses = fullWidth ? 'w-full' : undefined
   const sizeClasses = sizes[size ?? 'md']
   const styleClasses = styles[style ?? 'default']
