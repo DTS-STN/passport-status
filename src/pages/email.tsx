@@ -242,13 +242,12 @@ const Email = () => {
               value={formikValues.email}
               errorMessage={formikErrors.email && t(formikErrors.email as any)}
               textRequired={t('common:required')}
-              required={!!formikErrors.email}
+              required
               helpMessage={t('email.help-message')}
               extraContent={
                 <Collapse
                   title={t('email.for-child.title')}
                   detailProps="text-base"
-                  summaryProps="underline"
                 >
                   <p className="mt-4 border-l-[6px] border-gray-400 pl-6 text-base text-gray-600">
                     <Trans i18nKey="email.for-child.help-message" ns="email" />
@@ -266,16 +265,12 @@ const Email = () => {
                 formikErrors.givenName && t(formikErrors.givenName as any)
               }
               textRequired={t('common:required')}
-              required={!!formikErrors.givenName}
+              required
               helpMessage={
                 <Trans i18nKey="given-name.help-message" ns="email" />
               }
               extraContent={
-                <Collapse
-                  title={t('given-name.title')}
-                  detailProps="text-base"
-                  summaryProps="underline"
-                >
+                <Collapse title={t('given-name.title')} detailProps="text-base">
                   <p className="mt-4 border-l-[6px] border-gray-400 pl-6 text-base text-gray-600">
                     <Trans i18nKey="one-name" ns="email" />
                   </p>
@@ -292,7 +287,7 @@ const Email = () => {
                 formikErrors.surname && t(formikErrors.surname as any)
               }
               textRequired={t('common:required')}
-              required={!!formikErrors.surname}
+              required
               helpMessage={t('surname.help-message')}
             />
             <DateSelectField
@@ -304,7 +299,7 @@ const Email = () => {
                 formikErrors.dateOfBirth && t(formikErrors.dateOfBirth as any)
               }
               textRequired={t('common:required')}
-              required={!!formikErrors.dateOfBirth}
+              required
               helpMessage={t('date-of-birth.help-message')}
             />
             <div className="mt-8 flex flex-wrap gap-2">

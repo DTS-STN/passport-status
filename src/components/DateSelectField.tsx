@@ -7,8 +7,8 @@ import DateSelect, {
   DateSelectOnChangeEvent,
   DateSelectOption,
 } from './DateSelect'
+import FieldSetLegend from './FieldSetLegend'
 import InputErrorMessage from './InputErrorMessage'
-import InputLabel from './InputLabel'
 
 export type DateSelectFieldOnChangeEvent = (dateString: string) => void
 
@@ -166,14 +166,12 @@ const DateSelectField = ({
   return (
     <div className="mb-4" id={dateSelectWrapperId} data-testid={id}>
       <fieldset>
-        <legend>
-          <InputLabel
-            id={dateSelectLabelId}
-            required={required}
-            label={label}
-            textRequired={textRequired}
-          />
-        </legend>
+        <FieldSetLegend
+          id={dateSelectLabelId}
+          required={required}
+          label={label}
+          textRequired={textRequired}
+        />
         {errorMessage && (
           <InputErrorMessage
             id={dateSelectErrorMessageId}
