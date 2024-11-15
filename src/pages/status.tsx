@@ -189,7 +189,7 @@ const Status = () => {
       ) : (
         <>
           <AlertBlock page="status" />
-          <h1 className="h1" tabIndex={-1}>
+          <h1 id="main-header" className="h1" tabIndex={-1}>
             {t('header')}
           </h1>
           <form onSubmit={handleFormikSubmit} id="form-get-status">

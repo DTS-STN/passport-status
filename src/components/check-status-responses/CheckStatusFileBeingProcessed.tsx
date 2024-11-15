@@ -8,7 +8,12 @@ export const CheckStatusFileBeingProcessed = () => {
   return (
     <>
       <AlertBlock page="status-processing" />
-      <h1 data-testid="being-processed" className="h1" tabIndex={-1}>
+      <h1
+        id="main-header"
+        data-testid="being-processed"
+        className="h1"
+        tabIndex={-1}
+      >
         {t('being-processed.received')}
       </h1>
       <p>

@@ -41,6 +41,7 @@ describe('Check email page', () => {
     render(<Email />)
     const heading = screen.getByRole('heading', { level: 1 })
     expect(heading).toBeInTheDocument()
+    expect(heading).toHaveAttribute('id', 'main-header')
   })
 
   it('should be accessable', async () => {

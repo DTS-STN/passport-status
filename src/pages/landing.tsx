@@ -21,7 +21,9 @@ const Landing = () => {
         additionalMetaTags={[getDCTermsTitle(t('header'))]}
       />
       <AlertBlock page="landing" />
-      <h1 className="h1">{t('header')}</h1>
+      <h1 id="main-header" className="h1" tabIndex={-1}>
+        {t('header')}
+      </h1>
       <div className="max-w-prose">
         <p>
           <strong>{t('do-you-have.question')}</strong>

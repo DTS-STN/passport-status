@@ -8,7 +8,12 @@ export const CheckStatusReadyForPickup = () => {
   return (
     <>
       <AlertBlock page="status-ready-pickup" />
-      <h1 data-testid="ready-for-pickup" className="h1" tabIndex={-1}>
+      <h1
+        id="main-header"
+        data-testid="ready-for-pickup"
+        className="h1"
+        tabIndex={-1}
+      >
         {t('ready-for-pickup.has-been-printed')}
       </h1>
       <p>{t('ready-for-pickup.has-been-printed')}</p>

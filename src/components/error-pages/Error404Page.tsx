@@ -11,7 +11,7 @@ const Error404Page = () => {
         title="Not Found | Pas trouvé"
         titleTemplate="%s - Canada.ca"
       />
-      <h1 className="sr-only" lang="en">
+      <h1 id="main-header" className="sr-only" lang="en" tabIndex={-1}>
         Not Found
       </h1>
       <span className="sr-only">

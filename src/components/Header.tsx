@@ -32,7 +32,7 @@ const Header = ({ gocLink, skipToMainText }: HeaderProps) => {
         <a
           id="skipToMainContent"
           className="border border-blue-dark bg-blue-dark px-2 font-body font-bold text-white hover:bg-basic-darkgray focus:text-white focus:ring-2 focus:ring-inset focus:ring-orange-dark focus:ring-offset-2 "
-          href="#mainContent"
+          href="#main-header"
           draggable="false"
         >
           {skipToMainText}

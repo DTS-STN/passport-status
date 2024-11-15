@@ -15,7 +15,12 @@ export const CheckStatusShippingFedex = ({
   return (
     <>
       <AlertBlock page="status-shipped-fedex" />
-      <h1 data-testid="shipped-fedex" className="h1" tabIndex={-1}>
+      <h1
+        id="main-header"
+        data-testid="shipped-fedex"
+        className="h1"
+        tabIndex={-1}
+      >
         {t('shipped-fedex.header')}
       </h1>
       <p>{t('shipped-fedex.header')}.</p>

@@ -23,7 +23,7 @@ const Index = () => {
       >
         <div className="m-auto w-[300px] bg-gray-lighter md:w-[400px] lg:w-[500px]">
           <div className="p-8">
-            <h1 className="sr-only">
+            <h1 id="main-header" className="sr-only" tabIndex={-1}>
               Passport Application Status Checker | Vérificateur de l&#39;état
               d&#39;une demande de passeport
             </h1>

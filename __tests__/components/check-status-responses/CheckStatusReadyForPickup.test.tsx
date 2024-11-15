@@ -20,7 +20,12 @@ describe('CheckStatusReadyForPickup', () => {
 
   it('renders', () => {
     render(sut)
+
+    const heading = screen.getByRole('heading', { level: 1 })
+
     expect(screen.getByTestId('ready-for-pickup')).toBeInTheDocument()
+    expect(heading).toBeInTheDocument()
+    expect(heading).toHaveAttribute('id', 'main-header')
   })
 
   it('meets a11y', async () => {
