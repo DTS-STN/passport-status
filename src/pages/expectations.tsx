@@ -46,11 +46,7 @@ const Expectations = () => {
           <p>{t('not-liable')}</p>
           <h2 className="h2">{t('header-privacy')}</h2>
           <p>{t('privacy-description')}</p>
-          <Collapse
-            title={t('header-privacy')}
-            detailProps="rounded border"
-            summaryProps="hover:underline focus:underline"
-          >
+          <Collapse title={t('header-privacy')}>
             <p>
               <Trans i18nKey={'description-privacy.1'} ns="expectations" />
             </p>
