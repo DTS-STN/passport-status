@@ -33,8 +33,8 @@ const Expectations = () => {
         additionalMetaTags={[getDCTermsTitle(t('header'))]}
       />
       <Layout>
-        <h1 className="h1">{t('header')}</h1>
         <AlertBlock page="expectations" />
+        <h1 className="h1">{t('header')}</h1>
         <h2 className="h2">{t('header-avoid-waiting')}</h2>
         <p>{t('available-after.description')}</p>
         <ul className="mb-5 list-disc space-y-2 pl-10">

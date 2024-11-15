@@ -14,17 +14,19 @@ const AlertBlock = ({ page, className }: AlertBlockProps) => {
   const { data } = useAlerts({ page })
   const { i18n } = useTranslation()
 
-  return (
-    <div className={className}>
+  return data !== undefined && data !== null && data.length > 0 ? (
+    <div className={`${className} pt-4`}>
       {data?.map(({ textEn, textFr, type, uid }) => {
         const markdown = i18n.language === 'fr' ? textFr : textEn
         return (
-          <AlertSection key={uid} type={type} className="mb-4 mt-4">
+          <AlertSection key={uid} type={type} background>
             <MarkdownContent markdown={markdown} />
           </AlertSection>
         )
       })}
     </div>
+  ) : (
+    <></>
   )
 }
 

@@ -188,10 +188,10 @@ const Status = () => {
         />
       ) : (
         <>
+          <AlertBlock page="status" />
           <h1 className="h1" tabIndex={-1}>
             {t('header')}
           </h1>
-          <AlertBlock page="status" />
           <form onSubmit={handleFormikSubmit} id="form-get-status">
             <p className="max-w-prose">
               <Trans i18nKey="header-messages.matches" ns="status" />

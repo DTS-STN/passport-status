@@ -20,8 +20,8 @@ const Landing = () => {
         title={t('header')}
         additionalMetaTags={[getDCTermsTitle(t('header'))]}
       />
-      <h1 className="h1">{t('header')}</h1>
       <AlertBlock page="landing" />
+      <h1 className="h1">{t('header')}</h1>
       <p>{t('description')}</p>
       <div className="mb-4 flex flex-wrap gap-4 md:flex-nowrap">
         <div className="w-full lg:w-4/12 xl:w-3/12">

@@ -7,6 +7,7 @@ import { AlertType } from '../lib/types'
 export interface AlertSectionProps extends PropsWithChildren {
   type: AlertType
   className?: string
+  background?: boolean
 }
 
 const borderColors = {
@@ -17,18 +18,22 @@ const borderColors = {
 }
 
 const svgStyles = {
-  danger: '-translate-x-3 translate-y-10',
-  warning: '-translate-x-3 translate-y-10',
-  success: '-translate-x-3 translate-y-10',
-  info: '-translate-x-3 translate-y-10',
+  danger: '-translate-x-3 translate-y-3',
+  warning: '-translate-x-3 translate-y-3',
+  success: '-translate-x-3 translate-y-3',
+  info: '-translate-x-3 translate-y-3',
 }
 
-const SVG = (type: AlertType, lang: string) => {
+const SVG = (
+  type: AlertType,
+  lang: string,
+  background: boolean | undefined,
+) => {
   switch (type) {
     case 'danger': {
       return (
         <svg
-          className="h-8 w-8 bg-white fill-accent-error p-1"
+          className={`${background ? 'bg-slate-100' : 'bg-white'} h-8 w-8 fill-accent-error p-1`}
           viewBox="0 0 100 100"
           xmlns="http://www.w3.org/2000/svg"
           role="img"
@@ -41,7 +46,7 @@ const SVG = (type: AlertType, lang: string) => {
     case 'success': {
       return (
         <svg
-          className="h-8 w-8 bg-white fill-accent-success p-1"
+          className={`${background ? 'bg-slate-100' : 'bg-white'} h-8 w-8 fill-accent-success p-1`}
           viewBox="0 0 512 512"
           xmlns="http://www.w3.org/2000/svg"
           role="img"
@@ -54,7 +59,7 @@ const SVG = (type: AlertType, lang: string) => {
     case 'warning': {
       return (
         <svg
-          className="h-8 w-8 bg-white fill-accent-warning p-1"
+          className={`${background ? 'bg-slate-100' : 'bg-white'} h-8 w-8 fill-accent-warning p-1`}
           viewBox="0 0 24 24"
           xmlns="http://www.w3.org/2000/svg"
           role="img"
@@ -69,7 +74,7 @@ const SVG = (type: AlertType, lang: string) => {
     case 'info': {
       return (
         <svg
-          className="h-8 w-8 bg-white fill-accent-info p-1"
+          className={`${background ? 'bg-slate-100' : 'bg-white'} h-8 w-8 fill-accent-info p-1`}
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 512 512"
           role="img"
@@ -82,18 +87,25 @@ const SVG = (type: AlertType, lang: string) => {
   }
 }
 
-const AlertSection = ({ children, type, className }: AlertSectionProps) => {
+const AlertSection = ({
+  children,
+  type,
+  className,
+  background,
+}: AlertSectionProps) => {
   const { i18n } = useTranslation()
 
   const borderColor = borderColors[type]
 
   return (
-    <div className={`${className} pl-2`}>
-      <div className={`${svgStyles[type]} -mt-8 w-8`}>
-        {SVG(type, i18n.language)}
+    <div
+      className={`${className} pl-4 ${background ? 'bg-slate-100' : 'bg-white'}`}
+    >
+      <div className={`${svgStyles[type]} w-8 bg-transparent`}>
+        {SVG(type, i18n.language, background)}
       </div>
-      <section className={`border-l-8 pb-0.5 pt-2 ${borderColor}`}>
-        <div className="mb-2 ml-4">{children}</div>
+      <section className={`-mt-8 border-l-8 pb-0.5 pt-2 ${borderColor}`}>
+        <div className="ml-4">{children}</div>
       </section>
     </div>
   )
