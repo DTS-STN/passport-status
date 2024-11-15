@@ -218,7 +218,7 @@ const Status = () => {
                 value={formikValues.esrf}
                 errorMessage={formikErrors.esrf && t(formikErrors.esrf as any)}
                 textRequired={t('common:required')}
-                required={!!formikErrors.esrf}
+                required
                 helpMessage={
                   <Trans
                     i18nKey="esrf.help-message"
@@ -241,7 +241,7 @@ const Status = () => {
                   formikErrors.givenName && t(formikErrors.givenName as any)
                 }
                 textRequired={t('common:required')}
-                required={!!formikErrors.givenName}
+                required
                 helpMessage={
                   <Trans i18nKey="given-name.help-message" ns="status" />
                 }
@@ -249,7 +249,6 @@ const Status = () => {
                   <Collapse
                     title={t('given-name.title')}
                     detailProps="text-base"
-                    summaryProps="underline"
                   >
                     <p className="mt-4 border-l-[6px] border-gray-400 pl-6 text-base text-gray-600">
                       <Trans i18nKey="one-name" ns="status" />
@@ -269,7 +268,7 @@ const Status = () => {
                   formikErrors.surname && t(formikErrors.surname as any)
                 }
                 textRequired={t('common:required')}
-                required={!!formikErrors.surname}
+                required
                 helpMessage={t('surname.help-message')}
               />
             </div>
@@ -283,7 +282,7 @@ const Status = () => {
                   formikErrors.dateOfBirth && t(formikErrors.dateOfBirth as any)
                 }
                 textRequired={t('common:required')}
-                required={!!formikErrors.dateOfBirth}
+                required
                 helpMessage={t('date-of-birth.help-message')}
               />
             </div>
