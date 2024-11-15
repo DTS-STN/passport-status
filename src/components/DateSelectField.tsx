@@ -9,7 +9,6 @@ import DateSelect, {
 } from './DateSelect'
 import FieldSetLegend from './FieldSetLegend'
 import InputErrorMessage from './InputErrorMessage'
-import InputLabel from './InputLabel'
 
 export type DateSelectFieldOnChangeEvent = (dateString: string) => void
 
