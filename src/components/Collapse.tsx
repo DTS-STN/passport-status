@@ -2,7 +2,7 @@ import { useId } from 'react'
 
 const variants = {
   slim: 'text-base',
-  default: 'rounded border',
+  default: '',
 }
 export interface CollapseProps {
   title: string
@@ -15,7 +15,7 @@ const Collapse = ({ title, children, variant = 'default' }: CollapseProps) => {
   return (
     <details
       aria-describedby={`${id}-details-summary`}
-      className={`mb-3 max-w-prose p-3 ${variants[variant]}`}
+      className={`mb-3 max-w-prose rounded border p-3 ${variants[variant]}`}
     >
       <summary
         id={`${id}-details-summary`}
