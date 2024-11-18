@@ -25,14 +25,14 @@
     "dont-receive": "If you haven't received the email with your reference number:",
     "dont-receive-list": {
       "item-1": "check your junk folder",
-      "item-2": "try again tomorrow—we update our records daily"
+      "item-2": "if you think you may have entered different information than what was on your passport application, try again by clicking the button below"
     },
     "if-exists": "Your request has been received. If we can find the file with the information you gave us, <strong>we'll email you the file number or reference number</strong>. If you don't receive the email in your inbox, check your junk folder.",
     "may-take": "It can take 5-10 business days for your application to appear in our system. Try again tomorrow - we update our system daily.",
-    "please-contact": "If you still don't receive the email, please <Link>contact us</Link>.",
+    "please-contact": "Still haven't received the email with your reference number? <Link>Contact us</Link>.",
     "request-received": {
       "header": "We received your request",
-      "will-email": "We received your request for a reference number. If the information you provided matches our records, <strong>we’ll email you</strong> within 30 minutes.",
+      "will-email": "We received your request for a reference number. If the information you provided matches our records, <strong>we'll email you</strong> within 30 minutes.",
       "once-received": "Once you receive the email, please continue by clicking the button below."
     }
   },

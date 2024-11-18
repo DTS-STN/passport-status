@@ -28,8 +28,8 @@
       "item-2": "si vous pensez avoir saisi des renseignements différents de ceux figurant sur votre demande de passeport, essayez à nouveau en cliquant sur le bouton ci-dessous"
     },
     "if-exists": "Votre demande a été reçue. Si nous pouvons trouver le dossier avec les renseignements que vous nous avez fournis, <strong>nous vous enverrons le numéro de dossier ou le numéro de référence par courriel</strong>. Si vous ne recevez pas le message de confirmation dans votre boîte de réception, vérifiez votre dossier de courriel indésirable.",
-    "may-take": "Il peut falloir 5 à 10 jours ouvrables pour que votre demande apparaisse dans notre système. Réessayez demain, car nous mettons à jour notre système quotidiennement.",
-    "please-contact": "Si vous ne recevez toujours pas le courriel, <Link>contactez-nous</Link>.",
+    "may-take": "Il peut falloir 5 à 10 jours ouvrables pour que votre demande apparaisse dans notre système. Réessayez demain, car nous mettons à jour notre système quotidiennement.",
+    "please-contact": "Vous n'avez toujours pas reçu le courriel avec votre numéro de référence? <Link>Contactez-nous</Link>.",
     "request-received": {
       "header": "Nous avons reçu votre demande",
       "will-email": "Nous avons reçu votre demande de numéro de référence. Si les renseignements que vous avez fournis correspondent à nos dossiers, <strong>nous vous enverrons un courriel</strong> dans les 30 minutes.",
