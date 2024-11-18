@@ -39,7 +39,7 @@
   "email-esrf": "Email me the reference number",
   "enter-reference-number": "Enter my reference number",
   "given-name": {
-    "title": "If the applicant has a single legal name.",
+    "title": "If the applicant has a single legal name",
     "error": {
       "required": "The given name(s) is required."
     },
