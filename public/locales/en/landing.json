@@ -2,7 +2,7 @@
   "do-you-have": {
     "question": "Do you have a passport application reference number?",
     "with-reference": "Yes, I have my reference number",
-    "without-reference": "No, I don’t have my reference number"
+    "without-reference": "No, I don't have my reference number"
   },
   "header": "Reference number",
   "receipt-1-will-find": {
