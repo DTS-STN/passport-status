@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1731936760028" clover="3.2.0">
-  <project timestamp="1731936760028" name="All files">
-    <metrics statements="551" coveredstatements="358" conditionals="339" coveredconditionals="155" methods="155" coveredmethods="87" elements="1045" coveredelements="600" complexity="0" loc="551" ncloc="551" packages="11" files="61" classes="61"/>
+<coverage generated="1731937271066" clover="3.2.0">
+  <project timestamp="1731937271066" name="All files">
+    <metrics statements="551" coveredstatements="358" conditionals="337" coveredconditionals="153" methods="155" coveredmethods="87" elements="1043" coveredelements="598" complexity="0" loc="551" ncloc="551" packages="11" files="61" classes="61"/>
     <package name="src">
       <metrics statements="28" coveredstatements="14" conditionals="26" coveredconditionals="8" methods="7" coveredmethods="6"/>
       <file name="middleware.ts" path="/home/runner/work/passport-status/passport-status/src/middleware.ts">
@@ -50,7 +50,7 @@
       </file>
     </package>
     <package name="src.components">
-      <metrics statements="233" coveredstatements="190" conditionals="149" coveredconditionals="91" methods="66" coveredmethods="52"/>
+      <metrics statements="233" coveredstatements="190" conditionals="147" coveredconditionals="89" methods="66" coveredmethods="52"/>
       <file name="ActionButton.tsx" path="/home/runner/work/passport-status/passport-status/src/components/ActionButton.tsx">
         <metrics statements="9" coveredstatements="9" conditionals="6" coveredconditionals="4" methods="1" coveredmethods="1"/>
         <line num="18" count="6" type="stmt"/>
@@ -245,7 +245,7 @@
         <line num="24" count="2" type="stmt"/>
       </file>
       <file name="FieldSetLegend.tsx" path="/home/runner/work/passport-status/passport-status/src/components/FieldSetLegend.tsx">
-        <metrics statements="2" coveredstatements="2" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
+        <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
         <line num="9" count="3" type="stmt"/>
         <line num="15" count="8" type="stmt"/>
       </file>
