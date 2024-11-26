@@ -51,7 +51,7 @@
   "modal-go-back": {
     "back-button": "Retour",
     "description": "Êtes-vous sûr de vouloir revenir en arrière?",
-    "header": "Retournez à la page d'accueil",
+    "header": "Retourner à la page de numéro de référence",
     "no-button": "Non",
     "yes-button": "Oui"
   },
