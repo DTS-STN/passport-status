@@ -24,7 +24,7 @@
   },
   "esrf": {
     "error": {
-      "required": "The file number is required."
+      "required": "The reference number is required."
     },
     "help-message": "If you can't find the file number or reference number, you can <Link>request to receive it</Link>.",
     "label": "Reference number"
