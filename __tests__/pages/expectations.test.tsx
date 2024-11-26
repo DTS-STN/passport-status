@@ -31,7 +31,7 @@ describe('expectations page', () => {
     expect(heading).toHaveAttribute('id', 'main-header')
   })
 
-  it('should be accessable', async () => {
+  it('should be accessible', async () => {
     const { container } = render(<Expectations />)
     const results = await axe(container)
     expect(results).toHaveNoViolations()
