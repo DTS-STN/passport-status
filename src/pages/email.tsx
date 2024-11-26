@@ -310,7 +310,7 @@ const Email = () => {
               <ActionButton
                 id="btn-cancel"
                 disabled={isEmailEsrfPending}
-                text={t('common:modal-go-back.cancel-button')}
+                text={t('common:modal-go-back.back-button')}
                 onClick={handleOnCancelClick}
               />
             </div>

@@ -29,7 +29,7 @@ describe('landing page', () => {
     expect(heading).toHaveAttribute('id', 'main-header')
   })
 
-  it('should be accessable', async () => {
+  it('should be accessible', async () => {
     const { container } = render(<Landing />)
     const results = await axe(container)
     expect(results).toHaveNoViolations()

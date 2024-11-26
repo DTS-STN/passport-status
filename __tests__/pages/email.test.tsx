@@ -44,7 +44,7 @@ describe('Check email page', () => {
     expect(heading).toHaveAttribute('id', 'main-header')
   })
 
-  it('should be accessable', async () => {
+  it('should be accessible', async () => {
     const { container } = render(<Email />)
     const results = await axe(container)
     expect(results).toHaveNoViolations()

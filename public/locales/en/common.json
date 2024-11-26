@@ -49,7 +49,7 @@
     "skip-to-main": "Skip to main content"
   },
   "modal-go-back": {
-    "cancel-button": "Cancel",
+    "back-button": "Back",
     "description": "Are you sure you want to go back?",
     "header": "Return to the home page",
     "no-button": "No",
