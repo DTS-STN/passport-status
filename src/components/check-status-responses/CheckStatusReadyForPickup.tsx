@@ -25,7 +25,7 @@ export const CheckStatusReadyForPickup = () => {
       </AlertSection>
       <p>{t('ready-for-pickup.not-available')}</p>
       <AlertSection type="info">
-        <h2 className="h3 mb-3">{t('ready-for-pickup.date-passed')}</h2>
+        <h2 className="h3 mb-2">{t('ready-for-pickup.date-passed')}</h2>
       </AlertSection>
     </>
   )

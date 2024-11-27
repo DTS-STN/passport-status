@@ -62,10 +62,10 @@ export const CheckStatusShippingCanadaPost = ({
           </>
         )}
       </AlertSection>
-      <h2 className="h3 mb-3 mt-6">
+      <h2 className="h3 mb-2 mt-6">
         {t('shipped-canada-post.supporting-documents')}
       </h2>
-      <p className="mt-6">
+      <p>
         <Trans
           i18nKey="status-check-call"
           ns="status"
