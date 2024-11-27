@@ -33,7 +33,11 @@ import InputField from '../components/InputField'
 import Layout from '../components/Layout'
 import Modal from '../components/Modal'
 import { removeCheckStatus } from '../lib/removeCheckStatus'
-import { CheckStatusApiRequestQuery } from '../lib/types'
+import {
+  CheckStatusApiRequestQuery,
+  CheckStatusApiResponse,
+  StatusCode,
+} from '../lib/types'
 import { useCheckStatus } from '../lib/useCheckStatus'
 import { pageWithServerSideTranslations } from '../lib/utils/next-i18next-utils'
 import { getDCTermsTitle } from '../lib/utils/seo-utils'
@@ -164,13 +168,35 @@ const Status = () => {
     router.push('/landing')
   }, [router])
 
+  function getTitleHeader(
+    checkStatusResponse: CheckStatusApiResponse | null | undefined,
+  ): string {
+    if (checkStatusResponse === undefined) return t('header')
+    switch (checkStatusResponse?.status) {
+      case StatusCode.FILE_BEING_PROCESSED:
+        return t('being-processed.received')
+      case StatusCode.PASSPORT_ISSUED_READY_FOR_PICKUP:
+        return t('ready-for-pickup.has-been-printed')
+      case StatusCode.PASSPORT_IS_PRINTING:
+        return t('printing.in-printing')
+      case StatusCode.PASSPORT_ISSUED_SHIPPING_CANADA_POST:
+        return t('shipped-canada-post.header')
+      case StatusCode.PASSPORT_ISSUED_SHIPPING_FEDEX:
+        return t('shipped-fedex.header')
+      case StatusCode.NOT_ACCEPTABLE_FOR_PROCESSING:
+        return t('not-acceptable.cannot-process')
+      default:
+        return t('no-record.cannot-give-status.description')
+    }
+  }
+
   //if the api failed, fail hard to show error page
   if (checkStatusError) throw checkStatusError
 
   return (
     <Layout>
       <NextSeo
-        title={t('header')}
+        title={getTitleHeader(checkStatusResponse)}
         additionalMetaTags={[getDCTermsTitle(t('header'))]}
       />
       <IdleTimeout />
