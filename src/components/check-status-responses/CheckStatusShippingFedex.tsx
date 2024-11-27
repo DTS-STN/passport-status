@@ -58,7 +58,9 @@ export const CheckStatusShippingFedex = ({
           <p>{t('shipped-fedex.take-up-to')}</p>
         )}
       </AlertSection>
-      <p className="h3 mt-6">{t('shipped-fedex.supporting-documents')}</p>
+      <h2 className="h3 mb-3 mt-6">
+        {t('shipped-fedex.supporting-documents')}
+      </h2>
       <p className="mt-6">
         <Trans
           i18nKey="shipped-fedex.contact-us"
