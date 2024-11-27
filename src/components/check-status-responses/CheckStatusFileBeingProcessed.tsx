@@ -45,7 +45,7 @@ export const CheckStatusFileBeingProcessed = () => {
         />
       </p>
       <p>{t('being-processed.incomplete')}</p>
-      <p className="h3">{t('being-processed.need-faster')}</p>
+      <h2 className="h3 mb-3">{t('being-processed.need-faster')}</h2>
       <p>
         <Trans
           i18nKey={'being-processed.get-urgent'}
@@ -59,7 +59,7 @@ export const CheckStatusFileBeingProcessed = () => {
           }}
         />
       </p>
-      <p className="h3">{t('being-processed.dont-meet-standards')}</p>
+      <h2 className="h3 mb-3">{t('being-processed.dont-meet-standards')}</h2>
       <p>
         <Trans
           i18nKey={'being-processed.may-be-eligible'}

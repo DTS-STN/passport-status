@@ -36,7 +36,7 @@ export const CheckStatusNoRecord = () => {
           }}
         />
       </p>
-      <p className="h3">{t('no-record.need-faster')}</p>
+      <h2 className="h3 mb-3">{t('no-record.need-faster')}</h2>
       <p>
         <Trans
           i18nKey={'no-record.get-urgent'}
