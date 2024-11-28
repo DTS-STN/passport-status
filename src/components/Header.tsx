@@ -31,7 +31,7 @@ const Header = ({ gocLink, skipToMainText }: HeaderProps) => {
       >
         <a
           id="skipToMainContent"
-          className="border border-blue-dark bg-blue-dark px-2 font-body font-bold text-white hover:bg-basic-darkgray focus:text-white focus:ring-2 focus:ring-inset focus:ring-orange-dark focus:ring-offset-2 "
+          className="border border-blue-dark bg-blue-dark px-2 font-body font-bold text-white hover:bg-basic-darkgray focus:text-white focus:ring-2 focus:ring-inset focus:ring-orange-dark focus:ring-offset-2"
           href="#main-header"
           draggable="false"
         >
@@ -63,6 +63,14 @@ const Header = ({ gocLink, skipToMainText }: HeaderProps) => {
                 priority
               />
             </a>
+            <span className="sr-only">
+              /{' '}
+              <span lang={locale === 'en' ? 'fr' : 'en'}>
+                {locale === 'en'
+                  ? 'Gouvernement du Canada'
+                  : 'Government of Canada'}
+              </span>
+            </span>
 
             {/* Language selector for small screens */}
             <Link
