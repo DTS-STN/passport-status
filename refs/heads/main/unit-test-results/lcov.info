@@ -612,8 +612,12 @@ BRDA:56,4,0,2
 BRDA:56,4,1,1
 BRDA:60,5,0,2
 BRDA:60,5,1,1
-BRF:12
-BRH:12
+BRDA:68,6,0,2
+BRDA:68,6,1,1
+BRDA:69,7,0,2
+BRDA:69,7,1,1
+BRF:16
+BRH:16
 end_of_record
 TN:
 SF:src/components/IdleTimeout.tsx

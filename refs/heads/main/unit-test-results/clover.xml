@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1732736228597" clover="3.2.0">
-  <project timestamp="1732736228597" name="All files">
-    <metrics statements="560" coveredstatements="359" conditionals="346" coveredconditionals="154" methods="156" coveredmethods="88" elements="1062" coveredelements="601" complexity="0" loc="560" ncloc="560" packages="11" files="61" classes="61"/>
+<coverage generated="1732804391577" clover="3.2.0">
+  <project timestamp="1732804391577" name="All files">
+    <metrics statements="560" coveredstatements="359" conditionals="350" coveredconditionals="158" methods="156" coveredmethods="88" elements="1066" coveredelements="605" complexity="0" loc="560" ncloc="560" packages="11" files="61" classes="61"/>
     <package name="src">
       <metrics statements="28" coveredstatements="14" conditionals="26" coveredconditionals="8" methods="7" coveredmethods="6"/>
       <file name="middleware.ts" path="/home/runner/work/passport-status/passport-status/src/middleware.ts">
@@ -50,7 +50,7 @@
       </file>
     </package>
     <package name="src.components">
-      <metrics statements="233" coveredstatements="190" conditionals="147" coveredconditionals="89" methods="66" coveredmethods="52"/>
+      <metrics statements="233" coveredstatements="190" conditionals="151" coveredconditionals="93" methods="66" coveredmethods="52"/>
       <file name="ActionButton.tsx" path="/home/runner/work/passport-status/passport-status/src/components/ActionButton.tsx">
         <metrics statements="9" coveredstatements="9" conditionals="6" coveredconditionals="4" methods="1" coveredmethods="1"/>
         <line num="18" count="6" type="stmt"/>
@@ -256,7 +256,7 @@
         <line num="64" count="5" type="stmt"/>
       </file>
       <file name="Header.tsx" path="/home/runner/work/passport-status/passport-status/src/components/Header.tsx">
-        <metrics statements="9" coveredstatements="9" conditionals="12" coveredconditionals="12" methods="1" coveredmethods="1"/>
+        <metrics statements="9" coveredstatements="9" conditionals="16" coveredconditionals="16" methods="1" coveredmethods="1"/>
         <line num="15" count="2" type="stmt"/>
         <line num="16" count="3" type="stmt"/>
         <line num="17" count="3" type="stmt"/>
