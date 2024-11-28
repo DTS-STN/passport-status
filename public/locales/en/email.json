@@ -48,7 +48,7 @@
   },
   "header": "Get your reference number",
   "header-messages": {
-    "matches": "<strong>Make sure the information you enter here matches your passport application.</strong>",
+    "matches": "<strong>Make sure the information you enter matches your passport application.</strong>",
     "required": "<em>All fields are required.</em>"
   },
   "one-name": "Applicants with <strong>only one name</strong> (single or multiple names entered all in one field) must call us at 1‑800‑567‑6868 to get the status of their application.",

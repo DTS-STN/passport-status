@@ -39,7 +39,7 @@
   },
   "header": "Obtenir l'état de votre demande de passeport",
   "header-messages": {
-    "matches": "<strong>Assurez-vous que les informations que vous indiquez ici correspondent à votre demande de passeport.</strong>",
+    "matches": "<strong>Assurez-vous que les informations que vous indiquez correspondent à votre demande de passeport.</strong>",
     "required": "<em>Tous les champs sont obligatoires.</em>"
   },
   "no-record": {
