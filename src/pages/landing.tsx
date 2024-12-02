@@ -65,20 +65,6 @@ const Landing = () => {
             >
               <Trans i18nKey="receipt-image-1.descriptive-text" ns="landing" />
             </ExampleImage>
-            <p>{t('receipt-1-will-find.text')}</p>
-            <ul className="mb-5 list-disc pl-10">
-              <li>{t('receipt-1-will-find.list.item-1')}</li>
-              <li>{t('receipt-1-will-find.list.item-2')}</li>
-              <li>{t('receipt-1-will-find.list.item-3')}</li>
-              <li>{t('receipt-1-will-find.list.item-4')}</li>
-              <li>{t('receipt-1-will-find.list.item-5')}</li>
-              <li>{t('receipt-1-will-find.list.item-6')}</li>
-              <li>{t('receipt-1-will-find.list.item-7')}</li>
-              <li>{t('receipt-1-will-find.list.item-8')}</li>
-              <li>{t('receipt-1-will-find.list.item-9')}</li>
-              <li>{t('receipt-1-will-find.list.item-10')}</li>
-              <li>{t('receipt-1-will-find.list.item-11')}</li>
-            </ul>
           </div>
         </Collapse>
         <Collapse title={t('receipt-image-2.title')}>
@@ -93,41 +79,6 @@ const Landing = () => {
             >
               <Trans i18nKey="receipt-image-2.descriptive-text" ns="landing" />
             </ExampleImage>
-            <p>{t('receipt-2-will-find.text')}</p>
-            <ul className="mb-5 list-disc pl-10">
-              <li>{t('receipt-2-will-find.list.item-1')}</li>
-              <li>{t('receipt-2-will-find.list.item-2')}</li>
-              <li>{t('receipt-2-will-find.list.item-3')}</li>
-              <li>{t('receipt-2-will-find.list.item-4')}</li>
-              <li>{t('receipt-2-will-find.list.item-5')}</li>
-              <li>{t('receipt-2-will-find.list.item-6')}</li>
-              <li>{t('receipt-2-will-find.list.item-7')}</li>
-              <li>{t('receipt-2-will-find.list.item-8')}</li>
-              <li>{t('receipt-2-will-find.list.item-9')}</li>
-              <li>{t('receipt-2-will-find.list.item-10')}</li>
-              <li>{t('receipt-2-will-find.list.item-11')}</li>
-              <li>{t('receipt-2-will-find.list.item-12')}</li>
-            </ul>
-            <p>{t('receipt-2-pickup-instructions.text')}</p>
-            <ul className="mb-5 list-disc pl-10">
-              <li>{t('receipt-2-pickup-instructions.list.item-1')}</li>
-              <li>
-                {t('receipt-2-pickup-instructions.list.item-2.text')}
-                <ul className="list-disc pl-10">
-                  <li>
-                    <Trans
-                      i18nKey="receipt-2-pickup-instructions.list.item-2.list.item-1"
-                      ns="landing"
-                    />
-                  </li>
-                  <li>
-                    {t('receipt-2-pickup-instructions.list.item-2.list.item-2')}
-                  </li>
-                </ul>
-              </li>
-              <li>{t('receipt-2-pickup-instructions.list.item-3')}</li>
-              <li>{t('receipt-2-pickup-instructions.list.item-4')}</li>
-            </ul>
           </div>
         </Collapse>
         <Collapse title={t('receipt-image-3.title')}>
@@ -142,31 +93,6 @@ const Landing = () => {
             >
               <Trans i18nKey="receipt-image-3.descriptive-text" ns="landing" />
             </ExampleImage>
-            <p>{t('receipt-3-will-find.text')}</p>
-            <ul className="mb-5 list-disc pl-10">
-              <li>{t('receipt-3-will-find.list.item-1')}</li>
-              <li>{t('receipt-3-will-find.list.item-2')}</li>
-              <li>{t('receipt-3-will-find.list.item-3')}</li>
-              <li>{t('receipt-3-will-find.list.item-4')}</li>
-              <li>{t('receipt-3-will-find.list.item-5')}</li>
-              <li>{t('receipt-3-will-find.list.item-6')}</li>
-              <li>{t('receipt-3-will-find.list.item-7')}</li>
-              <li>{t('receipt-3-will-find.list.item-8')}</li>
-              <li>{t('receipt-3-will-find.list.item-9')}</li>
-              <li>{t('receipt-3-will-find.list.item-10')}</li>
-              <li>{t('receipt-3-will-find.list.item-11')}</li>
-              <li>{t('receipt-3-will-find.list.item-12')}</li>
-              <li>{t('receipt-3-will-find.list.item-13')}</li>
-              <li>{t('receipt-3-will-find.list.item-14')}</li>
-              <li>{t('receipt-3-will-find.list.item-15')}</li>
-            </ul>
-            <p>{t('receipt-3-next-steps.text')}</p>
-            <ul className="mb-5 list-disc pl-10">
-              <li>{t('receipt-3-next-steps.list.item-1')}</li>
-              <li>{t('receipt-3-next-steps.list.item-2')}</li>
-              <li>{t('receipt-3-next-steps.list.item-3')}</li>
-              <li>{t('receipt-3-next-steps.list.item-4')}</li>
-            </ul>
           </div>
         </Collapse>
         <h3 className="h3 mb-2 mt-8">{t('if-lost.header')}</h3>
