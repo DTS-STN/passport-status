@@ -85,9 +85,15 @@
     "take-up-to": "Cela peut prendre jusqu'à 2 à 3 jours ouvrables pour arriver."
   },
   "shipped-fedex": {
-    "contact-us": "Si vous ne recevez pas votre passeport et vos documents, <Link>veuillez nous contacter</Link>.",
     "header": "Votre passeport a été imprimé et envoyé par la poste",
-    "mailing": "Nous vous l'envoyons par FedEx",
+    "country-canada": {
+      "header": "Informations pour les clients dont le passeport est envoyé par la poste au Canada",
+      "mailing": "Nous vous l'envoyons par Purolator"
+    },
+    "country-us": {
+      "header": "Informations pour les clients dont le passeport est envoyé aux États-Unis",
+      "mailing": "Nous vous l'envoyons par FedEx"
+    },
     "supporting-documents": "Vous recevrez le passeport et les documents justificatifs dans la même enveloppe.",
     "take-up-to": "Cela peut prendre jusqu'à 5 à 7 jours ouvrables pour arriver."
   },
@@ -98,7 +104,8 @@
     "can-track": "Vous pouvez <Link>suivre en ligne la livraison de votre colis</Link>.",
     "link": {
       "canada-post": "https://www.canadapost-postescanada.ca/track-reperage/fr#/details/{{trackingNumber}}",
-      "fedex": "https://www.fedex.com/fedextrack/?action=track&cntry_code=ca&locale=fr_ca&trackingnumber={{trackingNumber}}"
+      "fedex": "https://www.fedex.com/fedextrack/?action=track&cntry_code=ca&locale=fr_ca&trackingnumber={{trackingNumber}}",
+      "purolator": "https://www.purolator.com/fr/expedition/faire-le-suivi-dun-envoi?pin={{trackingNumber}}"
     },
     "number": "Votre numéro de repérage est <strong>{{trackingNumber}}</strong>."
   },

@@ -24,10 +24,46 @@ export const CheckStatusShippingFedex = ({
         {t('shipped-fedex.header')}
       </h1>
       <p>{t('shipped-fedex.header')}.</p>
+      <h2 className="h2">{t('shipped-fedex.country-canada.header')}</h2>
       <AlertSection type="success">
-        <h2 data-testid="shipped-fedex-mailing" className="h2 mt-0">
-          {t('shipped-fedex.mailing')}
-        </h2>
+        <h3 data-testid="shipped-purolator-mailing" className="h2 mt-0">
+          {t('shipped-fedex.country-canada.mailing')}
+        </h3>
+        {trackingNumber ? (
+          <>
+            <p>
+              <Trans
+                i18nKey="status-check-tracking.number"
+                ns="status"
+                tOptions={{ trackingNumber }}
+              />
+            </p>
+            <p>
+              <Trans
+                i18nKey={'status-check-tracking.can-track'}
+                ns="status"
+                components={{
+                  Link: (
+                    <ExternalLink
+                      data-gc-analytics-exempt={true}
+                      href={t('status-check-tracking.link.purolator', {
+                        trackingNumber: encodeURIComponent(trackingNumber),
+                      })}
+                    />
+                  ),
+                }}
+              />
+            </p>
+          </>
+        ) : (
+          <p>{t('shipped-fedex.take-up-to')}</p>
+        )}
+      </AlertSection>
+      <h2 className="h2">{t('shipped-fedex.country-us.header')}</h2>
+      <AlertSection type="success">
+        <h3 data-testid="shipped-fedex-mailing" className="h2 mt-0">
+          {t('shipped-fedex.country-us.mailing')}
+        </h3>
         {trackingNumber ? (
           <>
             <p>
@@ -60,15 +96,6 @@ export const CheckStatusShippingFedex = ({
       </AlertSection>
       <p className="h3 mb-2 mt-6">
         <strong>{t('shipped-fedex.supporting-documents')}</strong>
-      </p>
-      <p>
-        <Trans
-          i18nKey="shipped-fedex.contact-us"
-          ns="status"
-          components={{
-            Link: <ExternalLink href={t('common:contact-us-link')} />,
-          }}
-        />
       </p>
     </>
   )
