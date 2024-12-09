@@ -167,7 +167,19 @@
 <a name='L102'></a><a href='#L102'>102</a>
 <a name='L103'></a><a href='#L103'>103</a>
 <a name='L104'></a><a href='#L104'>104</a>
-<a name='L105'></a><a href='#L105'>105</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L105'></a><a href='#L105'>105</a>
+<a name='L106'></a><a href='#L106'>106</a>
+<a name='L107'></a><a href='#L107'>107</a>
+<a name='L108'></a><a href='#L108'>108</a>
+<a name='L109'></a><a href='#L109'>109</a>
+<a name='L110'></a><a href='#L110'>110</a>
+<a name='L111'></a><a href='#L111'>111</a>
+<a name='L112'></a><a href='#L112'>112</a>
+<a name='L113'></a><a href='#L113'>113</a>
+<a name='L114'></a><a href='#L114'>114</a>
+<a name='L115'></a><a href='#L115'>115</a>
+<a name='L116'></a><a href='#L116'>116</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -271,10 +283,21 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Trans, useTranslation } from 'next-i18next'
 &nbsp;
 import AlertBlock from '../AlertBlock'
 import AlertSection from '../AlertSection'
+import Collapse from '../Collapse'
 import ExternalLink from '../ExternalLink'
 &nbsp;
 export interface CheckStatusShippingFedexProps {
@@ -297,76 +320,86 @@ export const CheckStatusShippingFedex = ({
         {t('shipped-fedex.header')}
       &lt;/h1&gt;
       &lt;p&gt;{t('shipped-fedex.header')}.&lt;/p&gt;
-      &lt;h2 className="h2"&gt;{t('shipped-fedex.country-canada.header')}&lt;/h2&gt;
-      &lt;AlertSection type="success"&gt;
-        &lt;h3 data-testid="shipped-purolator-mailing" className="h2 mt-0"&gt;
-          {t('shipped-fedex.country-canada.mailing')}
-        &lt;/h3&gt;
-        {trackingNumber ? (
-<span class="branch-0 cbranch-no" title="branch not covered" >          &lt;&gt;</span>
-            &lt;p&gt;
-              &lt;Trans
-                i18nKey="status-check-tracking.number"
-                ns="status"
-                tOptions={{ trackingNumber }}
-              /&gt;
-            &lt;/p&gt;
-            &lt;p&gt;
-              &lt;Trans
-                i18nKey={'status-check-tracking.can-track'}
-                ns="status"
-                components={{
-                  Link: (
-                    &lt;ExternalLink
-                      data-gc-analytics-exempt={true}
-                      href={t('status-check-tracking.link.purolator', {
-                        trackingNumber: encodeURIComponent(trackingNumber),
-                      })}
-                    /&gt;
-                  ),
-                }}
-              /&gt;
-            &lt;/p&gt;
-          &lt;/&gt;
-        ) : (
-          &lt;p&gt;{t('shipped-fedex.take-up-to')}&lt;/p&gt;
-        )}
-      &lt;/AlertSection&gt;
-      &lt;h2 className="h2"&gt;{t('shipped-fedex.country-us.header')}&lt;/h2&gt;
-      &lt;AlertSection type="success"&gt;
-        &lt;h3 data-testid="shipped-fedex-mailing" className="h2 mt-0"&gt;
-          {t('shipped-fedex.country-us.mailing')}
-        &lt;/h3&gt;
-        {trackingNumber ? (
-<span class="branch-0 cbranch-no" title="branch not covered" >          &lt;&gt;</span>
-            &lt;p&gt;
-              &lt;Trans
-                i18nKey="status-check-tracking.number"
-                ns="status"
-                tOptions={{ trackingNumber }}
-              /&gt;
-            &lt;/p&gt;
-            &lt;p&gt;
-              &lt;Trans
-                i18nKey={'status-check-tracking.can-track'}
-                ns="status"
-                components={{
-                  Link: (
-                    &lt;ExternalLink
-                      data-gc-analytics-exempt={true}
-                      href={t('status-check-tracking.link.fedex', {
-                        trackingNumber: encodeURIComponent(trackingNumber),
-                      })}
-                    /&gt;
-                  ),
-                }}
-              /&gt;
-            &lt;/p&gt;
-          &lt;/&gt;
-        ) : (
-          &lt;p&gt;{t('shipped-fedex.take-up-to')}&lt;/p&gt;
-        )}
-      &lt;/AlertSection&gt;
+      &lt;div className="w-fit"&gt;
+        &lt;Collapse
+          title={t('shipped-fedex.country-canada.header')}
+          variant="fullWidth"
+        &gt;
+          &lt;AlertSection className="mt-5" type="success"&gt;
+            &lt;h2 data-testid="shipped-purolator-mailing" className="h2 mt-0"&gt;
+              {t('shipped-fedex.country-canada.mailing')}
+            &lt;/h2&gt;
+            {trackingNumber ? (
+<span class="branch-0 cbranch-no" title="branch not covered" >              &lt;&gt;</span>
+                &lt;p&gt;
+                  &lt;Trans
+                    i18nKey="status-check-tracking.number"
+                    ns="status"
+                    tOptions={{ trackingNumber }}
+                  /&gt;
+                &lt;/p&gt;
+                &lt;p&gt;
+                  &lt;Trans
+                    i18nKey={'status-check-tracking.can-track'}
+                    ns="status"
+                    components={{
+                      Link: (
+                        &lt;ExternalLink
+                          data-gc-analytics-exempt={true}
+                          href={t('status-check-tracking.link.purolator', {
+                            trackingNumber: encodeURIComponent(trackingNumber),
+                          })}
+                        /&gt;
+                      ),
+                    }}
+                  /&gt;
+                &lt;/p&gt;
+              &lt;/&gt;
+            ) : (
+              &lt;p&gt;{t('shipped-fedex.take-up-to')}&lt;/p&gt;
+            )}
+          &lt;/AlertSection&gt;
+        &lt;/Collapse&gt;
+        &lt;Collapse
+          title={t('shipped-fedex.country-us.header')}
+          variant="fullWidth"
+        &gt;
+          &lt;AlertSection className="mt-5" type="success"&gt;
+            &lt;h2 data-testid="shipped-fedex-mailing" className="h2 mt-0"&gt;
+              {t('shipped-fedex.country-us.mailing')}
+            &lt;/h2&gt;
+            {trackingNumber ? (
+<span class="branch-0 cbranch-no" title="branch not covered" >              &lt;&gt;</span>
+                &lt;p&gt;
+                  &lt;Trans
+                    i18nKey="status-check-tracking.number"
+                    ns="status"
+                    tOptions={{ trackingNumber }}
+                  /&gt;
+                &lt;/p&gt;
+                &lt;p&gt;
+                  &lt;Trans
+                    i18nKey={'status-check-tracking.can-track'}
+                    ns="status"
+                    components={{
+                      Link: (
+                        &lt;ExternalLink
+                          data-gc-analytics-exempt={true}
+                          href={t('status-check-tracking.link.fedex', {
+                            trackingNumber: encodeURIComponent(trackingNumber),
+                          })}
+                        /&gt;
+                      ),
+                    }}
+                  /&gt;
+                &lt;/p&gt;
+              &lt;/&gt;
+            ) : (
+              &lt;p&gt;{t('shipped-fedex.take-up-to')}&lt;/p&gt;
+            )}
+          &lt;/AlertSection&gt;
+        &lt;/Collapse&gt;
+      &lt;/div&gt;
       &lt;p className="h3 mb-2 mt-6"&gt;
         &lt;strong&gt;{t('shipped-fedex.supporting-documents')}&lt;/strong&gt;
       &lt;/p&gt;
@@ -382,7 +415,7 @@ export default CheckStatusShippingFedex
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-12-09T12:02:58.263Z
+                at 2024-12-09T17:10:10.010Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
