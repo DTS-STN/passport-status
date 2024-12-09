@@ -26,7 +26,7 @@
     "error": {
       "required": "Le numéro de référence est obligatoire."
     },
-    "help-message": "Si vous ne pouvez pas trouver le numéro de dossier ou le numéro de référence, <Link>vous pouvez demander à le recevoir</Link>.",
+    "help-message": "Si vous ne pouvez pas trouver le numéro de référence, <Link>vous pouvez demander à le recevoir</Link>.",
     "label": "Numéro de référence"
   },
   "given-name": {
