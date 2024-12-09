@@ -77,20 +77,26 @@
   },
   "reset": "Vérifier l'état d'une autre demande",
   "shipped-canada-post": {
-    "header": "Votre passeport a été imprimé et envoyé par la poste",
-    "mailing": "Nous vous l'envoyons par Postes Canada.",
-    "remote-area": "Si vous vivez dans une région au nord ou éloignée, cela pourrait prendre jusqu'à 8 jours ouvrables pour arriver.",
+    "delivery-not-available": "Si la livraison n'est pas disponible, un agent vous contactera pour coordonner la livraison.",
+    "header": "Votre passeport a été imprimé et envoyé",
+    "mailing": "Nous vous l'envoyons par courrier.",
+    "remote-area": "Si vous vivez dans une région au nord ou éloignée, cela pourrait prendre jusqu'à 8 jours ouvrables.",
     "supporting-documents": "Nous pourrions renvoyer vos documents fournis en support de la demande séparément.",
     "take-up-to": "Cela peut prendre jusqu'à 2 à 3 jours ouvrables pour arriver."
   },
   "shipped-fedex": {
-    "contact-us": "Si vous ne recevez pas votre passeport et vos documents, <Link>veuillez nous contacter</Link>.",
     "header": "Votre passeport a été imprimé et envoyé par la poste",
-    "mailing": "Nous vous l'envoyons par FedEx",
+    "country-canada": {
+      "header": "Informations pour les clients dont le passeport est envoyé par la poste au Canada",
+      "mailing": "Nous vous l'envoyons par Purolator"
+    },
+    "country-us": {
+      "header": "Informations pour les clients dont le passeport est envoyé aux États-Unis",
+      "mailing": "Nous vous l'envoyons par FedEx"
+    },
     "supporting-documents": "Vous recevrez le passeport et les documents justificatifs dans la même enveloppe.",
     "take-up-to": "Cela peut prendre jusqu'à 5 à 7 jours ouvrables pour arriver."
   },
-  "status-check-call": "<Link>Communiquez avec nous</Link> seulement si vous ne recevez pas vos documents dans les six semaines suivant la réception de votre passeport.",
   "status-check-contact": {
     "service-standard-href": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens/delais-traitement.html"
   },
@@ -98,7 +104,8 @@
     "can-track": "Vous pouvez <Link>suivre en ligne la livraison de votre colis</Link>.",
     "link": {
       "canada-post": "https://www.canadapost-postescanada.ca/track-reperage/fr#/details/{{trackingNumber}}",
-      "fedex": "https://www.fedex.com/fedextrack/?action=track&cntry_code=ca&locale=fr_ca&trackingnumber={{trackingNumber}}"
+      "fedex": "https://www.fedex.com/fedextrack/?action=track&cntry_code=ca&locale=fr_ca&trackingnumber={{trackingNumber}}",
+      "purolator": "https://www.purolator.com/fr/expedition/faire-le-suivi-dun-envoi?pin={{trackingNumber}}"
     },
     "number": "Votre numéro de repérage est <strong>{{trackingNumber}}</strong>."
   },
