@@ -215,7 +215,7 @@ const Email = () => {
           <h1 id="main-header" className="h1" tabIndex={-1}>
             {t('header')}
           </h1>
-          <form onSubmit={handleFormikSubmit} id="form-email-esrf">
+          <form onSubmit={handleFormikSubmit} id="form-email-esrf" noValidate>
             <p className="max-w-prose">
               <Trans i18nKey="header-messages.matches" ns="email" />
             </p>

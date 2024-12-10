@@ -218,7 +218,7 @@ const Status = () => {
           <h1 id="main-header" className="h1" tabIndex={-1}>
             {t('header')}
           </h1>
-          <form onSubmit={handleFormikSubmit} id="form-get-status">
+          <form onSubmit={handleFormikSubmit} id="form-get-status" noValidate>
             <p className="max-w-prose">
               <Trans i18nKey="header-messages.matches" ns="status" />
             </p>
