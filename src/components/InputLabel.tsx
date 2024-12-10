@@ -16,7 +16,7 @@ const InputLabel = ({
   return (
     <label id={id} htmlFor={htmlFor} className="mb-2 block font-bold">
       {label}
-      {required && <span>&nbsp;{textRequired}</span>}
+      {required && <strong aria-hidden="true">&nbsp;{textRequired}</strong>}
     </label>
   )
 }
