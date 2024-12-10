@@ -16,7 +16,7 @@ const FieldSetLegend = ({
     <legend>
       <p id={id} className="mb-2 block font-bold">
         {label}
-        {required && <span>&nbsp;{textRequired}</span>}
+        {required && <strong aria-hidden="true">&nbsp;{textRequired}</strong>}
       </p>
     </legend>
   )
