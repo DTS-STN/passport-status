@@ -62,15 +62,15 @@ const Header = ({ gocLink, skipToMainText }: HeaderProps) => {
                 height={28}
                 priority
               />
-            </a>
-            <span className="sr-only">
-              /{' '}
-              <span lang={locale === 'en' ? 'fr' : 'en'}>
-                {locale === 'en'
-                  ? 'Gouvernement du Canada'
-                  : 'Government of Canada'}
+              <span className="sr-only">
+                /{' '}
+                <span lang={locale === 'en' ? 'fr' : 'en'}>
+                  {locale === 'en'
+                    ? 'Gouvernement du Canada'
+                    : 'Government of Canada'}
+                </span>
               </span>
-            </span>
+            </a>
 
             {/* Language selector for small screens */}
             <Link
