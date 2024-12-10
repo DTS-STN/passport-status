@@ -4,7 +4,7 @@ const variants = {
   fitWidth: 'w-fit',
   fullWidth: 'w-full',
   halfWidth: 'w-6/12',
-  slim: 'text-base',
+  slim: 'max-w-prose text-base',
   default: 'max-w-prose',
 }
 export interface CollapseProps {
