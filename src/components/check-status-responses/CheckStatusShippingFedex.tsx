@@ -30,7 +30,7 @@ export const CheckStatusShippingFedex = ({
           title={t('shipped-fedex.country-canada.header')}
           variant="fullWidth"
         >
-          <AlertSection className="mt-5" type="success">
+          <AlertSection type="success">
             <h2 data-testid="shipped-purolator-mailing" className="h2 mt-0">
               {t('shipped-fedex.country-canada.mailing')}
             </h2>
@@ -69,7 +69,7 @@ export const CheckStatusShippingFedex = ({
           title={t('shipped-fedex.country-us.header')}
           variant="fullWidth"
         >
-          <AlertSection className="mt-5" type="success">
+          <AlertSection type="success">
             <h2 data-testid="shipped-fedex-mailing" className="h2 mt-0">
               {t('shipped-fedex.country-us.mailing')}
             </h2>
@@ -105,7 +105,7 @@ export const CheckStatusShippingFedex = ({
           </AlertSection>
         </Collapse>
       </div>
-      <p className="h3 mb-2 mt-6">
+      <p className="mb-2 mt-6">
         <strong>{t('shipped-fedex.supporting-documents')}</strong>
       </p>
     </>

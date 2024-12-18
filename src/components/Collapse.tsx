@@ -28,7 +28,7 @@ const Collapse = ({ title, children, variant = 'default' }: CollapseProps) => {
       >
         {title}
       </summary>
-      {children}
+      <div className="pt-3">{children}</div>
     </details>
   )
 }
