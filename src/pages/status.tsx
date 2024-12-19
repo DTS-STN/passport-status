@@ -219,9 +219,6 @@ const Status = () => {
             {t('header')}
           </h1>
           <form onSubmit={handleFormikSubmit} id="form-get-status" noValidate>
-            <p className="max-w-prose">
-              <Trans i18nKey="header-messages.matches" ns="status" />
-            </p>
             <p>
               <Trans i18nKey="header-messages.required" ns="status" />
             </p>
@@ -292,7 +289,9 @@ const Status = () => {
                 }
                 textRequired={t('common:required')}
                 required
-                helpMessage={t('surname.help-message')}
+                helpMessage={
+                  <Trans i18nKey="surname.help-message" ns="status" />
+                }
               />
             </div>
             <div className="mt-8">

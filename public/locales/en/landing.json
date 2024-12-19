@@ -6,22 +6,10 @@
   },
   "header": "Reference number",
   "receipt-image-1": {
-    "alt": "Official receipt",
-    "descriptive-text": "<strong>An example of an official receipt. The reference number is circled in the middle of the receipt, above a barcode.</strong>",
+    "alt": "An example of an official receipt. The reference number is located in the centre, above a barcode.",
+    "descriptive-text": "<strong>Below the applicant name, you will find a 9-digit numeric reference number, above a barcode.</strong>",
     "src": "/receipt-1-en.png",
-    "title": "Example 1 - Official receipt"
-  },
-  "receipt-image-2": {
-    "alt": "Alternative official receipt.",
-    "descriptive-text": "<strong>An example of an official receipt. The file number is circled in the centre of the receipt.</strong>",
-    "src": "/receipt-2-en.png",
-    "title": "Example 2 - Alternative official receipt"
-  },
-  "receipt-image-3": {
-    "alt": "Alternative official receipt and pick-up slip.",
-    "descriptive-text": "<strong>An example of an official receipt and pick-up slip. The file number is circled in the upper left-hand side of the receipt, above a barcode.</strong>",
-    "src": "/receipt-3-en.png",
-    "title": "Example 3 - Alternative official receipt and pick-up slip"
+    "title": "Example - Official receipt"
   },
   "where-to-find": {
     "header": "Where to find your reference number",
@@ -31,7 +19,7 @@
     },
     "applied-in-person": {
       "header": "If you applied in person",
-      "text": "If you applied for your passport in person, the reference number can be found on the receipt you were given. Here are some examples of receipts, and where they contain the reference number:"
+      "text": "If you applied for your passport in person, the reference number can be found on the receipt you were given. Below is an example of a receipt, and where it contains the reference number. Please note that the format of the receipt and reference number may vary."
     }
   },
   "if-lost": {

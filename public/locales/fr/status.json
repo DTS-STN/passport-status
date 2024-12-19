@@ -34,7 +34,7 @@
     "error": {
       "required": "Le(s) prénom(s) est(sont) obligatoire(s)."
     },
-    "help-message": "Indiquez le(s) prénom(s) <strong>et le(s) deuxième(s) prénom(s)</strong> de la personne à qui le passeport est destiné.",
+    "help-message": "Indiquez le(s) prénom(s) <strong>et le(s) deuxième(s) prénom(s)</strong> de la personne à qui le passeport est destiné. <strong>Assurez-vous que les informations que vous indiquez correspondent à votre demande de passeport.</strong>",
     "label": "Prénom(s)"
   },
   "header": "Obtenir l'état de votre demande de passeport",
@@ -116,7 +116,7 @@
     "error": {
       "required": "Le nom de famille est obligatoire."
     },
-    "help-message": "Indiquez le nom de famille de la personne à qui le passeport est destiné.",
+    "help-message": "Indiquez le nom de famille de la personne à qui le passeport est destiné. <strong>Assurez-vous que les informations que vous indiquez correspondent à votre demande de passeport.</strong>",
     "label": "Nom de famille"
   }
 }
