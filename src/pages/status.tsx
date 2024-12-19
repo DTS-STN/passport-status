@@ -219,9 +219,6 @@ const Status = () => {
             {t('header')}
           </h1>
           <form onSubmit={handleFormikSubmit} id="form-get-status" noValidate>
-            <p className="max-w-prose">
-              <Trans i18nKey="header-messages.matches" ns="status" />
-            </p>
             <p>
               <Trans i18nKey="header-messages.required" ns="status" />
             </p>
@@ -273,7 +270,7 @@ const Status = () => {
                 }
                 extraContent={
                   <Collapse title={t('given-name.title')} variant="slim">
-                    <p className="mt-4 border-l-[6px] border-gray-400 pl-6 text-base text-gray-600">
+                    <p className="border-l-[6px] border-gray-400 pl-6 text-base text-gray-600">
                       <Trans i18nKey="one-name" ns="status" />
                     </p>
                   </Collapse>
@@ -292,7 +289,9 @@ const Status = () => {
                 }
                 textRequired={t('common:required')}
                 required
-                helpMessage={t('surname.help-message')}
+                helpMessage={
+                  <Trans i18nKey="surname.help-message" ns="status" />
+                }
               />
             </div>
             <div className="mt-8">

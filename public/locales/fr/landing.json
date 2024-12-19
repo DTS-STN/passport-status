@@ -6,22 +6,10 @@
   },
   "header": "Numéro de référence",
   "receipt-image-1": {
-    "alt": "Reçu officiel.",
-    "descriptive-text": "<strong>Un exemple de reçu officiel. Le numéro de référence est encerclé au centre du reçu, au-dessus d'un code-barres.</strong>",
+    "alt": "Un exemple de reçu officiel. Le numéro de référence est au centre du reçu, au-dessus d'un code-barres.",
+    "descriptive-text": "<strong>Sous le nom du requérant, vous trouverez un numéro de référence numérique à 9 chiffres, au-dessus d'un code-barres.</strong>",
     "src": "/receipt-1-fr.png",
-    "title": "Exemple 1 - Reçu officiel"
-  },
-  "receipt-image-2": {
-    "alt": "Reçu officiel alternatif.",
-    "descriptive-text": "<strong>Exemple de reçu officiel. Le numéro de dossier est encerclé au centre du reçu.</strong>",
-    "src": "/receipt-2-fr.png",
-    "title": "Exemple 2 - Reçu officiel alternatif"
-  },
-  "receipt-image-3": {
-    "alt": "Reçu officiel et bordereau de cueillette alternatif.",
-    "descriptive-text": "<strong>Exemple d'un reçu officiel et bordereau de cueillette. Le numéro de dossier est encerclé en haut à gauche du reçu, au-dessus d'un code-barres.</strong>",
-    "src": "/receipt-3-fr.png",
-    "title": "Exemple 3 - Reçu officiel et bordereau de cueillette alternatif"
+    "title": "Exemple - Reçu officiel"
   },
   "where-to-find": {
     "header": "Où trouver votre numéro de référence",
@@ -31,7 +19,7 @@
     },
     "applied-in-person": {
       "header": "Si vous avez présenté votre demande en personne",
-      "text": "Si vous avez présenté votre demande en personne, le numéro de référence se trouve sur le reçu qui vous a été remis. Voici quelques exemples de reçus et les endroits où ils contiennent le numéro de référence\u00a0:"
+      "text": "Si vous avez présenté votre demande en personne, le numéro de référence se trouve sur le reçu qui vous a été remis. Vous trouverez ci-dessous un exemple de reçu et l'endroit où il contient le numéro de référence. Veuillez noter que le format du reçu et le numéro de référence peuvent varier."
     }
   },
   "if-lost": {

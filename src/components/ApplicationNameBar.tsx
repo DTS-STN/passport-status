@@ -12,7 +12,7 @@ const ApplicationNameBar = ({ text, href }: ApplicationNameBarProps) => {
         <h2>
           <Link
             href={href}
-            className="font-body text-lg font-bold text-white underline md:text-[28px]"
+            className="font-body font-bold text-white underline md:text-[30px]"
           >
             {text}
           </Link>

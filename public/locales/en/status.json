@@ -34,7 +34,7 @@
     "error": {
       "required": "The given name(s) is required."
     },
-    "help-message": "Enter first name(s) <strong>and any middle name(s)</strong> of the person who the passport is for.",
+    "help-message": "Enter first name(s) <strong>and any middle name(s)</strong> of the person who the passport is for. <strong>Make sure the information you enter matches your passport application.</strong>",
     "label": "Given name(s)"
   },
   "header": "Get the status of your passport application",
@@ -116,7 +116,7 @@
     "error": {
       "required": "The surname is required."
     },
-    "help-message": "Enter last name of the person who the passport is for.",
+    "help-message": "Enter last name of the person who the passport is for. <strong>Make sure the information you enter matches your passport application.</strong>",
     "label": "Surname"
   }
 }
