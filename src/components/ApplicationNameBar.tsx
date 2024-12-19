@@ -9,12 +9,14 @@ const ApplicationNameBar = ({ text, href }: ApplicationNameBarProps) => {
   return (
     <div id="app-bar" className="bg-blue-dark">
       <section className="container mx-auto p-4">
-        <Link
-          href={href}
-          className="font-body text-lg font-bold text-white underline md:text-[28px]"
-        >
-          {text}
-        </Link>
+        <h2>
+          <Link
+            href={href}
+            className="font-body font-bold text-white underline md:text-[30px]"
+          >
+            {text}
+          </Link>
+        </h2>
       </section>
     </div>
   )
