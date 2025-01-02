@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1735556881741" clover="3.2.0">
-  <project timestamp="1735556881741" name="All files">
+<coverage generated="1735826133916" clover="3.2.0">
+  <project timestamp="1735826133917" name="All files">
     <metrics statements="559" coveredstatements="357" conditionals="348" coveredconditionals="156" methods="156" coveredmethods="88" elements="1063" coveredelements="601" complexity="0" loc="559" ncloc="559" packages="11" files="61" classes="61"/>
     <package name="src">
       <metrics statements="28" coveredstatements="14" conditionals="26" coveredconditionals="8" methods="7" coveredmethods="6"/>
@@ -135,7 +135,7 @@
         <line num="38" count="14" type="stmt"/>
         <line num="40" count="0" type="stmt"/>
         <line num="42" count="14" type="stmt"/>
-        <line num="65" count="674" type="stmt"/>
+        <line num="65" count="678" type="stmt"/>
       </file>
       <file name="DateSelectField.tsx" path="/home/runner/work/passport-status/passport-status/src/components/DateSelectField.tsx">
         <metrics statements="69" coveredstatements="55" conditionals="42" coveredconditionals="18" methods="18" coveredmethods="15"/>
@@ -156,8 +156,8 @@
         <line num="73" count="6" type="cond" truecount="2" falsecount="0"/>
         <line num="74" count="6" type="stmt"/>
         <line num="75" count="6" type="stmt"/>
-        <line num="76" count="750" type="stmt"/>
-        <line num="77" count="750" type="stmt"/>
+        <line num="76" count="756" type="stmt"/>
+        <line num="77" count="756" type="stmt"/>
         <line num="81" count="8" type="stmt"/>
         <line num="82" count="8" type="stmt"/>
         <line num="83" count="96" type="stmt"/>
@@ -199,7 +199,7 @@
         <line num="232" count="3" type="stmt"/>
         <line num="233" count="0" type="cond" truecount="0" falsecount="5"/>
         <line num="235" count="3" type="stmt"/>
-        <line num="236" count="1032" type="stmt"/>
+        <line num="236" count="1038" type="stmt"/>
         <line num="239" count="3" type="stmt"/>
         <line num="248" count="2" type="stmt"/>
         <line num="249" count="2" type="stmt"/>
