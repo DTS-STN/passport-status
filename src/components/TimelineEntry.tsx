@@ -49,7 +49,7 @@ const SVG = (type: TimelineEntryType, background: boolean | undefined) => {
       return (
         <svg
           className={`${background ? 'bg-slate-100' : 'bg-white'} h-8 w-8 fill-accent-success`}
-          viewBox="0 0 460 460"
+          viewBox="0 0 512 512"
           xmlns="http://www.w3.org/2000/svg"
           aria-hidden="true"
         >
@@ -123,7 +123,7 @@ const TimelineEntry = ({
       <div className={`${svgStyles[type]} w-8 content-center`}>
         {SVG(type, background)}
       </div>
-      <div className="-translate-x-2 translate-y-6">
+      <div className="m-6 -translate-x-4 translate-y-6">
         <p>{step}</p>
         <p>{date}</p>
       </div>
