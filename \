@@ -38,7 +38,7 @@ const bottomBorderStyle = (
 }
 
 const svgStyles = {
-  done: '-translate-x-7',
+  done: '-translate-x-8',
   current: '-translate-x-8 mt-1',
   future: '-translate-x-8',
 }
@@ -48,8 +48,8 @@ const SVG = (type: TimelineEntryType, background: boolean | undefined) => {
     case 'done': {
       return (
         <svg
-          className={`${background ? 'bg-slate-100' : 'bg-white'} h-7 w-7 fill-accent-success`}
-          viewBox="8 0 512 512"
+          className={`${background ? 'bg-slate-100' : 'bg-white'} h-8 w-8 mr-4 fill-accent-success`}
+          viewBox="-36 0 536 512"
           xmlns="http://www.w3.org/2000/svg"
           aria-hidden="true"
         >
