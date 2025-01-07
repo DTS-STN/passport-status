@@ -102,6 +102,12 @@ export enum StatusCode {
   PASSPORT_IS_PRINTING = '6',
 }
 
-export type TimelineEntryType = 'done' | 'current' | 'future'
+export type TimelineEntryStatus = 'done' | 'current' | 'future'
 
-export type TimelinePositionType = 'first' | 'middle' | 'last'
+export type TimelinePosition = 'first' | 'middle' | 'last'
+
+export type TimelineEntryData = {
+  step: string
+  status: TimelineEntryStatus
+  date: string
+}

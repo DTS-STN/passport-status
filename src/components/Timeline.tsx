@@ -1,20 +1,37 @@
 import { PropsWithChildren } from 'react'
 
-import TimelineEntry, { TimelineEntryProps } from './TimelineEntry'
+import { TimelineEntryData, TimelinePosition } from '../lib/types'
+import TimelineEntry from './TimelineEntry'
 
 export interface TimelineProps extends PropsWithChildren {
-  entries: TimelineEntryProps[]
+  entries: TimelineEntryData[]
   className?: string
   background?: boolean
 }
 
-const Timeline = ({ entries, className, background }: TimelineProps) => {
+const Timeline = ({ entries, className }: TimelineProps) => {
   return (
-    <div className="flex flex-col">
-      <div className="m-0">
-        {entries.map((entry) => {
-          return <TimelineEntry key={entry.step} {...entry} />
-        })}
+    <div className={className}>
+      <div className="flex flex-col">
+        <div className="m-0">
+          {entries.map((entry, index) => {
+            let position: TimelinePosition = 'last'
+            if (index === 0) {
+              position = 'first'
+            } else if (index < entries.length - 1) {
+              position = 'middle'
+            }
+            return (
+              <TimelineEntry
+                key={entry.step}
+                position={position}
+                type={entry.status}
+                step={entry.step}
+                date={entry.date}
+              />
+            )
+          })}
+        </div>
       </div>
     </div>
   )
