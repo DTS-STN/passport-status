@@ -43,7 +43,7 @@ const SVG = (type: TimelineEntryStatus, background: boolean | undefined) => {
       return (
         <svg
           className={`${background ? 'bg-slate-100' : 'bg-white'} h-8 w-8 fill-accent-success`}
-          viewBox="0 4 64 64"
+          viewBox="1 4 64 64"
           xmlns="http://www.w3.org/2000/svg"
           aria-hidden="true"
         >
@@ -78,7 +78,7 @@ const SVG = (type: TimelineEntryStatus, background: boolean | undefined) => {
       return (
         <svg
           className={`${background ? 'bg-slate-100' : 'bg-white'} h-8 w-8`}
-          viewBox="0 4 64 64"
+          viewBox="1 4 64 64"
           xmlns="http://www.w3.org/2000/svg"
           aria-hidden="true"
         >
@@ -98,7 +98,7 @@ const SVG = (type: TimelineEntryStatus, background: boolean | undefined) => {
         <svg
           className={`${background ? 'bg-slate-100' : 'bg-white'} h-8 w-8`}
           xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 4 64 64"
+          viewBox="1 4 64 64"
           aria-hidden="true"
         >
           <circle
@@ -131,18 +131,26 @@ const TimelineEntry = ({
       <div className="flex flex-row">
         <div className="relative h-auto w-8">
           <div
-            className={`-translate-x-2px absolute left-1/2 top-0 h-1/2 w-4 transform border-l-4 ${topBorderComputedStyle}`}
+            className={`absolute left-1/2 top-0 h-1/2 w-4 transform border-l-4 ${topBorderComputedStyle}`}
           />
           <div
-            className={`-translate-x-2px absolute left-1/2 top-1/2 h-1/2 w-4 transform border-l-4 ${bottomBorderComputedStyle}`}
+            className={`absolute left-1/2 top-1/2 h-1/2 w-4 transform border-l-4 ${bottomBorderComputedStyle}`}
           />
         </div>
         <div className={`${svgStyles[type]} w-8 content-center`}>
           {SVG(type, background)}
         </div>
-        <div className="my-4 -translate-x-4 translate-y-6">
-          <p>{step}</p>
-          <p>{date}</p>
+        <div
+          className={`${type == 'done' ? 'translate-y-6' : 'translate-y-1'} my-6 -translate-x-4`}
+        >
+          {type == 'current' || (position == 'last' && type == 'done') ? (
+            <strong>
+              <p>{step}</p>
+            </strong>
+          ) : (
+            <p>{step}</p>
+          )}
+          {type == 'done' ? <p>{date}</p> : null}
         </div>
       </div>
     </div>
