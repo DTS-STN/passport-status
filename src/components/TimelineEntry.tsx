@@ -16,9 +16,9 @@ const topBorderStyle = (
   position: TimelinePosition,
 ) => {
   const style =
-    type == 'future' ? 'border-dashed border-black' : 'border-accent-success'
+    type === 'future' ? 'border-dashed border-black' : 'border-accent-success'
 
-  return position == 'first' ? 'border-transparent' : style
+  return position === 'first' ? 'border-transparent' : style
 }
 
 const bottomBorderStyle = (
@@ -26,9 +26,9 @@ const bottomBorderStyle = (
   position: TimelinePosition,
 ) => {
   const style =
-    type == 'done' ? 'border-accent-success' : 'border-dashed border-black'
+    type === 'done' ? 'border-accent-success' : 'border-dashed border-black'
 
-  return position == 'last' ? 'border-transparent' : style
+  return position === 'last' ? 'border-transparent' : style
 }
 
 const svgStyles = {
@@ -141,16 +141,16 @@ const TimelineEntry = ({
           {SVG(type, background)}
         </div>
         <div
-          className={`${type == 'done' ? 'translate-y-6' : 'translate-y-1'} my-6 -translate-x-4`}
+          className={`${type === 'done' ? 'translate-y-5' : 'translate-y-1'} my-6 -translate-x-4`}
         >
-          {type == 'current' || (position == 'last' && type == 'done') ? (
+          {type === 'current' || (position == 'last' && type == 'done') ? (
             <strong>
               <p>{step}</p>
             </strong>
           ) : (
             <p>{step}</p>
           )}
-          {type == 'done' ? <p>{date}</p> : null}
+          {type === 'done' && <time dateTime={date}>{date}</time>}
         </div>
       </div>
     </div>
