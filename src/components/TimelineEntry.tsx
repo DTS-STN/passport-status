@@ -144,9 +144,9 @@ const TimelineEntry = ({
           className={`${type === 'done' ? 'translate-y-5' : 'translate-y-1'} my-6 -translate-x-4`}
         >
           {type === 'current' || (position == 'last' && type == 'done') ? (
-            <strong>
-              <p>{step}</p>
-            </strong>
+            <p>
+              <strong>{step}</strong>
+            </p>
           ) : (
             <p>{step}</p>
           )}
