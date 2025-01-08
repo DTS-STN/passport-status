@@ -101,3 +101,13 @@ export enum StatusCode {
   NOT_ACCEPTABLE_FOR_PROCESSING = '5',
   PASSPORT_IS_PRINTING = '6',
 }
+
+export type TimelineEntryStatus = 'done' | 'current' | 'future'
+
+export type TimelinePosition = 'first' | 'middle' | 'last'
+
+export type TimelineEntryData = {
+  step: string
+  status: TimelineEntryStatus
+  date: string
+}
