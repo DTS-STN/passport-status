@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1736436901230" clover="3.2.0">
-  <project timestamp="1736436901230" name="All files">
-    <metrics statements="583" coveredstatements="357" conditionals="378" coveredconditionals="156" methods="162" coveredmethods="88" elements="1123" coveredelements="601" complexity="0" loc="583" ncloc="583" packages="11" files="63" classes="63"/>
+<coverage generated="1736536347961" clover="3.2.0">
+  <project timestamp="1736536347961" name="All files">
+    <metrics statements="583" coveredstatements="357" conditionals="376" coveredconditionals="155" methods="162" coveredmethods="88" elements="1121" coveredelements="600" complexity="0" loc="583" ncloc="583" packages="11" files="63" classes="63"/>
     <package name="src">
       <metrics statements="28" coveredstatements="14" conditionals="26" coveredconditionals="8" methods="7" coveredmethods="6"/>
       <file name="middleware.ts" path="/home/runner/work/passport-status/passport-status/src/middleware.ts">
@@ -77,14 +77,14 @@
         <line num="11" count="14" type="stmt"/>
         <line num="18" count="14" type="stmt"/>
         <line num="25" count="14" type="stmt"/>
-        <line num="26" count="6" type="cond" truecount="1" falsecount="3"/>
+        <line num="26" count="4" type="cond" truecount="1" falsecount="3"/>
         <line num="28" count="0" type="stmt"/>
-        <line num="40" count="6" type="stmt"/>
+        <line num="40" count="4" type="stmt"/>
         <line num="52" count="0" type="stmt"/>
         <line num="66" count="0" type="stmt"/>
         <line num="80" count="14" type="stmt"/>
-        <line num="86" count="6" type="stmt"/>
-        <line num="88" count="6" type="stmt"/>
+        <line num="86" count="4" type="stmt"/>
+        <line num="88" count="4" type="stmt"/>
       </file>
       <file name="ApplicationNameBar.tsx" path="/home/runner/work/passport-status/passport-status/src/components/ApplicationNameBar.tsx">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
@@ -118,10 +118,10 @@
       </file>
       <file name="Collapse.tsx" path="/home/runner/work/passport-status/passport-status/src/components/Collapse.tsx">
         <metrics statements="4" coveredstatements="4" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
-        <line num="3" count="8" type="stmt"/>
-        <line num="16" count="8" type="cond" truecount="1" falsecount="0"/>
-        <line num="17" count="14" type="stmt"/>
-        <line num="18" count="14" type="stmt"/>
+        <line num="3" count="5" type="stmt"/>
+        <line num="16" count="5" type="cond" truecount="1" falsecount="0"/>
+        <line num="17" count="10" type="stmt"/>
+        <line num="18" count="10" type="stmt"/>
       </file>
       <file name="DateModified.tsx" path="/home/runner/work/passport-status/passport-status/src/components/DateModified.tsx">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
@@ -390,7 +390,7 @@
       </file>
     </package>
     <package name="src.components.check-status-responses">
-      <metrics statements="21" coveredstatements="19" conditionals="6" coveredconditionals="2" methods="7" coveredmethods="6"/>
+      <metrics statements="21" coveredstatements="19" conditionals="4" coveredconditionals="1" methods="7" coveredmethods="6"/>
       <file name="CheckStatusFileBeingProcessed.tsx" path="/home/runner/work/passport-status/passport-status/src/components/check-status-responses/CheckStatusFileBeingProcessed.tsx">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="6" count="4" type="stmt"/>
@@ -428,10 +428,10 @@
         <line num="16" count="0" type="stmt"/>
       </file>
       <file name="CheckStatusShippingFedex.tsx" path="/home/runner/work/passport-status/passport-status/src/components/check-status-responses/CheckStatusShippingFedex.tsx">
-        <metrics statements="3" coveredstatements="3" conditionals="4" coveredconditionals="2" methods="1" coveredmethods="1"/>
-        <line num="12" count="3" type="stmt"/>
+        <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="11" count="3" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
         <line num="15" count="2" type="stmt"/>
-        <line num="16" count="2" type="stmt"/>
       </file>
     </package>
     <package name="src.components.error-pages">
