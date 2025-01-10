@@ -7,7 +7,7 @@
   "header": "Reference number",
   "receipt-image-1": {
     "alt": "An example of an official receipt. The reference number is located in the centre, above a barcode.",
-    "descriptive-text": "<strong>Below the applicant name, you will find a 9-digit numeric reference number, above a barcode.</strong>",
+    "descriptive-text": "<strong>Below the applicant name, you will find a 10-digit numeric reference number, above a barcode.</strong>",
     "src": "/receipt-1-en.png",
     "title": "Example - Official receipt"
   },

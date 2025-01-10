@@ -59,12 +59,20 @@ export const CheckStatusShippingCanadaPost = ({
           <>
             <p>{t('shipped-canada-post.take-up-to')}</p>
             <p>{t('shipped-canada-post.remote-area')}</p>
-            <p>{t('shipped-canada-post.delivery-not-available')}</p>
           </>
         )}
       </AlertSection>
       <p className="mt-6">
         <strong>{t('shipped-canada-post.supporting-documents')}</strong>
+      </p>
+      <p>
+        <Trans
+          i18nKey="status-check-call"
+          ns="status"
+          components={{
+            Link: <ExternalLink href={t('common:contact-us-link')} />,
+          }}
+        />
       </p>
     </>
   )
