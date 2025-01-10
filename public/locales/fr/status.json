@@ -77,10 +77,9 @@
   },
   "reset": "Vérifier l'état d'une autre demande",
   "shipped-canada-post": {
-    "delivery-not-available": "Si la livraison n'est pas disponible, un agent vous contactera pour coordonner la livraison.",
-    "header": "Votre passeport a été imprimé et envoyé",
-    "mailing": "Nous vous l'envoyons par courrier.",
-    "remote-area": "Si vous vivez dans une région au nord ou éloignée, cela pourrait prendre jusqu'à 8 jours ouvrables.",
+    "header": "Votre passeport a été imprimé et envoyé par la poste",
+    "mailing": "Nous vous l'envoyons par Postes Canada.",
+    "remote-area": "Si vous vivez dans une région au nord ou éloignée, cela pourrait prendre jusqu'à 8 jours ouvrables pour arriver.",
     "supporting-documents": "Nous pourrions renvoyer vos documents fournis en support de la demande séparément.",
     "take-up-to": "Cela peut prendre jusqu'à 2 à 3 jours ouvrables pour arriver."
   },
@@ -97,6 +96,7 @@
     "supporting-documents": "Nous pourrions renvoyer vos documents fournis en support de la demande séparément.",
     "take-up-to": "Cela peut prendre jusqu'à 5 à 7 jours ouvrables pour arriver."
   },
+  "status-check-call": "<Link>Communiquez avec nous</Link> seulement si vous ne recevez pas vos documents dans les six semaines suivant la réception de votre passeport.",
   "status-check-contact": {
     "service-standard-href": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens/delais-traitement.html"
   },

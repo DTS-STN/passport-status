@@ -7,7 +7,7 @@
   "header": "Numéro de référence",
   "receipt-image-1": {
     "alt": "Un exemple de reçu officiel. Le numéro de référence est au centre du reçu, au-dessus d'un code-barres.",
-    "descriptive-text": "<strong>Sous le nom du requérant, vous trouverez un numéro de référence numérique à 9 chiffres, au-dessus d'un code-barres.</strong>",
+    "descriptive-text": "<strong>Sous le nom du requérant, vous trouverez un numéro de référence numérique à 10 chiffres, au-dessus d'un code-barres.</strong>",
     "src": "/receipt-1-fr.png",
     "title": "Exemple - Reçu officiel"
   },

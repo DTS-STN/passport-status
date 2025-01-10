@@ -77,9 +77,8 @@
   },
   "reset": "Check the status of another application",
   "shipped-canada-post": {
-    "delivery-not-available": "If delivery is not available, an agent will reach out to you to coordinate delivery.",
     "header": "Your passport has been printed and mailed",
-    "mailing": "We're mailing it to you",
+    "mailing": "We're mailing it to you by Canada Post",
     "remote-area": "If you live in a northern or remote area, it may take up to 8 business days.",
     "supporting-documents": "We may send your supporting documents back separately.",
     "take-up-to": "It can take up to 2 to 3 business days to arrive."
@@ -97,6 +96,7 @@
     "supporting-documents": "We may send your supporting documents back separately.",
     "take-up-to": "It can take up to 5 to 7 business days to arrive."
   },
+  "status-check-call": "<Link>Contact us</Link> if you don't receive your documents within 6 weeks of receiving your passport.",
   "status-check-contact": {
     "service-standard-href": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/processing-times.html"
   },
