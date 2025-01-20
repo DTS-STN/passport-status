@@ -1,0 +1,11 @@
+{
+  "printing": {
+    "received": "Received",
+    "reviewing": "Reviewing",
+    "reviewed": "Review complete",
+    "printing": "Print in progress",
+    "printed": "Printed",
+    "mailing": "Mailing",
+    "mailed": "Passport mailed out"
+  }
+}

@@ -55,7 +55,8 @@ export const CheckStatusInfo = ({
       statusComponent = <CheckStatusNotAcceptable />
       break
     default:
-      statusComponent = <CheckStatusNoRecord />
+      // statusComponent = <CheckStatusNoRecord />
+      statusComponent = <CheckStatusPrinting />
       break
   }
   return (
