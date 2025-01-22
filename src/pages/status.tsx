@@ -18,7 +18,6 @@ import * as Yup from 'yup'
 
 import ActionButton from '../components/ActionButton'
 import AlertBlock from '../components/AlertBlock'
-import CheckStatusInfo from '../components/CheckStatusInfo'
 import Collapse from '../components/Collapse'
 import DateSelectField, {
   DateSelectFieldOnChangeEvent,
@@ -32,6 +31,13 @@ import IdleTimeout from '../components/IdleTimeout'
 import InputField from '../components/InputField'
 import Layout from '../components/Layout'
 import Modal from '../components/Modal'
+import CheckStatusFileBeingProcessed from '../components/check-status-responses/CheckStatusFileBeingProcessed'
+import CheckStatusNoRecord from '../components/check-status-responses/CheckStatusNoRecord'
+import CheckStatusNotAcceptable from '../components/check-status-responses/CheckStatusNotAcceptable'
+import CheckStatusPrinting from '../components/check-status-responses/CheckStatusPrinting'
+import CheckStatusReadyForPickup from '../components/check-status-responses/CheckStatusReadyForPickup'
+import CheckStatusShippingCanadaPost from '../components/check-status-responses/CheckStatusShippingCanadaPost'
+import CheckStatusShippingFedex from '../components/check-status-responses/CheckStatusShippingFedex'
 import { removeCheckStatus } from '../lib/removeCheckStatus'
 import {
   CheckStatusApiRequestQuery,
@@ -190,6 +196,42 @@ const Status = () => {
     }
   }
 
+  const getStatusComponent = (response: CheckStatusApiResponse | null) => {
+    if (response !== null) {
+      switch (response.status) {
+        case StatusCode.FILE_BEING_PROCESSED:
+          return <CheckStatusFileBeingProcessed />
+        case StatusCode.PASSPORT_ISSUED_READY_FOR_PICKUP:
+          return <CheckStatusReadyForPickup />
+        case StatusCode.PASSPORT_IS_PRINTING:
+          return (
+            <CheckStatusPrinting
+              response={response}
+              backButtonHandler={handleOnGoBackClick}
+            />
+          )
+        case StatusCode.PASSPORT_ISSUED_SHIPPING_CANADA_POST:
+          return (
+            <CheckStatusShippingCanadaPost
+              trackingNumber={response.manifestNumber}
+            />
+          )
+        case StatusCode.PASSPORT_ISSUED_SHIPPING_FEDEX:
+          return (
+            <CheckStatusShippingFedex
+              trackingNumber={response.manifestNumber}
+            />
+          )
+        case StatusCode.NOT_ACCEPTABLE_FOR_PROCESSING:
+          return <CheckStatusNotAcceptable />
+        default:
+          return <CheckStatusNoRecord />
+      }
+    }
+
+    return <CheckStatusNoRecord />
+  }
+
   //if the api failed, fail hard to show error page
   if (checkStatusError) throw checkStatusError
 
@@ -201,17 +243,15 @@ const Status = () => {
       />
       <IdleTimeout />
       {checkStatusResponse !== undefined ? (
-        <CheckStatusInfo
+        <div
           id={
             checkStatusResponse === null
               ? 'response-no-result'
               : 'response-result'
           }
-          onGoBackClick={handleOnGoBackClick}
-          goBackText={checkStatusResponse === null ? t('previous') : t('reset')}
-          goBackStyle="primary"
-          checkStatusResponse={checkStatusResponse}
-        />
+        >
+          {getStatusComponent(checkStatusResponse)}
+        </div>
       ) : (
         <>
           <AlertBlock page="status" />
