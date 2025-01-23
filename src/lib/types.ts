@@ -47,6 +47,14 @@ export interface CheckStatusApiRequestQuery {
 export interface CheckStatusApiResponse {
   manifestNumber?: string
   status: string
+  overdue: boolean
+  submissionType: 'mail' | 'person'
+  receivedDate?: string
+  reviewedDate?: string
+  printedDate?: string
+  mailedDate?: string
+  pickUpReadyDate?: string
+  documentsReturnedDate?: string
 }
 
 export interface EmailEsrfApiRequestBody {
@@ -90,6 +98,14 @@ export interface PassportStatusesCertificateApplicationIdentification {
 
 export interface PassportStatusesCertificateApplicationStatus {
   StatusCode: string
+  // SubmissionType: 'mail' | 'person'
+  // Overdue: boolean
+  // ReceivedDate?: string
+  // ReviewedDate?: string
+  // PrintedDate?: string
+  // MailedDate?: string
+  // PickUpReadyDate?: string
+  // DocumentsReturnedDate?: string
 }
 
 export enum StatusCode {
@@ -109,5 +125,5 @@ export type TimelinePosition = 'first' | 'middle' | 'last'
 export type TimelineEntryData = {
   step: string
   status: TimelineEntryStatus
-  date: string
+  date?: string
 }

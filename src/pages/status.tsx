@@ -43,6 +43,7 @@ import {
   CheckStatusApiRequestQuery,
   CheckStatusApiResponse,
   StatusCode,
+  TimelineEntryData,
 } from '../lib/types'
 import { useCheckStatus } from '../lib/useCheckStatus'
 import { pageWithServerSideTranslations } from '../lib/utils/next-i18next-utils'
@@ -75,7 +76,7 @@ const scrollToHeading = () => {
 }
 
 const Status = () => {
-  const { t } = useTranslation(['status', 'common'])
+  const { t } = useTranslation(['status', 'common', 'timeline'])
 
   const router = useRouter()
   const [modalOpen, setModalOpen] = useState(false)
@@ -196,8 +197,76 @@ const Status = () => {
     }
   }
 
+  const getTimelineEntries = (
+    response: CheckStatusApiResponse,
+  ): TimelineEntryData[] => {
+    let entries: TimelineEntryData[] = []
+
+    if (response.receivedDate) {
+      entries.push({
+        status: 'done',
+        date: response.receivedDate,
+        step: t('timeline:received'),
+      })
+    }
+
+    if (response.reviewedDate) {
+      entries.push({
+        status: 'done',
+        date: response.reviewedDate,
+        step: t('timeline:review-done'),
+      })
+    } else {
+      entries.push({ status: 'current', step: t('timeline:review-current') })
+    }
+
+    // Push documents returned.
+    if (response.documentsReturnedDate) {
+      entries.push({
+        status: 'done',
+        date: response.documentsReturnedDate,
+        step: t('timeline:documents-returned'),
+      })
+      return entries
+    }
+
+    if (response.printedDate) {
+      entries.push({
+        status: 'done',
+        date: response.printedDate,
+        step: t('timeline:print-done'),
+      })
+    } else if (response.reviewedDate) {
+      entries.push({ status: 'current', step: t('timeline:print-current') })
+    } else {
+      entries.push({ status: 'future', step: t('timeline:print-future') })
+    }
+
+    if (response.submissionType === 'mail') {
+      if (response.mailedDate) {
+        entries.push({ status: 'done', step: t('timeline:mail-future') })
+      } else if (response.printedDate) {
+        entries.push({ status: 'current', step: t('timeline:mail-current') })
+      } else {
+        entries.push({ status: 'future', step: t('timeline:mail-future') })
+      }
+    } else {
+      if (response.pickUpReadyDate) {
+        entries.push({ status: 'done', step: t('timeline:pickup-done') })
+      } else if (response.printedDate) {
+        entries.push({ status: 'current', step: t('timeline:pickup-future') })
+      } else {
+        entries.push({ status: 'future', step: t('timeline:pickup-future') })
+      }
+    }
+
+    return entries
+  }
+
   const getStatusComponent = (response: CheckStatusApiResponse | null) => {
     if (response !== null) {
+      let timelineData = getTimelineEntries(response)
+
       switch (response.status) {
         case StatusCode.FILE_BEING_PROCESSED:
           return <CheckStatusFileBeingProcessed />
@@ -206,7 +275,7 @@ const Status = () => {
         case StatusCode.PASSPORT_IS_PRINTING:
           return (
             <CheckStatusPrinting
-              response={response}
+              timelineData={timelineData}
               backButtonHandler={handleOnGoBackClick}
             />
           )
@@ -390,7 +459,7 @@ const Status = () => {
 
 export const getServerSideProps: GetServerSideProps = async ({ locale }) => ({
   props: {
-    ...(await pageWithServerSideTranslations(locale, 'status')),
+    ...(await pageWithServerSideTranslations(locale, ['status', 'timeline'])),
   },
 })
 

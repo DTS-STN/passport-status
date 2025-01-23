@@ -2,55 +2,21 @@ import { MouseEventHandler } from 'react'
 
 import { Trans, useTranslation } from 'next-i18next'
 
-import { CheckStatusApiResponse, TimelineEntryData } from '../../lib/types'
+import { TimelineEntryData } from '../../lib/types'
 import ActionButton from '../ActionButton'
 import AlertBlock from '../AlertBlock'
 import ExternalLink from '../ExternalLink'
 import Timeline from '../Timeline'
 
 export type CheckStatusPrintingProps = {
-  response: CheckStatusApiResponse
+  timelineData: TimelineEntryData[]
   backButtonHandler: MouseEventHandler<HTMLButtonElement>
-}
-
-const getTimelineData = (
-  response: CheckStatusApiResponse,
-): TimelineEntryData[] => {
-  return [
-    {
-      step: 'Received',
-      status: 'done',
-      date: '2024-01-05',
-    },
-    {
-      step: 'Processing',
-      status: 'done',
-      date: '2024-01-06',
-    },
-    {
-      step: 'Printing',
-      status: 'current',
-      date: '2024-01-07',
-    },
-    {
-      step: 'Shipped',
-      status: 'future',
-      date: '2024-01-08',
-    },
-    {
-      step: 'Shipped',
-      status: 'future',
-      date: '2024-01-08',
-    },
-  ]
 }
 
 export const CheckStatusPrinting = (props: CheckStatusPrintingProps) => {
   const { t } = useTranslation(['status', 'timeline'])
 
-  const { response, backButtonHandler } = props
-
-  const timelineData = getTimelineData(response)
+  const { timelineData, backButtonHandler } = props
 
   return (
     <div id="response-result">
@@ -61,7 +27,7 @@ export const CheckStatusPrinting = (props: CheckStatusPrintingProps) => {
       <div className="flex flex-col sm:flex-row">
         <div className="max-w-prose">
           <p>{t('status:printing.reviewed-printing')}</p>
-          {timelineData && (
+          {timelineData.length > 0 && (
             <div className="flex w-full justify-center sm:hidden">
               <Timeline entries={timelineData} />
             </div>
