@@ -197,6 +197,9 @@ const Status = () => {
     }
   }
 
+  // This is just a first draft of this logic.
+  // We'll ultimately have to come up with logic based
+  // on both the status + the dates (in case they get out of sync).
   const getTimelineEntries = (
     response: CheckStatusApiResponse,
   ): TimelineEntryData[] => {
@@ -220,7 +223,8 @@ const Status = () => {
       entries.push({ status: 'current', step: t('timeline:review-current') })
     }
 
-    // Push documents returned.
+    // Documents returned is a special case.
+    // We don't have any timeline entries after this if it exists.
     if (response.documentsReturnedDate) {
       entries.push({
         status: 'done',
