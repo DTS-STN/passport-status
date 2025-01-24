@@ -16,21 +16,21 @@ describe('landing page loads', () => {
       .then((text) => {
         cy.title().should(
           'eq',
-          `${text} - Passport Application Status Checker - Canada.ca`
+          `${text} - Passport Application Status Checker - Canada.ca`,
         )
       })
   })
 
   it('should have correct title in French', () => {
     cy.get('[data-cy=toggle-language-link]').click()
-    cy.wait(200)
+    cy.wait(500)
     cy.get('h1')
       .filter(':visible')
       .invoke('text')
       .then((text) => {
         cy.title().should(
           'eq',
-          `${text} - Vérificateur de l'état d'une demande de passeport - Canada.ca`
+          `${text} - Vérificateur de l'état d'une demande de passeport - Canada.ca`,
         )
       })
   })

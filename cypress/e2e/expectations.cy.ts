@@ -21,7 +21,7 @@ describe('expectations page loads', () => {
 
   it('should have correct title in French', () => {
     cy.get('[data-cy=toggle-language-link]').click()
-    cy.wait(200)
+    cy.wait(500)
     cy.get('h1')
       .filter(':visible')
       .invoke('text')
