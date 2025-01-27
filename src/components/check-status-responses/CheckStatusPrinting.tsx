@@ -3,20 +3,27 @@ import { MouseEventHandler } from 'react'
 import { Trans, useTranslation } from 'next-i18next'
 
 import { TimelineEntryData } from '../../lib/types'
+import { formatDate } from '../../lib/utils/dates'
 import ActionButton from '../ActionButton'
 import AlertBlock from '../AlertBlock'
 import ExternalLink from '../ExternalLink'
 import Timeline from '../Timeline'
 
 export type CheckStatusPrintingProps = {
+  serviceLevel: '10' | '20'
   timelineData: TimelineEntryData[]
   backButtonHandler: MouseEventHandler<HTMLButtonElement>
 }
 
 export const CheckStatusPrinting = (props: CheckStatusPrintingProps) => {
-  const { t } = useTranslation(['status', 'timeline'])
+  const { t, i18n } = useTranslation(['status', 'timeline'])
 
-  const { timelineData, backButtonHandler } = props
+  const { serviceLevel, timelineData, backButtonHandler } = props
+
+  const receivedDate = formatDate(
+    timelineData[0].date ?? '1900-01-01',
+    i18n.language,
+  )
 
   return (
     <div id="response-result">
@@ -43,6 +50,7 @@ export const CheckStatusPrinting = (props: CheckStatusPrintingProps) => {
             <Trans
               i18nKey="printing.service-standards.we-received"
               ns="status"
+              tOptions={{ receivedDate, serviceLevel }}
               components={{
                 Link: (
                   <ExternalLink

@@ -1,3 +1,5 @@
+import { Service } from 'next-seo/lib/types'
+
 export type AdobeDataLayer = { push?: (object: Record<string, string>) => void }
 export type AppWindow = Window &
   typeof globalThis & { adobeDataLayer?: AdobeDataLayer }
@@ -47,8 +49,8 @@ export interface CheckStatusApiRequestQuery {
 export interface CheckStatusApiResponse {
   manifestNumber?: string
   status: string
-  overdue: boolean
-  submissionType: 'mail' | 'person'
+  serviceLevel: ServiceLevelCode
+  deliveryMethod: DeliveryMethodCode
   receivedDate?: string
   reviewedDate?: string
   printedDate?: string
@@ -126,4 +128,14 @@ export type TimelineEntryData = {
   step: string
   status: TimelineEntryStatus
   date?: string
+}
+
+export enum ServiceLevelCode {
+  TEN_DAYS = '1',
+  TWENTY_DAYS = '2',
+}
+
+export enum DeliveryMethodCode {
+  MAIL = '1',
+  IN_PERSON = '2',
 }

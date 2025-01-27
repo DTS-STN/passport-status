@@ -1,7 +1,9 @@
 import {
   CheckStatusApiResponse,
+  DeliveryMethodCode,
   PassportStatusesCertificateApplicationIdentification,
   PassportStatusesGetCertificateApplicationResponse,
+  ServiceLevelCode,
 } from '../types'
 
 /**
@@ -13,8 +15,8 @@ import {
 export const mapToCheckStatusApiResponse = (
   getCertificateApplicationResponse: PassportStatusesGetCertificateApplicationResponse,
 ): CheckStatusApiResponse => ({
-  overdue: false,
-  submissionType: 'mail',
+  serviceLevel: ServiceLevelCode.TEN_DAYS,
+  deliveryMethod: DeliveryMethodCode.MAIL,
   manifestNumber: getManifestNumber(
     getCertificateApplicationResponse.CertificateApplication
       .CertificateApplicationIdentification,

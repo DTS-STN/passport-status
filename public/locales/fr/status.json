@@ -68,7 +68,7 @@
     "reviewed-printing": "Votre demande a été examinée et votre passeport est prêt à être imprimé. Veuillez noter que l'impression peut prendre quelques jours ouvrables.",
     "service-standards": {
       "header": "Nos normes de service",
-      "we-received": "Nous avons reçu votre demande le {{receivedDate}}. Notre <Link>norme de service</Link> pour les demandes présentées par la poste est 20 jours ouvrables.",
+      "we-received": "Nous avons reçu votre demande le {{receivedDate}}. Notre <Link>norme de service</Link> pour les demandes présentées par la poste est {{serviceLevel}} jours ouvrables.",
       "dont-meet": "Si nous ne respectons pas nos normes de service, vous pourriez avoir droit à un remboursement partiel."
     }
   },

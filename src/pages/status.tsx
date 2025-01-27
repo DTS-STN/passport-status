@@ -42,6 +42,7 @@ import { removeCheckStatus } from '../lib/removeCheckStatus'
 import {
   CheckStatusApiRequestQuery,
   CheckStatusApiResponse,
+  ServiceLevelCode,
   StatusCode,
   TimelineEntryData,
 } from '../lib/types'
@@ -270,6 +271,8 @@ const Status = () => {
   const getStatusComponent = (response: CheckStatusApiResponse | null) => {
     if (response !== null) {
       let timelineData = getTimelineEntries(response)
+      const serviceLevel =
+        response.serviceLevel === ServiceLevelCode.TEN_DAYS ? '10' : '20'
 
       switch (response.status) {
         case StatusCode.FILE_BEING_PROCESSED:
@@ -279,6 +282,7 @@ const Status = () => {
         case StatusCode.PASSPORT_IS_PRINTING:
           return (
             <CheckStatusPrinting
+              serviceLevel={serviceLevel}
               timelineData={timelineData}
               backButtonHandler={handleOnGoBackClick}
             />
