@@ -19,13 +19,13 @@
     "tsc:validate": "tsc --noEmit --incremental false"
   },
   "dependencies": {
-    "@tanstack/react-query": "5.64.2",
+    "@tanstack/react-query": "5.65.0",
     "cookies-next": "5.1.0",
     "date-fns": "4.1.0",
     "formik": "2.4.6",
-    "i18next": "24.2.1",
+    "i18next": "24.2.2",
     "markdown-to-jsx": "7.7.3",
-    "next": "15.1.5",
+    "next": "15.1.6",
     "next-i18next": "15.4.1",
     "next-seo": "6.6.0",
     "pino": "9.6.0",
