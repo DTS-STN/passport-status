@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">95.83% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>23/24</span>
+                <span class='fraction'>16/16</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">86.2% </span>
+                <span class="strong">84.21% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>25/29</span>
+                <span class='fraction'>16/19</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>5/5</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">95.83% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>23/24</span>
+                <span class='fraction'>16/16</span>
             </div>
         
             
@@ -222,23 +222,8 @@
 <a name='L157'></a><a href='#L157'>157</a>
 <a name='L158'></a><a href='#L158'>158</a>
 <a name='L159'></a><a href='#L159'>159</a>
-<a name='L160'></a><a href='#L160'>160</a>
-<a name='L161'></a><a href='#L161'>161</a>
-<a name='L162'></a><a href='#L162'>162</a>
-<a name='L163'></a><a href='#L163'>163</a>
-<a name='L164'></a><a href='#L164'>164</a>
-<a name='L165'></a><a href='#L165'>165</a>
-<a name='L166'></a><a href='#L166'>166</a>
-<a name='L167'></a><a href='#L167'>167</a>
-<a name='L168'></a><a href='#L168'>168</a>
-<a name='L169'></a><a href='#L169'>169</a>
-<a name='L170'></a><a href='#L170'>170</a>
-<a name='L171'></a><a href='#L171'>171</a>
-<a name='L172'></a><a href='#L172'>172</a>
-<a name='L173'></a><a href='#L173'>173</a>
-<a name='L174'></a><a href='#L174'>174</a>
-<a name='L175'></a><a href='#L175'>175</a>
-<a name='L176'></a><a href='#L176'>176</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L160'></a><a href='#L160'>160</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -367,27 +352,10 @@
 <span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">16x</span>
-<span class="cline-any cline-yes">16x</span>
-<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -416,6 +384,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { PropsWithChildren } from 'react'
 &nbsp;
 import { TimelineEntryStatus, TimelinePosition } from '../lib/types'
+import TimelineEntryContent from './TimelineEntryContent'
 &nbsp;
 export interface TimelineEntryProps extends PropsWithChildren {
   type: TimelineEntryStatus
@@ -541,27 +510,6 @@ const TimelineEntry = ({
   const topBorderComputedStyle = topBorderStyle(type, position)
   const bottomBorderComputedStyle = bottomBorderStyle(type, position)
 &nbsp;
-  const entryStep = () =&gt; {
-    if (type === 'current') {
-      return (
-        &lt;p&gt;
-          &lt;strong&gt;{step}&lt;/strong&gt;
-        &lt;/p&gt;
-      )
-    } else if (type === 'done' &amp;&amp; date !== null) {
-      <span class="missing-if-branch" title="if path not taken" >I</span>if (position === 'last') {
-<span class="cstat-no" title="statement not covered" >        return (</span>
-          &lt;p className=""&gt;
-            &lt;strong&gt;{step}&lt;/strong&gt;
-          &lt;/p&gt;
-        )
-      }
-      return &lt;p className=""&gt;{step}&lt;/p&gt;
-    }
-&nbsp;
-    return &lt;p&gt;{step}&lt;/p&gt;
-  }
-&nbsp;
   return (
     &lt;div className={className}&gt;
       &lt;div className="flex flex-row"&gt;
@@ -579,8 +527,12 @@ const TimelineEntry = ({
         &lt;div
           className={`${type === 'done' ? '-translate-y-0' : 'translate-y-1'} my-6 -translate-x-4`}
         &gt;
-          {entryStep()}
-          {type === 'done' &amp;&amp; &lt;time dateTime={date}&gt;{date}&lt;/time&gt;}
+          &lt;TimelineEntryContent
+            type={type}
+            position={position}
+            topText={step}
+            bottomDate={date}
+          /&gt;
         &lt;/div&gt;
       &lt;/div&gt;
     &lt;/div&gt;
@@ -595,7 +547,7 @@ export default TimelineEntry
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-01-24T15:17:56.500Z
+                at 2025-01-27T12:04:48.998Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
