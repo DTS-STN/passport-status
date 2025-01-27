@@ -18,7 +18,6 @@ import * as Yup from 'yup'
 
 import ActionButton from '../components/ActionButton'
 import AlertBlock from '../components/AlertBlock'
-import CheckStatusInfo from '../components/CheckStatusInfo'
 import Collapse from '../components/Collapse'
 import DateSelectField, {
   DateSelectFieldOnChangeEvent,
@@ -32,11 +31,19 @@ import IdleTimeout from '../components/IdleTimeout'
 import InputField from '../components/InputField'
 import Layout from '../components/Layout'
 import Modal from '../components/Modal'
+import CheckStatusFileBeingProcessed from '../components/check-status-responses/CheckStatusFileBeingProcessed'
+import CheckStatusNoRecord from '../components/check-status-responses/CheckStatusNoRecord'
+import CheckStatusNotAcceptable from '../components/check-status-responses/CheckStatusNotAcceptable'
+import CheckStatusPrinting from '../components/check-status-responses/CheckStatusPrinting'
+import CheckStatusReadyForPickup from '../components/check-status-responses/CheckStatusReadyForPickup'
+import CheckStatusShippingCanadaPost from '../components/check-status-responses/CheckStatusShippingCanadaPost'
+import CheckStatusShippingFedex from '../components/check-status-responses/CheckStatusShippingFedex'
 import { removeCheckStatus } from '../lib/removeCheckStatus'
 import {
   CheckStatusApiRequestQuery,
   CheckStatusApiResponse,
   StatusCode,
+  TimelineEntryData,
 } from '../lib/types'
 import { useCheckStatus } from '../lib/useCheckStatus'
 import { pageWithServerSideTranslations } from '../lib/utils/next-i18next-utils'
@@ -69,7 +76,7 @@ const scrollToHeading = () => {
 }
 
 const Status = () => {
-  const { t } = useTranslation(['status', 'common'])
+  const { t } = useTranslation(['status', 'common', 'timeline'])
 
   const router = useRouter()
   const [modalOpen, setModalOpen] = useState(false)
@@ -190,6 +197,114 @@ const Status = () => {
     }
   }
 
+  // This is just a first draft of this logic.
+  // We'll ultimately have to come up with logic based
+  // on both the status + the dates (in case they get out of sync).
+  const getTimelineEntries = (
+    response: CheckStatusApiResponse,
+  ): TimelineEntryData[] => {
+    let entries: TimelineEntryData[] = []
+
+    if (response.receivedDate) {
+      entries.push({
+        status: 'done',
+        date: response.receivedDate,
+        step: t('timeline:received'),
+      })
+    }
+
+    if (response.reviewedDate) {
+      entries.push({
+        status: 'done',
+        date: response.reviewedDate,
+        step: t('timeline:review-done'),
+      })
+    } else {
+      entries.push({ status: 'current', step: t('timeline:review-current') })
+    }
+
+    // Documents returned is a special case.
+    // We don't have any timeline entries after this if it exists.
+    if (response.documentsReturnedDate) {
+      entries.push({
+        status: 'done',
+        date: response.documentsReturnedDate,
+        step: t('timeline:documents-returned'),
+      })
+      return entries
+    }
+
+    if (response.printedDate) {
+      entries.push({
+        status: 'done',
+        date: response.printedDate,
+        step: t('timeline:print-done'),
+      })
+    } else if (response.reviewedDate) {
+      entries.push({ status: 'current', step: t('timeline:print-current') })
+    } else {
+      entries.push({ status: 'future', step: t('timeline:print-future') })
+    }
+
+    if (response.submissionType === 'mail') {
+      if (response.mailedDate) {
+        entries.push({ status: 'done', step: t('timeline:mail-future') })
+      } else if (response.printedDate) {
+        entries.push({ status: 'current', step: t('timeline:mail-current') })
+      } else {
+        entries.push({ status: 'future', step: t('timeline:mail-future') })
+      }
+    } else {
+      if (response.pickUpReadyDate) {
+        entries.push({ status: 'done', step: t('timeline:pickup-done') })
+      } else if (response.printedDate) {
+        entries.push({ status: 'current', step: t('timeline:pickup-future') })
+      } else {
+        entries.push({ status: 'future', step: t('timeline:pickup-future') })
+      }
+    }
+
+    return entries
+  }
+
+  const getStatusComponent = (response: CheckStatusApiResponse | null) => {
+    if (response !== null) {
+      let timelineData = getTimelineEntries(response)
+
+      switch (response.status) {
+        case StatusCode.FILE_BEING_PROCESSED:
+          return <CheckStatusFileBeingProcessed />
+        case StatusCode.PASSPORT_ISSUED_READY_FOR_PICKUP:
+          return <CheckStatusReadyForPickup />
+        case StatusCode.PASSPORT_IS_PRINTING:
+          return (
+            <CheckStatusPrinting
+              timelineData={timelineData}
+              backButtonHandler={handleOnGoBackClick}
+            />
+          )
+        case StatusCode.PASSPORT_ISSUED_SHIPPING_CANADA_POST:
+          return (
+            <CheckStatusShippingCanadaPost
+              trackingNumber={response.manifestNumber}
+            />
+          )
+        case StatusCode.PASSPORT_ISSUED_SHIPPING_FEDEX:
+          return (
+            <CheckStatusShippingFedex
+              trackingNumber={response.manifestNumber}
+            />
+          )
+        case StatusCode.NOT_ACCEPTABLE_FOR_PROCESSING:
+          return <CheckStatusNotAcceptable />
+        default:
+          return <CheckStatusNoRecord />
+      }
+    }
+
+    return <CheckStatusNoRecord />
+  }
+
   //if the api failed, fail hard to show error page
   if (checkStatusError) throw checkStatusError
 
@@ -201,17 +316,15 @@ const Status = () => {
       />
       <IdleTimeout />
       {checkStatusResponse !== undefined ? (
-        <CheckStatusInfo
+        <div
           id={
             checkStatusResponse === null
               ? 'response-no-result'
               : 'response-result'
           }
-          onGoBackClick={handleOnGoBackClick}
-          goBackText={checkStatusResponse === null ? t('previous') : t('reset')}
-          goBackStyle="primary"
-          checkStatusResponse={checkStatusResponse}
-        />
+        >
+          {getStatusComponent(checkStatusResponse)}
+        </div>
       ) : (
         <>
           <AlertBlock page="status" />
@@ -350,7 +463,7 @@ const Status = () => {
 
 export const getServerSideProps: GetServerSideProps = async ({ locale }) => ({
   props: {
-    ...(await pageWithServerSideTranslations(locale, 'status')),
+    ...(await pageWithServerSideTranslations(locale, ['status', 'timeline'])),
   },
 })
 

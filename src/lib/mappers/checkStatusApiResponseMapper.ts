@@ -13,6 +13,8 @@ import {
 export const mapToCheckStatusApiResponse = (
   getCertificateApplicationResponse: PassportStatusesGetCertificateApplicationResponse,
 ): CheckStatusApiResponse => ({
+  overdue: false,
+  submissionType: 'mail',
   manifestNumber: getManifestNumber(
     getCertificateApplicationResponse.CertificateApplication
       .CertificateApplicationIdentification,
@@ -20,6 +22,10 @@ export const mapToCheckStatusApiResponse = (
   status:
     getCertificateApplicationResponse.CertificateApplication
       .CertificateApplicationStatus.StatusCode,
+  receivedDate: '2024-01-12',
+  reviewedDate: '2024-01-13',
+  // printedDate: '2024-01-14',
+  // documentsReturnedDate: '2024-01-15',
 })
 
 /**

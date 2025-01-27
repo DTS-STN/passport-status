@@ -1,6 +1,7 @@
 import { PropsWithChildren } from 'react'
 
 import { TimelineEntryStatus, TimelinePosition } from '../lib/types'
+import TimelineEntryContent from './TimelineEntryContent'
 
 export interface TimelineEntryProps extends PropsWithChildren {
   type: TimelineEntryStatus
@@ -141,16 +142,14 @@ const TimelineEntry = ({
           {SVG(type, background)}
         </div>
         <div
-          className={`${type === 'done' ? 'translate-y-5' : 'translate-y-1'} my-6 -translate-x-4`}
+          className={`${type === 'done' ? '-translate-y-0' : 'translate-y-1'} my-6 -translate-x-4`}
         >
-          {type === 'current' || (position == 'last' && type == 'done') ? (
-            <p>
-              <strong>{step}</strong>
-            </p>
-          ) : (
-            <p>{step}</p>
-          )}
-          {type === 'done' && <time dateTime={date}>{date}</time>}
+          <TimelineEntryContent
+            type={type}
+            position={position}
+            topText={step}
+            bottomDate={date}
+          />
         </div>
       </div>
     </div>

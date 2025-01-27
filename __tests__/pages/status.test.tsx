@@ -15,7 +15,6 @@ jest.mock('next/router', () => ({
 }))
 jest.mock('../../src/components/ActionButton')
 jest.mock('../../src/components/ExampleImage')
-jest.mock('../../src/components/CheckStatusInfo')
 jest.mock('../../src/components/ErrorSummary', () => ({
   default: jest.fn(),
   getErrorSummaryItems: jest.fn(() => []),

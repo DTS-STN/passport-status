@@ -1,0 +1,14 @@
+{
+  "received": "[FR]Received",
+  "review-current": "[FR]Reviewing",
+  "review-done": "[FR]Review complete",
+  "print-future": "[FR]Ready to print",
+  "print-current": "[FR]Print in progress",
+  "print-done": "[FR]Printed",
+  "mail-future": "[FR]Passport mailed out",
+  "mail-current": "[FR]Passport being mailed",
+  "pickup-future": "[FR]Ready for pickup",
+  "pickup-done": "[FR]Passport approved",
+  "pickup-instructions": "[FR]Check your receipt for pick-up instructions",
+  "documents-returned": "[FR]Documents returned"
+}

@@ -65,8 +65,12 @@
   "previous": "Vérifier l'état d'une autre demande",
   "printing": {
     "in-printing": "Nous imprimons votre passeport",
-    "reviewed-printing": "Votre demande a été examinée et votre passeport est maintenant prêt à être imprimé. Veuillez noter que le processus d'impression peut prendre quelques jours ouvrables.",
-    "print-update": "Une fois votre passeport imprimé, l'état de votre demande sera mis à jour en conséquence."
+    "reviewed-printing": "Votre demande a été examinée et votre passeport est prêt à être imprimé. Veuillez noter que l'impression peut prendre quelques jours ouvrables.",
+    "service-standards": {
+      "header": "Nos normes de service",
+      "we-received": "Nous avons reçu votre demande le {{receivedDate}}. Notre <Link>norme de service</Link> pour les demandes présentées par la poste est 20 jours ouvrables.",
+      "dont-meet": "Si nous ne respectons pas nos normes de service, vous pourriez avoir droit à un remboursement partiel."
+    }
   },
   "ready-for-pickup": {
     "check-receipt": "Vérifiez votre reçu pour les instructions de retrait en personne",
