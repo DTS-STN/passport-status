@@ -1,6 +1,7 @@
 import { PropsWithChildren } from 'react'
 
 import { TimelineEntryStatus, TimelinePosition } from '../lib/types'
+import TimelineEntryContent from './TimelineEntryContent'
 
 export interface TimelineEntryProps extends PropsWithChildren {
   type: TimelineEntryStatus
@@ -126,27 +127,6 @@ const TimelineEntry = ({
   const topBorderComputedStyle = topBorderStyle(type, position)
   const bottomBorderComputedStyle = bottomBorderStyle(type, position)
 
-  const entryStep = () => {
-    if (type === 'current') {
-      return (
-        <p>
-          <strong>{step}</strong>
-        </p>
-      )
-    } else if (type === 'done' && date !== null) {
-      if (position === 'last') {
-        return (
-          <p className="">
-            <strong>{step}</strong>
-          </p>
-        )
-      }
-      return <p className="">{step}</p>
-    }
-
-    return <p>{step}</p>
-  }
-
   return (
     <div className={className}>
       <div className="flex flex-row">
@@ -164,8 +144,12 @@ const TimelineEntry = ({
         <div
           className={`${type === 'done' ? '-translate-y-0' : 'translate-y-1'} my-6 -translate-x-4`}
         >
-          {entryStep()}
-          {type === 'done' && <time dateTime={date}>{date}</time>}
+          <TimelineEntryContent
+            type={type}
+            position={position}
+            topText={step}
+            bottomDate={date}
+          />
         </div>
       </div>
     </div>
