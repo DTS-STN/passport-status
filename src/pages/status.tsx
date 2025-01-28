@@ -182,7 +182,7 @@ const Status = () => {
     if (checkStatusResponse === undefined) return t('header')
     switch (checkStatusResponse?.status) {
       case StatusCode.FILE_BEING_PROCESSED:
-        return t('being-processed.received')
+        return t('being-processed.reviewing-application')
       case StatusCode.PASSPORT_ISSUED_READY_FOR_PICKUP:
         return t('ready-for-pickup.has-been-printed')
       case StatusCode.PASSPORT_IS_PRINTING:
@@ -247,7 +247,7 @@ const Status = () => {
       entries.push({ status: 'future', step: t('timeline:print-future') })
     }
 
-    if (response.submissionType === 'mail') {
+    if (response.deliveryMethod === '1') {
       if (response.mailedDate) {
         entries.push({ status: 'done', step: t('timeline:mail-future') })
       } else if (response.printedDate) {
@@ -276,7 +276,13 @@ const Status = () => {
 
       switch (response.status) {
         case StatusCode.FILE_BEING_PROCESSED:
-          return <CheckStatusFileBeingProcessed />
+          return (
+            <CheckStatusFileBeingProcessed
+              backButtonHandler={handleOnGoBackClick}
+              timelineData={timelineData}
+              serviceLevel={serviceLevel}
+            />
+          )
         case StatusCode.PASSPORT_ISSUED_READY_FOR_PICKUP:
           return <CheckStatusReadyForPickup />
         case StatusCode.PASSPORT_IS_PRINTING:
