@@ -15,8 +15,27 @@
     },
     "incomplete-applications": {
       "heading": "Incomplete applications",
-      "description": "If your application is incomplete or inaccurate, we may not be able to process it. Depending on the issue, we may contact you by mail or telephone.",
+      "description": "If your application is incomplete or inaccurate, we may not be able to process it. Depending on the issue, we may contact you by mail or telephone. If we contact you by phone, the call may show up as a blocked number. We will <strong>never</strong> contact you by text message or instant message.",
       "return-notice": "In some cases, we may have to return your application to you by mail."
+    }
+  },
+  "being-processed-overdue": {
+    "processing-delays-warning": {
+      "header": "Passport processing delays",
+      "description": "We're experiencing a high volume of applications. We apologize for the inconvenience."
+    },
+    "reviewing-application": "We are still reviewing your application.",
+    "employee-reviewing": "A passport employee is reviewing your application.",
+    "processing-delayed": "Processing is taking longer than expected. We are making every effort to complete it as soon as possible. We apologize for the inconvenience.",
+    "service-standards": {
+      "heading": "Our service standards",
+      "received-date": "We received your application on {{receivedDate}}. Our <Link>service standard</Link> is {{serviceLevel}} business days.",
+      "urgent-service-note": "If you requested urgent or express service at the passport office, your service standard is different. Please refer to your receipt for the pick-up date.",
+      "refund-eligibility": "Since we didn’t meet our service standard, you may be <Link>eligible for a partial refund</Link>. Most refunds are processed automatically."
+    },
+    "travelling-soon": {
+      "heading": "If you need your passport sooner",
+      "if-travelling": "If you’re travelling soon, we’ll do everything we can to get you your passport in time. Find out how to get <Link>urgent or express service for existing applications</Link> if you need the passport within 10 business days. Extra fees may apply."
     }
   },
   "check-status": "Check Status",

@@ -118,6 +118,7 @@ export enum StatusCode {
   PASSPORT_ISSUED_SHIPPING_FEDEX = '4',
   NOT_ACCEPTABLE_FOR_PROCESSING = '5',
   PASSPORT_IS_PRINTING = '6',
+  FILE_BEING_PROCESSED_OVERDUE = '7',
 }
 
 export type TimelineEntryStatus = 'done' | 'current' | 'future'

@@ -35,6 +35,7 @@ import CheckStatusFileBeingProcessed from '../components/check-status-responses/
 import CheckStatusNoRecord from '../components/check-status-responses/CheckStatusNoRecord'
 import CheckStatusNotAcceptable from '../components/check-status-responses/CheckStatusNotAcceptable'
 import CheckStatusPrinting from '../components/check-status-responses/CheckStatusPrinting'
+import CheckStatusProcessingOverdue from '../components/check-status-responses/CheckStatusProcessingOverdue'
 import CheckStatusReadyForPickup from '../components/check-status-responses/CheckStatusReadyForPickup'
 import CheckStatusShippingCanadaPost from '../components/check-status-responses/CheckStatusShippingCanadaPost'
 import CheckStatusShippingFedex from '../components/check-status-responses/CheckStatusShippingFedex'
@@ -42,6 +43,7 @@ import { removeCheckStatus } from '../lib/removeCheckStatus'
 import {
   CheckStatusApiRequestQuery,
   CheckStatusApiResponse,
+  DeliveryMethodCode,
   ServiceLevelCode,
   StatusCode,
   TimelineEntryData,
@@ -183,6 +185,8 @@ const Status = () => {
     switch (checkStatusResponse?.status) {
       case StatusCode.FILE_BEING_PROCESSED:
         return t('being-processed.reviewing-application')
+      case StatusCode.FILE_BEING_PROCESSED_OVERDUE:
+        return t('being-processed-overdue.employee-reviewing')
       case StatusCode.PASSPORT_ISSUED_READY_FOR_PICKUP:
         return t('ready-for-pickup.has-been-printed')
       case StatusCode.PASSPORT_IS_PRINTING:
@@ -274,6 +278,11 @@ const Status = () => {
       const serviceLevel =
         response.serviceLevel === ServiceLevelCode.TEN_DAYS ? '10' : '20'
 
+      const deliveryMethod =
+        response.deliveryMethod === DeliveryMethodCode.MAIL
+          ? 'mail'
+          : 'in-person'
+
       switch (response.status) {
         case StatusCode.FILE_BEING_PROCESSED:
           return (
@@ -281,6 +290,16 @@ const Status = () => {
               backButtonHandler={handleOnGoBackClick}
               timelineData={timelineData}
               serviceLevel={serviceLevel}
+              deliveryMethod={deliveryMethod}
+            />
+          )
+        case StatusCode.FILE_BEING_PROCESSED_OVERDUE:
+          return (
+            <CheckStatusProcessingOverdue
+              backButtonHandler={handleOnGoBackClick}
+              timelineData={timelineData}
+              serviceLevel={serviceLevel}
+              deliveryMethod={deliveryMethod}
             />
           )
         case StatusCode.PASSPORT_ISSUED_READY_FOR_PICKUP:
