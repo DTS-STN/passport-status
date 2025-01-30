@@ -12,6 +12,7 @@ import Timeline from '../Timeline'
 export type CheckStatusProcessingProps = {
   serviceLevel: '10' | '20'
   deliveryMethod: 'mail' | 'in-person'
+  receivedDate: string
   timelineData: TimelineEntryData[]
   backButtonHandler: MouseEventHandler<HTMLButtonElement>
 }
@@ -20,12 +21,16 @@ export const CheckStatusFileBeingProcessed = (
   props: CheckStatusProcessingProps,
 ) => {
   const { t, i18n } = useTranslation(['status', 'common'])
-  const { serviceLevel, deliveryMethod, timelineData, backButtonHandler } =
-    props
-  const receivedDate = formatDate(
-    timelineData[0].date ?? '1900-01-01',
-    i18n.language,
-  )
+
+  const {
+    receivedDate,
+    serviceLevel,
+    deliveryMethod,
+    timelineData,
+    backButtonHandler,
+  } = props
+
+  const formattedDate = formatDate(receivedDate, i18n.language)
 
   return (
     <div id="response-result">
@@ -58,7 +63,7 @@ export const CheckStatusFileBeingProcessed = (
               i18nKey={'being-processed.service-standards.received-date'}
               ns="status"
               values={{
-                receivedDate: receivedDate,
+                receivedDate: formattedDate,
                 serviceLevel: serviceLevel,
               }}
             />

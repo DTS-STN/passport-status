@@ -1,5 +1,3 @@
-import { Service } from 'next-seo/lib/types'
-
 export type AdobeDataLayer = { push?: (object: Record<string, string>) => void }
 export type AppWindow = Window &
   typeof globalThis & { adobeDataLayer?: AdobeDataLayer }
@@ -12,6 +10,7 @@ export type AlertPage =
   | 'status-not-found'
   | 'status-invalid'
   | 'status-processing'
+  | 'status-processing-overdue'
   | 'status-ready-pickup'
   | 'status-shipped-canada'
   | 'status-shipped-fedex'

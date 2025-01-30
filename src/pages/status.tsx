@@ -274,7 +274,11 @@ const Status = () => {
 
   const getStatusComponent = (response: CheckStatusApiResponse | null) => {
     if (response !== null) {
-      let timelineData = getTimelineEntries(response)
+      const timelineData = getTimelineEntries(response)
+      const receivedDate =
+        timelineData && timelineData[0]?.date
+          ? timelineData[0].date
+          : '1900-01-01'
       const serviceLevel =
         response.serviceLevel === ServiceLevelCode.TEN_DAYS ? '10' : '20'
 
@@ -289,6 +293,7 @@ const Status = () => {
             <CheckStatusFileBeingProcessed
               backButtonHandler={handleOnGoBackClick}
               timelineData={timelineData}
+              receivedDate={receivedDate}
               serviceLevel={serviceLevel}
               deliveryMethod={deliveryMethod}
             />
@@ -298,6 +303,7 @@ const Status = () => {
             <CheckStatusProcessingOverdue
               backButtonHandler={handleOnGoBackClick}
               timelineData={timelineData}
+              receivedDate={receivedDate}
               serviceLevel={serviceLevel}
               deliveryMethod={deliveryMethod}
             />
@@ -309,6 +315,7 @@ const Status = () => {
             <CheckStatusPrinting
               serviceLevel={serviceLevel}
               timelineData={timelineData}
+              receivedDate={receivedDate}
               backButtonHandler={handleOnGoBackClick}
             />
           )

@@ -4,6 +4,7 @@ import { render, screen } from '@testing-library/react'
 import { axe, toHaveNoViolations } from 'jest-axe'
 
 import CheckStatusFileBeingProcessed from '../../../src/components/check-status-responses/CheckStatusFileBeingProcessed'
+import { TimelineEntryData } from '../../../src/lib/types'
 
 expect.extend(toHaveNoViolations)
 
@@ -16,7 +17,23 @@ jest.mock('../../../src/lib/useAlerts', () => ({
 }))
 
 describe('CheckStatusFileBeingProcessed', () => {
-  const sut = <CheckStatusFileBeingProcessed />
+  const handleOnGoBackClick = () => {}
+  const timelineData: TimelineEntryData[] = [
+    {
+      step: 'Received',
+      status: 'done',
+      date: '2025-01-01',
+    },
+  ]
+  const sut = (
+    <CheckStatusFileBeingProcessed
+      backButtonHandler={handleOnGoBackClick}
+      timelineData={timelineData}
+      receivedDate="2024-01-01"
+      serviceLevel="20"
+      deliveryMethod="mail"
+    />
+  )
 
   //TODO: add test for when phone number is visible and when it isn't
   it('renders', () => {

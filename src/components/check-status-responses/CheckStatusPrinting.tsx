@@ -11,6 +11,7 @@ import Timeline from '../Timeline'
 
 export type CheckStatusPrintingProps = {
   serviceLevel: '10' | '20'
+  receivedDate: string
   timelineData: TimelineEntryData[]
   backButtonHandler: MouseEventHandler<HTMLButtonElement>
 }
@@ -18,12 +19,9 @@ export type CheckStatusPrintingProps = {
 export const CheckStatusPrinting = (props: CheckStatusPrintingProps) => {
   const { t, i18n } = useTranslation(['status', 'timeline'])
 
-  const { serviceLevel, timelineData, backButtonHandler } = props
+  const { receivedDate, serviceLevel, timelineData, backButtonHandler } = props
 
-  const receivedDate = formatDate(
-    timelineData[0].date ?? '1900-01-01',
-    i18n.language,
-  )
+  const formattedDate = formatDate(receivedDate, i18n.language)
 
   return (
     <div id="response-result">
@@ -50,7 +48,7 @@ export const CheckStatusPrinting = (props: CheckStatusPrintingProps) => {
             <Trans
               i18nKey="printing.service-standards.we-received"
               ns="status"
-              tOptions={{ receivedDate, serviceLevel }}
+              tOptions={{ formattedDate, serviceLevel }}
               components={{
                 Link: (
                   <ExternalLink
