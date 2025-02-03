@@ -50,7 +50,7 @@ export interface CheckStatusApiResponse {
   status: string
   serviceLevel: ServiceLevelCode
   deliveryMethod: DeliveryMethodCode
-  receivedDate?: string
+  receivedDate: string
   reviewedDate?: string
   printedDate?: string
   mailedDate?: string
@@ -99,8 +99,9 @@ export interface PassportStatusesCertificateApplicationIdentification {
 
 export interface PassportStatusesCertificateApplicationStatus {
   StatusCode: string
-  // SubmissionType: 'mail' | 'person'
-  // Overdue: boolean
+  // DeliveryMethodCode: string
+  // ServiceLevelCode: string
+  // TimelineExists: boolean
   // ReceivedDate?: string
   // ReviewedDate?: string
   // PrintedDate?: string
@@ -138,4 +139,12 @@ export enum ServiceLevelCode {
 export enum DeliveryMethodCode {
   MAIL = '1',
   IN_PERSON = '2',
+}
+
+export type StatusDisplayData = {
+  receivedDate: string
+  serviceLevel: ServiceLevelCode
+  deliveryMethod: DeliveryMethodCode
+  timelineExists: boolean
+  timelineData: TimelineEntryData[]
 }

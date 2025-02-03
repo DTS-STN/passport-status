@@ -1,8 +1,6 @@
 export const formatDate = (dateString: string, lang: string): string => {
   const date = new Date(dateString)
 
-  console.log(`DATE_STRING: ${dateString}`)
-
   // Check if the date is valid
   if (isNaN(date.getTime())) {
     throw new Error('Invalid date')

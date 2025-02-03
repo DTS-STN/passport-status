@@ -1,35 +1,28 @@
-import { MouseEventHandler } from 'react'
-
 import { Trans, useTranslation } from 'next-i18next'
 
-import { TimelineEntryData } from '../../lib/types'
+import { DeliveryMethodCode, ServiceLevelCode } from '../../lib/types'
 import { formatDate } from '../../lib/utils/dates'
+import { StatusResultProps } from '../../pages/status'
 import ActionButton from '../ActionButton'
 import AlertBlock from '../AlertBlock'
 import AlertSection from '../AlertSection'
 import ExternalLink from '../ExternalLink'
 import Timeline from '../Timeline'
 
-export type CheckStatusProcessingOverdueProps = {
-  serviceLevel: '10' | '20'
-  deliveryMethod: 'mail' | 'in-person'
-  receivedDate: string
-  timelineData: TimelineEntryData[]
-  backButtonHandler: MouseEventHandler<HTMLButtonElement>
-}
-
-export const CheckStatusProcessingOverdue = (
-  props: CheckStatusProcessingOverdueProps,
-) => {
+export const CheckStatusProcessingOverdue = (props: StatusResultProps) => {
   const { t, i18n } = useTranslation(['status', 'common'])
 
+  const { displayData, backButtonHandler } = props
+
   const {
+    deliveryMethod,
     receivedDate,
     serviceLevel,
-    deliveryMethod,
+    timelineExists,
     timelineData,
-    backButtonHandler,
-  } = props
+  } = displayData
+
+  const serviceDays = serviceLevel === ServiceLevelCode.TEN_DAYS ? '10' : '20'
 
   const formattedDate = formatDate(receivedDate, i18n.language)
 
@@ -59,7 +52,7 @@ export const CheckStatusProcessingOverdue = (
           <p>{t('status:being-processed-overdue.reviewing-application')}</p>
           <p>{t('status:being-processed-overdue.employee-reviewing')}</p>
           <p>{t('status:being-processed-overdue.processing-delayed')}</p>
-          {timelineData.length > 0 && (
+          {timelineExists && (
             <div className="flex w-full justify-center sm:hidden">
               <Timeline entries={timelineData} />
             </div>
@@ -75,11 +68,11 @@ export const CheckStatusProcessingOverdue = (
               ns="status"
               values={{
                 receivedDate: formattedDate,
-                serviceLevel: serviceLevel,
+                serviceLevel: serviceDays,
               }}
             />
           </p>
-          {deliveryMethod === 'in-person' && (
+          {deliveryMethod === DeliveryMethodCode.IN_PERSON && (
             <p>
               {t(
                 'status:being-processed-overdue.service-standards.urgent-service-note',
@@ -106,7 +99,10 @@ export const CheckStatusProcessingOverdue = (
                   />
                 ),
               }}
-              values={{ serviceLevel: serviceLevel }}
+              values={{
+                serviceLevel:
+                  serviceLevel === ServiceLevelCode.TEN_DAYS ? '10' : '20',
+              }}
             />
           </p>
 
@@ -118,7 +114,7 @@ export const CheckStatusProcessingOverdue = (
             />
           </div>
         </div>
-        {timelineData && (
+        {timelineExists && (
           <div className="hidden w-full justify-center sm:flex">
             <div className="-mt-6">
               <Timeline entries={timelineData} />

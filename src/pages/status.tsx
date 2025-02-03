@@ -43,9 +43,8 @@ import { removeCheckStatus } from '../lib/removeCheckStatus'
 import {
   CheckStatusApiRequestQuery,
   CheckStatusApiResponse,
-  DeliveryMethodCode,
-  ServiceLevelCode,
   StatusCode,
+  StatusDisplayData,
   TimelineEntryData,
 } from '../lib/types'
 import { useCheckStatus } from '../lib/useCheckStatus'
@@ -76,6 +75,11 @@ const scrollToHeading = () => {
     heading.scrollIntoView({ behavior: 'smooth', block: 'center' })
     heading.focus()
   }, 300)
+}
+
+export type StatusResultProps = {
+  displayData: StatusDisplayData
+  backButtonHandler: MouseEventHandler<HTMLButtonElement>
 }
 
 const Status = () => {
@@ -275,37 +279,28 @@ const Status = () => {
   const getStatusComponent = (response: CheckStatusApiResponse | null) => {
     if (response !== null) {
       const timelineData = getTimelineEntries(response)
-      const receivedDate =
-        timelineData && timelineData[0]?.date
-          ? timelineData[0].date
-          : '1900-01-01'
-      const serviceLevel =
-        response.serviceLevel === ServiceLevelCode.TEN_DAYS ? '10' : '20'
 
-      const deliveryMethod =
-        response.deliveryMethod === DeliveryMethodCode.MAIL
-          ? 'mail'
-          : 'in-person'
+      const displayData: StatusDisplayData = {
+        serviceLevel: response.serviceLevel,
+        timelineExists: true,
+        timelineData: timelineData,
+        deliveryMethod: response.deliveryMethod,
+        receivedDate: response.receivedDate,
+      }
 
       switch (response.status) {
         case StatusCode.FILE_BEING_PROCESSED:
           return (
             <CheckStatusFileBeingProcessed
+              displayData={displayData}
               backButtonHandler={handleOnGoBackClick}
-              timelineData={timelineData}
-              receivedDate={receivedDate}
-              serviceLevel={serviceLevel}
-              deliveryMethod={deliveryMethod}
             />
           )
         case StatusCode.FILE_BEING_PROCESSED_OVERDUE:
           return (
             <CheckStatusProcessingOverdue
+              displayData={displayData}
               backButtonHandler={handleOnGoBackClick}
-              timelineData={timelineData}
-              receivedDate={receivedDate}
-              serviceLevel={serviceLevel}
-              deliveryMethod={deliveryMethod}
             />
           )
         case StatusCode.PASSPORT_ISSUED_READY_FOR_PICKUP:
@@ -313,9 +308,7 @@ const Status = () => {
         case StatusCode.PASSPORT_IS_PRINTING:
           return (
             <CheckStatusPrinting
-              serviceLevel={serviceLevel}
-              timelineData={timelineData}
-              receivedDate={receivedDate}
+              displayData={displayData}
               backButtonHandler={handleOnGoBackClick}
             />
           )

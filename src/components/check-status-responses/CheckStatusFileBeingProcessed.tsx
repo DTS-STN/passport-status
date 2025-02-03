@@ -1,34 +1,27 @@
-import { MouseEventHandler } from 'react'
-
 import { Trans, useTranslation } from 'next-i18next'
 
-import { TimelineEntryData } from '../../lib/types'
+import { DeliveryMethodCode, ServiceLevelCode } from '../../lib/types'
 import { formatDate } from '../../lib/utils/dates'
+import { StatusResultProps } from '../../pages/status'
 import ActionButton from '../ActionButton'
 import AlertBlock from '../AlertBlock'
 import ExternalLink from '../ExternalLink'
 import Timeline from '../Timeline'
 
-export type CheckStatusProcessingProps = {
-  serviceLevel: '10' | '20'
-  deliveryMethod: 'mail' | 'in-person'
-  receivedDate: string
-  timelineData: TimelineEntryData[]
-  backButtonHandler: MouseEventHandler<HTMLButtonElement>
-}
-
-export const CheckStatusFileBeingProcessed = (
-  props: CheckStatusProcessingProps,
-) => {
+export const CheckStatusFileBeingProcessed = (props: StatusResultProps) => {
   const { t, i18n } = useTranslation(['status', 'common'])
 
+  const { displayData, backButtonHandler } = props
+
   const {
+    deliveryMethod,
     receivedDate,
     serviceLevel,
-    deliveryMethod,
+    timelineExists,
     timelineData,
-    backButtonHandler,
-  } = props
+  } = displayData
+
+  const serviceDays = serviceLevel === ServiceLevelCode.TEN_DAYS ? '10' : '20'
 
   const formattedDate = formatDate(receivedDate, i18n.language)
 
@@ -47,10 +40,10 @@ export const CheckStatusFileBeingProcessed = (
         <div className="max-w-prose">
           <p>{t('status:being-processed.processing-details')}</p>
           <p>{t('status:being-processed.completion-status')}</p>
-          {deliveryMethod === 'in-person' && (
+          {deliveryMethod === DeliveryMethodCode.IN_PERSON && (
             <p>{t('status:being-processed.urgent-service-note')}</p>
           )}
-          {timelineData.length > 0 && (
+          {timelineExists && (
             <div className="flex w-full justify-center sm:hidden">
               <Timeline entries={timelineData} />
             </div>
@@ -64,7 +57,7 @@ export const CheckStatusFileBeingProcessed = (
               ns="status"
               values={{
                 receivedDate: formattedDate,
-                serviceLevel: serviceLevel,
+                serviceLevel: serviceDays,
               }}
             />
           </p>
@@ -85,7 +78,7 @@ export const CheckStatusFileBeingProcessed = (
                   />
                 ),
               }}
-              values={{ serviceLevel: serviceLevel }}
+              values={{ serviceLevel: serviceDays }}
             />
           </p>
           <h2 className="h2 mb-2 mt-8">
@@ -105,7 +98,7 @@ export const CheckStatusFileBeingProcessed = (
             />
           </div>
         </div>
-        {timelineData && (
+        {timelineExists && (
           <div className="hidden w-full justify-center sm:flex">
             <div className="-mt-6">
               <Timeline entries={timelineData} />

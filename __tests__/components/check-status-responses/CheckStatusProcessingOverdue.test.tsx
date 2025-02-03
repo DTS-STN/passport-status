@@ -4,7 +4,12 @@ import { render, screen } from '@testing-library/react'
 import { axe, toHaveNoViolations } from 'jest-axe'
 
 import CheckStatusProcessingOverdue from '../../../src/components/check-status-responses/CheckStatusProcessingOverdue'
-import { TimelineEntryData } from '../../../src/lib/types'
+import {
+  DeliveryMethodCode,
+  ServiceLevelCode,
+  StatusDisplayData,
+  TimelineEntryData,
+} from '../../../src/lib/types'
 
 expect.extend(toHaveNoViolations)
 
@@ -25,13 +30,19 @@ describe('CheckStatusFileProcessingOverdue', () => {
       date: '2025-01-01',
     },
   ]
+
+  const displayData: StatusDisplayData = {
+    serviceLevel: ServiceLevelCode.TWENTY_DAYS,
+    timelineExists: true,
+    timelineData: timelineData,
+    deliveryMethod: DeliveryMethodCode.MAIL,
+    receivedDate: '2025-01-01',
+  }
+
   const sut = (
     <CheckStatusProcessingOverdue
       backButtonHandler={handleOnGoBackClick}
-      timelineData={timelineData}
-      receivedDate="2025-01-01"
-      serviceLevel="20"
-      deliveryMethod="mail"
+      displayData={displayData}
     />
   )
 
