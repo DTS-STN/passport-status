@@ -1,8 +1,8 @@
 {
   "being-processed": {
     "reviewing-application": "We are reviewing your application.",
-    "processing-details": "A passport employee is reviewing your application. This review normally takes about 15 business days, plus 5 days for printing.",
-    "completion-status": "If your application has been properly completed, your passport should be mailed to you within 20 business days.",
+    "processing-details": "A passport employee is reviewing your application. This review normally takes about {{reviewDays}} business days, plus {{printDays}} days for printing.",
+    "completion-status": "If your application has been properly completed, your passport should be mailed to you within {{serviceLevel}} business days.",
     "urgent-service-note": "If you requested urgent or express service at the passport office, your service standard is different. Please refer to your receipt for the pick-up date.",
     "service-standards": {
       "heading": "Our service standards",
@@ -91,10 +91,11 @@
   "previous": "Check the status of another application",
   "printing": {
     "in-printing": "We are printing your passport",
-    "reviewed-printing": "Your application has been reviewed, and your passport is now ready for printing. Please note that the printing process may take a few business days.",
+    "requested-urgent": "If you requested urgent or express service at the passport office, your service standard is different. Please refer to your receipt for the pick-up date.",
+    "reviewed-printing": "Your application has been reviewed and your passport is ready for printing. Be aware that printing can take a few business days.",
     "service-standards": {
       "header": "Our service standards",
-      "we-received": "We received your application on {{receivedDate}}. Our <Link>service standard</Link> for mail-in applications is {{serviceLevel}} business days.",
+      "we-received": "We received your application on {{receivedDate}}. Our <Link>service standard</Link> is {{serviceLevel}} business days.",
       "dont-meet": "If we don’t meet our service standard, you may be eligible for a partial refund."
     }
   },

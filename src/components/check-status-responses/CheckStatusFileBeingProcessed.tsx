@@ -38,8 +38,27 @@ export const CheckStatusFileBeingProcessed = (props: StatusResultProps) => {
       </h1>
       <div className="flex flex-col sm:flex-row">
         <div className="max-w-prose">
-          <p>{t('status:being-processed.processing-details')}</p>
-          <p>{t('status:being-processed.completion-status')}</p>
+          <p>
+            <Trans
+              i18nKey={'being-processed.processing-details'}
+              ns="status"
+              values={{
+                reviewDays:
+                  serviceLevel === ServiceLevelCode.TEN_DAYS ? '7' : '15',
+                printDays:
+                  serviceLevel === ServiceLevelCode.TEN_DAYS ? '3' : '5',
+              }}
+            />
+          </p>
+          <p>
+            <Trans
+              i18nKey={'being-processed.completion-status'}
+              ns="status"
+              values={{
+                serviceLevel: serviceDays,
+              }}
+            />
+          </p>
           {deliveryMethod === DeliveryMethodCode.IN_PERSON && (
             <p>{t('status:being-processed.urgent-service-note')}</p>
           )}

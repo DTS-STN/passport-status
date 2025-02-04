@@ -1,8 +1,8 @@
 {
   "being-processed": {
     "reviewing-application": "Nous examinons votre demande",
-    "processing-details": "Cet examen prend normalement environ 15 jours ouvrables, plus 5 jours pour l'impression.",
-    "completion-status": "Si votre demande a été dûment remplie, votre passeport devrait vous être envoyé par la poste dans les 20 jours ouvrables.",
+    "processing-details": "Cet examen prend normalement environ {{reviewDays}} jours ouvrables, plus {{printDays}} jours pour l'impression.",
+    "completion-status": "Si votre demande a été dûment remplie, votre passeport devrait vous être envoyé par la poste dans les {{serviceLevel}} jours ouvrables.",
     "urgent-service-note": "Si vous avez demandé un service urgent ou express au bureau des passeports, votre norme de service est différente. Veuillez-vous référer à votre reçu pour connaître la date de retrait.",
     "service-standards": {
       "heading": "Nos normes de service",
@@ -91,10 +91,11 @@
   "previous": "Vérifier l'état d'une autre demande",
   "printing": {
     "in-printing": "Nous imprimons votre passeport",
+    "requested-urgent": "Si vous avez demandé un service urgent ou express au bureau des passeports, votre norme de service est différente. Veuillez-vous référer à votre reçu pour connaître la date de retrait.",
     "reviewed-printing": "Votre demande a été examinée et votre passeport est prêt à être imprimé. Veuillez noter que l'impression peut prendre quelques jours ouvrables.",
     "service-standards": {
       "header": "Nos normes de service",
-      "we-received": "Nous avons reçu votre demande le {{receivedDate}}. Notre <Link>norme de service</Link> pour les demandes présentées par la poste est {{serviceLevel}} jours ouvrables.",
+      "we-received": "Nous avons reçu votre demande le {{receivedDate}}. Notre <Link>norme de service</Link> est {{serviceLevel}} jours ouvrables.",
       "dont-meet": "Si nous ne respectons pas nos normes de service, vous pourriez avoir droit à un remboursement partiel."
     }
   },

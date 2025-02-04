@@ -29,6 +29,9 @@ export const CheckStatusPrinting = (props: StatusResultProps) => {
       <div className="flex flex-col sm:flex-row">
         <div className="max-w-prose">
           <p>{t('status:printing.reviewed-printing')}</p>
+          {serviceLevel === ServiceLevelCode.TEN_DAYS && (
+            <p>{t('status:printing.requested-urgent')}</p>
+          )}
           {timelineExists && (
             <div className="flex w-full justify-center sm:hidden">
               <Timeline entries={timelineData} />
