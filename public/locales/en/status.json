@@ -115,19 +115,16 @@
     "take-up-to": "It can take up to 2 to 3 business days to arrive."
   },
   "shipped-fedex": {
-    "header": "Your passport has been printed and mailed to you",
-    "country-canada": {
-      "header": "Information for clients whose passport is being mailed within Canada",
-      "mailing": "We're sending it to you by Purolator"
-    },
-    "country-us": {
-      "header": "Information for clients whose passport is being mailed to the United States",
-      "mailing": "We're sending it to you by FedEx"
-    },
-    "supporting-documents": "We may send your supporting documents back separately.",
-    "take-up-to": "It can take up to 5 to 7 business days to arrive."
+    "header": "Your passport has been mailed to you",
+    "printed-mailed": "Your new passport has been successfully printed and mailed to you.",
+    "shipping-information": {
+      "header": "Shipping information",
+      "sending-via": "We’re sending your passport and your supporting documents by FedEx.",
+      "dont-receive": "If you don’t receive your passport or supporting documents, <Link>contact us</Link>.",
+      "take-up-to": "It can take up to 5 to 7 business days to arrive."
+    }
   },
-  "status-check-call": "<Link>Contact us</Link> if you don't receive your documents within 6 weeks of receiving your passport.",
+  "status-check-call": "If you don’t receive your passport or supporting documents, <Link>contact us</Link>.",
   "status-check-contact": {
     "service-standard-href": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/processing-times.html"
   },

@@ -116,18 +116,15 @@
   },
   "shipped-fedex": {
     "header": "Votre passeport a été imprimé et envoyé par la poste",
-    "country-canada": {
-      "header": "Informations pour les clients dont le passeport est envoyé par la poste au Canada",
-      "mailing": "Nous vous l'envoyons par Purolator"
-    },
-    "country-us": {
-      "header": "Informations pour les clients dont le passeport est envoyé aux États-Unis",
-      "mailing": "Nous vous l'envoyons par FedEx"
-    },
-    "supporting-documents": "Nous pourrions renvoyer vos documents fournis en support de la demande séparément.",
-    "take-up-to": "Cela peut prendre jusqu'à 5 à 7 jours ouvrables pour arriver."
+    "printed-mailed": "Votre nouveau passeport a été imprimé avec succès et vous a été envoyé par la poste.",
+    "shipping-information": {
+      "header": "Informations sur l’expédition",
+      "sending-via": "Nous vous envoyons votre passeport et vos documents fournis en support de la demande par FedEx.",
+      "dont-receive": "Si vous ne recevez pas votre passeport ou vos documents fournis en support de la demande, <Link>contactez-nous</Link>.",
+      "take-up-to": "Cela peut prendre jusqu'à 5 à 7 jours ouvrables pour arriver."
+    }
   },
-  "status-check-call": "<Link>Communiquez avec nous</Link> seulement si vous ne recevez pas vos documents dans les six semaines suivant la réception de votre passeport.",
+  "status-check-call": "Si vous ne recevez pas votre passeport ou vos documents fournis en support de la demande, <Link>contactez-nous</Link>.",
   "status-check-contact": {
     "service-standard-href": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens/delais-traitement.html"
   },

@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react'
 
 import { axe, toHaveNoViolations } from 'jest-axe'
 
-import CheckStatusShippingFedex from '../../../src/components/check-status-responses/CheckStatusShippingFedex'
+import CheckStatusShippingCanadaPost from '../../../src/components/check-status-responses/CheckStatusShippingCanadaPost'
 
 expect.extend(toHaveNoViolations)
 
@@ -15,8 +15,8 @@ jest.mock('../../../src/lib/useAlerts', () => ({
   }),
 }))
 
-describe('CheckStatusShippingFedex', () => {
-  const sut = <CheckStatusShippingFedex />
+describe('CheckStatusShippingCanadaPost', () => {
+  const sut = <CheckStatusShippingCanadaPost />
 
   //TODO: add test for when phone number is visible and when it isn't
   it('renders', () => {
@@ -24,7 +24,7 @@ describe('CheckStatusShippingFedex', () => {
 
     const heading = screen.getByRole('heading', { level: 1 })
 
-    expect(screen.getByTestId('shipped-fedex')).toBeInTheDocument()
+    expect(screen.getByTestId('shipped-canada-post')).toBeInTheDocument()
     expect(heading).toBeInTheDocument()
     expect(heading).toHaveAttribute('id', 'main-header')
   })

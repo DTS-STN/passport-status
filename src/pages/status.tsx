@@ -321,6 +321,8 @@ const Status = () => {
         case StatusCode.PASSPORT_ISSUED_SHIPPING_FEDEX:
           return (
             <CheckStatusShippingFedex
+              backButtonHandler={handleOnGoBackClick}
+              displayData={displayData}
               trackingNumber={response.manifestNumber}
             />
           )
