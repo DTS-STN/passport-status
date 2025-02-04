@@ -24,7 +24,7 @@ export const CheckStatusShippingFedex = ({
   const { timelineExists, timelineData } = displayData
 
   return (
-    <>
+    <div id="response-result">
       <AlertBlock page="status-shipped-fedex" />
       <h1
         id="main-header"
@@ -105,7 +105,7 @@ export const CheckStatusShippingFedex = ({
           </div>
         )}
       </div>
-    </>
+    </div>
   )
 }
 

@@ -100,11 +100,9 @@
     }
   },
   "ready-for-pickup": {
-    "check-receipt": "Vérifiez votre reçu pour les instructions de retrait en personne",
-    "date-passed": "Si votre date de retrait en personne est passée, vous pouvez aller chercher votre passeport à tout moment.",
-    "has-been-printed": "Votre demande est approuvée. Votre passeport sera disponible pour retrait à la date indiquée sur votre reçu.",
-    "not-available": "Le passeport ne sera pas disponible avant la date de retrait imprimée sur votre reçu.",
-    "receipt-details": "Votre reçu indique la date et le lieu de retrait de votre passeport."
+    "header": "Votre passeport est disponible pour retrait",
+    "receipt-location": "Votre nouveau passeport est disponible pour retrait à l’endroit indiqué sur votre reçu.",
+    "check-hours": "Veuillez vérifier les heures d'ouverture du Centre Service Canada ou du bureau des passeports avant de vous y rendre."
   },
   "reset": "Vérifier l'état d'une autre demande",
   "shipped-canada-post": {

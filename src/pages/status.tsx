@@ -192,7 +192,7 @@ const Status = () => {
       case StatusCode.FILE_BEING_PROCESSED_OVERDUE:
         return t('being-processed-overdue.employee-reviewing')
       case StatusCode.PASSPORT_ISSUED_READY_FOR_PICKUP:
-        return t('ready-for-pickup.has-been-printed')
+        return t('ready-for-pickup.header')
       case StatusCode.PASSPORT_IS_PRINTING:
         return t('printing.in-printing')
       case StatusCode.PASSPORT_ISSUED_SHIPPING_CANADA_POST:
@@ -304,7 +304,12 @@ const Status = () => {
             />
           )
         case StatusCode.PASSPORT_ISSUED_READY_FOR_PICKUP:
-          return <CheckStatusReadyForPickup />
+          return (
+            <CheckStatusReadyForPickup
+              displayData={displayData}
+              backButtonHandler={handleOnGoBackClick}
+            />
+          )
         case StatusCode.PASSPORT_IS_PRINTING:
           return (
             <CheckStatusPrinting

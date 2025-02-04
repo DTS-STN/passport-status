@@ -1,10 +1,17 @@
 import { useTranslation } from 'next-i18next'
 
+import { StatusResultProps } from '../../pages/status'
+import ActionButton from '../ActionButton'
 import AlertBlock from '../AlertBlock'
-import AlertSection from '../AlertSection'
+import Timeline from '../Timeline'
 
-export const CheckStatusReadyForPickup = () => {
-  const { t } = useTranslation('status')
+export const CheckStatusReadyForPickup = (props: StatusResultProps) => {
+  const { t } = useTranslation(['status', 'timeline'])
+
+  const { displayData, backButtonHandler } = props
+
+  const { timelineExists, timelineData } = displayData
+
   return (
     <>
       <AlertBlock page="status-ready-pickup" />
@@ -14,19 +21,33 @@ export const CheckStatusReadyForPickup = () => {
         className="h1"
         tabIndex={-1}
       >
-        {t('ready-for-pickup.has-been-printed')}
+        {t('ready-for-pickup.header')}
       </h1>
-      <p>{t('ready-for-pickup.has-been-printed')}</p>
-      <AlertSection type="success" className="mb-8">
-        <h2 data-testid="check-receipt" className="h2 mt-0">
-          {t('ready-for-pickup.check-receipt')}
-        </h2>
-        <p>{t('ready-for-pickup.receipt-details')}</p>
-      </AlertSection>
-      <p>{t('ready-for-pickup.not-available')}</p>
-      <p className="mb-2">
-        <strong>{t('ready-for-pickup.date-passed')}</strong>
-      </p>
+      <div className="flex flex-col sm:flex-row">
+        <div className="max-w-prose">
+          <p>{t('ready-for-pickup.receipt-location')}</p>
+          <p>{t('ready-for-pickup.check-hours')}</p>
+          {timelineExists && (
+            <div className="flex w-full justify-center sm:hidden">
+              <Timeline entries={timelineData} />
+            </div>
+          )}
+          <div className="mt-8">
+            <ActionButton
+              onClick={backButtonHandler}
+              text={t('status:previous')}
+              style="primary"
+            />
+          </div>
+        </div>
+        {timelineExists && (
+          <div className="hidden w-full justify-center sm:flex">
+            <div className="-mt-6">
+              <Timeline entries={timelineData} />
+            </div>
+          </div>
+        )}
+      </div>
     </>
   )
 }
