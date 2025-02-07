@@ -113,13 +113,13 @@
     "take-up-to": "Cela peut prendre jusqu'à 2 à 3 jours ouvrables pour arriver."
   },
   "shipped-fedex": {
-    "header": "Votre passeport a été imprimé et envoyé par la poste",
+    "header": "Votre passeport a été envoyé par la poste",
     "printed-mailed": "Votre nouveau passeport a été imprimé avec succès et vous a été envoyé par la poste.",
     "shipping-information": {
       "header": "Informations sur l’expédition",
       "sending-via": "Nous vous envoyons votre passeport et vos documents fournis en support de la demande par FedEx.",
-      "dont-receive": "Si vous ne recevez pas votre passeport ou vos documents fournis en support de la demande, <Link>contactez-nous</Link>.",
-      "take-up-to": "Cela peut prendre jusqu'à 5 à 7 jours ouvrables pour arriver."
+      "take-up-to": "Cela peut prendre entre 5 à 7 jours ouvrables pour arriver.",
+      "dont-receive": "Si vous ne recevez pas votre passeport ou vos documents fournis en support de la demande, <Link>contactez-nous</Link>."
     }
   },
   "status-check-call": "Si vous ne recevez pas votre passeport ou vos documents fournis en support de la demande, <Link>contactez-nous</Link>.",

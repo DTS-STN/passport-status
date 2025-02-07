@@ -118,8 +118,8 @@
     "shipping-information": {
       "header": "Shipping information",
       "sending-via": "We’re sending your passport and your supporting documents by FedEx.",
-      "dont-receive": "If you don’t receive your passport or supporting documents, <Link>contact us</Link>.",
-      "take-up-to": "It can take up to 5 to 7 business days to arrive."
+      "take-up-to": "It can take between 5 to 7 business days to arrive.",
+      "dont-receive": "If you don’t receive your passport or supporting documents, <Link>contact us</Link>."
     }
   },
   "status-check-call": "If you don’t receive your passport or supporting documents, <Link>contact us</Link>.",

@@ -45,16 +45,21 @@ export const CheckStatusShippingFedex = ({
           <h2 data-testid="shipped-fedex-mailing" className="h2 mt-0">
             {t('shipped-fedex.shipping-information.header')}
           </h2>
-          <p>{t('shipped-fedex.shipping-information.sending-via')}</p>
-          {trackingNumber ? (
+          <p>
+            `${t('shipped-fedex.shipping-information.sending-via')} $
+            {trackingNumber ? (
+              <Trans
+                i18nKey="status-check-tracking.number"
+                ns="status"
+                tOptions={{ trackingNumber }}
+              />
+            ) : (
+              t('shipped-fedex.shipping-information.take-up-to')
+            )}
+            `
+          </p>
+          {trackingNumber && (
             <>
-              <p>
-                <Trans
-                  i18nKey="status-check-tracking.number"
-                  ns="status"
-                  tOptions={{ trackingNumber }}
-                />
-              </p>
               <p>
                 <Trans
                   i18nKey={'status-check-tracking.can-track'}
@@ -72,13 +77,9 @@ export const CheckStatusShippingFedex = ({
                 />
               </p>
             </>
-          ) : (
-            <p>{t('shipped-fedex.shipping-information.take-up-to')}</p>
           )}
           <p className="mb-2 mt-6">
-            <strong>
-              {t('shipped-fedex.shipping-information.dont-receive')}
-            </strong>
+            {t('shipped-fedex.shipping-information.dont-receive')}
           </p>
           <p>
             <Trans
