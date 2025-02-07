@@ -22,7 +22,7 @@ jest.mock('../../../src/lib/useAlerts', () => ({
 }))
 
 describe('CheckStatusPrinting', () => {
-  const handleOnBackClick = () => null
+  const checkAnotherHandler = () => null
   const timelineData: TimelineEntryData[] = [
     {
       step: 'Received',
@@ -55,7 +55,7 @@ describe('CheckStatusPrinting', () => {
 
   const sut = (
     <CheckStatusPrinting
-      backButtonHandler={handleOnBackClick}
+      checkAnotherHandler={checkAnotherHandler}
       displayData={displayData}
     />
   )

@@ -10,12 +10,12 @@ import Timeline from '../Timeline'
 
 export interface CheckStatusShippingFedexProps {
   displayData: StatusDisplayData
-  backButtonHandler: MouseEventHandler<HTMLButtonElement>
+  checkAnotherHandler: MouseEventHandler<HTMLButtonElement>
   trackingNumber?: string
 }
 
 export const CheckStatusShippingFedex = ({
-  backButtonHandler,
+  checkAnotherHandler,
   displayData,
   trackingNumber,
 }: CheckStatusShippingFedexProps) => {
@@ -91,8 +91,8 @@ export const CheckStatusShippingFedex = ({
           </p>
           <div className="mt-8">
             <ActionButton
-              onClick={backButtonHandler}
-              text={t('status:previous')}
+              onClick={checkAnotherHandler}
+              text={t('status:check-another')}
               style="primary"
             />
           </div>

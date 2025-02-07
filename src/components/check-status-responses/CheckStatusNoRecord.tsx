@@ -1,10 +1,15 @@
 import { Trans, useTranslation } from 'next-i18next'
 
+import { NoStatusResultProps } from '../../pages/status'
+import ActionButton from '../ActionButton'
 import AlertBlock from '../AlertBlock'
 import ExternalLink from '../ExternalLink'
 
-export const CheckStatusNoRecord = () => {
+export const CheckStatusNoRecord = (props: NoStatusResultProps) => {
   const { t } = useTranslation(['status', 'common'])
+
+  const { checkAnotherHandler, tryAgainHandler } = props
+
   return (
     <>
       <AlertBlock page="status-not-found" />
@@ -50,6 +55,18 @@ export const CheckStatusNoRecord = () => {
           }}
         />
       </p>
+      <div className="mt-8 flex-col sm:flex-row">
+        <ActionButton
+          onClick={tryAgainHandler}
+          text={t('status:try-again')}
+          style="primary"
+        />
+        <ActionButton
+          onClick={checkAnotherHandler}
+          text={t('status:check-another')}
+          style="default"
+        />
+      </div>
     </>
   )
 }

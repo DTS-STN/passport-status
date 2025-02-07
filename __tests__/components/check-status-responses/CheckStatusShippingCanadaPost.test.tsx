@@ -22,7 +22,7 @@ jest.mock('../../../src/lib/useAlerts', () => ({
 }))
 
 describe('CheckStatusShippingFedex', () => {
-  const handleOnGoBackClick = () => {}
+  const checkAnotherHandler = () => {}
 
   const timelineData: TimelineEntryData[] = [
     {
@@ -42,7 +42,7 @@ describe('CheckStatusShippingFedex', () => {
 
   const sut = (
     <CheckStatusShippingFedex
-      backButtonHandler={handleOnGoBackClick}
+      checkAnotherHandler={checkAnotherHandler}
       displayData={displayData}
       trackingNumber="12345"
     />

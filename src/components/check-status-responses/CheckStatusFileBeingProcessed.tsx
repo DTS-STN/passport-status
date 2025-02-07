@@ -11,7 +11,7 @@ import Timeline from '../Timeline'
 export const CheckStatusFileBeingProcessed = (props: StatusResultProps) => {
   const { t, i18n } = useTranslation(['status', 'common'])
 
-  const { displayData, backButtonHandler } = props
+  const { displayData, checkAnotherHandler } = props
 
   const {
     deliveryMethod,
@@ -111,8 +111,8 @@ export const CheckStatusFileBeingProcessed = (props: StatusResultProps) => {
           </p>
           <div className="mt-8">
             <ActionButton
-              onClick={backButtonHandler}
-              text={t('status:previous')}
+              onClick={checkAnotherHandler}
+              text={t('status:check-another')}
               style="primary"
             />
           </div>

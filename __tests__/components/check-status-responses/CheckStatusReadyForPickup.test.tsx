@@ -22,7 +22,7 @@ jest.mock('../../../src/lib/useAlerts', () => ({
 }))
 
 describe('CheckStatusReadyForPickup', () => {
-  const handleOnGoBackClick = () => {}
+  const checkAnotherHandler = () => {}
   const timelineData: TimelineEntryData[] = [
     {
       step: 'Received',
@@ -40,7 +40,7 @@ describe('CheckStatusReadyForPickup', () => {
   }
   const sut = (
     <CheckStatusReadyForPickup
-      backButtonHandler={handleOnGoBackClick}
+      checkAnotherHandler={checkAnotherHandler}
       displayData={displayData}
     />
   )

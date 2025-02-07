@@ -22,7 +22,7 @@ jest.mock('../../../src/lib/useAlerts', () => ({
 }))
 
 describe('CheckStatusFileProcessingOverdue', () => {
-  const handleOnGoBackClick = () => {}
+  const checkAnotherHandler = () => {}
   const timelineData: TimelineEntryData[] = [
     {
       step: 'Received',
@@ -41,7 +41,7 @@ describe('CheckStatusFileProcessingOverdue', () => {
 
   const sut = (
     <CheckStatusProcessingOverdue
-      backButtonHandler={handleOnGoBackClick}
+      checkAnotherHandler={checkAnotherHandler}
       displayData={displayData}
     />
   )

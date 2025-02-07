@@ -16,7 +16,14 @@ jest.mock('../../../src/lib/useAlerts', () => ({
 }))
 
 describe('CheckStatusNoRecord', () => {
-  const sut = <CheckStatusNoRecord />
+  const checkAnotherHandler = () => {}
+  const tryAgainHandler = () => {}
+  const sut = (
+    <CheckStatusNoRecord
+      tryAgainHandler={tryAgainHandler}
+      checkAnotherHandler={checkAnotherHandler}
+    />
+  )
 
   //TODO: add test for when phone number is visible and when it isn't
   it('renders', () => {

@@ -8,7 +8,7 @@ import Timeline from '../Timeline'
 export const CheckStatusReadyForPickup = (props: StatusResultProps) => {
   const { t } = useTranslation(['status', 'timeline'])
 
-  const { displayData, backButtonHandler } = props
+  const { displayData, checkAnotherHandler } = props
 
   const { timelineExists, timelineData } = displayData
 
@@ -34,8 +34,8 @@ export const CheckStatusReadyForPickup = (props: StatusResultProps) => {
           )}
           <div className="mt-8">
             <ActionButton
-              onClick={backButtonHandler}
-              text={t('status:previous')}
+              onClick={checkAnotherHandler}
+              text={t('status:check-another')}
               style="primary"
             />
           </div>

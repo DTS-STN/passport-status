@@ -79,7 +79,12 @@ const scrollToHeading = () => {
 
 export type StatusResultProps = {
   displayData: StatusDisplayData
-  backButtonHandler: MouseEventHandler<HTMLButtonElement>
+  checkAnotherHandler: MouseEventHandler<HTMLButtonElement>
+}
+
+export type NoStatusResultProps = {
+  checkAnotherHandler: MouseEventHandler<HTMLButtonElement>
+  tryAgainHandler: MouseEventHandler<HTMLButtonElement>
 }
 
 const Status = () => {
@@ -146,7 +151,7 @@ const Status = () => {
     [formikErrors, t],
   )
 
-  const handleOnGoBackClick: MouseEventHandler<HTMLButtonElement> = useCallback(
+  const handleTryAgainClick: MouseEventHandler<HTMLButtonElement> = useCallback(
     async (e) => {
       e.preventDefault()
       if (checkStatusResponse) {
@@ -174,7 +179,7 @@ const Status = () => {
     [setFormikFieldValue],
   )
 
-  const handleOnBackClick = useCallback(() => setModalOpen(true), [])
+  const handleCheckAnotherClick = useCallback(() => setModalOpen(true), [])
 
   const handleOnModalClose = useCallback(() => setModalOpen(false), [])
 
@@ -293,28 +298,28 @@ const Status = () => {
           return (
             <CheckStatusFileBeingProcessed
               displayData={displayData}
-              backButtonHandler={handleOnGoBackClick}
+              checkAnotherHandler={handleCheckAnotherClick}
             />
           )
         case StatusCode.FILE_BEING_PROCESSED_OVERDUE:
           return (
             <CheckStatusProcessingOverdue
               displayData={displayData}
-              backButtonHandler={handleOnGoBackClick}
+              checkAnotherHandler={handleCheckAnotherClick}
             />
           )
         case StatusCode.PASSPORT_ISSUED_READY_FOR_PICKUP:
           return (
             <CheckStatusReadyForPickup
               displayData={displayData}
-              backButtonHandler={handleOnGoBackClick}
+              checkAnotherHandler={handleCheckAnotherClick}
             />
           )
         case StatusCode.PASSPORT_IS_PRINTING:
           return (
             <CheckStatusPrinting
               displayData={displayData}
-              backButtonHandler={handleOnGoBackClick}
+              checkAnotherHandler={handleCheckAnotherClick}
             />
           )
         case StatusCode.PASSPORT_ISSUED_SHIPPING_CANADA_POST:
@@ -326,7 +331,7 @@ const Status = () => {
         case StatusCode.PASSPORT_ISSUED_SHIPPING_FEDEX:
           return (
             <CheckStatusShippingFedex
-              backButtonHandler={handleOnGoBackClick}
+              checkAnotherHandler={handleCheckAnotherClick}
               displayData={displayData}
               trackingNumber={response.manifestNumber}
             />
@@ -334,11 +339,21 @@ const Status = () => {
         case StatusCode.NOT_ACCEPTABLE_FOR_PROCESSING:
           return <CheckStatusNotAcceptable />
         default:
-          return <CheckStatusNoRecord />
+          return (
+            <CheckStatusNoRecord
+              tryAgainHandler={handleTryAgainClick}
+              checkAnotherHandler={handleCheckAnotherClick}
+            />
+          )
       }
     }
 
-    return <CheckStatusNoRecord />
+    return (
+      <CheckStatusNoRecord
+        tryAgainHandler={handleTryAgainClick}
+        checkAnotherHandler={handleCheckAnotherClick}
+      />
+    )
   }
 
   //if the api failed, fail hard to show error page
@@ -469,7 +484,7 @@ const Status = () => {
                 id="btn-back"
                 disabled={isCheckStatusPending}
                 text={t('common:modal-go-back.back-button')}
-                onClick={handleOnBackClick}
+                onClick={handleCheckAnotherClick}
               />
             </div>
           </form>

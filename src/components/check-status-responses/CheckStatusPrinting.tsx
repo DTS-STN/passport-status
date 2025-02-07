@@ -11,7 +11,7 @@ import Timeline from '../Timeline'
 export const CheckStatusPrinting = (props: StatusResultProps) => {
   const { t, i18n } = useTranslation(['status', 'timeline'])
 
-  const { displayData, backButtonHandler } = props
+  const { displayData, checkAnotherHandler } = props
 
   const { receivedDate, serviceLevel, timelineExists, timelineData } =
     displayData
@@ -63,8 +63,8 @@ export const CheckStatusPrinting = (props: StatusResultProps) => {
           <p>{t('status:printing.service-standards.dont-meet')}</p>
           <div className="mt-8">
             <ActionButton
-              onClick={backButtonHandler}
-              text={t('status:previous')}
+              onClick={checkAnotherHandler}
+              text={t('status:check-another')}
               style="primary"
             />
           </div>

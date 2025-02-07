@@ -12,7 +12,7 @@ import Timeline from '../Timeline'
 export const CheckStatusProcessingOverdue = (props: StatusResultProps) => {
   const { t, i18n } = useTranslation(['status', 'common'])
 
-  const { displayData, backButtonHandler } = props
+  const { displayData, checkAnotherHandler } = props
 
   const {
     deliveryMethod,
@@ -108,8 +108,8 @@ export const CheckStatusProcessingOverdue = (props: StatusResultProps) => {
 
           <div className="mt-8">
             <ActionButton
-              onClick={backButtonHandler}
-              text={t('status:previous')}
+              onClick={checkAnotherHandler}
+              text={t('status:check-another')}
               style="primary"
             />
           </div>

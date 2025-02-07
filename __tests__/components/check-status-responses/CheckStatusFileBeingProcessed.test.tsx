@@ -22,7 +22,7 @@ jest.mock('../../../src/lib/useAlerts', () => ({
 }))
 
 describe('CheckStatusFileBeingProcessed', () => {
-  const handleOnGoBackClick = () => {}
+  const checkAnotherHandler = () => {}
   const timelineData: TimelineEntryData[] = [
     {
       step: 'Received',
@@ -41,7 +41,7 @@ describe('CheckStatusFileBeingProcessed', () => {
 
   const sut = (
     <CheckStatusFileBeingProcessed
-      backButtonHandler={handleOnGoBackClick}
+      checkAnotherHandler={checkAnotherHandler}
       displayData={displayData}
     />
   )
