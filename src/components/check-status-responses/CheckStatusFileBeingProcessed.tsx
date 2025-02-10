@@ -8,10 +8,11 @@ import AlertBlock from '../AlertBlock'
 import ExternalLink from '../ExternalLink'
 import Timeline from '../Timeline'
 
-export const CheckStatusFileBeingProcessed = (props: StatusResultProps) => {
+export const CheckStatusFileBeingProcessed = ({
+  displayData,
+  checkAnotherHandler,
+}: StatusResultProps) => {
   const { t, i18n } = useTranslation(['status', 'common'])
-
-  const { displayData, checkAnotherHandler } = props
 
   const {
     deliveryMethod,

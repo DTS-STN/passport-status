@@ -5,10 +5,11 @@ import ActionButton from '../ActionButton'
 import AlertBlock from '../AlertBlock'
 import ExternalLink from '../ExternalLink'
 
-export const CheckStatusNoRecord = (props: NoStatusResultProps) => {
+export const CheckStatusNoRecord = ({
+  checkAnotherHandler,
+  tryAgainHandler,
+}: NoStatusResultProps) => {
   const { t } = useTranslation(['status', 'common'])
-
-  const { checkAnotherHandler, tryAgainHandler } = props
 
   return (
     <>

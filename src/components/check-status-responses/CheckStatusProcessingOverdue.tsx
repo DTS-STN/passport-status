@@ -9,10 +9,11 @@ import AlertSection from '../AlertSection'
 import ExternalLink from '../ExternalLink'
 import Timeline from '../Timeline'
 
-export const CheckStatusProcessingOverdue = (props: StatusResultProps) => {
+export const CheckStatusProcessingOverdue = ({
+  displayData,
+  checkAnotherHandler,
+}: StatusResultProps) => {
   const { t, i18n } = useTranslation(['status', 'common'])
-
-  const { displayData, checkAnotherHandler } = props
 
   const {
     deliveryMethod,

@@ -325,6 +325,8 @@ const Status = () => {
         case StatusCode.PASSPORT_ISSUED_SHIPPING_CANADA_POST:
           return (
             <CheckStatusShippingCanadaPost
+              checkAnotherHandler={handleCheckAnotherClick}
+              displayData={displayData}
               trackingNumber={response.manifestNumber}
             />
           )

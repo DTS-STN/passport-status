@@ -106,11 +106,16 @@
   },
   "reset": "Check the status of another application",
   "shipped-canada-post": {
-    "header": "Your passport has been printed and mailed",
-    "mailing": "We're mailing it to you by Canada Post",
-    "remote-area": "If you live in a northern or remote area, it may take up to 8 business days.",
-    "supporting-documents": "We may send your supporting documents back separately.",
-    "take-up-to": "It can take up to 2 to 3 business days to arrive."
+    "header": "Your passport has been mailed to you",
+    "printed-mailed": "Your new passport has been successfully printed and mailed to you.",
+    "shipping-information": {
+      "header": "Shipping information",
+      "sending-via": "We’re sending your passport and your supporting documents by Canada Post.",
+      "take-up-to": "It can take 2 or 3 business days to arrive.",
+      "northern-remote": "If you live in a northern or remote area, it may take up to 8 business days to arrive.",
+      "supporting-documents": "We may send your supporting documents back separately.",
+      "dont-receive": "If you don’t receive your supporting documents within 6 weeks of receiving your passport, <Link>contact us</Link>."
+    }
   },
   "shipped-fedex": {
     "header": "Your passport has been mailed to you",

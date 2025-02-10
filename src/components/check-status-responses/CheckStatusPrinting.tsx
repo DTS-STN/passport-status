@@ -8,10 +8,11 @@ import AlertBlock from '../AlertBlock'
 import ExternalLink from '../ExternalLink'
 import Timeline from '../Timeline'
 
-export const CheckStatusPrinting = (props: StatusResultProps) => {
+export const CheckStatusPrinting = ({
+  displayData,
+  checkAnotherHandler,
+}: StatusResultProps) => {
   const { t, i18n } = useTranslation(['status', 'timeline'])
-
-  const { displayData, checkAnotherHandler } = props
 
   const { receivedDate, serviceLevel, timelineExists, timelineData } =
     displayData

@@ -106,11 +106,16 @@
   },
   "reset": "Vérifier l'état d'une autre demande",
   "shipped-canada-post": {
-    "header": "Votre passeport a été imprimé et envoyé par la poste",
-    "mailing": "Nous vous l'envoyons par Postes Canada.",
-    "remote-area": "Si vous vivez dans une région au nord ou éloignée, cela pourrait prendre jusqu'à 8 jours ouvrables pour arriver.",
-    "supporting-documents": "Nous pourrions renvoyer vos documents fournis en support de la demande séparément.",
-    "take-up-to": "Cela peut prendre jusqu'à 2 à 3 jours ouvrables pour arriver."
+    "header": "Votre passeport a été envoyé par la poste",
+    "printed-mailed": "Votre nouveau passeport a été imprimé avec succès et vous a été envoyé par la poste.",
+    "shipping-information": {
+      "header": "Informations sur l’expédition",
+      "sending-via": "Nous vous envoyons votre passeport et vos documents fournis en support de la demande par Postes Canada.",
+      "take-up-to": "Cela peut prendre 2 à 3 jours ouvrables pour arriver.",
+      "northern-remote": "Si vous vivez dans une région au nord ou éloignée, cela pourrait prendre jusqu'à 8 jours ouvrables pour arriver.",
+      "supporting-documents": "Nous pourrions renvoyer vos documents fournis en support de la demande séparément.",
+      "dont-receive": "Si vous ne recevez vos documents fournis en support de la demande dans les six semaines suivant la réception de votre passeport, <Link>contactez-nous</Link>."
+    }
   },
   "shipped-fedex": {
     "header": "Votre passeport a été envoyé par la poste",
