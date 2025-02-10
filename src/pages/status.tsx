@@ -339,7 +339,11 @@ const Status = () => {
             />
           )
         case StatusCode.NOT_ACCEPTABLE_FOR_PROCESSING:
-          return <CheckStatusNotAcceptable />
+          return (
+            <CheckStatusNotAcceptable
+              checkAnotherHandler={handleCheckAnotherClick}
+            />
+          )
         default:
           return (
             <CheckStatusNoRecord
