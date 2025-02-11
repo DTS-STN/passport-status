@@ -7,6 +7,7 @@ export interface TimelineEntryProps extends PropsWithChildren {
   type: TimelineEntryStatus
   step: string
   date?: string
+  subtext?: string
   position: TimelinePosition
   className?: string
   background?: boolean
@@ -121,6 +122,7 @@ const TimelineEntry = ({
   position,
   step,
   date,
+  subtext,
   className,
   background,
 }: TimelineEntryProps) => {
@@ -149,6 +151,7 @@ const TimelineEntry = ({
             position={position}
             topText={step}
             bottomDate={date}
+            bottomText={subtext}
           />
         </div>
       </div>

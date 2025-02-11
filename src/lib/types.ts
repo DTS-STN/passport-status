@@ -129,6 +129,7 @@ export type TimelineEntryData = {
   step: string
   status: TimelineEntryStatus
   date?: string
+  subtext?: string
 }
 
 export enum ServiceLevelCode {

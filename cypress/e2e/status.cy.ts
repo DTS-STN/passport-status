@@ -33,7 +33,7 @@ describe('status page loads', () => {
 
   it('should have correct title in French', () => {
     cy.get('[data-cy=toggle-language-link]').click()
-    cy.wait(500)
+    cy.wait(750)
     cy.get('h1')
       .filter(':visible')
       .invoke('text')

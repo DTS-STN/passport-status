@@ -262,7 +262,11 @@ const Status = () => {
 
     if (response.deliveryMethod === '1') {
       if (response.mailedDate) {
-        entries.push({ status: 'done', step: t('timeline:mail-future') })
+        entries.push({
+          status: 'done',
+          date: response.mailedDate,
+          step: t('timeline:mail-future'),
+        })
       } else if (response.printedDate) {
         entries.push({ status: 'current', step: t('timeline:mail-current') })
       } else {
@@ -270,7 +274,11 @@ const Status = () => {
       }
     } else {
       if (response.pickUpReadyDate) {
-        entries.push({ status: 'done', step: t('timeline:pickup-done') })
+        entries.push({
+          status: 'done',
+          subtext: t('timeline:pickup-instructions'),
+          step: t('timeline:pickup-done'),
+        })
       } else if (response.printedDate) {
         entries.push({ status: 'current', step: t('timeline:pickup-future') })
       } else {

@@ -28,6 +28,7 @@ const Timeline = ({ entries, className }: TimelineProps) => {
                 type={entry.status}
                 step={entry.step}
                 date={entry.date}
+                subtext={entry.subtext}
               />
             )
           })}
