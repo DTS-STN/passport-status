@@ -84,9 +84,13 @@
     "need-faster": "Si vous avez besoin du passeport plus rapidement"
   },
   "not-acceptable": {
-    "cannot-process": "Nous avons examiné votre demande et ne pouvons pas la traiter davantage",
-    "contact-us": "<Link>Pour plus d'informations, contactez-nous</Link>.",
-    "explanation": "Nous avons examiné votre demande et ne pouvons pas la traiter davantage. Nous vous envoyons une lettre expliquant pourquoi et nous vous retournerons vos documents justificatifs par la même occasion."
+    "header": "Nous ne sommes pas en mesure de traiter votre demande",
+    "unable-to-process": "Malheureusement, nous ne sommes pas en mesure de traiter votre demande pour le moment. Dans la plupart des cas, cela est dû au fait que la demande était incomplète ou que nous n’avons pas reçu les documents d'identité requis.",
+    "next-steps": {
+      "header": "Prochaines étapes",
+      "sent-letter": "Nous vous avons envoyé une lettre expliquant la situation et les démarches à suivre.",
+      "please-wait": "Veuillez attendre de recevoir cette lettre avant de nous contacter ou de soumettre une nouvelle demande."
+    }
   },
   "one-name": "Les requérants n'ayant <strong>qu'un seul nom</strong> (un ou plusieurs noms inscrits dans un seul champ) doivent nous appeler au 1-800-567-6868 pour connaître l'état de leur demande.",
   "printing": {

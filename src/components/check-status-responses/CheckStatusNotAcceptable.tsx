@@ -1,10 +1,9 @@
 import { MouseEventHandler } from 'react'
 
-import { Trans, useTranslation } from 'next-i18next'
+import { useTranslation } from 'next-i18next'
 
 import ActionButton from '../ActionButton'
 import AlertBlock from '../AlertBlock'
-import ExternalLink from '../ExternalLink'
 
 export interface CheckStatusNotAcceptableProps {
   checkAnotherHandler: MouseEventHandler<HTMLButtonElement>
@@ -23,19 +22,13 @@ export const CheckStatusNotAcceptable = ({
         className="h1"
         tabIndex={-1}
       >
-        {t('not-acceptable.cannot-process')}
+        {t('not-acceptable.header')}
       </h1>
       <div className="max-w-prose">
-        <p>{t('not-acceptable.explanation')}</p>
-        <p>
-          <Trans
-            i18nKey="not-acceptable.contact-us"
-            ns="status"
-            components={{
-              Link: <ExternalLink href={t('common:contact-us-link')} />,
-            }}
-          />
-        </p>
+        <p>{t('not-acceptable.unable-to-process')}</p>
+        <h2>{t('not-acceptable.next-steps.header')}</h2>
+        <p>{t('not-acceptable.next-steps.sent-letter')}</p>
+        <p>{t('not-acceptable.next-steps.please-wait')}</p>
         <div className="mt-8">
           <ActionButton
             onClick={checkAnotherHandler}

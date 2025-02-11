@@ -84,9 +84,13 @@
     "need-faster": "If you need the passport faster"
   },
   "not-acceptable": {
-    "cannot-process": "We've reviewed your application and can't process it further",
-    "contact-us": "For more information, <Link>contact us</Link>.",
-    "explanation": "We've reviewed your application and can't process it further. We're sending you a letter explaining why and will return your supporting documents at the same time."
+    "header": "We’re unable to process your application",
+    "unable-to-process": "Unfortunately, we're unable to process your application at this time. In most cases, this is because the application was incomplete, or we didn't receive the right identity documents.",
+    "next-steps": {
+      "header": "Next steps",
+      "sent-letter": "We've sent you a letter with an explanation of what went wrong, and what steps you should take.",
+      "please-wait": "Please wait for this letter before calling or applying again."
+    }
   },
   "one-name": "Applicants with <strong>only one name</strong> (single or multiple names entered all in one field) must call us at 1‑800‑567‑6868 to get the status of their application.",
   "printing": {

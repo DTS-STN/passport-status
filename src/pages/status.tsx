@@ -205,7 +205,7 @@ const Status = () => {
       case StatusCode.PASSPORT_ISSUED_SHIPPING_FEDEX:
         return t('shipped-fedex.header')
       case StatusCode.NOT_ACCEPTABLE_FOR_PROCESSING:
-        return t('not-acceptable.cannot-process')
+        return t('not-acceptable.header')
       default:
         return t('no-record.cannot-give-status.description')
     }
