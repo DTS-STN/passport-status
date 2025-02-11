@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react'
 
 import { axe, toHaveNoViolations } from 'jest-axe'
 
-import CheckStatusFileBeingProcessed from '../../../src/components/check-status-responses/CheckStatusFileBeingProcessed'
+import CheckStatusProcessingOverdue from '../../../src/components/check-status-responses/CheckStatusProcessingOverdue'
 import {
   DeliveryMethodCode,
   ServiceLevelCode,
@@ -21,7 +21,7 @@ jest.mock('../../../src/lib/useAlerts', () => ({
   }),
 }))
 
-describe('CheckStatusFileBeingProcessed', () => {
+describe('CheckStatusFileProcessingOverdue', () => {
   const checkAnotherHandler = () => {}
   const timelineData: TimelineEntryData[] = [
     {
@@ -40,18 +40,17 @@ describe('CheckStatusFileBeingProcessed', () => {
   }
 
   const sut = (
-    <CheckStatusFileBeingProcessed
+    <CheckStatusProcessingOverdue
       checkAnotherHandler={checkAnotherHandler}
       displayData={displayData}
     />
   )
 
-  //TODO: add test for when phone number is visible and when it isn't
   it('renders', () => {
     render(sut)
     const heading = screen.getByRole('heading', { level: 1 })
 
-    expect(screen.getByTestId('being-processed')).toBeInTheDocument()
+    expect(screen.getByTestId('processing-overdue')).toBeInTheDocument()
     expect(heading).toBeInTheDocument()
     expect(heading).toHaveAttribute('id', 'main-header')
   })

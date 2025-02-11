@@ -7,6 +7,7 @@ export interface TimelineEntryProps extends PropsWithChildren {
   type: TimelineEntryStatus
   step: string
   date?: string
+  subtext?: string
   position: TimelinePosition
   className?: string
   background?: boolean
@@ -54,7 +55,7 @@ const SVG = (type: TimelineEntryStatus, background: boolean | undefined) => {
             r="24"
             fill="green"
             stroke="green"
-            stroke-width="8"
+            strokeWidth="8"
           />
           <line
             x1="31"
@@ -62,7 +63,7 @@ const SVG = (type: TimelineEntryStatus, background: boolean | undefined) => {
             x2="49"
             y2="27"
             stroke="white"
-            stroke-width="6"
+            strokeWidth="6"
           />
           <line
             x1="34"
@@ -70,7 +71,7 @@ const SVG = (type: TimelineEntryStatus, background: boolean | undefined) => {
             x2="21"
             y2="37"
             stroke="white"
-            stroke-width="6"
+            strokeWidth="6"
           />
         </svg>
       )
@@ -89,7 +90,7 @@ const SVG = (type: TimelineEntryStatus, background: boolean | undefined) => {
             r="24"
             fill="black"
             stroke="black"
-            stroke-width="8"
+            strokeWidth="8"
           />
         </svg>
       )
@@ -108,7 +109,7 @@ const SVG = (type: TimelineEntryStatus, background: boolean | undefined) => {
             r="24"
             fill="none"
             stroke="black"
-            stroke-width="8"
+            strokeWidth="8"
           />
         </svg>
       )
@@ -121,6 +122,7 @@ const TimelineEntry = ({
   position,
   step,
   date,
+  subtext,
   className,
   background,
 }: TimelineEntryProps) => {
@@ -149,6 +151,7 @@ const TimelineEntry = ({
             position={position}
             topText={step}
             bottomDate={date}
+            bottomText={subtext}
           />
         </div>
       </div>

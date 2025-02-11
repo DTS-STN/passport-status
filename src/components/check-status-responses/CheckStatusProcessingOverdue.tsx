@@ -5,10 +5,11 @@ import { formatDate } from '../../lib/utils/dates'
 import { StatusResultProps } from '../../pages/status'
 import ActionButton from '../ActionButton'
 import AlertBlock from '../AlertBlock'
+import AlertSection from '../AlertSection'
 import ExternalLink from '../ExternalLink'
 import Timeline from '../Timeline'
 
-export const CheckStatusFileBeingProcessed = ({
+export const CheckStatusProcessingOverdue = ({
   displayData,
   checkAnotherHandler,
 }: StatusResultProps) => {
@@ -28,52 +29,43 @@ export const CheckStatusFileBeingProcessed = ({
 
   return (
     <div id="response-result">
-      <AlertBlock page="status-processing" />
+      <AlertBlock page="status-processing-overdue" />
       <h1
         id="main-header"
-        data-testid="being-processed"
+        data-testid="processing-overdue"
         className="h1"
         tabIndex={-1}
       >
-        {t('being-processed.reviewing-application')}
+        {t('status:being-processed-overdue.processing-delays-warning.header')}
       </h1>
+      <AlertSection type="warning">
+        <h2 className="h2">
+          {t('status:being-processed-overdue.processing-delays-warning.header')}
+        </h2>
+        <p>
+          {t(
+            'status:being-processed-overdue.processing-delays-warning.description',
+          )}
+        </p>
+      </AlertSection>
       <div className="flex flex-col sm:flex-row">
         <div className="max-w-prose">
-          <p>
-            <Trans
-              i18nKey={'being-processed.processing-details'}
-              ns="status"
-              values={{
-                reviewDays:
-                  serviceLevel === ServiceLevelCode.TEN_DAYS ? '7' : '15',
-                printDays:
-                  serviceLevel === ServiceLevelCode.TEN_DAYS ? '3' : '5',
-              }}
-            />
-          </p>
-          <p>
-            <Trans
-              i18nKey={'being-processed.completion-status'}
-              ns="status"
-              values={{
-                serviceLevel: serviceDays,
-              }}
-            />
-          </p>
-          {deliveryMethod === DeliveryMethodCode.IN_PERSON && (
-            <p>{t('status:being-processed.urgent-service-note')}</p>
-          )}
+          <p>{t('status:being-processed-overdue.reviewing-application')}</p>
+          <p>{t('status:being-processed-overdue.employee-reviewing')}</p>
+          <p>{t('status:being-processed-overdue.processing-delayed')}</p>
           {timelineExists && (
             <div className="flex w-full justify-center sm:hidden">
               <Timeline entries={timelineData} />
             </div>
           )}
           <h2 className="h2 mb-2 mt-8">
-            {t('being-processed.service-standards.heading')}
+            {t('status:being-processed-overdue.service-standards.heading')}
           </h2>
           <p>
             <Trans
-              i18nKey={'being-processed.service-standards.received-date'}
+              i18nKey={
+                'being-processed-overdue.service-standards.received-date'
+              }
               ns="status"
               values={{
                 receivedDate: formattedDate,
@@ -81,35 +73,40 @@ export const CheckStatusFileBeingProcessed = ({
               }}
             />
           </p>
+          {deliveryMethod === DeliveryMethodCode.IN_PERSON && (
+            <p>
+              {t(
+                'status:being-processed-overdue.service-standards.urgent-service-note',
+              )}
+            </p>
+          )}
           <p>
-            {t('status:being-processed.service-standards.refund-eligibility')}
+            {t(
+              'status:being-processed-overdue.service-standards.refund-eligibility',
+            )}
           </p>
+
           <h2 className="h2 mb-2 mt-8">
-            {t('being-processed.expedited-service.heading')}
+            {t('status:being-processed-overdue.travelling-soon.heading')}
           </h2>
           <p>
             <Trans
-              i18nKey={'being-processed.expedited-service.details'}
+              i18nKey={'being-processed-overdue.travelling-soon.if-travelling'}
               ns="status"
               components={{
                 Link: (
                   <ExternalLink
-                    href={t('status-check-urgent.express-services-href')}
+                    href={t('status:status-check-urgent.express-services-href')}
                   />
                 ),
               }}
-              values={{ serviceLevel: serviceDays }}
+              values={{
+                serviceLevel:
+                  serviceLevel === ServiceLevelCode.TEN_DAYS ? '10' : '20',
+              }}
             />
           </p>
-          <h2 className="h2 mb-2 mt-8">
-            {t('status:being-processed.incomplete-applications.heading')}
-          </h2>
-          <p>
-            {t('status:being-processed.incomplete-applications.description')}
-          </p>
-          <p>
-            {t('status:being-processed.incomplete-applications.return-notice')}
-          </p>
+
           <div className="mt-8">
             <ActionButton
               onClick={checkAnotherHandler}
@@ -130,4 +127,4 @@ export const CheckStatusFileBeingProcessed = ({
   )
 }
 
-export default CheckStatusFileBeingProcessed
+export default CheckStatusProcessingOverdue

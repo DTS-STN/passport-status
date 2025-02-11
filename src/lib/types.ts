@@ -10,6 +10,7 @@ export type AlertPage =
   | 'status-not-found'
   | 'status-invalid'
   | 'status-processing'
+  | 'status-processing-overdue'
   | 'status-ready-pickup'
   | 'status-shipped-canada'
   | 'status-shipped-fedex'
@@ -47,9 +48,9 @@ export interface CheckStatusApiRequestQuery {
 export interface CheckStatusApiResponse {
   manifestNumber?: string
   status: string
-  overdue: boolean
-  submissionType: 'mail' | 'person'
-  receivedDate?: string
+  serviceLevel: ServiceLevelCode
+  deliveryMethod: DeliveryMethodCode
+  receivedDate: string
   reviewedDate?: string
   printedDate?: string
   mailedDate?: string
@@ -98,8 +99,9 @@ export interface PassportStatusesCertificateApplicationIdentification {
 
 export interface PassportStatusesCertificateApplicationStatus {
   StatusCode: string
-  // SubmissionType: 'mail' | 'person'
-  // Overdue: boolean
+  // DeliveryMethodCode: string
+  // ServiceLevelCode: string
+  // TimelineExists: boolean
   // ReceivedDate?: string
   // ReviewedDate?: string
   // PrintedDate?: string
@@ -116,6 +118,7 @@ export enum StatusCode {
   PASSPORT_ISSUED_SHIPPING_FEDEX = '4',
   NOT_ACCEPTABLE_FOR_PROCESSING = '5',
   PASSPORT_IS_PRINTING = '6',
+  FILE_BEING_PROCESSED_OVERDUE = '7',
 }
 
 export type TimelineEntryStatus = 'done' | 'current' | 'future'
@@ -126,4 +129,23 @@ export type TimelineEntryData = {
   step: string
   status: TimelineEntryStatus
   date?: string
+  subtext?: string
+}
+
+export enum ServiceLevelCode {
+  TEN_DAYS = '1',
+  TWENTY_DAYS = '2',
+}
+
+export enum DeliveryMethodCode {
+  MAIL = '1',
+  IN_PERSON = '2',
+}
+
+export type StatusDisplayData = {
+  receivedDate: string
+  serviceLevel: ServiceLevelCode
+  deliveryMethod: DeliveryMethodCode
+  timelineExists: boolean
+  timelineData: TimelineEntryData[]
 }

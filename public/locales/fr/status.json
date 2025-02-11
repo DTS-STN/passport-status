@@ -1,17 +1,44 @@
 {
   "being-processed": {
-    "applied-by-mail": "Si vous avez présenté une demande par la poste ou à un Centre Service Canada offrant des services de passeport de 20 jours, l'examen pourrait prendre jusqu'à 20 jours ouvrables.",
-    "applied-in-person": "Si vous avez présenté votre demande en personne à un bureau des passeports ou à un Centre Service Canada offrant un service de passeport de 10 jours, il peut s'écouler jusqu'à 10 jours ouvrables avant que nous terminions l'examen.",
-    "dont-meet-standards": "Si nous ne respectons pas nos normes de service",
-    "get-urgent": "Apprenez comment obtenir <Link>des services urgents ou express pour votre demande existante</Link> si vous avez besoin du passeport dans un délai de 10 jours ouvrables. Des frais supplémentaires peuvent s'appliquer.",
-    "incomplete": "Dans certains cas, nous pourrions ne pas être en mesure de traiter une demande incomplète et nous vous la retournerons dès que possible. Vous recevrez par la poste une lettre expliquant pourquoi nous ne pouvons pas traiter la demande ainsi que vos documents justificatifs.",
-    "may-be-eligible": "Vous pourriez avoir droit à un remboursement partiel si nous ne respectons pas nos <Link>normes de service</Link>.",
-    "need-faster": "Si vous avez besoin du passeport plus rapidement",
-    "ready-within": "Si votre demande a été dûment remplie, votre passeport devrait être prêt selon nos <Link>normes de service</Link>. Toutefois, le traitement d'une demande peut prendre un peu plus de temps pendant les périodes de pointe.",
-    "received": "Nous avons reçu votre demande et nous sommes en train de l'examiner",
-    "received-will-not-change": "Nous avons reçu votre demande et nous sommes en train de l'examiner. L'état de votre demande ne changera pas à mesure que nous examinerons la demande.",
-    "we-will-contact": "Si nous avons besoin de plus amples renseignements, nous communiquerons avec vous par téléphone, par la poste ou par courriel. Si nous communiquons avec vous par téléphone, l'appel pourrait s'afficher comme un numéro bloqué. Nous ne communiquerons <strong>jamais</strong> avec vous par message texte ou par message instantané."
+    "reviewing-application": "Nous examinons votre demande",
+    "processing-details": "Cet examen prend normalement environ {{reviewDays}} jours ouvrables, plus {{printDays}} jours pour l'impression.",
+    "completion-status": "Si votre demande a été dûment remplie, votre passeport devrait vous être envoyé par la poste dans les {{serviceLevel}} jours ouvrables.",
+    "urgent-service-note": "Si vous avez demandé un service urgent ou express au bureau des passeports, votre norme de service est différente. Veuillez-vous référer à votre reçu pour connaître la date de retrait.",
+    "service-standards": {
+      "heading": "Nos normes de service",
+      "received-date": "Nous avons reçu votre demande le {{receivedDate}}. Notre norme de service est {{serviceLevel}} jours ouvrables.",
+      "refund-eligibility": "Si nous ne respectons pas nos normes de service, vous pourriez avoir droit à un remboursement partiel."
+    },
+    "expedited-service": {
+      "heading": "Si vous avez besoin du passeport plus rapidement",
+      "details": "Apprenez comment obtenir des services urgents ou express pour votre demande existante si vous avez besoin du passeport dans un délai de {{serviceLevel}} jours ouvrables. Des frais supplémentaires peuvent s'appliquer."
+    },
+    "incomplete-applications": {
+      "heading": "Demandes incomplètes",
+      "description": "Si votre demande est incomplète ou inexacte, nous ne pourrons peut-être pas la traiter. En fonction du problème, nous pourrons vous contacter par la poste ou par téléphone. Si nous vous contactons par téléphone, l'appel peut apparaître comme un numéro bloqué. Nous ne vous contacterons jamais par SMS ou par messagerie instantanée.",
+      "return-notice": "Si nous vous contactons par téléphone, l'appel peut apparaître comme un numéro bloqué. Nous ne vous contacterons <strong>jamais</strong> par SMS ou par messagerie instantanée. Dans certains cas, nous devrons peut-être vous retourner votre demande par la poste."
+    }
   },
+  "being-processed-overdue": {
+    "processing-delays-warning": {
+      "header": "[FR]Passport processing delays",
+      "description": "[FR]We're experiencing a high volume of applications. We apologize for the inconvenience."
+    },
+    "reviewing-application": "Nous examinons toujours votre demande",
+    "employee-reviewing": "Un employé du service des passeports est en train d’examiner votre demande.",
+    "processing-delayed": "Le traitement prend plus de temps que prévu. Nous faisons tout notre possible pour traiter votre demande dès que possible. Nous nous excusons pour le désagrément.",
+    "service-standards": {
+      "heading": "Nos normes de service",
+      "received-date": "Nous avons reçu votre demande le {{receivedDate}}. Notre norme de service est {{serviceLevel}} jours ouvrables.",
+      "urgent-service-note": "Si vous avez demandé un service urgent ou express au bureau des passeports, votre norme de service est différente. Veuillez-vous référer à votre reçu pour connaître la date de retrait.",
+      "refund-eligibility": "Étant donné que nous n’avons pas respecté nos normes de service, vous pourriez avoir <Link>droit à un remboursement partiel</Link>. La plupart des remboursements sont traités automatiquement."
+    },
+    "travelling-soon": {
+      "heading": "Si vous voyagez bientôt",
+      "if-travelling": "Si vous voyagez bientôt, nous ferons tout notre possible pour vous fournir votre passeport à temps. Apprenez comment obtenir des <Link>services urgents ou express pour votre demande existante</Link> si vous avez besoin du passeport dans les 10 jours ouvrables. Des frais supplémentaires peuvent s'appliquer. "
+    }
+  },
+  "check-another": "Vérifier l'état d'une autre demande",
   "check-status": "Vérifiez l'état",
   "date-of-birth": {
     "error": {
@@ -57,50 +84,54 @@
     "need-faster": "Si vous avez besoin du passeport plus rapidement"
   },
   "not-acceptable": {
-    "cannot-process": "Nous avons examiné votre demande et ne pouvons pas la traiter davantage",
-    "contact-us": "<Link>Pour plus d'informations, contactez-nous</Link>.",
-    "explanation": "Nous avons examiné votre demande et ne pouvons pas la traiter davantage. Nous vous envoyons une lettre expliquant pourquoi et nous vous retournerons vos documents justificatifs par la même occasion."
+    "header": "Nous ne sommes pas en mesure de traiter votre demande",
+    "unable-to-process": "Malheureusement, nous ne sommes pas en mesure de traiter votre demande pour le moment. Dans la plupart des cas, cela est dû au fait que la demande était incomplète ou que nous n’avons pas reçu les documents d'identité requis.",
+    "next-steps": {
+      "header": "Prochaines étapes",
+      "sent-letter": "Nous vous avons envoyé une lettre expliquant la situation et les démarches à suivre.",
+      "please-wait": "Veuillez attendre de recevoir cette lettre avant de nous contacter ou de soumettre une nouvelle demande."
+    }
   },
   "one-name": "Les requérants n'ayant <strong>qu'un seul nom</strong> (un ou plusieurs noms inscrits dans un seul champ) doivent nous appeler au 1-800-567-6868 pour connaître l'état de leur demande.",
-  "previous": "Vérifier l'état d'une autre demande",
   "printing": {
     "in-printing": "Nous imprimons votre passeport",
+    "requested-urgent": "Si vous avez demandé un service urgent ou express au bureau des passeports, votre norme de service est différente. Veuillez-vous référer à votre reçu pour connaître la date de retrait.",
     "reviewed-printing": "Votre demande a été examinée et votre passeport est prêt à être imprimé. Veuillez noter que l'impression peut prendre quelques jours ouvrables.",
     "service-standards": {
       "header": "Nos normes de service",
-      "we-received": "Nous avons reçu votre demande le {{receivedDate}}. Notre <Link>norme de service</Link> pour les demandes présentées par la poste est 20 jours ouvrables.",
+      "we-received": "Nous avons reçu votre demande le {{receivedDate}}. Notre <Link>norme de service</Link> est {{serviceLevel}} jours ouvrables.",
       "dont-meet": "Si nous ne respectons pas nos normes de service, vous pourriez avoir droit à un remboursement partiel."
     }
   },
   "ready-for-pickup": {
-    "check-receipt": "Vérifiez votre reçu pour les instructions de retrait en personne",
-    "date-passed": "Si votre date de retrait en personne est passée, vous pouvez aller chercher votre passeport à tout moment.",
-    "has-been-printed": "Votre demande est approuvée. Votre passeport sera disponible pour retrait à la date indiquée sur votre reçu.",
-    "not-available": "Le passeport ne sera pas disponible avant la date de retrait imprimée sur votre reçu.",
-    "receipt-details": "Votre reçu indique la date et le lieu de retrait de votre passeport."
+    "header": "Votre passeport est disponible pour retrait",
+    "receipt-location": "Votre nouveau passeport est disponible pour retrait à l’endroit indiqué sur votre reçu.",
+    "check-hours": "Veuillez vérifier les heures d'ouverture du Centre Service Canada ou du bureau des passeports avant de vous y rendre."
   },
   "reset": "Vérifier l'état d'une autre demande",
   "shipped-canada-post": {
-    "header": "Votre passeport a été imprimé et envoyé par la poste",
-    "mailing": "Nous vous l'envoyons par Postes Canada.",
-    "remote-area": "Si vous vivez dans une région au nord ou éloignée, cela pourrait prendre jusqu'à 8 jours ouvrables pour arriver.",
-    "supporting-documents": "Nous pourrions renvoyer vos documents fournis en support de la demande séparément.",
-    "take-up-to": "Cela peut prendre jusqu'à 2 à 3 jours ouvrables pour arriver."
+    "header": "Votre passeport a été envoyé par la poste",
+    "printed-mailed": "Votre nouveau passeport a été imprimé avec succès et vous a été envoyé par la poste.",
+    "shipping-information": {
+      "header": "Informations sur l’expédition",
+      "sending-via": "Nous vous envoyons votre passeport et vos documents fournis en support de la demande par Postes Canada.",
+      "take-up-to": "Cela peut prendre 2 à 3 jours ouvrables pour arriver.",
+      "northern-remote": "Si vous vivez dans une région au nord ou éloignée, cela pourrait prendre jusqu'à 8 jours ouvrables pour arriver.",
+      "supporting-documents": "Nous pourrions renvoyer vos documents fournis en support de la demande séparément.",
+      "dont-receive": "Si vous ne recevez vos documents fournis en support de la demande dans les six semaines suivant la réception de votre passeport, <Link>contactez-nous</Link>."
+    }
   },
   "shipped-fedex": {
-    "header": "Votre passeport a été imprimé et envoyé par la poste",
-    "country-canada": {
-      "header": "Informations pour les clients dont le passeport est envoyé par la poste au Canada",
-      "mailing": "Nous vous l'envoyons par Purolator"
-    },
-    "country-us": {
-      "header": "Informations pour les clients dont le passeport est envoyé aux États-Unis",
-      "mailing": "Nous vous l'envoyons par FedEx"
-    },
-    "supporting-documents": "Nous pourrions renvoyer vos documents fournis en support de la demande séparément.",
-    "take-up-to": "Cela peut prendre jusqu'à 5 à 7 jours ouvrables pour arriver."
+    "header": "Votre passeport a été envoyé par la poste",
+    "printed-mailed": "Votre nouveau passeport a été imprimé avec succès et vous a été envoyé par la poste.",
+    "shipping-information": {
+      "header": "Informations sur l’expédition",
+      "sending-via": "Nous vous envoyons votre passeport et vos documents fournis en support de la demande par FedEx.",
+      "take-up-to": "Cela peut prendre entre 5 à 7 jours ouvrables pour arriver.",
+      "dont-receive": "Si vous ne recevez pas votre passeport ou vos documents fournis en support de la demande, <Link>contactez-nous</Link>."
+    }
   },
-  "status-check-call": "<Link>Communiquez avec nous</Link> seulement si vous ne recevez pas vos documents dans les six semaines suivant la réception de votre passeport.",
+  "status-check-call": "Si vous ne recevez pas votre passeport ou vos documents fournis en support de la demande, <Link>contactez-nous</Link>.",
   "status-check-contact": {
     "service-standard-href": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens/delais-traitement.html"
   },
@@ -122,5 +153,6 @@
     },
     "help-message": "Indiquez le nom de famille de la personne à qui le passeport est destiné. <strong>Assurez-vous que les informations que vous indiquez correspondent à votre demande de passeport.</strong>",
     "label": "Nom de famille"
-  }
+  },
+  "try-again": "Mettre à jour les informations et réessayer"
 }

@@ -1,6 +1,12 @@
 import { faker } from '@faker-js/faker'
 
-import { CheckStatusApiResponse, StatusCode } from '../../src/lib/types'
+import {
+  CheckStatusApiResponse,
+  DeliveryMethodCode,
+  ServiceLevelCode,
+  StatusCode,
+  StatusDisplayData,
+} from '../../src/lib/types'
 
 beforeEach(() => {
   cy.visit('/expectations')
@@ -27,7 +33,7 @@ describe('status page loads', () => {
 
   it('should have correct title in French', () => {
     cy.get('[data-cy=toggle-language-link]').click()
-    cy.wait(500)
+    cy.wait(750)
     cy.get('h1')
       .filter(':visible')
       .invoke('text')
@@ -138,18 +144,53 @@ describe('dateOfBirth field validation', () => {
   })
 })
 
+const pastDate = faker.date.past()
+const receivedDate = pastDate.toISOString().split('T')[0]
+
 const statusCodes: ReadonlyArray<CheckStatusApiResponse> = [
-  { status: StatusCode.APPLICATION_NO_LONGER_MEETS_CRITERIA },
-  { status: StatusCode.FILE_BEING_PROCESSED },
-  { status: StatusCode.NOT_ACCEPTABLE_FOR_PROCESSING },
-  { status: StatusCode.PASSPORT_ISSUED_READY_FOR_PICKUP },
+  {
+    status: StatusCode.APPLICATION_NO_LONGER_MEETS_CRITERIA,
+    receivedDate: receivedDate,
+    deliveryMethod: DeliveryMethodCode.MAIL,
+    serviceLevel: ServiceLevelCode.TWENTY_DAYS,
+  },
+  {
+    status: StatusCode.FILE_BEING_PROCESSED,
+    receivedDate: receivedDate,
+    deliveryMethod: DeliveryMethodCode.MAIL,
+    serviceLevel: ServiceLevelCode.TWENTY_DAYS,
+  },
+  {
+    status: StatusCode.NOT_ACCEPTABLE_FOR_PROCESSING,
+    receivedDate: receivedDate,
+    deliveryMethod: DeliveryMethodCode.MAIL,
+    serviceLevel: ServiceLevelCode.TWENTY_DAYS,
+  },
+  {
+    status: StatusCode.PASSPORT_ISSUED_READY_FOR_PICKUP,
+    receivedDate: receivedDate,
+    deliveryMethod: DeliveryMethodCode.MAIL,
+    serviceLevel: ServiceLevelCode.TWENTY_DAYS,
+  },
   {
     status: StatusCode.PASSPORT_ISSUED_SHIPPING_CANADA_POST,
+    receivedDate: receivedDate,
+    deliveryMethod: DeliveryMethodCode.MAIL,
+    serviceLevel: ServiceLevelCode.TWENTY_DAYS,
     manifestNumber: faker.helpers.replaceSymbols('################'),
   },
   {
     status: StatusCode.PASSPORT_ISSUED_SHIPPING_FEDEX,
+    receivedDate: receivedDate,
+    deliveryMethod: DeliveryMethodCode.MAIL,
+    serviceLevel: ServiceLevelCode.TWENTY_DAYS,
     manifestNumber: faker.helpers.replaceSymbols('######################'),
+  },
+  {
+    status: StatusCode.FILE_BEING_PROCESSED_OVERDUE,
+    receivedDate: receivedDate,
+    deliveryMethod: DeliveryMethodCode.MAIL,
+    serviceLevel: ServiceLevelCode.TWENTY_DAYS,
   },
 ]
 statusCodes.forEach((response) => {
