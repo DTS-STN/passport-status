@@ -1,22 +1,25 @@
-import { MouseEventHandler } from 'react'
-
 import { Trans, useTranslation } from 'next-i18next'
 
-import { TimelineEntryData } from '../../lib/types'
+import { ServiceLevelCode } from '../../lib/types'
+import { formatDate } from '../../lib/utils/dates'
+import { StatusResultProps } from '../../pages/status'
 import ActionButton from '../ActionButton'
 import AlertBlock from '../AlertBlock'
 import ExternalLink from '../ExternalLink'
 import Timeline from '../Timeline'
 
-export type CheckStatusPrintingProps = {
-  timelineData: TimelineEntryData[]
-  backButtonHandler: MouseEventHandler<HTMLButtonElement>
-}
+export const CheckStatusPrinting = ({
+  displayData,
+  checkAnotherHandler,
+}: StatusResultProps) => {
+  const { t, i18n } = useTranslation(['status', 'timeline'])
 
-export const CheckStatusPrinting = (props: CheckStatusPrintingProps) => {
-  const { t } = useTranslation(['status', 'timeline'])
+  const { receivedDate, serviceLevel, timelineExists, timelineData } =
+    displayData
 
-  const { timelineData, backButtonHandler } = props
+  const serviceDays = serviceLevel === ServiceLevelCode.TEN_DAYS ? '10' : '20'
+
+  const formattedDate = formatDate(receivedDate, i18n.language)
 
   return (
     <div id="response-result">
@@ -27,7 +30,10 @@ export const CheckStatusPrinting = (props: CheckStatusPrintingProps) => {
       <div className="flex flex-col sm:flex-row">
         <div className="max-w-prose">
           <p>{t('status:printing.reviewed-printing')}</p>
-          {timelineData.length > 0 && (
+          {serviceLevel === ServiceLevelCode.TEN_DAYS && (
+            <p>{t('status:printing.requested-urgent')}</p>
+          )}
+          {timelineExists && (
             <div className="flex w-full justify-center sm:hidden">
               <Timeline entries={timelineData} />
             </div>
@@ -43,6 +49,7 @@ export const CheckStatusPrinting = (props: CheckStatusPrintingProps) => {
             <Trans
               i18nKey="printing.service-standards.we-received"
               ns="status"
+              tOptions={{ formattedDate, serviceDays }}
               components={{
                 Link: (
                   <ExternalLink
@@ -57,13 +64,13 @@ export const CheckStatusPrinting = (props: CheckStatusPrintingProps) => {
           <p>{t('status:printing.service-standards.dont-meet')}</p>
           <div className="mt-8">
             <ActionButton
-              onClick={backButtonHandler}
-              text={t('status:previous')}
+              onClick={checkAnotherHandler}
+              text={t('status:check-another')}
               style="primary"
             />
           </div>
         </div>
-        {timelineData && (
+        {timelineExists && (
           <div className="hidden w-full justify-center sm:flex">
             <div className="-mt-6">
               <Timeline entries={timelineData} />

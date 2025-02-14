@@ -16,7 +16,7 @@
     "help-message": "Enter the email address you provided on your passport application form.",
     "for-child": {
       "title": "For child applications",
-      "help-message": "For child applications, enter the email address of the applicant's parent or legal guardian provided on the passport application."
+      "help-message": "For child applications, enter the email address of the applicant parent or legal guardian provided on the passport application."
     },
     "label": "Email address"
   },

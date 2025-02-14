@@ -16,7 +16,11 @@ jest.mock('../../../src/lib/useAlerts', () => ({
 }))
 
 describe('CheckStatusNotAcceptable', () => {
-  const sut = <CheckStatusNotAcceptable />
+  const checkAnotherHandler = () => {}
+
+  const sut = (
+    <CheckStatusNotAcceptable checkAnotherHandler={checkAnotherHandler} />
+  )
 
   it('renders', () => {
     render(sut)

@@ -4,7 +4,12 @@ import { render, screen } from '@testing-library/react'
 import { axe, toHaveNoViolations } from 'jest-axe'
 
 import CheckStatusPrinting from '../../../src/components/check-status-responses/CheckStatusPrinting'
-import { TimelineEntryData } from '../../../src/lib/types'
+import {
+  DeliveryMethodCode,
+  ServiceLevelCode,
+  StatusDisplayData,
+  TimelineEntryData,
+} from '../../../src/lib/types'
 
 expect.extend(toHaveNoViolations)
 
@@ -17,7 +22,7 @@ jest.mock('../../../src/lib/useAlerts', () => ({
 }))
 
 describe('CheckStatusPrinting', () => {
-  const handleOnBackClick = () => null
+  const checkAnotherHandler = () => null
   const timelineData: TimelineEntryData[] = [
     {
       step: 'Received',
@@ -39,10 +44,19 @@ describe('CheckStatusPrinting', () => {
       status: 'future',
     },
   ]
+
+  const displayData: StatusDisplayData = {
+    serviceLevel: ServiceLevelCode.TWENTY_DAYS,
+    timelineExists: true,
+    timelineData: timelineData,
+    deliveryMethod: DeliveryMethodCode.MAIL,
+    receivedDate: '2024-01-01',
+  }
+
   const sut = (
     <CheckStatusPrinting
-      backButtonHandler={handleOnBackClick}
-      timelineData={timelineData}
+      checkAnotherHandler={checkAnotherHandler}
+      displayData={displayData}
     />
   )
 

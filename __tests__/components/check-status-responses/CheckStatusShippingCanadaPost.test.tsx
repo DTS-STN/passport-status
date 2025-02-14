@@ -4,6 +4,12 @@ import { render, screen } from '@testing-library/react'
 import { axe, toHaveNoViolations } from 'jest-axe'
 
 import CheckStatusShippingFedex from '../../../src/components/check-status-responses/CheckStatusShippingFedex'
+import {
+  DeliveryMethodCode,
+  ServiceLevelCode,
+  StatusDisplayData,
+  TimelineEntryData,
+} from '../../../src/lib/types'
 
 expect.extend(toHaveNoViolations)
 
@@ -16,7 +22,31 @@ jest.mock('../../../src/lib/useAlerts', () => ({
 }))
 
 describe('CheckStatusShippingFedex', () => {
-  const sut = <CheckStatusShippingFedex />
+  const checkAnotherHandler = () => {}
+
+  const timelineData: TimelineEntryData[] = [
+    {
+      step: 'Received',
+      status: 'done',
+      date: '2025-01-01',
+    },
+  ]
+
+  const displayData: StatusDisplayData = {
+    serviceLevel: ServiceLevelCode.TWENTY_DAYS,
+    timelineExists: true,
+    timelineData: timelineData,
+    deliveryMethod: DeliveryMethodCode.MAIL,
+    receivedDate: '2025-01-01',
+  }
+
+  const sut = (
+    <CheckStatusShippingFedex
+      checkAnotherHandler={checkAnotherHandler}
+      displayData={displayData}
+      trackingNumber="12345"
+    />
+  )
 
   //TODO: add test for when phone number is visible and when it isn't
   it('renders', () => {

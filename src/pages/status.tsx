@@ -35,6 +35,7 @@ import CheckStatusFileBeingProcessed from '../components/check-status-responses/
 import CheckStatusNoRecord from '../components/check-status-responses/CheckStatusNoRecord'
 import CheckStatusNotAcceptable from '../components/check-status-responses/CheckStatusNotAcceptable'
 import CheckStatusPrinting from '../components/check-status-responses/CheckStatusPrinting'
+import CheckStatusProcessingOverdue from '../components/check-status-responses/CheckStatusProcessingOverdue'
 import CheckStatusReadyForPickup from '../components/check-status-responses/CheckStatusReadyForPickup'
 import CheckStatusShippingCanadaPost from '../components/check-status-responses/CheckStatusShippingCanadaPost'
 import CheckStatusShippingFedex from '../components/check-status-responses/CheckStatusShippingFedex'
@@ -43,6 +44,7 @@ import {
   CheckStatusApiRequestQuery,
   CheckStatusApiResponse,
   StatusCode,
+  StatusDisplayData,
   TimelineEntryData,
 } from '../lib/types'
 import { useCheckStatus } from '../lib/useCheckStatus'
@@ -73,6 +75,16 @@ const scrollToHeading = () => {
     heading.scrollIntoView({ behavior: 'smooth', block: 'center' })
     heading.focus()
   }, 300)
+}
+
+export type StatusResultProps = {
+  displayData: StatusDisplayData
+  checkAnotherHandler: MouseEventHandler<HTMLButtonElement>
+}
+
+export type NoStatusResultProps = {
+  checkAnotherHandler: MouseEventHandler<HTMLButtonElement>
+  tryAgainHandler: MouseEventHandler<HTMLButtonElement>
 }
 
 const Status = () => {
@@ -139,7 +151,7 @@ const Status = () => {
     [formikErrors, t],
   )
 
-  const handleOnGoBackClick: MouseEventHandler<HTMLButtonElement> = useCallback(
+  const handleTryAgainClick: MouseEventHandler<HTMLButtonElement> = useCallback(
     async (e) => {
       e.preventDefault()
       if (checkStatusResponse) {
@@ -167,7 +179,7 @@ const Status = () => {
     [setFormikFieldValue],
   )
 
-  const handleOnBackClick = useCallback(() => setModalOpen(true), [])
+  const handleCheckAnotherClick = useCallback(() => setModalOpen(true), [])
 
   const handleOnModalClose = useCallback(() => setModalOpen(false), [])
 
@@ -181,9 +193,11 @@ const Status = () => {
     if (checkStatusResponse === undefined) return t('header')
     switch (checkStatusResponse?.status) {
       case StatusCode.FILE_BEING_PROCESSED:
-        return t('being-processed.received')
+        return t('being-processed.reviewing-application')
+      case StatusCode.FILE_BEING_PROCESSED_OVERDUE:
+        return t('being-processed-overdue.employee-reviewing')
       case StatusCode.PASSPORT_ISSUED_READY_FOR_PICKUP:
-        return t('ready-for-pickup.has-been-printed')
+        return t('ready-for-pickup.header')
       case StatusCode.PASSPORT_IS_PRINTING:
         return t('printing.in-printing')
       case StatusCode.PASSPORT_ISSUED_SHIPPING_CANADA_POST:
@@ -191,7 +205,7 @@ const Status = () => {
       case StatusCode.PASSPORT_ISSUED_SHIPPING_FEDEX:
         return t('shipped-fedex.header')
       case StatusCode.NOT_ACCEPTABLE_FOR_PROCESSING:
-        return t('not-acceptable.cannot-process')
+        return t('not-acceptable.header')
       default:
         return t('no-record.cannot-give-status.description')
     }
@@ -246,9 +260,13 @@ const Status = () => {
       entries.push({ status: 'future', step: t('timeline:print-future') })
     }
 
-    if (response.submissionType === 'mail') {
+    if (response.deliveryMethod === '1') {
       if (response.mailedDate) {
-        entries.push({ status: 'done', step: t('timeline:mail-future') })
+        entries.push({
+          status: 'done',
+          date: response.mailedDate,
+          step: t('timeline:mail-future'),
+        })
       } else if (response.printedDate) {
         entries.push({ status: 'current', step: t('timeline:mail-current') })
       } else {
@@ -256,7 +274,11 @@ const Status = () => {
       }
     } else {
       if (response.pickUpReadyDate) {
-        entries.push({ status: 'done', step: t('timeline:pickup-done') })
+        entries.push({
+          status: 'done',
+          subtext: t('timeline:pickup-instructions'),
+          step: t('timeline:pickup-done'),
+        })
       } else if (response.printedDate) {
         entries.push({ status: 'current', step: t('timeline:pickup-future') })
       } else {
@@ -269,40 +291,83 @@ const Status = () => {
 
   const getStatusComponent = (response: CheckStatusApiResponse | null) => {
     if (response !== null) {
-      let timelineData = getTimelineEntries(response)
+      const timelineData = getTimelineEntries(response)
+
+      const displayData: StatusDisplayData = {
+        serviceLevel: response.serviceLevel,
+        timelineExists: true,
+        timelineData: timelineData,
+        deliveryMethod: response.deliveryMethod,
+        receivedDate: response.receivedDate,
+      }
 
       switch (response.status) {
         case StatusCode.FILE_BEING_PROCESSED:
-          return <CheckStatusFileBeingProcessed />
+          return (
+            <CheckStatusFileBeingProcessed
+              displayData={displayData}
+              checkAnotherHandler={handleCheckAnotherClick}
+            />
+          )
+        case StatusCode.FILE_BEING_PROCESSED_OVERDUE:
+          return (
+            <CheckStatusProcessingOverdue
+              displayData={displayData}
+              checkAnotherHandler={handleCheckAnotherClick}
+            />
+          )
         case StatusCode.PASSPORT_ISSUED_READY_FOR_PICKUP:
-          return <CheckStatusReadyForPickup />
+          return (
+            <CheckStatusReadyForPickup
+              displayData={displayData}
+              checkAnotherHandler={handleCheckAnotherClick}
+            />
+          )
         case StatusCode.PASSPORT_IS_PRINTING:
           return (
             <CheckStatusPrinting
-              timelineData={timelineData}
-              backButtonHandler={handleOnGoBackClick}
+              displayData={displayData}
+              checkAnotherHandler={handleCheckAnotherClick}
             />
           )
         case StatusCode.PASSPORT_ISSUED_SHIPPING_CANADA_POST:
           return (
             <CheckStatusShippingCanadaPost
+              checkAnotherHandler={handleCheckAnotherClick}
+              displayData={displayData}
               trackingNumber={response.manifestNumber}
             />
           )
         case StatusCode.PASSPORT_ISSUED_SHIPPING_FEDEX:
           return (
             <CheckStatusShippingFedex
+              checkAnotherHandler={handleCheckAnotherClick}
+              displayData={displayData}
               trackingNumber={response.manifestNumber}
             />
           )
         case StatusCode.NOT_ACCEPTABLE_FOR_PROCESSING:
-          return <CheckStatusNotAcceptable />
+          return (
+            <CheckStatusNotAcceptable
+              checkAnotherHandler={handleCheckAnotherClick}
+            />
+          )
         default:
-          return <CheckStatusNoRecord />
+          return (
+            <CheckStatusNoRecord
+              tryAgainHandler={handleTryAgainClick}
+              checkAnotherHandler={handleCheckAnotherClick}
+            />
+          )
       }
     }
 
-    return <CheckStatusNoRecord />
+    return (
+      <CheckStatusNoRecord
+        tryAgainHandler={handleTryAgainClick}
+        checkAnotherHandler={handleCheckAnotherClick}
+      />
+    )
   }
 
   //if the api failed, fail hard to show error page
@@ -433,7 +498,7 @@ const Status = () => {
                 id="btn-back"
                 disabled={isCheckStatusPending}
                 text={t('common:modal-go-back.back-button')}
-                onClick={handleOnBackClick}
+                onClick={handleCheckAnotherClick}
               />
             </div>
           </form>
