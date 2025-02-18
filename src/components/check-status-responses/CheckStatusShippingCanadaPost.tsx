@@ -36,7 +36,7 @@ export const CheckStatusShippingCanadaPost = ({
       </h1>
       <div className="flex flex-col sm:flex-row">
         <div className="max-w-prose">
-          <p>{t('shipped-canada-post.printed-mailed')}.</p>
+          <p>{t('shipped-canada-post.printed-mailed')}</p>
           {timelineExists && (
             <div className="flex w-full justify-center sm:hidden">
               <Timeline entries={timelineData} />
@@ -46,7 +46,8 @@ export const CheckStatusShippingCanadaPost = ({
             {t('shipped-canada-post.shipping-information.header')}
           </h2>
           <p>
-            `${t('shipped-canada-post.shipping-information.sending-via')} $
+            {t('shipped-canada-post.shipping-information.sending-via')}
+            <> </>
             {trackingNumber ? (
               <Trans
                 i18nKey="status-check-tracking.number"
@@ -56,7 +57,6 @@ export const CheckStatusShippingCanadaPost = ({
             ) : (
               t('shipped-canada-post.shipping-information.take-up-to')
             )}
-            `
           </p>
           {!trackingNumber && (
             <p>

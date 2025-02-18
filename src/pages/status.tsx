@@ -237,17 +237,6 @@ const Status = () => {
       entries.push({ status: 'current', step: t('timeline:review-current') })
     }
 
-    // Documents returned is a special case.
-    // We don't have any timeline entries after this if it exists.
-    if (response.documentsReturnedDate) {
-      entries.push({
-        status: 'done',
-        date: response.documentsReturnedDate,
-        step: t('timeline:documents-returned'),
-      })
-      return entries
-    }
-
     if (response.printedDate) {
       entries.push({
         status: 'done',
@@ -261,10 +250,10 @@ const Status = () => {
     }
 
     if (response.deliveryMethod === '1') {
-      if (response.mailedDate) {
+      if (response.completedDate) {
         entries.push({
           status: 'done',
-          date: response.mailedDate,
+          date: response.completedDate,
           step: t('timeline:mail-future'),
         })
       } else if (response.printedDate) {
@@ -273,13 +262,13 @@ const Status = () => {
         entries.push({ status: 'future', step: t('timeline:mail-future') })
       }
     } else {
-      if (response.pickUpReadyDate) {
+      if (response.completedDate) {
         entries.push({
           status: 'done',
           subtext: t('timeline:pickup-instructions'),
           step: t('timeline:pickup-done'),
         })
-      } else if (response.printedDate) {
+      } else if (response.completedDate) {
         entries.push({ status: 'current', step: t('timeline:pickup-future') })
       } else {
         entries.push({ status: 'future', step: t('timeline:pickup-future') })

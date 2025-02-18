@@ -15,8 +15,11 @@ import {
 export const mapToCheckStatusApiResponse = (
   getCertificateApplicationResponse: PassportStatusesGetCertificateApplicationResponse,
 ): CheckStatusApiResponse => ({
-  serviceLevel: ServiceLevelCode.TEN_DAYS,
-  deliveryMethod: DeliveryMethodCode.MAIL,
+  serviceLevel: getCertificateApplicationResponse.CertificateApplication
+    .CertificateApplicationServiceLevel.ServiceLevelCode as ServiceLevelCode,
+  deliveryMethod: getCertificateApplicationResponse.CertificateApplication
+    .CertificateApplicationDeliveryMethod
+    .DeliveryMethodCode as DeliveryMethodCode,
   manifestNumber: getManifestNumber(
     getCertificateApplicationResponse.CertificateApplication
       .CertificateApplicationIdentification,
@@ -24,10 +27,18 @@ export const mapToCheckStatusApiResponse = (
   status:
     getCertificateApplicationResponse.CertificateApplication
       .CertificateApplicationStatus.StatusCode,
-  receivedDate: '2024-01-12',
-  reviewedDate: '2024-01-13',
-  // printedDate: '2024-01-14',
-  // documentsReturnedDate: '2024-01-15',
+  receivedDate:
+    getCertificateApplicationResponse.CertificateApplication
+      .CertificateApplicationTimelineDates.ApplicationReceivedDate.Date,
+  reviewedDate:
+    getCertificateApplicationResponse.CertificateApplication
+      .CertificateApplicationTimelineDates.ApplicationReviewedDate.Date,
+  printedDate:
+    getCertificateApplicationResponse.CertificateApplication
+      .CertificateApplicationTimelineDates.ApplicationPrintedDate.Date,
+  completedDate:
+    getCertificateApplicationResponse.CertificateApplication
+      .CertificateApplicationTimelineDates.ApplicationCompletedDate.Date,
 })
 
 /**

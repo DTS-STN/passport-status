@@ -46,7 +46,8 @@ export const CheckStatusShippingFedex = ({
             {t('shipped-fedex.shipping-information.header')}
           </h2>
           <p>
-            `${t('shipped-fedex.shipping-information.sending-via')} $
+            {t('shipped-fedex.shipping-information.sending-via')}
+            <> </>
             {trackingNumber ? (
               <Trans
                 i18nKey="status-check-tracking.number"
@@ -56,7 +57,6 @@ export const CheckStatusShippingFedex = ({
             ) : (
               t('shipped-fedex.shipping-information.take-up-to')
             )}
-            `
           </p>
           {trackingNumber && (
             <>
