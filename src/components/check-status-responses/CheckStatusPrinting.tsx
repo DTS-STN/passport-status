@@ -23,15 +23,15 @@ export const CheckStatusPrinting = ({
 
   return (
     <div id="response-result">
-      <AlertBlock page="status-ready-pickup" />
+      <AlertBlock page="status-printing" />
       <h1 id="main-header" data-testid="printing" className="h1" tabIndex={-1}>
-        {t('status:printing.in-printing')}
+        {t('printing.in-printing')}
       </h1>
       <div className="flex flex-col sm:flex-row">
         <div className="max-w-prose">
-          <p>{t('status:printing.reviewed-printing')}</p>
+          <p>{t('printing.reviewed-printing')}</p>
           {serviceLevel === ServiceLevelCode.TEN_DAYS && (
-            <p>{t('status:printing.requested-urgent')}</p>
+            <p>{t('printing.requested-urgent')}</p>
           )}
           {timelineExists && (
             <div className="flex w-full justify-center sm:hidden">
@@ -43,7 +43,7 @@ export const CheckStatusPrinting = ({
             data-testid="service-standards"
             className="h2"
           >
-            {t('status:printing.service-standards.header')}
+            {t('printing.service-standards.header')}
           </h2>
           <p>
             <Trans
@@ -53,19 +53,17 @@ export const CheckStatusPrinting = ({
               components={{
                 Link: (
                   <ExternalLink
-                    href={t(
-                      'status:status-check-contact.service-standard-href',
-                    )}
+                    href={t('status-check-contact.service-standard-href')}
                   />
                 ),
               }}
             />
           </p>
-          <p>{t('status:printing.service-standards.dont-meet')}</p>
+          <p>{t('printing.service-standards.dont-meet')}</p>
           <div className="mt-8">
             <ActionButton
               onClick={checkAnotherHandler}
-              text={t('status:check-another')}
+              text={t('check-another')}
               style="primary"
             />
           </div>

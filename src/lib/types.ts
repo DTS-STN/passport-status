@@ -9,6 +9,7 @@ export type AlertPage =
   | 'status'
   | 'status-not-found'
   | 'status-invalid'
+  | 'status-printing'
   | 'status-processing'
   | 'status-processing-overdue'
   | 'status-ready-pickup'
@@ -148,11 +149,13 @@ export type TimelineEntryData = {
 }
 
 export enum ServiceLevelCode {
+  NOT_AVAILABLE = '0',
   TEN_DAYS = '1',
   TWENTY_DAYS = '2',
 }
 
 export enum DeliveryMethodCode {
+  NOT_AVAILABLE = '0',
   MAIL = '1',
   IN_PERSON = '2',
 }

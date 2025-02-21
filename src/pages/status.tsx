@@ -39,10 +39,14 @@ import CheckStatusProcessingOverdue from '../components/check-status-responses/C
 import CheckStatusReadyForPickup from '../components/check-status-responses/CheckStatusReadyForPickup'
 import CheckStatusShippingCanadaPost from '../components/check-status-responses/CheckStatusShippingCanadaPost'
 import CheckStatusShippingFedex from '../components/check-status-responses/CheckStatusShippingFedex'
+import LegacyCheckStatusFileBeingProcessed from '../components/check-status-responses/legacy/LegacyStatusFileBeingProcessed'
+import LegacyStatusPrinting from '../components/check-status-responses/legacy/LegacyStatusPrinting'
 import { removeCheckStatus } from '../lib/removeCheckStatus'
 import {
   CheckStatusApiRequestQuery,
   CheckStatusApiResponse,
+  DeliveryMethodCode,
+  ServiceLevelCode,
   StatusCode,
   StatusDisplayData,
   TimelineEntryData,
@@ -290,9 +294,18 @@ const Status = () => {
         receivedDate: response.receivedDate,
       }
 
+      const legacyStatus =
+        displayData.receivedDate === '0001-01-01' ||
+        displayData.serviceLevel === ServiceLevelCode.NOT_AVAILABLE ||
+        displayData.deliveryMethod === DeliveryMethodCode.NOT_AVAILABLE
+
       switch (response.status) {
         case StatusCode.FILE_BEING_PROCESSED:
-          return (
+          return legacyStatus ? (
+            <LegacyCheckStatusFileBeingProcessed
+              checkAnotherHandler={handleCheckAnotherClick}
+            />
+          ) : (
             <CheckStatusFileBeingProcessed
               displayData={displayData}
               checkAnotherHandler={handleCheckAnotherClick}
@@ -313,7 +326,11 @@ const Status = () => {
             />
           )
         case StatusCode.PASSPORT_IS_PRINTING:
-          return (
+          return legacyStatus ? (
+            <LegacyStatusPrinting
+              checkAnotherHandler={handleCheckAnotherClick}
+            />
+          ) : (
             <CheckStatusPrinting
               displayData={displayData}
               checkAnotherHandler={handleCheckAnotherClick}
