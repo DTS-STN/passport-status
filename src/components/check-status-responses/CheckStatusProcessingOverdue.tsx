@@ -48,13 +48,13 @@ export const CheckStatusProcessingOverdue = ({
           )}
         </p>
       </AlertSection>
-      <div className="flex flex-col sm:flex-row">
+      <div className="flex flex-col md:flex-row">
         <div className="max-w-prose">
           <p>{t('status:being-processed-overdue.reviewing-application')}</p>
           <p>{t('status:being-processed-overdue.employee-reviewing')}</p>
           <p>{t('status:being-processed-overdue.processing-delayed')}</p>
           {timelineExists && (
-            <div className="flex w-full justify-center sm:hidden">
+            <div className="flex w-full justify-center md:hidden">
               <Timeline entries={timelineData} />
             </div>
           )}
@@ -116,7 +116,7 @@ export const CheckStatusProcessingOverdue = ({
           </div>
         </div>
         {timelineExists && (
-          <div className="hidden w-full justify-center sm:flex">
+          <div className="hidden w-full justify-center md:flex">
             <div className="-mt-6">
               <Timeline entries={timelineData} />
             </div>
