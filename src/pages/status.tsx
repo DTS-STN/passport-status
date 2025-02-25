@@ -215,69 +215,98 @@ const Status = () => {
     }
   }
 
-  // This is just a first draft of this logic.
-  // We'll ultimately have to come up with logic based
-  // on both the status + the dates (in case they get out of sync).
   const getTimelineEntries = (
     response: CheckStatusApiResponse,
   ): TimelineEntryData[] => {
     let entries: TimelineEntryData[] = []
 
-    if (response.receivedDate) {
-      entries.push({
-        status: 'done',
-        date: response.receivedDate,
-        step: t('timeline:received'),
-      })
+    const status = response.status as StatusCode
+
+    const noTimelineStatuses = [
+      StatusCode.APPLICATION_NO_LONGER_MEETS_CRITERIA,
+      StatusCode.NOT_ACCEPTABLE_FOR_PROCESSING,
+    ]
+
+    const processingStatuses = [
+      StatusCode.FILE_BEING_PROCESSED,
+      StatusCode.FILE_BEING_PROCESSED_OVERDUE,
+    ]
+
+    const printingStatuses = [StatusCode.PASSPORT_IS_PRINTING]
+
+    const completedStatuses = [
+      StatusCode.PASSPORT_ISSUED_SHIPPING_CANADA_POST,
+      StatusCode.PASSPORT_ISSUED_SHIPPING_FEDEX,
+      StatusCode.PASSPORT_ISSUED_READY_FOR_PICKUP,
+    ]
+
+    // First check for situations where we don't want to return a timeline.
+    if (noTimelineStatuses.includes(status) || !response.receivedDate) {
+      return entries
     }
 
-    if (response.reviewedDate) {
-      entries.push({
-        status: 'done',
-        date: response.reviewedDate,
-        step: t('timeline:review-done'),
-      })
-    } else {
-      entries.push({ status: 'current', step: t('timeline:review-current') })
-    }
+    // Next we always have a received date (it's mandatory in the model)
+    entries.push({
+      status: 'done',
+      date: response.receivedDate,
+      step: t('timeline:received'),
+    })
 
-    if (response.printedDate) {
-      entries.push({
-        status: 'done',
-        date: response.printedDate,
-        step: t('timeline:print-done'),
-      })
-    } else if (response.reviewedDate) {
-      entries.push({ status: 'current', step: t('timeline:print-current') })
-    } else {
-      entries.push({ status: 'future', step: t('timeline:print-future') })
-    }
+    // Next we need to calculate whether the processing state is finished
+    // or not. And which translation to use.
+    const reviewStatus = processingStatuses.includes(status)
+      ? 'current'
+      : 'done'
+    const reviewText = processingStatuses.includes(status)
+      ? t('timeline:review-current')
+      : t('timeline:review-done')
 
-    if (response.deliveryMethod === '1') {
-      if (response.completedDate) {
-        entries.push({
-          status: 'done',
-          date: response.completedDate,
-          step: t('timeline:mail-future'),
-        })
-      } else if (response.printedDate) {
-        entries.push({ status: 'current', step: t('timeline:mail-current') })
-      } else {
-        entries.push({ status: 'future', step: t('timeline:mail-future') })
-      }
-    } else {
-      if (response.completedDate) {
-        entries.push({
-          status: 'done',
-          subtext: t('timeline:pickup-instructions'),
-          step: t('timeline:pickup-done'),
-        })
-      } else if (response.completedDate) {
-        entries.push({ status: 'current', step: t('timeline:pickup-future') })
-      } else {
-        entries.push({ status: 'future', step: t('timeline:pickup-future') })
-      }
-    }
+    entries.push({
+      status: reviewStatus,
+      date: response.reviewedDate,
+      step: reviewText,
+    })
+
+    // Next we calculate the same thing for the printing step.
+    // This is more complicated as this is the first step that can
+    // be in the past, present or future.
+    const printStatus = printingStatuses.includes(status)
+      ? 'current'
+      : completedStatuses.includes(status)
+        ? 'done'
+        : 'future'
+    const printText = printingStatuses.includes(status)
+      ? t('timeline:print-current')
+      : completedStatuses.includes(status)
+        ? t('timeline:print-done')
+        : t('timeline:print-future')
+
+    entries.push({
+      status: printStatus,
+      date: response.printedDate,
+      step: printText,
+    })
+
+    // Next we do the final step for the "completed" step.
+    // This is more complicated, as it pivots based on not only the status,
+    // but also the delivery method. But because of how the statuses progress,
+    // it will only ever be 'future' or 'done' which helps.
+    const completedStatus = completedStatuses.includes(status)
+      ? 'done'
+      : 'future'
+    const completedText = completedStatuses.includes(status)
+      ? response.deliveryMethod === DeliveryMethodCode.MAIL
+        ? t('timeline:mail-future')
+        : t('timeline:pickup-future')
+      : response.deliveryMethod === DeliveryMethodCode.MAIL
+        ? t('timeline:mail-future')
+        : t('timeline:pickup-future')
+
+    entries.push({
+      status: completedStatus,
+      date: response.completedDate,
+      step: completedText,
+    })
 
     return entries
   }
@@ -288,7 +317,7 @@ const Status = () => {
 
       const displayData: StatusDisplayData = {
         serviceLevel: response.serviceLevel,
-        timelineExists: true,
+        timelineExists: timelineData.length > 0,
         timelineData: timelineData,
         deliveryMethod: response.deliveryMethod,
         receivedDate: response.receivedDate,

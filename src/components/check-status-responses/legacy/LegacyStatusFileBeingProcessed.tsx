@@ -29,7 +29,12 @@ export const LegacyCheckStatusFileBeingProcessed = ({
         <p>{t('legacy.being-processed.received-will-not-change')}</p>
         <p>{t('legacy.being-processed.applied-in-person')}</p>
         <p>{t('legacy.being-processed.applied-by-mail')}</p>
-        <p>{t('legacy.being-processed.we-will-contact')}</p>
+        <p>
+          <Trans
+            i18nKey={'legacy.being-processed.we-will-contact'}
+            ns="status"
+          />
+        </p>
         <p>
           <Trans
             i18nKey={'legacy.being-processed.ready-within'}

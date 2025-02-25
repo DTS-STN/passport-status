@@ -49,7 +49,10 @@ export const CheckStatusPrinting = ({
             <Trans
               i18nKey="printing.service-standards.we-received"
               ns="status"
-              tOptions={{ formattedDate, serviceDays }}
+              values={{
+                receivedDate: formattedDate,
+                serviceLevel: serviceDays,
+              }}
               components={{
                 Link: (
                   <ExternalLink
