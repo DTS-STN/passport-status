@@ -23,19 +23,17 @@ const TimelineEntryContent = ({
   const isLast = position === 'last'
 
   return (
-    <div className={className}>
+    <div className={`flex flex-col gap-2`}>
       {isCurrent || (isDoneWithBottom && isLast) ? (
-        <p>
+        <span>
           <strong>{topText}</strong>
-        </p>
+        </span>
       ) : (
-        <p>{topText}</p>
+        <span>{topText}</span>
       )}
-      {type === 'done' && hasDate ? (
-        <time dateTime={bottomDate}>{bottomDate}</time>
-      ) : (
-        <p>{bottomText}</p>
-      )}
+      {type === 'done' && hasDate
+        ? bottomDate && <time dateTime={bottomDate}>{bottomDate}</time>
+        : bottomText && <span>{bottomText}</span>}
     </div>
   )
 }

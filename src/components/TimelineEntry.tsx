@@ -34,9 +34,9 @@ const bottomBorderStyle = (
 }
 
 const svgStyles = {
-  done: '-translate-x-8',
-  current: '-translate-x-8',
-  future: '-translate-x-8',
+  done: '-translate-x-0 -translate-y-0',
+  current: '-translate-x-0',
+  future: '-translate-x-0',
 }
 
 const SVG = (type: TimelineEntryStatus, background: boolean | undefined) => {
@@ -44,32 +44,32 @@ const SVG = (type: TimelineEntryStatus, background: boolean | undefined) => {
     case 'done': {
       return (
         <svg
-          className={`${background ? 'bg-slate-100' : 'bg-white'} h-8 w-8 fill-accent-success`}
-          viewBox="1 4 64 64"
+          className={`${background ? 'bg-slate-100' : 'bg-white'} h-9 w-9 fill-accent-success`}
+          viewBox="0 0 64 64"
           xmlns="http://www.w3.org/2000/svg"
           aria-hidden="true"
         >
           <circle
-            cx="36"
-            cy="36"
+            cx="32"
+            cy="32"
             r="24"
             fill="green"
             stroke="green"
             strokeWidth="8"
           />
           <line
-            x1="31"
-            y1="47"
-            x2="49"
-            y2="27"
+            x1="27"
+            y1="43"
+            x2="45"
+            y2="23"
             stroke="white"
             strokeWidth="6"
           />
           <line
-            x1="34"
-            y1="48"
-            x2="21"
-            y2="37"
+            x1="30"
+            y1="44"
+            x2="17"
+            y2="33"
             stroke="white"
             strokeWidth="6"
           />
@@ -79,14 +79,14 @@ const SVG = (type: TimelineEntryStatus, background: boolean | undefined) => {
     case 'current': {
       return (
         <svg
-          className={`${background ? 'bg-slate-100' : 'bg-white'} h-8 w-8`}
-          viewBox="1 4 64 64"
+          className={`${background ? 'bg-slate-100' : 'bg-white'} h-9 w-9`}
+          viewBox="0 0 64 64"
           xmlns="http://www.w3.org/2000/svg"
           aria-hidden="true"
         >
           <circle
-            cx="36"
-            cy="36"
+            cx="32"
+            cy="32"
             r="24"
             fill="black"
             stroke="black"
@@ -98,14 +98,14 @@ const SVG = (type: TimelineEntryStatus, background: boolean | undefined) => {
     case 'future': {
       return (
         <svg
-          className={`${background ? 'bg-slate-100' : 'bg-white'} h-8 w-8`}
+          className={`${background ? 'bg-slate-100' : 'bg-white'} h-9 w-9`}
           xmlns="http://www.w3.org/2000/svg"
-          viewBox="1 4 64 64"
+          viewBox="0 0 64 64"
           aria-hidden="true"
         >
           <circle
-            cx="36"
-            cy="36"
+            cx="32"
+            cy="32"
             r="24"
             fill="none"
             stroke="black"
@@ -132,20 +132,20 @@ const TimelineEntry = ({
   return (
     <div className={className}>
       <div className="flex flex-row">
-        <div className="relative h-auto w-8">
-          <div
-            className={`absolute left-1/2 top-0 h-1/2 w-4 transform border-l-4 ${topBorderComputedStyle}`}
-          />
-          <div
-            className={`absolute left-1/2 top-1/2 h-1/2 w-4 transform border-l-4 ${bottomBorderComputedStyle}`}
-          />
+        <div className="align-center mr-2 flex flex-col justify-between">
+          <div className="flex h-full w-full justify-center">
+            <div
+              className={`h-full w-0 border-l-2 border-r-2 ${topBorderComputedStyle}`}
+            />
+          </div>
+          <div className={svgStyles[type]}>{SVG(type, background)}</div>
+          <div className="flex h-full w-full justify-center">
+            <div
+              className={`h-full w-0 border-l-2 border-r-2 ${bottomBorderComputedStyle}`}
+            />
+          </div>
         </div>
-        <div className={`${svgStyles[type]} w-8 content-center`}>
-          {SVG(type, background)}
-        </div>
-        <div
-          className={`${type === 'done' ? '-translate-y-0' : 'translate-y-1'} my-6 -translate-x-4`}
-        >
+        <div className={`my-8`}>
           <TimelineEntryContent
             type={type}
             position={position}
