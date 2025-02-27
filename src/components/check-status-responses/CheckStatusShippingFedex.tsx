@@ -42,7 +42,7 @@ export const CheckStatusShippingFedex = ({
               <Timeline entries={timelineData} />
             </div>
           )}
-          <h2 data-testid="shipped-fedex-mailing" className="h2 mt-0">
+          <h2 data-testid="shipped-fedex-mailing" className="h2 mt-8">
             {t('shipped-fedex.shipping-information.header')}
           </h2>
           <p>
@@ -78,12 +78,9 @@ export const CheckStatusShippingFedex = ({
               </p>
             </>
           )}
-          <p className="mb-2 mt-6">
-            {t('shipped-fedex.shipping-information.dont-receive')}
-          </p>
           <p>
             <Trans
-              i18nKey="status-check-call"
+              i18nKey="shipped-fedex.shipping-information.dont-receive"
               ns="status"
               components={{
                 Link: <ExternalLink href={t('common:contact-us-link')} />,

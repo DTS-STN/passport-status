@@ -62,5 +62,7 @@
     "header": "Avertissement d'expiration de la session"
   },
   "opens-in-new-tab": "(s'ouvre dans un nouvel onglet)",
-  "required": "(obligatoire)"
+  "refund-eligible-link": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens/frais/passeport-document-voyage-remboursement.html",
+  "required": "(obligatoire)",
+  "service-standard-link": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens/delais-traitement.html"
 }

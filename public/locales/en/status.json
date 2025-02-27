@@ -20,10 +20,7 @@
     }
   },
   "being-processed-overdue": {
-    "processing-delays-warning": {
-      "header": "Passport processing delays",
-      "description": "We're experiencing a high volume of applications. We apologize for the inconvenience."
-    },
+    "header": "We are still reviewing you application",
     "reviewing-application": "We are still reviewing your application.",
     "employee-reviewing": "A passport employee is reviewing your application.",
     "processing-delayed": "Processing is taking longer than expected. We are making every effort to complete it as soon as possible. We apologize for the inconvenience.",

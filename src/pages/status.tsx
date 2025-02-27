@@ -299,8 +299,8 @@ const Status = () => {
         ? t('timeline:mail-future')
         : t('timeline:pickup-future')
       : response.deliveryMethod === DeliveryMethodCode.MAIL
-        ? t('timeline:mail-future')
-        : t('timeline:pickup-future')
+        ? t('timeline:mail-done')
+        : t('timeline:pickup-done')
 
     entries.push({
       status: completedStatus,
@@ -324,7 +324,6 @@ const Status = () => {
       }
 
       const legacyStatus =
-        displayData.receivedDate === '0001-01-01' ||
         displayData.serviceLevel === ServiceLevelCode.NOT_AVAILABLE ||
         displayData.deliveryMethod === DeliveryMethodCode.NOT_AVAILABLE
 

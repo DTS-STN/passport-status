@@ -42,7 +42,7 @@ export const CheckStatusShippingCanadaPost = ({
               <Timeline entries={timelineData} />
             </div>
           )}
-          <h2 data-testid="shipped-canada-post-mailing" className="h2 mt-0">
+          <h2 data-testid="shipped-canada-post-mailing" className="h2 mt-8">
             {t('shipped-canada-post.shipping-information.header')}
           </h2>
           <p>
@@ -83,7 +83,7 @@ export const CheckStatusShippingCanadaPost = ({
               </p>
             </>
           )}
-          <p className="mb-2 mt-6">
+          <p className="mb-4 mt-4">
             <strong>
               {t(
                 'shipped-canada-post.shipping-information.supporting-documents',
