@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">72.72% </span>
+                <span class="strong">36.36% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>8/11</span>
+                <span class='fraction'>4/11</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">21.42% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>3/14</span>
+                <span class='fraction'>0/14</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>0/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">72.72% </span>
+                <span class="strong">36.36% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>8/11</span>
+                <span class='fraction'>4/11</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -190,7 +190,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">13x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -216,7 +216,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -250,9 +250,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -291,9 +291,9 @@ const svgStyles = {
   info: '-translate-x-3 translate-y-3',
 }
 &nbsp;
-const SVG = (type: AlertType, background: boolean | undefined) =&gt; {
-  switch (type) {
-<span class="branch-0 cbranch-no" title="branch not covered" >    case 'danger': {</span>
+const SVG = <span class="fstat-no" title="function not covered" >(t</span>ype: AlertType, background: boolean | undefined) =&gt; {
+<span class="cstat-no" title="statement not covered" >  switch (type) {</span>
+    case 'danger': {
 <span class="cstat-no" title="statement not covered" >      return (</span>
         &lt;svg
           className={`${background ? 'bg-slate-100' : 'bg-white'} h-8 w-8 fill-accent-error p-1`}
@@ -305,7 +305,7 @@ const SVG = (type: AlertType, background: boolean | undefined) =&gt; {
         &lt;/svg&gt;
       )
     }
-<span class="branch-1 cbranch-no" title="branch not covered" >    case 'success': {</span>
+    case 'success': {
 <span class="cstat-no" title="statement not covered" >      return (</span>
         &lt;svg
           className={`${background ? 'bg-slate-100' : 'bg-white'} h-8 w-8 fill-accent-success p-1`}
@@ -318,9 +318,9 @@ const SVG = (type: AlertType, background: boolean | undefined) =&gt; {
       )
     }
     case 'warning': {
-      return (
+<span class="cstat-no" title="statement not covered" >      return (</span>
         &lt;svg
-          className={`${background ? <span class="branch-0 cbranch-no" title="branch not covered" >'bg-slate-100' </span>: 'bg-white'} h-8 w-8 fill-accent-warning p-1`}
+          className={`${background ? 'bg-slate-100' : 'bg-white'} h-8 w-8 fill-accent-warning p-1`}
           viewBox="0 0 24 24"
           xmlns="http://www.w3.org/2000/svg"
           aria-hidden="true"
@@ -331,7 +331,7 @@ const SVG = (type: AlertType, background: boolean | undefined) =&gt; {
         &lt;/svg&gt;
       )
     }
-<span class="branch-3 cbranch-no" title="branch not covered" >    case 'info': {</span>
+    case 'info': {
 <span class="cstat-no" title="statement not covered" >      return (</span>
         &lt;svg
           className={`${background ? 'bg-slate-100' : 'bg-white'} h-8 w-8 fill-accent-info p-1`}
@@ -346,17 +346,17 @@ const SVG = (type: AlertType, background: boolean | undefined) =&gt; {
   }
 }
 &nbsp;
-const AlertSection = ({
+const AlertSection = <span class="fstat-no" title="function not covered" >({</span>
   children,
   type,
   className,
   background,
 }: AlertSectionProps) =&gt; {
-  const borderColor = borderColors[type]
+  const borderColor = <span class="cstat-no" title="statement not covered" >borderColors[type]</span>
 &nbsp;
-  return (
+<span class="cstat-no" title="statement not covered" >  return (</span>
     &lt;div
-      className={`${className} pl-4 ${background ? <span class="branch-0 cbranch-no" title="branch not covered" >'bg-slate-100' </span>: 'bg-white'}`}
+      className={`${className} pl-4 ${background ? 'bg-slate-100' : 'bg-white'}`}
     &gt;
       &lt;div className={`${svgStyles[type]} w-8 bg-transparent`}&gt;
         {SVG(type, background)}
@@ -376,7 +376,7 @@ export default AlertSection
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-02-14T14:15:35.572Z
+                at 2025-02-27T17:44:51.857Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
