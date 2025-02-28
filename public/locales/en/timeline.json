@@ -1,14 +1,12 @@
 {
   "received": "Received",
-  "review-current": "Reviewing",
+  "review-current": "Review in progress",
   "review-done": "Review complete",
-  "print-future": "Ready to print",
-  "print-current": "Print in progress",
-  "print-done": "Printed",
+  "print-future": "Print",
+  "print-current": "Print",
+  "print-done": "Print complete",
   "mail-future": "Passport mailed out",
-  "mail-current": "Passport being mailed",
+  "mail-done": "Passport mailed out",
   "pickup-future": "Ready for pickup",
-  "pickup-done": "Passport approved",
-  "pickup-instructions": "Check your receipt for pick-up instructions",
-  "documents-returned": "Documents returned"
+  "pickup-done": "Ready for pickup"
 }
