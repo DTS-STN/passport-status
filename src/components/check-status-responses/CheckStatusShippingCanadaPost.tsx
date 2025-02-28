@@ -34,19 +34,20 @@ export const CheckStatusShippingCanadaPost = ({
       >
         {t('shipped-canada-post.header')}
       </h1>
-      <div className="flex flex-col sm:flex-row">
+      <div className="flex flex-col md:flex-row">
         <div className="max-w-prose">
-          <p>{t('shipped-canada-post.printed-mailed')}.</p>
+          <p>{t('shipped-canada-post.printed-mailed')}</p>
           {timelineExists && (
-            <div className="flex w-full justify-center sm:hidden">
+            <div className="flex w-full justify-center md:hidden">
               <Timeline entries={timelineData} />
             </div>
           )}
-          <h2 data-testid="shipped-canada-post-mailing" className="h2 mt-0">
+          <h2 data-testid="shipped-canada-post-mailing" className="h2 mt-8">
             {t('shipped-canada-post.shipping-information.header')}
           </h2>
           <p>
-            `${t('shipped-canada-post.shipping-information.sending-via')} $
+            {t('shipped-canada-post.shipping-information.sending-via')}
+            <> </>
             {trackingNumber ? (
               <Trans
                 i18nKey="status-check-tracking.number"
@@ -56,7 +57,6 @@ export const CheckStatusShippingCanadaPost = ({
             ) : (
               t('shipped-canada-post.shipping-information.take-up-to')
             )}
-            `
           </p>
           {!trackingNumber && (
             <p>
@@ -83,7 +83,7 @@ export const CheckStatusShippingCanadaPost = ({
               </p>
             </>
           )}
-          <p className="mb-2 mt-6">
+          <p className="mb-4 mt-4">
             <strong>
               {t(
                 'shipped-canada-post.shipping-information.supporting-documents',
@@ -108,7 +108,7 @@ export const CheckStatusShippingCanadaPost = ({
           </div>
         </div>
         {timelineExists && (
-          <div className="hidden w-full justify-center sm:flex">
+          <div className="hidden w-full justify-center md:flex">
             <div className="-mt-6">
               <Timeline entries={timelineData} />
             </div>
