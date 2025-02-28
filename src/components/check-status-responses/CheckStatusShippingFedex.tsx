@@ -34,19 +34,20 @@ export const CheckStatusShippingFedex = ({
       >
         {t('shipped-fedex.header')}
       </h1>
-      <div className="flex flex-col sm:flex-row">
+      <div className="flex flex-col md:flex-row">
         <div className="max-w-prose">
           <p>{t('shipped-fedex.printed-mailed')}</p>
           {timelineExists && (
-            <div className="flex w-full justify-center sm:hidden">
+            <div className="flex w-full justify-center md:hidden">
               <Timeline entries={timelineData} />
             </div>
           )}
-          <h2 data-testid="shipped-fedex-mailing" className="h2 mt-0">
+          <h2 data-testid="shipped-fedex-mailing" className="h2 mt-8">
             {t('shipped-fedex.shipping-information.header')}
           </h2>
           <p>
-            `${t('shipped-fedex.shipping-information.sending-via')} $
+            {t('shipped-fedex.shipping-information.sending-via')}
+            <> </>
             {trackingNumber ? (
               <Trans
                 i18nKey="status-check-tracking.number"
@@ -56,7 +57,6 @@ export const CheckStatusShippingFedex = ({
             ) : (
               t('shipped-fedex.shipping-information.take-up-to')
             )}
-            `
           </p>
           {trackingNumber && (
             <>
@@ -78,12 +78,9 @@ export const CheckStatusShippingFedex = ({
               </p>
             </>
           )}
-          <p className="mb-2 mt-6">
-            {t('shipped-fedex.shipping-information.dont-receive')}
-          </p>
           <p>
             <Trans
-              i18nKey="status-check-call"
+              i18nKey="shipped-fedex.shipping-information.dont-receive"
               ns="status"
               components={{
                 Link: <ExternalLink href={t('common:contact-us-link')} />,
@@ -99,7 +96,7 @@ export const CheckStatusShippingFedex = ({
           </div>
         </div>
         {timelineExists && (
-          <div className="hidden w-full justify-center sm:flex">
+          <div className="hidden w-full justify-center md:flex">
             <div className="-mt-6">
               <Timeline entries={timelineData} />
             </div>

@@ -9,6 +9,7 @@ export type AlertPage =
   | 'status'
   | 'status-not-found'
   | 'status-invalid'
+  | 'status-printing'
   | 'status-processing'
   | 'status-processing-overdue'
   | 'status-ready-pickup'
@@ -53,9 +54,7 @@ export interface CheckStatusApiResponse {
   receivedDate: string
   reviewedDate?: string
   printedDate?: string
-  mailedDate?: string
-  pickUpReadyDate?: string
-  documentsReturnedDate?: string
+  completedDate?: string
 }
 
 export interface EmailEsrfApiRequestBody {
@@ -90,6 +89,9 @@ export interface PassportStatusesGetCertificateApplicationResponse {
 export interface PassportStatusesCertificateApplication {
   CertificateApplicationIdentification: PassportStatusesCertificateApplicationIdentification[]
   CertificateApplicationStatus: PassportStatusesCertificateApplicationStatus
+  CertificateApplicationDeliveryMethod: PassportStatusesCertificateApplicationDeliveryMethod
+  CertificateApplicationServiceLevel: PassportStatusesCertificateApplicationServiceLevel
+  CertificateApplicationTimelineDates: PassportStatusesCertificateApplicationTimelineDates
 }
 
 export interface PassportStatusesCertificateApplicationIdentification {
@@ -99,15 +101,29 @@ export interface PassportStatusesCertificateApplicationIdentification {
 
 export interface PassportStatusesCertificateApplicationStatus {
   StatusCode: string
-  // DeliveryMethodCode: string
-  // ServiceLevelCode: string
-  // TimelineExists: boolean
-  // ReceivedDate?: string
-  // ReviewedDate?: string
-  // PrintedDate?: string
-  // MailedDate?: string
-  // PickUpReadyDate?: string
-  // DocumentsReturnedDate?: string
+}
+
+export interface PassportStatusesCertificateApplicationDeliveryMethod {
+  DeliveryMethodCode: string
+}
+
+export interface PassportStatusesCertificateApplicationServiceLevel {
+  ServiceLevelCode: string
+}
+
+export interface PassportStatusesCertificateApplicationTimelineDates {
+  ApplicationReceivedDate: NIEMRequiredDate
+  ApplicationReviewedDate: NIEMNullableDate
+  ApplicationPrintedDate: NIEMNullableDate
+  ApplicationCompletedDate: NIEMNullableDate
+}
+
+export interface NIEMRequiredDate {
+  Date: string
+}
+
+export interface NIEMNullableDate {
+  Date?: string
 }
 
 export enum StatusCode {
@@ -133,11 +149,13 @@ export type TimelineEntryData = {
 }
 
 export enum ServiceLevelCode {
+  NOT_AVAILABLE = '0',
   TEN_DAYS = '1',
   TWENTY_DAYS = '2',
 }
 
 export enum DeliveryMethodCode {
+  NOT_AVAILABLE = '0',
   MAIL = '1',
   IN_PERSON = '2',
 }

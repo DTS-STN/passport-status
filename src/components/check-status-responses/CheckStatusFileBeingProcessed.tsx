@@ -37,7 +37,7 @@ export const CheckStatusFileBeingProcessed = ({
       >
         {t('being-processed.reviewing-application')}
       </h1>
-      <div className="flex flex-col sm:flex-row">
+      <div className="flex flex-col md:flex-row">
         <div className="max-w-prose">
           <p>
             <Trans
@@ -64,7 +64,7 @@ export const CheckStatusFileBeingProcessed = ({
             <p>{t('status:being-processed.urgent-service-note')}</p>
           )}
           {timelineExists && (
-            <div className="flex w-full justify-center sm:hidden">
+            <div className="flex justify-center md:hidden">
               <Timeline entries={timelineData} />
             </div>
           )}
@@ -105,7 +105,10 @@ export const CheckStatusFileBeingProcessed = ({
             {t('status:being-processed.incomplete-applications.heading')}
           </h2>
           <p>
-            {t('status:being-processed.incomplete-applications.description')}
+            <Trans
+              i18nKey={'being-processed.incomplete-applications.description'}
+              ns="status"
+            />
           </p>
           <p>
             {t('status:being-processed.incomplete-applications.return-notice')}
@@ -119,7 +122,7 @@ export const CheckStatusFileBeingProcessed = ({
           </div>
         </div>
         {timelineExists && (
-          <div className="hidden w-full justify-center sm:flex">
+          <div className="hidden w-full justify-center md:flex">
             <div className="-mt-6">
               <Timeline entries={timelineData} />
             </div>
