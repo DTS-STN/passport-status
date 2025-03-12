@@ -58,7 +58,7 @@ const DateSelect = ({
         aria-required={required ? true : undefined}
         className={`w-40 rounded border px-3 py-1 ${
           error ? 'border-accent-error' : 'border-neutral-400'
-        } bg-white focus:border-sky-500 focus:outline-none focus:ring-sky-500`}
+        } bg-white focus:border-sky-500 focus:ring-sky-500 focus:outline-hidden`}
       >
         <option value="" disabled></option>
         {options.map(({ label, value }) => (

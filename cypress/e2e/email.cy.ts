@@ -153,7 +153,7 @@ describe('cancel email esrf', () => {
 
   it('cancel email esrf dialog has no detectable a11y violations', () => {
     cy.injectAxe()
-    cy.wait(500)
+    cy.wait(1000)
     cy.checkA11y()
   })
 })
