@@ -18,12 +18,12 @@ const Collapse = ({ title, children, variant = 'default' }: CollapseProps) => {
   return (
     <details
       aria-describedby={`${id}-details-summary`}
-      className={`mb-3 rounded border p-3 ${variants[variant]}`}
+      className={`mb-3 rounded-sm border p-3 ${variants[variant]}`}
     >
       <summary
         id={`${id}-details-summary`}
         className={
-          'cursor-pointer text-blue-light hover:text-link-selected hover:underline focus:text-link-selected focus:underline'
+          'text-blue-light hover:text-link-selected focus:text-link-selected cursor-pointer hover:underline focus:underline'
         }
       >
         {title}

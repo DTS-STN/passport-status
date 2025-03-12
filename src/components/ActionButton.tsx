@@ -16,9 +16,9 @@ export interface ActionButtonProps {
 }
 
 const sizes = {
-  xs: 'px-1.5 py-px rounded-sm text-sm',
-  sm: 'px-2.5 py-1.5 rounded-sm text-sm',
-  md: 'px-3.5 py-2.5 rounded text-base',
+  xs: 'px-1.5 py-px rounded-xs text-sm',
+  sm: 'px-2.5 py-1.5 rounded-xs text-sm',
+  md: 'px-3.5 py-2.5 rounded-sm text-base',
   lg: 'px-4 py-2.5 rounded-md text-lg',
 }
 
@@ -40,7 +40,7 @@ const ActionButton = ({
   type,
 }: ActionButtonProps) => {
   const baseClasses =
-    'align-middle border font-display inline-flex items-center justify-center shadow-sm disabled:cursor-not-allowed disabled:opacity-70 disabled:pointer-events-none disabled:shadow-none focus:ring-2 focus:ring-black focus:ring-offset-2'
+    'align-middle border font-display inline-flex items-center justify-center shadow-xs disabled:cursor-not-allowed disabled:opacity-70 disabled:pointer-events-none disabled:shadow-none focus:ring-2 focus:ring-black focus:ring-offset-2'
   const fullWidthClasses = fullWidth ? 'w-full' : undefined
   const sizeClasses = sizes[size ?? 'md']
   const styleClasses = styles[style ?? 'default']

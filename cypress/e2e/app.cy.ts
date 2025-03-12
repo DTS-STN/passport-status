@@ -20,13 +20,13 @@ describe('app page loads', () => {
   it('should have correct title', () => {
     cy.title().should(
       'eq',
-      "Passport Application Status Checker | Vérificateur de l'état d'une demande de passeport - Canada.ca"
+      "Passport Application Status Checker | Vérificateur de l'état d'une demande de passeport - Canada.ca",
     )
   })
 
   it('has no detectable a11y violations on load', () => {
     cy.injectAxe()
-    cy.wait(500)
+    cy.wait(1000)
     cy.checkA11y()
   })
 })
