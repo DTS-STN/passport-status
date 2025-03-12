@@ -42,34 +42,36 @@ const Modal = ({
   return (
     <dialog
       ref={dialogRef}
-      className="w-full border-none bg-transparent p-1 backdrop:bg-black backdrop:bg-opacity-80 md:w-2/3 lg:w-2/5"
+      className="min-h-screen min-w-screen items-center justify-center border-none bg-black/70 p-1 backdrop-blur-md"
     >
-      <FocusOn enabled={open}>
-        <section
-          data-autofocus
-          tabIndex={-1}
-          className="rounded-md bg-white ring-2 ring-gray-modal"
-          aria-describedby={`${id}-modal-header`}
-        >
-          <header
-            id={`${id}-modal-header`}
-            className="rounded-t-md border-b border-black bg-blue-deep p-3 text-white"
+      <div className="flex min-h-screen w-full items-center justify-center">
+        <FocusOn enabled={open}>
+          <section
+            data-autofocus
+            tabIndex={-1}
+            className="ring-gray-modal rounded-md bg-white ring-2"
+            aria-describedby={`${id}-modal-header`}
           >
-            <h1>{header}</h1>
-          </header>
-          <div id={`${id}-modal-desc`} className="p-3">
-            {children}
-          </div>
-          <div className="flex justify-end gap-2 border-t border-gray-modal p-2">
-            {actionButtons.map((actionButtonProps) => (
-              <ActionButton
-                key={actionButtonProps.text}
-                {...actionButtonProps}
-              />
-            ))}
-          </div>
-        </section>
-      </FocusOn>
+            <header
+              id={`${id}-modal-header`}
+              className="bg-blue-deep rounded-t-md border-b border-black p-3 text-white"
+            >
+              <h1>{header}</h1>
+            </header>
+            <div id={`${id}-modal-desc`} className="p-3">
+              {children}
+            </div>
+            <div className="border-gray-modal flex justify-end gap-2 border-t p-2">
+              {actionButtons.map((actionButtonProps) => (
+                <ActionButton
+                  key={actionButtonProps.text}
+                  {...actionButtonProps}
+                />
+              ))}
+            </div>
+          </section>
+        </FocusOn>
+      </div>
     </dialog>
   )
 }
