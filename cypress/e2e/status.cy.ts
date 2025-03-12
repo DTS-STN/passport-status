@@ -238,7 +238,7 @@ statusCodes.forEach((response) => {
 
     it(`loads result for status '${response.status}' has no detectable a11y violations`, () => {
       cy.injectAxe()
-      cy.wait(500)
+      cy.wait(1000)
       cy.checkA11y()
     })
   })

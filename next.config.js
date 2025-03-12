@@ -50,6 +50,7 @@ const securityHeaders = [
  * @type {import('next').NextConfig}
  **/
 const nextConfig = {
+  devIndicators: false,
   env: {
     NEXT_PUBLIC_BUILD_DATE: builddate,
   },

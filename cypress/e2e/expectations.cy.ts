@@ -58,7 +58,7 @@ describe('expectations page loads', () => {
 
   it('has no detectable a11y violations on load', () => {
     cy.injectAxe()
-    cy.wait(500)
+    cy.wait(1000)
     cy.checkA11y()
   })
 })
