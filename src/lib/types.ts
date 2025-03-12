@@ -91,7 +91,7 @@ export interface PassportStatusesCertificateApplication {
   CertificateApplicationStatus: PassportStatusesCertificateApplicationStatus
   CertificateApplicationDeliveryMethod: PassportStatusesCertificateApplicationDeliveryMethod
   CertificateApplicationServiceLevel: PassportStatusesCertificateApplicationServiceLevel
-  CertificateApplicationTimelineDates: PassportStatusesCertificateApplicationTimelineDates
+  CertificateApplicationTimelineDates: PassportStatusesCertificateApplicationTimelineDate[]
 }
 
 export interface PassportStatusesCertificateApplicationIdentification {
@@ -111,19 +111,20 @@ export interface PassportStatusesCertificateApplicationServiceLevel {
   ServiceLevelCode: string
 }
 
-export interface PassportStatusesCertificateApplicationTimelineDates {
-  ApplicationReceivedDate: NIEMRequiredDate
-  ApplicationReviewedDate: NIEMNullableDate
-  ApplicationPrintedDate: NIEMNullableDate
-  ApplicationCompletedDate: NIEMNullableDate
+export interface PassportStatusesCertificateApplicationTimelineDate {
+  ReferenceDataName: string
+  TimelineDate: NIEMRequiredDate
 }
 
 export interface NIEMRequiredDate {
   Date: string
 }
 
-export interface NIEMNullableDate {
-  Date?: string
+export enum TimelineReferenceDataName {
+  RECEIVED = 'Received',
+  REVIEWED = 'Reviewed',
+  PRINTED = 'Printed',
+  COMPLETED = 'Completed',
 }
 
 export enum StatusCode {
