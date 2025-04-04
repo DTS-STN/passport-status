@@ -19,11 +19,11 @@
     "tsc:validate": "tsc --noEmit --incremental false"
   },
   "dependencies": {
-    "@tanstack/react-query": "5.67.1",
+    "@tanstack/react-query": "5.71.10",
     "cookies-next": "5.1.0",
     "date-fns": "4.1.0",
     "formik": "2.4.6",
-    "i18next": "24.2.2",
+    "i18next": "24.2.3",
     "markdown-to-jsx": "7.7.4",
     "next": "15.2.4",
     "next-i18next": "15.4.2",
@@ -34,7 +34,7 @@
     "react-focus-on": "3.9.4",
     "react-i18next": "15.4.1",
     "react-idle-timer": "5.7.2",
-    "sharp": "0.33.5",
+    "sharp": "0.34.0",
     "yup": "1.6.1"
   },
   "devDependencies": {
