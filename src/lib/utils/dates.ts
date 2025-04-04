@@ -17,7 +17,7 @@ export const formatDate = (dateString: string, lang: string): string => {
   // Create a Date object in UTC
   date = new Date(Date.UTC(year, month - 1, day))
 
-  const prefix = lang in ['en', 'fr'] ? lang : 'en'
+  const prefix = ['en', 'fr'].includes(lang) ? lang : 'en'
 
   const options: Intl.DateTimeFormatOptions = {
     month: 'long', // Full month name
