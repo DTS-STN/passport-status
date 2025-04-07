@@ -7,7 +7,7 @@
     "service-standards": {
       "heading": "Our service standards",
       "received-date": "We received your application on {{receivedDate}}. Our service standard for {{serviceLevel}} business days.",
-      "refund-eligibility": "If we don’t meet our service standard, you may be eligible for a partial refund."
+      "refund-eligibility": "If we don't meet our service standard, you may be eligible for a partial refund."
     },
     "expedited-service": {
       "heading": "If you need your passport sooner",
@@ -28,11 +28,11 @@
       "heading": "Our service standards",
       "received-date": "We received your application on {{receivedDate}}. Our <Link>service standard</Link> is {{serviceLevel}} business days.",
       "urgent-service-note": "If you requested urgent or express service at the passport office, your service standard is different. Please refer to your receipt for the pick-up date.",
-      "refund-eligibility": "Since we didn’t meet our service standard, you may be <Link>eligible for a partial refund</Link>. Most refunds are processed automatically."
+      "refund-eligibility": "Since we didn't meet our service standard, you may be <Link>eligible for a partial refund</Link>. Most refunds are processed automatically."
     },
     "travelling-soon": {
       "heading": "If you need your passport sooner",
-      "if-travelling": "If you’re travelling soon, we’ll do everything we can to get you your passport in time. Find out how to get <Link>urgent or express service for existing applications</Link> if you need the passport within 10 business days. Extra fees may apply."
+      "if-travelling": "If you're travelling soon, we'll do everything we can to get you your passport in time. Find out how to get <Link>urgent or express service for existing applications</Link> if you need the passport within 10 business days. Extra fees may apply."
     }
   },
   "check-another": "Check the status of another application",
@@ -101,7 +101,7 @@
     "need-faster": "If you need the passport faster"
   },
   "not-acceptable": {
-    "header": "We’re unable to process your application",
+    "header": "We're unable to process your application",
     "unable-to-process": "Unfortunately, we're unable to process your application at this time. In most cases, this is because the application was incomplete, or we didn't receive the right identity documents.",
     "next-steps": {
       "header": "Next steps",
@@ -109,7 +109,7 @@
       "please-wait": "Please wait for this letter before calling or applying again."
     }
   },
-  "one-name": "Applicants with <strong>only one name</strong> (single or multiple names entered all in one field) must call us at 1‑800‑567‑6868 to get the status of their application.",
+  "one-name": "Applicants with <strong>only one name</strong> (single or multiple names entered all in one field) must call us at 1-800-567-6868 to get the status of their application.",
   "printing": {
     "in-printing": "We are printing your passport",
     "requested-urgent": "If you requested urgent or express service at the passport office, your service standard is different. Please refer to your receipt for the pick-up date.",
@@ -117,7 +117,7 @@
     "service-standards": {
       "header": "Our service standards",
       "we-received": "We received your application on {{receivedDate}}. Our <Link>service standard</Link> is {{serviceLevel}} business days.",
-      "dont-meet": "If we don’t meet our service standard, you may be eligible for a partial refund."
+      "dont-meet": "If we don't meet our service standard, you may be eligible for a partial refund."
     }
   },
   "ready-for-pickup": {
@@ -131,11 +131,11 @@
     "printed-mailed": "Your new passport has been successfully printed and mailed to you.",
     "shipping-information": {
       "header": "Shipping information",
-      "sending-via": "We’re sending your passport and your supporting documents by Canada Post.",
+      "sending-via": "We're sending your passport and your supporting documents by Canada Post.",
       "take-up-to": "It can take 2 or 3 business days to arrive.",
       "northern-remote": "If you live in a northern or remote area, it may take up to 8 business days to arrive.",
       "supporting-documents": "We may send your supporting documents back separately.",
-      "dont-receive": "If you don’t receive your supporting documents within 6 weeks of receiving your passport, <Link>contact us</Link>."
+      "dont-receive": "If you don't receive your supporting documents within 6 weeks of receiving your passport, <Link>contact us</Link>."
     }
   },
   "shipped-fedex": {
@@ -143,12 +143,12 @@
     "printed-mailed": "Your new passport has been successfully printed and mailed to you.",
     "shipping-information": {
       "header": "Shipping information",
-      "sending-via": "We’re sending your passport and your supporting documents by FedEx.",
+      "sending-via": "We're sending your passport and your supporting documents by FedEx.",
       "take-up-to": "It can take between 5 to 7 business days to arrive.",
-      "dont-receive": "If you don’t receive your passport or supporting documents, <Link>contact us</Link>."
+      "dont-receive": "If you don't receive your passport or supporting documents, <Link>contact us</Link>."
     }
   },
-  "status-check-call": "If you don’t receive your passport or supporting documents, <Link>contact us</Link>.",
+  "status-check-call": "If you don't receive your passport or supporting documents, <Link>contact us</Link>.",
   "status-check-contact": {
     "service-standard-href": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/processing-times.html"
   },
