@@ -23,7 +23,7 @@ export const CheckStatusReadyForPickup = (props: StatusResultProps) => {
       >
         {t('ready-for-pickup.header')}
       </h1>
-      <div className="flex flex-col md:flex-row">
+      <div className="flex flex-col md:flex-row md:gap-x-30 lg:gap-x-40 xl:gap-x-50">
         <div className="max-w-prose">
           <p>{t('ready-for-pickup.receipt-location')}</p>
           <p>{t('ready-for-pickup.check-hours')}</p>
@@ -41,7 +41,7 @@ export const CheckStatusReadyForPickup = (props: StatusResultProps) => {
           </div>
         </div>
         {timelineExists && (
-          <div className="hidden w-full justify-center md:flex">
+          <div className="hidden w-full md:flex">
             <div className="-mt-6">
               <Timeline entries={timelineData} />
             </div>

@@ -37,7 +37,7 @@ export const CheckStatusFileBeingProcessed = ({
       >
         {t('being-processed.reviewing-application')}
       </h1>
-      <div className="flex flex-col md:flex-row">
+      <div className="flex flex-col md:flex-row md:gap-x-30 lg:gap-x-40 xl:gap-x-50">
         <div className="max-w-prose">
           <p>
             <Trans
@@ -122,7 +122,7 @@ export const CheckStatusFileBeingProcessed = ({
           </div>
         </div>
         {timelineExists && (
-          <div className="hidden w-full justify-center md:flex">
+          <div className="hidden w-full md:flex">
             <div className="-mt-6">
               <Timeline entries={timelineData} />
             </div>
