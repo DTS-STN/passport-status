@@ -26,7 +26,9 @@ export const CheckStatusNotAcceptable = ({
       </h1>
       <div className="max-w-prose">
         <p>{t('not-acceptable.unable-to-process')}</p>
-        <h2>{t('not-acceptable.next-steps.header')}</h2>
+        <h2 className="h2 mt-8 mb-2">
+          {t('not-acceptable.next-steps.header')}
+        </h2>
         <p>{t('not-acceptable.next-steps.sent-letter')}</p>
         <p>{t('not-acceptable.next-steps.please-wait')}</p>
         <div className="mt-8">
