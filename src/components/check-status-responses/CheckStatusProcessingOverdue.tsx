@@ -1,7 +1,7 @@
 import { Trans, useTranslation } from 'next-i18next'
 
 import { DeliveryMethodCode, ServiceLevelCode } from '../../lib/types'
-import { formatDate } from '../../lib/utils/dates'
+import { formatDateShort } from '../../lib/utils/dates'
 import { StatusResultProps } from '../../pages/status'
 import ActionButton from '../ActionButton'
 import AlertBlock from '../AlertBlock'
@@ -24,7 +24,7 @@ export const CheckStatusProcessingOverdue = ({
 
   const serviceDays = serviceLevel === ServiceLevelCode.TEN_DAYS ? '10' : '20'
 
-  const formattedDate = formatDate(receivedDate, i18n.language)
+  const formattedDate = formatDateShort(receivedDate, i18n.language)
 
   return (
     <div id="response-result">
@@ -48,7 +48,7 @@ export const CheckStatusProcessingOverdue = ({
               <Timeline entries={timelineData} />
             </div>
           )}
-          <h2 className="h2 mb-2 mt-8">
+          <h2 className="h2 mt-8 mb-2">
             {t('status:being-processed-overdue.service-standards.heading')}
           </h2>
           <p>
@@ -85,7 +85,7 @@ export const CheckStatusProcessingOverdue = ({
             />
           </p>
 
-          <h2 className="h2 mb-2 mt-8">
+          <h2 className="h2 mt-8 mb-2">
             {t('status:being-processed-overdue.travelling-soon.heading')}
           </h2>
           <p>
