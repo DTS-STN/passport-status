@@ -1,7 +1,7 @@
 import { Trans, useTranslation } from 'next-i18next'
 
 import { ServiceLevelCode } from '../../lib/types'
-import { formatDate } from '../../lib/utils/dates'
+import { formatDateShort } from '../../lib/utils/dates'
 import { StatusResultProps } from '../../pages/status'
 import ActionButton from '../ActionButton'
 import AlertBlock from '../AlertBlock'
@@ -19,7 +19,7 @@ export const CheckStatusPrinting = ({
 
   const serviceDays = serviceLevel === ServiceLevelCode.TEN_DAYS ? '10' : '20'
 
-  const formattedDate = formatDate(receivedDate, i18n.language)
+  const formattedDate = formatDateShort(receivedDate, i18n.language)
 
   return (
     <div id="response-result">

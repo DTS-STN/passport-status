@@ -1,5 +1,9 @@
 import { PropsWithChildren } from 'react'
 
+import { useTranslation } from 'react-i18next'
+
+import { formatDateLong } from '../lib/utils/dates'
+
 export interface TimelineEntryContentProps extends PropsWithChildren {
   type: string
   position: string
@@ -17,6 +21,7 @@ const TimelineEntryContent = ({
   bottomDate,
   className,
 }: TimelineEntryContentProps) => {
+  const { i18n } = useTranslation()
   const isCurrent = type === 'current'
   const hasDate = bottomDate !== null
   const isDoneWithBottom = type === 'done' && (hasDate || bottomText !== null)
@@ -32,7 +37,11 @@ const TimelineEntryContent = ({
         <span>{topText}</span>
       )}
       {type === 'done' && hasDate
-        ? bottomDate && <time dateTime={bottomDate}>{bottomDate}</time>
+        ? bottomDate && (
+            <time dateTime={bottomDate}>
+              {formatDateLong(bottomDate, i18n.language)}
+            </time>
+          )
         : bottomText && <span>{bottomText}</span>}
     </div>
   )

@@ -1,4 +1,40 @@
-export const formatDate = (dateString: string, lang: string): string => {
+/**
+ * @description Formats a date string into a more readable format.
+ * @param {string} dateString - The date string to format (YYYY-MM-DD).
+ * @param {string} lang - The language code for formatting (e.g., 'en', 'fr').
+ * @returns {string} - The formatted date string. 'April 11'
+ **/
+export const formatDateShort = (dateString: string, lang: string): string => {
+  return formatDateWithOptions(dateString, lang, {
+    month: 'long', // Full month name
+    day: 'numeric', // Numeric day of the month
+  })
+}
+
+/**
+ * @description Formats a date string into a more readable format.
+ * @param {string} dateString - The date string to format (YYYY-MM-DD).
+ * @param {string} lang - The language code for formatting (e.g., 'en', 'fr').
+ * @returns {string} - The formatted date string. 'April 11, 1979'
+ **/
+export const formatDateLong = (dateString: string, lang: string): string => {
+  return formatDateWithOptions(dateString, lang, {
+    dateStyle: 'long', // Full date
+  })
+}
+
+/**
+ * @description Formats a date string into a more readable format.
+ * @param {string} dateString - The date string to format (YYYY-MM-DD).
+ * @param {string} lang - The language code for formatting (e.g., 'en', 'fr').
+ * @param {Intl.DateTimeFormatOptions} formatOptions - Additional formatting options.
+ * @returns {string} - The formatted date string.
+ **/
+const formatDateWithOptions = (
+  dateString: string,
+  lang: string,
+  formatOptions: Omit<Intl.DateTimeFormatOptions, 'timeZone'>,
+) => {
   let date = new Date(dateString)
 
   // Check if the date is valid
@@ -20,8 +56,7 @@ export const formatDate = (dateString: string, lang: string): string => {
   const prefix = ['en', 'fr'].includes(lang) ? lang : 'en'
 
   const options: Intl.DateTimeFormatOptions = {
-    month: 'long', // Full month name
-    day: 'numeric', // Numeric day of the month
+    ...formatOptions,
     timeZone: 'UTC', // Force UTC timezone
   }
 
