@@ -27,7 +27,7 @@ export const CheckStatusPrinting = ({
       <h1 id="main-header" data-testid="printing" className="h1" tabIndex={-1}>
         {t('printing.in-printing')}
       </h1>
-      <div className="flex flex-col md:flex-row">
+      <div className="flex flex-col md:flex-row md:gap-x-30 lg:gap-x-40 xl:gap-x-50">
         <div className="max-w-prose">
           <p>{t('printing.reviewed-printing')}</p>
           {serviceLevel === ServiceLevelCode.TEN_DAYS && (
@@ -72,7 +72,7 @@ export const CheckStatusPrinting = ({
           </div>
         </div>
         {timelineExists && (
-          <div className="hidden w-full justify-center md:flex">
+          <div className="hidden w-full md:flex">
             <div className="-mt-6">
               <Timeline entries={timelineData} />
             </div>

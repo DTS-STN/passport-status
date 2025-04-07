@@ -38,7 +38,7 @@ export const CheckStatusProcessingOverdue = ({
         {t('status:being-processed-overdue.header')}
       </h1>
 
-      <div className="flex flex-col md:flex-row">
+      <div className="flex flex-col md:flex-row md:gap-x-30 lg:gap-x-40 xl:gap-x-50">
         <div className="max-w-prose">
           <p>{t('status:being-processed-overdue.reviewing-application')}</p>
           <p>{t('status:being-processed-overdue.employee-reviewing')}</p>
@@ -115,7 +115,7 @@ export const CheckStatusProcessingOverdue = ({
           </div>
         </div>
         {timelineExists && (
-          <div className="hidden w-full justify-center md:flex">
+          <div className="hidden w-full md:flex">
             <div className="-mt-6">
               <Timeline entries={timelineData} />
             </div>

@@ -34,7 +34,7 @@ export const CheckStatusShippingFedex = ({
       >
         {t('shipped-fedex.header')}
       </h1>
-      <div className="flex flex-col md:flex-row">
+      <div className="flex flex-col md:flex-row md:gap-x-30 lg:gap-x-40 xl:gap-x-50">
         <div className="max-w-prose">
           <p>{t('shipped-fedex.printed-mailed')}</p>
           {timelineExists && (
@@ -96,7 +96,7 @@ export const CheckStatusShippingFedex = ({
           </div>
         </div>
         {timelineExists && (
-          <div className="hidden w-full justify-center md:flex">
+          <div className="hidden w-full md:flex">
             <div className="-mt-6">
               <Timeline entries={timelineData} />
             </div>
