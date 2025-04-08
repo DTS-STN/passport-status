@@ -1,17 +1,19 @@
 {
   "being-processed": {
-    "reviewing-application": "We are reviewing your application.",
+    "reviewing-application": "We are reviewing your application",
     "processing-details": "A passport employee is reviewing your application. This review normally takes about {{reviewDays}} business days, plus {{printDays}} days for printing.",
     "completion-status": "If your application has been properly completed, your passport should be mailed to you within {{serviceLevel}} business days.",
     "urgent-service-note": "If you requested urgent or express service at the passport office, your service standard is different. Please refer to your receipt for the pick-up date.",
     "service-standards": {
       "heading": "Our service standards",
-      "received-date": "We received your application on {{receivedDate}}. Our service standard for {{serviceLevel}} business days.",
-      "refund-eligibility": "If we don't meet our service standard, you may be eligible for a partial refund."
+      "received-date": "We received your application on {{receivedDate}} our <Link>service standard</Link> is {{serviceLevel}} business days.",
+      "refund-eligibility": "If we don't meet our service standard, you may be eligible for a partial refund.",
+      "service-standards-href": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/processing-times.html"
     },
     "expedited-service": {
       "heading": "If you need your passport sooner",
-      "details": "Find out how to get urgent or express service for existing applications if you need the passport within {{serviceLevel}} business days. Extra fees may apply."
+      "details": "Find out how to get <Link>urgent or express service for existing applications</Link> if you need the passport within {{serviceLevel}} business days. Extra fees may apply.",
+      "expedited-service-href": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/urgent-emergency-passport.html"
     },
     "incomplete-applications": {
       "heading": "Incomplete applications",
