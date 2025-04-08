@@ -6,12 +6,14 @@
     "urgent-service-note": "Si vous avez demandé un service urgent ou express au bureau des passeports, votre norme de service est différente. Veuillez-vous référer à votre reçu pour connaître la date de retrait.",
     "service-standards": {
       "heading": "Nos normes de service",
-      "received-date": "Nous avons reçu votre demande le {{receivedDate}}. Notre norme de service est {{serviceLevel}} jours ouvrables.",
-      "refund-eligibility": "Si nous ne respectons pas nos normes de service, vous pourriez avoir droit à un remboursement partiel."
+      "received-date": "Nous avons reçu votre demande le {{receivedDate}}. Notre <Link>norme de service</Link> est {{serviceLevel}} jours ouvrables.",
+      "refund-eligibility": "Si nous ne respectons pas nos normes de service, vous pourriez avoir droit à un remboursement partiel.",
+      "service-standards-href": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens/delais-traitement.html"
     },
     "expedited-service": {
       "heading": "Si vous avez besoin du passeport plus rapidement",
-      "details": "Apprenez comment obtenir des services urgents ou express pour votre demande existante si vous avez besoin du passeport dans un délai de {{serviceLevel}} jours ouvrables. Des frais supplémentaires peuvent s'appliquer."
+      "details": "Apprenez comment obtenir des <Link>services urgents ou express pour votre demande existante</Link> si vous avez besoin du passeport dans un délai de {{serviceLevel}} jours ouvrables. Des frais supplémentaires peuvent s'appliquer.",
+      "expedited-service-href": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens/passeport-urgent-express.html"
     },
     "incomplete-applications": {
       "heading": "Demandes incomplètes",

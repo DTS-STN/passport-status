@@ -79,6 +79,15 @@ export const CheckStatusFileBeingProcessed = ({
                 receivedDate: formattedDate,
                 serviceLevel: serviceDays,
               }}
+              components={{
+                Link: (
+                  <ExternalLink
+                    href={t(
+                      'being-processed.service-standards.service-standards-href',
+                    )}
+                  />
+                ),
+              }}
             />
           </p>
           <p>
@@ -94,7 +103,9 @@ export const CheckStatusFileBeingProcessed = ({
               components={{
                 Link: (
                   <ExternalLink
-                    href={t('status-check-urgent.express-services-href')}
+                    href={t(
+                      'being-processed.expedited-service.expedited-service-href',
+                    )}
                   />
                 ),
               }}
