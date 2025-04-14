@@ -90,9 +90,6 @@ export const CheckStatusFileBeingProcessed = ({
               }}
             />
           </p>
-          <p>
-            {t('status:being-processed.service-standards.refund-eligibility')}
-          </p>
           <h2 className="h2 mt-8 mb-2">
             {t('being-processed.expedited-service.heading')}
           </h2>
