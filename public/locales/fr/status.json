@@ -123,9 +123,10 @@
     }
   },
   "ready-for-pickup": {
-    "header": "Votre passeport est disponible pour retrait",
-    "receipt-location": "Votre nouveau passeport est disponible pour retrait à l'endroit indiqué sur votre reçu.",
-    "check-hours": "Veuillez vérifier les heures d'ouverture du Centre Service Canada ou du bureau des passeports avant de vous y rendre."
+    "header": "Votre passeport est disponible pour un retrait en personne",
+    "receipt-location": "Votre nouveau passeport est disponible pour un retrait en personne à l'endroit indiqué sur votre reçu.",
+    "check-hours": "Veuillez vérifier les heures d'ouverture du <Link>Centre Service Canada ou du bureau des passeports</Link> avant de vous y rendre.",
+    "check-hours-href": "https://ircc.canada.ca/francais/passeport/map/carte.asp"
   },
   "reset": "Vérifier l'état d'une autre demande",
   "shipped-canada-post": {

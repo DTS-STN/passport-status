@@ -123,9 +123,10 @@
     }
   },
   "ready-for-pickup": {
-    "header": "Your passport is ready for pick up",
-    "receipt-location": "Your new passport is ready for pick up at the location listed on your receipt.",
-    "check-hours": "Please check the working hours of the Service Canada Centre or Passport office before you go."
+    "header": "Your passport is ready for in-person pick-up",
+    "receipt-location": "Your new passport is ready for in-person pick-up at the location listed on your receipt.",
+    "check-hours": "Please check the working hours of the <Link>Service Canada Centre or Passport office</Link> before you go.",
+    "check-hours-href": "https://ircc.canada.ca/english/passport/map/map.asp"
   },
   "reset": "Check the status of another application",
   "shipped-canada-post": {
