@@ -7,6 +7,6 @@
   "print-done": "Impression terminée",
   "mail-future": "Passeport envoyé par la poste",
   "mail-done": "Passeport envoyé par la poste",
-  "pickup-future": "Prêt pour la cueillette",
-  "pickup-done": "Prêt pour la cueillette"
+  "pickup-future": "Prêt pour le retrait",
+  "pickup-done": "Prêt pour le retrait"
 }

@@ -7,6 +7,6 @@
   "print-done": "Print complete",
   "mail-future": "Passport mailed out",
   "mail-done": "Passport mailed out",
-  "pickup-future": "Ready for pickup",
-  "pickup-done": "Ready for pickup"
+  "pickup-future": "Ready for pick-up",
+  "pickup-done": "Ready for pick-up"
 }
