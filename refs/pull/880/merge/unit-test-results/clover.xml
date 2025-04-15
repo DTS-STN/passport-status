@@ -1,0 +1,890 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1744722078590" clover="3.2.0">
+  <project timestamp="1744722078590" name="All files">
+    <metrics statements="647" coveredstatements="415" conditionals="472" coveredconditionals="226" methods="172" coveredmethods="97" elements="1291" coveredelements="738" complexity="0" loc="647" ncloc="647" packages="12" files="67" classes="67"/>
+    <package name="src">
+      <metrics statements="28" coveredstatements="14" conditionals="26" coveredconditionals="8" methods="7" coveredmethods="6"/>
+      <file name="middleware.ts" path="/home/runner/work/passport-status/passport-status/src/middleware.ts">
+        <metrics statements="14" coveredstatements="0" conditionals="18" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="13" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="23" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="28" count="0" type="cond" truecount="0" falsecount="5"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="32" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="39" count="0" type="stmt"/>
+      </file>
+      <file name="next-seo.config.ts" path="/home/runner/work/passport-status/passport-status/src/next-seo.config.ts">
+        <metrics statements="14" coveredstatements="14" conditionals="8" coveredconditionals="8" methods="6" coveredmethods="6"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="16" count="7" type="cond" truecount="2" falsecount="0"/>
+        <line num="17" count="4" type="stmt"/>
+        <line num="29" count="2" type="stmt"/>
+        <line num="32" count="7" type="cond" truecount="2" falsecount="0"/>
+        <line num="33" count="4" type="stmt"/>
+        <line num="47" count="3" type="stmt"/>
+        <line num="107" count="2" type="stmt"/>
+        <line num="141" count="2" type="stmt"/>
+        <line num="176" count="2" type="stmt"/>
+        <line num="177" count="5" type="stmt"/>
+        <line num="178" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="179" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="180" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.@types">
+      <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="i18next.d.ts" path="/home/runner/work/passport-status/passport-status/src/@types/i18next.d.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="resources.ts" path="/home/runner/work/passport-status/passport-status/src/@types/resources.ts">
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="8" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components">
+      <metrics statements="246" coveredstatements="210" conditionals="177" coveredconditionals="118" methods="72" coveredmethods="56"/>
+      <file name="ActionButton.tsx" path="/home/runner/work/passport-status/passport-status/src/components/ActionButton.tsx">
+        <metrics statements="9" coveredstatements="9" conditionals="6" coveredconditionals="4" methods="1" coveredmethods="1"/>
+        <line num="18" count="13" type="stmt"/>
+        <line num="25" count="13" type="stmt"/>
+        <line num="32" count="13" type="stmt"/>
+        <line num="43" count="23" type="stmt"/>
+        <line num="44" count="23" type="cond" truecount="1" falsecount="1"/>
+        <line num="45" count="23" type="cond" truecount="2" falsecount="0"/>
+        <line num="46" count="23" type="cond" truecount="1" falsecount="1"/>
+        <line num="48" count="23" type="stmt"/>
+        <line num="61" count="13" type="stmt"/>
+      </file>
+      <file name="AlertBlock.tsx" path="/home/runner/work/passport-status/passport-status/src/components/AlertBlock.tsx">
+        <metrics statements="6" coveredstatements="4" conditionals="6" coveredconditionals="2" methods="2" coveredmethods="1"/>
+        <line num="13" count="13" type="stmt"/>
+        <line num="14" count="26" type="stmt"/>
+        <line num="15" count="26" type="stmt"/>
+        <line num="17" count="26" type="cond" truecount="2" falsecount="2"/>
+        <line num="20" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="21" count="0" type="stmt"/>
+      </file>
+      <file name="AlertSection.tsx" path="/home/runner/work/passport-status/passport-status/src/components/AlertSection.tsx">
+        <metrics statements="11" coveredstatements="4" conditionals="14" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="11" count="13" type="stmt"/>
+        <line num="18" count="13" type="stmt"/>
+        <line num="25" count="13" type="stmt"/>
+        <line num="26" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="52" count="0" type="stmt"/>
+        <line num="66" count="0" type="stmt"/>
+        <line num="80" count="13" type="stmt"/>
+        <line num="86" count="0" type="stmt"/>
+        <line num="88" count="0" type="stmt"/>
+      </file>
+      <file name="ApplicationNameBar.tsx" path="/home/runner/work/passport-status/passport-status/src/components/ApplicationNameBar.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="8" count="3" type="stmt"/>
+        <line num="9" count="5" type="stmt"/>
+      </file>
+      <file name="Banner.tsx" path="/home/runner/work/passport-status/passport-status/src/components/Banner.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="6" count="3" type="stmt"/>
+        <line num="7" count="5" type="stmt"/>
+      </file>
+      <file name="Collapse.tsx" path="/home/runner/work/passport-status/passport-status/src/components/Collapse.tsx">
+        <metrics statements="4" coveredstatements="4" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="3" count="5" type="stmt"/>
+        <line num="16" count="5" type="cond" truecount="1" falsecount="0"/>
+        <line num="17" count="10" type="stmt"/>
+        <line num="18" count="10" type="stmt"/>
+      </file>
+      <file name="DateModified.tsx" path="/home/runner/work/passport-status/passport-status/src/components/DateModified.tsx">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="12" count="3" type="stmt"/>
+        <line num="13" count="4" type="stmt"/>
+        <line num="23" count="3" type="stmt"/>
+      </file>
+      <file name="DateSelect.tsx" path="/home/runner/work/passport-status/passport-status/src/components/DateSelect.tsx">
+        <metrics statements="5" coveredstatements="4" conditionals="6" coveredconditionals="4" methods="3" coveredmethods="2"/>
+        <line num="26" count="3" type="stmt"/>
+        <line num="38" count="14" type="stmt"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="42" count="14" type="stmt"/>
+        <line num="65" count="678" type="stmt"/>
+      </file>
+      <file name="DateSelectField.tsx" path="/home/runner/work/passport-status/passport-status/src/components/DateSelectField.tsx">
+        <metrics statements="69" coveredstatements="55" conditionals="42" coveredconditionals="18" methods="18" coveredmethods="15"/>
+        <line num="35" count="3" type="stmt"/>
+        <line num="47" count="8" type="stmt"/>
+        <line num="49" count="8" type="stmt"/>
+        <line num="59" count="8" type="stmt"/>
+        <line num="60" count="8" type="stmt"/>
+        <line num="61" count="8" type="stmt"/>
+        <line num="62" count="8" type="stmt"/>
+        <line num="64" count="8" type="stmt"/>
+        <line num="65" count="24" type="stmt"/>
+        <line num="66" count="24" type="cond" truecount="1" falsecount="1"/>
+        <line num="67" count="24" type="cond" truecount="2" falsecount="0"/>
+        <line num="68" count="24" type="cond" truecount="2" falsecount="0"/>
+        <line num="71" count="8" type="stmt"/>
+        <line num="72" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="73" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="74" count="6" type="stmt"/>
+        <line num="75" count="6" type="stmt"/>
+        <line num="76" count="756" type="stmt"/>
+        <line num="77" count="756" type="stmt"/>
+        <line num="81" count="8" type="stmt"/>
+        <line num="82" count="8" type="stmt"/>
+        <line num="83" count="96" type="stmt"/>
+        <line num="84" count="96" type="stmt"/>
+        <line num="88" count="8" type="stmt"/>
+        <line num="89" count="6" type="stmt"/>
+        <line num="90" count="6" type="stmt"/>
+        <line num="91" count="6" type="cond" truecount="1" falsecount="1"/>
+        <line num="94" count="6" type="stmt"/>
+        <line num="95" count="186" type="stmt"/>
+        <line num="96" count="186" type="stmt"/>
+        <line num="100" count="8" type="stmt"/>
+        <line num="102" count="0" type="stmt"/>
+        <line num="103" count="0" type="stmt"/>
+        <line num="104" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="105" count="0" type="stmt"/>
+        <line num="107" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="108" count="0" type="stmt"/>
+        <line num="111" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="113" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="116" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="118" count="0" type="stmt"/>
+        <line num="119" count="0" type="stmt"/>
+        <line num="133" count="8" type="stmt"/>
+        <line num="135" count="8" type="stmt"/>
+        <line num="136" count="6" type="cond" truecount="1" falsecount="1"/>
+        <line num="137" count="6" type="stmt"/>
+        <line num="139" count="0" type="stmt"/>
+        <line num="143" count="8" type="stmt"/>
+        <line num="144" count="6" type="stmt"/>
+        <line num="145" count="6" type="stmt"/>
+        <line num="146" count="6" type="stmt"/>
+        <line num="151" count="8" type="stmt"/>
+        <line num="152" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="153" count="4" type="stmt"/>
+        <line num="155" count="2" type="stmt"/>
+        <line num="156" count="2" type="stmt"/>
+        <line num="166" count="8" type="stmt"/>
+        <line num="232" count="3" type="stmt"/>
+        <line num="233" count="0" type="cond" truecount="0" falsecount="5"/>
+        <line num="235" count="3" type="stmt"/>
+        <line num="236" count="1038" type="stmt"/>
+        <line num="239" count="3" type="stmt"/>
+        <line num="248" count="2" type="stmt"/>
+        <line num="249" count="2" type="stmt"/>
+        <line num="250" count="2" type="stmt"/>
+        <line num="251" count="2" type="stmt"/>
+        <line num="253" count="2" type="cond" truecount="2" falsecount="3"/>
+        <line num="254" count="2" type="stmt"/>
+        <line num="257" count="0" type="stmt"/>
+      </file>
+      <file name="ErrorLayout.tsx" path="/home/runner/work/passport-status/passport-status/src/components/ErrorLayout.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="7" count="3" type="stmt"/>
+        <line num="8" count="4" type="stmt"/>
+      </file>
+      <file name="ErrorSummary.tsx" path="/home/runner/work/passport-status/passport-status/src/components/ErrorSummary.tsx">
+        <metrics statements="15" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="4"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="34" count="1" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="38" count="1" type="stmt"/>
+        <line num="39" count="1" type="stmt"/>
+        <line num="42" count="1" type="stmt"/>
+        <line num="43" count="1" type="stmt"/>
+        <line num="44" count="1" type="stmt"/>
+        <line num="47" count="1" type="stmt"/>
+        <line num="56" count="1" type="stmt"/>
+      </file>
+      <file name="ExampleImage.tsx" path="/home/runner/work/passport-status/passport-status/src/components/ExampleImage.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="17" count="2" type="stmt"/>
+        <line num="18" count="2" type="stmt"/>
+      </file>
+      <file name="ExternalLink.tsx" path="/home/runner/work/passport-status/passport-status/src/components/ExternalLink.tsx">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="18" count="14" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
+      </file>
+      <file name="FieldSetLegend.tsx" path="/home/runner/work/passport-status/passport-status/src/components/FieldSetLegend.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="9" count="3" type="stmt"/>
+        <line num="15" count="8" type="stmt"/>
+      </file>
+      <file name="Footer.tsx" path="/home/runner/work/passport-status/passport-status/src/components/Footer.tsx">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="44" count="2" type="stmt"/>
+        <line num="51" count="2" type="stmt"/>
+        <line num="64" count="5" type="stmt"/>
+      </file>
+      <file name="Header.tsx" path="/home/runner/work/passport-status/passport-status/src/components/Header.tsx">
+        <metrics statements="9" coveredstatements="9" conditionals="16" coveredconditionals="16" methods="1" coveredmethods="1"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="16" count="3" type="stmt"/>
+        <line num="17" count="3" type="stmt"/>
+        <line num="18" count="3" type="stmt"/>
+        <line num="20" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="21" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="22" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="23" count="3" type="stmt"/>
+        <line num="25" count="3" type="stmt"/>
+      </file>
+      <file name="IdleTimeout.tsx" path="/home/runner/work/passport-status/passport-status/src/components/IdleTimeout.tsx">
+        <metrics statements="21" coveredstatements="16" conditionals="8" coveredconditionals="8" methods="7" coveredmethods="4"/>
+        <line num="14" count="3" type="stmt"/>
+        <line num="15" count="3" type="stmt"/>
+        <line num="16" count="3" type="stmt"/>
+        <line num="17" count="3" type="stmt"/>
+        <line num="18" count="3" type="stmt"/>
+        <line num="20" count="3" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="25" count="3" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="30" count="3" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="37" count="3" type="stmt"/>
+        <line num="38" count="2" type="stmt"/>
+        <line num="39" count="2" type="stmt"/>
+        <line num="40" count="2" type="stmt"/>
+        <line num="45" count="3" type="stmt"/>
+        <line num="46" count="2" type="stmt"/>
+        <line num="49" count="3" type="stmt"/>
+        <line num="55" count="0" type="stmt"/>
+      </file>
+      <file name="InputErrorMessage.tsx" path="/home/runner/work/passport-status/passport-status/src/components/InputErrorMessage.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="6" count="7" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+      </file>
+      <file name="InputField.tsx" path="/home/runner/work/passport-status/passport-status/src/components/InputField.tsx">
+        <metrics statements="14" coveredstatements="14" conditionals="22" coveredconditionals="19" methods="2" coveredmethods="2"/>
+        <line num="20" count="3" type="stmt"/>
+        <line num="35" count="2" type="stmt"/>
+        <line num="36" count="2" type="stmt"/>
+        <line num="37" count="2" type="stmt"/>
+        <line num="38" count="2" type="stmt"/>
+        <line num="39" count="2" type="stmt"/>
+        <line num="41" count="2" type="stmt"/>
+        <line num="42" count="2" type="stmt"/>
+        <line num="43" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="44" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="45" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="46" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="49" count="2" type="stmt"/>
+        <line num="97" count="3" type="stmt"/>
+      </file>
+      <file name="InputLabel.tsx" path="/home/runner/work/passport-status/passport-status/src/components/InputLabel.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="9" count="4" type="stmt"/>
+        <line num="16" count="3" type="stmt"/>
+      </file>
+      <file name="Layout.tsx" path="/home/runner/work/passport-status/passport-status/src/components/Layout.tsx">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+      </file>
+      <file name="LinkButton.tsx" path="/home/runner/work/passport-status/passport-status/src/components/LinkButton.tsx">
+        <metrics statements="8" coveredstatements="8" conditionals="10" coveredconditionals="8" methods="1" coveredmethods="1"/>
+        <line num="18" count="4" type="stmt"/>
+        <line num="25" count="4" type="stmt"/>
+        <line num="30" count="4" type="stmt"/>
+        <line num="42" count="4" type="stmt"/>
+        <line num="43" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="44" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="45" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="47" count="4" type="stmt"/>
+      </file>
+      <file name="MarkdownContent.tsx" path="/home/runner/work/passport-status/passport-status/src/components/MarkdownContent.tsx">
+        <metrics statements="4" coveredstatements="2" conditionals="1" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="7" count="13" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="16" count="13" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+      </file>
+      <file name="Modal.tsx" path="/home/runner/work/passport-status/passport-status/src/components/Modal.tsx">
+        <metrics statements="14" coveredstatements="13" conditionals="2" coveredconditionals="1" methods="5" coveredmethods="5"/>
+        <line num="14" count="3" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="25" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
+        <line num="34" count="1" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="36" count="1" type="stmt"/>
+        <line num="42" count="1" type="stmt"/>
+        <line num="66" count="1" type="stmt"/>
+      </file>
+      <file name="Timeline.tsx" path="/home/runner/work/passport-status/passport-status/src/components/Timeline.tsx">
+        <metrics statements="8" coveredstatements="8" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
+        <line num="12" count="7" type="stmt"/>
+        <line num="13" count="24" type="stmt"/>
+        <line num="17" count="36" type="stmt"/>
+        <line num="18" count="36" type="cond" truecount="2" falsecount="0"/>
+        <line num="19" count="24" type="stmt"/>
+        <line num="20" count="12" type="cond" truecount="2" falsecount="0"/>
+        <line num="21" count="8" type="stmt"/>
+        <line num="23" count="36" type="stmt"/>
+      </file>
+      <file name="TimelineEntry.tsx" path="/home/runner/work/passport-status/passport-status/src/components/TimelineEntry.tsx">
+        <metrics statements="16" coveredstatements="16" conditionals="17" coveredconditionals="14" methods="4" coveredmethods="4"/>
+        <line num="16" count="7" type="stmt"/>
+        <line num="21" count="36" type="cond" truecount="2" falsecount="0"/>
+        <line num="23" count="36" type="cond" truecount="2" falsecount="0"/>
+        <line num="26" count="7" type="stmt"/>
+        <line num="31" count="36" type="cond" truecount="2" falsecount="0"/>
+        <line num="33" count="36" type="cond" truecount="2" falsecount="0"/>
+        <line num="36" count="7" type="stmt"/>
+        <line num="42" count="7" type="stmt"/>
+        <line num="43" count="36" type="cond" truecount="3" falsecount="0"/>
+        <line num="45" count="28" type="stmt"/>
+        <line num="80" count="4" type="stmt"/>
+        <line num="99" count="4" type="stmt"/>
+        <line num="120" count="7" type="stmt"/>
+        <line num="129" count="36" type="stmt"/>
+        <line num="130" count="36" type="stmt"/>
+        <line num="132" count="36" type="stmt"/>
+      </file>
+      <file name="TimelineEntryContent.tsx" path="/home/runner/work/passport-status/passport-status/src/components/TimelineEntryContent.tsx">
+        <metrics statements="7" coveredstatements="7" conditionals="16" coveredconditionals="14" methods="1" coveredmethods="1"/>
+        <line num="16" count="7" type="stmt"/>
+        <line num="24" count="36" type="stmt"/>
+        <line num="25" count="36" type="stmt"/>
+        <line num="26" count="36" type="stmt"/>
+        <line num="27" count="36" type="cond" truecount="2" falsecount="1"/>
+        <line num="28" count="36" type="stmt"/>
+        <line num="30" count="36" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components.check-status-responses">
+      <metrics statements="37" coveredstatements="37" conditionals="52" coveredconditionals="40" methods="8" coveredmethods="8"/>
+      <file name="CheckStatusFileBeingProcessed.tsx" path="/home/runner/work/passport-status/passport-status/src/components/check-status-responses/CheckStatusFileBeingProcessed.tsx">
+        <metrics statements="6" coveredstatements="6" conditionals="12" coveredconditionals="8" methods="1" coveredmethods="1"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
+        <line num="25" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="27" count="2" type="stmt"/>
+        <line num="29" count="2" type="stmt"/>
+      </file>
+      <file name="CheckStatusNoRecord.tsx" path="/home/runner/work/passport-status/passport-status/src/components/check-status-responses/CheckStatusNoRecord.tsx">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+      </file>
+      <file name="CheckStatusNotAcceptable.tsx" path="/home/runner/work/passport-status/passport-status/src/components/check-status-responses/CheckStatusNotAcceptable.tsx">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
+      </file>
+      <file name="CheckStatusPrinting.tsx" path="/home/runner/work/passport-status/passport-status/src/components/check-status-responses/CheckStatusPrinting.tsx">
+        <metrics statements="6" coveredstatements="6" conditionals="8" coveredconditionals="6" methods="1" coveredmethods="1"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="18" count="2" type="stmt"/>
+        <line num="20" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="22" count="2" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
+      </file>
+      <file name="CheckStatusProcessingOverdue.tsx" path="/home/runner/work/passport-status/passport-status/src/components/check-status-responses/CheckStatusProcessingOverdue.tsx">
+        <metrics statements="6" coveredstatements="6" conditionals="10" coveredconditionals="7" methods="1" coveredmethods="1"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
+        <line num="25" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="27" count="2" type="stmt"/>
+        <line num="29" count="2" type="stmt"/>
+      </file>
+      <file name="CheckStatusReadyForPickup.tsx" path="/home/runner/work/passport-status/passport-status/src/components/check-status-responses/CheckStatusReadyForPickup.tsx">
+        <metrics statements="5" coveredstatements="5" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="10" count="3" type="stmt"/>
+        <line num="12" count="3" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
+      </file>
+      <file name="CheckStatusShippingCanadaPost.tsx" path="/home/runner/work/passport-status/passport-status/src/components/check-status-responses/CheckStatusShippingCanadaPost.tsx">
+        <metrics statements="4" coveredstatements="4" conditionals="10" coveredconditionals="8" methods="1" coveredmethods="1"/>
+        <line num="17" count="2" type="stmt"/>
+        <line num="22" count="2" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="26" count="2" type="stmt"/>
+      </file>
+      <file name="CheckStatusShippingFedex.tsx" path="/home/runner/work/passport-status/passport-status/src/components/check-status-responses/CheckStatusShippingFedex.tsx">
+        <metrics statements="4" coveredstatements="4" conditionals="8" coveredconditionals="7" methods="1" coveredmethods="1"/>
+        <line num="17" count="2" type="stmt"/>
+        <line num="22" count="2" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="26" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components.check-status-responses.legacy">
+      <metrics statements="6" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <file name="LegacyStatusFileBeingProcessed.tsx" path="/home/runner/work/passport-status/passport-status/src/components/check-status-responses/legacy/LegacyStatusFileBeingProcessed.tsx">
+        <metrics statements="3" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+      </file>
+      <file name="LegacyStatusPrinting.tsx" path="/home/runner/work/passport-status/passport-status/src/components/check-status-responses/legacy/LegacyStatusPrinting.tsx">
+        <metrics statements="3" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components.error-pages">
+      <metrics statements="4" coveredstatements="4" conditionals="10" coveredconditionals="10" methods="2" coveredmethods="2"/>
+      <file name="Error404Page.tsx" path="/home/runner/work/passport-status/passport-status/src/components/error-pages/Error404Page.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+      </file>
+      <file name="ErrorPage.tsx" path="/home/runner/work/passport-status/passport-status/src/components/error-pages/ErrorPage.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="10" coveredconditionals="10" methods="1" coveredmethods="1"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.lib">
+      <metrics statements="27" coveredstatements="1" conditionals="22" coveredconditionals="0" methods="9" coveredmethods="0"/>
+      <file name="removeCheckStatus.ts" path="/home/runner/work/passport-status/passport-status/src/lib/removeCheckStatus.ts">
+        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+      </file>
+      <file name="types.ts" path="/home/runner/work/passport-status/passport-status/src/lib/types.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="useAlerts.ts" path="/home/runner/work/passport-status/passport-status/src/lib/useAlerts.ts">
+        <metrics statements="10" coveredstatements="0" conditionals="10" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="11" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="18" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="19" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+      </file>
+      <file name="useCheckStatus.ts" path="/home/runner/work/passport-status/passport-status/src/lib/useCheckStatus.ts">
+        <metrics statements="10" coveredstatements="0" conditionals="8" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="15" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="38" count="0" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
+      </file>
+      <file name="useEmailEsrf.ts" path="/home/runner/work/passport-status/passport-status/src/lib/useEmailEsrf.ts">
+        <metrics statements="5" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="23" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="24" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.lib.mappers">
+      <metrics statements="8" coveredstatements="3" conditionals="4" coveredconditionals="0" methods="5" coveredmethods="0"/>
+      <file name="checkStatusApiResponseMapper.ts" path="/home/runner/work/passport-status/passport-status/src/lib/mappers/checkStatusApiResponseMapper.ts">
+        <metrics statements="8" coveredstatements="3" conditionals="4" coveredconditionals="0" methods="5" coveredmethods="0"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="59" count="1" type="stmt"/>
+        <line num="63" count="0" type="stmt"/>
+        <line num="65" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="72" count="1" type="stmt"/>
+        <line num="75" count="0" type="stmt"/>
+        <line num="77" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.lib.utils">
+      <metrics statements="27" coveredstatements="17" conditionals="12" coveredconditionals="4" methods="6" coveredmethods="4"/>
+      <file name="dates.ts" path="/home/runner/work/passport-status/passport-status/src/lib/utils/dates.ts">
+        <metrics statements="13" coveredstatements="13" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="3"/>
+        <line num="7" count="8" type="stmt"/>
+        <line num="8" count="12" type="stmt"/>
+        <line num="20" count="8" type="stmt"/>
+        <line num="21" count="34" type="stmt"/>
+        <line num="33" count="8" type="stmt"/>
+        <line num="38" count="46" type="stmt"/>
+        <line num="41" count="46" type="cond" truecount="2" falsecount="0"/>
+        <line num="42" count="2" type="stmt"/>
+        <line num="51" count="44" type="stmt"/>
+        <line num="54" count="44" type="stmt"/>
+        <line num="56" count="44" type="cond" truecount="2" falsecount="0"/>
+        <line num="58" count="44" type="stmt"/>
+        <line num="63" count="44" type="stmt"/>
+      </file>
+      <file name="fonts.ts" path="/home/runner/work/passport-status/passport-status/src/lib/utils/fonts.ts">
+        <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+      </file>
+      <file name="next-i18next-utils.ts" path="/home/runner/work/passport-status/passport-status/src/lib/utils/next-i18next-utils.ts">
+        <metrics statements="11" coveredstatements="3" conditionals="8" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="9" count="4" type="stmt"/>
+        <line num="17" count="4" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="26" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="30" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="44" count="4" type="stmt"/>
+        <line num="51" count="0" type="stmt"/>
+      </file>
+      <file name="seo-utils.ts" path="/home/runner/work/passport-status/passport-status/src/lib/utils/seo-utils.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="5" count="9" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.logging">
+      <metrics statements="7" coveredstatements="7" conditionals="5" coveredconditionals="4" methods="3" coveredmethods="3"/>
+      <file name="log-level.ts" path="/home/runner/work/passport-status/passport-status/src/logging/log-level.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="5" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+      </file>
+      <file name="log-util.ts" path="/home/runner/work/passport-status/passport-status/src/logging/log-util.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="3" coveredconditionals="3" methods="2" coveredmethods="2"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="10" count="2" type="cond" truecount="3" falsecount="0"/>
+        <line num="14" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.pages">
+      <metrics statements="173" coveredstatements="80" conditionals="112" coveredconditionals="23" methods="47" coveredmethods="14"/>
+      <file name="_app.tsx" path="/home/runner/work/passport-status/passport-status/src/pages/_app.tsx">
+        <metrics statements="19" coveredstatements="19" conditionals="4" coveredconditionals="4" methods="4" coveredmethods="4"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="26" count="2" type="stmt"/>
+        <line num="28" count="2" type="stmt"/>
+        <line num="29" count="2" type="stmt"/>
+        <line num="30" count="2" type="stmt"/>
+        <line num="35" count="2" type="stmt"/>
+        <line num="36" count="2" type="stmt"/>
+        <line num="38" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="39" count="1" type="stmt"/>
+        <line num="40" count="1" type="stmt"/>
+        <line num="44" count="2" type="stmt"/>
+        <line num="45" count="2" type="stmt"/>
+        <line num="46" count="2" type="stmt"/>
+        <line num="47" count="2" type="stmt"/>
+        <line num="48" count="2" type="stmt"/>
+        <line num="49" count="2" type="stmt"/>
+        <line num="53" count="2" type="stmt"/>
+      </file>
+      <file name="_document.tsx" path="/home/runner/work/passport-status/passport-status/src/pages/_document.tsx">
+        <metrics statements="3" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+      </file>
+      <file name="_error.tsx" path="/home/runner/work/passport-status/passport-status/src/pages/_error.tsx">
+        <metrics statements="6" coveredstatements="4" conditionals="5" coveredconditionals="2" methods="2" coveredmethods="1"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="0" type="cond" truecount="0" falsecount="3"/>
+        <line num="17" count="0" type="stmt"/>
+      </file>
+      <file name="email.tsx" path="/home/runner/work/passport-status/passport-status/src/pages/email.tsx">
+        <metrics statements="38" coveredstatements="19" conditionals="20" coveredconditionals="7" methods="14" coveredmethods="2"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="40" count="1" type="stmt"/>
+        <line num="51" count="1" type="stmt"/>
+        <line num="52" count="0" type="stmt"/>
+        <line num="54" count="0" type="stmt"/>
+        <line num="55" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="56" count="0" type="stmt"/>
+        <line num="57" count="0" type="stmt"/>
+        <line num="61" count="1" type="stmt"/>
+        <line num="62" count="3" type="stmt"/>
+        <line num="64" count="3" type="stmt"/>
+        <line num="65" count="3" type="stmt"/>
+        <line num="73" count="2" type="stmt"/>
+        <line num="82" count="2" type="stmt"/>
+        <line num="85" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="88" count="0" type="stmt"/>
+        <line num="89" count="0" type="stmt"/>
+        <line num="91" count="0" type="stmt"/>
+        <line num="93" count="0" type="stmt"/>
+        <line num="94" count="0" type="stmt"/>
+        <line num="102" count="2" type="stmt"/>
+        <line num="104" count="2" type="stmt"/>
+        <line num="105" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="107" count="0" type="stmt"/>
+        <line num="112" count="2" type="stmt"/>
+        <line num="114" count="0" type="stmt"/>
+        <line num="119" count="2" type="stmt"/>
+        <line num="121" count="2" type="stmt"/>
+        <line num="123" count="2" type="stmt"/>
+        <line num="124" count="0" type="stmt"/>
+        <line num="128" count="2" type="stmt"/>
+        <line num="130" count="0" type="stmt"/>
+        <line num="131" count="0" type="stmt"/>
+        <line num="132" count="0" type="stmt"/>
+        <line num="133" count="0" type="stmt"/>
+        <line num="139" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="141" count="2" type="stmt"/>
+        <line num="339" count="1" type="stmt"/>
+      </file>
+      <file name="expectations.tsx" path="/home/runner/work/passport-status/passport-status/src/pages/expectations.tsx">
+        <metrics statements="8" coveredstatements="5" conditionals="2" coveredconditionals="0" methods="3" coveredmethods="1"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="18" count="3" type="stmt"/>
+        <line num="20" count="3" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="29" count="2" type="stmt"/>
+        <line num="97" count="1" type="stmt"/>
+      </file>
+      <file name="index.tsx" path="/home/runner/work/passport-status/passport-status/src/pages/index.tsx">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="112" count="1" type="stmt"/>
+      </file>
+      <file name="landing.tsx" path="/home/runner/work/passport-status/passport-status/src/pages/landing.tsx">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="17" count="2" type="stmt"/>
+        <line num="80" count="1" type="stmt"/>
+      </file>
+      <file name="status.tsx" path="/home/runner/work/passport-status/passport-status/src/pages/status.tsx">
+        <metrics statements="92" coveredstatements="26" conditionals="77" coveredconditionals="10" methods="18" coveredmethods="4"/>
+        <line num="58" count="1" type="stmt"/>
+        <line num="65" count="1" type="stmt"/>
+        <line num="74" count="1" type="stmt"/>
+        <line num="75" count="0" type="stmt"/>
+        <line num="77" count="0" type="stmt"/>
+        <line num="78" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="79" count="0" type="stmt"/>
+        <line num="80" count="0" type="stmt"/>
+        <line num="94" count="1" type="stmt"/>
+        <line num="95" count="3" type="stmt"/>
+        <line num="97" count="3" type="stmt"/>
+        <line num="98" count="3" type="stmt"/>
+        <line num="99" count="2" type="stmt"/>
+        <line num="109" count="2" type="stmt"/>
+        <line num="112" count="0" type="stmt"/>
+        <line num="116" count="0" type="stmt"/>
+        <line num="117" count="0" type="stmt"/>
+        <line num="119" count="0" type="stmt"/>
+        <line num="121" count="0" type="stmt"/>
+        <line num="122" count="0" type="stmt"/>
+        <line num="135" count="2" type="stmt"/>
+        <line num="142" count="2" type="stmt"/>
+        <line num="143" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="144" count="0" type="stmt"/>
+        <line num="148" count="2" type="stmt"/>
+        <line num="150" count="2" type="stmt"/>
+        <line num="151" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="153" count="0" type="stmt"/>
+        <line num="158" count="2" type="stmt"/>
+        <line num="160" count="0" type="stmt"/>
+        <line num="161" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="162" count="0" type="stmt"/>
+        <line num="163" count="0" type="stmt"/>
+        <line num="165" count="0" type="stmt"/>
+        <line num="166" count="0" type="stmt"/>
+        <line num="167" count="0" type="stmt"/>
+        <line num="172" count="2" type="stmt"/>
+        <line num="174" count="0" type="stmt"/>
+        <line num="179" count="2" type="stmt"/>
+        <line num="181" count="0" type="stmt"/>
+        <line num="186" count="2" type="stmt"/>
+        <line num="188" count="2" type="stmt"/>
+        <line num="190" count="2" type="stmt"/>
+        <line num="191" count="0" type="stmt"/>
+        <line num="197" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="198" count="0" type="cond" truecount="0" falsecount="8"/>
+        <line num="200" count="0" type="stmt"/>
+        <line num="202" count="0" type="stmt"/>
+        <line num="204" count="0" type="stmt"/>
+        <line num="206" count="0" type="stmt"/>
+        <line num="208" count="0" type="stmt"/>
+        <line num="210" count="0" type="stmt"/>
+        <line num="212" count="0" type="stmt"/>
+        <line num="214" count="0" type="stmt"/>
+        <line num="218" count="2" type="stmt"/>
+        <line num="221" count="0" type="stmt"/>
+        <line num="223" count="0" type="stmt"/>
+        <line num="225" count="0" type="stmt"/>
+        <line num="230" count="0" type="stmt"/>
+        <line num="235" count="0" type="stmt"/>
+        <line num="237" count="0" type="stmt"/>
+        <line num="244" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="245" count="0" type="stmt"/>
+        <line num="249" count="0" type="stmt"/>
+        <line num="257" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="260" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="264" count="0" type="stmt"/>
+        <line num="273" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="278" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="284" count="0" type="stmt"/>
+        <line num="294" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="297" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="305" count="0" type="stmt"/>
+        <line num="311" count="0" type="stmt"/>
+        <line num="314" count="2" type="stmt"/>
+        <line num="315" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="316" count="0" type="stmt"/>
+        <line num="318" count="0" type="stmt"/>
+        <line num="330" count="0" type="cond" truecount="0" falsecount="3"/>
+        <line num="334" count="0" type="cond" truecount="0" falsecount="8"/>
+        <line num="336" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="347" count="0" type="stmt"/>
+        <line num="354" count="0" type="stmt"/>
+        <line num="361" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="372" count="0" type="stmt"/>
+        <line num="380" count="0" type="stmt"/>
+        <line num="388" count="0" type="stmt"/>
+        <line num="394" count="0" type="stmt"/>
+        <line num="403" count="0" type="stmt"/>
+        <line num="412" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="414" count="2" type="stmt"/>
+        <line num="567" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.pages.api">
+      <metrics statements="83" coveredstatements="40" conditionals="52" coveredconditionals="19" methods="11" coveredmethods="4"/>
+      <file name="alerts.ts" path="/home/runner/work/passport-status/passport-status/src/pages/api/alerts.ts">
+        <metrics statements="23" coveredstatements="0" conditionals="10" coveredconditionals="0" methods="6" coveredmethods="0"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="13" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="18" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="38" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="41" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="46" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="49" count="0" type="stmt"/>
+        <line num="56" count="0" type="stmt"/>
+        <line num="59" count="0" type="stmt"/>
+        <line num="60" count="0" type="stmt"/>
+      </file>
+      <file name="check-status.ts" path="/home/runner/work/passport-status/passport-status/src/pages/api/check-status.ts">
+        <metrics statements="33" coveredstatements="22" conditionals="22" coveredconditionals="13" methods="2" coveredmethods="2"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="17" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="23" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="31" count="2" type="stmt"/>
+        <line num="32" count="2" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="45" count="1" type="stmt"/>
+        <line num="49" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="50" count="0" type="stmt"/>
+        <line num="53" count="0" type="stmt"/>
+        <line num="58" count="2" type="stmt"/>
+        <line num="59" count="2" type="stmt"/>
+        <line num="65" count="2" type="stmt"/>
+        <line num="66" count="2" type="stmt"/>
+        <line num="67" count="2" type="stmt"/>
+        <line num="69" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="70" count="0" type="stmt"/>
+        <line num="71" count="0" type="stmt"/>
+        <line num="72" count="0" type="stmt"/>
+        <line num="74" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="75" count="0" type="stmt"/>
+        <line num="78" count="0" type="stmt"/>
+        <line num="81" count="0" type="stmt"/>
+        <line num="86" count="2" type="cond" truecount="4" falsecount="0"/>
+        <line num="87" count="1" type="stmt"/>
+        <line num="92" count="1" type="stmt"/>
+        <line num="95" count="1" type="stmt"/>
+        <line num="96" count="1" type="stmt"/>
+      </file>
+      <file name="email-esrf.ts" path="/home/runner/work/passport-status/passport-status/src/pages/api/email-esrf.ts">
+        <metrics statements="21" coveredstatements="18" conditionals="8" coveredconditionals="6" methods="2" coveredmethods="2"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="12" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="18" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="36" count="1" type="stmt"/>
+        <line num="40" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="41" count="0" type="stmt"/>
+        <line num="46" count="1" type="stmt"/>
+        <line num="65" count="1" type="stmt"/>
+        <line num="76" count="1" type="stmt"/>
+        <line num="77" count="1" type="stmt"/>
+      </file>
+      <file name="health.ts" path="/home/runner/work/passport-status/passport-status/src/pages/api/health.ts">
+        <metrics statements="6" coveredstatements="0" conditionals="12" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="12" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>
