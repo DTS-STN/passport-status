@@ -115,8 +115,7 @@
     "reviewed-printing": "Your application has been reviewed and your passport is ready for printing. Be aware that printing can take a few business days.",
     "service-standards": {
       "header": "Our service standards",
-      "we-received": "We received your application on {{receivedDate}}. Our <Link>service standard</Link> is {{serviceLevel}} business days plus mailing time.",
-      "dont-meet": "If we don't meet our service standard, you may be eligible for a partial refund."
+      "we-received": "We received your application on {{receivedDate}}. Our <Link>service standard</Link> is {{serviceLevel}} business days plus mailing time."
     }
   },
   "ready-for-pickup": {
