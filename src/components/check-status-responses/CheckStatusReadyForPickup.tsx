@@ -1,8 +1,9 @@
-import { useTranslation } from 'next-i18next'
+import { Trans, useTranslation } from 'next-i18next'
 
 import { StatusResultProps } from '../../pages/status'
 import ActionButton from '../ActionButton'
 import AlertBlock from '../AlertBlock'
+import ExternalLink from '../ExternalLink'
 import Timeline from '../Timeline'
 
 export const CheckStatusReadyForPickup = (props: StatusResultProps) => {
@@ -23,10 +24,20 @@ export const CheckStatusReadyForPickup = (props: StatusResultProps) => {
       >
         {t('ready-for-pickup.header')}
       </h1>
-      <div className="flex flex-col md:flex-row">
+      <div className="flex flex-col md:flex-row md:gap-x-30 lg:gap-x-40 xl:gap-x-50">
         <div className="max-w-prose">
           <p>{t('ready-for-pickup.receipt-location')}</p>
-          <p>{t('ready-for-pickup.check-hours')}</p>
+          <p>
+            <Trans
+              i18nKey={'ready-for-pickup.check-hours'}
+              ns="status"
+              components={{
+                Link: (
+                  <ExternalLink href={t('ready-for-pickup.check-hours-href')} />
+                ),
+              }}
+            />
+          </p>
           {timelineExists && (
             <div className="flex w-full justify-center md:hidden">
               <Timeline entries={timelineData} />
@@ -41,7 +52,7 @@ export const CheckStatusReadyForPickup = (props: StatusResultProps) => {
           </div>
         </div>
         {timelineExists && (
-          <div className="hidden w-full justify-center md:flex">
+          <div className="hidden w-full md:flex">
             <div className="-mt-6">
               <Timeline entries={timelineData} />
             </div>

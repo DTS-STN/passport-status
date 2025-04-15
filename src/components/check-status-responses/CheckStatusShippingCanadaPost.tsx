@@ -34,7 +34,7 @@ export const CheckStatusShippingCanadaPost = ({
       >
         {t('shipped-canada-post.header')}
       </h1>
-      <div className="flex flex-col md:flex-row">
+      <div className="flex flex-col md:flex-row md:gap-x-30 lg:gap-x-40 xl:gap-x-50">
         <div className="max-w-prose">
           <p>{t('shipped-canada-post.printed-mailed')}</p>
           {timelineExists && (
@@ -83,7 +83,7 @@ export const CheckStatusShippingCanadaPost = ({
               </p>
             </>
           )}
-          <p className="mb-4 mt-4">
+          <p className="mt-4 mb-4">
             <strong>
               {t(
                 'shipped-canada-post.shipping-information.supporting-documents',
@@ -108,7 +108,7 @@ export const CheckStatusShippingCanadaPost = ({
           </div>
         </div>
         {timelineExists && (
-          <div className="hidden w-full justify-center md:flex">
+          <div className="hidden w-full md:flex">
             <div className="-mt-6">
               <Timeline entries={timelineData} />
             </div>

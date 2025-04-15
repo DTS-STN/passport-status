@@ -6,29 +6,28 @@
     "urgent-service-note": "Si vous avez demandé un service urgent ou express au bureau des passeports, votre norme de service est différente. Veuillez-vous référer à votre reçu pour connaître la date de retrait.",
     "service-standards": {
       "heading": "Nos normes de service",
-      "received-date": "Nous avons reçu votre demande le {{receivedDate}}. Notre norme de service est {{serviceLevel}} jours ouvrables.",
-      "refund-eligibility": "Si nous ne respectons pas nos normes de service, vous pourriez avoir droit à un remboursement partiel."
+      "received-date": "Nous avons reçu votre demande le {{receivedDate}}. Notre <Link>norme de service</Link> est {{serviceLevel}} jours ouvrables plus le délai de livraison.",
+      "service-standards-href": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens/delais-traitement.html"
     },
     "expedited-service": {
       "heading": "Si vous avez besoin du passeport plus rapidement",
-      "details": "Apprenez comment obtenir des services urgents ou express pour votre demande existante si vous avez besoin du passeport dans un délai de {{serviceLevel}} jours ouvrables. Des frais supplémentaires peuvent s'appliquer."
+      "details": "Apprenez comment obtenir des <Link>services urgents ou express pour votre demande existante</Link> si vous avez besoin du passeport dans un délai de {{serviceLevel}} jours ouvrables. Des frais supplémentaires peuvent s'appliquer.",
+      "expedited-service-href": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens/passeport-urgent-express.html"
     },
     "incomplete-applications": {
       "heading": "Demandes incomplètes",
-      "description": "Si votre demande est incomplète ou inexacte, nous ne pourrons peut-être pas la traiter. En fonction du problème, nous pourrons vous contacter par la poste ou par téléphone. Si nous vous contactons par téléphone, l'appel peut apparaître comme un numéro bloqué. Nous ne vous contacterons <strong>jamais</strong> par SMS ou par messagerie instantanée.",
+      "description": "Si votre demande est incomplète ou inexacte, cela peut entraîner des retards ou nous pourrions ne pas être en mesure de la traiter. En fonction du problème, nous pourrons vous contacter par la poste ou par téléphone. Si nous vous contactons par téléphone, l'appel peut apparaître comme un numéro bloqué. Nous ne vous contacterons <strong>jamais</strong> par SMS ou par messagerie instantanée.",
       "return-notice": "Dans certains cas, nous devrons peut-être vous retourner votre demande par la poste."
     }
   },
   "being-processed-overdue": {
     "header": "Nous examinons toujours votre demande",
-    "reviewing-application": "Nous examinons toujours votre demande",
-    "employee-reviewing": "Un employé du service des passeports est en train d’examiner votre demande.",
+    "employee-reviewing": "Un employé du service des passeports est en train d'examiner votre demande.",
     "processing-delayed": "Le traitement prend plus de temps que prévu. Nous faisons tout notre possible pour traiter votre demande dès que possible. Nous nous excusons pour le désagrément.",
     "service-standards": {
       "heading": "Nos normes de service",
-      "received-date": "Nous avons reçu votre demande le {{receivedDate}}. Notre <Link>norme de service</Link> est {{serviceLevel}} jours ouvrables.",
-      "urgent-service-note": "Si vous avez demandé un service urgent ou express au bureau des passeports, votre norme de service est différente. Veuillez-vous référer à votre reçu pour connaître la date de retrait.",
-      "refund-eligibility": "Étant donné que nous n’avons pas respecté nos normes de service, vous pourriez avoir <Link>droit à un remboursement partiel</Link>. La plupart des remboursements sont traités automatiquement."
+      "received-date": "Nous avons reçu votre demande le {{receivedDate}}. Notre <Link>norme de service</Link> est {{serviceLevel}} jours ouvrables plus le délai de livraison.",
+      "urgent-service-note": "Si vous avez demandé un service urgent ou express au bureau des passeports, votre norme de service est différente. Veuillez-vous référer à votre reçu pour connaître la date de retrait."
     },
     "travelling-soon": {
       "heading": "Si vous voyagez bientôt",
@@ -102,10 +101,10 @@
   },
   "not-acceptable": {
     "header": "Nous ne sommes pas en mesure de traiter votre demande",
-    "unable-to-process": "Malheureusement, nous ne sommes pas en mesure de traiter votre demande pour le moment. Dans la plupart des cas, cela est dû au fait que la demande était incomplète ou que nous n’avons pas reçu les documents d'identité requis.",
+    "unable-to-process": "Malheureusement, nous ne sommes pas en mesure de traiter votre demande pour le moment. Dans la plupart des cas, cela est dû au fait que la demande était incomplète.",
     "next-steps": {
       "header": "Prochaines étapes",
-      "sent-letter": "Nous vous avons envoyé une lettre expliquant la situation et les démarches à suivre.",
+      "sent-letter": "Nous vous avons envoyé une lettre expliquant la situation et les mesures à prendre.",
       "please-wait": "Veuillez attendre de recevoir cette lettre avant de nous contacter ou de soumettre une nouvelle demande."
     }
   },
@@ -116,21 +115,21 @@
     "reviewed-printing": "Votre demande a été examinée et votre passeport est prêt à être imprimé. Veuillez noter que l'impression peut prendre quelques jours ouvrables.",
     "service-standards": {
       "header": "Nos normes de service",
-      "we-received": "Nous avons reçu votre demande le {{receivedDate}}. Notre <Link>norme de service</Link> est {{serviceLevel}} jours ouvrables.",
-      "dont-meet": "Si nous ne respectons pas nos normes de service, vous pourriez avoir droit à un remboursement partiel."
+      "we-received": "Nous avons reçu votre demande le {{receivedDate}}. Notre <Link>norme de service</Link> est {{serviceLevel}} jours ouvrables plus le délai de livraison."
     }
   },
   "ready-for-pickup": {
-    "header": "Votre passeport est disponible pour retrait",
-    "receipt-location": "Votre nouveau passeport est disponible pour retrait à l’endroit indiqué sur votre reçu.",
-    "check-hours": "Veuillez vérifier les heures d'ouverture du Centre Service Canada ou du bureau des passeports avant de vous y rendre."
+    "header": "Votre passeport est disponible pour un retrait en personne",
+    "receipt-location": "Votre nouveau passeport est disponible pour un retrait en personne à l'endroit indiqué sur votre reçu.",
+    "check-hours": "Veuillez vérifier les heures d'ouverture du <Link>Centre Service Canada ou du bureau des passeports</Link> avant de vous y rendre.",
+    "check-hours-href": "https://ircc.canada.ca/francais/passeport/map/carte.asp"
   },
   "reset": "Vérifier l'état d'une autre demande",
   "shipped-canada-post": {
     "header": "Votre passeport a été envoyé par la poste",
     "printed-mailed": "Votre nouveau passeport a été imprimé avec succès et vous a été envoyé par la poste.",
     "shipping-information": {
-      "header": "Informations sur l’expédition",
+      "header": "Informations sur l'expédition",
       "sending-via": "Nous vous envoyons votre passeport et vos documents fournis en support de la demande par Postes Canada.",
       "take-up-to": "Cela peut prendre 2 à 3 jours ouvrables pour arriver.",
       "northern-remote": "Si vous vivez dans une région au nord ou éloignée, cela pourrait prendre jusqu'à 8 jours ouvrables pour arriver.",
@@ -142,7 +141,7 @@
     "header": "Votre passeport a été envoyé par la poste",
     "printed-mailed": "Votre nouveau passeport a été imprimé avec succès et vous a été envoyé par la poste.",
     "shipping-information": {
-      "header": "Informations sur l’expédition",
+      "header": "Informations sur l'expédition",
       "sending-via": "Nous vous envoyons votre passeport et vos documents fournis en support de la demande par FedEx.",
       "take-up-to": "Cela peut prendre entre 5 à 7 jours ouvrables pour arriver.",
       "dont-receive": "Si vous ne recevez pas votre passeport ou vos documents fournis en support de la demande, <Link>contactez-nous</Link>."

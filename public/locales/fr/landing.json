@@ -24,6 +24,6 @@
   },
   "if-lost": {
     "header": "Si vous avez perdu votre numéro de référence",
-    "text": "Si vous avez perdu ou égaré votre numéro de référence, vous devrez <Link>le demander</Link>. Nous vous enverrons le numéro de référence par courriel."
+    "text": "Si vous avez perdu ou égaré votre numéro de référence, vous devrez <Link>le demander</Link>. Nous vous enverrons le numéro de référence par courriel."
   }
 }

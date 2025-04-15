@@ -37,7 +37,7 @@ export const CheckStatusFileBeingProcessed = ({
       >
         {t('being-processed.reviewing-application')}
       </h1>
-      <div className="flex flex-col md:flex-row">
+      <div className="flex flex-col md:flex-row md:gap-x-30 lg:gap-x-40 xl:gap-x-50">
         <div className="max-w-prose">
           <p>
             <Trans
@@ -79,10 +79,16 @@ export const CheckStatusFileBeingProcessed = ({
                 receivedDate: formattedDate,
                 serviceLevel: serviceDays,
               }}
+              components={{
+                Link: (
+                  <ExternalLink
+                    href={t(
+                      'being-processed.service-standards.service-standards-href',
+                    )}
+                  />
+                ),
+              }}
             />
-          </p>
-          <p>
-            {t('status:being-processed.service-standards.refund-eligibility')}
           </p>
           <h2 className="h2 mt-8 mb-2">
             {t('being-processed.expedited-service.heading')}
@@ -94,7 +100,9 @@ export const CheckStatusFileBeingProcessed = ({
               components={{
                 Link: (
                   <ExternalLink
-                    href={t('status-check-urgent.express-services-href')}
+                    href={t(
+                      'being-processed.expedited-service.expedited-service-href',
+                    )}
                   />
                 ),
               }}
@@ -122,7 +130,7 @@ export const CheckStatusFileBeingProcessed = ({
           </div>
         </div>
         {timelineExists && (
-          <div className="hidden w-full justify-center md:flex">
+          <div className="hidden w-full md:flex">
             <div className="-mt-6">
               <Timeline entries={timelineData} />
             </div>
