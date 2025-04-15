@@ -22,14 +22,12 @@
   },
   "being-processed-overdue": {
     "header": "Nous examinons toujours votre demande",
-    "reviewing-application": "Nous examinons toujours votre demande",
     "employee-reviewing": "Un employé du service des passeports est en train d'examiner votre demande.",
     "processing-delayed": "Le traitement prend plus de temps que prévu. Nous faisons tout notre possible pour traiter votre demande dès que possible. Nous nous excusons pour le désagrément.",
     "service-standards": {
       "heading": "Nos normes de service",
       "received-date": "Nous avons reçu votre demande le {{receivedDate}}. Notre <Link>norme de service</Link> est {{serviceLevel}} jours ouvrables plus le délai de livraison.",
-      "urgent-service-note": "Si vous avez demandé un service urgent ou express au bureau des passeports, votre norme de service est différente. Veuillez-vous référer à votre reçu pour connaître la date de retrait.",
-      "refund-eligibility": "Étant donné que nous n'avons pas respecté nos normes de service, vous pourriez avoir <Link>droit à un remboursement partiel</Link>. La plupart des remboursements sont traités automatiquement."
+      "urgent-service-note": "Si vous avez demandé un service urgent ou express au bureau des passeports, votre norme de service est différente. Veuillez-vous référer à votre reçu pour connaître la date de retrait."
     },
     "travelling-soon": {
       "heading": "Si vous voyagez bientôt",
