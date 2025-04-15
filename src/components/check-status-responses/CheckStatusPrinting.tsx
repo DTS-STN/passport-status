@@ -62,7 +62,6 @@ export const CheckStatusPrinting = ({
               }}
             />
           </p>
-          <p>{t('printing.service-standards.dont-meet')}</p>
           <div className="mt-8">
             <ActionButton
               onClick={checkAnotherHandler}
