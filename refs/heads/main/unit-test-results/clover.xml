@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1744720098471" clover="3.2.0">
-  <project timestamp="1744720098471" name="All files">
+<coverage generated="1744723674991" clover="3.2.0">
+  <project timestamp="1744723674991" name="All files">
     <metrics statements="647" coveredstatements="415" conditionals="472" coveredconditionals="226" methods="172" coveredmethods="97" elements="1291" coveredelements="738" complexity="0" loc="647" ncloc="647" packages="12" files="67" classes="67"/>
     <package name="src">
       <metrics statements="28" coveredstatements="14" conditionals="26" coveredconditionals="8" methods="7" coveredmethods="6"/>
@@ -422,11 +422,11 @@
       </file>
       <file name="CheckStatusReadyForPickup.tsx" path="/home/runner/work/passport-status/passport-status/src/components/check-status-responses/CheckStatusReadyForPickup.tsx">
         <metrics statements="5" coveredstatements="5" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
-        <line num="8" count="2" type="stmt"/>
-        <line num="9" count="3" type="stmt"/>
-        <line num="11" count="3" type="stmt"/>
-        <line num="13" count="2" type="stmt"/>
-        <line num="15" count="2" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="10" count="3" type="stmt"/>
+        <line num="12" count="3" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
       </file>
       <file name="CheckStatusShippingCanadaPost.tsx" path="/home/runner/work/passport-status/passport-status/src/components/check-status-responses/CheckStatusShippingCanadaPost.tsx">
         <metrics statements="4" coveredstatements="4" conditionals="10" coveredconditionals="8" methods="1" coveredmethods="1"/>
