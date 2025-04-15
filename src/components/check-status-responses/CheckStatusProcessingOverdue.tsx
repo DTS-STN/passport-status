@@ -40,7 +40,6 @@ export const CheckStatusProcessingOverdue = ({
 
       <div className="flex flex-col md:flex-row md:gap-x-30 lg:gap-x-40 xl:gap-x-50">
         <div className="max-w-prose">
-          <p>{t('status:being-processed-overdue.reviewing-application')}</p>
           <p>{t('status:being-processed-overdue.employee-reviewing')}</p>
           <p>{t('status:being-processed-overdue.processing-delayed')}</p>
           {timelineExists && (
@@ -73,18 +72,6 @@ export const CheckStatusProcessingOverdue = ({
               )}
             </p>
           )}
-          <p>
-            <Trans
-              i18nKey={
-                'being-processed-overdue.service-standards.refund-eligibility'
-              }
-              ns="status"
-              components={{
-                Link: <ExternalLink href={t('common:refund-eligible-link')} />,
-              }}
-            />
-          </p>
-
           <h2 className="h2 mt-8 mb-2">
             {t('status:being-processed-overdue.travelling-soon.heading')}
           </h2>

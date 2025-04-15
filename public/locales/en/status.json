@@ -21,15 +21,13 @@
     }
   },
   "being-processed-overdue": {
-    "header": "We are still reviewing you application",
-    "reviewing-application": "We are still reviewing your application.",
+    "header": "We are still reviewing your application",
     "employee-reviewing": "A passport employee is reviewing your application.",
     "processing-delayed": "Processing is taking longer than expected. We are making every effort to complete it as soon as possible. We apologize for the inconvenience.",
     "service-standards": {
       "heading": "Our service standards",
       "received-date": "We received your application on {{receivedDate}}. Our <Link>service standard</Link> is {{serviceLevel}} business days plus mailing time.",
-      "urgent-service-note": "If you requested urgent or express service at the passport office, your service standard is different. Please refer to your receipt for the pick-up date.",
-      "refund-eligibility": "Since we didn't meet our service standard, you may be <Link>eligible for a partial refund</Link>. Most refunds are processed automatically."
+      "urgent-service-note": "If you requested urgent or express service at the passport office, your service standard is different. Please refer to your receipt for the pick-up date."
     },
     "travelling-soon": {
       "heading": "If you need your passport sooner",
