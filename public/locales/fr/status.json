@@ -101,10 +101,10 @@
   },
   "not-acceptable": {
     "header": "Nous ne sommes pas en mesure de traiter votre demande",
-    "unable-to-process": "Malheureusement, nous ne sommes pas en mesure de traiter votre demande pour le moment. Dans la plupart des cas, cela est dû au fait que la demande était incomplète ou que nous n'avons pas reçu les documents d'identité requis.",
+    "unable-to-process": "Malheureusement, nous ne sommes pas en mesure de traiter votre demande pour le moment. Dans la plupart des cas, cela est dû au fait que la demande était incomplète.",
     "next-steps": {
       "header": "Prochaines étapes",
-      "sent-letter": "Nous vous avons envoyé une lettre expliquant la situation et les démarches à suivre.",
+      "sent-letter": "Nous vous avons envoyé une lettre expliquant la situation et les mesures à prendre.",
       "please-wait": "Veuillez attendre de recevoir cette lettre avant de nous contacter ou de soumettre une nouvelle demande."
     }
   },

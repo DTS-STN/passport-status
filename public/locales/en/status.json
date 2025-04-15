@@ -101,11 +101,11 @@
   },
   "not-acceptable": {
     "header": "We're unable to process your application",
-    "unable-to-process": "Unfortunately, we're unable to process your application at this time. In most cases, this is because the application was incomplete, or we didn't receive the right identity documents.",
+    "unable-to-process": "Unfortunately, we're unable to process your application at this time. In most cases, this is due to the application being incomplete.",
     "next-steps": {
       "header": "Next steps",
-      "sent-letter": "We've sent you a letter with an explanation of what went wrong, and what steps you should take.",
-      "please-wait": "Please wait for this letter before calling or applying again."
+      "sent-letter": "We've sent you a letter explaining what happened and what steps to take next.",
+      "please-wait": "Please wait for this letter before contacting us or applying again."
     }
   },
   "one-name": "Applicants with <strong>only one name</strong> (single or multiple names entered all in one field) must call us at 1-800-567-6868 to get the status of their application.",
