@@ -158,15 +158,11 @@ const Status = () => {
   const handleTryAgainClick: MouseEventHandler<HTMLButtonElement> = useCallback(
     async (e) => {
       e.preventDefault()
-      if (checkStatusResponse) {
-        await router.push('/landing')
-        return
-      }
       setFormikStatus(undefined)
       removeCheckStatus(queryClient)
       scrollToHeading()
     },
-    [checkStatusResponse, setFormikStatus, queryClient, router],
+    [setFormikStatus, queryClient],
   )
 
   const handleOnESRFChange: ChangeEventHandler<HTMLInputElement> = useCallback(
