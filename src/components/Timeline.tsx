@@ -1,5 +1,7 @@
 import { PropsWithChildren } from 'react'
 
+import { useTranslation } from 'react-i18next'
+
 import { TimelineEntryData, TimelinePosition } from '../lib/types'
 import TimelineEntry from './TimelineEntry'
 
@@ -10,9 +12,14 @@ export interface TimelineProps extends PropsWithChildren {
 }
 
 const Timeline = ({ entries, className }: TimelineProps) => {
+  const { t } = useTranslation()
+
   return (
     <div className={className}>
-      <div className="flex flex-col">
+      <ul
+        aria-label={t('timeline:application-steps-list-title')}
+        className="flex flex-col"
+      >
         {entries.map((entry, index) => {
           let position: TimelinePosition = 'last'
           if (index === 0) {
@@ -20,6 +27,7 @@ const Timeline = ({ entries, className }: TimelineProps) => {
           } else if (index < entries.length - 1) {
             position = 'middle'
           }
+
           return (
             <TimelineEntry
               key={entry.step}
@@ -28,10 +36,11 @@ const Timeline = ({ entries, className }: TimelineProps) => {
               step={entry.step}
               date={entry.date}
               subtext={entry.subtext}
+              stepIndex={index + 1} // index is zero based
             />
           )
         })}
-      </div>
+      </ul>
     </div>
   )
 }
