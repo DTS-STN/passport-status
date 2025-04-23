@@ -11,6 +11,7 @@ export interface TimelineEntryContentProps extends PropsWithChildren {
   bottomText?: string
   bottomDate?: string
   className?: string
+  stepIndex: number
 }
 
 const TimelineEntryContent = ({
@@ -20,30 +21,43 @@ const TimelineEntryContent = ({
   bottomText,
   bottomDate,
   className,
+  stepIndex,
 }: TimelineEntryContentProps) => {
-  const { i18n } = useTranslation()
+  const { i18n, t } = useTranslation()
   const isCurrent = type === 'current'
   const hasDate = bottomDate !== null
   const isDoneWithBottom = type === 'done' && (hasDate || bottomText !== null)
   const isLast = position === 'last'
 
+  const stepAriaLabel = (() => {
+    const bottomLine = bottomText ?? bottomDate ?? undefined
+    return t('timeline:step-aria-label', {
+      index: stepIndex,
+      type: t(`timeline:type-${type}`),
+      step: `${topText}${bottomLine ? `, ${bottomLine}` : ''}`,
+    })
+  })()
+
   return (
-    <div className={`flex flex-col gap-2`}>
-      {isCurrent || (isDoneWithBottom && isLast) ? (
-        <span>
-          <strong>{topText}</strong>
-        </span>
-      ) : (
-        <span>{topText}</span>
-      )}
-      {type === 'done' && hasDate
-        ? bottomDate && (
-            <time dateTime={bottomDate}>
-              {formatDateLong(bottomDate, i18n.language)}
-            </time>
-          )
-        : bottomText && <span>{bottomText}</span>}
-    </div>
+    <>
+      <span className="sr-only">{stepAriaLabel}</span>
+      <div aria-hidden="true" className={`flex flex-col gap-2`}>
+        {isCurrent || (isDoneWithBottom && isLast) ? (
+          <span>
+            <strong>{topText}</strong>
+          </span>
+        ) : (
+          <span>{topText}</span>
+        )}
+        {type === 'done' && hasDate
+          ? bottomDate && (
+              <time dateTime={bottomDate}>
+                {formatDateLong(bottomDate, i18n.language)}
+              </time>
+            )
+          : bottomText && <span>{bottomText}</span>}
+      </div>
+    </>
   )
 }
 
