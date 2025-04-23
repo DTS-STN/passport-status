@@ -300,7 +300,10 @@ const Status = () => {
 
     entries.push({
       status: completedStatus,
-      date: response.completedDate,
+      date:
+        response.deliveryMethod === DeliveryMethodCode.MAIL // Work item #5650 - Explicitly show  date for mail delivery method
+          ? response.completedDate
+          : undefined,
       step: completedText,
     })
 
