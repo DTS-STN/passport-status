@@ -25,28 +25,28 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7/7</span>
+                <span class='fraction'>10/10</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">87.5% </span>
+                <span class="strong">90.47% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>14/16</span>
+                <span class='fraction'>19/21</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7/7</span>
+                <span class='fraction'>10/10</span>
             </div>
         
             
@@ -113,7 +113,22 @@
 <a name='L48'></a><a href='#L48'>48</a>
 <a name='L49'></a><a href='#L49'>49</a>
 <a name='L50'></a><a href='#L50'>50</a>
-<a name='L51'></a><a href='#L51'>51</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -136,6 +151,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">36x</span>
 <span class="cline-any cline-yes">36x</span>
 <span class="cline-any cline-yes">36x</span>
@@ -143,6 +159,18 @@
 <span class="cline-any cline-yes">36x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">36x</span>
+<span class="cline-any cline-yes">36x</span>
+<span class="cline-any cline-yes">36x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">36x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -176,6 +204,7 @@ export interface TimelineEntryContentProps extends PropsWithChildren {
   bottomText?: string
   bottomDate?: string
   className?: string
+  stepIndex: number
 }
 &nbsp;
 const TimelineEntryContent = ({
@@ -185,30 +214,43 @@ const TimelineEntryContent = ({
   bottomText,
   bottomDate,
   className,
+  stepIndex,
 }: TimelineEntryContentProps) =&gt; {
-  const { i18n } = useTranslation()
+  const { i18n, t } = useTranslation()
   const isCurrent = type === 'current'
   const hasDate = bottomDate !== null
   const isDoneWithBottom = type === 'done' &amp;&amp; (hasDate || <span class="branch-2 cbranch-no" title="branch not covered" >bottomText !== null)</span>
   const isLast = position === 'last'
 &nbsp;
+  const stepAriaLabel = (() =&gt; {
+    const bottomLine = bottomText ?? bottomDate ?? undefined
+    return t('timeline:step-aria-label', {
+      index: stepIndex,
+      type: t(`timeline:type-${type}`),
+      step: `${topText}${bottomLine ? `, ${bottomLine}` : ''}`,
+    })
+  })()
+&nbsp;
   return (
-    &lt;div className={`flex flex-col gap-2`}&gt;
-      {isCurrent || (isDoneWithBottom &amp;&amp; isLast) ? (
-        &lt;span&gt;
-          &lt;strong&gt;{topText}&lt;/strong&gt;
-        &lt;/span&gt;
-      ) : (
-        &lt;span&gt;{topText}&lt;/span&gt;
-      )}
-      {type === 'done' &amp;&amp; hasDate
-        ? bottomDate &amp;&amp; (
-            &lt;time dateTime={bottomDate}&gt;
-              {formatDateLong(bottomDate, i18n.language)}
-            &lt;/time&gt;
-          )
-        : bottomText &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >&lt;span&gt;{bottomText}&lt;/span&gt;}</span>
-    &lt;/div&gt;
+    &lt;&gt;
+      &lt;span className="sr-only"&gt;{stepAriaLabel}&lt;/span&gt;
+      &lt;div aria-hidden="true" className={`flex flex-col gap-2`}&gt;
+        {isCurrent || (isDoneWithBottom &amp;&amp; isLast) ? (
+          &lt;span&gt;
+            &lt;strong&gt;{topText}&lt;/strong&gt;
+          &lt;/span&gt;
+        ) : (
+          &lt;span&gt;{topText}&lt;/span&gt;
+        )}
+        {type === 'done' &amp;&amp; hasDate
+          ? bottomDate &amp;&amp; (
+              &lt;time dateTime={bottomDate}&gt;
+                {formatDateLong(bottomDate, i18n.language)}
+              &lt;/time&gt;
+            )
+          : bottomText &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >&lt;span&gt;{bottomText}&lt;/span&gt;}</span>
+      &lt;/div&gt;
+    &lt;/&gt;
   )
 }
 &nbsp;
@@ -220,7 +262,7 @@ export default TimelineEntryContent
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-04-15T13:27:55.008Z
+                at 2025-04-23T17:35:42.414Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
