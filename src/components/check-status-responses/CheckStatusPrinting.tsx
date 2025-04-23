@@ -1,6 +1,6 @@
 import { Trans, useTranslation } from 'next-i18next'
 
-import { ServiceLevelCode } from '../../lib/types'
+import { DeliveryMethodCode, ServiceLevelCode } from '../../lib/types'
 import { formatDateShort } from '../../lib/utils/dates'
 import { StatusResultProps } from '../../pages/status'
 import ActionButton from '../ActionButton'
@@ -14,8 +14,13 @@ export const CheckStatusPrinting = ({
 }: StatusResultProps) => {
   const { t, i18n } = useTranslation(['status', 'timeline'])
 
-  const { receivedDate, serviceLevel, timelineExists, timelineData } =
-    displayData
+  const {
+    deliveryMethod,
+    receivedDate,
+    serviceLevel,
+    timelineExists,
+    timelineData,
+  } = displayData
 
   const serviceDays = serviceLevel === ServiceLevelCode.TEN_DAYS ? '10' : '20'
 
@@ -47,7 +52,11 @@ export const CheckStatusPrinting = ({
           </h2>
           <p>
             <Trans
-              i18nKey="printing.service-standards.we-received"
+              i18nKey={
+                deliveryMethod === DeliveryMethodCode.MAIL
+                  ? 'printing.service-standards.we-received-mail'
+                  : 'printing.service-standards.we-received'
+              }
               ns="status"
               values={{
                 receivedDate: formattedDate,

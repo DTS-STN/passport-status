@@ -6,7 +6,8 @@
     "urgent-service-note": "If you requested urgent or express service at the passport office, your service standard is different. Please refer to your receipt for the pick-up date.",
     "service-standards": {
       "heading": "Our service standards",
-      "received-date": "We received your application on {{receivedDate}}. Our <Link>service standard</Link> is {{serviceLevel}} business days plus mailing time.",
+      "received-date": "We received your application on {{receivedDate}}. Our <Link>service standard</Link> is {{serviceLevel}} business days.",
+      "received-date-mail": "We received your application on {{receivedDate}}. Our <Link>service standard</Link> is {{serviceLevel}} business days plus mailing time.",
       "service-standards-href": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/processing-times.html"
     },
     "expedited-service": {
@@ -26,7 +27,8 @@
     "processing-delayed": "Processing is taking longer than expected. We are making every effort to complete it as soon as possible. We apologize for the inconvenience.",
     "service-standards": {
       "heading": "Our service standards",
-      "received-date": "We received your application on {{receivedDate}}. Our <Link>service standard</Link> is {{serviceLevel}} business days plus mailing time.",
+      "received-date": "We received your application on {{receivedDate}}. Our <Link>service standard</Link> is {{serviceLevel}} business days.",
+      "received-date-mail": "We received your application on {{receivedDate}}. Our <Link>service standard</Link> is {{serviceLevel}} business days plus mailing time.",
       "urgent-service-note": "If you requested urgent or express service at the passport office, your service standard is different. Please refer to your receipt for the pick-up date."
     },
     "travelling-soon": {
@@ -115,7 +117,8 @@
     "reviewed-printing": "Your application has been reviewed and your passport is ready for printing. Be aware that printing can take a few business days.",
     "service-standards": {
       "header": "Our service standards",
-      "we-received": "We received your application on {{receivedDate}}. Our <Link>service standard</Link> is {{serviceLevel}} business days plus mailing time."
+      "we-received": "We received your application on {{receivedDate}}. Our <Link>service standard</Link> is {{serviceLevel}} business days.",
+      "we-received-mail": "We received your application on {{receivedDate}}. Our <Link>service standard</Link> is {{serviceLevel}} business days plus mailing time."
     }
   },
   "ready-for-pickup": {

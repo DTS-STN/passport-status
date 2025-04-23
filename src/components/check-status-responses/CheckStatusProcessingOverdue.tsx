@@ -53,7 +53,9 @@ export const CheckStatusProcessingOverdue = ({
           <p>
             <Trans
               i18nKey={
-                'being-processed-overdue.service-standards.received-date'
+                deliveryMethod === DeliveryMethodCode.MAIL
+                  ? 'being-processed-overdue.service-standards.received-date-mail'
+                  : 'being-processed-overdue.service-standards.received-date'
               }
               ns="status"
               components={{
