@@ -60,9 +60,6 @@ export const CheckStatusFileBeingProcessed = ({
               }}
             />
           </p>
-          {deliveryMethod === DeliveryMethodCode.IN_PERSON && (
-            <p>{t('status:being-processed.urgent-service-note')}</p>
-          )}
           {timelineExists && (
             <div className="flex justify-center md:hidden">
               <Timeline entries={timelineData} />
@@ -90,6 +87,9 @@ export const CheckStatusFileBeingProcessed = ({
               }}
             />
           </p>
+          {deliveryMethod === DeliveryMethodCode.IN_PERSON && (
+            <p>{t('status:being-processed.urgent-service-note')}</p>
+          )}
           <h2 className="h2 mt-8 mb-2">
             {t('being-processed.expedited-service.heading')}
           </h2>
