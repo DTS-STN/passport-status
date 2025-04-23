@@ -1,12 +1,17 @@
 {
+  "application-steps-list-title": "Application steps.",
+  "mail-done": "Passport mailed out",
+  "mail-future": "Passport mailed out",
+  "pickup-done": "Ready for pick-up",
+  "pickup-future": "Ready for pick-up",
+  "print-current": "Print",
+  "print-done": "Print complete",
+  "print-future": "Print",
   "received": "Received",
   "review-current": "Review in progress",
   "review-done": "Review complete",
-  "print-future": "Print",
-  "print-current": "Print",
-  "print-done": "Print complete",
-  "mail-future": "Passport mailed out",
-  "mail-done": "Passport mailed out",
-  "pickup-future": "Ready for pick-up",
-  "pickup-done": "Ready for pick-up"
+  "step-aria-label": "Step {{index}}: {{type}}. {{step}}.",
+  "type-current": "in progress",
+  "type-done": "completed",
+  "type-future": "incomplete"
 }

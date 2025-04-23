@@ -158,15 +158,11 @@ const Status = () => {
   const handleTryAgainClick: MouseEventHandler<HTMLButtonElement> = useCallback(
     async (e) => {
       e.preventDefault()
-      if (checkStatusResponse) {
-        await router.push('/landing')
-        return
-      }
       setFormikStatus(undefined)
       removeCheckStatus(queryClient)
       scrollToHeading()
     },
-    [checkStatusResponse, setFormikStatus, queryClient, router],
+    [setFormikStatus, queryClient],
   )
 
   const handleOnESRFChange: ChangeEventHandler<HTMLInputElement> = useCallback(
@@ -304,7 +300,10 @@ const Status = () => {
 
     entries.push({
       status: completedStatus,
-      date: response.completedDate,
+      date:
+        response.deliveryMethod === DeliveryMethodCode.MAIL // Work item #5650 - Explicitly show  date for mail delivery method
+          ? response.completedDate
+          : undefined,
       step: completedText,
     })
 

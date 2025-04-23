@@ -11,6 +11,7 @@ export interface TimelineEntryProps extends PropsWithChildren {
   position: TimelinePosition
   className?: string
   background?: boolean
+  stepIndex: number
 }
 
 const topBorderStyle = (
@@ -44,7 +45,7 @@ const SVG = (type: TimelineEntryStatus, background: boolean | undefined) => {
     case 'done': {
       return (
         <svg
-          className={`${background ? 'bg-slate-100' : 'bg-white'} h-9 w-9 fill-accent-success`}
+          className={`${background ? 'bg-slate-100' : 'bg-white'} fill-accent-success h-9 w-9`}
           viewBox="0 0 64 64"
           xmlns="http://www.w3.org/2000/svg"
           aria-hidden="true"
@@ -125,23 +126,24 @@ const TimelineEntry = ({
   subtext,
   className,
   background,
+  stepIndex,
 }: TimelineEntryProps) => {
   const topBorderComputedStyle = topBorderStyle(type, position)
   const bottomBorderComputedStyle = bottomBorderStyle(type, position)
 
   return (
-    <div className={className}>
+    <li className={className}>
       <div className="flex flex-row">
         <div className="align-center mr-2 flex flex-col justify-between">
           <div className="flex h-full w-full justify-center">
             <div
-              className={`h-full w-0 border-l-2 border-r-2 ${topBorderComputedStyle}`}
+              className={`h-full w-0 border-r-2 border-l-2 ${topBorderComputedStyle}`}
             />
           </div>
           <div className={svgStyles[type]}>{SVG(type, background)}</div>
           <div className="flex h-full w-full justify-center">
             <div
-              className={`h-full w-0 border-l-2 border-r-2 ${bottomBorderComputedStyle}`}
+              className={`h-full w-0 border-r-2 border-l-2 ${bottomBorderComputedStyle}`}
             />
           </div>
         </div>
@@ -152,10 +154,11 @@ const TimelineEntry = ({
             topText={step}
             bottomDate={date}
             bottomText={subtext}
+            stepIndex={stepIndex}
           />
         </div>
       </div>
-    </div>
+    </li>
   )
 }
 

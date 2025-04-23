@@ -51,17 +51,16 @@ export const CheckStatusFileBeingProcessed = ({
               }}
             />
           </p>
-          <p>
-            <Trans
-              i18nKey={'being-processed.completion-status'}
-              ns="status"
-              values={{
-                serviceLevel: serviceDays,
-              }}
-            />
-          </p>
-          {deliveryMethod === DeliveryMethodCode.IN_PERSON && (
-            <p>{t('status:being-processed.urgent-service-note')}</p>
+          {deliveryMethod === DeliveryMethodCode.MAIL && (
+            <p>
+              <Trans
+                i18nKey={'being-processed.completion-status'}
+                ns="status"
+                values={{
+                  serviceLevel: serviceDays,
+                }}
+              />
+            </p>
           )}
           {timelineExists && (
             <div className="flex justify-center md:hidden">
@@ -73,7 +72,11 @@ export const CheckStatusFileBeingProcessed = ({
           </h2>
           <p>
             <Trans
-              i18nKey={'being-processed.service-standards.received-date'}
+              i18nKey={
+                deliveryMethod === DeliveryMethodCode.MAIL
+                  ? 'being-processed.service-standards.received-date-mail'
+                  : 'being-processed.service-standards.received-date'
+              }
               ns="status"
               values={{
                 receivedDate: formattedDate,
@@ -90,6 +93,9 @@ export const CheckStatusFileBeingProcessed = ({
               }}
             />
           </p>
+          {deliveryMethod === DeliveryMethodCode.IN_PERSON && (
+            <p>{t('status:being-processed.urgent-service-note')}</p>
+          )}
           <h2 className="h2 mt-8 mb-2">
             {t('being-processed.expedited-service.heading')}
           </h2>

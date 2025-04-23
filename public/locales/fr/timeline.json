@@ -1,12 +1,17 @@
 {
+  "application-steps-list-title": "Étapes de la demande.",
+  "mail-done": "Passeport envoyé par la poste",
+  "mail-future": "Passeport envoyé par la poste",
+  "pickup-done": "Prêt pour le retrait",
+  "pickup-future": "Prêt pour le retrait",
+  "print-current": "Impression",
+  "print-done": "Impression terminée",
+  "print-future": "Impression",
   "received": "Reçue",
   "review-current": "Examen en cours",
   "review-done": "Examen terminé",
-  "print-future": "Impression",
-  "print-current": "Impression",
-  "print-done": "Impression terminée",
-  "mail-future": "Passeport envoyé par la poste",
-  "mail-done": "Passeport envoyé par la poste",
-  "pickup-future": "Prêt pour le retrait",
-  "pickup-done": "Prêt pour le retrait"
+  "step-aria-label": "Étape {{index}}: {{type}}. {{step}}.",
+  "type-current": "en cours",
+  "type-done": "terminée",
+  "type-future": "incomplète"
 }
