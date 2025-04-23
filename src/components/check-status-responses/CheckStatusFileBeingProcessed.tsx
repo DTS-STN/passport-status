@@ -51,15 +51,17 @@ export const CheckStatusFileBeingProcessed = ({
               }}
             />
           </p>
-          <p>
-            <Trans
-              i18nKey={'being-processed.completion-status'}
-              ns="status"
-              values={{
-                serviceLevel: serviceDays,
-              }}
-            />
-          </p>
+          {deliveryMethod === DeliveryMethodCode.MAIL && (
+            <p>
+              <Trans
+                i18nKey={'being-processed.completion-status'}
+                ns="status"
+                values={{
+                  serviceLevel: serviceDays,
+                }}
+              />
+            </p>
+          )}
           {timelineExists && (
             <div className="flex justify-center md:hidden">
               <Timeline entries={timelineData} />
@@ -70,7 +72,11 @@ export const CheckStatusFileBeingProcessed = ({
           </h2>
           <p>
             <Trans
-              i18nKey={'being-processed.service-standards.received-date'}
+              i18nKey={
+                deliveryMethod === DeliveryMethodCode.MAIL
+                  ? 'being-processed.service-standards.received-date-mail'
+                  : 'being-processed.service-standards.received-date'
+              }
               ns="status"
               values={{
                 receivedDate: formattedDate,
