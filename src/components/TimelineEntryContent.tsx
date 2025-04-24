@@ -25,12 +25,16 @@ const TimelineEntryContent = ({
 }: TimelineEntryContentProps) => {
   const { i18n, t } = useTranslation()
   const isCurrent = type === 'current'
-  const hasDate = bottomDate !== null
+  const hasDate = bottomDate && bottomDate !== null
   const isDoneWithBottom = type === 'done' && (hasDate || bottomText !== null)
   const isLast = position === 'last'
 
   const stepAriaLabel = (() => {
-    const bottomLine = bottomText ?? bottomDate ?? undefined
+    const bottomLine =
+      type === 'done' && hasDate
+        ? formatDateLong(bottomDate, i18n.language)
+        : bottomText
+
     return t('timeline:step-aria-label', {
       index: stepIndex,
       type: t(`timeline:type-${type}`),
@@ -49,13 +53,13 @@ const TimelineEntryContent = ({
         ) : (
           <span>{topText}</span>
         )}
-        {type === 'done' && hasDate
-          ? bottomDate && (
-              <time dateTime={bottomDate}>
-                {formatDateLong(bottomDate, i18n.language)}
-              </time>
-            )
-          : bottomText && <span>{bottomText}</span>}
+        {type === 'done' && hasDate ? (
+          <time dateTime={bottomDate}>
+            {formatDateLong(bottomDate, i18n.language)}
+          </time>
+        ) : (
+          bottomText && <span>{bottomText}</span>
+        )}
       </div>
     </>
   )
