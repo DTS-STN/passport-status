@@ -68,7 +68,7 @@ export const CheckStatusPrinting = ({
               }}
             />
           </p>
-          {serviceLevel === ServiceLevelCode.TEN_DAYS && (
+          {deliveryMethod === DeliveryMethodCode.IN_PERSON && (
             <p>{t('printing.service-standards.requested-urgent')}</p>
           )}
           <div className="mt-8">
