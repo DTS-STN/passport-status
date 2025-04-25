@@ -94,7 +94,11 @@ export const CheckStatusFileBeingProcessed = ({
             />
           </p>
           {deliveryMethod === DeliveryMethodCode.IN_PERSON && (
-            <p>{t('status:being-processed.urgent-service-note')}</p>
+            <p>
+              {t(
+                'status:being-processed.service-standards.urgent-service-note',
+              )}
+            </p>
           )}
           <h2 className="h2 mt-8 mb-2">
             {t('being-processed.expedited-service.heading')}
