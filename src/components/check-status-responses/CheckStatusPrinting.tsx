@@ -35,9 +35,6 @@ export const CheckStatusPrinting = ({
       <div className="flex flex-col md:flex-row md:gap-x-30 lg:gap-x-40 xl:gap-x-50">
         <div className="max-w-prose">
           <p>{t('printing.reviewed-printing')}</p>
-          {serviceLevel === ServiceLevelCode.TEN_DAYS && (
-            <p>{t('printing.requested-urgent')}</p>
-          )}
           {timelineExists && (
             <div className="flex w-full justify-center md:hidden">
               <Timeline entries={timelineData} />
@@ -71,6 +68,9 @@ export const CheckStatusPrinting = ({
               }}
             />
           </p>
+          {serviceLevel === ServiceLevelCode.TEN_DAYS && (
+            <p>{t('printing.service-standards.requested-urgent')}</p>
+          )}
           <div className="mt-8">
             <ActionButton
               onClick={checkAnotherHandler}
