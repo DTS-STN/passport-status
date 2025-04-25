@@ -3,12 +3,12 @@
     "reviewing-application": "Nous examinons votre demande",
     "processing-details": "Cet examen prend normalement environ {{reviewDays}} jours ouvrables, plus {{printDays}} jours pour l'impression.",
     "completion-status": "Si votre demande a été dûment remplie, votre passeport devrait vous être envoyé par la poste dans les {{serviceLevel}} jours ouvrables.",
-    "urgent-service-note": "Si vous avez demandé un service urgent ou express au bureau des passeports, votre norme de service est différente. Veuillez-vous référer à votre reçu pour connaître la date de retrait.",
     "service-standards": {
       "heading": "Nos normes de service",
       "received-date": "Nous avons reçu votre demande le {{receivedDate}}. Notre <Link>norme de service</Link> est {{serviceLevel}} jours ouvrables.",
       "received-date-mail": "Nous avons reçu votre demande le {{receivedDate}}. Notre <Link>norme de service</Link> est {{serviceLevel}} jours ouvrables plus le délai de livraison.",
-      "service-standards-href": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens/delais-traitement.html"
+      "service-standards-href": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens/delais-traitement.html",
+      "urgent-service-note": "Si vous avez demandé un service urgent ou express au bureau des passeports, votre norme de service est différente. Veuillez-vous référer à votre reçu pour connaître la date de retrait."
     },
     "expedited-service": {
       "heading": "Si vous avez besoin du passeport plus rapidement",
