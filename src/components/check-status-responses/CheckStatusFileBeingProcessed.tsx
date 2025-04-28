@@ -116,7 +116,6 @@ export const CheckStatusFileBeingProcessed = ({
                   />
                 ),
               }}
-              values={{ serviceLevel: serviceDays }}
             />
           </p>
           <h2 className="h2 mt-8 mb-2">

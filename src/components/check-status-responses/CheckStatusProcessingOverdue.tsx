@@ -81,10 +81,6 @@ export const CheckStatusProcessingOverdue = ({
                   />
                 ),
               }}
-              values={{
-                serviceLevel:
-                  serviceLevel === ServiceLevelCode.TEN_DAYS ? '10' : '20',
-              }}
             />
           </p>
 
