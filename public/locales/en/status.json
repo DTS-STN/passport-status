@@ -12,7 +12,7 @@
     },
     "expedited-service": {
       "heading": "If you need your passport sooner",
-      "details": "Find out how to get <Link>urgent or express service for existing applications</Link> if you need the passport within {{serviceLevel}} business days. Extra fees may apply.",
+      "details": "Find out how to get <Link>urgent or express service for existing applications</Link> if you need the passport within 10 business days. Extra fees may apply.",
       "expedited-service-href": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/urgent-emergency-passport.html"
     },
     "incomplete-applications": {

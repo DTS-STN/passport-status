@@ -12,7 +12,7 @@
     },
     "expedited-service": {
       "heading": "Si vous avez besoin du passeport plus rapidement",
-      "details": "Apprenez comment obtenir des <Link>services urgents ou express pour votre demande existante</Link> si vous avez besoin du passeport dans un délai de {{serviceLevel}} jours ouvrables. Des frais supplémentaires peuvent s'appliquer.",
+      "details": "Apprenez comment obtenir des <Link>services urgents ou express pour votre demande existante</Link> si vous avez besoin du passeport dans un délai de 10 jours ouvrables. Des frais supplémentaires peuvent s'appliquer.",
       "expedited-service-href": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens/passeport-urgent-express.html"
     },
     "incomplete-applications": {
@@ -32,7 +32,7 @@
     },
     "travelling-soon": {
       "heading": "Si vous voyagez bientôt",
-      "if-travelling": "Si vous voyagez bientôt, nous ferons tout notre possible pour vous fournir votre passeport à temps. Apprenez comment obtenir des <Link>services urgents ou express pour votre demande existante</Link> si vous avez besoin du passeport dans les 10 jours ouvrables. Des frais supplémentaires peuvent s'appliquer. "
+      "if-travelling": "Si vous voyagez bientôt, nous ferons tout notre possible pour vous fournir votre passeport à temps. Apprenez comment obtenir des <Link>services urgents ou express pour votre demande existante</Link> si vous avez besoin du passeport dans les 10 jours ouvrables. Des frais supplémentaires peuvent s'appliquer."
     }
   },
   "check-another": "Vérifier l'état d'une autre demande",
