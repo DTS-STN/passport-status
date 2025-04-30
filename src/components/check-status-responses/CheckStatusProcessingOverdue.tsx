@@ -67,13 +67,6 @@ export const CheckStatusProcessingOverdue = ({
               }}
             />
           </p>
-          {deliveryMethod === DeliveryMethodCode.IN_PERSON && (
-            <p>
-              {t(
-                'status:being-processed-overdue.service-standards.urgent-service-note',
-              )}
-            </p>
-          )}
           <h2 className="h2 mt-8 mb-2">
             {t('status:being-processed-overdue.travelling-soon.heading')}
           </h2>
@@ -87,10 +80,6 @@ export const CheckStatusProcessingOverdue = ({
                     href={t('status:status-check-urgent.express-services-href')}
                   />
                 ),
-              }}
-              values={{
-                serviceLevel:
-                  serviceLevel === ServiceLevelCode.TEN_DAYS ? '10' : '20',
               }}
             />
           </p>

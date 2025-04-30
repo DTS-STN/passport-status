@@ -3,16 +3,16 @@
     "reviewing-application": "We are reviewing your application",
     "processing-details": "A passport employee is reviewing your application. This review normally takes about {{reviewDays}} business days, plus {{printDays}} days for printing.",
     "completion-status": "If your application has been properly completed, your passport should be mailed to you within {{serviceLevel}} business days.",
-    "urgent-service-note": "If you requested urgent or express service at the passport office, your service standard is different. Please refer to your receipt for the pick-up date.",
     "service-standards": {
       "heading": "Our service standards",
       "received-date": "We received your application on {{receivedDate}}. Our <Link>service standard</Link> is {{serviceLevel}} business days.",
       "received-date-mail": "We received your application on {{receivedDate}}. Our <Link>service standard</Link> is {{serviceLevel}} business days plus mailing time.",
-      "service-standards-href": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/processing-times.html"
+      "service-standards-href": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/processing-times.html",
+      "urgent-service-note": "If you requested urgent or express service at the passport office, your service standard is different. Please refer to your receipt for the pick-up date."
     },
     "expedited-service": {
       "heading": "If you need your passport sooner",
-      "details": "Find out how to get <Link>urgent or express service for existing applications</Link> if you need the passport within {{serviceLevel}} business days. Extra fees may apply.",
+      "details": "Find out how to get <Link>urgent or express service for existing applications</Link> if you need the passport within 10 business days. Extra fees may apply.",
       "expedited-service-href": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/urgent-emergency-passport.html"
     },
     "incomplete-applications": {
@@ -28,8 +28,7 @@
     "service-standards": {
       "heading": "Our service standards",
       "received-date": "We received your application on {{receivedDate}}. Our <Link>service standard</Link> is {{serviceLevel}} business days.",
-      "received-date-mail": "We received your application on {{receivedDate}}. Our <Link>service standard</Link> is {{serviceLevel}} business days plus mailing time.",
-      "urgent-service-note": "If you requested urgent or express service at the passport office, your service standard is different. Please refer to your receipt for the pick-up date."
+      "received-date-mail": "We received your application on {{receivedDate}}. Our <Link>service standard</Link> is {{serviceLevel}} business days plus mailing time."
     },
     "travelling-soon": {
       "heading": "If you need your passport sooner",
@@ -113,10 +112,10 @@
   "one-name": "Applicants with <strong>only one name</strong> (single or multiple names entered all in one field) must call us at 1-800-567-6868 to get the status of their application.",
   "printing": {
     "in-printing": "We are printing your passport",
-    "requested-urgent": "If you requested urgent or express service at the passport office, your service standard is different. Please refer to your receipt for the pick-up date.",
     "reviewed-printing": "Your application has been reviewed and your passport is ready for printing. Be aware that printing can take a few business days.",
     "service-standards": {
       "header": "Our service standards",
+      "requested-urgent": "If you requested urgent or express service at the passport office, your service standard is different. Please refer to your receipt for the pick-up date.",
       "we-received": "We received your application on {{receivedDate}}. Our <Link>service standard</Link> is {{serviceLevel}} business days.",
       "we-received-mail": "We received your application on {{receivedDate}}. Our <Link>service standard</Link> is {{serviceLevel}} business days plus mailing time."
     }

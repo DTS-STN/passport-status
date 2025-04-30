@@ -3,16 +3,16 @@
     "reviewing-application": "Nous examinons votre demande",
     "processing-details": "Cet examen prend normalement environ {{reviewDays}} jours ouvrables, plus {{printDays}} jours pour l'impression.",
     "completion-status": "Si votre demande a été dûment remplie, votre passeport devrait vous être envoyé par la poste dans les {{serviceLevel}} jours ouvrables.",
-    "urgent-service-note": "Si vous avez demandé un service urgent ou express au bureau des passeports, votre norme de service est différente. Veuillez-vous référer à votre reçu pour connaître la date de retrait.",
     "service-standards": {
       "heading": "Nos normes de service",
       "received-date": "Nous avons reçu votre demande le {{receivedDate}}. Notre <Link>norme de service</Link> est {{serviceLevel}} jours ouvrables.",
       "received-date-mail": "Nous avons reçu votre demande le {{receivedDate}}. Notre <Link>norme de service</Link> est {{serviceLevel}} jours ouvrables plus le délai de livraison.",
-      "service-standards-href": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens/delais-traitement.html"
+      "service-standards-href": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens/delais-traitement.html",
+      "urgent-service-note": "Si vous avez demandé un service urgent ou express au bureau des passeports, votre norme de service est différente. Veuillez-vous référer à votre reçu pour connaître la date de retrait."
     },
     "expedited-service": {
       "heading": "Si vous avez besoin du passeport plus rapidement",
-      "details": "Apprenez comment obtenir des <Link>services urgents ou express pour votre demande existante</Link> si vous avez besoin du passeport dans un délai de {{serviceLevel}} jours ouvrables. Des frais supplémentaires peuvent s'appliquer.",
+      "details": "Apprenez comment obtenir des <Link>services urgents ou express pour votre demande existante</Link> si vous avez besoin du passeport dans un délai de 10 jours ouvrables. Des frais supplémentaires peuvent s'appliquer.",
       "expedited-service-href": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens/passeport-urgent-express.html"
     },
     "incomplete-applications": {
@@ -28,12 +28,11 @@
     "service-standards": {
       "heading": "Nos normes de service",
       "received-date": "Nous avons reçu votre demande le {{receivedDate}}. Notre <Link>norme de service</Link> est {{serviceLevel}} jours ouvrables.",
-      "received-date-mail": "Nous avons reçu votre demande le {{receivedDate}}. Notre <Link>norme de service</Link> est {{serviceLevel}} jours ouvrables plus le délai de livraison.",
-      "urgent-service-note": "Si vous avez demandé un service urgent ou express au bureau des passeports, votre norme de service est différente. Veuillez-vous référer à votre reçu pour connaître la date de retrait."
+      "received-date-mail": "Nous avons reçu votre demande le {{receivedDate}}. Notre <Link>norme de service</Link> est {{serviceLevel}} jours ouvrables plus le délai de livraison."
     },
     "travelling-soon": {
       "heading": "Si vous voyagez bientôt",
-      "if-travelling": "Si vous voyagez bientôt, nous ferons tout notre possible pour vous fournir votre passeport à temps. Apprenez comment obtenir des <Link>services urgents ou express pour votre demande existante</Link> si vous avez besoin du passeport dans les 10 jours ouvrables. Des frais supplémentaires peuvent s'appliquer. "
+      "if-travelling": "Si vous voyagez bientôt, nous ferons tout notre possible pour vous fournir votre passeport à temps. Apprenez comment obtenir des <Link>services urgents ou express pour votre demande existante</Link> si vous avez besoin du passeport dans les 10 jours ouvrables. Des frais supplémentaires peuvent s'appliquer."
     }
   },
   "check-another": "Vérifier l'état d'une autre demande",
@@ -113,10 +112,10 @@
   "one-name": "Les requérants n'ayant <strong>qu'un seul nom</strong> (un ou plusieurs noms inscrits dans un seul champ) doivent nous appeler au 1-800-567-6868 pour connaître l'état de leur demande.",
   "printing": {
     "in-printing": "Nous imprimons votre passeport",
-    "requested-urgent": "Si vous avez demandé un service urgent ou express au bureau des passeports, votre norme de service est différente. Veuillez-vous référer à votre reçu pour connaître la date de retrait.",
     "reviewed-printing": "Votre demande a été examinée et votre passeport est prêt à être imprimé. Veuillez noter que l'impression peut prendre quelques jours ouvrables.",
     "service-standards": {
       "header": "Nos normes de service",
+      "requested-urgent": "Si vous avez demandé un service urgent ou express au bureau des passeports, votre norme de service est différente. Veuillez-vous référer à votre reçu pour connaître la date de retrait.",
       "we-received": "Nous avons reçu votre demande le {{receivedDate}}. Notre <Link>norme de service</Link> est {{serviceLevel}} jours ouvrables.",
       "we-received-mail": "Nous avons reçu votre demande le {{receivedDate}}. Notre <Link>norme de service</Link> est {{serviceLevel}} jours ouvrables plus le délai de livraison."
     }
