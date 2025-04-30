@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1746017625168" clover="3.2.0">
-  <project timestamp="1746017625168" name="All files">
-    <metrics statements="648" coveredstatements="419" conditionals="485" coveredconditionals="236" methods="173" coveredmethods="98" elements="1306" coveredelements="753" complexity="0" loc="648" ncloc="648" packages="12" files="67" classes="67"/>
+<coverage generated="1746018892566" clover="3.2.0">
+  <project timestamp="1746018892567" name="All files">
+    <metrics statements="648" coveredstatements="419" conditionals="482" coveredconditionals="235" methods="173" coveredmethods="98" elements="1303" coveredelements="752" complexity="0" loc="648" ncloc="648" packages="12" files="67" classes="67"/>
     <package name="src">
       <metrics statements="28" coveredstatements="14" conditionals="26" coveredconditionals="8" methods="7" coveredmethods="6"/>
       <file name="middleware.ts" path="/home/runner/work/passport-status/passport-status/src/middleware.ts">
@@ -50,7 +50,7 @@
       </file>
     </package>
     <package name="src.components">
-      <metrics statements="250" coveredstatements="214" conditionals="182" coveredconditionals="123" methods="73" coveredmethods="57"/>
+      <metrics statements="250" coveredstatements="214" conditionals="183" coveredconditionals="124" methods="73" coveredmethods="57"/>
       <file name="ActionButton.tsx" path="/home/runner/work/passport-status/passport-status/src/components/ActionButton.tsx">
         <metrics statements="9" coveredstatements="9" conditionals="6" coveredconditionals="4" methods="1" coveredmethods="1"/>
         <line num="18" count="13" type="stmt"/>
@@ -370,21 +370,21 @@
         <line num="134" count="36" type="stmt"/>
       </file>
       <file name="TimelineEntryContent.tsx" path="/home/runner/work/passport-status/passport-status/src/components/TimelineEntryContent.tsx">
-        <metrics statements="10" coveredstatements="10" conditionals="21" coveredconditionals="19" methods="2" coveredmethods="2"/>
+        <metrics statements="10" coveredstatements="10" conditionals="22" coveredconditionals="20" methods="2" coveredmethods="2"/>
         <line num="17" count="7" type="stmt"/>
         <line num="26" count="36" type="stmt"/>
         <line num="27" count="36" type="stmt"/>
-        <line num="28" count="36" type="stmt"/>
+        <line num="28" count="36" type="cond" truecount="2" falsecount="0"/>
         <line num="29" count="36" type="cond" truecount="2" falsecount="1"/>
         <line num="30" count="36" type="stmt"/>
         <line num="32" count="36" type="stmt"/>
-        <line num="33" count="36" type="cond" truecount="3" falsecount="0"/>
-        <line num="34" count="36" type="stmt"/>
-        <line num="41" count="36" type="stmt"/>
+        <line num="34" count="36" type="cond" truecount="4" falsecount="0"/>
+        <line num="38" count="36" type="stmt"/>
+        <line num="45" count="36" type="stmt"/>
       </file>
     </package>
     <package name="src.components.check-status-responses">
-      <metrics statements="37" coveredstatements="37" conditionals="60" coveredconditionals="45" methods="8" coveredmethods="8"/>
+      <metrics statements="37" coveredstatements="37" conditionals="56" coveredconditionals="43" methods="8" coveredmethods="8"/>
       <file name="CheckStatusFileBeingProcessed.tsx" path="/home/runner/work/passport-status/passport-status/src/components/check-status-responses/CheckStatusFileBeingProcessed.tsx">
         <metrics statements="6" coveredstatements="6" conditionals="16" coveredconditionals="11" methods="1" coveredmethods="1"/>
         <line num="11" count="2" type="stmt"/>
@@ -416,7 +416,7 @@
         <line num="29" count="2" type="stmt"/>
       </file>
       <file name="CheckStatusProcessingOverdue.tsx" path="/home/runner/work/passport-status/passport-status/src/components/check-status-responses/CheckStatusProcessingOverdue.tsx">
-        <metrics statements="6" coveredstatements="6" conditionals="12" coveredconditionals="8" methods="1" coveredmethods="1"/>
+        <metrics statements="6" coveredstatements="6" conditionals="8" coveredconditionals="6" methods="1" coveredmethods="1"/>
         <line num="11" count="2" type="stmt"/>
         <line num="15" count="2" type="stmt"/>
         <line num="23" count="2" type="stmt"/>
@@ -541,16 +541,16 @@
         <line num="7" count="8" type="stmt"/>
         <line num="8" count="12" type="stmt"/>
         <line num="20" count="8" type="stmt"/>
-        <line num="21" count="34" type="stmt"/>
+        <line num="21" count="62" type="stmt"/>
         <line num="33" count="8" type="stmt"/>
-        <line num="38" count="46" type="stmt"/>
-        <line num="41" count="46" type="cond" truecount="2" falsecount="0"/>
+        <line num="38" count="74" type="stmt"/>
+        <line num="41" count="74" type="cond" truecount="2" falsecount="0"/>
         <line num="42" count="2" type="stmt"/>
-        <line num="51" count="44" type="stmt"/>
-        <line num="54" count="44" type="stmt"/>
-        <line num="56" count="44" type="cond" truecount="2" falsecount="0"/>
-        <line num="58" count="44" type="stmt"/>
-        <line num="63" count="44" type="stmt"/>
+        <line num="51" count="72" type="stmt"/>
+        <line num="54" count="72" type="stmt"/>
+        <line num="56" count="72" type="cond" truecount="2" falsecount="0"/>
+        <line num="58" count="72" type="stmt"/>
+        <line num="63" count="72" type="stmt"/>
       </file>
       <file name="fonts.ts" path="/home/runner/work/passport-status/passport-status/src/lib/utils/fonts.ts">
         <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
