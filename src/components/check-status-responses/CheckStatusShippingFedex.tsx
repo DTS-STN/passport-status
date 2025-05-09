@@ -5,6 +5,7 @@ import { Trans, useTranslation } from 'next-i18next'
 import { StatusDisplayData } from '../../lib/types'
 import ActionButton from '../ActionButton'
 import AlertBlock from '../AlertBlock'
+import Collapse from '../Collapse'
 import ExternalLink from '../ExternalLink'
 import Timeline from '../Timeline'
 
@@ -42,51 +43,114 @@ export const CheckStatusShippingFedex = ({
               <Timeline entries={timelineData} />
             </div>
           )}
-          <h2 data-testid="shipped-fedex-mailing" className="h2 mt-8">
+          <h2 className="h2 mt-8">
             {t('shipped-fedex.shipping-information.header')}
           </h2>
-          <p>
-            {t('shipped-fedex.shipping-information.sending-via')}
-            <> </>
-            {trackingNumber ? (
-              <Trans
-                i18nKey="status-check-tracking.number"
-                ns="status"
-                tOptions={{ trackingNumber }}
-              />
-            ) : (
-              t('shipped-fedex.shipping-information.take-up-to')
-            )}
-          </p>
-          {trackingNumber && (
+
+          {trackingNumber ? (
+            <>
+              <Collapse
+                title={t(
+                  'shipped-fedex.shipping-information.country-canada.header',
+                )}
+                variant="fullWidth"
+              >
+                <p>
+                  <Trans
+                    i18nKey="shipped-fedex.shipping-information.country-canada.mailing"
+                    ns="status"
+                    tOptions={{ trackingNumber }}
+                  />
+                </p>
+                <p>
+                  <Trans
+                    i18nKey={'status-check-tracking.can-track'}
+                    ns="status"
+                    components={{
+                      Link: (
+                        <ExternalLink
+                          data-gc-analytics-exempt={true}
+                          href={t('status-check-tracking.link.purolator', {
+                            trackingNumber: encodeURIComponent(trackingNumber),
+                          })}
+                        />
+                      ),
+                    }}
+                  />
+                </p>
+                <p className="font-bold">
+                  {t(
+                    'shipped-fedex.shipping-information.country-canada.send-separately',
+                  )}
+                </p>
+                <p>
+                  <Trans
+                    i18nKey="shipped-fedex.shipping-information.country-canada.dont-receive"
+                    ns="status"
+                    components={{
+                      Link: <ExternalLink href={t('common:contact-us-link')} />,
+                    }}
+                  />
+                </p>
+              </Collapse>
+              <Collapse
+                title={t(
+                  'shipped-fedex.shipping-information.country-us.header',
+                )}
+                variant="fullWidth"
+              >
+                <p>
+                  <Trans
+                    i18nKey="shipped-fedex.shipping-information.country-us.mailing"
+                    ns="status"
+                    tOptions={{ trackingNumber }}
+                  />
+                </p>
+                <p>
+                  <Trans
+                    i18nKey={'status-check-tracking.can-track'}
+                    ns="status"
+                    components={{
+                      Link: (
+                        <ExternalLink
+                          data-gc-analytics-exempt={true}
+                          href={t('status-check-tracking.link.fedex', {
+                            trackingNumber: encodeURIComponent(trackingNumber),
+                          })}
+                        />
+                      ),
+                    }}
+                  />
+                </p>
+                <p>
+                  <Trans
+                    i18nKey="shipped-fedex.shipping-information.dont-receive"
+                    ns="status"
+                    components={{
+                      Link: <ExternalLink href={t('common:contact-us-link')} />,
+                    }}
+                  />
+                </p>
+              </Collapse>
+            </>
+          ) : (
             <>
               <p>
+                {t(
+                  'shipped-fedex.shipping-information.no-tracking-number.mailing',
+                )}
+              </p>
+              <p>
                 <Trans
-                  i18nKey={'status-check-tracking.can-track'}
+                  i18nKey="shipped-fedex.shipping-information.dont-receive"
                   ns="status"
                   components={{
-                    Link: (
-                      <ExternalLink
-                        data-gc-analytics-exempt={true}
-                        href={t('status-check-tracking.link.fedex', {
-                          trackingNumber: encodeURIComponent(trackingNumber),
-                        })}
-                      />
-                    ),
+                    Link: <ExternalLink href={t('common:contact-us-link')} />,
                   }}
                 />
               </p>
             </>
           )}
-          <p>
-            <Trans
-              i18nKey="shipped-fedex.shipping-information.dont-receive"
-              ns="status"
-              components={{
-                Link: <ExternalLink href={t('common:contact-us-link')} />,
-              }}
-            />
-          </p>
           <div className="mt-8">
             <ActionButton
               onClick={checkAnotherHandler}

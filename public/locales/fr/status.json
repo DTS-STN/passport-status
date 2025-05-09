@@ -143,10 +143,21 @@
     "header": "Votre passeport a été envoyé par la poste",
     "printed-mailed": "Votre nouveau passeport a été imprimé avec succès et vous a été envoyé par la poste.",
     "shipping-information": {
+      "country-canada": {
+        "dont-receive": "Si vous ne recevez pas vos documents fournis en support de la demande dans les six semaines suivant la réception de votre passeport, <Link>contactez-nous</Link>.",
+        "header": "Informations pour les clients dont les passeports sont envoyés au Canada",
+        "mailing": "Nous vous envoyons votre passeport et vos documents fournis en support de la demande par Purolator. Votre numéro de repérage est <strong>{{trackingNumber}}</strong>.",
+        "send-separately": "Nous pourrions renvoyer vos documents fournis en support de la demande séparément."
+      },
+      "country-us": {
+        "header": "Informations pour les clients dont les passeport sont envoyés aux États-Unis",
+        "mailing": "Nous vous envoyons votre passeport et vos documents fournis en support de la demande par FedEx. Votre numéro de repérage est <strong>{{trackingNumber}}</strong>."
+      },
+      "dont-receive": "Si vous ne recevez pas votre passeport ou vos documents fournis en support de la demande, <Link>contactez-nous</Link>.",
       "header": "Informations sur l'expédition",
-      "sending-via": "Nous vous envoyons votre passeport et vos documents fournis en support de la demande par FedEx.",
-      "take-up-to": "Cela peut prendre entre 5 à 7 jours ouvrables pour arriver.",
-      "dont-receive": "Si vous ne recevez pas votre passeport ou vos documents fournis en support de la demande, <Link>contactez-nous</Link>."
+      "no-tracking-number": {
+        "mailing": "Nous vous envoyons votre passeport et vos documents fournis en support de la demande par FedEx. Cela peut prendre entre 5 à 7 jours ouvrables pour arriver."
+      }
     }
   },
   "status-check-call": "Si vous ne recevez pas votre passeport ou vos documents fournis en support de la demande, <Link>contactez-nous</Link>.",

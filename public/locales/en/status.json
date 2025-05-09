@@ -143,10 +143,21 @@
     "header": "Your passport has been mailed to you",
     "printed-mailed": "Your new passport has been successfully printed and mailed to you.",
     "shipping-information": {
+      "country-canada": {
+        "dont-receive": "If you don't receive your supporting documents within 6 weeks of receiving your passport, <Link>contact us</Link>.",
+        "header": "Information for clients with passports mailed within Canada",
+        "mailing": "We're sending your passport and your supporting documents by Purolator. Your tracking number is <strong>{{trackingNumber}}</strong>.",
+        "send-separately": "We may send your supporting documents back separately."
+      },
+      "country-us": {
+        "header": "Information for clients with passports mailed to the United States",
+        "mailing": "We're sending your passport and your supporting documents by FedEx. Your tracking number is <strong>{{trackingNumber}}</strong>."
+      },
+      "dont-receive": "If you don't receive your passport or supporting documents, <Link>contact us</Link>.",
       "header": "Shipping information",
-      "sending-via": "We're sending your passport and your supporting documents by FedEx.",
-      "take-up-to": "It can take between 5 to 7 business days to arrive.",
-      "dont-receive": "If you don't receive your passport or supporting documents, <Link>contact us</Link>."
+      "no-tracking-number": {
+        "mailing": "We're sending your passport and your supporting documents by FedEx. It can take between 5 to 7 business days to arrive."
+      }
     }
   },
   "status-check-call": "If you don't receive your passport or supporting documents, <Link>contact us</Link>.",
