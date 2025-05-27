@@ -237,7 +237,11 @@ const Status = () => {
     ]
 
     // First check for situations where we don't want to return a timeline.
-    if (noTimelineStatuses.includes(status) || !response.receivedDate) {
+    if (
+      noTimelineStatuses.includes(status) ||
+      !response.receivedDate ||
+      new Date(response.receivedDate) <= new Date('1900-01-01') // No timeline for old statuses
+    ) {
       return entries
     }
 
@@ -326,7 +330,7 @@ const Status = () => {
       // get sent across without a receivedDate somehow. So that it will display
       // the original pages for them instead of the pages that require that data.
       const legacyStatus =
-        displayData.receivedDate === '0001-01-01' ||
+        new Date(displayData.receivedDate) <= new Date('1900-01-01') ||
         displayData.serviceLevel === ServiceLevelCode.NOT_AVAILABLE ||
         displayData.deliveryMethod === DeliveryMethodCode.NOT_AVAILABLE
 
