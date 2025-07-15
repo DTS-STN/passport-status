@@ -17,7 +17,7 @@
     },
     "incomplete-applications": {
       "heading": "Demandes incomplètes",
-      "description": "Si votre demande est incomplète ou inexacte, cela peut entraîner des retards ou nous pourrions ne pas être en mesure de la traiter. En fonction du problème, nous pourrons vous contacter par la poste ou par téléphone. Si nous vous contactons par téléphone, l'appel peut apparaître comme un numéro bloqué. Nous ne vous contacterons <strong>jamais</strong> par SMS ou par messagerie instantanée.",
+      "description": "Si votre demande est incomplète ou inexacte, cela peut entraîner des retards ou nous pourrions ne pas être en mesure de la traiter. En fonction du problème, nous pourrons vous contacter par téléphone, par courriel, ou par la poste. Si nous vous contactons par téléphone, l'appel peut apparaître comme un numéro bloqué. Nous ne vous contacterons <strong>jamais</strong> par SMS ou par messagerie instantanée.",
       "return-notice": "Dans certains cas, nous devrons peut-être vous retourner votre demande par la poste."
     }
   },
