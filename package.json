@@ -24,18 +24,18 @@
     "date-fns": "4.1.0",
     "formik": "2.4.6",
     "i18next": "24.2.3",
-    "markdown-to-jsx": "7.7.6",
+    "markdown-to-jsx": "7.7.13",
     "next": "15.5.2",
     "next-i18next": "15.4.2",
     "next-seo": "6.7.1",
-    "pino": "9.7.0",
+    "pino": "9.9.2",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-focus-on": "3.10.0",
     "react-i18next": "15.5.1",
     "react-idle-timer": "5.7.2",
-    "sharp": "0.34.1",
-    "yup": "1.6.1"
+    "sharp": "0.34.3",
+    "yup": "1.7.0"
   },
   "devDependencies": {
     "@faker-js/faker": "9.8.0",
@@ -73,7 +73,7 @@
     "prettier-plugin-tailwindcss": "0.6.14",
     "react-test-renderer": "18.3.1",
     "start-server-and-test": "2.0.13",
-    "tailwindcss": "^4.0.13",
+    "tailwindcss": "4.1.12",
     "ts-jest": "29.4.1",
     "ts-node": "10.9.2",
     "typescript": "5.9.2"
