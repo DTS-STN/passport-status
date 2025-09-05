@@ -34,7 +34,7 @@ const config: Config = {
     '^.+\\.(js|jsx|ts|tsx)$': ['babel-jest', { presets: ['next/babel'] }],
   },
   transformIgnorePatterns: [
-    '/node_modules/',
+    '/node_modules/(?!@faker-js/faker)', // Allow @faker-js/faker to be transpiled, v10 uses ESM
     '^.+\\.module\\.(css|sass|scss)$',
   ],
 }
