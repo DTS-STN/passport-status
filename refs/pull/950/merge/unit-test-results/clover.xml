@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1757510669883" clover="3.2.0">
-  <project timestamp="1757510669884" name="All files">
+<coverage generated="1757513203591" clover="3.2.0">
+  <project timestamp="1757513203591" name="All files">
     <metrics statements="647" coveredstatements="419" conditionals="481" coveredconditionals="233" methods="173" coveredmethods="98" elements="1301" coveredelements="750" complexity="0" loc="647" ncloc="647" packages="12" files="67" classes="67"/>
     <package name="src">
       <metrics statements="28" coveredstatements="14" conditionals="26" coveredconditionals="8" methods="7" coveredmethods="6"/>
@@ -249,25 +249,25 @@
       <file name="IdleTimeout.tsx" path="/home/runner/work/passport-status/passport-status/src/components/IdleTimeout.tsx">
         <metrics statements="21" coveredstatements="16" conditionals="8" coveredconditionals="8" methods="7" coveredmethods="4"/>
         <line num="14" count="3" type="stmt"/>
-        <line num="15" count="4" type="stmt"/>
-        <line num="16" count="4" type="stmt"/>
-        <line num="17" count="4" type="stmt"/>
-        <line num="18" count="4" type="stmt"/>
-        <line num="20" count="4" type="stmt"/>
+        <line num="15" count="3" type="stmt"/>
+        <line num="16" count="3" type="stmt"/>
+        <line num="17" count="3" type="stmt"/>
+        <line num="18" count="3" type="stmt"/>
+        <line num="20" count="3" type="stmt"/>
         <line num="21" count="0" type="stmt"/>
         <line num="22" count="0" type="stmt"/>
-        <line num="25" count="4" type="stmt"/>
+        <line num="25" count="3" type="stmt"/>
         <line num="26" count="0" type="stmt"/>
         <line num="27" count="0" type="stmt"/>
-        <line num="30" count="4" type="stmt"/>
+        <line num="30" count="3" type="stmt"/>
         <line num="32" count="1" type="stmt"/>
-        <line num="37" count="4" type="stmt"/>
+        <line num="37" count="3" type="stmt"/>
         <line num="38" count="2" type="stmt"/>
         <line num="39" count="2" type="stmt"/>
         <line num="40" count="2" type="stmt"/>
-        <line num="45" count="4" type="stmt"/>
+        <line num="45" count="3" type="stmt"/>
         <line num="46" count="2" type="stmt"/>
-        <line num="49" count="4" type="stmt"/>
+        <line num="49" count="3" type="stmt"/>
         <line num="55" count="0" type="stmt"/>
       </file>
       <file name="InputErrorMessage.tsx" path="/home/runner/work/passport-status/passport-status/src/components/InputErrorMessage.tsx">
