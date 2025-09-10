@@ -8,7 +8,7 @@ const InputErrorMessage = ({ id, message }: InputErrorMessageProps) => {
     <div
       id={id}
       data-testid="input-error-message"
-      className="mb-1.5 inline-block border-l-4 border-red-dark bg-red-light px-2 font-bold"
+      className="border-red-dark bg-red-light mb-1.5 inline-block border-l-4 px-2 font-bold"
     >
       {message}
     </div>

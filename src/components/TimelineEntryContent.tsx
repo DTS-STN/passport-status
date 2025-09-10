@@ -10,7 +10,6 @@ export interface TimelineEntryContentProps extends PropsWithChildren {
   topText: string
   bottomText?: string
   bottomDate?: string
-  className?: string
   stepIndex: number
 }
 
@@ -20,7 +19,6 @@ const TimelineEntryContent = ({
   topText,
   bottomText,
   bottomDate,
-  className,
   stepIndex,
 }: TimelineEntryContentProps) => {
   const { i18n, t } = useTranslation()

@@ -6,9 +6,7 @@ import AlertBlock from './AlertBlock'
 import Footer from './Footer'
 import Header from './Header'
 
-export interface LayoutProps extends PropsWithChildren {}
-
-const Layout = ({ children }: LayoutProps) => {
+const Layout = ({ children }: PropsWithChildren) => {
   const { t } = useTranslation('common')
 
   return (

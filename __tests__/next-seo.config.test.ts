@@ -21,7 +21,7 @@ describe('getNextSEOConfig', () => {
 
     // assert
     expect(act.defaultTitle).toBe(
-      "Passport Application Status Checker | Vérificateur de l'état d'une demande de passeport - Canada.ca"
+      "Passport Application Status Checker | Vérificateur de l'état d'une demande de passeport - Canada.ca",
     )
   })
 
@@ -35,7 +35,7 @@ describe('getNextSEOConfig', () => {
 
     // assert
     expect(act.defaultTitle).toBe(
-      'Passport Application Status Checker - Canada.ca'
+      'Passport Application Status Checker - Canada.ca',
     )
   })
 
@@ -49,7 +49,7 @@ describe('getNextSEOConfig', () => {
 
     // assert
     expect(act.defaultTitle).toBe(
-      "Vérificateur de l'état d'une demande de passeport - Canada.ca"
+      "Vérificateur de l'état d'une demande de passeport - Canada.ca",
     )
   })
 })

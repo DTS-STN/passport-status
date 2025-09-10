@@ -31,7 +31,7 @@ const Header = ({ gocLink, skipToMainText }: HeaderProps) => {
       >
         <a
           id="skipToMainContent"
-          className="border border-blue-dark bg-blue-dark px-2 font-body font-bold text-white hover:bg-basic-darkgray focus:text-white focus:ring-2 focus:ring-inset focus:ring-orange-dark focus:ring-offset-2"
+          className="border-blue-dark bg-blue-dark font-body hover:bg-basic-darkgray focus:ring-orange-dark border px-2 font-bold text-white focus:text-white focus:ring-2 focus:ring-offset-2 focus:ring-inset"
           href="#main-header"
           draggable="false"
         >
@@ -77,7 +77,7 @@ const Header = ({ gocLink, skipToMainText }: HeaderProps) => {
               href={asPath}
               locale={langSelectorLocale}
               replace
-              className={`ml-6 block cursor-help pb-2 font-body text-base font-bold text-[#284162] underline decoration-dotted hover:text-[#0535d2] sm:ml-16 md:hidden md:text-sm`}
+              className={`font-body ml-6 block cursor-help pb-2 text-base font-bold text-[#284162] underline decoration-dotted hover:text-[#0535d2] sm:ml-16 md:hidden md:text-sm`}
               lang={langSelectorLocale}
             >
               <abbr title={langSelectorText}>{langSelectorAbbreviation}</abbr>
@@ -90,7 +90,7 @@ const Header = ({ gocLink, skipToMainText }: HeaderProps) => {
               href={asPath}
               locale={langSelectorLocale}
               replace
-              className="hidden self-end pb-0 font-body text-[#284162] underline hover:text-[#0535d2] md:block lg:pb-4"
+              className="font-body hidden self-end pb-0 text-[#284162] underline hover:text-[#0535d2] md:block lg:pb-4"
               data-cy="toggle-language-link"
               lang={langSelectorLocale}
             >

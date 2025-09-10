@@ -8,7 +8,7 @@ export const fetchAlerts = async (
   init?: RequestInit,
 ): Promise<Alert[] | null> => {
   const query = new URLSearchParams({ ...alertQuery }).toString()
-  let uri = alertQuery.page ? `/api/alerts?${query}` : `/api/alerts`
+  const uri = alertQuery.page ? `/api/alerts?${query}` : `/api/alerts`
 
   const response = await fetch(uri, {
     ...(init ?? {}),

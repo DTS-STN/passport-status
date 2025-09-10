@@ -5,7 +5,6 @@ import {
   DeliveryMethodCode,
   ServiceLevelCode,
   StatusCode,
-  StatusDisplayData,
 } from '../../src/lib/types'
 
 beforeEach(() => {

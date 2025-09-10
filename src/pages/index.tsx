@@ -19,9 +19,9 @@ const Index = () => {
       />
       <main
         role="main"
-        className="flex h-screen bg-splash-page bg-cover bg-center"
+        className="bg-splash-page flex h-screen bg-cover bg-center"
       >
-        <div className="m-auto w-[300px] bg-gray-lighter md:w-[400px] lg:w-[500px]">
+        <div className="bg-gray-lighter m-auto w-[300px] md:w-[400px] lg:w-[500px]">
           <div className="p-8">
             <h1 id="main-header" className="sr-only" tabIndex={-1}>
               Passport Application Status Checker | Vérificateur de l&#39;état
@@ -42,7 +42,7 @@ const Index = () => {
                 / <span lang="fr">Gouvernement du Canada</span>
               </span>
             </div>
-            <div className="mb-2 mt-9 flex justify-center gap-8">
+            <div className="mt-9 mb-2 flex justify-center gap-8">
               <section className="w-36" lang="en">
                 <h2 className="sr-only">Government of Canada</h2>
                 <LinkButton
@@ -69,8 +69,8 @@ const Index = () => {
               </section>
             </div>
           </div>
-          <div className="flex items-center justify-between gap-6 bg-gray-light p-8">
-            <div className="w-7/12 text-blue-light md:w-8/12">
+          <div className="bg-gray-light flex items-center justify-between gap-6 p-8">
+            <div className="text-blue-light w-7/12 md:w-8/12">
               <a
                 className="text-inherit no-underline visited:text-inherit hover:text-inherit hover:underline focus:text-inherit focus:underline"
                 data-cy="terms"

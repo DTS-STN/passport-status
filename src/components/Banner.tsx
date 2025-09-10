@@ -6,9 +6,9 @@ export interface BannerProps {
 const Banner = ({ alert, description }: BannerProps) => {
   return (
     <div className="bg-blue-normal font-body text-white">
-      <div className="container mx-auto flex flex-col space-y-2 p-4 lg:flex-row lg:items-center lg:space-x-4 lg:space-y-0">
+      <div className="container mx-auto flex flex-col space-y-2 p-4 lg:flex-row lg:items-center lg:space-y-0 lg:space-x-4">
         <div
-          className="w-max whitespace-nowrap border-2 px-4 py-1"
+          className="w-max border-2 px-4 py-1 whitespace-nowrap"
           role="alert"
         >
           <b>{alert}</b>
