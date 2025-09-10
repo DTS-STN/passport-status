@@ -237,6 +237,7 @@ const Email = () => {
               label={t('email.label')}
               onChange={handleFormikChange}
               value={formikValues.email}
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
               errorMessage={formikErrors.email && t(formikErrors.email as any)}
               textRequired={t('common:required')}
               required
@@ -256,6 +257,7 @@ const Email = () => {
               onChange={handleFormikChange}
               value={formikValues.givenName}
               errorMessage={
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 formikErrors.givenName && t(formikErrors.givenName as any)
               }
               textRequired={t('common:required')}
@@ -278,6 +280,7 @@ const Email = () => {
               onChange={handleFormikChange}
               value={formikValues.surname}
               errorMessage={
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 formikErrors.surname && t(formikErrors.surname as any)
               }
               textRequired={t('common:required')}
@@ -290,6 +293,7 @@ const Email = () => {
               onChange={handleOnDateOfBirthChange}
               value={formikValues.dateOfBirth}
               errorMessage={
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 formikErrors.dateOfBirth && t(formikErrors.dateOfBirth as any)
               }
               textRequired={t('common:required')}

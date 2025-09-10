@@ -27,7 +27,7 @@ const SVG = (type: AlertType, background: boolean | undefined) => {
     case 'danger': {
       return (
         <svg
-          className={`${background ? 'bg-slate-100' : 'bg-white'} h-8 w-8 fill-accent-error p-1`}
+          className={`${background ? 'bg-slate-100' : 'bg-white'} fill-accent-error h-8 w-8 p-1`}
           viewBox="0 0 100 100"
           xmlns="http://www.w3.org/2000/svg"
           aria-hidden="true"
@@ -39,7 +39,7 @@ const SVG = (type: AlertType, background: boolean | undefined) => {
     case 'success': {
       return (
         <svg
-          className={`${background ? 'bg-slate-100' : 'bg-white'} h-8 w-8 fill-accent-success p-1`}
+          className={`${background ? 'bg-slate-100' : 'bg-white'} fill-accent-success h-8 w-8 p-1`}
           viewBox="0 0 512 512"
           xmlns="http://www.w3.org/2000/svg"
           aria-hidden="true"
@@ -51,7 +51,7 @@ const SVG = (type: AlertType, background: boolean | undefined) => {
     case 'warning': {
       return (
         <svg
-          className={`${background ? 'bg-slate-100' : 'bg-white'} h-8 w-8 fill-accent-warning p-1`}
+          className={`${background ? 'bg-slate-100' : 'bg-white'} fill-accent-warning h-8 w-8 p-1`}
           viewBox="0 0 24 24"
           xmlns="http://www.w3.org/2000/svg"
           aria-hidden="true"
@@ -65,7 +65,7 @@ const SVG = (type: AlertType, background: boolean | undefined) => {
     case 'info': {
       return (
         <svg
-          className={`${background ? 'bg-slate-100' : 'bg-white'} h-8 w-8 fill-accent-info p-1`}
+          className={`${background ? 'bg-slate-100' : 'bg-white'} fill-accent-info h-8 w-8 p-1`}
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 512 512"
           aria-hidden="true"
@@ -92,7 +92,7 @@ const AlertSection = ({
       <div className={`${svgStyles[type]} w-8 bg-transparent`}>
         {SVG(type, background)}
       </div>
-      <section className={`-mt-8 border-l-8 pb-0.5 pt-2 ${borderColor}`}>
+      <section className={`-mt-8 border-l-8 pt-2 pb-0.5 ${borderColor}`}>
         <div className="ml-4">{children}</div>
       </section>
     </div>

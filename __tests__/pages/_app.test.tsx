@@ -48,6 +48,7 @@ describe('custom `app`', () => {
             userConfig: null,
           },
         }}
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         router={{ events: { on: jest.fn(), off: jest.fn() } } as any}
       />,
     )
@@ -83,6 +84,7 @@ describe('custom `app`', () => {
             userConfig: null,
           },
         }}
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         router={{ events: { on: jest.fn(), off: jest.fn() } } as any}
       />,
     )

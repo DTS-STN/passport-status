@@ -60,7 +60,7 @@ const Landing = () => {
           </p>
         </Collapse>
 
-        <div className="mb-4 mt-8 flex flex-wrap gap-6 md:flex-nowrap">
+        <div className="mt-8 mb-4 flex flex-wrap gap-6 md:flex-nowrap">
           <div className="w-full">
             <LinkButton href="/status" fullWidth style="primary" id="with-esrf">
               {t('do-you-have.with-reference')}

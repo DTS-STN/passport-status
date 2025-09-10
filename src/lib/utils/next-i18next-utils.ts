@@ -31,7 +31,6 @@ export const getNamespaces = (
     return [...new Set([...namespaces, namespacesRequired])]
   }
 
-  namespacesRequired
   return [...new Set([...namespaces, ...namespacesRequired])]
 }
 

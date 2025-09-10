@@ -7,7 +7,7 @@ export interface ErrorProps {
   statusCode?: number
 }
 
-const Error: NextPage<ErrorProps> = ({ statusCode }) => {
+const Error: NextPage<ErrorProps> = ({ statusCode }: ErrorProps) => {
   if (statusCode === 404) return <Error404Page />
   return <ErrorPage statusCode={statusCode} />
 }

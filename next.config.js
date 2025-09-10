@@ -50,6 +50,9 @@ const securityHeaders = [
  * @type {import('next').NextConfig}
  **/
 const nextConfig = {
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   devIndicators: false,
   env: {
     NEXT_PUBLIC_BUILD_DATE: builddate,

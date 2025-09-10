@@ -39,8 +39,8 @@ export default async function handler(
     )
 
     const pageAlerts = page
-      ? validAlerts.filter(
-          (alert) => alert.pages?.find((alertPage) => alertPage === page),
+      ? validAlerts.filter((alert) =>
+          alert.pages?.find((alertPage) => alertPage === page),
         )
       : validAlerts.filter(
           (alert) => alert.pages === undefined || alert.pages?.length === 0,

@@ -49,7 +49,7 @@ export const LegacyCheckStatusFileBeingProcessed = ({
           />
         </p>
         <p>{t('legacy.being-processed.incomplete')}</p>
-        <h2 className="h3 mb-2 mt-8">
+        <h2 className="h3 mt-8 mb-2">
           {t('legacy.being-processed.need-faster')}
         </h2>
         <p>
@@ -65,7 +65,7 @@ export const LegacyCheckStatusFileBeingProcessed = ({
             }}
           />
         </p>
-        <h2 className="h3 mb-2 mt-8">
+        <h2 className="h3 mt-8 mb-2">
           {t('legacy.being-processed.dont-meet-standards')}
         </h2>
         <p>

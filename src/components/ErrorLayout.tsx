@@ -2,9 +2,7 @@ import { PropsWithChildren } from 'react'
 
 import Image from 'next/image'
 
-export interface ErrorLayoutProps extends PropsWithChildren {}
-
-const ErrorLayout = ({ children }: ErrorLayoutProps) => {
+const ErrorLayout = ({ children }: PropsWithChildren) => {
   return (
     <div className="flex min-h-screen flex-col">
       <header className="container mx-auto my-6 px-4">
@@ -27,10 +25,6 @@ const ErrorLayout = ({ children }: ErrorLayoutProps) => {
       </main>
       <footer className="bg-gray-light py-4">
         <div className="container mx-auto flex justify-between px-4 lg:flex-row-reverse">
-          <a className="w-32 font-body text-sm sm:w-36 lg:hidden" href="#">
-            Top of page / Haut de la page&nbsp;
-            <span className="font-extrabold">&#8963;</span>
-          </a>
           <Image
             className="h-6 w-auto lg:h-auto lg:w-40"
             alt="Symbol of the Government of Canada - Symbole du gouvernement du Canada"

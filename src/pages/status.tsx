@@ -214,7 +214,7 @@ const Status = () => {
   const getTimelineEntries = (
     response: CheckStatusApiResponse,
   ): TimelineEntryData[] => {
-    let entries: TimelineEntryData[] = []
+    const entries: TimelineEntryData[] = []
 
     const status = response.status as StatusCode
 
@@ -458,6 +458,7 @@ const Status = () => {
                 label={t('esrf.label')}
                 onChange={handleOnESRFChange}
                 value={formikValues.esrf}
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 errorMessage={formikErrors.esrf && t(formikErrors.esrf as any)}
                 textRequired={t('common:required')}
                 required
@@ -480,6 +481,7 @@ const Status = () => {
                 onChange={handleFormikChange}
                 value={formikValues.givenName}
                 errorMessage={
+                  // eslint-disable-next-line @typescript-eslint/no-explicit-any
                   formikErrors.givenName && t(formikErrors.givenName as any)
                 }
                 textRequired={t('common:required')}
@@ -504,6 +506,7 @@ const Status = () => {
                 onChange={handleFormikChange}
                 value={formikValues.surname}
                 errorMessage={
+                  // eslint-disable-next-line @typescript-eslint/no-explicit-any
                   formikErrors.surname && t(formikErrors.surname as any)
                 }
                 textRequired={t('common:required')}
@@ -520,6 +523,7 @@ const Status = () => {
                 onChange={handleOnDateOfBirthChange}
                 value={formikValues.dateOfBirth}
                 errorMessage={
+                  // eslint-disable-next-line @typescript-eslint/no-explicit-any
                   formikErrors.dateOfBirth && t(formikErrors.dateOfBirth as any)
                 }
                 textRequired={t('common:required')}

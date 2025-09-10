@@ -1,6 +1,11 @@
 // @see: https://react.i18next.com/misc/testing
+import { ComponentType } from 'react'
 
-export const appWithTranslation = (wrappedComponent: any) => wrappedComponent
+import { AppProps } from 'next/app'
+
+export const appWithTranslation = <Props extends AppProps>(
+  WrappedComponent: ComponentType<Props>,
+) => WrappedComponent
 
 export const Trans = ({ i18nKey }: { i18nKey: string }) => i18nKey
 

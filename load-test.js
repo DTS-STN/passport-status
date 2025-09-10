@@ -13,10 +13,8 @@ export const options = {
 }
 
 export default function main() {
-  let response
-
   group('Next_Template', function () {
-    response = http.get('https://passport-status-main.dev.dts-stn.com/', {
+    http.get('https://passport-status-main.dev.dts-stn.com/', {
       headers: {
         'upgrade-insecure-requests': '1',
         'sec-ch-ua':

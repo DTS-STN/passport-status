@@ -26,9 +26,12 @@ export const getErrorSummaryItems = <T extends FormikValues>(
   formErrors: FormikErrors<T>,
   t: TFunction<Namespace, undefined>,
 ) => {
-  return Object.keys(formErrors)
-    .filter((key) => !!formErrors[key])
-    .map((key) => getErrorSummaryItem(key, t(formErrors[key] as any)))
+  return (
+    Object.keys(formErrors)
+      .filter((key) => !!formErrors[key])
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      .map((key) => getErrorSummaryItem(key, t(formErrors[key] as any)))
+  )
 }
 
 export const goToErrorSummary = (errorSummaryId: string) => {
@@ -47,7 +50,7 @@ const ErrorSummary = ({ id, errors, summary }: ErrorSummaryProps) => {
   return (
     <section
       id={id}
-      className="mb-5 border-l-6 border-accent-error p-5"
+      className="border-accent-error mb-5 border-l-6 p-5"
       tabIndex={-1}
     >
       <h2 className="mb-3 text-2xl font-bold">{summary}</h2>

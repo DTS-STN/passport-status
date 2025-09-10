@@ -186,7 +186,7 @@ const DateSelectField = ({
             {helpMessage}
           </div>
         )}
-        <div className="flex flex-col space-y-2 sm:flex-row sm:space-x-2 sm:space-y-0">
+        <div className="flex flex-col space-y-2 sm:flex-row sm:space-y-0 sm:space-x-2">
           <DateSelect
             ariaDescribedby={getAriaDescribedby()}
             dateSelectLabelId={dateSelectLabelId}
