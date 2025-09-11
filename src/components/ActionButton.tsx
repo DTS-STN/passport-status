@@ -35,9 +35,9 @@ const ActionButton = ({
   id,
   onClick,
   size,
-  style,
+  style = 'default',
   text,
-  type,
+  type = 'button',
 }: ActionButtonProps) => {
   const baseClasses =
     'align-middle border font-display inline-flex items-center justify-center shadow-xs disabled:cursor-not-allowed disabled:opacity-70 disabled:pointer-events-none disabled:shadow-none focus:ring-2 focus:ring-black focus:ring-offset-2'
@@ -56,11 +56,6 @@ const ActionButton = ({
       {text}
     </button>
   )
-}
-
-ActionButton.defaultProps = {
-  type: 'button',
-  style: 'default',
 }
 
 export default ActionButton
