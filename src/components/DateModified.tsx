@@ -9,7 +9,10 @@ export interface DateModifiedProps {
 /**
  * Contains build time stamp
  */
-const DateModified = ({ id, text }: DateModifiedProps) => {
+const DateModified = ({
+  id = 'date-modified',
+  text = 'Date Modified: ',
+}: DateModifiedProps) => {
   return (
     <dl id={id} className="container mx-auto px-4 py-8">
       <dt className="inline">{text}</dt>
@@ -18,11 +21,6 @@ const DateModified = ({ id, text }: DateModifiedProps) => {
       </dd>
     </dl>
   )
-}
-
-DateModified.defaultProps = {
-  id: 'date-modified',
-  text: 'Date Modified: ',
 }
 
 export default DateModified

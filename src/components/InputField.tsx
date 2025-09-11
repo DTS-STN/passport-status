@@ -28,7 +28,7 @@ const InputField = ({
   onChange,
   required,
   textRequired,
-  type,
+  type = 'text',
   value,
   extraContent,
 }: InputFieldProps) => {
@@ -92,10 +92,6 @@ const InputField = ({
       )}
     </div>
   )
-}
-
-InputField.defaultProps = {
-  type: 'text',
 }
 
 export default InputField
