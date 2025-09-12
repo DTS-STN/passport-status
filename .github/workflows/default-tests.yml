@@ -1,6 +1,6 @@
 name: Default Testing
 
-on: 
+on:
   pull_request:
     branches: [main]
   push:
@@ -11,26 +11,26 @@ jobs:
     name: Lint Check
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout 🔔
-      uses: actions/checkout@v4
+      - name: Checkout 🔔
+        uses: actions/checkout@v4
 
-    - name: Setup Node
-      uses: actions/setup-node@v5
-      with:
-        node-version: 18.x
-      
-    - name: Install
-      run: npm install
-      env:
-        CI: true
+      - name: Setup Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: 22.x
 
-    - name: Linting
-      run: npm run lint
+      - name: Install
+        run: npm install
+        env:
+          CI: true
 
-    - name: TypeScript Validation
-      run: npm run tsc:validate
+      - name: Linting
+        run: npm run lint
 
-  unit:  
+      - name: TypeScript Validation
+        run: npm run tsc:validate
+
+  unit:
     name: Jest Unit Test
     runs-on: ubuntu-latest
     steps:
@@ -40,7 +40,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v5
         with:
-          node-version: 18.x
+          node-version: 22.x
 
       - name: Install
         run: npm install
@@ -68,7 +68,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v5
         with:
-          node-version: 18.x
+          node-version: 22.x
 
       - name: Install
         run: npm install
@@ -113,19 +113,19 @@ jobs:
       fail-fast: false
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-    - name: Initialize CodeQL
-      uses: github/codeql-action/init@v3
-      with:
-        languages: 'javascript'
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v3
+        with:
+          languages: 'javascript'
 
-    - name: Autobuild
-      uses: github/codeql-action/autobuild@v3
+      - name: Autobuild
+        uses: github/codeql-action/autobuild@v3
 
-    - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@v3
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v3
 
   deploy_test_results:
     name: Get and Deploy Artifacts
@@ -134,16 +134,16 @@ jobs:
     runs-on: ubuntu-latest
     #dependabot doesn't get write access
     steps:
-    - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-    - uses: actions/download-artifact@v5
-      with:
-        path: test_results
-      env:
-        CI: true
+      - uses: actions/download-artifact@v5
+        with:
+          path: test_results
+        env:
+          CI: true
 
-    - name: Deploy Report 🚀
-      uses: JamesIves/github-pages-deploy-action@v4
-      with:
-        target-folder: ${{ github.ref }}
-        folder: test_results
+      - name: Deploy Report 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          target-folder: ${{ github.ref }}
+          folder: test_results
