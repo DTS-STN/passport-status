@@ -143,21 +143,47 @@ describe('dateOfBirth field validation', () => {
   })
 })
 
-const pastDate = faker.date.past()
-const receivedDate = pastDate.toISOString().split('T')[0]
+//
+const receivedDate = '2025-01-23'
+const reviewedDate = '2025-01-28'
+const printedDate = '2025-02-02'
+const completedDate = '2025-03-04'
 
 const statusCodes: ReadonlyArray<CheckStatusApiResponse> = [
-  {
-    status: StatusCode.APPLICATION_NO_LONGER_MEETS_CRITERIA,
-    receivedDate: receivedDate,
-    deliveryMethod: DeliveryMethodCode.MAIL,
-    serviceLevel: ServiceLevelCode.TWENTY_DAYS,
-  },
   {
     status: StatusCode.FILE_BEING_PROCESSED,
     receivedDate: receivedDate,
     deliveryMethod: DeliveryMethodCode.MAIL,
     serviceLevel: ServiceLevelCode.TWENTY_DAYS,
+  },
+  {
+    status: StatusCode.PASSPORT_ISSUED_READY_FOR_PICKUP,
+    receivedDate: receivedDate,
+    reviewedDate: reviewedDate,
+    printedDate: printedDate,
+    completedDate: completedDate,
+    deliveryMethod: DeliveryMethodCode.MAIL,
+    serviceLevel: ServiceLevelCode.TWENTY_DAYS,
+  },
+  {
+    status: StatusCode.PASSPORT_ISSUED_SHIPPING_CANADA_POST,
+    receivedDate: receivedDate,
+    reviewedDate: reviewedDate,
+    printedDate: printedDate,
+    completedDate: completedDate,
+    deliveryMethod: DeliveryMethodCode.MAIL,
+    serviceLevel: ServiceLevelCode.TWENTY_DAYS,
+    manifestNumber: faker.helpers.replaceSymbols('################'),
+  },
+  {
+    status: StatusCode.PASSPORT_ISSUED_SHIPPING_FEDEX,
+    receivedDate: receivedDate,
+    reviewedDate: reviewedDate,
+    printedDate: printedDate,
+    completedDate: completedDate,
+    deliveryMethod: DeliveryMethodCode.MAIL,
+    serviceLevel: ServiceLevelCode.TWENTY_DAYS,
+    manifestNumber: faker.helpers.replaceSymbols('######################'),
   },
   {
     status: StatusCode.NOT_ACCEPTABLE_FOR_PROCESSING,
@@ -166,27 +192,20 @@ const statusCodes: ReadonlyArray<CheckStatusApiResponse> = [
     serviceLevel: ServiceLevelCode.TWENTY_DAYS,
   },
   {
-    status: StatusCode.PASSPORT_ISSUED_READY_FOR_PICKUP,
+    status: StatusCode.PASSPORT_IS_PRINTING,
     receivedDate: receivedDate,
+    reviewedDate: reviewedDate,
     deliveryMethod: DeliveryMethodCode.MAIL,
     serviceLevel: ServiceLevelCode.TWENTY_DAYS,
-  },
-  {
-    status: StatusCode.PASSPORT_ISSUED_SHIPPING_CANADA_POST,
-    receivedDate: receivedDate,
-    deliveryMethod: DeliveryMethodCode.MAIL,
-    serviceLevel: ServiceLevelCode.TWENTY_DAYS,
-    manifestNumber: faker.helpers.replaceSymbols('################'),
-  },
-  {
-    status: StatusCode.PASSPORT_ISSUED_SHIPPING_FEDEX,
-    receivedDate: receivedDate,
-    deliveryMethod: DeliveryMethodCode.MAIL,
-    serviceLevel: ServiceLevelCode.TWENTY_DAYS,
-    manifestNumber: faker.helpers.replaceSymbols('######################'),
   },
   {
     status: StatusCode.FILE_BEING_PROCESSED_OVERDUE,
+    receivedDate: receivedDate,
+    deliveryMethod: DeliveryMethodCode.MAIL,
+    serviceLevel: ServiceLevelCode.TWENTY_DAYS,
+  },
+  {
+    status: StatusCode.APPLICATION_NO_LONGER_MEETS_CRITERIA,
     receivedDate: receivedDate,
     deliveryMethod: DeliveryMethodCode.MAIL,
     serviceLevel: ServiceLevelCode.TWENTY_DAYS,
