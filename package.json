@@ -19,7 +19,7 @@
     "tsc:validate": "tsc --noEmit --incremental false"
   },
   "dependencies": {
-    "@tanstack/react-query": "5.87.4",
+    "@tanstack/react-query": "5.89.0",
     "cookies-next": "6.1.0",
     "date-fns": "4.1.0",
     "formik": "2.4.6",
@@ -34,7 +34,7 @@
     "react-focus-on": "3.10.0",
     "react-i18next": "15.7.3",
     "react-idle-timer": "5.7.2",
-    "sharp": "0.34.3",
+    "sharp": "0.34.4",
     "yup": "1.7.0"
   },
   "devDependencies": {
@@ -50,7 +50,7 @@
     "@types/jest": "30.0.0",
     "@types/jest-axe": "3.5.9",
     "@types/node": "22.10.1",
-    "@types/react": "19.1.12",
+    "@types/react": "19.1.13",
     "axe-core": "4.10.3",
     "babel-jest": "30.1.2",
     "cypress": "15.2.0",
@@ -72,19 +72,19 @@
     "jest-environment-jsdom": "30.1.2",
     "lint-staged": "16.1.6",
     "mocha": "11.7.2",
-    "mochawesome": "7.1.3",
+    "mochawesome": "7.1.4",
     "mochawesome-merge": "5.0.0",
-    "mochawesome-report-generator": "6.2.0",
+    "mochawesome-report-generator": "6.3.0",
     "node-mocks-http": "1.17.2",
     "pino-pretty": "13.1.1",
     "postcss": "8.5.6",
     "prettier": "3.6.2",
     "prettier-plugin-tailwindcss": "0.6.14",
-    "start-server-and-test": "2.1.0",
+    "start-server-and-test": "2.1.1",
     "tailwindcss": "4.1.13",
-    "ts-jest": "29.4.1",
+    "ts-jest": "29.4.2",
     "ts-node": "10.9.2",
     "typescript": "5.9.2",
-    "typescript-eslint": "8.43.0"
+    "typescript-eslint": "8.44.0"
   }
 }
