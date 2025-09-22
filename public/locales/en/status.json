@@ -86,6 +86,34 @@
       "print-update": "Once your passport has been printed, the status of your application will be updated accordingly."
     }
   },
+  "missing-information": {
+    "header": "We need more information",
+    "received-date": "We received your application on {{receivedDate}}. A passport employee is currently reviewing it, but we need more information to continue processing it.",
+    "received-contact": "<strong>We will contact you by telephone or by email.</strong> If we are unable to reach you, we will send you a letter by mail.",
+    "received-note": "<strong>Please note:</strong> our phone number may appear as blocked on your caller ID.",
+    "service-standards": {
+      "heading": "Our service standards",
+      "statement": "Our <Link>service standard</Link> is {{serviceLevel}} business days. However, missing information may delay your application.",
+      "statement-mail": "Our <Link>service standard</Link> is {{serviceLevel}} business days plus mailing time. However, missing information may delay your application."
+    },
+    "why-message": {
+      "heading": "Why you're seeing this message",
+      "description": "You're seeing this message because.",
+      "list": {
+        "item-1": "we need more information or documentation, or",
+        "item-2": "some details in your application don't match our records"
+      },
+      "conclusion": "We need this information to verify your identity and ensure that your application is processed correctly."
+    },
+    "hear-from-us": {
+      "heading": "If you don't hear from us",
+      "description": "If you haven't been contacted yet, please call the Passport Call Centre at <strong>1-800-567-6868</strong>. A representative can help you with your application."
+    },
+    "already-spoken": {
+      "heading": "If you've already spoken to us",
+      "description": "If you've already spoken to a passport employee and you're still seeing this message, don't worry. It may take a few days for this page to update."
+    }
+  },
   "no-record": {
     "can-review": "You can review the information you entered and try again.",
     "cannot-give-status": {

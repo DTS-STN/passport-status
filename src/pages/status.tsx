@@ -32,6 +32,7 @@ import InputField from '../components/InputField'
 import Layout from '../components/Layout'
 import Modal from '../components/Modal'
 import CheckStatusFileBeingProcessed from '../components/check-status-responses/CheckStatusFileBeingProcessed'
+import CheckStatusMissingInformation from '../components/check-status-responses/CheckStatusMissingInformation'
 import CheckStatusNoRecord from '../components/check-status-responses/CheckStatusNoRecord'
 import CheckStatusNotAcceptable from '../components/check-status-responses/CheckStatusNotAcceptable'
 import CheckStatusPrinting from '../components/check-status-responses/CheckStatusPrinting'
@@ -206,6 +207,8 @@ const Status = () => {
         return t('shipped-fedex.header')
       case StatusCode.NOT_ACCEPTABLE_FOR_PROCESSING:
         return t('not-acceptable.header')
+      case StatusCode.MISSING_INFORMATION:
+        return t('missing-information.header')
       default:
         return t('no-record.cannot-give-status.description')
     }
@@ -226,6 +229,7 @@ const Status = () => {
     const processingStatuses = [
       StatusCode.FILE_BEING_PROCESSED,
       StatusCode.FILE_BEING_PROCESSED_OVERDUE,
+      StatusCode.MISSING_INFORMATION,
     ]
 
     const printingStatuses = [StatusCode.PASSPORT_IS_PRINTING]
@@ -390,6 +394,13 @@ const Status = () => {
         case StatusCode.NOT_ACCEPTABLE_FOR_PROCESSING:
           return (
             <CheckStatusNotAcceptable
+              checkAnotherHandler={handleCheckAnotherClick}
+            />
+          )
+        case StatusCode.MISSING_INFORMATION:
+          return (
+            <CheckStatusMissingInformation
+              displayData={displayData}
               checkAnotherHandler={handleCheckAnotherClick}
             />
           )
