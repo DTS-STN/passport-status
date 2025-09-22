@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">28.12% </span>
+                <span class="strong">27.55% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>27/96</span>
+                <span class='fraction'>27/98</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">12.82% </span>
+                <span class="strong">12.5% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>10/78</span>
+                <span class='fraction'>10/80</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">29.21% </span>
+                <span class="strong">28.57% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>26/89</span>
+                <span class='fraction'>26/91</span>
             </div>
         
             
@@ -643,7 +643,19 @@
 <a name='L578'></a><a href='#L578'>578</a>
 <a name='L579'></a><a href='#L579'>579</a>
 <a name='L580'></a><a href='#L580'>580</a>
-<a name='L581'></a><a href='#L581'>581</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L581'></a><a href='#L581'>581</a>
+<a name='L582'></a><a href='#L582'>582</a>
+<a name='L583'></a><a href='#L583'>583</a>
+<a name='L584'></a><a href='#L584'>584</a>
+<a name='L585'></a><a href='#L585'>585</a>
+<a name='L586'></a><a href='#L586'>586</a>
+<a name='L587'></a><a href='#L587'>587</a>
+<a name='L588'></a><a href='#L588'>588</a>
+<a name='L589'></a><a href='#L589'>589</a>
+<a name='L590'></a><a href='#L590'>590</a>
+<a name='L591'></a><a href='#L591'>591</a>
+<a name='L592'></a><a href='#L592'>592</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -854,6 +866,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
@@ -873,6 +887,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -1034,6 +1049,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1257,6 +1279,7 @@ import InputField from '../components/InputField'
 import Layout from '../components/Layout'
 import Modal from '../components/Modal'
 import CheckStatusFileBeingProcessed from '../components/check-status-responses/CheckStatusFileBeingProcessed'
+import CheckStatusMissingInformation from '../components/check-status-responses/CheckStatusMissingInformation'
 import CheckStatusNoRecord from '../components/check-status-responses/CheckStatusNoRecord'
 import CheckStatusNotAcceptable from '../components/check-status-responses/CheckStatusNotAcceptable'
 import CheckStatusPrinting from '../components/check-status-responses/CheckStatusPrinting'
@@ -1431,6 +1454,8 @@ const Status = () =&gt; {
 <span class="cstat-no" title="statement not covered" >        return t('shipped-fedex.header')</span>
       case StatusCode.NOT_ACCEPTABLE_FOR_PROCESSING:
 <span class="cstat-no" title="statement not covered" >        return t('not-acceptable.header')</span>
+      case StatusCode.MISSING_INFORMATION:
+<span class="cstat-no" title="statement not covered" >        return t('missing-information.header')</span>
       default:
 <span class="cstat-no" title="statement not covered" >        return t('no-record.cannot-give-status.description')</span>
     }
@@ -1451,6 +1476,7 @@ const Status = () =&gt; {
     const processingStatuses = <span class="cstat-no" title="statement not covered" >[</span>
       StatusCode.FILE_BEING_PROCESSED,
       StatusCode.FILE_BEING_PROCESSED_OVERDUE,
+      StatusCode.MISSING_INFORMATION,
     ]
 &nbsp;
     const printingStatuses = <span class="cstat-no" title="statement not covered" >[StatusCode.PASSPORT_IS_PRINTING]</span>
@@ -1615,6 +1641,13 @@ const Status = () =&gt; {
         case StatusCode.NOT_ACCEPTABLE_FOR_PROCESSING:
 <span class="cstat-no" title="statement not covered" >          return (</span>
             &lt;CheckStatusNotAcceptable
+              checkAnotherHandler={handleCheckAnotherClick}
+            /&gt;
+          )
+        case StatusCode.MISSING_INFORMATION:
+<span class="cstat-no" title="statement not covered" >          return (</span>
+            &lt;CheckStatusMissingInformation
+              displayData={displayData}
               checkAnotherHandler={handleCheckAnotherClick}
             /&gt;
           )
@@ -1810,7 +1843,7 @@ export default Status
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-09-17T17:22:37.680Z
+                at 2025-09-22T16:30:32.950Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
