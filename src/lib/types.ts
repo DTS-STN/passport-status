@@ -136,6 +136,7 @@ export enum StatusCode {
   NOT_ACCEPTABLE_FOR_PROCESSING = '5',
   PASSPORT_IS_PRINTING = '6',
   FILE_BEING_PROCESSED_OVERDUE = '7',
+  MISSING_INFORMATION = '8',
 }
 
 export type TimelineEntryStatus = 'done' | 'current' | 'future'

@@ -86,6 +86,34 @@
       "print-update": "Une fois votre passeport imprimé, l'état de votre demande sera mis à jour en conséquence."
     }
   },
+  "missing-information": {
+    "header": "Nous avons besoin de plus d'informations",
+    "received-date": "Nous avons reçu votre demande le {{receivedDate}}. Un employé des passeports est en train de l'examiner, mais nous avons besoin de plus d'informations pour continuer à la traiter.",
+    "received-contact": "<strong>Nous vous contacterons par téléphone ou par courriel.</strong> Si nous ne pouvons pas vous joindre, nous vous enverrons une lettre par la poste.",
+    "received-note": "<strong>Veuillez noter :</strong> notre numéro de téléphone peut apparaître comme bloqué sur votre afficheur.",
+    "service-standards": {
+      "heading": "Nos normes de service",
+      "statement": "Notre <Link>norme de service</Link> est {{serviceLevel}} jours ouvrables. Cependant, des informations manquantes peuvent retarder votre demande.",
+      "statement-mail": "Notre <Link>norme de service</Link> est {{serviceLevel}} jours ouvrables, plus le délai de livraison. Cependant, des informations manquantes peuvent retarder votre demande."
+    },
+    "why-message": {
+      "heading": "Pourquoi voyez-vous ce message",
+      "description": "Vous voyez ce message parce que :",
+      "list": {
+        "item-1": "nous avons besoin de plus d'informations ou de documents, ou",
+        "item-2": "certains détails dans votre demande ne correspondent pas à nos dossiers"
+      },
+      "conclusion": "Dans la plupart des cas, il s'agit d'un problème simple qui peut être résolu rapidement."
+    },
+    "hear-from-us": {
+      "heading": "Si vous ne recevez pas de nos nouvelles",
+      "description": "Si vous n'avez pas encore été contacté, veuillez appeler le Centre d'appels des passeports au <strong>1-800-567-6868</strong>. Un représentant pourra vous aider avec votre demande."
+    },
+    "already-spoken": {
+      "heading": "Si vous nous avez déjà parlé",
+      "description": "Si vous avez déjà parlé à un employé du service des passeports et que vous voyez toujours ce message, ne vous inquiétez pas. La mise à jour de cette page peut prendre quelques jours."
+    }
+  },
   "no-record": {
     "can-review": "Vous pouvez revérifier vos renseignements et essayer à nouveau.",
     "cannot-give-status": {

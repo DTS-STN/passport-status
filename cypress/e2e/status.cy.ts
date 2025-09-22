@@ -205,6 +205,12 @@ const statusCodes: ReadonlyArray<CheckStatusApiResponse> = [
     serviceLevel: ServiceLevelCode.TWENTY_DAYS,
   },
   {
+    status: StatusCode.MISSING_INFORMATION,
+    receivedDate: receivedDate,
+    deliveryMethod: DeliveryMethodCode.MAIL,
+    serviceLevel: ServiceLevelCode.TWENTY_DAYS,
+  },
+  {
     status: StatusCode.APPLICATION_NO_LONGER_MEETS_CRITERIA,
     receivedDate: receivedDate,
     deliveryMethod: DeliveryMethodCode.MAIL,
@@ -214,6 +220,8 @@ const statusCodes: ReadonlyArray<CheckStatusApiResponse> = [
 statusCodes.forEach((response) => {
   describe(`responses- loads result - '${response.status}'`, () => {
     beforeEach(() => {
+      cy.get('[data-cy=toggle-language-link]').click()
+      cy.wait(750)
       const esrf = faker.helpers.replaceSymbols('?#######')
       const givenName = faker.person.firstName()
       const surname = faker.person.lastName()
@@ -252,6 +260,10 @@ statusCodes.forEach((response) => {
 
     it(`loads result for status '${response.status}'`, () => {
       cy.get('#response-result').should('exist')
+
+      cy.screenshot(`results-status-${response.status}`, {
+        capture: 'fullPage',
+      })
     })
 
     it(`loads result for status '${response.status}' has no detectable a11y violations`, () => {
