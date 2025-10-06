@@ -112,13 +112,7 @@
 <a name='L47'></a><a href='#L47'>47</a>
 <a name='L48'></a><a href='#L48'>48</a>
 <a name='L49'></a><a href='#L49'>49</a>
-<a name='L50'></a><a href='#L50'>50</a>
-<a name='L51'></a><a href='#L51'>51</a>
-<a name='L52'></a><a href='#L52'>52</a>
-<a name='L53'></a><a href='#L53'>53</a>
-<a name='L54'></a><a href='#L54'>54</a>
-<a name='L55'></a><a href='#L55'>55</a>
-<a name='L56'></a><a href='#L56'>56</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L50'></a><a href='#L50'>50</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -135,9 +129,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -164,24 +155,21 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { FlatNamespace } from 'i18next'
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { FlatNamespace } from 'i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 &nbsp;
-import nextI18nextConfig from '../../../next-i18next.config'
+import nextI18nextConfig from '../../../next-i18next.config';
 &nbsp;
 /**
  * The default namespaces for translations.
  */
-export const defaultNamespaces: Array&lt;FlatNamespace&gt; = ['common']
+export const defaultNamespaces: Array&lt;FlatNamespace&gt; = ['common'];
 &nbsp;
 /**
  * Retrieves namespaces based on the provided requirements.
@@ -190,24 +178,21 @@ export const defaultNamespaces: Array&lt;FlatNamespace&gt; = ['common']
  * @returns The retrieved namespaces.
  */
 export const getNamespaces = <span class="fstat-no" title="function not covered" >(</span>
-  namespacesRequired:
-    | Readonly&lt;FlatNamespace&gt;
-    | ReadonlyArray&lt;FlatNamespace&gt;
-    | undefined = <span class="branch-0 cbranch-no" title="branch not covered" >undefined,</span>
+  namespacesRequired: Readonly&lt;FlatNamespace&gt; | ReadonlyArray&lt;FlatNamespace&gt; | undefined = <span class="branch-0 cbranch-no" title="branch not covered" >undefined,</span>
 ) =&gt; {
   // default with namespaces to always needed
-  const namespaces: Array&lt;FlatNamespace&gt; = <span class="cstat-no" title="statement not covered" >defaultNamespaces</span>
+  const namespaces: Array&lt;FlatNamespace&gt; = <span class="cstat-no" title="statement not covered" >defaultNamespaces;</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  if (!namespacesRequired) {</span>
-<span class="cstat-no" title="statement not covered" >    return namespaces</span>
+<span class="cstat-no" title="statement not covered" >    return namespaces;</span>
   }
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  if (typeof namespacesRequired === 'string') {</span>
-<span class="cstat-no" title="statement not covered" >    return [...new Set([...namespaces, namespacesRequired])]</span>
+<span class="cstat-no" title="statement not covered" >    return [...new Set([...namespaces, namespacesRequired])];</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return [...new Set([...namespaces, ...namespacesRequired])]</span>
-}
+<span class="cstat-no" title="statement not covered" >  return [...new Set([...namespaces, ...namespacesRequired])];</span>
+};
 &nbsp;
 /**
  * A wrapper function for server-side translations using next-i18next.
@@ -217,17 +202,14 @@ export const getNamespaces = <span class="fstat-no" title="function not covered"
  */
 export const pageWithServerSideTranslations = <span class="fstat-no" title="function not covered" >as</span>ync (
   locale?: string,
-  namespacesRequired:
-    | FlatNamespace
-    | Array&lt;FlatNamespace&gt;
-    | undefined = <span class="branch-0 cbranch-no" title="branch not covered" >undefined,</span>
+  namespacesRequired: FlatNamespace | Array&lt;FlatNamespace&gt; | undefined = <span class="branch-0 cbranch-no" title="branch not covered" >undefined,</span>
 ) =&gt; {
 <span class="cstat-no" title="statement not covered" >  return serverSideTranslations(</span>
     locale ?? nextI18nextConfig.i18n.defaultLocale,
     getNamespaces(namespacesRequired),
     nextI18nextConfig,
-  )
-}
+  );
+};
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -235,7 +217,7 @@ export const pageWithServerSideTranslations = <span class="fstat-no" title="func
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-10-06T15:21:52.346Z
+                at 2025-10-06T16:06:42.380Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

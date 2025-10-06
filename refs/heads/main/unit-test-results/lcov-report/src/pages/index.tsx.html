@@ -155,31 +155,7 @@
 <a name='L90'></a><a href='#L90'>90</a>
 <a name='L91'></a><a href='#L91'>91</a>
 <a name='L92'></a><a href='#L92'>92</a>
-<a name='L93'></a><a href='#L93'>93</a>
-<a name='L94'></a><a href='#L94'>94</a>
-<a name='L95'></a><a href='#L95'>95</a>
-<a name='L96'></a><a href='#L96'>96</a>
-<a name='L97'></a><a href='#L97'>97</a>
-<a name='L98'></a><a href='#L98'>98</a>
-<a name='L99'></a><a href='#L99'>99</a>
-<a name='L100'></a><a href='#L100'>100</a>
-<a name='L101'></a><a href='#L101'>101</a>
-<a name='L102'></a><a href='#L102'>102</a>
-<a name='L103'></a><a href='#L103'>103</a>
-<a name='L104'></a><a href='#L104'>104</a>
-<a name='L105'></a><a href='#L105'>105</a>
-<a name='L106'></a><a href='#L106'>106</a>
-<a name='L107'></a><a href='#L107'>107</a>
-<a name='L108'></a><a href='#L108'>108</a>
-<a name='L109'></a><a href='#L109'>109</a>
-<a name='L110'></a><a href='#L110'>110</a>
-<a name='L111'></a><a href='#L111'>111</a>
-<a name='L112'></a><a href='#L112'>112</a>
-<a name='L113'></a><a href='#L113'>113</a>
-<a name='L114'></a><a href='#L114'>114</a>
-<a name='L115'></a><a href='#L115'>115</a>
-<a name='L116'></a><a href='#L116'>116</a>
-<a name='L117'></a><a href='#L117'>117</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L93'></a><a href='#L93'>93</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -266,41 +242,17 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { GetServerSideProps } from 'next'
-import { NextSeo } from 'next-seo'
-import Image from 'next/image'
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { GetServerSideProps } from 'next';
+import { NextSeo } from 'next-seo';
+import Image from 'next/image';
 &nbsp;
-import LinkButton from '../components/LinkButton'
-import { getDCTermsTitle } from '../lib/utils/seo-utils'
+import LinkButton from '../components/LinkButton';
+import { getDCTermsTitle } from '../lib/utils/seo-utils';
 &nbsp;
 const Index = () =&gt; {
   return (
@@ -309,20 +261,14 @@ const Index = () =&gt; {
         title="Passport Application Status Checker | Vérificateur de l'état d'une demande de passeport"
         titleTemplate="%s - Canada.ca"
         additionalMetaTags={[
-          getDCTermsTitle(
-            "Passport Application Status Checker - Vérificateur de l'état d'une demande de passeport",
-          ),
+          getDCTermsTitle("Passport Application Status Checker - Vérificateur de l'état d'une demande de passeport"),
         ]}
       /&gt;
-      &lt;main
-        role="main"
-        className="bg-splash-page flex h-screen bg-cover bg-center"
-      &gt;
+      &lt;main role="main" className="bg-splash-page flex h-screen bg-cover bg-center"&gt;
         &lt;div className="bg-gray-lighter m-auto w-[300px] md:w-[400px] lg:w-[500px]"&gt;
           &lt;div className="p-8"&gt;
             &lt;h1 id="main-header" className="sr-only" tabIndex={-1}&gt;
-              Passport Application Status Checker | Vérificateur de l&amp;#39;état
-              d&amp;#39;une demande de passeport
+              Passport Application Status Checker | Vérificateur de l&amp;#39;état d&amp;#39;une demande de passeport
             &lt;/h1&gt;
             &lt;div className="w-11/12 lg:w-8/12"&gt;
               &lt;Image
@@ -342,25 +288,13 @@ const Index = () =&gt; {
             &lt;div className="mt-9 mb-2 flex justify-center gap-8"&gt;
               &lt;section className="w-36" lang="en"&gt;
                 &lt;h2 className="sr-only"&gt;Government of Canada&lt;/h2&gt;
-                &lt;LinkButton
-                  href="/expectations"
-                  id="english-button"
-                  style="primary"
-                  fullWidth
-                  locale="en"
-                &gt;
+                &lt;LinkButton href="/expectations" id="english-button" style="primary" fullWidth locale="en"&gt;
                   English
                 &lt;/LinkButton&gt;
               &lt;/section&gt;
               &lt;section className="w-36" lang="fr"&gt;
                 &lt;h2 className="sr-only"&gt;Gouvernement du Canada&lt;/h2&gt;
-                &lt;LinkButton
-                  href="/expectations"
-                  id="french-button"
-                  style="primary"
-                  fullWidth
-                  locale="fr"
-                &gt;
+                &lt;LinkButton href="/expectations" id="french-button" style="primary" fullWidth locale="fr"&gt;
                   Français
                 &lt;/LinkButton&gt;
               &lt;/section&gt;
@@ -387,13 +321,7 @@ const Index = () =&gt; {
               &lt;/a&gt;
             &lt;/div&gt;
             &lt;div className="w-5/12 md:w-4/12"&gt;
-              &lt;Image
-                alt="Symbol of the Government of Canada"
-                src="/wmms-blk.svg"
-                width={300}
-                height={71}
-                priority
-              /&gt;
+              &lt;Image alt="Symbol of the Government of Canada" src="/wmms-blk.svg" width={300} height={71} priority /&gt;
               &lt;span className="sr-only"&gt;
                 {' '}
                 / &lt;span lang="fr"&gt;Symbole du gouvernement du Canada&lt;/span&gt;
@@ -403,14 +331,14 @@ const Index = () =&gt; {
         &lt;/div&gt;
       &lt;/main&gt;
     &lt;/&gt;
-  )
-}
+  );
+};
 &nbsp;
 export const getServerSideProps: GetServerSideProps = <span class="fstat-no" title="function not covered" >as</span>ync () =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
   props: {},
-})
+});
 &nbsp;
-export default Index
+export default Index;
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -418,7 +346,7 @@ export default Index
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-10-06T15:21:52.346Z
+                at 2025-10-06T16:06:42.380Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

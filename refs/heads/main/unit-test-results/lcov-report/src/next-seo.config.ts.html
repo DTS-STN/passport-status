@@ -236,15 +236,7 @@
 <a name='L171'></a><a href='#L171'>171</a>
 <a name='L172'></a><a href='#L172'>172</a>
 <a name='L173'></a><a href='#L173'>173</a>
-<a name='L174'></a><a href='#L174'>174</a>
-<a name='L175'></a><a href='#L175'>175</a>
-<a name='L176'></a><a href='#L176'>176</a>
-<a name='L177'></a><a href='#L177'>177</a>
-<a name='L178'></a><a href='#L178'>178</a>
-<a name='L179'></a><a href='#L179'>179</a>
-<a name='L180'></a><a href='#L180'>180</a>
-<a name='L181'></a><a href='#L181'>181</a>
-<a name='L182'></a><a href='#L182'>182</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L174'></a><a href='#L174'>174</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -273,13 +265,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -348,8 +335,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -385,7 +370,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -425,22 +409,22 @@
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { DefaultSeoProps } from 'next-seo'
-import { OpenGraphMedia } from 'next-seo/lib/types'
-import { Router } from 'next/router'
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { DefaultSeoProps } from 'next-seo';
+import { OpenGraphMedia } from 'next-seo/lib/types';
+import { Router } from 'next/router';
 &nbsp;
-export type NextSEORouter = Pick&lt;Router, 'asPath' | 'locale'&gt;
+export type NextSEORouter = Pick&lt;Router, 'asPath' | 'locale'&gt;;
 &nbsp;
 export interface LanguageAlternate {
-  hrefLang: string
-  href: string
+  hrefLang: string;
+  href: string;
 }
 &nbsp;
 export const getLanguageAlternates = (
   appBaseUri: string,
   router: NextSEORouter,
 ): ReadonlyArray&lt;LanguageAlternate&gt; | undefined =&gt; {
-  if (!appBaseUri) return
+  if (!appBaseUri) return;
   return [
     {
       hrefLang: 'en',
@@ -450,31 +434,25 @@ export const getLanguageAlternates = (
       hrefLang: 'fr',
       href: `${appBaseUri}/fr${router.asPath}`,
     },
-  ]
-}
+  ];
+};
 &nbsp;
-export const getOpenGraphImages = (
-  appBaseUri: string,
-): ReadonlyArray&lt;OpenGraphMedia&gt; | undefined =&gt; {
-  if (!appBaseUri) return
+export const getOpenGraphImages = (appBaseUri: string): ReadonlyArray&lt;OpenGraphMedia&gt; | undefined =&gt; {
+  if (!appBaseUri) return;
   return [
     {
       url: `${appBaseUri}/ogp.jpg`,
       width: 2048,
       height: 1152,
     },
-  ]
-}
+  ];
+};
 &nbsp;
-export type GetNextSEOConfig = (
-  appBaseUri: string,
-  router: NextSEORouter,
-) =&gt; DefaultSeoProps
+export type GetNextSEOConfig = (appBaseUri: string, router: NextSEORouter) =&gt; DefaultSeoProps;
 &nbsp;
 export const getDefaultConfig: GetNextSEOConfig = (appBaseUri, router) =&gt; ({
   titleTemplate: '%s - Canada.ca',
-  defaultTitle:
-    "Passport Application Status Checker | Vérificateur de l'état d'une demande de passeport - Canada.ca",
+  defaultTitle: "Passport Application Status Checker | Vérificateur de l'état d'une demande de passeport - Canada.ca",
   additionalMetaTags: [
     {
       name: 'author',
@@ -521,15 +499,14 @@ export const getDefaultConfig: GetNextSEOConfig = (appBaseUri, router) =&gt; ({
   openGraph: {
     images: getOpenGraphImages(appBaseUri),
     locale: 'en_CA',
-    siteName:
-      "Passport Application Status Checker | Vérificateur de l'état d'une demande de passeport - Canada.ca",
+    siteName: "Passport Application Status Checker | Vérificateur de l'état d'une demande de passeport - Canada.ca",
     type: 'website',
   },
   twitter: {
     site: '@CitImmCanada',
     cardType: 'summary_large_image',
   },
-})
+});
 &nbsp;
 export const getEnglishConfig: GetNextSEOConfig = (appBaseUri, router) =&gt; ({
   titleTemplate: '%s - Passport Application Status Checker - Canada.ca',
@@ -563,11 +540,10 @@ export const getEnglishConfig: GetNextSEOConfig = (appBaseUri, router) =&gt; ({
     site: '@CitImmCanada',
     cardType: 'summary_large_image',
   },
-})
+});
 &nbsp;
 export const getFrenchConfig: GetNextSEOConfig = (appBaseUri, router) =&gt; ({
-  titleTemplate:
-    "%s - Vérificateur de l'état d'une demande de passeport - Canada.ca",
+  titleTemplate: "%s - Vérificateur de l'état d'une demande de passeport - Canada.ca",
   defaultTitle: "Vérificateur de l'état d'une demande de passeport - Canada.ca",
   additionalMetaTags: [
     {
@@ -598,14 +574,14 @@ export const getFrenchConfig: GetNextSEOConfig = (appBaseUri, router) =&gt; ({
     site: '@citimmcanfr',
     cardType: 'summary_large_image',
   },
-})
+});
 &nbsp;
 export const getNextSEOConfig: GetNextSEOConfig = (appBaseUri, router) =&gt; {
-  const { locale } = router
-  if (locale === 'en') return getEnglishConfig(appBaseUri, router)
-  if (locale === 'fr') return getFrenchConfig(appBaseUri, router)
-  return getDefaultConfig(appBaseUri, router)
-}
+  const { locale } = router;
+  if (locale === 'en') return getEnglishConfig(appBaseUri, router);
+  if (locale === 'fr') return getFrenchConfig(appBaseUri, router);
+  return getDefaultConfig(appBaseUri, router);
+};
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -613,7 +589,7 @@ export const getNextSEOConfig: GetNextSEOConfig = (appBaseUri, router) =&gt; {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-10-06T15:21:52.346Z
+                at 2025-10-06T16:06:42.380Z
             </div>
         <script src="../prettify.js"></script>
         <script>

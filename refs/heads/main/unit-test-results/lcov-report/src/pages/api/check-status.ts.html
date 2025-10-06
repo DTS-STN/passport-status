@@ -143,37 +143,13 @@
 <a name='L78'></a><a href='#L78'>78</a>
 <a name='L79'></a><a href='#L79'>79</a>
 <a name='L80'></a><a href='#L80'>80</a>
-<a name='L81'></a><a href='#L81'>81</a>
-<a name='L82'></a><a href='#L82'>82</a>
-<a name='L83'></a><a href='#L83'>83</a>
-<a name='L84'></a><a href='#L84'>84</a>
-<a name='L85'></a><a href='#L85'>85</a>
-<a name='L86'></a><a href='#L86'>86</a>
-<a name='L87'></a><a href='#L87'>87</a>
-<a name='L88'></a><a href='#L88'>88</a>
-<a name='L89'></a><a href='#L89'>89</a>
-<a name='L90'></a><a href='#L90'>90</a>
-<a name='L91'></a><a href='#L91'>91</a>
-<a name='L92'></a><a href='#L92'>92</a>
-<a name='L93'></a><a href='#L93'>93</a>
-<a name='L94'></a><a href='#L94'>94</a>
-<a name='L95'></a><a href='#L95'>95</a>
-<a name='L96'></a><a href='#L96'>96</a>
-<a name='L97'></a><a href='#L97'>97</a>
-<a name='L98'></a><a href='#L98'>98</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L81'></a><a href='#L81'>81</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
@@ -210,11 +186,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
@@ -235,20 +207,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -257,41 +223,34 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { NextApiRequest, NextApiResponse } from 'next'
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { NextApiRequest, NextApiResponse } from 'next';
 &nbsp;
-import { mapToCheckStatusApiResponse } from '../../lib/mappers/checkStatusApiResponseMapper'
-import {
-  CheckStatusApiRequestQuery,
-  CheckStatusApiResponse,
-  PassportStatusesSearchResult,
-} from '../../lib/types'
-import { getLogger } from '../../logging/log-util'
+import { mapToCheckStatusApiResponse } from '../../lib/mappers/checkStatusApiResponseMapper';
+import { CheckStatusApiRequestQuery, CheckStatusApiResponse, PassportStatusesSearchResult } from '../../lib/types';
+import { getLogger } from '../../logging/log-util';
 &nbsp;
-const logger = getLogger('check-status')
+const logger = getLogger('check-status');
 &nbsp;
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse&lt;CheckStatusApiResponse | string&gt;,
-) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse&lt;CheckStatusApiResponse | string&gt;) {
   if (req.method !== 'GET') {
-    logger.debug(`error 405: Invalid request method ${req.method}`)
-    res.status(405).send(`Invalid request method ${req.method}`)
-    return
+    logger.debug(`error 405: Invalid request method ${req.method}`);
+    res.status(405).send(`Invalid request method ${req.method}`);
+    return;
   }
 &nbsp;
-  const { searchParams } = new URL(req.url ?? <span class="branch-1 cbranch-no" title="branch not covered" >'',</span> `http://${req.headers.host}`)
+  const { searchParams } = new URL(req.url ?? <span class="branch-1 cbranch-no" title="branch not covered" >'',</span> `http://${req.headers.host}`);
   const checkStatusRequest: CheckStatusApiRequestQuery = {
     dateOfBirth: searchParams.get('dateOfBirth') ?? <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
     esrf: searchParams.get('esrf') ?? <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
     givenName: searchParams.get('givenName') ?? <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
     surname: searchParams.get('surname') ?? <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
-  }
+  };
 &nbsp;
   try {
-    await searchPassportStatusApi(res, checkStatusRequest)
+    await searchPassportStatusApi(res, checkStatusRequest);
   } catch (error) {
-<span class="cstat-no" title="statement not covered" >    logger.error(error, 'Unhandled exception: Internal Server Error (500)')</span>
-<span class="cstat-no" title="statement not covered" >    res.status(500).send('Something went wrong.')</span>
+<span class="cstat-no" title="statement not covered" >    logger.error(error, 'Unhandled exception: Internal Server Error (500)');</span>
+<span class="cstat-no" title="statement not covered" >    res.status(500).send('Something went wrong.');</span>
   }
 }
 &nbsp;
@@ -306,54 +265,44 @@ export const searchPassportStatusApi = async (
   checkStatusApiRequestQuery: CheckStatusApiRequestQuery,
 ) =&gt; {
   <span class="missing-if-branch" title="if path not taken" >I</span>if (!process.env.PASSPORT_STATUS_API_BASE_URI) {
-<span class="cstat-no" title="statement not covered" >    logger.error(</span>
-      'PASSPORT_STATUS_API_BASE_URI must not be undefined, null or empty',
-    )
-<span class="cstat-no" title="statement not covered" >    throw Error(</span>
-      'process.env.PASSPORT_STATUS_API_BASE_URI must not be undefined, null or empty',
-    )
+<span class="cstat-no" title="statement not covered" >    logger.error('PASSPORT_STATUS_API_BASE_URI must not be undefined, null or empty');</span>
+<span class="cstat-no" title="statement not covered" >    throw Error('process.env.PASSPORT_STATUS_API_BASE_URI must not be undefined, null or empty');</span>
   }
 &nbsp;
-  const { dateOfBirth, esrf, givenName, surname } = checkStatusApiRequestQuery
+  const { dateOfBirth, esrf, givenName, surname } = checkStatusApiRequestQuery;
   const query = new URLSearchParams({
     dateOfBirth,
     fileNumber: esrf,
     givenName,
     surname,
-  }).toString()
-  const url = `${process.env.PASSPORT_STATUS_API_BASE_URI}/api/v1/passport-statuses/_search?${query}`
-  logger.debug({ url }, 'performing status check')
-  const response = await fetch(url)
+  }).toString();
+  const url = `${process.env.PASSPORT_STATUS_API_BASE_URI}/api/v1/passport-statuses/_search?${query}`;
+  logger.debug({ url }, 'performing status check');
+  const response = await fetch(url);
 &nbsp;
   <span class="missing-if-branch" title="if path not taken" >I</span>if (response.ok) {
-<span class="cstat-no" title="statement not covered" >    logger.debug('Check status returned OK')</span>
-    const searchResult: PassportStatusesSearchResult = <span class="cstat-no" title="statement not covered" >await response.json()</span>
-    const { GetCertificateApplicationResponse } = <span class="cstat-no" title="statement not covered" >searchResult._embedded</span>
+<span class="cstat-no" title="statement not covered" >    logger.debug('Check status returned OK');</span>
+    const searchResult: PassportStatusesSearchResult = <span class="cstat-no" title="statement not covered" >await response.json();</span>
+    const { GetCertificateApplicationResponse } = <span class="cstat-no" title="statement not covered" >searchResult._embedded;</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    if (GetCertificateApplicationResponse.length === 0) {</span>
-<span class="cstat-no" title="statement not covered" >      logger.debug(</span>
-        'error 404: searchResult._embedded is empty, passport status not found',
-      )
-<span class="cstat-no" title="statement not covered" >      return res.status(404).send('Passport Status Not Found')</span>
+<span class="cstat-no" title="statement not covered" >      logger.debug('error 404: searchResult._embedded is empty, passport status not found');</span>
+<span class="cstat-no" title="statement not covered" >      return res.status(404).send('Passport Status Not Found');</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return res.json(</span>
-      mapToCheckStatusApiResponse(GetCertificateApplicationResponse[0]),
-    )
+<span class="cstat-no" title="statement not covered" >    return res.json(mapToCheckStatusApiResponse(GetCertificateApplicationResponse[0]));</span>
   }
 &nbsp;
   if (response.status === 404 || response.status === 422) {
-    logger.debug(
-      `Check status returned not OK - error ${response.status}: ${response.body}`,
-    )
+    logger.debug(`Check status returned not OK - error ${response.status}: ${response.body}`);
     // 404 and 422 responses should both be handled as
     // `not found` results to mitigate data probing attacks
-    return res.status(404).send('Passport Status Not Found')
+    return res.status(404).send('Passport Status Not Found');
   }
 &nbsp;
-  logger.debug(`Status: ${response.status}: ${response.statusText}`)
-  return res.status(response.status).send(response.statusText)
-}
+  logger.debug(`Status: ${response.status}: ${response.statusText}`);
+  return res.status(response.status).send(response.statusText);
+};
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -361,7 +310,7 @@ export const searchPassportStatusApi = async (
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-10-06T15:21:52.346Z
+                at 2025-10-06T16:06:42.380Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

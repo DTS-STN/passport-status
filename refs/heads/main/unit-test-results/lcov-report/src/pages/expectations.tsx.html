@@ -154,22 +154,7 @@
 <a name='L89'></a><a href='#L89'>89</a>
 <a name='L90'></a><a href='#L90'>90</a>
 <a name='L91'></a><a href='#L91'>91</a>
-<a name='L92'></a><a href='#L92'>92</a>
-<a name='L93'></a><a href='#L93'>93</a>
-<a name='L94'></a><a href='#L94'>94</a>
-<a name='L95'></a><a href='#L95'>95</a>
-<a name='L96'></a><a href='#L96'>96</a>
-<a name='L97'></a><a href='#L97'>97</a>
-<a name='L98'></a><a href='#L98'>98</a>
-<a name='L99'></a><a href='#L99'>99</a>
-<a name='L100'></a><a href='#L100'>100</a>
-<a name='L101'></a><a href='#L101'>101</a>
-<a name='L102'></a><a href='#L102'>102</a>
-<a name='L103'></a><a href='#L103'>103</a>
-<a name='L104'></a><a href='#L104'>104</a>
-<a name='L105'></a><a href='#L105'>105</a>
-<a name='L106'></a><a href='#L106'>106</a>
-<a name='L107'></a><a href='#L107'>107</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L92'></a><a href='#L92'>92</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -189,24 +174,12 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -272,44 +245,34 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { MouseEventHandler, useCallback } from 'react'
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { MouseEventHandler, useCallback } from 'react';
 &nbsp;
-import { setCookie } from 'cookies-next'
-import { GetServerSideProps } from 'next'
-import { Trans, useTranslation } from 'next-i18next'
-import { NextSeo } from 'next-seo'
-import Router from 'next/router'
+import { setCookie } from 'cookies-next';
+import { GetServerSideProps } from 'next';
+import { Trans, useTranslation } from 'next-i18next';
+import { NextSeo } from 'next-seo';
+import Router from 'next/router';
 &nbsp;
-import ActionButton from '../components/ActionButton'
-import AlertBlock from '../components/AlertBlock'
-import Collapse from '../components/Collapse'
-import ExternalLink from '../components/ExternalLink'
-import Layout from '../components/Layout'
-import { pageWithServerSideTranslations } from '../lib/utils/next-i18next-utils'
-import { getDCTermsTitle } from '../lib/utils/seo-utils'
+import ActionButton from '../components/ActionButton';
+import AlertBlock from '../components/AlertBlock';
+import Collapse from '../components/Collapse';
+import ExternalLink from '../components/ExternalLink';
+import Layout from '../components/Layout';
+import { pageWithServerSideTranslations } from '../lib/utils/next-i18next-utils';
+import { getDCTermsTitle } from '../lib/utils/seo-utils';
 &nbsp;
 const Expectations = () =&gt; {
-  const { t } = useTranslation(['expectations', 'common'])
+  const { t } = useTranslation(['expectations', 'common']);
 &nbsp;
-  const handleOnAgreeClick: MouseEventHandler&lt;HTMLButtonElement&gt; = useCallback(
-<span class="fstat-no" title="function not covered" >    (e</span>) =&gt; {
-<span class="cstat-no" title="statement not covered" >      e.preventDefault()</span>
-<span class="cstat-no" title="statement not covered" >      setCookie('agreed-to-email-esrf-terms', 'true', { sameSite: true })</span>
-<span class="cstat-no" title="statement not covered" >      Router.push('/landing')</span>
-    },
-    [],
-  )
+  const handleOnAgreeClick: MouseEventHandler&lt;HTMLButtonElement&gt; = useCallback(<span class="fstat-no" title="function not covered" >(e</span>) =&gt; {
+<span class="cstat-no" title="statement not covered" >    e.preventDefault();</span>
+<span class="cstat-no" title="statement not covered" >    setCookie('agreed-to-email-esrf-terms', 'true', { sameSite: true });</span>
+<span class="cstat-no" title="statement not covered" >    Router.push('/landing');</span>
+  }, []);
 &nbsp;
   return (
     &lt;&gt;
-      &lt;NextSeo
-        title={t('header')}
-        description={t('meta.description')}
-        additionalMetaTags={[getDCTermsTitle(t('header'))]}
-      /&gt;
+      &lt;NextSeo title={t('header')} description={t('meta.description')} additionalMetaTags={[getDCTermsTitle(t('header'))]} /&gt;
       &lt;Layout&gt;
         &lt;AlertBlock page="expectations" /&gt;
         &lt;h1 id="main-header" className="h1" tabIndex={-1}&gt;
@@ -358,29 +321,21 @@ const Expectations = () =&gt; {
             &lt;/p&gt;
           &lt;/Collapse&gt;
           &lt;div className="mt-8"&gt;
-            &lt;ActionButton
-              id="btn-agree"
-              style="primary"
-              text={t('button-agree')}
-              onClick={handleOnAgreeClick}
-            /&gt;
+            &lt;ActionButton id="btn-agree" style="primary" text={t('button-agree')} onClick={handleOnAgreeClick} /&gt;
           &lt;/div&gt;
         &lt;/div&gt;
       &lt;/Layout&gt;
     &lt;/&gt;
-  )
-}
+  );
+};
 &nbsp;
 export const getServerSideProps: GetServerSideProps = <span class="fstat-no" title="function not covered" >as</span>ync ({ locale }) =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
   props: {
-    ...(await pageWithServerSideTranslations(
-      locale ?? 'default',
-      'expectations',
-    )),
+    ...(await pageWithServerSideTranslations(locale ?? 'default', 'expectations')),
   },
-})
+});
 &nbsp;
-export default Expectations
+export default Expectations;
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -388,7 +343,7 @@ export default Expectations
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-10-06T15:21:52.346Z
+                at 2025-10-06T16:06:42.380Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

@@ -131,13 +131,7 @@
 <a name='L66'></a><a href='#L66'>66</a>
 <a name='L67'></a><a href='#L67'>67</a>
 <a name='L68'></a><a href='#L68'>68</a>
-<a name='L69'></a><a href='#L69'>69</a>
-<a name='L70'></a><a href='#L70'>70</a>
-<a name='L71'></a><a href='#L71'>71</a>
-<a name='L72'></a><a href='#L72'>72</a>
-<a name='L73'></a><a href='#L73'>73</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L69'></a><a href='#L69'>69</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -177,8 +171,6 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -207,53 +199,49 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useCallback, useEffect, useState } from 'react'
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useCallback, useEffect, useState } from 'react';
 &nbsp;
-import { deleteCookie } from 'cookies-next'
-import { useTranslation } from 'next-i18next'
-import { useRouter } from 'next/router'
-import { IIdleTimerProps, useIdleTimer } from 'react-idle-timer'
+import { deleteCookie } from 'cookies-next';
+import { useTranslation } from 'next-i18next';
+import { useRouter } from 'next/router';
+import { IIdleTimerProps, useIdleTimer } from 'react-idle-timer';
 &nbsp;
-import Modal from './Modal'
+import Modal from './Modal';
 &nbsp;
-export interface IdleTimeoutProps
-  extends Pick&lt;IIdleTimerProps, 'promptBeforeIdle'&gt;,
-    Pick&lt;IIdleTimerProps, 'timeout'&gt; {}
+export interface IdleTimeoutProps extends Pick&lt;IIdleTimerProps, 'promptBeforeIdle'&gt;, Pick&lt;IIdleTimerProps, 'timeout'&gt; {}
 &nbsp;
 const IdleTimeout = ({ promptBeforeIdle, timeout }: IdleTimeoutProps) =&gt; {
-  const { t } = useTranslation('common')
-  const router = useRouter()
-  const [modalOpen, setModalOpen] = useState(false)
-  const [timeRemaining, setTimeRemaining] = useState('')
+  const { t } = useTranslation('common');
+  const router = useRouter();
+  const [modalOpen, setModalOpen] = useState(false);
+  const [timeRemaining, setTimeRemaining] = useState('');
 &nbsp;
   const handleOnIdle = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
-<span class="cstat-no" title="statement not covered" >    deleteCookie('agreed-to-email-esrf-terms')</span>
-<span class="cstat-no" title="statement not covered" >    router.reload()</span>
-  }
+<span class="cstat-no" title="statement not covered" >    deleteCookie('agreed-to-email-esrf-terms');</span>
+<span class="cstat-no" title="statement not covered" >    router.reload();</span>
+  };
 &nbsp;
   const handleOnIdleContinueSession = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
-<span class="cstat-no" title="statement not covered" >    setModalOpen(false)</span>
-<span class="cstat-no" title="statement not covered" >    reset()</span>
-  }
+<span class="cstat-no" title="statement not covered" >    setModalOpen(false);</span>
+<span class="cstat-no" title="statement not covered" >    reset();</span>
+  };
 &nbsp;
   const { reset, getRemainingTime } = useIdleTimer({
     onIdle: handleOnIdle,
     onPrompt: () =&gt; setModalOpen(true),
     promptBeforeIdle: promptBeforeIdle ?? 5 * 60 * 1000, //5 minutes
     timeout: timeout ?? 15 * 60 * 1000, //15 minutes
-  })
+  });
 &nbsp;
   const tick = useCallback(() =&gt; {
-    const minutes = Math.floor(getRemainingTime() / 60000)
-    const seconds = Math.floor((getRemainingTime() / 1000) % 60).toFixed(0)
-    setTimeRemaining(
-      minutes + ':' + (parseInt(seconds) &lt; 10 ? '0' : '') + seconds,
-    )
-  }, [getRemainingTime])
+    const minutes = Math.floor(getRemainingTime() / 60000);
+    const seconds = Math.floor((getRemainingTime() / 1000) % 60).toFixed(0);
+    setTimeRemaining(minutes + ':' + (parseInt(seconds) &lt; 10 ? '0' : '') + seconds);
+  }, [getRemainingTime]);
 &nbsp;
   useEffect(() =&gt; {
-    setInterval(tick, 1000)
-  }, [tick])
+    setInterval(tick, 1000);
+  }, [tick]);
 &nbsp;
   return (
     &lt;Modal
@@ -275,10 +263,10 @@ const IdleTimeout = ({ promptBeforeIdle, timeout }: IdleTimeoutProps) =&gt; {
     &gt;
       &lt;p&gt;{t('modal-idle-timeout.description', { timeRemaining })}&lt;/p&gt;
     &lt;/Modal&gt;
-  )
-}
+  );
+};
 &nbsp;
-export default IdleTimeout
+export default IdleTimeout;
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -286,7 +274,7 @@ export default IdleTimeout
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-10-06T15:21:52.346Z
+                at 2025-10-06T16:06:42.380Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

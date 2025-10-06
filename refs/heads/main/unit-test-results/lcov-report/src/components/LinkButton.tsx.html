@@ -115,17 +115,7 @@
 <a name='L50'></a><a href='#L50'>50</a>
 <a name='L51'></a><a href='#L51'>51</a>
 <a name='L52'></a><a href='#L52'>52</a>
-<a name='L53'></a><a href='#L53'>53</a>
-<a name='L54'></a><a href='#L54'>54</a>
-<a name='L55'></a><a href='#L55'>55</a>
-<a name='L56'></a><a href='#L56'>56</a>
-<a name='L57'></a><a href='#L57'>57</a>
-<a name='L58'></a><a href='#L58'>58</a>
-<a name='L59'></a><a href='#L59'>59</a>
-<a name='L60'></a><a href='#L60'>60</a>
-<a name='L61'></a><a href='#L61'>61</a>
-<a name='L62'></a><a href='#L62'>62</a>
-<a name='L63'></a><a href='#L63'>63</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L53'></a><a href='#L53'>53</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -156,16 +146,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
@@ -187,21 +167,21 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { PropsWithChildren } from 'react'
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { PropsWithChildren } from 'react';
 &nbsp;
-import Link, { LinkProps } from 'next/link'
+import Link, { LinkProps } from 'next/link';
 &nbsp;
-export type LinkButtonSize = 'xs' | 'sm' | 'md' | 'lg'
+export type LinkButtonSize = 'xs' | 'sm' | 'md' | 'lg';
 &nbsp;
-export type LinkButtonStyle = 'default' | 'primary'
+export type LinkButtonStyle = 'default' | 'primary';
 &nbsp;
 export interface LinkButtonProps extends LinkProps, PropsWithChildren {
-  external?: boolean
-  fullWidth?: boolean
-  id?: string
-  lang?: string
-  size?: LinkButtonSize
-  style?: LinkButtonStyle
+  external?: boolean;
+  fullWidth?: boolean;
+  id?: string;
+  lang?: string;
+  size?: LinkButtonSize;
+  style?: LinkButtonStyle;
 }
 &nbsp;
 const sizes = {
@@ -209,29 +189,19 @@ const sizes = {
   sm: 'px-2.5 py-1.5 rounded-xs text-sm',
   md: 'px-3.5 py-2.5 rounded-sm text-base',
   lg: 'px-4 py-2.5 rounded-md text-lg',
-}
+};
 &nbsp;
 const styles = {
   default: `bg-gray-normal border-b-gray-500 border-gray-dark border-r-gray-500 text-blue-light focus:bg-gray-dark focus:text-blue-light hover:bg-gray-dark hover:border-l-gray-deep hover:border-t-grasy-deep hover:text-blue-light visited:text-blue-light`,
   primary: `bg-blue-dark border-blue-dark text-basic-white active:bg-blue-active focus:bg-blue-normal focus:text-basic-white hover:bg-blue-normal hover:text-basic-white visited:text-basic-white`,
-}
+};
 &nbsp;
-const LinkButton = ({
-  children,
-  external,
-  fullWidth,
-  href,
-  id,
-  locale,
-  lang,
-  size,
-  style,
-}: LinkButtonProps) =&gt; {
+const LinkButton = ({ children, external, fullWidth, href, id, locale, lang, size, style }: LinkButtonProps) =&gt; {
   const baseClasses =
-    'align-middle border font-display inline-flex items-center justify-center no-underline shadow-xs text-center focus:ring-2 focus:ring-black focus:ring-offset-2'
-  const fullWidthClasses = fullWidth ? 'w-full' : undefined
-  const sizeClasses = sizes[size ?? 'md']
-  const styleClasses = styles[style ?? 'default']
+    'align-middle border font-display inline-flex items-center justify-center no-underline shadow-xs text-center focus:ring-2 focus:ring-black focus:ring-offset-2';
+  const fullWidthClasses = fullWidth ? 'w-full' : undefined;
+  const sizeClasses = sizes[size ?? 'md'];
+  const styleClasses = styles[style ?? 'default'];
 &nbsp;
   return (
     &lt;Link
@@ -245,10 +215,10 @@ const LinkButton = ({
     &gt;
       {children}
     &lt;/Link&gt;
-  )
-}
+  );
+};
 &nbsp;
-export default LinkButton
+export default LinkButton;
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -256,7 +226,7 @@ export default LinkButton
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-10-06T15:21:52.346Z
+                at 2025-10-06T16:06:42.380Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

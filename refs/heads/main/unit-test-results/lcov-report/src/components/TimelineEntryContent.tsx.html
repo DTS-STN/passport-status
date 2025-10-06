@@ -117,19 +117,7 @@
 <a name='L52'></a><a href='#L52'>52</a>
 <a name='L53'></a><a href='#L53'>53</a>
 <a name='L54'></a><a href='#L54'>54</a>
-<a name='L55'></a><a href='#L55'>55</a>
-<a name='L56'></a><a href='#L56'>56</a>
-<a name='L57'></a><a href='#L57'>57</a>
-<a name='L58'></a><a href='#L58'>58</a>
-<a name='L59'></a><a href='#L59'>59</a>
-<a name='L60'></a><a href='#L60'>60</a>
-<a name='L61'></a><a href='#L61'>61</a>
-<a name='L62'></a><a href='#L62'>62</a>
-<a name='L63'></a><a href='#L63'>63</a>
-<a name='L64'></a><a href='#L64'>64</a>
-<a name='L65'></a><a href='#L65'>65</a>
-<a name='L66'></a><a href='#L66'>66</a>
-<a name='L67'></a><a href='#L67'>67</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L55'></a><a href='#L55'>55</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -145,13 +133,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">36x</span>
 <span class="cline-any cline-yes">36x</span>
 <span class="cline-any cline-yes">36x</span>
@@ -159,10 +140,7 @@
 <span class="cline-any cline-yes">36x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">36x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">36x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">36x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -193,49 +171,37 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { PropsWithChildren } from 'react'
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { PropsWithChildren } from 'react';
 &nbsp;
-import { useTranslation } from 'next-i18next'
+import { useTranslation } from 'next-i18next';
 &nbsp;
-import { formatDateLong } from '../lib/utils/dates'
+import { formatDateLong } from '../lib/utils/dates';
 &nbsp;
 export interface TimelineEntryContentProps extends PropsWithChildren {
-  type: string
-  position: string
-  topText: string
-  bottomText?: string
-  bottomDate?: string
-  stepIndex: number
+  type: string;
+  position: string;
+  topText: string;
+  bottomText?: string;
+  bottomDate?: string;
+  stepIndex: number;
 }
 &nbsp;
-const TimelineEntryContent = ({
-  position,
-  type,
-  topText,
-  bottomText,
-  bottomDate,
-  stepIndex,
-}: TimelineEntryContentProps) =&gt; {
-  const { i18n, t } = useTranslation()
-  const isCurrent = type === 'current'
-  const hasDate = bottomDate &amp;&amp; bottomDate !== null
-  const isDoneWithBottom = type === 'done' &amp;&amp; (hasDate || <span class="branch-2 cbranch-no" title="branch not covered" >bottomText !== null)</span>
-  const isLast = position === 'last'
+const TimelineEntryContent = ({ position, type, topText, bottomText, bottomDate, stepIndex }: TimelineEntryContentProps) =&gt; {
+  const { i18n, t } = useTranslation();
+  const isCurrent = type === 'current';
+  const hasDate = bottomDate &amp;&amp; bottomDate !== null;
+  const isDoneWithBottom = type === 'done' &amp;&amp; (hasDate || <span class="branch-2 cbranch-no" title="branch not covered" >bottomText !== null)</span>;
+  const isLast = position === 'last';
 &nbsp;
   const stepAriaLabel = (() =&gt; {
-    const bottomLine =
-      type === 'done' &amp;&amp; hasDate
-        ? formatDateLong(bottomDate, i18n.language)
-        : bottomText
+    const bottomLine = type === 'done' &amp;&amp; hasDate ? formatDateLong(bottomDate, i18n.language) : bottomText;
 &nbsp;
     return t('timeline:step-aria-label', {
       index: stepIndex,
       type: t(`timeline:type-${type}`),
       step: `${topText}${bottomLine ? `, ${bottomLine}` : ''}`,
-    })
-  })()
+    });
+  })();
 &nbsp;
   return (
     &lt;&gt;
@@ -249,18 +215,16 @@ const TimelineEntryContent = ({
           &lt;span&gt;{topText}&lt;/span&gt;
         )}
         {type === 'done' &amp;&amp; hasDate ? (
-          &lt;time dateTime={bottomDate}&gt;
-            {formatDateLong(bottomDate, i18n.language)}
-          &lt;/time&gt;
+          &lt;time dateTime={bottomDate}&gt;{formatDateLong(bottomDate, i18n.language)}&lt;/time&gt;
         ) : (
           bottomText &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >&lt;span&gt;{bottomText}&lt;/span&gt;</span>
         )}
       &lt;/div&gt;
     &lt;/&gt;
-  )
-}
+  );
+};
 &nbsp;
-export default TimelineEntryContent
+export default TimelineEntryContent;
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -268,7 +232,7 @@ export default TimelineEntryContent
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-10-06T15:21:52.346Z
+                at 2025-10-06T16:06:42.380Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

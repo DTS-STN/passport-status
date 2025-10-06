@@ -134,30 +134,7 @@
 <a name='L69'></a><a href='#L69'>69</a>
 <a name='L70'></a><a href='#L70'>70</a>
 <a name='L71'></a><a href='#L71'>71</a>
-<a name='L72'></a><a href='#L72'>72</a>
-<a name='L73'></a><a href='#L73'>73</a>
-<a name='L74'></a><a href='#L74'>74</a>
-<a name='L75'></a><a href='#L75'>75</a>
-<a name='L76'></a><a href='#L76'>76</a>
-<a name='L77'></a><a href='#L77'>77</a>
-<a name='L78'></a><a href='#L78'>78</a>
-<a name='L79'></a><a href='#L79'>79</a>
-<a name='L80'></a><a href='#L80'>80</a>
-<a name='L81'></a><a href='#L81'>81</a>
-<a name='L82'></a><a href='#L82'>82</a>
-<a name='L83'></a><a href='#L83'>83</a>
-<a name='L84'></a><a href='#L84'>84</a>
-<a name='L85'></a><a href='#L85'>85</a>
-<a name='L86'></a><a href='#L86'>86</a>
-<a name='L87'></a><a href='#L87'>87</a>
-<a name='L88'></a><a href='#L88'>88</a>
-<a name='L89'></a><a href='#L89'>89</a>
-<a name='L90'></a><a href='#L90'>90</a>
-<a name='L91'></a><a href='#L91'>91</a>
-<a name='L92'></a><a href='#L92'>92</a>
-<a name='L93'></a><a href='#L93'>93</a>
-<a name='L94'></a><a href='#L94'>94</a>
-<a name='L95'></a><a href='#L95'>95</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L72'></a><a href='#L72'>72</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -168,16 +145,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -237,47 +205,24 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Trans, useTranslation } from 'next-i18next'
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Trans, useTranslation } from 'next-i18next';
 &nbsp;
-import { DeliveryMethodCode, ServiceLevelCode } from '../../lib/types'
-import { formatDateShort } from '../../lib/utils/dates'
-import { StatusResultProps } from '../../pages/status'
-import ActionButton from '../ActionButton'
-import AlertBlock from '../AlertBlock'
-import ExternalLink from '../ExternalLink'
-import Timeline from '../Timeline'
+import { DeliveryMethodCode, ServiceLevelCode } from '../../lib/types';
+import { formatDateShort } from '../../lib/utils/dates';
+import { StatusResultProps } from '../../pages/status';
+import ActionButton from '../ActionButton';
+import AlertBlock from '../AlertBlock';
+import ExternalLink from '../ExternalLink';
+import Timeline from '../Timeline';
 &nbsp;
-export const CheckStatusPrinting = ({
-  displayData,
-  checkAnotherHandler,
-}: StatusResultProps) =&gt; {
-  const { t, i18n } = useTranslation(['status', 'timeline'])
+export const CheckStatusPrinting = ({ displayData, checkAnotherHandler }: StatusResultProps) =&gt; {
+  const { t, i18n } = useTranslation(['status', 'timeline']);
 &nbsp;
-  const {
-    deliveryMethod,
-    receivedDate,
-    serviceLevel,
-    timelineExists,
-    timelineData,
-  } = displayData
+  const { deliveryMethod, receivedDate, serviceLevel, timelineExists, timelineData } = displayData;
 &nbsp;
-  const serviceDays = serviceLevel === ServiceLevelCode.TEN_DAYS ? <span class="branch-0 cbranch-no" title="branch not covered" >'10' </span>: '20'
+  const serviceDays = serviceLevel === ServiceLevelCode.TEN_DAYS ? <span class="branch-0 cbranch-no" title="branch not covered" >'10' </span>: '20';
 &nbsp;
-  const formattedDate = formatDateShort(receivedDate, i18n.language)
+  const formattedDate = formatDateShort(receivedDate, i18n.language);
 &nbsp;
   return (
     &lt;div id="response-result"&gt;
@@ -293,11 +238,7 @@ export const CheckStatusPrinting = ({
               &lt;Timeline entries={timelineData} /&gt;
             &lt;/div&gt;
           )}
-          &lt;h2
-            id="service-standards-header"
-            data-testid="service-standards"
-            className="h2"
-          &gt;
+          &lt;h2 id="service-standards-header" data-testid="service-standards" className="h2"&gt;
             {t('printing.service-standards.header')}
           &lt;/h2&gt;
           &lt;p&gt;
@@ -313,23 +254,13 @@ export const CheckStatusPrinting = ({
                 serviceLevel: serviceDays,
               }}
               components={{
-                Link: (
-                  &lt;ExternalLink
-                    href={t('status-check-contact.service-standard-href')}
-                  /&gt;
-                ),
+                Link: &lt;ExternalLink href={t('status-check-contact.service-standard-href')} /&gt;,
               }}
             /&gt;
           &lt;/p&gt;
-          {deliveryMethod === DeliveryMethodCode.IN_PERSON &amp;&amp; (
-<span class="branch-1 cbranch-no" title="branch not covered" >            &lt;p&gt;{t('printing.service-standards.requested-urgent')}&lt;/p&gt;</span>
-          )}
+          {deliveryMethod === DeliveryMethodCode.IN_PERSON &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >&lt;p&gt;{t('printing.service-standards.requested-urgent')}&lt;/p&gt;}</span>
           &lt;div className="mt-8"&gt;
-            &lt;ActionButton
-              onClick={checkAnotherHandler}
-              text={t('check-another')}
-              style="primary"
-            /&gt;
+            &lt;ActionButton onClick={checkAnotherHandler} text={t('check-another')} style="primary" /&gt;
           &lt;/div&gt;
         &lt;/div&gt;
         {timelineExists &amp;&amp; (
@@ -341,10 +272,10 @@ export const CheckStatusPrinting = ({
         )}
       &lt;/div&gt;
     &lt;/div&gt;
-  )
-}
+  );
+};
 &nbsp;
-export default CheckStatusPrinting
+export default CheckStatusPrinting;
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -352,7 +283,7 @@ export default CheckStatusPrinting
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-10-06T15:21:52.346Z
+                at 2025-10-06T16:06:42.380Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

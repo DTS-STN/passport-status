@@ -138,18 +138,7 @@
 <a name='L73'></a><a href='#L73'>73</a>
 <a name='L74'></a><a href='#L74'>74</a>
 <a name='L75'></a><a href='#L75'>75</a>
-<a name='L76'></a><a href='#L76'>76</a>
-<a name='L77'></a><a href='#L77'>77</a>
-<a name='L78'></a><a href='#L78'>78</a>
-<a name='L79'></a><a href='#L79'>79</a>
-<a name='L80'></a><a href='#L80'>80</a>
-<a name='L81'></a><a href='#L81'>81</a>
-<a name='L82'></a><a href='#L82'>82</a>
-<a name='L83'></a><a href='#L83'>83</a>
-<a name='L84'></a><a href='#L84'>84</a>
-<a name='L85'></a><a href='#L85'>85</a>
-<a name='L86'></a><a href='#L86'>86</a>
-<a name='L87'></a><a href='#L87'>87</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L76'></a><a href='#L76'>76</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -217,17 +206,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -235,28 +213,25 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { GetServerSideProps } from 'next'
-import { Trans, useTranslation } from 'next-i18next'
-import { NextSeo } from 'next-seo'
-import Link from 'next/link'
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { GetServerSideProps } from 'next';
+import { Trans, useTranslation } from 'next-i18next';
+import { NextSeo } from 'next-seo';
+import Link from 'next/link';
 &nbsp;
-import AlertBlock from '../components/AlertBlock'
-import Collapse from '../components/Collapse'
-import ExampleImage from '../components/ExampleImage'
-import Layout from '../components/Layout'
-import LinkButton from '../components/LinkButton'
-import { pageWithServerSideTranslations } from '../lib/utils/next-i18next-utils'
-import { getDCTermsTitle } from '../lib/utils/seo-utils'
+import AlertBlock from '../components/AlertBlock';
+import Collapse from '../components/Collapse';
+import ExampleImage from '../components/ExampleImage';
+import Layout from '../components/Layout';
+import LinkButton from '../components/LinkButton';
+import { pageWithServerSideTranslations } from '../lib/utils/next-i18next-utils';
+import { getDCTermsTitle } from '../lib/utils/seo-utils';
 &nbsp;
 const Landing = () =&gt; {
-  const { t } = useTranslation('landing')
+  const { t } = useTranslation('landing');
 &nbsp;
   return (
     &lt;Layout&gt;
-      &lt;NextSeo
-        title={t('do-you-have.question')}
-        additionalMetaTags={[getDCTermsTitle(t('header'))]}
-      /&gt;
+      &lt;NextSeo title={t('do-you-have.question')} additionalMetaTags={[getDCTermsTitle(t('header'))]} /&gt;
       &lt;AlertBlock page="landing" /&gt;
       &lt;h1 id="main-header" className="h1" tabIndex={-1}&gt;
         {t('do-you-have.question')}
@@ -265,11 +240,7 @@ const Landing = () =&gt; {
         &lt;h2 className="h2 mb-6"&gt;{t('where-to-find.header')}&lt;/h2&gt;
         &lt;Collapse title={t('where-to-find.applied-by-mail.header')}&gt;
           &lt;p&gt;
-            &lt;Trans
-              i18nKey="where-to-find.applied-by-mail.text"
-              ns="landing"
-              components={{ Link: &lt;Link href="/email" /&gt; }}
-            /&gt;
+            &lt;Trans i18nKey="where-to-find.applied-by-mail.text" ns="landing" components={{ Link: &lt;Link href="/email" /&gt; }} /&gt;
           &lt;/p&gt;
         &lt;/Collapse&gt;
         &lt;Collapse title={t('where-to-find.applied-in-person.header')}&gt;
@@ -289,11 +260,7 @@ const Landing = () =&gt; {
         &lt;/Collapse&gt;
         &lt;Collapse title={t('if-lost.header')}&gt;
           &lt;p&gt;
-            &lt;Trans
-              i18nKey="if-lost.text"
-              ns="landing"
-              components={{ Link: &lt;Link href="/email" /&gt; }}
-            /&gt;
+            &lt;Trans i18nKey="if-lost.text" ns="landing" components={{ Link: &lt;Link href="/email" /&gt; }} /&gt;
           &lt;/p&gt;
         &lt;/Collapse&gt;
 &nbsp;
@@ -311,16 +278,16 @@ const Landing = () =&gt; {
         &lt;/div&gt;
       &lt;/div&gt;
     &lt;/Layout&gt;
-  )
-}
+  );
+};
 &nbsp;
 export const getServerSideProps: GetServerSideProps = <span class="fstat-no" title="function not covered" >as</span>ync ({ locale }) =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
   props: {
     ...(await pageWithServerSideTranslations(locale, 'landing')),
   },
-})
+});
 &nbsp;
-export default Landing
+export default Landing;
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -328,7 +295,7 @@ export default Landing
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-10-06T15:21:52.346Z
+                at 2025-10-06T16:06:42.380Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

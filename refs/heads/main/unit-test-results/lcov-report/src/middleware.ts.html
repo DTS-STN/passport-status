@@ -96,14 +96,7 @@
 <a name='L31'></a><a href='#L31'>31</a>
 <a name='L32'></a><a href='#L32'>32</a>
 <a name='L33'></a><a href='#L33'>33</a>
-<a name='L34'></a><a href='#L34'>34</a>
-<a name='L35'></a><a href='#L35'>35</a>
-<a name='L36'></a><a href='#L36'>36</a>
-<a name='L37'></a><a href='#L37'>37</a>
-<a name='L38'></a><a href='#L38'>38</a>
-<a name='L39'></a><a href='#L39'>39</a>
-<a name='L40'></a><a href='#L40'>40</a>
-<a name='L41'></a><a href='#L41'>41</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L34'></a><a href='#L34'>34</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -116,10 +109,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -135,53 +124,43 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { NextRequest, NextResponse } from 'next/server'
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { NextRequest, NextResponse } from 'next/server';
 &nbsp;
-import { getLogger } from './logging/log-util'
+import { getLogger } from './logging/log-util';
 &nbsp;
 //regex to check if there's an extension in the path, ie .jpg
-const PUBLIC_FILE = <span class="cstat-no" title="statement not covered" >/\.(.*)$/</span>
-const logger = <span class="cstat-no" title="statement not covered" >getLogger('middleware')</span>
+const PUBLIC_FILE = <span class="cstat-no" title="statement not covered" >/\.(.*)$/;</span>
+const logger = <span class="cstat-no" title="statement not covered" >getLogger('middleware');</span>
 &nbsp;
 export async function <span class="fstat-no" title="function not covered" >middleware(</span>req: NextRequest) {
-  const { cookies, nextUrl, url } = <span class="cstat-no" title="statement not covered" >req</span>
-  const { locale, pathname } = <span class="cstat-no" title="statement not covered" >nextUrl</span>
+  const { cookies, nextUrl, url } = <span class="cstat-no" title="statement not covered" >req;</span>
+  const { locale, pathname } = <span class="cstat-no" title="statement not covered" >nextUrl;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (</span>
-    pathname.startsWith('/_next') ||
-    pathname.includes('/api/') ||
-    PUBLIC_FILE.test(pathname)
-  ) {
-<span class="cstat-no" title="statement not covered" >    return NextResponse.next()</span>
+<span class="cstat-no" title="statement not covered" >  if (pathname.startsWith('/_next') || pathname.includes('/api/') || PUBLIC_FILE.test(pathname)) {</span>
+<span class="cstat-no" title="statement not covered" >    return NextResponse.next();</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  logger.debug(req)</span>
+<span class="cstat-no" title="statement not covered" >  logger.debug(req);</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  if (locale === 'default' &amp;&amp; !pathname.endsWith('/')) {</span>
-<span class="cstat-no" title="statement not covered" >    return NextResponse.redirect(new URL(`/en${pathname}`, url))</span>
+<span class="cstat-no" title="statement not covered" >    return NextResponse.redirect(new URL(`/en${pathname}`, url));</span>
   }
 &nbsp;
   //Redirect for index page as it's meant to be bilingual so we don't want users navigating to /en or /fr
 <span class="cstat-no" title="statement not covered" >  if ((locale === 'en' || locale === 'fr') &amp;&amp; pathname === '/') {</span>
-<span class="cstat-no" title="statement not covered" >    return NextResponse.redirect(new URL(`/`, url))</span>
+<span class="cstat-no" title="statement not covered" >    return NextResponse.redirect(new URL(`/`, url));</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (</span>
-    !['/', '/expectations'].includes(pathname) &amp;&amp;
-    cookies.get('agreed-to-email-esrf-terms')?.value !== 'true'
-  ) {
-<span class="cstat-no" title="statement not covered" >    return NextResponse.redirect(new URL(`/${locale}/expectations`, url))</span>
+<span class="cstat-no" title="statement not covered" >  if (!['/', '/expectations'].includes(pathname) &amp;&amp; cookies.get('agreed-to-email-esrf-terms')?.value !== 'true') {</span>
+<span class="cstat-no" title="statement not covered" >    return NextResponse.redirect(new URL(`/${locale}/expectations`, url));</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return NextResponse.next()</span>
+<span class="cstat-no" title="statement not covered" >  return NextResponse.next();</span>
 }
 &nbsp;</pre></td></tr></table></pre>
 
@@ -190,7 +169,7 @@ export async function <span class="fstat-no" title="function not covered" >middl
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-10-06T15:21:52.346Z
+                at 2025-10-06T16:06:42.380Z
             </div>
         <script src="../prettify.js"></script>
         <script>

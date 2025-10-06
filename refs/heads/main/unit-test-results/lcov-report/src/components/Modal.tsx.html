@@ -130,19 +130,7 @@
 <a name='L65'></a><a href='#L65'>65</a>
 <a name='L66'></a><a href='#L66'>66</a>
 <a name='L67'></a><a href='#L67'>67</a>
-<a name='L68'></a><a href='#L68'>68</a>
-<a name='L69'></a><a href='#L69'>69</a>
-<a name='L70'></a><a href='#L70'>70</a>
-<a name='L71'></a><a href='#L71'>71</a>
-<a name='L72'></a><a href='#L72'>72</a>
-<a name='L73'></a><a href='#L73'>73</a>
-<a name='L74'></a><a href='#L74'>74</a>
-<a name='L75'></a><a href='#L75'>75</a>
-<a name='L76'></a><a href='#L76'>76</a>
-<a name='L77'></a><a href='#L77'>77</a>
-<a name='L78'></a><a href='#L78'>78</a>
-<a name='L79'></a><a href='#L79'>79</a>
-<a name='L80'></a><a href='#L80'>80</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L68'></a><a href='#L68'>68</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -156,12 +144,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -204,9 +186,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -218,47 +197,38 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { PropsWithChildren, useEffect, useId, useRef } from 'react'
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { PropsWithChildren, useEffect, useId, useRef } from 'react';
 &nbsp;
-import { FocusOn } from 'react-focus-on'
+import { FocusOn } from 'react-focus-on';
 &nbsp;
-import ActionButton, { ActionButtonProps } from './ActionButton'
+import ActionButton, { ActionButtonProps } from './ActionButton';
 &nbsp;
 export interface ModalProps extends PropsWithChildren {
-  actionButtons: ActionButtonProps[]
-  header: string
-  onClose: EventListener
-  open: boolean
+  actionButtons: ActionButtonProps[];
+  header: string;
+  onClose: EventListener;
+  open: boolean;
 }
 &nbsp;
-const Modal = ({
-  actionButtons,
-  children,
-  header,
-  onClose,
-  open,
-}: ModalProps) =&gt; {
-  const dialogRef = useRef&lt;HTMLDialogElement&gt;(null)
-  const id = useId()
+const Modal = ({ actionButtons, children, header, onClose, open }: ModalProps) =&gt; {
+  const dialogRef = useRef&lt;HTMLDialogElement&gt;(null);
+  const id = useId();
 &nbsp;
   useEffect(() =&gt; {
     if (open) {
-      dialogRef.current?.showModal()
+      dialogRef.current?.showModal();
     } else <span class="missing-if-branch" title="else path not taken" >E</span>{
-<span class="cstat-no" title="statement not covered" >      dialogRef.current?.close()</span>
+<span class="cstat-no" title="statement not covered" >      dialogRef.current?.close();</span>
     }
-  }, [open])
+  }, [open]);
 &nbsp;
   useEffect(() =&gt; {
-    const el = dialogRef.current
-    el?.addEventListener('close', onClose)
+    const el = dialogRef.current;
+    el?.addEventListener('close', onClose);
     return () =&gt; {
-      el?.removeEventListener('close', onClose)
-    }
-  }, [onClose])
+      el?.removeEventListener('close', onClose);
+    };
+  }, [onClose]);
 &nbsp;
   // "Confirm" button of form triggers "close" on dialog because of [method="dialog"]
 &nbsp;
@@ -275,10 +245,7 @@ const Modal = ({
             className="ring-gray-modal rounded-md bg-white ring-2"
             aria-describedby={`${id}-modal-header`}
           &gt;
-            &lt;header
-              id={`${id}-modal-header`}
-              className="bg-blue-deep rounded-t-md border-b border-black p-3 text-white"
-            &gt;
+            &lt;header id={`${id}-modal-header`} className="bg-blue-deep rounded-t-md border-b border-black p-3 text-white"&gt;
               &lt;h1&gt;{header}&lt;/h1&gt;
             &lt;/header&gt;
             &lt;div id={`${id}-modal-desc`} className="p-3"&gt;
@@ -286,20 +253,17 @@ const Modal = ({
             &lt;/div&gt;
             &lt;div className="border-gray-modal flex justify-end gap-2 border-t p-2"&gt;
               {actionButtons.map((actionButtonProps) =&gt; (
-                &lt;ActionButton
-                  key={actionButtonProps.text}
-                  {...actionButtonProps}
-                /&gt;
+                &lt;ActionButton key={actionButtonProps.text} {...actionButtonProps} /&gt;
               ))}
             &lt;/div&gt;
           &lt;/section&gt;
         &lt;/FocusOn&gt;
       &lt;/div&gt;
     &lt;/dialog&gt;
-  )
-}
+  );
+};
 &nbsp;
-export default Modal
+export default Modal;
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -307,7 +271,7 @@ export default Modal
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-10-06T15:21:52.346Z
+                at 2025-10-06T16:06:42.380Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

@@ -145,12 +145,7 @@
 <a name='L80'></a><a href='#L80'>80</a>
 <a name='L81'></a><a href='#L81'>81</a>
 <a name='L82'></a><a href='#L82'>82</a>
-<a name='L83'></a><a href='#L83'>83</a>
-<a name='L84'></a><a href='#L84'>84</a>
-<a name='L85'></a><a href='#L85'>85</a>
-<a name='L86'></a><a href='#L86'>86</a>
-<a name='L87'></a><a href='#L87'>87</a>
-<a name='L88'></a><a href='#L88'>88</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L83'></a><a href='#L83'>83</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -176,7 +171,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
@@ -233,40 +227,35 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useEffect } from 'react'
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useEffect } from 'react';
 &nbsp;
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import { appWithTranslation } from 'next-i18next'
-import { DefaultSeo } from 'next-seo'
-import { AppProps } from 'next/app'
-import getConfig from 'next/config'
-import Head from 'next/head'
-import Script from 'next/script'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { appWithTranslation } from 'next-i18next';
+import { DefaultSeo } from 'next-seo';
+import { AppProps } from 'next/app';
+import getConfig from 'next/config';
+import Head from 'next/head';
+import Script from 'next/script';
 &nbsp;
-import nextI18NextConfig from '../../next-i18next.config.js'
-import { AppWindow } from '../lib/types'
-import { lato, notoSans } from '../lib/utils/fonts'
-import { getNextSEOConfig } from '../next-seo.config'
-import '../styles/globals.css'
+import nextI18NextConfig from '../../next-i18next.config.js';
+import { AppWindow } from '../lib/types';
+import { lato, notoSans } from '../lib/utils/fonts';
+import { getNextSEOConfig } from '../next-seo.config';
+import '../styles/globals.css';
 &nbsp;
 // Create a react-query client
 const queryClient = new QueryClient({
   defaultOptions: { queries: { refetchOnWindowFocus: false } },
-})
+});
 &nbsp;
 // help to prevent double firing of adobe analytics pageLoad event
-let appPreviousLocationPathname = ''
+let appPreviousLocationPathname = '';
 &nbsp;
 const MyApp = ({ Component, pageProps, router }: AppProps) =&gt; {
-  const config = getConfig()
-  const adobeAnalyticsScriptSrc =
-    config?.publicRuntimeConfig?.adobeAnalyticsScriptSrc
-  const appBaseUri = config?.publicRuntimeConfig?.appBaseUri
-  const nextSEOConfig = getNextSEOConfig(appBaseUri, router)
+  const config = getConfig();
+  const adobeAnalyticsScriptSrc = config?.publicRuntimeConfig?.adobeAnalyticsScriptSrc;
+  const appBaseUri = config?.publicRuntimeConfig?.appBaseUri;
+  const nextSEOConfig = getNextSEOConfig(appBaseUri, router);
 &nbsp;
   /** Web Analytics - taken from Google Analytics example
    *  @see https://github.com/vercel/next.js/blob/canary/examples/with-google-analytics
@@ -275,19 +264,19 @@ const MyApp = ({ Component, pageProps, router }: AppProps) =&gt; {
     const handleRouteChange = () =&gt; {
       // only push event if pathname is different
       if (window.location.pathname !== appPreviousLocationPathname) {
-        ;(window as AppWindow).adobeDataLayer?.push?.({ event: 'pageLoad' })
-        appPreviousLocationPathname = window.location.pathname
+        (window as AppWindow).adobeDataLayer?.push?.({ event: 'pageLoad' });
+        appPreviousLocationPathname = window.location.pathname;
       }
-    }
+    };
 &nbsp;
-    handleRouteChange()
-    router.events.on('routeChangeComplete', handleRouteChange)
-    router.events.on('hashChangeComplete', handleRouteChange)
+    handleRouteChange();
+    router.events.on('routeChangeComplete', handleRouteChange);
+    router.events.on('hashChangeComplete', handleRouteChange);
     return () =&gt; {
-      router.events.off('routeChangeComplete', handleRouteChange)
-      router.events.off('hashChangeComplete', handleRouteChange)
-    }
-  }, [router.events])
+      router.events.off('routeChangeComplete', handleRouteChange);
+      router.events.off('hashChangeComplete', handleRouteChange);
+    };
+  }, [router.events]);
 &nbsp;
   return (
     &lt;&gt;
@@ -311,19 +300,15 @@ const MyApp = ({ Component, pageProps, router }: AppProps) =&gt; {
         &lt;/&gt;
       )}
 &nbsp;
-      &lt;DefaultSeo
-        dangerouslySetAllPagesToNoIndex
-        dangerouslySetAllPagesToNoFollow
-        {...nextSEOConfig}
-      /&gt;
+      &lt;DefaultSeo dangerouslySetAllPagesToNoIndex dangerouslySetAllPagesToNoFollow {...nextSEOConfig} /&gt;
       &lt;QueryClientProvider client={queryClient}&gt;
         &lt;Component {...pageProps} /&gt;
       &lt;/QueryClientProvider&gt;
     &lt;/&gt;
-  )
-}
+  );
+};
 &nbsp;
-export default appWithTranslation(MyApp, nextI18NextConfig)
+export default appWithTranslation(MyApp, nextI18NextConfig);
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -331,7 +316,7 @@ export default appWithTranslation(MyApp, nextI18NextConfig)
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-10-06T15:21:52.346Z
+                at 2025-10-06T16:06:42.380Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

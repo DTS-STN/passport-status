@@ -118,18 +118,7 @@
 <a name='L53'></a><a href='#L53'>53</a>
 <a name='L54'></a><a href='#L54'>54</a>
 <a name='L55'></a><a href='#L55'>55</a>
-<a name='L56'></a><a href='#L56'>56</a>
-<a name='L57'></a><a href='#L57'>57</a>
-<a name='L58'></a><a href='#L58'>58</a>
-<a name='L59'></a><a href='#L59'>59</a>
-<a name='L60'></a><a href='#L60'>60</a>
-<a name='L61'></a><a href='#L61'>61</a>
-<a name='L62'></a><a href='#L62'>62</a>
-<a name='L63'></a><a href='#L63'>63</a>
-<a name='L64'></a><a href='#L64'>64</a>
-<a name='L65'></a><a href='#L65'>65</a>
-<a name='L66'></a><a href='#L66'>66</a>
-<a name='L67'></a><a href='#L67'>67</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L56'></a><a href='#L56'>56</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -184,41 +173,25 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Trans, useTranslation } from 'next-i18next'
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Trans, useTranslation } from 'next-i18next';
 &nbsp;
-import { StatusResultProps } from '../../pages/status'
-import ActionButton from '../ActionButton'
-import AlertBlock from '../AlertBlock'
-import ExternalLink from '../ExternalLink'
-import Timeline from '../Timeline'
+import { StatusResultProps } from '../../pages/status';
+import ActionButton from '../ActionButton';
+import AlertBlock from '../AlertBlock';
+import ExternalLink from '../ExternalLink';
+import Timeline from '../Timeline';
 &nbsp;
 export const CheckStatusReadyForPickup = (props: StatusResultProps) =&gt; {
-  const { t } = useTranslation(['status', 'timeline'])
+  const { t } = useTranslation(['status', 'timeline']);
 &nbsp;
-  const { displayData, checkAnotherHandler } = props
+  const { displayData, checkAnotherHandler } = props;
 &nbsp;
-  const { timelineExists, timelineData } = displayData
+  const { timelineExists, timelineData } = displayData;
 &nbsp;
   return (
     &lt;&gt;
       &lt;AlertBlock page="status-ready-pickup" /&gt;
-      &lt;h1
-        id="main-header"
-        data-testid="ready-for-pickup"
-        className="h1"
-        tabIndex={-1}
-      &gt;
+      &lt;h1 id="main-header" data-testid="ready-for-pickup" className="h1" tabIndex={-1}&gt;
         {t('ready-for-pickup.header')}
       &lt;/h1&gt;
       &lt;div className="flex flex-col md:flex-row md:gap-x-30 lg:gap-x-40 xl:gap-x-50"&gt;
@@ -229,9 +202,7 @@ export const CheckStatusReadyForPickup = (props: StatusResultProps) =&gt; {
               i18nKey={'ready-for-pickup.check-hours'}
               ns="status"
               components={{
-                Link: (
-                  &lt;ExternalLink href={t('ready-for-pickup.check-hours-href')} /&gt;
-                ),
+                Link: &lt;ExternalLink href={t('ready-for-pickup.check-hours-href')} /&gt;,
               }}
             /&gt;
           &lt;/p&gt;
@@ -241,11 +212,7 @@ export const CheckStatusReadyForPickup = (props: StatusResultProps) =&gt; {
             &lt;/div&gt;
           )}
           &lt;div className="mt-8"&gt;
-            &lt;ActionButton
-              onClick={checkAnotherHandler}
-              text={t('status:check-another')}
-              style="primary"
-            /&gt;
+            &lt;ActionButton onClick={checkAnotherHandler} text={t('status:check-another')} style="primary" /&gt;
           &lt;/div&gt;
         &lt;/div&gt;
         {timelineExists &amp;&amp; (
@@ -257,10 +224,10 @@ export const CheckStatusReadyForPickup = (props: StatusResultProps) =&gt; {
         )}
       &lt;/div&gt;
     &lt;/&gt;
-  )
-}
+  );
+};
 &nbsp;
-export default CheckStatusReadyForPickup
+export default CheckStatusReadyForPickup;
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -268,7 +235,7 @@ export default CheckStatusReadyForPickup
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-10-06T15:21:52.346Z
+                at 2025-10-06T16:06:42.380Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
