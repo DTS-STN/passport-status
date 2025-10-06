@@ -1,9 +1,9 @@
-import { GetServerSideProps } from 'next'
-import { NextSeo } from 'next-seo'
-import Image from 'next/image'
+import { GetServerSideProps } from 'next';
+import { NextSeo } from 'next-seo';
+import Image from 'next/image';
 
-import LinkButton from '../components/LinkButton'
-import { getDCTermsTitle } from '../lib/utils/seo-utils'
+import LinkButton from '../components/LinkButton';
+import { getDCTermsTitle } from '../lib/utils/seo-utils';
 
 const Index = () => {
   return (
@@ -12,20 +12,14 @@ const Index = () => {
         title="Passport Application Status Checker | Vérificateur de l'état d'une demande de passeport"
         titleTemplate="%s - Canada.ca"
         additionalMetaTags={[
-          getDCTermsTitle(
-            "Passport Application Status Checker - Vérificateur de l'état d'une demande de passeport",
-          ),
+          getDCTermsTitle("Passport Application Status Checker - Vérificateur de l'état d'une demande de passeport"),
         ]}
       />
-      <main
-        role="main"
-        className="bg-splash-page flex h-screen bg-cover bg-center"
-      >
+      <main role="main" className="bg-splash-page flex h-screen bg-cover bg-center">
         <div className="bg-gray-lighter m-auto w-[300px] md:w-[400px] lg:w-[500px]">
           <div className="p-8">
             <h1 id="main-header" className="sr-only" tabIndex={-1}>
-              Passport Application Status Checker | Vérificateur de l&#39;état
-              d&#39;une demande de passeport
+              Passport Application Status Checker | Vérificateur de l&#39;état d&#39;une demande de passeport
             </h1>
             <div className="w-11/12 lg:w-8/12">
               <Image
@@ -45,25 +39,13 @@ const Index = () => {
             <div className="mt-9 mb-2 flex justify-center gap-8">
               <section className="w-36" lang="en">
                 <h2 className="sr-only">Government of Canada</h2>
-                <LinkButton
-                  href="/expectations"
-                  id="english-button"
-                  style="primary"
-                  fullWidth
-                  locale="en"
-                >
+                <LinkButton href="/expectations" id="english-button" style="primary" fullWidth locale="en">
                   English
                 </LinkButton>
               </section>
               <section className="w-36" lang="fr">
                 <h2 className="sr-only">Gouvernement du Canada</h2>
-                <LinkButton
-                  href="/expectations"
-                  id="french-button"
-                  style="primary"
-                  fullWidth
-                  locale="fr"
-                >
+                <LinkButton href="/expectations" id="french-button" style="primary" fullWidth locale="fr">
                   Français
                 </LinkButton>
               </section>
@@ -90,13 +72,7 @@ const Index = () => {
               </a>
             </div>
             <div className="w-5/12 md:w-4/12">
-              <Image
-                alt="Symbol of the Government of Canada"
-                src="/wmms-blk.svg"
-                width={300}
-                height={71}
-                priority
-              />
+              <Image alt="Symbol of the Government of Canada" src="/wmms-blk.svg" width={300} height={71} priority />
               <span className="sr-only">
                 {' '}
                 / <span lang="fr">Symbole du gouvernement du Canada</span>
@@ -106,11 +82,11 @@ const Index = () => {
         </div>
       </main>
     </>
-  )
-}
+  );
+};
 
 export const getServerSideProps: GetServerSideProps = async () => ({
   props: {},
-})
+});
 
-export default Index
+export default Index;

@@ -1,41 +1,35 @@
-import { PropsWithChildren, useEffect, useId, useRef } from 'react'
+import { PropsWithChildren, useEffect, useId, useRef } from 'react';
 
-import { FocusOn } from 'react-focus-on'
+import { FocusOn } from 'react-focus-on';
 
-import ActionButton, { ActionButtonProps } from './ActionButton'
+import ActionButton, { ActionButtonProps } from './ActionButton';
 
 export interface ModalProps extends PropsWithChildren {
-  actionButtons: ActionButtonProps[]
-  header: string
-  onClose: EventListener
-  open: boolean
+  actionButtons: ActionButtonProps[];
+  header: string;
+  onClose: EventListener;
+  open: boolean;
 }
 
-const Modal = ({
-  actionButtons,
-  children,
-  header,
-  onClose,
-  open,
-}: ModalProps) => {
-  const dialogRef = useRef<HTMLDialogElement>(null)
-  const id = useId()
+const Modal = ({ actionButtons, children, header, onClose, open }: ModalProps) => {
+  const dialogRef = useRef<HTMLDialogElement>(null);
+  const id = useId();
 
   useEffect(() => {
     if (open) {
-      dialogRef.current?.showModal()
+      dialogRef.current?.showModal();
     } else {
-      dialogRef.current?.close()
+      dialogRef.current?.close();
     }
-  }, [open])
+  }, [open]);
 
   useEffect(() => {
-    const el = dialogRef.current
-    el?.addEventListener('close', onClose)
+    const el = dialogRef.current;
+    el?.addEventListener('close', onClose);
     return () => {
-      el?.removeEventListener('close', onClose)
-    }
-  }, [onClose])
+      el?.removeEventListener('close', onClose);
+    };
+  }, [onClose]);
 
   // "Confirm" button of form triggers "close" on dialog because of [method="dialog"]
 
@@ -52,10 +46,7 @@ const Modal = ({
             className="ring-gray-modal rounded-md bg-white ring-2"
             aria-describedby={`${id}-modal-header`}
           >
-            <header
-              id={`${id}-modal-header`}
-              className="bg-blue-deep rounded-t-md border-b border-black p-3 text-white"
-            >
+            <header id={`${id}-modal-header`} className="bg-blue-deep rounded-t-md border-b border-black p-3 text-white">
               <h1>{header}</h1>
             </header>
             <div id={`${id}-modal-desc`} className="p-3">
@@ -63,17 +54,14 @@ const Modal = ({
             </div>
             <div className="border-gray-modal flex justify-end gap-2 border-t p-2">
               {actionButtons.map((actionButtonProps) => (
-                <ActionButton
-                  key={actionButtonProps.text}
-                  {...actionButtonProps}
-                />
+                <ActionButton key={actionButtonProps.text} {...actionButtonProps} />
               ))}
             </div>
           </section>
         </FocusOn>
       </div>
     </dialog>
-  )
-}
+  );
+};
 
-export default Modal
+export default Modal;

@@ -1,12 +1,12 @@
-import { FlatNamespace } from 'i18next'
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import { FlatNamespace } from 'i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-import nextI18nextConfig from '../../../next-i18next.config'
+import nextI18nextConfig from '../../../next-i18next.config';
 
 /**
  * The default namespaces for translations.
  */
-export const defaultNamespaces: Array<FlatNamespace> = ['common']
+export const defaultNamespaces: Array<FlatNamespace> = ['common'];
 
 /**
  * Retrieves namespaces based on the provided requirements.
@@ -15,24 +15,21 @@ export const defaultNamespaces: Array<FlatNamespace> = ['common']
  * @returns The retrieved namespaces.
  */
 export const getNamespaces = (
-  namespacesRequired:
-    | Readonly<FlatNamespace>
-    | ReadonlyArray<FlatNamespace>
-    | undefined = undefined,
+  namespacesRequired: Readonly<FlatNamespace> | ReadonlyArray<FlatNamespace> | undefined = undefined,
 ) => {
   // default with namespaces to always needed
-  const namespaces: Array<FlatNamespace> = defaultNamespaces
+  const namespaces: Array<FlatNamespace> = defaultNamespaces;
 
   if (!namespacesRequired) {
-    return namespaces
+    return namespaces;
   }
 
   if (typeof namespacesRequired === 'string') {
-    return [...new Set([...namespaces, namespacesRequired])]
+    return [...new Set([...namespaces, namespacesRequired])];
   }
 
-  return [...new Set([...namespaces, ...namespacesRequired])]
-}
+  return [...new Set([...namespaces, ...namespacesRequired])];
+};
 
 /**
  * A wrapper function for server-side translations using next-i18next.
@@ -42,14 +39,11 @@ export const getNamespaces = (
  */
 export const pageWithServerSideTranslations = async (
   locale?: string,
-  namespacesRequired:
-    | FlatNamespace
-    | Array<FlatNamespace>
-    | undefined = undefined,
+  namespacesRequired: FlatNamespace | Array<FlatNamespace> | undefined = undefined,
 ) => {
   return serverSideTranslations(
     locale ?? nextI18nextConfig.i18n.defaultLocale,
     getNamespaces(namespacesRequired),
     nextI18nextConfig,
-  )
-}
+  );
+};

@@ -1,26 +1,23 @@
 export interface DateSelectOption {
-  value: string
-  label: string
+  value: string;
+  label: string;
 }
-export type DateSelectOptions = DateSelectOption[]
-export type DateSelectType = 'year' | 'month' | 'day'
+export type DateSelectOptions = DateSelectOption[];
+export type DateSelectType = 'year' | 'month' | 'day';
 
-export type DateSelectOnChangeEvent = (
-  e: React.ChangeEvent<HTMLSelectElement>,
-  type: DateSelectType,
-) => void
+export type DateSelectOnChangeEvent = (e: React.ChangeEvent<HTMLSelectElement>, type: DateSelectType) => void;
 
 export interface DateSelectProps {
-  ariaDescribedby?: string
-  dateSelectLabelId: string
-  error?: boolean
-  id: string
-  label: string
-  onChange: DateSelectOnChangeEvent
-  options: DateSelectOptions
-  required?: boolean
-  type: DateSelectType
-  value: string
+  ariaDescribedby?: string;
+  dateSelectLabelId: string;
+  error?: boolean;
+  id: string;
+  label: string;
+  onChange: DateSelectOnChangeEvent;
+  options: DateSelectOptions;
+  required?: boolean;
+  type: DateSelectType;
+  value: string;
 }
 
 const DateSelect = ({
@@ -35,17 +32,11 @@ const DateSelect = ({
   type,
   value,
 }: DateSelectProps) => {
-  const handleOnSelectChange: React.ChangeEventHandler<HTMLSelectElement> = (
-    e,
-  ) => onChange(e, type)
+  const handleOnSelectChange: React.ChangeEventHandler<HTMLSelectElement> = (e) => onChange(e, type);
 
   return (
     <div className="flex flex-col space-y-2">
-      <label
-        id={`date-select-${id}-${type}-label`}
-        htmlFor={id}
-        className="font-bold"
-      >
+      <label id={`date-select-${id}-${type}-label`} htmlFor={id} className="font-bold">
         {label}
       </label>
       <select
@@ -68,7 +59,7 @@ const DateSelect = ({
         ))}
       </select>
     </div>
-  )
-}
+  );
+};
 
-export default DateSelect
+export default DateSelect;

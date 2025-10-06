@@ -1,6 +1,6 @@
 export interface InputErrorMessageProps {
-  id?: string
-  message: string
+  id?: string;
+  message: string;
 }
 
 const InputErrorMessage = ({ id, message }: InputErrorMessageProps) => {
@@ -12,7 +12,7 @@ const InputErrorMessage = ({ id, message }: InputErrorMessageProps) => {
     >
       {message}
     </div>
-  )
-}
+  );
+};
 
-export default InputErrorMessage
+export default InputErrorMessage;

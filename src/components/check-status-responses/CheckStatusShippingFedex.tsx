@@ -1,18 +1,18 @@
-import { MouseEventHandler } from 'react'
+import { MouseEventHandler } from 'react';
 
-import { Trans, useTranslation } from 'next-i18next'
+import { Trans, useTranslation } from 'next-i18next';
 
-import { StatusDisplayData } from '../../lib/types'
-import ActionButton from '../ActionButton'
-import AlertBlock from '../AlertBlock'
-import Collapse from '../Collapse'
-import ExternalLink from '../ExternalLink'
-import Timeline from '../Timeline'
+import { StatusDisplayData } from '../../lib/types';
+import ActionButton from '../ActionButton';
+import AlertBlock from '../AlertBlock';
+import Collapse from '../Collapse';
+import ExternalLink from '../ExternalLink';
+import Timeline from '../Timeline';
 
 export interface CheckStatusShippingFedexProps {
-  displayData: StatusDisplayData
-  checkAnotherHandler: MouseEventHandler<HTMLButtonElement>
-  trackingNumber?: string
+  displayData: StatusDisplayData;
+  checkAnotherHandler: MouseEventHandler<HTMLButtonElement>;
+  trackingNumber?: string;
 }
 
 export const CheckStatusShippingFedex = ({
@@ -20,19 +20,14 @@ export const CheckStatusShippingFedex = ({
   displayData,
   trackingNumber,
 }: CheckStatusShippingFedexProps) => {
-  const { t } = useTranslation(['status', 'common', 'timeline'])
+  const { t } = useTranslation(['status', 'common', 'timeline']);
 
-  const { timelineExists, timelineData } = displayData
+  const { timelineExists, timelineData } = displayData;
 
   return (
     <div id="response-result">
       <AlertBlock page="status-shipped-fedex" />
-      <h1
-        id="main-header"
-        data-testid="shipped-fedex"
-        className="h1"
-        tabIndex={-1}
-      >
+      <h1 id="main-header" data-testid="shipped-fedex" className="h1" tabIndex={-1}>
         {t('shipped-fedex.header')}
       </h1>
       <div className="flex flex-col md:flex-row md:gap-x-30 lg:gap-x-40 xl:gap-x-50">
@@ -43,18 +38,11 @@ export const CheckStatusShippingFedex = ({
               <Timeline entries={timelineData} />
             </div>
           )}
-          <h2 className="h2 mt-8">
-            {t('shipped-fedex.shipping-information.header')}
-          </h2>
+          <h2 className="h2 mt-8">{t('shipped-fedex.shipping-information.header')}</h2>
 
           {trackingNumber ? (
             <>
-              <Collapse
-                title={t(
-                  'shipped-fedex.shipping-information.country-canada.header',
-                )}
-                variant="fullWidth"
-              >
+              <Collapse title={t('shipped-fedex.shipping-information.country-canada.header')} variant="fullWidth">
                 <p>
                   <Trans
                     i18nKey="shipped-fedex.shipping-information.country-canada.mailing"
@@ -78,11 +66,7 @@ export const CheckStatusShippingFedex = ({
                     }}
                   />
                 </p>
-                <p className="font-bold">
-                  {t(
-                    'shipped-fedex.shipping-information.country-canada.send-separately',
-                  )}
-                </p>
+                <p className="font-bold">{t('shipped-fedex.shipping-information.country-canada.send-separately')}</p>
                 <p>
                   <Trans
                     i18nKey="shipped-fedex.shipping-information.country-canada.dont-receive"
@@ -93,12 +77,7 @@ export const CheckStatusShippingFedex = ({
                   />
                 </p>
               </Collapse>
-              <Collapse
-                title={t(
-                  'shipped-fedex.shipping-information.country-us.header',
-                )}
-                variant="fullWidth"
-              >
+              <Collapse title={t('shipped-fedex.shipping-information.country-us.header')} variant="fullWidth">
                 <p>
                   <Trans
                     i18nKey="shipped-fedex.shipping-information.country-us.mailing"
@@ -135,11 +114,7 @@ export const CheckStatusShippingFedex = ({
             </>
           ) : (
             <>
-              <p>
-                {t(
-                  'shipped-fedex.shipping-information.no-tracking-number.mailing',
-                )}
-              </p>
+              <p>{t('shipped-fedex.shipping-information.no-tracking-number.mailing')}</p>
               <p>
                 <Trans
                   i18nKey="shipped-fedex.shipping-information.dont-receive"
@@ -152,11 +127,7 @@ export const CheckStatusShippingFedex = ({
             </>
           )}
           <div className="mt-8">
-            <ActionButton
-              onClick={checkAnotherHandler}
-              text={t('status:check-another')}
-              style="primary"
-            />
+            <ActionButton onClick={checkAnotherHandler} text={t('status:check-another')} style="primary" />
           </div>
         </div>
         {timelineExists && (
@@ -168,7 +139,7 @@ export const CheckStatusShippingFedex = ({
         )}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default CheckStatusShippingFedex
+export default CheckStatusShippingFedex;

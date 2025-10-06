@@ -1,22 +1,19 @@
-import { PropsWithChildren } from 'react'
+import { PropsWithChildren } from 'react';
 
-import Markdown from 'markdown-to-jsx'
+import Markdown from 'markdown-to-jsx';
 
-import ExternalLink from './ExternalLink'
+import ExternalLink from './ExternalLink';
 
 const Link = ({ children, ...props }: PropsWithChildren<{ href: string }>) => (
   <ExternalLink {...props}>{children}</ExternalLink>
-)
+);
 
 export type MarkdownContentProps = {
-  markdown: string
-  disableParsingRawHTML?: boolean
-}
+  markdown: string;
+  disableParsingRawHTML?: boolean;
+};
 
-export const MarkdownContent = ({
-  markdown,
-  disableParsingRawHTML = true,
-}: MarkdownContentProps) => (
+export const MarkdownContent = ({ markdown, disableParsingRawHTML = true }: MarkdownContentProps) => (
   <Markdown
     options={{
       disableParsingRawHTML,
@@ -50,4 +47,4 @@ export const MarkdownContent = ({
   >
     {markdown}
   </Markdown>
-)
+);

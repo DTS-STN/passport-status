@@ -8,8 +8,8 @@ export const formatDateShort = (dateString: string, lang: string): string => {
   return formatDateWithOptions(dateString, lang, {
     month: 'long', // Full month name
     day: 'numeric', // Numeric day of the month
-  })
-}
+  });
+};
 
 /**
  * @description Formats a date string into a more readable format.
@@ -20,8 +20,8 @@ export const formatDateShort = (dateString: string, lang: string): string => {
 export const formatDateLong = (dateString: string, lang: string): string => {
   return formatDateWithOptions(dateString, lang, {
     dateStyle: 'long', // Full date
-  })
-}
+  });
+};
 
 /**
  * @description Formats a date string into a more readable format.
@@ -35,11 +35,11 @@ const formatDateWithOptions = (
   lang: string,
   formatOptions: Omit<Intl.DateTimeFormatOptions, 'timeZone'>,
 ) => {
-  let date = new Date(dateString)
+  let date = new Date(dateString);
 
   // Check if the date is valid
   if (isNaN(date.getTime())) {
-    throw new Error('Invalid date')
+    throw new Error('Invalid date');
   }
 
   // In my testing setting the timezone on the Intl.DateTimeFormatOptions
@@ -48,17 +48,17 @@ const formatDateWithOptions = (
   // is a safe bet.
 
   // Parse the date string into components
-  const [year, month, day] = dateString.split('-').map(Number)
+  const [year, month, day] = dateString.split('-').map(Number);
 
   // Create a Date object in UTC
-  date = new Date(Date.UTC(year, month - 1, day))
+  date = new Date(Date.UTC(year, month - 1, day));
 
-  const prefix = ['en', 'fr'].includes(lang) ? lang : 'en'
+  const prefix = ['en', 'fr'].includes(lang) ? lang : 'en';
 
   const options: Intl.DateTimeFormatOptions = {
     ...formatOptions,
     timeZone: 'UTC', // Force UTC timezone
-  }
+  };
 
-  return new Intl.DateTimeFormat(`${prefix}-CA`, options).format(date)
-}
+  return new Intl.DateTimeFormat(`${prefix}-CA`, options).format(date);
+};

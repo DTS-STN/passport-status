@@ -1,53 +1,47 @@
-import Image from 'next/image'
+import Image from 'next/image';
 
-import DateModified from './DateModified'
+import DateModified from './DateModified';
 
 export interface FooterLogo {
-  src: string
-  alt: string
-  width: number
-  height: number
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
 }
 
 export interface FooterLink {
-  link: string
-  linkText: string
+  link: string;
+  linkText: string;
 }
 
 export interface FooterProps {
-  dateModifiedText: string
+  dateModifiedText: string;
 
   /**
    * footer header
    */
-  footerHeader: string
+  footerHeader: string;
 
   /**
    * footer canada-ca logo
    */
-  footerLogo: FooterLogo
+  footerLogo: FooterLogo;
 
   /**
    * Screenreader section indicator
    */
-  footerNavHeader: string
+  footerNavHeader: string;
 
   /**
    * array of objects containing the link text and link
    */
-  links: FooterLink[]
+  links: FooterLink[];
 }
 
 /**
  * footer element for all pages
  */
-const Footer = ({
-  dateModifiedText,
-  footerHeader,
-  footerLogo,
-  footerNavHeader,
-  links,
-}: FooterProps) => {
+const Footer = ({ dateModifiedText, footerHeader, footerLogo, footerNavHeader, links }: FooterProps) => {
   return (
     <footer>
       <h2 className="sr-only">{footerHeader}</h2>
@@ -85,7 +79,7 @@ const Footer = ({
         </div>
       </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

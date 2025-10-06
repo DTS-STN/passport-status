@@ -1,17 +1,12 @@
-import '@testing-library/jest-dom'
-import { render, screen } from '@testing-library/react'
+import '@testing-library/jest-dom';
+import { render, screen } from '@testing-library/react';
 
-import { axe, toHaveNoViolations } from 'jest-axe'
+import { axe, toHaveNoViolations } from 'jest-axe';
 
-import CheckStatusShippingFedex from '../../../src/components/check-status-responses/CheckStatusShippingFedex'
-import {
-  DeliveryMethodCode,
-  ServiceLevelCode,
-  StatusDisplayData,
-  TimelineEntryData,
-} from '../../../src/lib/types'
+import CheckStatusShippingFedex from '../../../src/components/check-status-responses/CheckStatusShippingFedex';
+import { DeliveryMethodCode, ServiceLevelCode, StatusDisplayData, TimelineEntryData } from '../../../src/lib/types';
 
-expect.extend(toHaveNoViolations)
+expect.extend(toHaveNoViolations);
 
 jest.mock('../../../src/lib/useAlerts', () => ({
   useAlerts: () => ({
@@ -19,10 +14,10 @@ jest.mock('../../../src/lib/useAlerts', () => ({
     error: undefined,
     data: undefined,
   }),
-}))
+}));
 
 describe('CheckStatusShippingFedex', () => {
-  const checkAnotherHandler = () => {}
+  const checkAnotherHandler = () => {};
 
   const timelineData: TimelineEntryData[] = [
     {
@@ -30,7 +25,7 @@ describe('CheckStatusShippingFedex', () => {
       status: 'done',
       date: '2025-01-01',
     },
-  ]
+  ];
 
   const displayData: StatusDisplayData = {
     serviceLevel: ServiceLevelCode.TWENTY_DAYS,
@@ -38,30 +33,26 @@ describe('CheckStatusShippingFedex', () => {
     timelineData: timelineData,
     deliveryMethod: DeliveryMethodCode.MAIL,
     receivedDate: '2025-01-01',
-  }
+  };
 
   const sut = (
-    <CheckStatusShippingFedex
-      checkAnotherHandler={checkAnotherHandler}
-      displayData={displayData}
-      trackingNumber="12345"
-    />
-  )
+    <CheckStatusShippingFedex checkAnotherHandler={checkAnotherHandler} displayData={displayData} trackingNumber="12345" />
+  );
 
   //TODO: add test for when phone number is visible and when it isn't
   it('renders', () => {
-    render(sut)
+    render(sut);
 
-    const heading = screen.getByRole('heading', { level: 1 })
+    const heading = screen.getByRole('heading', { level: 1 });
 
-    expect(screen.getByTestId('shipped-fedex')).toBeInTheDocument()
-    expect(heading).toBeInTheDocument()
-    expect(heading).toHaveAttribute('id', 'main-header')
-  })
+    expect(screen.getByTestId('shipped-fedex')).toBeInTheDocument();
+    expect(heading).toBeInTheDocument();
+    expect(heading).toHaveAttribute('id', 'main-header');
+  });
 
   it('meets a11y', async () => {
-    const { container } = render(sut)
-    const results = await axe(container)
-    expect(results).toHaveNoViolations()
-  })
-})
+    const { container } = render(sut);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+});

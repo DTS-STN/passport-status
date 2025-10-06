@@ -1,17 +1,12 @@
-import '@testing-library/jest-dom'
-import { render, screen } from '@testing-library/react'
+import '@testing-library/jest-dom';
+import { render, screen } from '@testing-library/react';
 
-import { axe, toHaveNoViolations } from 'jest-axe'
+import { axe, toHaveNoViolations } from 'jest-axe';
 
-import CheckStatusPrinting from '../../../src/components/check-status-responses/CheckStatusPrinting'
-import {
-  DeliveryMethodCode,
-  ServiceLevelCode,
-  StatusDisplayData,
-  TimelineEntryData,
-} from '../../../src/lib/types'
+import CheckStatusPrinting from '../../../src/components/check-status-responses/CheckStatusPrinting';
+import { DeliveryMethodCode, ServiceLevelCode, StatusDisplayData, TimelineEntryData } from '../../../src/lib/types';
 
-expect.extend(toHaveNoViolations)
+expect.extend(toHaveNoViolations);
 
 jest.mock('../../../src/lib/useAlerts', () => ({
   useAlerts: () => ({
@@ -19,10 +14,10 @@ jest.mock('../../../src/lib/useAlerts', () => ({
     error: undefined,
     data: undefined,
   }),
-}))
+}));
 
 describe('CheckStatusPrinting', () => {
-  const checkAnotherHandler = () => null
+  const checkAnotherHandler = () => null;
   const timelineData: TimelineEntryData[] = [
     {
       step: 'Received',
@@ -43,7 +38,7 @@ describe('CheckStatusPrinting', () => {
       step: 'Mailed out',
       status: 'future',
     },
-  ]
+  ];
 
   const displayData: StatusDisplayData = {
     serviceLevel: ServiceLevelCode.TWENTY_DAYS,
@@ -51,28 +46,23 @@ describe('CheckStatusPrinting', () => {
     timelineData: timelineData,
     deliveryMethod: DeliveryMethodCode.MAIL,
     receivedDate: '2024-01-01',
-  }
+  };
 
-  const sut = (
-    <CheckStatusPrinting
-      checkAnotherHandler={checkAnotherHandler}
-      displayData={displayData}
-    />
-  )
+  const sut = <CheckStatusPrinting checkAnotherHandler={checkAnotherHandler} displayData={displayData} />;
 
   it('renders', () => {
-    render(sut)
+    render(sut);
 
-    const heading = screen.getByRole('heading', { level: 1 })
+    const heading = screen.getByRole('heading', { level: 1 });
 
-    expect(screen.getByTestId('printing')).toBeInTheDocument()
-    expect(heading).toBeInTheDocument()
-    expect(heading).toHaveAttribute('id', 'main-header')
-  })
+    expect(screen.getByTestId('printing')).toBeInTheDocument();
+    expect(heading).toBeInTheDocument();
+    expect(heading).toHaveAttribute('id', 'main-header');
+  });
 
   it('meets a11y', async () => {
-    const { container } = render(sut)
-    const results = await axe(container)
-    expect(results).toHaveNoViolations()
-  })
-})
+    const { container } = render(sut);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+});

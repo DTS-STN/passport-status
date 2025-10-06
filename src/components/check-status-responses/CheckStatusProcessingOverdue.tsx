@@ -1,40 +1,26 @@
-import { Trans, useTranslation } from 'next-i18next'
+import { Trans, useTranslation } from 'next-i18next';
 
-import { DeliveryMethodCode, ServiceLevelCode } from '../../lib/types'
-import { formatDateShort } from '../../lib/utils/dates'
-import { StatusResultProps } from '../../pages/status'
-import ActionButton from '../ActionButton'
-import AlertBlock from '../AlertBlock'
-import ExternalLink from '../ExternalLink'
-import Timeline from '../Timeline'
+import { DeliveryMethodCode, ServiceLevelCode } from '../../lib/types';
+import { formatDateShort } from '../../lib/utils/dates';
+import { StatusResultProps } from '../../pages/status';
+import ActionButton from '../ActionButton';
+import AlertBlock from '../AlertBlock';
+import ExternalLink from '../ExternalLink';
+import Timeline from '../Timeline';
 
-export const CheckStatusProcessingOverdue = ({
-  displayData,
-  checkAnotherHandler,
-}: StatusResultProps) => {
-  const { t, i18n } = useTranslation(['status', 'common'])
+export const CheckStatusProcessingOverdue = ({ displayData, checkAnotherHandler }: StatusResultProps) => {
+  const { t, i18n } = useTranslation(['status', 'common']);
 
-  const {
-    deliveryMethod,
-    receivedDate,
-    serviceLevel,
-    timelineExists,
-    timelineData,
-  } = displayData
+  const { deliveryMethod, receivedDate, serviceLevel, timelineExists, timelineData } = displayData;
 
-  const serviceDays = serviceLevel === ServiceLevelCode.TEN_DAYS ? '10' : '20'
+  const serviceDays = serviceLevel === ServiceLevelCode.TEN_DAYS ? '10' : '20';
 
-  const formattedDate = formatDateShort(receivedDate, i18n.language)
+  const formattedDate = formatDateShort(receivedDate, i18n.language);
 
   return (
     <div id="response-result">
       <AlertBlock page="status-processing-overdue" />
-      <h1
-        id="main-header"
-        data-testid="processing-overdue"
-        className="h1"
-        tabIndex={-1}
-      >
+      <h1 id="main-header" data-testid="processing-overdue" className="h1" tabIndex={-1}>
         {t('status:being-processed-overdue.header')}
       </h1>
 
@@ -47,9 +33,7 @@ export const CheckStatusProcessingOverdue = ({
               <Timeline entries={timelineData} />
             </div>
           )}
-          <h2 className="h2 mt-8 mb-2">
-            {t('status:being-processed-overdue.service-standards.heading')}
-          </h2>
+          <h2 className="h2 mt-8 mb-2">{t('status:being-processed-overdue.service-standards.heading')}</h2>
           <p>
             <Trans
               i18nKey={
@@ -67,29 +51,19 @@ export const CheckStatusProcessingOverdue = ({
               }}
             />
           </p>
-          <h2 className="h2 mt-8 mb-2">
-            {t('status:being-processed-overdue.travelling-soon.heading')}
-          </h2>
+          <h2 className="h2 mt-8 mb-2">{t('status:being-processed-overdue.travelling-soon.heading')}</h2>
           <p>
             <Trans
               i18nKey={'being-processed-overdue.travelling-soon.if-travelling'}
               ns="status"
               components={{
-                Link: (
-                  <ExternalLink
-                    href={t('status:status-check-urgent.express-services-href')}
-                  />
-                ),
+                Link: <ExternalLink href={t('status:status-check-urgent.express-services-href')} />,
               }}
             />
           </p>
 
           <div className="mt-8">
-            <ActionButton
-              onClick={checkAnotherHandler}
-              text={t('status:check-another')}
-              style="primary"
-            />
+            <ActionButton onClick={checkAnotherHandler} text={t('status:check-another')} style="primary" />
           </div>
         </div>
         {timelineExists && (
@@ -101,7 +75,7 @@ export const CheckStatusProcessingOverdue = ({
         )}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default CheckStatusProcessingOverdue
+export default CheckStatusProcessingOverdue;

@@ -1,32 +1,32 @@
-import '@testing-library/jest-dom'
-import { render, screen } from '@testing-library/react'
+import '@testing-library/jest-dom';
+import { render, screen } from '@testing-library/react';
 
-import { axe, toHaveNoViolations } from 'jest-axe'
+import { axe, toHaveNoViolations } from 'jest-axe';
 
-import Email from '../../src/pages/email'
+import Email from '../../src/pages/email';
 
-expect.extend(toHaveNoViolations)
+expect.extend(toHaveNoViolations);
 
 jest.mock('next/router', () => ({
   useRouter: () => ({}),
-}))
-jest.mock('../../src/components/ActionButton')
+}));
+jest.mock('../../src/components/ActionButton');
 jest.mock('../../src/components/ErrorSummary', () => ({
   default: jest.fn(),
   getErrorSummaryItems: jest.fn(() => []),
-}))
-jest.mock('../../src/components/IdleTimeout')
-jest.mock('../../src/components/InputField')
-jest.mock('../../src/components/Layout')
-jest.mock('../../src/components/Modal')
+}));
+jest.mock('../../src/components/IdleTimeout');
+jest.mock('../../src/components/InputField');
+jest.mock('../../src/components/Layout');
+jest.mock('../../src/components/Modal');
 jest.mock('../../src/lib/useEmailEsrf', () => {
   return jest.fn(() => ({
     isPending: false,
     isSuccess: false,
     error: undefined,
     mutate: jest.fn(),
-  }))
-})
+  }));
+});
 
 jest.mock('../../src/lib/useAlerts', () => ({
   useAlerts: () => ({
@@ -34,19 +34,19 @@ jest.mock('../../src/lib/useAlerts', () => ({
     error: undefined,
     data: undefined,
   }),
-}))
+}));
 
 describe('Check email page', () => {
   it('should render the page', () => {
-    render(<Email />)
-    const heading = screen.getByRole('heading', { level: 1 })
-    expect(heading).toBeInTheDocument()
-    expect(heading).toHaveAttribute('id', 'main-header')
-  })
+    render(<Email />);
+    const heading = screen.getByRole('heading', { level: 1 });
+    expect(heading).toBeInTheDocument();
+    expect(heading).toHaveAttribute('id', 'main-header');
+  });
 
   it('should be accessible', async () => {
-    const { container } = render(<Email />)
-    const results = await axe(container)
-    expect(results).toHaveNoViolations()
-  })
-})
+    const { container } = render(<Email />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+});

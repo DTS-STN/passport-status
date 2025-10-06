@@ -1,19 +1,19 @@
-import { DefaultSeoProps } from 'next-seo'
-import { OpenGraphMedia } from 'next-seo/lib/types'
-import { Router } from 'next/router'
+import { DefaultSeoProps } from 'next-seo';
+import { OpenGraphMedia } from 'next-seo/lib/types';
+import { Router } from 'next/router';
 
-export type NextSEORouter = Pick<Router, 'asPath' | 'locale'>
+export type NextSEORouter = Pick<Router, 'asPath' | 'locale'>;
 
 export interface LanguageAlternate {
-  hrefLang: string
-  href: string
+  hrefLang: string;
+  href: string;
 }
 
 export const getLanguageAlternates = (
   appBaseUri: string,
   router: NextSEORouter,
 ): ReadonlyArray<LanguageAlternate> | undefined => {
-  if (!appBaseUri) return
+  if (!appBaseUri) return;
   return [
     {
       hrefLang: 'en',
@@ -23,31 +23,25 @@ export const getLanguageAlternates = (
       hrefLang: 'fr',
       href: `${appBaseUri}/fr${router.asPath}`,
     },
-  ]
-}
+  ];
+};
 
-export const getOpenGraphImages = (
-  appBaseUri: string,
-): ReadonlyArray<OpenGraphMedia> | undefined => {
-  if (!appBaseUri) return
+export const getOpenGraphImages = (appBaseUri: string): ReadonlyArray<OpenGraphMedia> | undefined => {
+  if (!appBaseUri) return;
   return [
     {
       url: `${appBaseUri}/ogp.jpg`,
       width: 2048,
       height: 1152,
     },
-  ]
-}
+  ];
+};
 
-export type GetNextSEOConfig = (
-  appBaseUri: string,
-  router: NextSEORouter,
-) => DefaultSeoProps
+export type GetNextSEOConfig = (appBaseUri: string, router: NextSEORouter) => DefaultSeoProps;
 
 export const getDefaultConfig: GetNextSEOConfig = (appBaseUri, router) => ({
   titleTemplate: '%s - Canada.ca',
-  defaultTitle:
-    "Passport Application Status Checker | Vérificateur de l'état d'une demande de passeport - Canada.ca",
+  defaultTitle: "Passport Application Status Checker | Vérificateur de l'état d'une demande de passeport - Canada.ca",
   additionalMetaTags: [
     {
       name: 'author',
@@ -94,15 +88,14 @@ export const getDefaultConfig: GetNextSEOConfig = (appBaseUri, router) => ({
   openGraph: {
     images: getOpenGraphImages(appBaseUri),
     locale: 'en_CA',
-    siteName:
-      "Passport Application Status Checker | Vérificateur de l'état d'une demande de passeport - Canada.ca",
+    siteName: "Passport Application Status Checker | Vérificateur de l'état d'une demande de passeport - Canada.ca",
     type: 'website',
   },
   twitter: {
     site: '@CitImmCanada',
     cardType: 'summary_large_image',
   },
-})
+});
 
 export const getEnglishConfig: GetNextSEOConfig = (appBaseUri, router) => ({
   titleTemplate: '%s - Passport Application Status Checker - Canada.ca',
@@ -136,11 +129,10 @@ export const getEnglishConfig: GetNextSEOConfig = (appBaseUri, router) => ({
     site: '@CitImmCanada',
     cardType: 'summary_large_image',
   },
-})
+});
 
 export const getFrenchConfig: GetNextSEOConfig = (appBaseUri, router) => ({
-  titleTemplate:
-    "%s - Vérificateur de l'état d'une demande de passeport - Canada.ca",
+  titleTemplate: "%s - Vérificateur de l'état d'une demande de passeport - Canada.ca",
   defaultTitle: "Vérificateur de l'état d'une demande de passeport - Canada.ca",
   additionalMetaTags: [
     {
@@ -171,11 +163,11 @@ export const getFrenchConfig: GetNextSEOConfig = (appBaseUri, router) => ({
     site: '@citimmcanfr',
     cardType: 'summary_large_image',
   },
-})
+});
 
 export const getNextSEOConfig: GetNextSEOConfig = (appBaseUri, router) => {
-  const { locale } = router
-  if (locale === 'en') return getEnglishConfig(appBaseUri, router)
-  if (locale === 'fr') return getFrenchConfig(appBaseUri, router)
-  return getDefaultConfig(appBaseUri, router)
-}
+  const { locale } = router;
+  if (locale === 'en') return getEnglishConfig(appBaseUri, router);
+  if (locale === 'fr') return getFrenchConfig(appBaseUri, router);
+  return getDefaultConfig(appBaseUri, router);
+};

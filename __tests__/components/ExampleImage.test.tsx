@@ -1,11 +1,11 @@
-import '@testing-library/jest-dom'
-import { render, screen, waitFor } from '@testing-library/react'
+import '@testing-library/jest-dom';
+import { render, screen, waitFor } from '@testing-library/react';
 
-import { axe, toHaveNoViolations } from 'jest-axe'
+import { axe, toHaveNoViolations } from 'jest-axe';
 
-import ExampleImage from '../../src/components/ExampleImage'
+import ExampleImage from '../../src/components/ExampleImage';
 
-expect.extend(toHaveNoViolations)
+expect.extend(toHaveNoViolations);
 
 describe('ExampleImage', () => {
   const sut = (
@@ -20,21 +20,21 @@ describe('ExampleImage', () => {
     >
       <p>{'description'}</p>
     </ExampleImage>
-  )
+  );
 
   it('renders', async () => {
-    render(sut)
-    const screenText = screen.getByText('description')
-    expect(screenText).toBeInTheDocument()
+    render(sut);
+    const screenText = screen.getByText('description');
+    expect(screenText).toBeInTheDocument();
     await waitFor(() => {
-      const img = screen.getByAltText('This is an image')
-      expect(img.getAttribute('src')).toContain('Receipt1_EN.png')
-    })
-  })
+      const img = screen.getByAltText('This is an image');
+      expect(img.getAttribute('src')).toContain('Receipt1_EN.png');
+    });
+  });
 
   it('meets a11y', async () => {
-    const { container } = render(sut)
-    const results = await axe(container)
-    expect(results).toHaveNoViolations()
-  })
-})
+    const { container } = render(sut);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+});

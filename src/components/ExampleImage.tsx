@@ -1,17 +1,17 @@
-import { PropsWithChildren } from 'react'
+import { PropsWithChildren } from 'react';
 
-import Image from 'next/image'
+import Image from 'next/image';
 
 export interface ImageProps {
-  src: string
-  alt: string
-  width: number
-  height: number
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
 }
 
 export interface ExampleImageProps extends PropsWithChildren {
-  title?: string
-  imageProps: ImageProps
+  title?: string;
+  imageProps: ImageProps;
 }
 
 const ExampleImage = ({ children, title, imageProps }: ExampleImageProps) => {
@@ -34,7 +34,7 @@ const ExampleImage = ({ children, title, imageProps }: ExampleImageProps) => {
         <figcaption className="px-5 py-3 text-lg">{children}</figcaption>
       </figure>
     </>
-  )
-}
+  );
+};
 
-export default ExampleImage
+export default ExampleImage;
