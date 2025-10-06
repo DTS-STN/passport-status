@@ -1,30 +1,21 @@
-import { Trans, useTranslation } from 'next-i18next'
+import { Trans, useTranslation } from 'next-i18next';
 
-import { DeliveryMethodCode, ServiceLevelCode } from '../../lib/types'
-import { formatDateShort } from '../../lib/utils/dates'
-import { StatusResultProps } from '../../pages/status'
-import ActionButton from '../ActionButton'
-import AlertBlock from '../AlertBlock'
-import ExternalLink from '../ExternalLink'
-import Timeline from '../Timeline'
+import { DeliveryMethodCode, ServiceLevelCode } from '../../lib/types';
+import { formatDateShort } from '../../lib/utils/dates';
+import { StatusResultProps } from '../../pages/status';
+import ActionButton from '../ActionButton';
+import AlertBlock from '../AlertBlock';
+import ExternalLink from '../ExternalLink';
+import Timeline from '../Timeline';
 
-export const CheckStatusPrinting = ({
-  displayData,
-  checkAnotherHandler,
-}: StatusResultProps) => {
-  const { t, i18n } = useTranslation(['status', 'timeline'])
+export const CheckStatusPrinting = ({ displayData, checkAnotherHandler }: StatusResultProps) => {
+  const { t, i18n } = useTranslation(['status', 'timeline']);
 
-  const {
-    deliveryMethod,
-    receivedDate,
-    serviceLevel,
-    timelineExists,
-    timelineData,
-  } = displayData
+  const { deliveryMethod, receivedDate, serviceLevel, timelineExists, timelineData } = displayData;
 
-  const serviceDays = serviceLevel === ServiceLevelCode.TEN_DAYS ? '10' : '20'
+  const serviceDays = serviceLevel === ServiceLevelCode.TEN_DAYS ? '10' : '20';
 
-  const formattedDate = formatDateShort(receivedDate, i18n.language)
+  const formattedDate = formatDateShort(receivedDate, i18n.language);
 
   return (
     <div id="response-result">
@@ -40,11 +31,7 @@ export const CheckStatusPrinting = ({
               <Timeline entries={timelineData} />
             </div>
           )}
-          <h2
-            id="service-standards-header"
-            data-testid="service-standards"
-            className="h2"
-          >
+          <h2 id="service-standards-header" data-testid="service-standards" className="h2">
             {t('printing.service-standards.header')}
           </h2>
           <p>
@@ -60,23 +47,13 @@ export const CheckStatusPrinting = ({
                 serviceLevel: serviceDays,
               }}
               components={{
-                Link: (
-                  <ExternalLink
-                    href={t('status-check-contact.service-standard-href')}
-                  />
-                ),
+                Link: <ExternalLink href={t('status-check-contact.service-standard-href')} />,
               }}
             />
           </p>
-          {deliveryMethod === DeliveryMethodCode.IN_PERSON && (
-            <p>{t('printing.service-standards.requested-urgent')}</p>
-          )}
+          {deliveryMethod === DeliveryMethodCode.IN_PERSON && <p>{t('printing.service-standards.requested-urgent')}</p>}
           <div className="mt-8">
-            <ActionButton
-              onClick={checkAnotherHandler}
-              text={t('check-another')}
-              style="primary"
-            />
+            <ActionButton onClick={checkAnotherHandler} text={t('check-another')} style="primary" />
           </div>
         </div>
         {timelineExists && (
@@ -88,7 +65,7 @@ export const CheckStatusPrinting = ({
         )}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default CheckStatusPrinting
+export default CheckStatusPrinting;

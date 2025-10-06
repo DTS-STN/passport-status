@@ -1,40 +1,26 @@
-import { Trans, useTranslation } from 'next-i18next'
+import { Trans, useTranslation } from 'next-i18next';
 
-import { DeliveryMethodCode, ServiceLevelCode } from '../../lib/types'
-import { formatDateShort } from '../../lib/utils/dates'
-import { StatusResultProps } from '../../pages/status'
-import ActionButton from '../ActionButton'
-import AlertBlock from '../AlertBlock'
-import ExternalLink from '../ExternalLink'
-import Timeline from '../Timeline'
+import { DeliveryMethodCode, ServiceLevelCode } from '../../lib/types';
+import { formatDateShort } from '../../lib/utils/dates';
+import { StatusResultProps } from '../../pages/status';
+import ActionButton from '../ActionButton';
+import AlertBlock from '../AlertBlock';
+import ExternalLink from '../ExternalLink';
+import Timeline from '../Timeline';
 
-export const CheckStatusFileBeingProcessed = ({
-  displayData,
-  checkAnotherHandler,
-}: StatusResultProps) => {
-  const { t, i18n } = useTranslation(['status', 'common'])
+export const CheckStatusFileBeingProcessed = ({ displayData, checkAnotherHandler }: StatusResultProps) => {
+  const { t, i18n } = useTranslation(['status', 'common']);
 
-  const {
-    deliveryMethod,
-    receivedDate,
-    serviceLevel,
-    timelineExists,
-    timelineData,
-  } = displayData
+  const { deliveryMethod, receivedDate, serviceLevel, timelineExists, timelineData } = displayData;
 
-  const serviceDays = serviceLevel === ServiceLevelCode.TEN_DAYS ? '10' : '20'
+  const serviceDays = serviceLevel === ServiceLevelCode.TEN_DAYS ? '10' : '20';
 
-  const formattedDate = formatDateShort(receivedDate, i18n.language)
+  const formattedDate = formatDateShort(receivedDate, i18n.language);
 
   return (
     <div id="response-result">
       <AlertBlock page="status-processing" />
-      <h1
-        id="main-header"
-        data-testid="being-processed"
-        className="h1"
-        tabIndex={-1}
-      >
+      <h1 id="main-header" data-testid="being-processed" className="h1" tabIndex={-1}>
         {t('being-processed.reviewing-application')}
       </h1>
       <div className="flex flex-col md:flex-row md:gap-x-30 lg:gap-x-40 xl:gap-x-50">
@@ -44,10 +30,8 @@ export const CheckStatusFileBeingProcessed = ({
               i18nKey={'being-processed.processing-details'}
               ns="status"
               values={{
-                reviewDays:
-                  serviceLevel === ServiceLevelCode.TEN_DAYS ? '7' : '15',
-                printDays:
-                  serviceLevel === ServiceLevelCode.TEN_DAYS ? '3' : '5',
+                reviewDays: serviceLevel === ServiceLevelCode.TEN_DAYS ? '7' : '15',
+                printDays: serviceLevel === ServiceLevelCode.TEN_DAYS ? '3' : '5',
               }}
             />
           </p>
@@ -67,9 +51,7 @@ export const CheckStatusFileBeingProcessed = ({
               <Timeline entries={timelineData} />
             </div>
           )}
-          <h2 className="h2 mt-8 mb-2">
-            {t('being-processed.service-standards.heading')}
-          </h2>
+          <h2 className="h2 mt-8 mb-2">{t('being-processed.service-standards.heading')}</h2>
           <p>
             <Trans
               i18nKey={
@@ -83,59 +65,30 @@ export const CheckStatusFileBeingProcessed = ({
                 serviceLevel: serviceDays,
               }}
               components={{
-                Link: (
-                  <ExternalLink
-                    href={t(
-                      'being-processed.service-standards.service-standards-href',
-                    )}
-                  />
-                ),
+                Link: <ExternalLink href={t('being-processed.service-standards.service-standards-href')} />,
               }}
             />
           </p>
           {deliveryMethod === DeliveryMethodCode.IN_PERSON && (
-            <p>
-              {t(
-                'status:being-processed.service-standards.urgent-service-note',
-              )}
-            </p>
+            <p>{t('status:being-processed.service-standards.urgent-service-note')}</p>
           )}
-          <h2 className="h2 mt-8 mb-2">
-            {t('being-processed.expedited-service.heading')}
-          </h2>
+          <h2 className="h2 mt-8 mb-2">{t('being-processed.expedited-service.heading')}</h2>
           <p>
             <Trans
               i18nKey={'being-processed.expedited-service.details'}
               ns="status"
               components={{
-                Link: (
-                  <ExternalLink
-                    href={t(
-                      'being-processed.expedited-service.expedited-service-href',
-                    )}
-                  />
-                ),
+                Link: <ExternalLink href={t('being-processed.expedited-service.expedited-service-href')} />,
               }}
             />
           </p>
-          <h2 className="h2 mt-8 mb-2">
-            {t('status:being-processed.incomplete-applications.heading')}
-          </h2>
+          <h2 className="h2 mt-8 mb-2">{t('status:being-processed.incomplete-applications.heading')}</h2>
           <p>
-            <Trans
-              i18nKey={'being-processed.incomplete-applications.description'}
-              ns="status"
-            />
+            <Trans i18nKey={'being-processed.incomplete-applications.description'} ns="status" />
           </p>
-          <p>
-            {t('status:being-processed.incomplete-applications.return-notice')}
-          </p>
+          <p>{t('status:being-processed.incomplete-applications.return-notice')}</p>
           <div className="mt-8">
-            <ActionButton
-              onClick={checkAnotherHandler}
-              text={t('status:check-another')}
-              style="primary"
-            />
+            <ActionButton onClick={checkAnotherHandler} text={t('status:check-another')} style="primary" />
           </div>
         </div>
         {timelineExists && (
@@ -147,7 +100,7 @@ export const CheckStatusFileBeingProcessed = ({
         )}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default CheckStatusFileBeingProcessed
+export default CheckStatusFileBeingProcessed;

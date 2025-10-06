@@ -1,4 +1,4 @@
-import type { Config } from 'jest'
+import type { Config } from 'jest';
 
 const config: Config = {
   modulePathIgnorePatterns: ['./cypress'],
@@ -11,16 +11,9 @@ const config: Config = {
     // Handle image imports https://jestjs.io/docs/webpack#handling-static-assets
     '^.+\\.(jpg|jpeg|png|gif|webp|svg)$': '<rootDir>/__mocks__/fileMock.js',
     // Handle React markdown not being pre-compiled
-    'react-markdown':
-      '<rootDir>/node_modules/react-markdown/react-markdown.min.js',
+    'react-markdown': '<rootDir>/node_modules/react-markdown/react-markdown.min.js',
   },
-  coverageReporters: [
-    'clover',
-    'json',
-    'json-summary',
-    'lcov',
-    ['text', { skipFull: true }],
-  ],
+  coverageReporters: ['clover', 'json', 'json-summary', 'lcov', ['text', { skipFull: true }]],
   testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/.next/'],
   testEnvironment: 'jsdom',
   transform: {
@@ -43,6 +36,6 @@ const config: Config = {
     '/node_modules/(?!@faker-js/faker)', // Allow @faker-js/faker to be transpiled, v10 uses ESM
     '^.+\\.module\\.(css|sass|scss)$',
   ],
-}
+};
 
-export default config
+export default config;

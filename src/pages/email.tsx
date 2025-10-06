@@ -1,33 +1,27 @@
-import { MouseEventHandler, useCallback, useMemo, useState } from 'react'
+import { MouseEventHandler, useCallback, useMemo, useState } from 'react';
 
-import { useFormik, validateYupSchema, yupToFormErrors } from 'formik'
-import { GetServerSideProps } from 'next'
-import { Trans, useTranslation } from 'next-i18next'
-import { NextSeo } from 'next-seo'
-import { useRouter } from 'next/router'
-import * as Yup from 'yup'
+import { useFormik, validateYupSchema, yupToFormErrors } from 'formik';
+import { GetServerSideProps } from 'next';
+import { Trans, useTranslation } from 'next-i18next';
+import { NextSeo } from 'next-seo';
+import { useRouter } from 'next/router';
+import * as Yup from 'yup';
 
-import ActionButton from '../components/ActionButton'
-import AlertBlock from '../components/AlertBlock'
-import Collapse from '../components/Collapse'
-import DateSelectField, {
-  DateSelectFieldOnChangeEvent,
-} from '../components/DateSelectField'
-import ErrorSummary, {
-  ErrorSummaryItem,
-  getErrorSummaryItems,
-  goToErrorSummary,
-} from '../components/ErrorSummary'
-import ExternalLink from '../components/ExternalLink'
-import IdleTimeout from '../components/IdleTimeout'
-import InputField from '../components/InputField'
-import Layout from '../components/Layout'
-import LinkButton from '../components/LinkButton'
-import Modal from '../components/Modal'
-import { EmailEsrfApiRequestBody } from '../lib/types'
-import useEmailEsrf from '../lib/useEmailEsrf'
-import { pageWithServerSideTranslations } from '../lib/utils/next-i18next-utils'
-import { getDCTermsTitle } from '../lib/utils/seo-utils'
+import ActionButton from '../components/ActionButton';
+import AlertBlock from '../components/AlertBlock';
+import Collapse from '../components/Collapse';
+import DateSelectField, { DateSelectFieldOnChangeEvent } from '../components/DateSelectField';
+import ErrorSummary, { ErrorSummaryItem, getErrorSummaryItems, goToErrorSummary } from '../components/ErrorSummary';
+import ExternalLink from '../components/ExternalLink';
+import IdleTimeout from '../components/IdleTimeout';
+import InputField from '../components/InputField';
+import Layout from '../components/Layout';
+import LinkButton from '../components/LinkButton';
+import Modal from '../components/Modal';
+import { EmailEsrfApiRequestBody } from '../lib/types';
+import useEmailEsrf from '../lib/useEmailEsrf';
+import { pageWithServerSideTranslations } from '../lib/utils/next-i18next-utils';
+import { getDCTermsTitle } from '../lib/utils/seo-utils';
 
 const initialValues: EmailEsrfApiRequestBody = {
   dateOfBirth: '',
@@ -35,34 +29,29 @@ const initialValues: EmailEsrfApiRequestBody = {
   givenName: '',
   locale: '',
   surname: '',
-}
+};
 
 const validationSchema = Yup.object({
-  email: Yup.string()
-    .required('email.error.required')
-    .email('email.error.valid'),
+  email: Yup.string().required('email.error.required').email('email.error.valid'),
   givenName: Yup.string().required('given-name.error.required'),
   surname: Yup.string().required('surname.error.required'),
-  dateOfBirth: Yup.date()
-    .required('date-of-birth.error.required')
-    .max(new Date(), 'date-of-birth.error.current'),
-})
+  dateOfBirth: Yup.date().required('date-of-birth.error.required').max(new Date(), 'date-of-birth.error.current'),
+});
 
 const scrollToHeading = () => {
   setTimeout(() => {
-    const heading =
-      document.querySelector<HTMLHeadingElement>('h1[tabIndex="-1"]')
-    if (!heading) return
-    heading.scrollIntoView({ behavior: 'smooth', block: 'center' })
-    heading.focus()
-  }, 300)
-}
+    const heading = document.querySelector<HTMLHeadingElement>('h1[tabIndex="-1"]');
+    if (!heading) return;
+    heading.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    heading.focus();
+  }, 300);
+};
 
 const Email = () => {
-  const { t } = useTranslation(['email', 'common'])
+  const { t } = useTranslation(['email', 'common']);
 
-  const router = useRouter()
-  const [modalOpen, setModalOpen] = useState(false)
+  const router = useRouter();
+  const [modalOpen, setModalOpen] = useState(false);
 
   const {
     error: emailEsrfError,
@@ -70,7 +59,7 @@ const Email = () => {
     isSuccess: isEmailEsrfSuccess,
     mutate: emailEsrf,
     reset: resetEmailEsrf,
-  } = useEmailEsrf({ onSuccess: () => scrollToHeading() })
+  } = useEmailEsrf({ onSuccess: () => scrollToHeading() });
 
   const {
     errors: formikErrors,
@@ -81,69 +70,64 @@ const Email = () => {
     values: formikValues,
   } = useFormik<EmailEsrfApiRequestBody>({
     initialValues,
-    onSubmit: (values) =>
-      emailEsrf({ ...values, locale: router.locale ?? 'en' }),
+    onSubmit: (values) => emailEsrf({ ...values, locale: router.locale ?? 'en' }),
     validate: async (values) => {
       // manually validate with yup, scroll and focus error summary section element on errors
       try {
-        await validateYupSchema(values, validationSchema)
+        await validateYupSchema(values, validationSchema);
         // empty errors
-        return {}
+        return {};
       } catch (yupError) {
-        goToErrorSummary('error-summary-email-esrf')
-        return yupToFormErrors(yupError)
+        goToErrorSummary('error-summary-email-esrf');
+        return yupToFormErrors(yupError);
       }
     },
     validateOnBlur: false,
     validateOnChange: false,
     validateOnMount: false,
-  })
+  });
 
   const errorSummaryItems = useMemo<ErrorSummaryItem[]>(
     () =>
       getErrorSummaryItems(formikErrors, t).map((item) => {
-        if (item.feildId !== 'dateOfBirth') return item
+        if (item.feildId !== 'dateOfBirth') return item;
         // field id should target the year select input
-        return { ...item, feildId: 'dateOfBirth-year' }
+        return { ...item, feildId: 'dateOfBirth-year' };
       }),
     [formikErrors, t],
-  )
+  );
 
   const handleOnDateOfBirthChange: DateSelectFieldOnChangeEvent = useCallback(
     (dateString) => {
-      setFormikFieldValue('dateOfBirth', dateString)
+      setFormikFieldValue('dateOfBirth', dateString);
     },
     [setFormikFieldValue],
-  )
+  );
 
-  const handleOnCancelClick = useCallback(() => setModalOpen(true), [])
+  const handleOnCancelClick = useCallback(() => setModalOpen(true), []);
 
-  const handleOnModalClose = useCallback(() => setModalOpen(false), [])
+  const handleOnModalClose = useCallback(() => setModalOpen(false), []);
 
   const handleOnModalYesButtonClick = useCallback(() => {
-    router.push('/landing')
-  }, [router])
+    router.push('/landing');
+  }, [router]);
 
-  const handleOnNewFileRequest: MouseEventHandler<HTMLButtonElement> =
-    useCallback(
-      (e) => {
-        e.preventDefault()
-        resetFormik()
-        resetEmailEsrf()
-        scrollToHeading()
-      },
-      [resetEmailEsrf, resetFormik],
-    )
+  const handleOnNewFileRequest: MouseEventHandler<HTMLButtonElement> = useCallback(
+    (e) => {
+      e.preventDefault();
+      resetFormik();
+      resetEmailEsrf();
+      scrollToHeading();
+    },
+    [resetEmailEsrf, resetFormik],
+  );
 
   //if the api failed, fail hard to show error page
-  if (emailEsrfError) throw emailEsrfError
+  if (emailEsrfError) throw emailEsrfError;
 
   return (
     <Layout>
-      <NextSeo
-        title={t('header')}
-        additionalMetaTags={[getDCTermsTitle(t('header'))]}
-      />
+      <NextSeo title={t('header')} additionalMetaTags={[getDCTermsTitle(t('header'))]} />
       <IdleTimeout />
 
       {isEmailEsrfSuccess ? (
@@ -154,37 +138,21 @@ const Email = () => {
           </h1>
           <div className="max-w-prose">
             <p>
-              <Trans
-                i18nKey="email-confirmation-msg.request-received.will-email"
-                ns="email"
-              />
+              <Trans i18nKey="email-confirmation-msg.request-received.will-email" ns="email" />
             </p>
             <p>
-              <Trans
-                i18nKey="email-confirmation-msg.request-received.once-received"
-                ns="email"
-              />
+              <Trans i18nKey="email-confirmation-msg.request-received.once-received" ns="email" />
             </p>
             <div className="my-8 sm:w-full md:w-fit">
-              <LinkButton
-                href="/status"
-                fullWidth
-                id="enter-reference-number"
-                style="primary"
-              >
+              <LinkButton href="/status" fullWidth id="enter-reference-number" style="primary">
                 {t('enter-reference-number')}
               </LinkButton>
             </div>
-            <h2 className="h2 mt-16">
-              {t('email-confirmation-msg.dont-receive-header')}
-            </h2>
+            <h2 className="h2 mt-16">{t('email-confirmation-msg.dont-receive-header')}</h2>
             <p>{t('email-confirmation-msg.dont-receive')}</p>
             <ul className="mb-5 list-disc space-y-2 pl-10">
               <li>
-                <Trans
-                  i18nKey="email-confirmation-msg.dont-receive-list.item-1"
-                  ns="email"
-                />
+                <Trans i18nKey="email-confirmation-msg.dont-receive-list.item-1" ns="email" />
               </li>
               <li>{t('email-confirmation-msg.dont-receive-list.item-2')}</li>
             </ul>
@@ -262,9 +230,7 @@ const Email = () => {
               }
               textRequired={t('common:required')}
               required
-              helpMessage={
-                <Trans i18nKey="given-name.help-message" ns="email" />
-              }
+              helpMessage={<Trans i18nKey="given-name.help-message" ns="email" />}
               extraContent={
                 <Collapse title={t('given-name.title')} variant="slim">
                   <p className="border-l-[6px] border-gray-400 pl-6 text-base text-gray-600">
@@ -337,13 +303,13 @@ const Email = () => {
         <p>{t('common:modal-go-back.description')}</p>
       </Modal>
     </Layout>
-  )
-}
+  );
+};
 
 export const getServerSideProps: GetServerSideProps = async ({ locale }) => ({
   props: {
     ...(await pageWithServerSideTranslations(locale, 'email')),
   },
-})
+});
 
-export default Email
+export default Email;

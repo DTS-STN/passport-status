@@ -1,5 +1,5 @@
 // @ts-check
-const { i18n } = require('./next-i18next.config')
+const { i18n } = require('./next-i18next.config');
 
 //formatting TC Date
 const builddate = process.env.BUILD_DATE
@@ -8,7 +8,7 @@ const builddate = process.env.BUILD_DATE
     process.env.BUILD_DATE.substring(4, 6) +
     '-' +
     process.env.BUILD_DATE.substring(6, 8)
-  : 'DATE-NA'
+  : 'DATE-NA';
 
 const securityHeaders = [
   {
@@ -44,7 +44,7 @@ const securityHeaders = [
     value:
       "default-src 'self'; base-uri 'self'; frame-ancestors 'self'; form-action 'self'; object-src 'none'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://code.jquery.com https://*.demdex.net https://cm.everesttech.net https://assets.adobedtm.com https://www.youtube.com; connect-src 'self' https://*.demdex.net https://cm.everesttech.net https://assets.adobedtm.com https://*.omtrdc.net; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https://*.demdex.net https://cm.everesttech.net https://assets.adobedtm.com https://*.omtrdc.net; frame-src 'self' https://*.demdex.net;",
   },
-]
+];
 
 /**
  * @type {import('next').NextConfig}
@@ -64,7 +64,7 @@ const nextConfig = {
     loggingLevel: process.env.LOGGING_LEVEL,
   },
   generateBuildId: async () => {
-    return process.env.BUILD_ID ?? 'local'
+    return process.env.BUILD_ID ?? 'local';
   },
   reactStrictMode: true,
   i18n: {
@@ -77,8 +77,8 @@ const nextConfig = {
         source: '/:path*',
         headers: securityHeaders,
       },
-    ]
+    ];
   },
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

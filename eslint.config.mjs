@@ -1,18 +1,18 @@
-import eslint from '@eslint/js'
-import pluginNext from '@next/eslint-plugin-next'
-import pluginImport from 'eslint-plugin-import'
-import pluginJsxA11y from 'eslint-plugin-jsx-a11y'
-import pluginPrettier from 'eslint-plugin-prettier/recommended'
-import pluginReact from 'eslint-plugin-react'
-import pluginReactHooks from 'eslint-plugin-react-hooks'
-import { defineConfig } from 'eslint/config'
-import globals from 'globals'
-import path from 'node:path'
-import { fileURLToPath } from 'node:url'
-import tseslint from 'typescript-eslint'
+import eslint from '@eslint/js';
+import pluginNext from '@next/eslint-plugin-next';
+import pluginImport from 'eslint-plugin-import';
+import pluginJsxA11y from 'eslint-plugin-jsx-a11y';
+import pluginPrettier from 'eslint-plugin-prettier/recommended';
+import pluginReact from 'eslint-plugin-react';
+import pluginReactHooks from 'eslint-plugin-react-hooks';
+import { defineConfig } from 'eslint/config';
+import globals from 'globals';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import tseslint from 'typescript-eslint';
 
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 export default defineConfig(
   { ignores: ['next-env.d.ts', '.next/', 'cypress.config.ts'] },
@@ -43,11 +43,7 @@ export default defineConfig(
     // all files
     //
     files: ['**/*.{js,cjs,mjs,ts,tsx}'],
-    extends: [
-      eslint.configs.recommended,
-      pluginNext.flatConfig.coreWebVitals,
-      pluginPrettier,
-    ],
+    extends: [eslint.configs.recommended, pluginNext.flatConfig.coreWebVitals, pluginPrettier],
     rules: {
       'prettier/prettier': 'error',
     },
@@ -57,11 +53,7 @@ export default defineConfig(
     // typescript
     //
     files: ['**/*.{ts,tsx}'],
-    extends: [
-      eslint.configs.recommended,
-      tseslint.configs.recommended,
-      pluginImport.flatConfigs.recommended,
-    ],
+    extends: [eslint.configs.recommended, tseslint.configs.recommended, pluginImport.flatConfigs.recommended],
     rules: {},
     settings: {
       'import/resolver': {
@@ -84,10 +76,7 @@ export default defineConfig(
     ],
     rules: {
       'jsx-a11y/no-autofocus': ['error', { ignoreNonDOM: true }],
-      'react/no-unknown-property': [
-        'error',
-        { ignore: ['global', 'jsx', 'typeof', 'vocab'] },
-      ],
+      'react/no-unknown-property': ['error', { ignore: ['global', 'jsx', 'typeof', 'vocab'] }],
       'react/prop-types': 'off',
     },
     settings: {
@@ -96,4 +85,4 @@ export default defineConfig(
       },
     },
   },
-)
+);

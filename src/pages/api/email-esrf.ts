@@ -1,46 +1,36 @@
-import { NextApiRequest, NextApiResponse } from 'next'
+import { NextApiRequest, NextApiResponse } from 'next';
 
-import { EmailEsrfApiRequestBody } from '../../lib/types'
-import { getLogger } from '../../logging/log-util'
+import { EmailEsrfApiRequestBody } from '../../lib/types';
+import { getLogger } from '../../logging/log-util';
 
-const logger = getLogger('email-esrf')
+const logger = getLogger('email-esrf');
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<string>,
-) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse<string>) {
   if (req.method !== 'POST') {
-    logger.debug(`Status 405: Invalid request method ${req.method}`)
-    res.status(405).send(`Invalid request method ${req.method}`)
-    return
+    logger.debug(`Status 405: Invalid request method ${req.method}`);
+    res.status(405).send(`Invalid request method ${req.method}`);
+    return;
   }
 
   if (req.headers['content-type'] !== 'application/json') {
-    logger.debug(
-      `Status 415: Invalid media type ${req.headers['content-type']}`,
-    )
-    res.status(415).send(`Invalid media type ${req.headers['content-type']}`)
-    return
+    logger.debug(`Status 415: Invalid media type ${req.headers['content-type']}`);
+    res.status(415).send(`Invalid media type ${req.headers['content-type']}`);
+    return;
   }
 
-  const body = req.body as EmailEsrfApiRequestBody
+  const body = req.body as EmailEsrfApiRequestBody;
 
   try {
-    await emailEsrfApi(res, body)
+    await emailEsrfApi(res, body);
   } catch (error) {
-    logger.error(error, 'Unhandled exception: Internal Server Error (500)')
-    res.status(500).send('Something went wrong.')
+    logger.error(error, 'Unhandled exception: Internal Server Error (500)');
+    res.status(500).send('Something went wrong.');
   }
 }
 
-const emailEsrfApi = async (
-  res: NextApiResponse<string>,
-  emailEsrfApiRequestBody: EmailEsrfApiRequestBody,
-) => {
+const emailEsrfApi = async (res: NextApiResponse<string>, emailEsrfApiRequestBody: EmailEsrfApiRequestBody) => {
   if (!process.env.PASSPORT_STATUS_API_BASE_URI) {
-    throw Error(
-      'process.env.PASSPORT_STATUS_API_BASE_URI must not be undefined, null or empty',
-    )
+    throw Error('process.env.PASSPORT_STATUS_API_BASE_URI must not be undefined, null or empty');
   }
 
   const body = {
@@ -56,23 +46,19 @@ const emailEsrfApi = async (
         PersonSurName: emailEsrfApiRequestBody.surname,
       },
       PersonPreferredLanguage: {
-        LanguageName:
-          emailEsrfApiRequestBody.locale === 'fr' ? 'FRENCH' : 'ENGLISH',
+        LanguageName: emailEsrfApiRequestBody.locale === 'fr' ? 'FRENCH' : 'ENGLISH',
       },
     },
-  }
+  };
 
-  const response = await fetch(
-    `${process.env.PASSPORT_STATUS_API_BASE_URI}/api/v1/esrf-requests`,
-    {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(body),
+  const response = await fetch(`${process.env.PASSPORT_STATUS_API_BASE_URI}/api/v1/esrf-requests`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
     },
-  )
+    body: JSON.stringify(body),
+  });
 
-  logger.debug(`Status ${response.status}: ${response.statusText}`)
-  res.status(response.status).send(response.statusText)
-}
+  logger.debug(`Status ${response.status}: ${response.statusText}`);
+  res.status(response.status).send(response.statusText);
+};

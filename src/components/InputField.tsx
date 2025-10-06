@@ -1,20 +1,20 @@
-import InputErrorMessage from './InputErrorMessage'
-import InputLabel from './InputLabel'
+import InputErrorMessage from './InputErrorMessage';
+import InputLabel from './InputLabel';
 
 export interface InputFieldProps {
-  errorMessage?: string
-  helpMessage?: React.ReactNode
-  helpMessageSecondary?: React.ReactNode
-  id: string
-  label: string
-  max?: string
-  name: string
-  onChange?: React.ChangeEventHandler<HTMLInputElement>
-  required?: boolean
-  textRequired?: string
-  type?: React.HTMLInputTypeAttribute
-  value?: string | number | readonly string[]
-  extraContent?: React.ReactNode
+  errorMessage?: string;
+  helpMessage?: React.ReactNode;
+  helpMessageSecondary?: React.ReactNode;
+  id: string;
+  label: string;
+  max?: string;
+  name: string;
+  onChange?: React.ChangeEventHandler<HTMLInputElement>;
+  required?: boolean;
+  textRequired?: string;
+  type?: React.HTMLInputTypeAttribute;
+  value?: string | number | readonly string[];
+  extraContent?: React.ReactNode;
 }
 
 const InputField = ({
@@ -32,37 +32,26 @@ const InputField = ({
   value,
   extraContent,
 }: InputFieldProps) => {
-  const inputErrorMessageId = `input-${id}-error`
-  const inputHelpMessageId = `input-${id}-help`
-  const inputHelpMessageSecondaryId = `input-${id}-help-secondary`
-  const inputWrapperId = `input-${id}`
-  const inputLabelId = `input-${id}-label`
+  const inputErrorMessageId = `input-${id}-error`;
+  const inputHelpMessageId = `input-${id}-help`;
+  const inputHelpMessageSecondaryId = `input-${id}-help-secondary`;
+  const inputWrapperId = `input-${id}`;
+  const inputLabelId = `input-${id}-label`;
 
   const getAriaDescribedby = () => {
-    const ariaDescribedby: string[] = []
-    if (errorMessage) ariaDescribedby.push(inputErrorMessageId)
-    if (helpMessage) ariaDescribedby.push(inputHelpMessageId)
-    if (helpMessageSecondary) ariaDescribedby.push(inputHelpMessageSecondaryId)
-    return ariaDescribedby.length > 0 ? ariaDescribedby.join(' ') : undefined
-  }
+    const ariaDescribedby: string[] = [];
+    if (errorMessage) ariaDescribedby.push(inputErrorMessageId);
+    if (helpMessage) ariaDescribedby.push(inputHelpMessageId);
+    if (helpMessageSecondary) ariaDescribedby.push(inputHelpMessageSecondaryId);
+    return ariaDescribedby.length > 0 ? ariaDescribedby.join(' ') : undefined;
+  };
 
   return (
     <div className="mb-4" id={inputWrapperId} data-testid={id}>
-      <InputLabel
-        id={inputLabelId}
-        htmlFor={id}
-        required={required}
-        label={label}
-        textRequired={textRequired}
-      />
-      {errorMessage && (
-        <InputErrorMessage id={inputErrorMessageId} message={errorMessage} />
-      )}
+      <InputLabel id={inputLabelId} htmlFor={id} required={required} label={label} textRequired={textRequired} />
+      {errorMessage && <InputErrorMessage id={inputErrorMessageId} message={errorMessage} />}
       {helpMessage && (
-        <div
-          className="mb-1.5 max-w-prose text-base text-gray-600"
-          id={inputHelpMessageId}
-        >
+        <div className="mb-1.5 max-w-prose text-base text-gray-600" id={inputHelpMessageId}>
           {helpMessage}
         </div>
       )}
@@ -83,15 +72,12 @@ const InputField = ({
         value={value ?? ''}
       />
       {helpMessageSecondary && (
-        <div
-          className="mt-1.5 max-w-prose text-base text-gray-600"
-          id={inputHelpMessageSecondaryId}
-        >
+        <div className="mt-1.5 max-w-prose text-base text-gray-600" id={inputHelpMessageSecondaryId}>
           {helpMessageSecondary}
         </div>
       )}
     </div>
-  )
-}
+  );
+};
 
-export default InputField
+export default InputField;

@@ -16,7 +16,9 @@
     "test:unit": "jest",
     "test:coverage": "jest --coverage --forceExit",
     "prepare": "husky",
-    "tsc:validate": "tsc --noEmit --incremental false"
+    "tsc:validate": "tsc --noEmit --incremental false",
+    "format:check": "prettier --cache --check .",
+    "format:write": "prettier --write ."
   },
   "dependencies": {
     "@tanstack/react-query": "5.90.2",

@@ -1,11 +1,11 @@
-import { PropsWithChildren } from 'react'
+import { PropsWithChildren } from 'react';
 
-import { AlertType } from '../lib/types'
+import { AlertType } from '../lib/types';
 
 export interface AlertSectionProps extends PropsWithChildren {
-  type: AlertType
-  className?: string
-  background?: boolean
+  type: AlertType;
+  className?: string;
+  background?: boolean;
 }
 
 const borderColors = {
@@ -13,14 +13,14 @@ const borderColors = {
   warning: 'border-accent-warning',
   success: 'border-accent-success',
   info: 'border-accent-info',
-}
+};
 
 const svgStyles = {
   danger: '-translate-x-3 translate-y-3',
   warning: '-translate-x-3 translate-y-3',
   success: '-translate-x-3 translate-y-3',
   info: '-translate-x-3 translate-y-3',
-}
+};
 
 const SVG = (type: AlertType, background: boolean | undefined) => {
   switch (type) {
@@ -34,7 +34,7 @@ const SVG = (type: AlertType, background: boolean | undefined) => {
         >
           <path d="M50,5C25.1,5,5,25.1,5,50c0,24.9,20.1,45,45,45c24.9,0,45-20.1,45-45C95,25.1,74.9,5,50,5L50,5z M55.6,77  c0,3.2-2.5,5.6-5.6,5.6c-3.1,0-5.5-2.5-5.5-5.6v-1.1c0-3.1,2.5-5.6,5.5-5.6c3.1,0,5.6,2.5,5.6,5.6V77z M58.3,26.3l-2.8,34.2  c-0.3,3.2-3,5.4-6.1,5.2c-2.8-0.2-4.9-2.5-5.1-5.2l-2.8-34.2c-0.5-4.5,3.7-8.9,8.2-8.9C54.7,17.4,58.7,21.8,58.3,26.3z"></path>
         </svg>
-      )
+      );
     }
     case 'success': {
       return (
@@ -46,7 +46,7 @@ const SVG = (type: AlertType, background: boolean | undefined) => {
         >
           <path d="m504 256c0 136.967-111.033 248-248 248s-248-111.033-248-248 111.033-248 248-248 248 111.033 248 248zm-276.686 131.314 184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0l-150.059 150.058-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z" />
         </svg>
-      )
+      );
     }
     case 'warning': {
       return (
@@ -60,7 +60,7 @@ const SVG = (type: AlertType, background: boolean | undefined) => {
           <circle cx="12" cy="16" r="1.3" />
           <path d="M13.5 10c0-.83-.671-1.5-1.5-1.5s-1.5.67-1.5 1.5c0 .199.041.389.111.562.554 1.376 1.389 3.438 1.389 3.438l1.391-3.438c.068-.173.109-.363.109-.562z" />
         </svg>
-      )
+      );
     }
     case 'info': {
       return (
@@ -72,31 +72,22 @@ const SVG = (type: AlertType, background: boolean | undefined) => {
         >
           <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" />
         </svg>
-      )
+      );
     }
   }
-}
+};
 
-const AlertSection = ({
-  children,
-  type,
-  className,
-  background,
-}: AlertSectionProps) => {
-  const borderColor = borderColors[type]
+const AlertSection = ({ children, type, className, background }: AlertSectionProps) => {
+  const borderColor = borderColors[type];
 
   return (
-    <div
-      className={`${className} pl-4 ${background ? 'bg-slate-100' : 'bg-white'}`}
-    >
-      <div className={`${svgStyles[type]} w-8 bg-transparent`}>
-        {SVG(type, background)}
-      </div>
+    <div className={`${className} pl-4 ${background ? 'bg-slate-100' : 'bg-white'}`}>
+      <div className={`${svgStyles[type]} w-8 bg-transparent`}>{SVG(type, background)}</div>
       <section className={`-mt-8 border-l-8 pt-2 pb-0.5 ${borderColor}`}>
         <div className="ml-4">{children}</div>
       </section>
     </div>
-  )
-}
+  );
+};
 
-export default AlertSection
+export default AlertSection;

@@ -1,6 +1,6 @@
-import { PropsWithChildren } from 'react'
+import { PropsWithChildren } from 'react';
 
-import Image from 'next/image'
+import Image from 'next/image';
 
 const ErrorLayout = ({ children }: PropsWithChildren) => {
   return (
@@ -16,11 +16,7 @@ const ErrorLayout = ({ children }: PropsWithChildren) => {
         />
       </header>
       <hr />
-      <main
-        role="main"
-        id="mainContent"
-        className="container mx-auto my-8 flex-1 px-4"
-      >
+      <main role="main" id="mainContent" className="container mx-auto my-8 flex-1 px-4">
         {children}
       </main>
       <footer className="bg-gray-light py-4">
@@ -36,7 +32,7 @@ const ErrorLayout = ({ children }: PropsWithChildren) => {
         </div>
       </footer>
     </div>
-  )
-}
+  );
+};
 
-export default ErrorLayout
+export default ErrorLayout;

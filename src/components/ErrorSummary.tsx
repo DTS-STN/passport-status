@@ -1,26 +1,23 @@
-import { useEffect } from 'react'
+import { useEffect } from 'react';
 
-import { FormikErrors, FormikValues } from 'formik'
-import { Namespace, TFunction } from 'i18next'
+import { FormikErrors, FormikValues } from 'formik';
+import { Namespace, TFunction } from 'i18next';
 
 export interface ErrorSummaryItem {
-  feildId: string
-  errorMessage: string
+  feildId: string;
+  errorMessage: string;
 }
 
 export interface ErrorSummaryProps {
-  id: string
-  errors: ErrorSummaryItem[]
-  summary: string
+  id: string;
+  errors: ErrorSummaryItem[];
+  summary: string;
 }
 
-export const getErrorSummaryItem = (
-  feildId: string,
-  errorMessage: string,
-): ErrorSummaryItem => ({
+export const getErrorSummaryItem = (feildId: string, errorMessage: string): ErrorSummaryItem => ({
   feildId,
   errorMessage,
-})
+});
 
 export const getErrorSummaryItems = <T extends FormikValues>(
   formErrors: FormikErrors<T>,
@@ -31,28 +28,22 @@ export const getErrorSummaryItems = <T extends FormikValues>(
       .filter((key) => !!formErrors[key])
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       .map((key) => getErrorSummaryItem(key, t(formErrors[key] as any)))
-  )
-}
+  );
+};
 
 export const goToErrorSummary = (errorSummaryId: string) => {
-  const errorSummaryEl = document.querySelector<HTMLElement>(
-    `#${errorSummaryId}`,
-  )
-  errorSummaryEl?.scrollIntoView({ behavior: 'smooth', block: 'center' })
-  errorSummaryEl?.focus()
-}
+  const errorSummaryEl = document.querySelector<HTMLElement>(`#${errorSummaryId}`);
+  errorSummaryEl?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  errorSummaryEl?.focus();
+};
 
 const ErrorSummary = ({ id, errors, summary }: ErrorSummaryProps) => {
   useEffect(() => {
-    goToErrorSummary(id)
-  }, [id])
+    goToErrorSummary(id);
+  }, [id]);
 
   return (
-    <section
-      id={id}
-      className="border-accent-error mb-5 border-l-6 p-5"
-      tabIndex={-1}
-    >
+    <section id={id} className="border-accent-error mb-5 border-l-6 p-5" tabIndex={-1}>
       <h2 className="mb-3 text-2xl font-bold">{summary}</h2>
       <ul className="list-disc space-y-2 pl-10">
         {errors.map(({ feildId, errorMessage }) => (
@@ -64,7 +55,7 @@ const ErrorSummary = ({ id, errors, summary }: ErrorSummaryProps) => {
         ))}
       </ul>
     </section>
-  )
-}
+  );
+};
 
-export default ErrorSummary
+export default ErrorSummary;

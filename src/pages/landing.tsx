@@ -1,25 +1,22 @@
-import { GetServerSideProps } from 'next'
-import { Trans, useTranslation } from 'next-i18next'
-import { NextSeo } from 'next-seo'
-import Link from 'next/link'
+import { GetServerSideProps } from 'next';
+import { Trans, useTranslation } from 'next-i18next';
+import { NextSeo } from 'next-seo';
+import Link from 'next/link';
 
-import AlertBlock from '../components/AlertBlock'
-import Collapse from '../components/Collapse'
-import ExampleImage from '../components/ExampleImage'
-import Layout from '../components/Layout'
-import LinkButton from '../components/LinkButton'
-import { pageWithServerSideTranslations } from '../lib/utils/next-i18next-utils'
-import { getDCTermsTitle } from '../lib/utils/seo-utils'
+import AlertBlock from '../components/AlertBlock';
+import Collapse from '../components/Collapse';
+import ExampleImage from '../components/ExampleImage';
+import Layout from '../components/Layout';
+import LinkButton from '../components/LinkButton';
+import { pageWithServerSideTranslations } from '../lib/utils/next-i18next-utils';
+import { getDCTermsTitle } from '../lib/utils/seo-utils';
 
 const Landing = () => {
-  const { t } = useTranslation('landing')
+  const { t } = useTranslation('landing');
 
   return (
     <Layout>
-      <NextSeo
-        title={t('do-you-have.question')}
-        additionalMetaTags={[getDCTermsTitle(t('header'))]}
-      />
+      <NextSeo title={t('do-you-have.question')} additionalMetaTags={[getDCTermsTitle(t('header'))]} />
       <AlertBlock page="landing" />
       <h1 id="main-header" className="h1" tabIndex={-1}>
         {t('do-you-have.question')}
@@ -28,11 +25,7 @@ const Landing = () => {
         <h2 className="h2 mb-6">{t('where-to-find.header')}</h2>
         <Collapse title={t('where-to-find.applied-by-mail.header')}>
           <p>
-            <Trans
-              i18nKey="where-to-find.applied-by-mail.text"
-              ns="landing"
-              components={{ Link: <Link href="/email" /> }}
-            />
+            <Trans i18nKey="where-to-find.applied-by-mail.text" ns="landing" components={{ Link: <Link href="/email" /> }} />
           </p>
         </Collapse>
         <Collapse title={t('where-to-find.applied-in-person.header')}>
@@ -52,11 +45,7 @@ const Landing = () => {
         </Collapse>
         <Collapse title={t('if-lost.header')}>
           <p>
-            <Trans
-              i18nKey="if-lost.text"
-              ns="landing"
-              components={{ Link: <Link href="/email" /> }}
-            />
+            <Trans i18nKey="if-lost.text" ns="landing" components={{ Link: <Link href="/email" /> }} />
           </p>
         </Collapse>
 
@@ -74,13 +63,13 @@ const Landing = () => {
         </div>
       </div>
     </Layout>
-  )
-}
+  );
+};
 
 export const getServerSideProps: GetServerSideProps = async ({ locale }) => ({
   props: {
     ...(await pageWithServerSideTranslations(locale, 'landing')),
   },
-})
+});
 
-export default Landing
+export default Landing;

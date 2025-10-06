@@ -5,13 +5,13 @@
  *
  * @link https://www.i18next.com/overview/typescript
  */
-import 'i18next'
+import 'i18next';
 
 // resources.ts file is generated with `npm run toc`
-import resources from './resources.ts'
+import resources from './resources.ts';
 
 declare module 'i18next' {
   interface CustomTypeOptions {
-    resources: typeof resources
+    resources: typeof resources;
   }
 }

@@ -1,11 +1,11 @@
-import '@testing-library/jest-dom'
-import { render, screen } from '@testing-library/react'
+import '@testing-library/jest-dom';
+import { render, screen } from '@testing-library/react';
 
-import { axe, toHaveNoViolations } from 'jest-axe'
+import { axe, toHaveNoViolations } from 'jest-axe';
 
-import CheckStatusNoRecord from '../../../src/components/check-status-responses/CheckStatusNoRecord'
+import CheckStatusNoRecord from '../../../src/components/check-status-responses/CheckStatusNoRecord';
 
-expect.extend(toHaveNoViolations)
+expect.extend(toHaveNoViolations);
 
 jest.mock('../../../src/lib/useAlerts', () => ({
   useAlerts: () => ({
@@ -13,32 +13,27 @@ jest.mock('../../../src/lib/useAlerts', () => ({
     error: undefined,
     data: undefined,
   }),
-}))
+}));
 
 describe('CheckStatusNoRecord', () => {
-  const checkAnotherHandler = () => {}
-  const tryAgainHandler = () => {}
-  const sut = (
-    <CheckStatusNoRecord
-      tryAgainHandler={tryAgainHandler}
-      checkAnotherHandler={checkAnotherHandler}
-    />
-  )
+  const checkAnotherHandler = () => {};
+  const tryAgainHandler = () => {};
+  const sut = <CheckStatusNoRecord tryAgainHandler={tryAgainHandler} checkAnotherHandler={checkAnotherHandler} />;
 
   //TODO: add test for when phone number is visible and when it isn't
   it('renders', () => {
-    render(sut)
+    render(sut);
 
-    const heading = screen.getByRole('heading', { level: 1 })
+    const heading = screen.getByRole('heading', { level: 1 });
 
-    expect(screen.getByTestId('no-record')).toBeInTheDocument()
-    expect(heading).toBeInTheDocument()
-    expect(heading).toHaveAttribute('id', 'main-header')
-  })
+    expect(screen.getByTestId('no-record')).toBeInTheDocument();
+    expect(heading).toBeInTheDocument();
+    expect(heading).toHaveAttribute('id', 'main-header');
+  });
 
   it('meets a11y', async () => {
-    const { container } = render(sut)
-    const results = await axe(container)
-    expect(results).toHaveNoViolations()
-  })
-})
+    const { container } = render(sut);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+});

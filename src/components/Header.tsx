@@ -1,26 +1,26 @@
-import { useTranslation } from 'next-i18next'
-import getConfig from 'next/config'
-import Image from 'next/image'
-import Link from 'next/link'
-import { useRouter } from 'next/router'
+import { useTranslation } from 'next-i18next';
+import getConfig from 'next/config';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
-import ApplicationNameBar from './ApplicationNameBar'
-import Banner from './Banner'
+import ApplicationNameBar from './ApplicationNameBar';
+import Banner from './Banner';
 
 export interface HeaderProps {
-  gocLink: string
-  skipToMainText: string
+  gocLink: string;
+  skipToMainText: string;
 }
 
 const Header = ({ gocLink, skipToMainText }: HeaderProps) => {
-  const config = getConfig()
-  const { locale, asPath } = useRouter()
-  const { t } = useTranslation('common')
+  const config = getConfig();
+  const { locale, asPath } = useRouter();
+  const { t } = useTranslation('common');
 
-  const langSelectorLocale = locale === 'en' ? 'fr' : 'en'
-  const langSelectorAbbreviation = langSelectorLocale === 'fr' ? 'FR' : 'EN'
-  const langSelectorText = langSelectorLocale === 'fr' ? 'Français' : 'English'
-  const showBanner = config?.publicRuntimeConfig?.environment !== 'prod'
+  const langSelectorLocale = locale === 'en' ? 'fr' : 'en';
+  const langSelectorAbbreviation = langSelectorLocale === 'fr' ? 'FR' : 'EN';
+  const langSelectorText = langSelectorLocale === 'fr' ? 'Français' : 'English';
+  const showBanner = config?.publicRuntimeConfig?.environment !== 'prod';
 
   return (
     <>
@@ -40,23 +40,14 @@ const Header = ({ gocLink, skipToMainText }: HeaderProps) => {
       </nav>
 
       <header>
-        {showBanner && (
-          <Banner
-            alert={t('banner.alert')}
-            description={t('banner.description')}
-          />
-        )}
+        {showBanner && <Banner alert={t('banner.alert')} description={t('banner.description')} />}
         <div className="container mx-auto flex flex-col justify-between px-4 py-2.5 md:flex md:flex-row">
           <div className="flex flex-row content-center items-center justify-between md:mt-7">
             <a href={gocLink}>
               <Image
                 key={locale}
                 className="h-7 w-auto lg:h-8"
-                alt={
-                  locale === 'en'
-                    ? 'Government of Canada'
-                    : 'Gouvernement du Canada'
-                }
+                alt={locale === 'en' ? 'Government of Canada' : 'Gouvernement du Canada'}
                 src={locale === 'en' ? '/sig-blk-en.svg' : '/sig-blk-fr.svg'}
                 width={300}
                 height={28}
@@ -65,9 +56,7 @@ const Header = ({ gocLink, skipToMainText }: HeaderProps) => {
               <span className="sr-only">
                 /{' '}
                 <span lang={locale === 'en' ? 'fr' : 'en'}>
-                  {locale === 'en'
-                    ? 'Gouvernement du Canada'
-                    : 'Government of Canada'}
+                  {locale === 'en' ? 'Gouvernement du Canada' : 'Government of Canada'}
                 </span>
               </span>
             </a>
@@ -101,10 +90,7 @@ const Header = ({ gocLink, skipToMainText }: HeaderProps) => {
           </div>
         </div>
 
-        <ApplicationNameBar
-          text={t('application-name-bar')}
-          href="/expectations"
-        />
+        <ApplicationNameBar text={t('application-name-bar')} href="/expectations" />
 
         {/* <Menu
           loginText={t('login')}
@@ -132,7 +118,7 @@ const Header = ({ gocLink, skipToMainText }: HeaderProps) => {
         */}
       </header>
     </>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

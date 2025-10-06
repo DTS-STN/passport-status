@@ -1,31 +1,28 @@
-import { PropsWithChildren } from 'react'
+import { PropsWithChildren } from 'react';
 
-import { useTranslation } from 'next-i18next'
+import { useTranslation } from 'next-i18next';
 
-import { TimelineEntryData, TimelinePosition } from '../lib/types'
-import TimelineEntry from './TimelineEntry'
+import { TimelineEntryData, TimelinePosition } from '../lib/types';
+import TimelineEntry from './TimelineEntry';
 
 export interface TimelineProps extends PropsWithChildren {
-  entries: TimelineEntryData[]
-  className?: string
-  background?: boolean
+  entries: TimelineEntryData[];
+  className?: string;
+  background?: boolean;
 }
 
 const Timeline = ({ entries, className }: TimelineProps) => {
-  const { t } = useTranslation()
+  const { t } = useTranslation();
 
   return (
     <div className={className}>
-      <ul
-        aria-label={t('timeline:application-steps-list-title')}
-        className="flex flex-col"
-      >
+      <ul aria-label={t('timeline:application-steps-list-title')} className="flex flex-col">
         {entries.map((entry, index) => {
-          let position: TimelinePosition = 'last'
+          let position: TimelinePosition = 'last';
           if (index === 0) {
-            position = 'first'
+            position = 'first';
           } else if (index < entries.length - 1) {
-            position = 'middle'
+            position = 'middle';
           }
 
           return (
@@ -38,11 +35,11 @@ const Timeline = ({ entries, className }: TimelineProps) => {
               subtext={entry.subtext}
               stepIndex={index + 1} // index is zero based
             />
-          )
+          );
         })}
       </ul>
     </div>
-  )
-}
+  );
+};
 
-export default Timeline
+export default Timeline;

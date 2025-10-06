@@ -1,27 +1,22 @@
-import { Trans, useTranslation } from 'next-i18next'
+import { Trans, useTranslation } from 'next-i18next';
 
-import { StatusResultProps } from '../../pages/status'
-import ActionButton from '../ActionButton'
-import AlertBlock from '../AlertBlock'
-import ExternalLink from '../ExternalLink'
-import Timeline from '../Timeline'
+import { StatusResultProps } from '../../pages/status';
+import ActionButton from '../ActionButton';
+import AlertBlock from '../AlertBlock';
+import ExternalLink from '../ExternalLink';
+import Timeline from '../Timeline';
 
 export const CheckStatusReadyForPickup = (props: StatusResultProps) => {
-  const { t } = useTranslation(['status', 'timeline'])
+  const { t } = useTranslation(['status', 'timeline']);
 
-  const { displayData, checkAnotherHandler } = props
+  const { displayData, checkAnotherHandler } = props;
 
-  const { timelineExists, timelineData } = displayData
+  const { timelineExists, timelineData } = displayData;
 
   return (
     <>
       <AlertBlock page="status-ready-pickup" />
-      <h1
-        id="main-header"
-        data-testid="ready-for-pickup"
-        className="h1"
-        tabIndex={-1}
-      >
+      <h1 id="main-header" data-testid="ready-for-pickup" className="h1" tabIndex={-1}>
         {t('ready-for-pickup.header')}
       </h1>
       <div className="flex flex-col md:flex-row md:gap-x-30 lg:gap-x-40 xl:gap-x-50">
@@ -32,9 +27,7 @@ export const CheckStatusReadyForPickup = (props: StatusResultProps) => {
               i18nKey={'ready-for-pickup.check-hours'}
               ns="status"
               components={{
-                Link: (
-                  <ExternalLink href={t('ready-for-pickup.check-hours-href')} />
-                ),
+                Link: <ExternalLink href={t('ready-for-pickup.check-hours-href')} />,
               }}
             />
           </p>
@@ -44,11 +37,7 @@ export const CheckStatusReadyForPickup = (props: StatusResultProps) => {
             </div>
           )}
           <div className="mt-8">
-            <ActionButton
-              onClick={checkAnotherHandler}
-              text={t('status:check-another')}
-              style="primary"
-            />
+            <ActionButton onClick={checkAnotherHandler} text={t('status:check-another')} style="primary" />
           </div>
         </div>
         {timelineExists && (
@@ -60,7 +49,7 @@ export const CheckStatusReadyForPickup = (props: StatusResultProps) => {
         )}
       </div>
     </>
-  )
-}
+  );
+};
 
-export default CheckStatusReadyForPickup
+export default CheckStatusReadyForPickup;

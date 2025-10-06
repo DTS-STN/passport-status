@@ -1,4 +1,4 @@
-import { useId } from 'react'
+import { useId } from 'react';
 
 const variants = {
   fitWidth: 'w-fit',
@@ -6,20 +6,17 @@ const variants = {
   halfWidth: 'w-6/12',
   slim: 'max-w-prose text-base',
   default: 'max-w-prose',
-}
+};
 export interface CollapseProps {
-  title: string
-  children?: React.ReactNode
-  variant?: keyof typeof variants
+  title: string;
+  children?: React.ReactNode;
+  variant?: keyof typeof variants;
 }
 
 const Collapse = ({ title, children, variant = 'default' }: CollapseProps) => {
-  const id = useId()
+  const id = useId();
   return (
-    <details
-      aria-describedby={`${id}-details-summary`}
-      className={`mb-3 rounded-sm border p-3 ${variants[variant]}`}
-    >
+    <details aria-describedby={`${id}-details-summary`} className={`mb-3 rounded-sm border p-3 ${variants[variant]}`}>
       <summary
         id={`${id}-details-summary`}
         className={
@@ -30,7 +27,7 @@ const Collapse = ({ title, children, variant = 'default' }: CollapseProps) => {
       </summary>
       <div className="pt-3">{children}</div>
     </details>
-  )
-}
+  );
+};
 
-export default Collapse
+export default Collapse;

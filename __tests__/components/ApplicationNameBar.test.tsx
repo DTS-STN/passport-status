@@ -1,25 +1,25 @@
-import '@testing-library/jest-dom'
-import { render, screen } from '@testing-library/react'
+import '@testing-library/jest-dom';
+import { render, screen } from '@testing-library/react';
 
-import { axe, toHaveNoViolations } from 'jest-axe'
+import { axe, toHaveNoViolations } from 'jest-axe';
 
-import ApplicationNameBar from '../../src/components/ApplicationNameBar'
+import ApplicationNameBar from '../../src/components/ApplicationNameBar';
 
-expect.extend(toHaveNoViolations)
+expect.extend(toHaveNoViolations);
 
 describe('ApplicationNameBar', () => {
-  const sut = <ApplicationNameBar text="Test" href="/somelink" />
+  const sut = <ApplicationNameBar text="Test" href="/somelink" />;
 
   it('renders', () => {
-    render(sut)
-    const screenText = screen.getByText('Test')
-    expect(screenText).toBeInTheDocument()
-    expect(document.querySelector('a')?.getAttribute('href')).toBe('/somelink')
-  })
+    render(sut);
+    const screenText = screen.getByText('Test');
+    expect(screenText).toBeInTheDocument();
+    expect(document.querySelector('a')?.getAttribute('href')).toBe('/somelink');
+  });
 
   it('meets a11y', async () => {
-    const { container } = render(sut)
-    const results = await axe(container)
-    expect(results).toHaveNoViolations()
-  })
-})
+    const { container } = render(sut);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+});

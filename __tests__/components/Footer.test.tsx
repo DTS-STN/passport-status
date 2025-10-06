@@ -1,11 +1,11 @@
-import '@testing-library/jest-dom'
-import { render, screen } from '@testing-library/react'
+import '@testing-library/jest-dom';
+import { render, screen } from '@testing-library/react';
 
-import { axe, toHaveNoViolations } from 'jest-axe'
+import { axe, toHaveNoViolations } from 'jest-axe';
 
-import Footer from '../../src/components/Footer'
+import Footer from '../../src/components/Footer';
 
-expect.extend(toHaveNoViolations)
+expect.extend(toHaveNoViolations);
 
 describe('Footer', () => {
   it('renders Footer with links', () => {
@@ -39,10 +39,10 @@ describe('Footer', () => {
           },
         ]}
       />,
-    )
-    const footerLink = screen.getByText('some-link-4')
-    expect(footerLink).toBeInTheDocument()
-  })
+    );
+    const footerLink = screen.getByText('some-link-4');
+    expect(footerLink).toBeInTheDocument();
+  });
 
   it('has no a11y violations', async () => {
     const { container } = render(
@@ -63,8 +63,8 @@ describe('Footer', () => {
         ]}
         footerNavHeader="testFooterNavHeader"
       />,
-    )
-    const results = await axe(container)
-    expect(results).toHaveNoViolations()
-  })
-})
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+});

@@ -1,25 +1,18 @@
-import { PropsWithChildren } from 'react'
+import { PropsWithChildren } from 'react';
 
-import { useTranslation } from 'next-i18next'
+import { useTranslation } from 'next-i18next';
 
-import AlertBlock from './AlertBlock'
-import Footer from './Footer'
-import Header from './Header'
+import AlertBlock from './AlertBlock';
+import Footer from './Footer';
+import Header from './Header';
 
 const Layout = ({ children }: PropsWithChildren) => {
-  const { t } = useTranslation('common')
+  const { t } = useTranslation('common');
 
   return (
     <div className="flex min-h-screen flex-col">
-      <Header
-        skipToMainText={t('header.skip-to-main')}
-        gocLink={t('header.goc-link')}
-      />
-      <main
-        role="main"
-        id="mainContent"
-        className="container mx-auto flex-1 px-4 pb-8"
-      >
+      <Header skipToMainText={t('header.skip-to-main')} gocLink={t('header.goc-link')} />
+      <main role="main" id="mainContent" className="container mx-auto flex-1 px-4 pb-8">
         <AlertBlock />
         {children}
       </main>
@@ -57,7 +50,7 @@ const Layout = ({ children }: PropsWithChildren) => {
         ]}
       />
     </div>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;

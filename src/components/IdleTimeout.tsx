@@ -1,50 +1,46 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react';
 
-import { deleteCookie } from 'cookies-next'
-import { useTranslation } from 'next-i18next'
-import { useRouter } from 'next/router'
-import { IIdleTimerProps, useIdleTimer } from 'react-idle-timer'
+import { deleteCookie } from 'cookies-next';
+import { useTranslation } from 'next-i18next';
+import { useRouter } from 'next/router';
+import { IIdleTimerProps, useIdleTimer } from 'react-idle-timer';
 
-import Modal from './Modal'
+import Modal from './Modal';
 
-export interface IdleTimeoutProps
-  extends Pick<IIdleTimerProps, 'promptBeforeIdle'>,
-    Pick<IIdleTimerProps, 'timeout'> {}
+export interface IdleTimeoutProps extends Pick<IIdleTimerProps, 'promptBeforeIdle'>, Pick<IIdleTimerProps, 'timeout'> {}
 
 const IdleTimeout = ({ promptBeforeIdle, timeout }: IdleTimeoutProps) => {
-  const { t } = useTranslation('common')
-  const router = useRouter()
-  const [modalOpen, setModalOpen] = useState(false)
-  const [timeRemaining, setTimeRemaining] = useState('')
+  const { t } = useTranslation('common');
+  const router = useRouter();
+  const [modalOpen, setModalOpen] = useState(false);
+  const [timeRemaining, setTimeRemaining] = useState('');
 
   const handleOnIdle = () => {
-    deleteCookie('agreed-to-email-esrf-terms')
-    router.reload()
-  }
+    deleteCookie('agreed-to-email-esrf-terms');
+    router.reload();
+  };
 
   const handleOnIdleContinueSession = () => {
-    setModalOpen(false)
-    reset()
-  }
+    setModalOpen(false);
+    reset();
+  };
 
   const { reset, getRemainingTime } = useIdleTimer({
     onIdle: handleOnIdle,
     onPrompt: () => setModalOpen(true),
     promptBeforeIdle: promptBeforeIdle ?? 5 * 60 * 1000, //5 minutes
     timeout: timeout ?? 15 * 60 * 1000, //15 minutes
-  })
+  });
 
   const tick = useCallback(() => {
-    const minutes = Math.floor(getRemainingTime() / 60000)
-    const seconds = Math.floor((getRemainingTime() / 1000) % 60).toFixed(0)
-    setTimeRemaining(
-      minutes + ':' + (parseInt(seconds) < 10 ? '0' : '') + seconds,
-    )
-  }, [getRemainingTime])
+    const minutes = Math.floor(getRemainingTime() / 60000);
+    const seconds = Math.floor((getRemainingTime() / 1000) % 60).toFixed(0);
+    setTimeRemaining(minutes + ':' + (parseInt(seconds) < 10 ? '0' : '') + seconds);
+  }, [getRemainingTime]);
 
   useEffect(() => {
-    setInterval(tick, 1000)
-  }, [tick])
+    setInterval(tick, 1000);
+  }, [tick]);
 
   return (
     <Modal
@@ -66,7 +62,7 @@ const IdleTimeout = ({ promptBeforeIdle, timeout }: IdleTimeoutProps) => {
     >
       <p>{t('modal-idle-timeout.description', { timeRemaining })}</p>
     </Modal>
-  )
-}
+  );
+};
 
-export default IdleTimeout
+export default IdleTimeout;

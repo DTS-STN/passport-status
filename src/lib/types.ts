@@ -1,6 +1,5 @@
-export type AdobeDataLayer = { push?: (object: Record<string, string>) => void }
-export type AppWindow = Window &
-  typeof globalThis & { adobeDataLayer?: AdobeDataLayer }
+export type AdobeDataLayer = { push?: (object: Record<string, string>) => void };
+export type AppWindow = Window & typeof globalThis & { adobeDataLayer?: AdobeDataLayer };
 
 export type AlertPage =
   | 'email'
@@ -14,110 +13,110 @@ export type AlertPage =
   | 'status-processing-overdue'
   | 'status-ready-pickup'
   | 'status-shipped-canada'
-  | 'status-shipped-fedex'
+  | 'status-shipped-fedex';
 
-export type AlertType = 'danger' | 'info' | 'warning' | 'success'
+export type AlertType = 'danger' | 'info' | 'warning' | 'success';
 
 export interface AlertApiRequestQuery {
-  page?: AlertPage
+  page?: AlertPage;
 }
 
 export interface AlertJsonResponse {
-  jsonAlerts: AlertMeta[]
+  jsonAlerts: AlertMeta[];
 }
 
 export interface Alert {
-  uid: string
-  textEn: string
-  textFr: string
-  type: AlertType
+  uid: string;
+  textEn: string;
+  textFr: string;
+  type: AlertType;
 }
 
 export interface AlertMeta extends Alert {
-  pages?: AlertPage[]
-  validFrom: Date
-  validTo: Date
+  pages?: AlertPage[];
+  validFrom: Date;
+  validTo: Date;
 }
 
 export interface CheckStatusApiRequestQuery {
-  dateOfBirth: string
-  esrf: string
-  givenName: string
-  surname: string
+  dateOfBirth: string;
+  esrf: string;
+  givenName: string;
+  surname: string;
 }
 
 export interface CheckStatusApiResponse {
-  manifestNumber?: string
-  status: string
-  serviceLevel: ServiceLevelCode
-  deliveryMethod: DeliveryMethodCode
-  receivedDate: string
-  reviewedDate?: string
-  printedDate?: string
-  completedDate?: string
+  manifestNumber?: string;
+  status: string;
+  serviceLevel: ServiceLevelCode;
+  deliveryMethod: DeliveryMethodCode;
+  receivedDate: string;
+  reviewedDate?: string;
+  printedDate?: string;
+  completedDate?: string;
 }
 
 export interface EmailEsrfApiRequestBody {
-  dateOfBirth: string
-  email: string
-  givenName: string
-  locale: string
-  surname: string
+  dateOfBirth: string;
+  email: string;
+  givenName: string;
+  locale: string;
+  surname: string;
 }
 
 export interface HealthApiResponse {
-  adobeAnalyticsScriptSrc: string | null
-  appBaseUri: string | null
-  buildDate: string | null
-  environment: string | null
-  loggingLevel: string | null
-  status: string
-  uptime: string
+  adobeAnalyticsScriptSrc: string | null;
+  appBaseUri: string | null;
+  buildDate: string | null;
+  environment: string | null;
+  loggingLevel: string | null;
+  status: string;
+  uptime: string;
 }
 
 export interface PassportStatusesSearchResult {
   _embedded: {
-    GetCertificateApplicationResponse: PassportStatusesGetCertificateApplicationResponse[]
-  }
+    GetCertificateApplicationResponse: PassportStatusesGetCertificateApplicationResponse[];
+  };
 }
 
 export interface PassportStatusesGetCertificateApplicationResponse {
-  id: string
-  CertificateApplication: PassportStatusesCertificateApplication
+  id: string;
+  CertificateApplication: PassportStatusesCertificateApplication;
 }
 
 export interface PassportStatusesCertificateApplication {
-  CertificateApplicationIdentification: PassportStatusesCertificateApplicationIdentification[]
-  CertificateApplicationStatus: PassportStatusesCertificateApplicationStatus
-  CertificateApplicationDeliveryMethod: PassportStatusesCertificateApplicationDeliveryMethod
-  CertificateApplicationServiceLevel: PassportStatusesCertificateApplicationServiceLevel
-  CertificateApplicationTimelineDates: PassportStatusesCertificateApplicationTimelineDate[]
+  CertificateApplicationIdentification: PassportStatusesCertificateApplicationIdentification[];
+  CertificateApplicationStatus: PassportStatusesCertificateApplicationStatus;
+  CertificateApplicationDeliveryMethod: PassportStatusesCertificateApplicationDeliveryMethod;
+  CertificateApplicationServiceLevel: PassportStatusesCertificateApplicationServiceLevel;
+  CertificateApplicationTimelineDates: PassportStatusesCertificateApplicationTimelineDate[];
 }
 
 export interface PassportStatusesCertificateApplicationIdentification {
-  IdentificationCategoryText: string
-  IdentificationID: string
+  IdentificationCategoryText: string;
+  IdentificationID: string;
 }
 
 export interface PassportStatusesCertificateApplicationStatus {
-  StatusCode: string
+  StatusCode: string;
 }
 
 export interface PassportStatusesCertificateApplicationDeliveryMethod {
-  DeliveryMethodCode: string
+  DeliveryMethodCode: string;
 }
 
 export interface PassportStatusesCertificateApplicationServiceLevel {
-  ServiceLevelCode: string
+  ServiceLevelCode: string;
 }
 
 export interface PassportStatusesCertificateApplicationTimelineDate {
-  ReferenceDataName: string
-  TimelineDate: NIEMRequiredDate
+  ReferenceDataName: string;
+  TimelineDate: NIEMRequiredDate;
 }
 
 export interface NIEMRequiredDate {
-  Date: string
+  Date: string;
 }
 
 export enum TimelineReferenceDataName {
@@ -139,16 +138,16 @@ export enum StatusCode {
   MISSING_INFORMATION = '8',
 }
 
-export type TimelineEntryStatus = 'done' | 'current' | 'future'
+export type TimelineEntryStatus = 'done' | 'current' | 'future';
 
-export type TimelinePosition = 'first' | 'middle' | 'last'
+export type TimelinePosition = 'first' | 'middle' | 'last';
 
 export type TimelineEntryData = {
-  step: string
-  status: TimelineEntryStatus
-  date?: string
-  subtext?: string
-}
+  step: string;
+  status: TimelineEntryStatus;
+  date?: string;
+  subtext?: string;
+};
 
 export enum ServiceLevelCode {
   NOT_AVAILABLE = '0',
@@ -163,9 +162,9 @@ export enum DeliveryMethodCode {
 }
 
 export type StatusDisplayData = {
-  receivedDate: string
-  serviceLevel: ServiceLevelCode
-  deliveryMethod: DeliveryMethodCode
-  timelineExists: boolean
-  timelineData: TimelineEntryData[]
-}
+  receivedDate: string;
+  serviceLevel: ServiceLevelCode;
+  deliveryMethod: DeliveryMethodCode;
+  timelineExists: boolean;
+  timelineData: TimelineEntryData[];
+};

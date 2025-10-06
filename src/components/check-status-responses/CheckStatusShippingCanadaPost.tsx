@@ -1,17 +1,17 @@
-import { MouseEventHandler } from 'react'
+import { MouseEventHandler } from 'react';
 
-import { Trans, useTranslation } from 'next-i18next'
+import { Trans, useTranslation } from 'next-i18next';
 
-import { StatusDisplayData } from '../../lib/types'
-import ActionButton from '../ActionButton'
-import AlertBlock from '../AlertBlock'
-import ExternalLink from '../ExternalLink'
-import Timeline from '../Timeline'
+import { StatusDisplayData } from '../../lib/types';
+import ActionButton from '../ActionButton';
+import AlertBlock from '../AlertBlock';
+import ExternalLink from '../ExternalLink';
+import Timeline from '../Timeline';
 
 export interface CheckStatusShippingCanadaPostProps {
-  displayData: StatusDisplayData
-  checkAnotherHandler: MouseEventHandler<HTMLButtonElement>
-  trackingNumber?: string
+  displayData: StatusDisplayData;
+  checkAnotherHandler: MouseEventHandler<HTMLButtonElement>;
+  trackingNumber?: string;
 }
 
 export const CheckStatusShippingCanadaPost = ({
@@ -19,19 +19,14 @@ export const CheckStatusShippingCanadaPost = ({
   checkAnotherHandler,
   trackingNumber,
 }: CheckStatusShippingCanadaPostProps) => {
-  const { t } = useTranslation(['status', 'common', 'timeline'])
+  const { t } = useTranslation(['status', 'common', 'timeline']);
 
-  const { timelineExists, timelineData } = displayData
+  const { timelineExists, timelineData } = displayData;
 
   return (
     <div id="response-result">
       <AlertBlock page="status-shipped-canada" />
-      <h1
-        id="main-header"
-        data-testid="shipped-canada-post"
-        className="h1"
-        tabIndex={-1}
-      >
+      <h1 id="main-header" data-testid="shipped-canada-post" className="h1" tabIndex={-1}>
         {t('shipped-canada-post.header')}
       </h1>
       <div className="flex flex-col md:flex-row md:gap-x-30 lg:gap-x-40 xl:gap-x-50">
@@ -49,20 +44,12 @@ export const CheckStatusShippingCanadaPost = ({
             {t('shipped-canada-post.shipping-information.sending-via')}
             <> </>
             {trackingNumber ? (
-              <Trans
-                i18nKey="status-check-tracking.number"
-                ns="status"
-                tOptions={{ trackingNumber }}
-              />
+              <Trans i18nKey="status-check-tracking.number" ns="status" tOptions={{ trackingNumber }} />
             ) : (
               t('shipped-canada-post.shipping-information.take-up-to')
             )}
           </p>
-          {!trackingNumber && (
-            <p>
-              {t('shipped-canada-post.shipping-information.northern-remote')}
-            </p>
-          )}
+          {!trackingNumber && <p>{t('shipped-canada-post.shipping-information.northern-remote')}</p>}
           {trackingNumber && (
             <>
               <p>
@@ -84,11 +71,7 @@ export const CheckStatusShippingCanadaPost = ({
             </>
           )}
           <p className="mt-4 mb-4">
-            <strong>
-              {t(
-                'shipped-canada-post.shipping-information.supporting-documents',
-              )}
-            </strong>
+            <strong>{t('shipped-canada-post.shipping-information.supporting-documents')}</strong>
           </p>
           <p>
             <Trans
@@ -100,11 +83,7 @@ export const CheckStatusShippingCanadaPost = ({
             />
           </p>
           <div className="mt-8">
-            <ActionButton
-              onClick={checkAnotherHandler}
-              text={t('status:check-another')}
-              style="primary"
-            />
+            <ActionButton onClick={checkAnotherHandler} text={t('status:check-another')} style="primary" />
           </div>
         </div>
         {timelineExists && (
@@ -116,7 +95,7 @@ export const CheckStatusShippingCanadaPost = ({
         )}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default CheckStatusShippingCanadaPost
+export default CheckStatusShippingCanadaPost;
