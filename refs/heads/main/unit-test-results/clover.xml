@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1759766802364" clover="3.2.0">
-  <project timestamp="1759766802364" name="All files">
-    <metrics statements="649" coveredstatements="417" conditionals="494" coveredconditionals="237" methods="174" coveredmethods="98" elements="1317" coveredelements="752" complexity="0" loc="649" ncloc="649" packages="12" files="68" classes="68"/>
+<coverage generated="1760983166185" clover="3.2.0">
+  <project timestamp="1760983166186" name="All files">
+    <metrics statements="649" coveredstatements="417" conditionals="496" coveredconditionals="237" methods="174" coveredmethods="98" elements="1319" coveredelements="752" complexity="0" loc="649" ncloc="649" packages="12" files="68" classes="68"/>
     <package name="src">
       <metrics statements="28" coveredstatements="14" conditionals="26" coveredconditionals="8" methods="7" coveredmethods="6"/>
       <file name="middleware.ts" path="/home/runner/work/passport-status/passport-status/src/middleware.ts">
@@ -379,7 +379,7 @@
       </file>
     </package>
     <package name="src.components.check-status-responses">
-      <metrics statements="43" coveredstatements="38" conditionals="60" coveredconditionals="41" methods="9" coveredmethods="8"/>
+      <metrics statements="43" coveredstatements="38" conditionals="62" coveredconditionals="41" methods="9" coveredmethods="8"/>
       <file name="CheckStatusFileBeingProcessed.tsx" path="/home/runner/work/passport-status/passport-status/src/components/check-status-responses/CheckStatusFileBeingProcessed.tsx">
         <metrics statements="6" coveredstatements="6" conditionals="16" coveredconditionals="11" methods="1" coveredmethods="1"/>
         <line num="11" count="2" type="stmt"/>
@@ -390,7 +390,7 @@
         <line num="20" count="2" type="stmt"/>
       </file>
       <file name="CheckStatusMissingInformation.tsx" path="/home/runner/work/passport-status/passport-status/src/components/check-status-responses/CheckStatusMissingInformation.tsx">
-        <metrics statements="6" coveredstatements="1" conditionals="6" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <metrics statements="6" coveredstatements="1" conditionals="8" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="11" count="1" type="stmt"/>
         <line num="12" count="0" type="stmt"/>
         <line num="14" count="0" type="stmt"/>
