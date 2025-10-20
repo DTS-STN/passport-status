@@ -40,7 +40,11 @@ export const CheckStatusMissingInformation = ({ displayData, checkAnotherHandler
           <p>
             <Trans i18nKey={'missing-information.received-note'} ns="status" />
           </p>
-
+          {timelineExists && (
+            <div className="flex w-full justify-center md:hidden">
+              <Timeline entries={timelineData} />
+            </div>
+          )}
           <h2 id="service-standards-header" data-testid="service-standards" className="h2">
             {t('missing-information.service-standards.heading')}
           </h2>
