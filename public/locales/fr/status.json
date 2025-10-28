@@ -1,8 +1,8 @@
 {
   "being-processed": {
     "reviewing-application": "Nous examinons votre demande",
-    "processing-details": "Cet examen prend normalement environ {{reviewDays}} jours ouvrables, plus {{printDays}} jours pour l'impression.",
-    "completion-status": "Si votre demande a été dûment remplie, votre passeport devrait vous être envoyé par la poste dans les {{serviceLevel}} jours ouvrables.",
+    "processing-details": "Un employé du service des passeports examine votre demande. Cet examen prend normalement environ {{reviewDays}} jours ouvrables, plus {{printDays}} jours pour l'impression.",
+    "completion-status": "Si vous avez correctement rempli votre demande, votre passeport devrait vous être envoyé par la poste dans les {{serviceLevel}} jours ouvrables.",
     "service-standards": {
       "heading": "Nos normes de service",
       "received-date": "Nous avons reçu votre demande le {{receivedDate}}. Notre <Link>norme de service</Link> est {{serviceLevel}} jours ouvrables.",
@@ -16,9 +16,9 @@
       "expedited-service-href": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens/passeport-urgent-express.html"
     },
     "incomplete-applications": {
-      "heading": "Demandes incomplètes",
-      "description": "Si votre demande est incomplète ou inexacte, cela peut entraîner des retards ou nous pourrions ne pas être en mesure de la traiter. En fonction du problème, nous pourrons vous contacter par téléphone, par courriel, ou par la poste. Si nous vous contactons par téléphone, l'appel peut apparaître comme un numéro bloqué. Nous ne vous contacterons <strong>jamais</strong> par SMS ou par messagerie instantanée.",
-      "return-notice": "Dans certains cas, nous devrons peut-être vous retourner votre demande par la poste."
+      "heading": "Si votre demande est incomplète",
+      "description": "Si votre demande est incomplète, cela pourrait retarder votre passeport. Selon le problème, nous pourrions vous contacter par téléphone, courriel, ou par la poste. Si nous vous appelons, le numéro pourrait apparaître comme bloqué. Nous ne vous contacterons <strong>jamais</strong> par SMS ou par messagerie instantanée.",
+      "return-notice": "Parfois, nous pourrions devoir vous retourner votre demande incomplète par la poste."
     }
   },
   "being-processed-overdue": {
