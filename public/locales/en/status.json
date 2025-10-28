@@ -2,11 +2,11 @@
   "being-processed": {
     "reviewing-application": "We are reviewing your application",
     "processing-details": "A passport employee is reviewing your application. This review normally takes about {{reviewDays}} business days, plus {{printDays}} days for printing.",
-    "completion-status": "If your application has been properly completed, your passport should be mailed to you within {{serviceLevel}} business days.",
+    "completion-status": "If you properly completed your application, your passport should be mailed to you within {{serviceLevel}} business days.",
     "service-standards": {
       "heading": "Our service standards",
-      "received-date": "We received your application on {{receivedDate}}. Our <Link>service standard</Link> is {{serviceLevel}} business days.",
-      "received-date-mail": "We received your application on {{receivedDate}}. Our <Link>service standard</Link> is {{serviceLevel}} business days plus mailing time.",
+      "received-date": "We received your application on {{receivedDate}}. Our <Link>service standard</Link> is {{serviceLevel}} business days. Your application is within the normal timeframe.",
+      "received-date-mail": "We received your application on {{receivedDate}}. Our <Link>service standard</Link> is {{serviceLevel}} business days plus mailing time. Your application is within the normal timeframe.",
       "service-standards-href": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/processing-times.html",
       "urgent-service-note": "If you requested urgent or express service at the passport office, your service standard is different. Please refer to your receipt for the pick-up date."
     },
@@ -16,9 +16,9 @@
       "expedited-service-href": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/urgent-emergency-passport.html"
     },
     "incomplete-applications": {
-      "heading": "Incomplete applications",
-      "description": "If your application is incomplete or inaccurate, it may lead to delays or we may not be able to process it. Depending on the issue, we may contact you by telephone, email, or mail. If we contact you by phone, the call may show up as a blocked number. We will <strong>never</strong> contact you by text message or instant message.",
-      "return-notice": "In some cases, we may have to return your application to you by mail."
+      "heading": "If your application is missing information",
+      "description": "If your application is incomplete, it could delay your passport. Depending on the issue, we may contact you by telephone, email, or mail. If we call you, the number may show up as blocked. We will <strong>never</strong> contact you by text message or instant message.",
+      "return-notice": "Sometimes, we may need to return your incomplete application to you by mail."
     }
   },
   "being-processed-overdue": {
