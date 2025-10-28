@@ -89,7 +89,7 @@ export const CheckStatusMissingInformation = ({ displayData, checkAnotherHandler
           </div>
         </div>
         {timelineExists && (
-          <div className="hidden w-full md:flex">
+          <div className="hidden w-full max-w-[350px] md:flex">
             <div className="-mt-6">
               <Timeline entries={timelineData} />
             </div>

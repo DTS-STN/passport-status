@@ -140,12 +140,21 @@
   "one-name": "Applicants with <strong>only one name</strong> (single or multiple names entered all in one field) must enter it in <strong>both</strong> the given name(s) and surname fields.",
   "printing": {
     "in-printing": "We are printing your passport",
-    "reviewed-printing": "Your application has been reviewed and your passport is ready for printing. Be aware that printing can take several business days.",
-    "service-standards": {
-      "header": "Our service standards",
-      "requested-urgent": "If you requested urgent or express service at the passport office, your service standard is different. Please refer to your receipt for the pick-up date.",
-      "we-received": "We received your application on {{receivedDate}}. Our <Link>service standard</Link> is {{serviceLevel}} business days.",
-      "we-received-mail": "We received your application on {{receivedDate}}. Our <Link>service standard</Link> is {{serviceLevel}} business days plus mailing time."
+    "in-person": {
+      "reviewed": "We've reviewed your application. Your passport is ready to be printed.",
+      "urgent": "You chose urgent, express, or 10 business days pick-up service. <strong>Your passport will be ready for pick-up on the date printed on your receipt.</strong>",
+      "problem": "If there is a problem, we'll contact you before your pick-up date."
+    },
+    "mail": {
+      "reviewed": "We've reviewed your application. Your passport is ready to be printed. Printing can take several business days.",
+      "service-standards": {
+        "header": "Our service standards",
+        "we-received": "We received your application on {{receivedDate}}. Our <Link>service standard</Link> is {{serviceLevel}} business days."
+      },
+      "renewing": {
+        "header": "If you are renewing your passport",
+        "details": "If you are renewing your passport, your status may show \"printing\" for most or all the process. This is normal. We aim to print your passport within our service standard of {{serviceLevel}} business days."
+      }
     }
   },
   "ready-for-pickup": {

@@ -140,12 +140,21 @@
   "one-name": "Les requérants n'ayant <strong>qu'un seul nom</strong> (un ou plusieurs noms inscrits dans un seul champ) doivent l'indiquer dans les <strong>deux</strong> champs prénom(s) et nom de famille.",
   "printing": {
     "in-printing": "Nous imprimons votre passeport",
-    "reviewed-printing": "Votre demande a été examinée et votre passeport est prêt à être imprimé. Veuillez noter que l'impression peut prendre plusieurs jours ouvrables.",
-    "service-standards": {
-      "header": "Nos normes de service",
-      "requested-urgent": "Si vous avez demandé un service urgent ou express au bureau des passeports, votre norme de service est différente. Veuillez-vous référer à votre reçu pour connaître la date de retrait.",
-      "we-received": "Nous avons reçu votre demande le {{receivedDate}}. Notre <Link>norme de service</Link> est {{serviceLevel}} jours ouvrables.",
-      "we-received-mail": "Nous avons reçu votre demande le {{receivedDate}}. Notre <Link>norme de service</Link> est {{serviceLevel}} jours ouvrables plus le délai de livraison."
+    "in-person": {
+      "reviewed": "Nous avons examiné votre demande. Votre passeport est prêt à être imprimé.",
+      "urgent": "Vous avez choisi le service de retrait urgent, express ou de 10 jours ouvrables. <strong>Votre passeport sera prêt pour le retrait en personne à la date indiquée sur votre reçu.</strong>",
+      "problem": "En cas de problème, nous vous contacterons avant la date de retrait."
+    },
+    "mail": {
+      "reviewed": "Nous avons examiné votre demande. Votre passeport est prêt à être imprimé. L'impression peut prendre plusieurs jours ouvrables.",
+      "service-standards": {
+        "header": "Nos normes de service",
+        "we-received": "Nous avons reçu votre demande le {{receivedDate}}. Notre <Link>norme de service</Link> est {{serviceLevel}} jours ouvrables."
+      },
+      "renewing": {
+        "header": "Si vous renouvelez votre passeport",
+        "details": "Si vous renouvelez votre passeport, votre statut peut indiquer « impression » pendant la majeure partie ou la totalité du processus. C'est normal. Nous visons à imprimer votre passeport dans notre norme de service de {{serviceLevel}} jours ouvrables."
+      }
     }
   },
   "ready-for-pickup": {
