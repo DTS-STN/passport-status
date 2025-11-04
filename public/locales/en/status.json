@@ -153,7 +153,7 @@
       },
       "renewing": {
         "header": "If you are renewing your passport",
-        "details": "If you are renewing your passport, your status may show \"printing\" for most or all the process. This is normal. We aim to print your passport within our service standard of {{serviceLevel}} business days."
+        "details": "If you are renewing your passport, your status may show \"printing\" for most or all of the process. This is normal. We aim to print your passport within our service standard of {{serviceLevel}} business days."
       }
     }
   },
