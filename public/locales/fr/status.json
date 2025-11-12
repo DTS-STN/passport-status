@@ -5,8 +5,8 @@
     "completion-status": "Si vous avez correctement rempli votre demande, votre passeport devrait vous être envoyé par la poste dans les {{serviceLevel}} jours ouvrables.",
     "service-standards": {
       "heading": "Nos normes de service",
-      "received-date": "Nous avons reçu votre demande le {{receivedDate}}. Notre <Link>norme de service</Link> est {{serviceLevel}} jours ouvrables.",
-      "received-date-mail": "Nous avons reçu votre demande le {{receivedDate}}. Notre <Link>norme de service</Link> est {{serviceLevel}} jours ouvrables plus le délai de livraison.",
+      "received-date": "Nous avons reçu votre demande le {{receivedDate}}. Notre <Link>norme de service</Link> est {{serviceLevel}} jours ouvrables. Votre demande est dans les délais normaux.",
+      "received-date-mail": "Nous avons reçu votre demande le {{receivedDate}}. Notre <Link>norme de service</Link> est {{serviceLevel}} jours ouvrables plus le délai de livraison. Votre demande est dans les délais normaux.",
       "service-standards-href": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens/delais-traitement.html",
       "urgent-service-note": "Si vous avez demandé un service urgent ou express au bureau des passeports, votre norme de service est différente. Veuillez-vous référer à votre reçu pour connaître la date de retrait."
     },
@@ -153,7 +153,7 @@
       },
       "renewing": {
         "header": "Si vous renouvelez votre passeport",
-        "details": "Si vous renouvelez votre passeport, votre statut peut indiquer « impression » pendant la majeure partie ou la totalité du processus. C'est normal. Nous visons à imprimer votre passeport dans notre norme de service de {{serviceLevel}} jours ouvrables."
+        "details": "Si vous renouvelez votre passeport, l'état de votre demande peut afficher « impression » pendant la majeure partie ou la totalité du processus. C'est normal. Nous visons à imprimer votre passeport dans notre norme de service de {{serviceLevel}} jours ouvrables."
       }
     }
   },
