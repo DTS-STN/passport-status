@@ -64,5 +64,6 @@
   "opens-in-new-tab": "(opens in a new tab)",
   "refund-eligible-link": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/fees/passport-travel-document-refunds.html",
   "required": "(required)",
-  "service-standard-link": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/processing-times.html"
+  "service-standard-link": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/processing-times.html",
+  "tty": "Teletypewriter"
 }
