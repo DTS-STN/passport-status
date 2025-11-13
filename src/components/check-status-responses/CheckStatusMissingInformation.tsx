@@ -76,7 +76,13 @@ export const CheckStatusMissingInformation = ({ displayData, checkAnotherHandler
             {t('missing-information.hear-from-us.heading')}
           </h2>
           <p>
-            <Trans i18nKey={'missing-information.hear-from-us.description'} ns="status" />
+            <Trans
+              i18nKey={'missing-information.hear-from-us.description'}
+              ns="status"
+              components={{
+                TTY: <abbr title={t('common:tty')} />,
+              }}
+            />
           </p>
 
           <h2 id="already-spoken-header" data-testid="already-spoken" className="h2">
