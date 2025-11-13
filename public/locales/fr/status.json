@@ -87,27 +87,27 @@
     }
   },
   "missing-information": {
-    "header": "Nous avons besoin de plus d'informations",
-    "received-date": "Nous avons reçu votre demande le {{receivedDate}}. Un employé des passeports est en train de l'examiner, mais nous avons besoin de plus d'informations pour continuer à la traiter.",
+    "header": "Nous avons besoin de plus de renseignements",
+    "received-date": "Nous avons reçu votre demande le {{receivedDate}}. Un employé des passeports est en train de l'examiner, mais nous avons besoin de plus de renseignements pour poursuivre le traitement.",
     "received-contact": "<strong>Nous vous contacterons par téléphone ou par courriel.</strong> Si nous ne pouvons pas vous joindre, nous vous enverrons une lettre par la poste.",
     "received-note": "<strong>Veuillez noter :</strong> notre numéro de téléphone peut apparaître comme bloqué sur votre afficheur.",
     "service-standards": {
       "heading": "Nos normes de service",
-      "statement": "Notre <Link>norme de service</Link> est {{serviceLevel}} jours ouvrables. Cependant, des informations manquantes peuvent retarder votre demande.",
-      "statement-mail": "Notre <Link>norme de service</Link> est {{serviceLevel}} jours ouvrables, plus le délai de livraison. Cependant, des informations manquantes peuvent retarder votre demande."
+      "statement": "Notre <Link>norme de service</Link> est {{serviceLevel}} jours ouvrables. Cependant, des renseignements manquants peuvent retarder votre demande.",
+      "statement-mail": "Notre <Link>norme de service</Link> est {{serviceLevel}} jours ouvrables, plus le délai de livraison. Cependant, des renseignements manquants peuvent retarder votre demande."
     },
     "why-message": {
       "heading": "Pourquoi voyez-vous ce message",
       "description": "Vous voyez ce message parce que :",
       "list": {
-        "item-1": "nous avons besoin de plus d'informations ou de documents, ou",
+        "item-1": "nous avons besoin de plus de renseignements ou de documents, ou",
         "item-2": "certains détails dans votre demande ne correspondent pas à nos dossiers"
       },
       "conclusion": "Dans la plupart des cas, il s'agit d'un problème simple qui peut être résolu rapidement."
     },
     "hear-from-us": {
       "heading": "Si vous ne recevez pas de nos nouvelles",
-      "description": "Si vous n'avez pas encore été contacté, veuillez appeler le Centre d'appels des passeports au 1-800-567-6868 (<TTY>ATS</TTY>: 1-866-255-7655). Un représentant pourra vous aider avec votre demande."
+      "description": "Si vous n'avez pas encore été contacté, veuillez appeler le Centre d'appels des passeports au 1-800-567-6868 (<TTY>ATS</TTY> : 1-866-255-7655). Un représentant pourra vous aider avec votre demande."
     },
     "already-spoken": {
       "heading": "Si vous nous avez déjà parlé",
