@@ -149,7 +149,7 @@
       "reviewed": "We've reviewed your application. Your passport is ready to be printed. Printing can take several business days.",
       "service-standards": {
         "header": "Our service standards",
-        "we-received": "We received your application on {{receivedDate}}. Our <Link>service standard</Link> is {{serviceLevel}} business days."
+        "we-received": "We received your application on {{receivedDate}}. Our <Link>service standard</Link> is {{serviceLevel}} business days plus mailing time."
       },
       "renewing": {
         "header": "If you are renewing your passport",

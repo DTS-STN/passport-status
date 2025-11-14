@@ -149,7 +149,7 @@
       "reviewed": "Nous avons examiné votre demande. Votre passeport est prêt à être imprimé. L'impression peut prendre plusieurs jours ouvrables.",
       "service-standards": {
         "header": "Nos normes de service",
-        "we-received": "Nous avons reçu votre demande le {{receivedDate}}. Notre <Link>norme de service</Link> est {{serviceLevel}} jours ouvrables."
+        "we-received": "Nous avons reçu votre demande le {{receivedDate}}. Notre <Link>norme de service</Link> est {{serviceLevel}} jours ouvrables plus le délai de livraison."
       },
       "renewing": {
         "header": "Si vous renouvelez votre passeport",
