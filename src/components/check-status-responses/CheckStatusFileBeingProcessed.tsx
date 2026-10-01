@@ -2,7 +2,7 @@ import { Trans, useTranslation } from 'next-i18next';
 
 import { DeliveryMethodCode, ServiceLevelCode } from '../../lib/types';
 import { formatDateShort } from '../../lib/utils/dates';
-import { StatusResultProps } from '../../pages/status';
+import type { StatusResultProps } from '../../pages/status';
 import ActionButton from '../ActionButton';
 import AlertBlock from '../AlertBlock';
 import ExternalLink from '../ExternalLink';
@@ -25,16 +25,7 @@ export const CheckStatusFileBeingProcessed = ({ displayData, checkAnotherHandler
       </h1>
       <div className="flex flex-col md:flex-row md:gap-x-30 lg:gap-x-40 xl:gap-x-50">
         <div className="max-w-prose">
-          <p>
-            <Trans
-              i18nKey={'being-processed.processing-details'}
-              ns="status"
-              values={{
-                reviewDays: serviceLevel === ServiceLevelCode.TEN_DAYS ? '7' : '15',
-                printDays: serviceLevel === ServiceLevelCode.TEN_DAYS ? '3' : '5',
-              }}
-            />
-          </p>
+          <p>{t('being-processed.processing-details')}</p>
           {deliveryMethod === DeliveryMethodCode.MAIL && (
             <p>
               <Trans

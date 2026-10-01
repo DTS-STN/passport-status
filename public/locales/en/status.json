@@ -1,12 +1,12 @@
 {
   "being-processed": {
     "reviewing-application": "We are reviewing your application",
-    "processing-details": "A passport employee is reviewing your application. This review normally takes about {{reviewDays}} business days, plus {{printDays}} days for printing.",
+    "processing-details": "A passport employee is reviewing your application. Applications typically spend most of their processing time at this stage before moving to the print stage.",
     "completion-status": "If you properly completed your application, your passport should be mailed to you within {{serviceLevel}} business days.",
     "service-standards": {
       "heading": "Our service standards",
-      "received-date": "We received your application on {{receivedDate}}. Our <Link>service standard</Link> is {{serviceLevel}} business days. Your application is within the normal timeframe.",
-      "received-date-mail": "We received your application on {{receivedDate}}. Our <Link>service standard</Link> is {{serviceLevel}} business days plus mailing time. Your application is within the normal timeframe.",
+      "received-date": "We received your application on {{receivedDate}}. Our <Link>service standard</Link> is {{serviceLevel}} business days.",
+      "received-date-mail": "We received your application on {{receivedDate}}. Our <Link>service standard</Link> is {{serviceLevel}} business days plus mailing time.",
       "service-standards-href": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/processing-times.html",
       "urgent-service-note": "If you requested urgent or express service at the passport office, your service standard is different. Please refer to your receipt for the pick-up date."
     },
