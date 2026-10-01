@@ -140,6 +140,7 @@ const DateSelectField = ({
       return;
     }
     const { year, month, day } = parseDateString(value);
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- Keep the internal fields in sync with controlled prop updates.
     setState((curState) => ({
       yearValue: year,
       monthValue: month,

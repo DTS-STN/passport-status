@@ -1,3 +1,4 @@
+import { fixupConfigRules } from '@eslint/compat';
 import eslint from '@eslint/js';
 import pluginNext from '@next/eslint-plugin-next';
 import pluginImport from 'eslint-plugin-import';
@@ -70,9 +71,8 @@ export default defineConfig(
     files: ['**/*.tsx'],
     extends: [
       pluginJsxA11y.flatConfigs.recommended,
-      pluginReact.configs.flat.recommended,
-      pluginReact.configs.flat['jsx-runtime'],
-      pluginReactHooks.configs['recommended-latest'],
+      ...fixupConfigRules([pluginReact.configs.flat.recommended, pluginReact.configs.flat['jsx-runtime']]),
+      pluginReactHooks.configs.flat['recommended-latest'],
     ],
     rules: {
       'jsx-a11y/no-autofocus': ['error', { ignoreNonDOM: true }],
