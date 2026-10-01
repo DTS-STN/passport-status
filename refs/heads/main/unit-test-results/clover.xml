@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1790865683681" clover="3.2.0">
-  <project timestamp="1790865683681" name="All files">
+<coverage generated="1790872527534" clover="3.2.0">
+  <project timestamp="1790872527535" name="All files">
     <metrics statements="656" coveredstatements="436" conditionals="494" coveredconditionals="247" methods="176" coveredmethods="106" elements="1326" coveredelements="789" complexity="0" loc="656" ncloc="656" packages="12" files="68" classes="68"/>
     <package name="src">
       <metrics statements="28" coveredstatements="14" conditionals="26" coveredconditionals="8" methods="7" coveredmethods="6"/>
@@ -215,9 +215,9 @@
       </file>
       <file name="ExternalLink.tsx" path="/home/runner/work/passport-status/passport-status/src/components/ExternalLink.tsx">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="11" count="15" type="stmt"/>
+        <line num="10" count="15" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
         <line num="12" count="2" type="stmt"/>
-        <line num="13" count="2" type="stmt"/>
       </file>
       <file name="FieldSetLegend.tsx" path="/home/runner/work/passport-status/passport-status/src/components/FieldSetLegend.tsx">
         <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
