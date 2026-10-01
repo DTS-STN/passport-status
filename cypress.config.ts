@@ -1,6 +1,7 @@
 import { defineConfig } from 'cypress';
 
 export default defineConfig({
+  allowCypressEnv: false,
   video: false,
   reporter: 'cypress-multi-reporters',
   reporterOptions: {
