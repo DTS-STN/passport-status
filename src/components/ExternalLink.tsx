@@ -3,8 +3,7 @@ import { AnchorHTMLAttributes, DetailedHTMLProps, PropsWithChildren } from 'reac
 import { useTranslation } from 'next-i18next';
 
 export interface ExternalLinkProps
-  extends DetailedHTMLProps<AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>,
-    PropsWithChildren {
+  extends DetailedHTMLProps<AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>, PropsWithChildren {
   href: string;
 }
 
