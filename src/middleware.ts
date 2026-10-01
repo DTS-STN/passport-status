@@ -14,7 +14,7 @@ export async function middleware(req: NextRequest) {
     return NextResponse.next();
   }
 
-  logger.debug(req);
+  logger.trace(req);
 
   if (locale === 'default' && !pathname.endsWith('/')) {
     return NextResponse.redirect(new URL(`/en${pathname}`, url));
