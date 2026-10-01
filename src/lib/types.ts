@@ -5,6 +5,7 @@ export type AlertPage =
   | 'email'
   | 'expectations'
   | 'landing'
+  | 'missing-information'
   | 'status'
   | 'status-not-found'
   | 'status-invalid'

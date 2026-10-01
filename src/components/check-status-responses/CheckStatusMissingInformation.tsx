@@ -19,8 +19,8 @@ export const CheckStatusMissingInformation = ({ displayData, checkAnotherHandler
 
   return (
     <div id="response-result">
-      <AlertBlock page="status-processing" />
-      <h1 id="main-header" data-testid="being-processed" className="h1" tabIndex={-1}>
+      <AlertBlock page="missing-information" />
+      <h1 id="main-header" data-testid="missing-information" className="h1" tabIndex={-1}>
         {t('missing-information.header')}
       </h1>
       <div className="flex flex-col md:flex-row md:gap-x-30 lg:gap-x-40 xl:gap-x-50">
