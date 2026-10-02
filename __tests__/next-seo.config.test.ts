@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom';
 
-import { OpenGraphMedia } from 'next-seo/lib/types';
+import { OpenGraphMedia } from 'next-seo/pages';
 
 import {
   LanguageAlternate,

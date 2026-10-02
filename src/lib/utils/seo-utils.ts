@@ -1,4 +1,4 @@
-import { MetaTag } from 'next-seo/lib/types';
+import { MetaTag } from 'next-seo/pages';
 
 export type GetDCTermsTitle = (content: string) => MetaTag;
 

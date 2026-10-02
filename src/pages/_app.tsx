@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { appWithTranslation } from 'next-i18next/pages';
-import { DefaultSeo } from 'next-seo';
+import { generateDefaultSeo } from 'next-seo/pages';
 import { AppProps } from 'next/app';
 import getConfig from 'next/config';
 import Head from 'next/head';
@@ -71,7 +71,13 @@ const MyApp = ({ Component, pageProps, router }: AppProps) => {
         </>
       )}
 
-      <DefaultSeo dangerouslySetAllPagesToNoIndex dangerouslySetAllPagesToNoFollow {...nextSEOConfig} />
+      <Head>
+        {generateDefaultSeo({
+          dangerouslySetAllPagesToNoIndex: true,
+          dangerouslySetAllPagesToNoFollow: true,
+          ...nextSEOConfig,
+        })}
+      </Head>
       <QueryClientProvider client={queryClient}>
         <Component {...pageProps} />
       </QueryClientProvider>

@@ -1,5 +1,4 @@
-import { DefaultSeoProps } from 'next-seo';
-import { OpenGraphMedia } from 'next-seo/lib/types';
+import { DefaultSeoProps, OpenGraphMedia } from 'next-seo/pages';
 import { Router } from 'next/router';
 
 export type NextSEORouter = Pick<Router, 'asPath' | 'locale'>;
