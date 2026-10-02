@@ -1,6 +1,6 @@
 import { MouseEventHandler } from 'react';
 
-import { Trans, useTranslation } from 'next-i18next';
+import { Trans, useTranslation } from 'next-i18next/pages';
 
 import ActionButton from '../../ActionButton';
 import AlertBlock from '../../AlertBlock';

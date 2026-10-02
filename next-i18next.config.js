@@ -1,7 +1,7 @@
 // @ts-check
 
 /**
- * @type {import('next-i18next').UserConfig}
+ * @type {import('next-i18next/pages').UserConfig}
  **/
 module.exports = {
   appendNamespaceToMissingKey: true,

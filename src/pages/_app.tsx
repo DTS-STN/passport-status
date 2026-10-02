@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { appWithTranslation } from 'next-i18next';
+import { appWithTranslation } from 'next-i18next/pages';
 import { DefaultSeo } from 'next-seo';
 import { AppProps } from 'next/app';
 import getConfig from 'next/config';
