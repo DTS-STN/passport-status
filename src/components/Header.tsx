@@ -66,7 +66,7 @@ const Header = ({ gocLink, skipToMainText }: HeaderProps) => {
               href={asPath}
               locale={langSelectorLocale}
               replace
-              className={`font-body ml-6 block cursor-help pb-2 text-base font-bold text-[#284162] underline decoration-dotted hover:text-[#0535d2] sm:ml-16 md:hidden md:text-sm`}
+              className={`font-body hover:text-link-selected ml-6 block cursor-help pb-2 text-base font-bold text-[#284162] underline decoration-dotted sm:ml-16 md:hidden md:text-sm`}
               lang={langSelectorLocale}
             >
               <abbr title={langSelectorText}>{langSelectorAbbreviation}</abbr>
@@ -79,7 +79,7 @@ const Header = ({ gocLink, skipToMainText }: HeaderProps) => {
               href={asPath}
               locale={langSelectorLocale}
               replace
-              className="font-body hidden self-end pb-0 text-[#284162] underline hover:text-[#0535d2] md:block lg:pb-4"
+              className="font-body hover:text-link-selected hidden self-end pb-0 text-[#284162] underline md:block lg:pb-4"
               data-cy="toggle-language-link"
               lang={langSelectorLocale}
             >
