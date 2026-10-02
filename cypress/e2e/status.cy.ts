@@ -24,7 +24,7 @@ describe('status page loads', () => {
 
   it('should have correct title in French', () => {
     cy.get('[data-cy=toggle-language-link]').click();
-    cy.wait(750);
+    cy.get('html').should('have.attr', 'lang', 'fr');
     cy.get('h1')
       .filter(':visible')
       .invoke('text')
@@ -40,7 +40,7 @@ describe('status page loads', () => {
 
   it('displays the language link to change to English', () => {
     cy.get('[data-cy=toggle-language-link]').click();
-    cy.wait(200);
+    cy.get('html').should('have.attr', 'lang', 'fr');
     cy.location('pathname').should('equal', '/fr/status');
     cy.get('[data-cy=toggle-language-link]').should('contain.text', 'English');
   });
@@ -56,7 +56,6 @@ describe('status page loads', () => {
 
   it('has no detectable a11y violations on load', () => {
     cy.injectAxe();
-    cy.wait(1000);
     cy.checkA11y();
   });
 });
@@ -210,7 +209,7 @@ statusCodes.forEach((response) => {
   describe(`responses- loads result - '${response.status}'`, () => {
     beforeEach(() => {
       cy.get('[data-cy=toggle-language-link]').click();
-      cy.wait(750);
+      cy.get('html').should('have.attr', 'lang', 'fr');
       const esrf = faker.helpers.replaceSymbols('?#######');
       const givenName = faker.person.firstName();
       const surname = faker.person.lastName();
@@ -257,7 +256,6 @@ statusCodes.forEach((response) => {
 
     it(`loads result for status '${response.status}' has no detectable a11y violations`, () => {
       cy.injectAxe();
-      cy.wait(1000);
       cy.checkA11y();
     });
   });
@@ -307,7 +305,6 @@ describe('responses - loads no result', () => {
 
   it('no result has no detectable a11y violations', () => {
     cy.injectAxe();
-    cy.wait(500);
     cy.checkA11y();
   });
 });
@@ -328,7 +325,6 @@ describe('cancel check status', () => {
 
   it('cancel check status dialog has no detectable a11y violations', () => {
     cy.injectAxe();
-    cy.wait(500);
     cy.checkA11y();
   });
 });
