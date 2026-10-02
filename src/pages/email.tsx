@@ -212,7 +212,7 @@ const Email = () => {
               helpMessage={t('email.help-message')}
               extraContent={
                 <Collapse title={t('email.for-child.title')} variant="slim">
-                  <p className="border-l-[6px] border-gray-400 pl-6 text-base text-gray-600">
+                  <p className="border-l-6 border-gray-400 pl-6 text-base text-gray-600">
                     <Trans i18nKey="email.for-child.help-message" ns="email" />
                   </p>
                 </Collapse>
@@ -233,7 +233,7 @@ const Email = () => {
               helpMessage={<Trans i18nKey="given-name.help-message" ns="email" />}
               extraContent={
                 <Collapse title={t('given-name.title')} variant="slim">
-                  <p className="border-l-[6px] border-gray-400 pl-6 text-base text-gray-600">
+                  <p className="border-l-6 border-gray-400 pl-6 text-base text-gray-600">
                     <Trans i18nKey="one-name" ns="email" />
                   </p>
                 </Collapse>
