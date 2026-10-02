@@ -3,7 +3,6 @@ import { MouseEventHandler, useCallback } from 'react';
 import { setCookie } from 'cookies-next';
 import { GetServerSideProps } from 'next';
 import { Trans, useTranslation } from 'next-i18next/pages';
-import { NextSeo } from 'next-seo';
 import Router from 'next/router';
 
 import ActionButton from '../components/ActionButton';
@@ -11,6 +10,7 @@ import AlertBlock from '../components/AlertBlock';
 import Collapse from '../components/Collapse';
 import ExternalLink from '../components/ExternalLink';
 import Layout from '../components/Layout';
+import NextSeo from '../components/NextSeo';
 import { pageWithServerSideTranslations } from '../lib/utils/next-i18next-utils';
 import { getDCTermsTitle } from '../lib/utils/seo-utils';
 

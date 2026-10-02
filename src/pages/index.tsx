@@ -1,8 +1,8 @@
 import { GetServerSideProps } from 'next';
-import { NextSeo } from 'next-seo';
 import Image from 'next/image';
 
 import LinkButton from '../components/LinkButton';
+import NextSeo from '../components/NextSeo';
 import { getDCTermsTitle } from '../lib/utils/seo-utils';
 
 const Index = () => {

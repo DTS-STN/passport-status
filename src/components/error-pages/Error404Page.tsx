@@ -1,7 +1,7 @@
-import { NextSeo } from 'next-seo';
 import Link from 'next/link';
 
 import ErrorLayout from '../ErrorLayout';
+import NextSeo from '../NextSeo';
 
 const Error404Page = () => {
   return (

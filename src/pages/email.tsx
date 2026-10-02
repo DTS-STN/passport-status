@@ -3,7 +3,6 @@ import { MouseEventHandler, useCallback, useMemo, useState } from 'react';
 import { useFormik, validateYupSchema, yupToFormErrors } from 'formik';
 import { GetServerSideProps } from 'next';
 import { Trans, useTranslation } from 'next-i18next/pages';
-import { NextSeo } from 'next-seo';
 import { useRouter } from 'next/router';
 import * as Yup from 'yup';
 
@@ -18,6 +17,7 @@ import InputField from '../components/InputField';
 import Layout from '../components/Layout';
 import LinkButton from '../components/LinkButton';
 import Modal from '../components/Modal';
+import NextSeo from '../components/NextSeo';
 import { EmailEsrfApiRequestBody } from '../lib/types';
 import useEmailEsrf from '../lib/useEmailEsrf';
 import { pageWithServerSideTranslations } from '../lib/utils/next-i18next-utils';
