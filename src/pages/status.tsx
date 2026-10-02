@@ -3,7 +3,7 @@ import { ChangeEventHandler, MouseEventHandler, useCallback, useEffect, useMemo,
 import { useQueryClient } from '@tanstack/react-query';
 import { useFormik, validateYupSchema, yupToFormErrors } from 'formik';
 import { GetServerSideProps } from 'next';
-import { Trans, useTranslation } from 'next-i18next';
+import { Trans, useTranslation } from 'next-i18next/pages';
 import { NextSeo } from 'next-seo';
 import Link from 'next/link';
 import { useRouter } from 'next/router';

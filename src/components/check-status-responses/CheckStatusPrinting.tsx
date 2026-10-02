@@ -1,4 +1,4 @@
-import { Trans, useTranslation } from 'next-i18next';
+import { Trans, useTranslation } from 'next-i18next/pages';
 
 import { DeliveryMethodCode, ServiceLevelCode } from '../../lib/types';
 import { formatDateShort } from '../../lib/utils/dates';

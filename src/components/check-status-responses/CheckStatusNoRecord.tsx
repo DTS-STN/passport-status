@@ -1,4 +1,4 @@
-import { Trans, useTranslation } from 'next-i18next';
+import { Trans, useTranslation } from 'next-i18next/pages';
 
 import { NoStatusResultProps } from '../../pages/status';
 import ActionButton from '../ActionButton';

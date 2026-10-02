@@ -1,6 +1,6 @@
 import { PropsWithChildren } from 'react';
 
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-i18next/pages';
 
 import AlertBlock from './AlertBlock';
 import Footer from './Footer';

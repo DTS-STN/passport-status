@@ -4,6 +4,7 @@ const config: Config = {
   modulePathIgnorePatterns: ['./cypress'],
   collectCoverageFrom: ['src/**/*.{js,jsx,ts,tsx}'],
   moduleNameMapper: {
+    '^next-i18next/pages$': '<rootDir>/__mocks__/next-i18next.ts',
     // Handle CSS imports (with CSS modules) https://jestjs.io/docs/webpack#mocking-css-modules
     '^.+\\.module\\.(css|sass|scss)$': 'identity-obj-proxy',
     // Handle CSS imports (without CSS modules)

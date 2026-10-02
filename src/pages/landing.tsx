@@ -1,5 +1,5 @@
 import { GetServerSideProps } from 'next';
-import { Trans, useTranslation } from 'next-i18next';
+import { Trans, useTranslation } from 'next-i18next/pages';
 import { NextSeo } from 'next-seo';
 import Link from 'next/link';
 

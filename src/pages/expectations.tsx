@@ -2,7 +2,7 @@ import { MouseEventHandler, useCallback } from 'react';
 
 import { setCookie } from 'cookies-next';
 import { GetServerSideProps } from 'next';
-import { Trans, useTranslation } from 'next-i18next';
+import { Trans, useTranslation } from 'next-i18next/pages';
 import { NextSeo } from 'next-seo';
 import Router from 'next/router';
 
