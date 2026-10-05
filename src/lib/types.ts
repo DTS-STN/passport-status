@@ -67,6 +67,7 @@ export interface EmailEsrfApiRequestBody {
 
 export interface HealthApiResponse {
   adobeAnalyticsScriptSrc: string | null;
+  apiBaseUri: string | null;
   appBaseUri: string | null;
   buildDate: string | null;
   environment: string | null;

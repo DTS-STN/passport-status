@@ -1,15 +1,16 @@
 import '@testing-library/jest-dom';
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 
 import { axe, toHaveNoViolations } from 'jest-axe';
 
 import Footer from '../../src/components/Footer';
+import { renderWithClientEnvironment } from '../../test-utils/renderWithClientEnvironment';
 
 expect.extend(toHaveNoViolations);
 
 describe('Footer', () => {
   it('renders Footer with links', () => {
-    render(
+    renderWithClientEnvironment(
       <Footer
         dateModifiedText="testDateModified"
         footerHeader="testFooterHeader"
@@ -45,7 +46,7 @@ describe('Footer', () => {
   });
 
   it('has no a11y violations', async () => {
-    const { container } = render(
+    const { container } = renderWithClientEnvironment(
       <Footer
         dateModifiedText="testDateModified"
         footerHeader="testFooterHeader"

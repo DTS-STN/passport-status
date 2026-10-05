@@ -35,7 +35,12 @@ RUN npm run build
 FROM base AS runner
 WORKDIR /app
 
+ARG BUILD_DATE
+ARG BUILD_ID
+
 ENV NODE_ENV production
+ENV BUILD_DATE=$BUILD_DATE
+ENV BUILD_ID=$BUILD_ID
 # Uncomment the following line in case you want to disable telemetry during runtime.
 ENV NEXT_TELEMETRY_DISABLED 1
 

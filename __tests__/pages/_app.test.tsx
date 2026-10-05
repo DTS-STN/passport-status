@@ -4,18 +4,10 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 
-import App from '../../src/pages/_app';
+import App, { getClientEnvironment, serializeClientEnvironment } from '../../src/pages/_app';
 
 const adobeAnalyticsScriptSrc = 'https://assets.adobedtm.com/be5dfd287373/1e84b99f81fb/launch-ffa1e01dbeab-staging.min.js';
 const jQueryScriptSrc = 'https://code.jquery.com/jquery-3.6.3.min.js';
-
-const mockGetConfig = jest.fn().mockImplementation(() => ({
-  publicRuntimeConfig: {
-    adobeAnalyticsScriptSrc: undefined,
-  },
-}));
-
-jest.mock('next/config', () => () => mockGetConfig());
 
 jest.mock('../../src/lib/utils/fonts', () => ({
   lato: {
@@ -33,11 +25,38 @@ jest.mock('../../src/lib/utils/fonts', () => ({
 const MockComponent = jest.fn().mockImplementation(() => <h1>Mock Component</h1>);
 
 describe('custom `app`', () => {
+  it('uses the window client environment in the browser', () => {
+    const previousEnvironment = window.__CLIENT_ENV__;
+    const clientEnvironment = {
+      APP_BASE_URI: 'https://client.example',
+      ENVIRONMENT: 'client',
+    };
+    window.__CLIENT_ENV__ = clientEnvironment;
+
+    expect(getClientEnvironment()).toEqual(clientEnvironment);
+
+    if (previousEnvironment) {
+      window.__CLIENT_ENV__ = previousEnvironment;
+    } else {
+      delete window.__CLIENT_ENV__;
+    }
+  });
+
+  it('escapes HTML-significant characters in serialized client environment', () => {
+    expect(serializeClientEnvironment({ APP_BASE_URI: '', ENVIRONMENT: '</script><script>&' })).toBe(
+      '{"APP_BASE_URI":"","ENVIRONMENT":"\\u003c/script\\u003e\\u003cscript\\u003e\\u0026"}',
+    );
+  });
+
   it('should render the page', () => {
     render(
       <App
         Component={MockComponent}
         pageProps={{
+          clientEnvironment: {
+            APP_BASE_URI: 'http://localhost',
+            ENVIRONMENT: 'test',
+          },
           _nextI18Next: {
             initialI18nStore: '',
             initialLocale: 'en',
@@ -57,19 +76,18 @@ describe('custom `app`', () => {
     expect(aaScript).not.toBeInTheDocument();
     expect(jQueryScript).not.toBeInTheDocument();
     expect(MockComponent).toHaveBeenCalled();
-    expect(mockGetConfig).toHaveBeenCalled();
   });
 
   it('should render the page with adobe analytics', () => {
-    mockGetConfig.mockReturnValueOnce({
-      publicRuntimeConfig: {
-        adobeAnalyticsScriptSrc,
-      },
-    });
     render(
       <App
         Component={MockComponent}
         pageProps={{
+          clientEnvironment: {
+            ADOBE_ANALYTICS_SCRIPT_SRC: adobeAnalyticsScriptSrc,
+            APP_BASE_URI: 'http://localhost',
+            ENVIRONMENT: 'test',
+          },
           _nextI18Next: {
             initialI18nStore: '',
             initialLocale: 'en',
@@ -89,6 +107,5 @@ describe('custom `app`', () => {
     expect(aaScript).toBeInTheDocument();
     expect(jQueryScript).toBeInTheDocument();
     expect(MockComponent).toHaveBeenCalled();
-    expect(mockGetConfig).toHaveBeenCalled();
   });
 });

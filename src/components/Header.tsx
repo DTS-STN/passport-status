@@ -1,9 +1,9 @@
 import { useTranslation } from 'next-i18next/pages';
-import getConfig from 'next/config';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
+import { useClientEnvironment } from '../context/ClientEnvironmentContext';
 import ApplicationNameBar from './ApplicationNameBar';
 import Banner from './Banner';
 
@@ -13,14 +13,15 @@ export interface HeaderProps {
 }
 
 const Header = ({ gocLink, skipToMainText }: HeaderProps) => {
-  const config = getConfig();
+  const { ENVIRONMENT } = useClientEnvironment();
+
   const { locale, asPath } = useRouter();
   const { t } = useTranslation('common');
 
   const langSelectorLocale = locale === 'en' ? 'fr' : 'en';
   const langSelectorAbbreviation = langSelectorLocale === 'fr' ? 'FR' : 'EN';
   const langSelectorText = langSelectorLocale === 'fr' ? 'Français' : 'English';
-  const showBanner = config?.publicRuntimeConfig?.environment !== 'prod';
+  const showBanner = ENVIRONMENT !== 'prod';
 
   return (
     <>
