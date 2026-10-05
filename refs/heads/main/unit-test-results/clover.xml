@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1790953814510" clover="3.2.0">
-  <project timestamp="1790953814510" name="All files">
-    <metrics statements="657" coveredstatements="437" conditionals="494" coveredconditionals="247" methods="177" coveredmethods="107" elements="1328" coveredelements="791" complexity="0" loc="657" ncloc="657" packages="12" files="69" classes="69"/>
+<coverage generated="1791196967435" clover="3.2.0">
+  <project timestamp="1791196967435" name="All files">
+    <metrics statements="657" coveredstatements="437" conditionals="494" coveredconditionals="247" methods="177" coveredmethods="107" elements="1328" coveredelements="791" complexity="0" loc="657" ncloc="657" packages="12" files="70" classes="70"/>
     <package name="src">
       <metrics statements="28" coveredstatements="14" conditionals="26" coveredconditionals="8" methods="7" coveredmethods="6"/>
       <file name="middleware.ts" path="/home/runner/work/passport-status/passport-status/src/middleware.ts">
@@ -47,6 +47,9 @@
       <file name="resources.ts" path="/home/runner/work/passport-status/passport-status/src/@types/resources.ts">
         <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="8" count="0" type="stmt"/>
+      </file>
+      <file name="styles.d.ts" path="/home/runner/work/passport-status/passport-status/src/@types/styles.d.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       </file>
     </package>
     <package name="src.components">
