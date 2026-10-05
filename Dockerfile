@@ -8,6 +8,7 @@ WORKDIR /app
 
 # Install dependencies based on the preferred package manager
 COPY package*.json ./
+COPY .npmrc ./
 RUN npm ci
 
 
@@ -27,7 +28,7 @@ ENV NODE_ENV=production
 # Next.js collects completely anonymous telemetry data about general usage.
 # Learn more here: https://nextjs.org/telemetry
 # Uncomment the following line in case you want to disable telemetry during the build.
-ENV NEXT_TELEMETRY_DISABLED 1
+ENV NEXT_TELEMETRY_DISABLED=1
 
 RUN npm run build
 
@@ -38,11 +39,11 @@ WORKDIR /app
 ARG BUILD_DATE
 ARG BUILD_ID
 
-ENV NODE_ENV production
 ENV BUILD_DATE=$BUILD_DATE
 ENV BUILD_ID=$BUILD_ID
+ENV NODE_ENV=production
 # Uncomment the following line in case you want to disable telemetry during runtime.
-ENV NEXT_TELEMETRY_DISABLED 1
+ENV NEXT_TELEMETRY_DISABLED=1
 
 COPY --from=builder /app/public ./public
 COPY --from=builder --chown=node:node /app/.next ./.next
@@ -60,6 +61,6 @@ USER node
 
 EXPOSE 3000
 
-ENV PORT 3000
+ENV PORT=3000
 
 CMD ["npm", "run", "start"]
