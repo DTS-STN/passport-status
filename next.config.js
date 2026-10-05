@@ -41,9 +41,6 @@ const securityHeaders = [
  * @type {import('next').NextConfig}
  **/
 const nextConfig = {
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
   devIndicators: false,
   env: {},
   generateBuildId: async () => {

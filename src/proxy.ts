@@ -6,7 +6,7 @@ import { getLogger } from './logging/log-util';
 const PUBLIC_FILE = /\.(.*)$/;
 const logger = getLogger('middleware');
 
-export async function middleware(req: NextRequest) {
+export async function proxy(req: NextRequest) {
   const { cookies, nextUrl, url } = req;
   const { locale, pathname } = nextUrl;
 
