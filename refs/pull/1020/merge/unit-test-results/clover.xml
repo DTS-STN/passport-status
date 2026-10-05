@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1791210997026" clover="3.2.0">
-  <project timestamp="1791210997026" name="All files">
-    <metrics statements="668" coveredstatements="447" conditionals="510" coveredconditionals="268" methods="180" coveredmethods="110" elements="1358" coveredelements="825" complexity="0" loc="668" ncloc="668" packages="13" files="72" classes="72"/>
+<coverage generated="1791218590989" clover="3.2.0">
+  <project timestamp="1791218590989" name="All files">
+    <metrics statements="674" coveredstatements="452" conditionals="514" coveredconditionals="270" methods="182" coveredmethods="112" elements="1370" coveredelements="834" complexity="0" loc="674" ncloc="674" packages="13" files="72" classes="72"/>
     <package name="src">
       <metrics statements="28" coveredstatements="14" conditionals="26" coveredconditionals="8" methods="7" coveredmethods="6"/>
       <file name="middleware.ts" path="/home/runner/work/passport-status/passport-status/src/middleware.ts">
@@ -627,30 +627,36 @@
       </file>
     </package>
     <package name="src.pages">
-      <metrics statements="174" coveredstatements="79" conditionals="121" coveredconditionals="24" methods="48" coveredmethods="14"/>
+      <metrics statements="180" coveredstatements="84" conditionals="125" coveredconditionals="26" methods="50" coveredmethods="16"/>
       <file name="_app.tsx" path="/home/runner/work/passport-status/passport-status/src/pages/_app.tsx">
-        <metrics statements="21" coveredstatements="18" conditionals="10" coveredconditionals="5" methods="5" coveredmethods="4"/>
+        <metrics statements="27" coveredstatements="23" conditionals="14" coveredconditionals="7" methods="7" coveredmethods="6"/>
         <line num="18" count="1" type="stmt"/>
-        <line num="23" count="1" type="stmt"/>
-        <line num="25" count="1" type="stmt"/>
-        <line num="26" count="2" type="stmt"/>
-        <line num="28" count="2" type="stmt"/>
-        <line num="33" count="2" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="23" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="32" count="2" type="stmt"/>
         <line num="34" count="2" type="stmt"/>
-        <line num="36" count="2" type="cond" truecount="2" falsecount="0"/>
-        <line num="37" count="1" type="stmt"/>
-        <line num="38" count="1" type="stmt"/>
-        <line num="42" count="2" type="stmt"/>
-        <line num="43" count="2" type="stmt"/>
-        <line num="44" count="2" type="stmt"/>
-        <line num="45" count="2" type="stmt"/>
-        <line num="46" count="2" type="stmt"/>
-        <line num="47" count="2" type="stmt"/>
+        <line num="39" count="2" type="stmt"/>
+        <line num="40" count="2" type="stmt"/>
+        <line num="42" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="43" count="1" type="stmt"/>
+        <line num="44" count="1" type="stmt"/>
+        <line num="48" count="2" type="stmt"/>
+        <line num="49" count="2" type="stmt"/>
+        <line num="50" count="2" type="stmt"/>
         <line num="51" count="2" type="stmt"/>
-        <line num="95" count="1" type="stmt"/>
-        <line num="97" count="0" type="stmt"/>
-        <line num="99" count="0" type="stmt"/>
+        <line num="52" count="2" type="stmt"/>
+        <line num="53" count="2" type="stmt"/>
+        <line num="57" count="2" type="stmt"/>
+        <line num="101" count="1" type="stmt"/>
+        <line num="103" count="0" type="stmt"/>
+        <line num="105" count="0" type="stmt"/>
         <line num="107" count="0" type="stmt"/>
+        <line num="116" count="1" type="stmt"/>
+        <line num="118" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="119" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="122" count="0" type="stmt"/>
       </file>
       <file name="_document.tsx" path="/home/runner/work/passport-status/passport-status/src/pages/_document.tsx">
         <metrics statements="3" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="2" coveredmethods="0"/>

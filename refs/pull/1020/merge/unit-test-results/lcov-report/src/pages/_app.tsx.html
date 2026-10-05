@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">85.71% </span>
+                <span class="strong">85.18% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>18/21</span>
+                <span class='fraction'>23/27</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">50% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>5/10</span>
-            </div>
-        
-            
-            <div class='fl pad1y space-right2'>
-                <span class="strong">80% </span>
-                <span class="quiet">Functions</span>
-                <span class='fraction'>4/5</span>
+                <span class='fraction'>7/14</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">85.71% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>6/7</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">85.18% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>18/21</span>
+                <span class='fraction'>23/27</span>
             </div>
         
             
@@ -179,7 +179,22 @@
 <a name='L114'></a><a href='#L114'>114</a>
 <a name='L115'></a><a href='#L115'>115</a>
 <a name='L116'></a><a href='#L116'>116</a>
-<a name='L117'></a><a href='#L117'>117</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L117'></a><a href='#L117'>117</a>
+<a name='L118'></a><a href='#L118'>118</a>
+<a name='L119'></a><a href='#L119'>119</a>
+<a name='L120'></a><a href='#L120'>120</a>
+<a name='L121'></a><a href='#L121'>121</a>
+<a name='L122'></a><a href='#L122'>122</a>
+<a name='L123'></a><a href='#L123'>123</a>
+<a name='L124'></a><a href='#L124'>124</a>
+<a name='L125'></a><a href='#L125'>125</a>
+<a name='L126'></a><a href='#L126'>126</a>
+<a name='L127'></a><a href='#L127'>127</a>
+<a name='L128'></a><a href='#L128'>128</a>
+<a name='L129'></a><a href='#L129'>129</a>
+<a name='L130'></a><a href='#L130'>130</a>
+<a name='L131'></a><a href='#L131'>131</a>
+<a name='L132'></a><a href='#L132'>132</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -197,6 +212,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -279,10 +300,19 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -315,6 +345,12 @@ import '../styles/globals.css';
 const queryClient = new QueryClient({
   defaultOptions: { queries: { refetchOnWindowFocus: false } },
 });
+&nbsp;
+export const serializeClientEnvironment = (clientEnvironment: ClientEnvironment | undefined) =&gt;
+  JSON.stringify(clientEnvironment || <span class="branch-1 cbranch-no" title="branch not covered" >{})</span>
+    .replace(/&lt;/g, '\\u003c')
+    .replace(/&gt;/g, '\\u003e')
+    .replace(/&amp;/g, '\\u0026');
 &nbsp;
 // help to prevent double firing of adobe analytics pageLoad event
 let appPreviousLocationPathname = '';
@@ -350,7 +386,7 @@ const MyApp = ({ Component, pageProps, router }: AppProps) =&gt; {
       &lt;Head&gt;
         &lt;script
           dangerouslySetInnerHTML={{
-            __html: `window.__CLIENT_ENV__ = ${JSON.stringify(pageProps.clientEnvironment || <span class="branch-1 cbranch-no" title="branch not covered" >{})</span>};`,
+            __html: `window.__CLIENT_ENV__ = ${serializeClientEnvironment(pageProps.clientEnvironment)};`,
           }}
         /&gt;
         &lt;meta charSet="utf-8" /&gt;
@@ -393,13 +429,7 @@ MyApp.getInitialProps = <span class="fstat-no" title="function not covered" >as<
   // Execute underlying page data fetching (resolves translation loads, serverSideProps, etc)
   const appProps = <span class="cstat-no" title="statement not covered" >await App.getInitialProps(appContext);</span>
 &nbsp;
-  const clientEnvironment: ClientEnvironment = <span class="cstat-no" title="statement not covered" >{</span>
-    ADOBE_ANALYTICS_SCRIPT_SRC: process.env.ADOBE_ANALYTICS_SCRIPT_SRC,
-    APP_BASE_URI: process.env.APP_BASE_URI ?? '',
-    ENVIRONMENT: process.env.ENVIRONMENT ?? '',
-    LOGGING_LEVEL: process.env.LOGGING_LEVEL,
-    BUILD_DATE: process.env.BUILD_DATE,
-  };
+  const clientEnvironment = <span class="cstat-no" title="statement not covered" >getClientEnvironment();</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  return {</span>
     ...appProps,
@@ -407,6 +437,21 @@ MyApp.getInitialProps = <span class="fstat-no" title="function not covered" >as<
       ...appProps.pageProps,
       clientEnvironment,
     },
+  };
+};
+&nbsp;
+export const getClientEnvironment = (): ClientEnvironment =&gt; {
+  // getInitialProps is designed as a "universal" (isomorphic) data fetching method that runs on both the server and the client
+  <span class="missing-if-branch" title="else path not taken" >E</span>if (typeof window !== 'undefined') {
+    return window.__CLIENT_ENV__ ?? <span class="branch-1 cbranch-no" title="branch not covered" >{ APP_BASE_URI: '', ENVIRONMENT: '' };</span>
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  return {</span>
+    ADOBE_ANALYTICS_SCRIPT_SRC: process.env.ADOBE_ANALYTICS_SCRIPT_SRC,
+    APP_BASE_URI: process.env.APP_BASE_URI ?? '',
+    ENVIRONMENT: process.env.ENVIRONMENT ?? '',
+    LOGGING_LEVEL: process.env.LOGGING_LEVEL,
+    BUILD_DATE: process.env.BUILD_DATE,
   };
 };
 &nbsp;
@@ -418,7 +463,7 @@ export default appWithTranslation(MyApp, nextI18NextConfig);
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-10-05T14:36:37.043Z
+                at 2026-10-05T16:43:11.001Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
