@@ -16,7 +16,7 @@ const Index = () => {
         ]}
       />
       <main role="main" className="bg-splash-page flex h-screen bg-cover bg-center">
-        <div className="bg-gray-lighter m-auto w-[300px] md:w-[400px] lg:w-[500px]">
+        <div className="bg-gray-lighter m-auto w-75 md:w-100 lg:w-125">
           <div className="p-8">
             <h1 id="main-header" className="sr-only" tabIndex={-1}>
               Passport Application Status Checker | Vérificateur de l&#39;état d&#39;une demande de passeport
