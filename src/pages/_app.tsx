@@ -3,12 +3,12 @@ import { useEffect } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { appWithTranslation } from 'next-i18next/pages';
 import { generateDefaultSeo } from 'next-seo/pages';
-import { AppProps } from 'next/app';
-import getConfig from 'next/config';
+import App, { AppContext, AppProps } from 'next/app';
 import Head from 'next/head';
 import Script from 'next/script';
 
 import nextI18NextConfig from '../../next-i18next.config.js';
+import { ClientEnvironment, ClientEnvironmentProvider } from '../context/ClientEnvironmentContext';
 import { AppWindow } from '../lib/types';
 import { lato, notoSans } from '../lib/utils/fonts';
 import { getNextSEOConfig } from '../next-seo.config';
@@ -19,14 +19,19 @@ const queryClient = new QueryClient({
   defaultOptions: { queries: { refetchOnWindowFocus: false } },
 });
 
+export const serializeClientEnvironment = (clientEnvironment: ClientEnvironment | undefined) =>
+  JSON.stringify(clientEnvironment || {})
+    .replace(/</g, '\\u003c')
+    .replace(/>/g, '\\u003e')
+    .replace(/&/g, '\\u0026');
+
 // help to prevent double firing of adobe analytics pageLoad event
 let appPreviousLocationPathname = '';
 
 const MyApp = ({ Component, pageProps, router }: AppProps) => {
-  const config = getConfig();
-  const adobeAnalyticsScriptSrc = config?.publicRuntimeConfig?.adobeAnalyticsScriptSrc;
-  const appBaseUri = config?.publicRuntimeConfig?.appBaseUri;
-  const nextSEOConfig = getNextSEOConfig(appBaseUri, router);
+  const { ADOBE_ANALYTICS_SCRIPT_SRC, APP_BASE_URI }: ClientEnvironment = pageProps.clientEnvironment;
+
+  const nextSEOConfig = getNextSEOConfig(APP_BASE_URI, router);
 
   /** Web Analytics - taken from Google Analytics example
    *  @see https://github.com/vercel/next.js/blob/canary/examples/with-google-analytics
@@ -52,6 +57,11 @@ const MyApp = ({ Component, pageProps, router }: AppProps) => {
   return (
     <>
       <Head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.__CLIENT_ENV__ = ${serializeClientEnvironment(pageProps.clientEnvironment)};`,
+          }}
+        />
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
@@ -64,10 +74,10 @@ const MyApp = ({ Component, pageProps, router }: AppProps) => {
         }
       `}</style>
 
-      {adobeAnalyticsScriptSrc && (
+      {ADOBE_ANALYTICS_SCRIPT_SRC && (
         <>
           <Script src="https://code.jquery.com/jquery-3.6.3.min.js" />
-          <Script src={adobeAnalyticsScriptSrc} />
+          <Script src={ADOBE_ANALYTICS_SCRIPT_SRC} />
         </>
       )}
 
@@ -78,11 +88,44 @@ const MyApp = ({ Component, pageProps, router }: AppProps) => {
           ...nextSEOConfig,
         })}
       </Head>
-      <QueryClientProvider client={queryClient}>
-        <Component {...pageProps} />
-      </QueryClientProvider>
+      <ClientEnvironmentProvider env={pageProps.clientEnvironment}>
+        <QueryClientProvider client={queryClient}>
+          <Component {...pageProps} />
+        </QueryClientProvider>
+      </ClientEnvironmentProvider>
     </>
   );
+};
+
+// Fetch server-side container environments dynamically on every request
+MyApp.getInitialProps = async (appContext: AppContext) => {
+  // Execute underlying page data fetching (resolves translation loads, serverSideProps, etc)
+  const appProps = await App.getInitialProps(appContext);
+
+  const clientEnvironment = getClientEnvironment();
+
+  return {
+    ...appProps,
+    pageProps: {
+      ...appProps.pageProps,
+      clientEnvironment,
+    },
+  };
+};
+
+export const getClientEnvironment = (): ClientEnvironment => {
+  // getInitialProps is designed as a "universal" (isomorphic) data fetching method that runs on both the server and the client
+  if (typeof window !== 'undefined') {
+    return window.__CLIENT_ENV__ ?? { APP_BASE_URI: '', ENVIRONMENT: '' };
+  }
+
+  return {
+    ADOBE_ANALYTICS_SCRIPT_SRC: process.env.ADOBE_ANALYTICS_SCRIPT_SRC,
+    APP_BASE_URI: process.env.APP_BASE_URI ?? '',
+    ENVIRONMENT: process.env.ENVIRONMENT ?? '',
+    LOGGING_LEVEL: process.env.LOGGING_LEVEL,
+    BUILD_DATE: process.env.BUILD_DATE,
+  };
 };
 
 export default appWithTranslation(MyApp, nextI18NextConfig);

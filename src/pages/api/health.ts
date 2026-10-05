@@ -14,8 +14,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
 
   res.status(200).json({
     adobeAnalyticsScriptSrc: process.env.ADOBE_ANALYTICS_SCRIPT_SRC ?? null,
+    apiBaseUri: process.env.PASSPORT_STATUS_API_BASE_URI ?? null,
     appBaseUri: process.env.APP_BASE_URI ?? null,
-    buildDate: process.env.NEXT_PUBLIC_BUILD_DATE ?? null,
+    buildDate: process.env.BUILD_DATE ?? null,
     environment: process.env.ENVIRONMENT ?? null,
     loggingLevel: process.env.LOGGING_LEVEL ?? null,
     status: 'UP',

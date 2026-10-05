@@ -1,15 +1,6 @@
 // @ts-check
 const { i18n } = require('./next-i18next.config');
 
-//formatting TC Date
-const builddate = process.env.BUILD_DATE
-  ? process.env.BUILD_DATE.substring(0, 4) +
-    '-' +
-    process.env.BUILD_DATE.substring(4, 6) +
-    '-' +
-    process.env.BUILD_DATE.substring(6, 8)
-  : 'DATE-NA';
-
 const securityHeaders = [
   {
     key: 'X-DNS-Prefetch-Control',
@@ -54,15 +45,7 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   devIndicators: false,
-  env: {
-    NEXT_PUBLIC_BUILD_DATE: builddate,
-  },
-  publicRuntimeConfig: {
-    adobeAnalyticsScriptSrc: process.env.ADOBE_ANALYTICS_SCRIPT_SRC,
-    appBaseUri: process.env.APP_BASE_URI ?? '',
-    environment: process.env.ENVIRONMENT ?? '',
-    loggingLevel: process.env.LOGGING_LEVEL,
-  },
+  env: {},
   generateBuildId: async () => {
     return process.env.BUILD_ID ?? 'local';
   },

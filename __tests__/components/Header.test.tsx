@@ -1,10 +1,11 @@
 import '@testing-library/jest-dom';
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 
 import { axe, toHaveNoViolations } from 'jest-axe';
 import { useRouter } from 'next/router';
 
 import Header from '../../src/components/Header';
+import { renderWithClientEnvironment } from '../../test-utils/renderWithClientEnvironment';
 
 const defaultRouterObj = {
   pathname: '/',
@@ -21,7 +22,7 @@ expect.extend(toHaveNoViolations);
 
 describe('Header', () => {
   it('renders Header in English', () => {
-    render(<Header gocLink="testGocLink" skipToMainText="testSkipToMainText" />);
+    renderWithClientEnvironment(<Header gocLink="testGocLink" skipToMainText="testSkipToMainText" />);
     const HeaderLang = screen.getByText('Français');
     expect(HeaderLang).toBeInTheDocument();
   });
@@ -32,13 +33,29 @@ describe('Header', () => {
       ...defaultRouterObj,
       locale: 'fr',
     }));
-    render(<Header gocLink="testGocLink" skipToMainText="testSkipToMainText" />);
+    renderWithClientEnvironment(<Header gocLink="testGocLink" skipToMainText="testSkipToMainText" />);
     const HeaderLang = screen.getByText('English');
     expect(HeaderLang).toBeInTheDocument();
   });
 
+  it('shows the test banner outside production', () => {
+    renderWithClientEnvironment(<Header gocLink="testGocLink" skipToMainText="testSkipToMainText" />, {
+      ENVIRONMENT: 'test',
+    });
+
+    expect(screen.getByRole('alert')).toBeInTheDocument();
+  });
+
+  it('hides the test banner in production', () => {
+    renderWithClientEnvironment(<Header gocLink="testGocLink" skipToMainText="testSkipToMainText" />, {
+      ENVIRONMENT: 'prod',
+    });
+
+    expect(screen.queryByRole('alert')).not.toBeInTheDocument();
+  });
+
   it('has no a11y violations', async () => {
-    const { container } = render(<Header gocLink="testGocLink" skipToMainText="testSkipToMainText" />);
+    const { container } = renderWithClientEnvironment(<Header gocLink="testGocLink" skipToMainText="testSkipToMainText" />);
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
