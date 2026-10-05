@@ -19,12 +19,6 @@ const queryClient = new QueryClient({
   defaultOptions: { queries: { refetchOnWindowFocus: false } },
 });
 
-export const serializeClientEnvironment = (clientEnvironment: ClientEnvironment | undefined) =>
-  JSON.stringify(clientEnvironment || {})
-    .replace(/</g, '\\u003c')
-    .replace(/>/g, '\\u003e')
-    .replace(/&/g, '\\u0026');
-
 // help to prevent double firing of adobe analytics pageLoad event
 let appPreviousLocationPathname = '';
 
@@ -57,11 +51,6 @@ const MyApp = ({ Component, pageProps, router }: AppProps) => {
   return (
     <>
       <Head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `window.__CLIENT_ENV__ = ${serializeClientEnvironment(pageProps.clientEnvironment)};`,
-          }}
-        />
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />

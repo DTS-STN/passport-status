@@ -44,7 +44,7 @@ export default defineConfig(
     // all files
     //
     files: ['**/*.{js,cjs,mjs,ts,tsx}'],
-    extends: [eslint.configs.recommended, pluginNext.flatConfig.coreWebVitals, pluginPrettier],
+    extends: [eslint.configs.recommended, pluginNext.configs['core-web-vitals'], pluginPrettier],
     rules: {
       'prettier/prettier': 'error',
     },

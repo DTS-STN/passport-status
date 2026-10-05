@@ -4,7 +4,8 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 
-import App, { getClientEnvironment, serializeClientEnvironment } from '../../src/pages/_app';
+import { serializeClientEnvironment } from '../../src/lib/utils/client-environment';
+import App, { getClientEnvironment } from '../../src/pages/_app';
 
 const adobeAnalyticsScriptSrc = 'https://assets.adobedtm.com/be5dfd287373/1e84b99f81fb/launch-ffa1e01dbeab-staging.min.js';
 const jQueryScriptSrc = 'https://code.jquery.com/jquery-3.6.3.min.js';
