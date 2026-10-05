@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for src/pages/_document.tsx</title>
+    <title>Code coverage report for src/context/ClientEnvironmentContext.tsx</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">src/pages</a> _document.tsx</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">src/context</a> ClientEnvironmentContext.tsx</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">83.33% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/3</span>
+                <span class='fraction'>5/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>1/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">83.33% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/3</span>
+                <span class='fraction'>5/6</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -85,50 +85,56 @@
 <a name='L20'></a><a href='#L20'>20</a>
 <a name='L21'></a><a href='#L21'>21</a>
 <a name='L22'></a><a href='#L22'>22</a>
-<a name='L23'></a><a href='#L23'>23</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import Document, { DocumentContext, DocumentInitialProps, Head, Html, Main, NextScript } from 'next/document';
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { createContext, useContext } from 'react';
 &nbsp;
-class MyDocument extends Document {
-<span class="fstat-no" title="function not covered" >  st</span>atic async getInitialProps(ctx: DocumentContext): Promise&lt;DocumentInitialProps&gt; {
-    const initialProps = <span class="cstat-no" title="statement not covered" >await Document.getInitialProps(ctx);</span>
-&nbsp;
-<span class="cstat-no" title="statement not covered" >    return initialProps;</span>
-  }
-<span class="fstat-no" title="function not covered" >  re</span>nder() {
-<span class="cstat-no" title="statement not covered" >    return (</span>
-      &lt;Html lang={(this.props.locale?.toLowerCase() ?? 'default') === 'default' ? 'en' : this.props.locale}&gt;
-        &lt;Head /&gt;
-        &lt;body&gt;
-          &lt;Main /&gt;
-          &lt;NextScript /&gt;
-        &lt;/body&gt;
-      &lt;/Html&gt;
-    );
-  }
+export interface ClientEnvironment {
+  ADOBE_ANALYTICS_SCRIPT_SRC?: string;
+  APP_BASE_URI: string;
+  ENVIRONMENT: string;
+  LOGGING_LEVEL?: string;
+  BUILD_DATE?: string;
 }
 &nbsp;
-export default MyDocument;
+const ClientEnvironmentContext = createContext&lt;ClientEnvironment | null&gt;(null);
+&nbsp;
+export function ClientEnvironmentProvider({ children, env }: { children: React.ReactNode; env: ClientEnvironment }) {
+  return &lt;ClientEnvironmentContext.Provider value={env}&gt;{children}&lt;/ClientEnvironmentContext.Provider&gt;;
+}
+&nbsp;
+// Custom hook for clean consumption in components
+export function useClientEnvironment() {
+  const context = useContext(ClientEnvironmentContext);
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (!context) {
+<span class="cstat-no" title="statement not covered" >    throw new Error('useClientEnvironment must be used within a ClientEnvironmentProvider');</span>
+  }
+  return context;
+}
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
