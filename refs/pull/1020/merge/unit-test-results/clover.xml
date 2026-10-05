@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1791218590989" clover="3.2.0">
-  <project timestamp="1791218590989" name="All files">
+<coverage generated="1791219055442" clover="3.2.0">
+  <project timestamp="1791219055442" name="All files">
     <metrics statements="674" coveredstatements="452" conditionals="514" coveredconditionals="270" methods="182" coveredmethods="112" elements="1370" coveredelements="834" complexity="0" loc="674" ncloc="674" packages="13" files="72" classes="72"/>
     <package name="src">
       <metrics statements="28" coveredstatements="14" conditionals="26" coveredconditionals="8" methods="7" coveredmethods="6"/>
@@ -614,9 +614,9 @@
       <file name="log-level.ts" path="/home/runner/work/passport-status/passport-status/src/logging/log-level.ts">
         <metrics statements="5" coveredstatements="5" conditionals="6" coveredconditionals="6" methods="1" coveredmethods="1"/>
         <line num="1" count="4" type="stmt"/>
-        <line num="2" count="7" type="cond" truecount="4" falsecount="0"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="7" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="2" count="8" type="cond" truecount="2" falsecount="0"/>
+        <line num="3" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="7" count="3" type="cond" truecount="2" falsecount="0"/>
         <line num="10" count="4" type="stmt"/>
       </file>
       <file name="log-util.ts" path="/home/runner/work/passport-status/passport-status/src/logging/log-util.ts">
