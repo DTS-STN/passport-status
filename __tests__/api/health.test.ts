@@ -1,5 +1,6 @@
-import { NextApiRequest, NextApiResponse } from 'next';
-import { createMocks, createRequest, createResponse } from 'node-mocks-http';
+import type { NextApiRequest, NextApiResponse } from 'next';
+import type { createRequest, createResponse } from 'node-mocks-http';
+import { createMocks } from 'node-mocks-http';
 
 import handler from '../../src/pages/api/health';
 
@@ -20,7 +21,9 @@ describe('api/health', () => {
 
   beforeEach(() => {
     process.env = { ...originalEnvironment };
-    environmentVariables.forEach((key) => delete process.env[key]);
+    environmentVariables.forEach((key) => {
+      delete process.env[key];
+    });
   });
 
   afterEach(() => {

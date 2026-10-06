@@ -1,6 +1,5 @@
 import '@testing-library/jest-dom';
 import { screen } from '@testing-library/react';
-
 import { axe, toHaveNoViolations } from 'jest-axe';
 
 import Footer from '../../src/components/Footer';

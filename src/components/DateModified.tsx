@@ -16,7 +16,7 @@ const DateModified = ({ id = 'date-modified', text = 'Date Modified: ' }: DateMo
 
   //formatting TC Date
   const builddate = BUILD_DATE
-    ? BUILD_DATE.substring(0, 4) + '-' + BUILD_DATE.substring(4, 6) + '-' + BUILD_DATE.substring(6, 8)
+    ? `${BUILD_DATE.substring(0, 4)}-${BUILD_DATE.substring(4, 6)}-${BUILD_DATE.substring(6, 8)}`
     : 'DATE-NA';
 
   return (

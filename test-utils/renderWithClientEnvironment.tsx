@@ -2,7 +2,8 @@ import type { ReactElement } from 'react';
 
 import { render } from '@testing-library/react';
 
-import { ClientEnvironment, ClientEnvironmentProvider } from '../src/context/ClientEnvironmentContext';
+import type { ClientEnvironment } from '../src/context/ClientEnvironmentContext';
+import { ClientEnvironmentProvider } from '../src/context/ClientEnvironmentContext';
 
 const defaultEnvironment: ClientEnvironment = {
   APP_BASE_URI: 'http://localhost',

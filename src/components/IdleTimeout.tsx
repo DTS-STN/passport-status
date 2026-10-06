@@ -1,9 +1,10 @@
 import { useCallback, useEffect, useState } from 'react';
 
 import { deleteCookie } from 'cookies-next';
-import { useTranslation } from 'next-i18next/pages';
 import { useRouter } from 'next/router';
-import { IIdleTimerProps, useIdleTimer } from 'react-idle-timer';
+import { useTranslation } from 'next-i18next/pages';
+import type { IIdleTimerProps } from 'react-idle-timer';
+import { useIdleTimer } from 'react-idle-timer';
 
 import Modal from './Modal';
 
@@ -16,7 +17,7 @@ const IdleTimeout = ({ promptBeforeIdle, timeout }: IdleTimeoutProps) => {
   const [timeRemaining, setTimeRemaining] = useState('');
 
   const handleOnIdle = () => {
-    deleteCookie('agreed-to-email-esrf-terms');
+    void deleteCookie('agreed-to-email-esrf-terms');
     router.reload();
   };
 
@@ -35,7 +36,7 @@ const IdleTimeout = ({ promptBeforeIdle, timeout }: IdleTimeoutProps) => {
   const tick = useCallback(() => {
     const minutes = Math.floor(getRemainingTime() / 60000);
     const seconds = Math.floor((getRemainingTime() / 1000) % 60).toFixed(0);
-    setTimeRemaining(minutes + ':' + (parseInt(seconds) < 10 ? '0' : '') + seconds);
+    setTimeRemaining(`${minutes}:${parseInt(seconds, 10) < 10 ? '0' : ''}${seconds}`);
   }, [getRemainingTime]);
 
   useEffect(() => {

@@ -1,4 +1,4 @@
-import { FlatNamespace } from 'i18next';
+import type { FlatNamespace } from 'i18next';
 import { serverSideTranslations } from 'next-i18next/pages/serverSideTranslations';
 
 import nextI18nextConfig from '../../../next-i18next.config';
@@ -14,9 +14,7 @@ export const defaultNamespaces: Array<FlatNamespace> = ['common'];
  * @param namespacesRequired The namespaces required.
  * @returns The retrieved namespaces.
  */
-export const getNamespaces = (
-  namespacesRequired: Readonly<FlatNamespace> | ReadonlyArray<FlatNamespace> | undefined = undefined,
-) => {
+export const getNamespaces = (namespacesRequired: Readonly<FlatNamespace> | ReadonlyArray<FlatNamespace> | undefined) => {
   // default with namespaces to always needed
   const namespaces: Array<FlatNamespace> = defaultNamespaces;
 
@@ -37,9 +35,9 @@ export const getNamespaces = (
  * @param namespacesRequired - The namespaces required for translations. It can be a single `FlatNamespace` or an array of `FlatNamespace`. If not provided, {@link defaultNamespaces} will be used.
  * @returns {Promise<object>} - A Promise that resolves to an object containing the translations for the specified locale and namespaces.
  */
-export const pageWithServerSideTranslations = async (
-  locale?: string,
-  namespacesRequired: FlatNamespace | Array<FlatNamespace> | undefined = undefined,
+export const pageWithServerSideTranslations = (
+  locale: string | undefined,
+  namespacesRequired: FlatNamespace | Array<FlatNamespace> | undefined,
 ) => {
   return serverSideTranslations(
     locale ?? nextI18nextConfig.i18n.defaultLocale,

@@ -38,7 +38,7 @@ const formatDateWithOptions = (
   let date = new Date(dateString);
 
   // Check if the date is valid
-  if (isNaN(date.getTime())) {
+  if (Number.isNaN(date.getTime())) {
     throw new Error('Invalid date');
   }
 

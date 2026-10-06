@@ -1,8 +1,9 @@
 import { faker } from '@faker-js/faker';
-import { NextApiRequest, NextApiResponse } from 'next';
-import { createMocks, createRequest, createResponse } from 'node-mocks-http';
+import type { NextApiRequest, NextApiResponse } from 'next';
+import type { createRequest, createResponse } from 'node-mocks-http';
+import { createMocks } from 'node-mocks-http';
 
-import { CheckStatusApiRequestQuery } from '../../src/lib/types';
+import type { CheckStatusApiRequestQuery } from '../../src/lib/types';
 import handler from '../../src/pages/api/check-status';
 
 /**
@@ -13,7 +14,7 @@ type ApiRequest = NextApiRequest & ReturnType<typeof createRequest>;
 type ApiResponse = NextApiResponse & ReturnType<typeof createResponse>;
 
 const getUrl = (checkStatusApiRequestQuery: CheckStatusApiRequestQuery) =>
-  'api/check-status?' + new URLSearchParams({ ...checkStatusApiRequestQuery }).toString();
+  `api/check-status?${new URLSearchParams({ ...checkStatusApiRequestQuery }).toString()}`;
 
 describe('api/check-status', () => {
   const env = process.env;

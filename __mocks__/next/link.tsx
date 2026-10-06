@@ -1,4 +1,4 @@
-import { PropsWithChildren } from 'react';
+import type { PropsWithChildren } from 'react';
 
 interface LinkProps extends PropsWithChildren {
   href: string;

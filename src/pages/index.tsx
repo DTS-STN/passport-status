@@ -1,4 +1,4 @@
-import { GetServerSideProps } from 'next';
+import type { GetServerSideProps } from 'next';
 import Image from 'next/image';
 
 import LinkButton from '../components/LinkButton';
@@ -15,7 +15,7 @@ const Index = () => {
           getDCTermsTitle("Passport Application Status Checker - Vérificateur de l'état d'une demande de passeport"),
         ]}
       />
-      <main role="main" className="bg-splash-page flex h-screen bg-cover bg-center">
+      <main className="bg-splash-page flex h-screen bg-cover bg-center">
         <div className="bg-gray-lighter m-auto w-75 md:w-100 lg:w-125">
           <div className="p-8">
             <h1 id="main-header" className="sr-only" tabIndex={-1}>

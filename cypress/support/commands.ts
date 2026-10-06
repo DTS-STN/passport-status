@@ -1,3 +1,5 @@
+/** biome-ignore-all lint/suspicious/noEmptySource: example empty source */
+
 // ***********************************************
 // This example commands.ts shows you how to
 // create various custom commands and overwrite

@@ -2,7 +2,7 @@ import '@testing-library/jest-dom';
 import { render, screen, waitFor } from '@testing-library/react';
 
 import IdleTimeout from '../../src/components/IdleTimeout';
-import { ModalProps } from '../../src/components/Modal';
+import type { ModalProps } from '../../src/components/Modal';
 
 const ModalMock = ({ open }: ModalProps) => {
   return <div data-testid="modal">{open ? 'modal-opened' : 'modal-closed'}</div>;

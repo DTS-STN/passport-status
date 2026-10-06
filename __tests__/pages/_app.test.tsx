@@ -65,7 +65,7 @@ describe('custom `app`', () => {
             userConfig: null,
           },
         }}
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        // biome-ignore lint/suspicious/noExplicitAny: any usage
         router={{ events: { on: jest.fn(), off: jest.fn() } } as any}
       />,
     );
@@ -96,7 +96,7 @@ describe('custom `app`', () => {
             userConfig: null,
           },
         }}
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        // biome-ignore lint/suspicious/noExplicitAny: any usage
         router={{ events: { on: jest.fn(), off: jest.fn() } } as any}
       />,
     );

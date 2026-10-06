@@ -1,4 +1,4 @@
-import { PropsWithChildren } from 'react';
+import type { PropsWithChildren } from 'react';
 
 import { useTranslation } from 'next-i18next/pages';
 
@@ -12,7 +12,7 @@ const Layout = ({ children }: PropsWithChildren) => {
   return (
     <div className="flex min-h-screen flex-col">
       <Header skipToMainText={t('header.skip-to-main')} gocLink={t('header.goc-link')} />
-      <main role="main" id="mainContent" className="container mx-auto flex-1 px-4 pb-8">
+      <main id="mainContent" className="container mx-auto flex-1 px-4 pb-8">
         <AlertBlock />
         {children}
       </main>

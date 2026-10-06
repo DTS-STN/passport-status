@@ -1,6 +1,6 @@
-import { GetServerSideProps } from 'next';
-import { Trans, useTranslation } from 'next-i18next/pages';
+import type { GetServerSideProps } from 'next';
 import Link from 'next/link';
+import { Trans, useTranslation } from 'next-i18next/pages';
 
 import AlertBlock from '../components/AlertBlock';
 import Collapse from '../components/Collapse';

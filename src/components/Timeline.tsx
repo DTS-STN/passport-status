@@ -1,8 +1,8 @@
-import { PropsWithChildren } from 'react';
+import type { PropsWithChildren } from 'react';
 
 import { useTranslation } from 'next-i18next/pages';
 
-import { TimelineEntryData, TimelinePosition } from '../lib/types';
+import type { TimelineEntryData, TimelinePosition } from '../lib/types';
 import TimelineEntry from './TimelineEntry';
 
 export interface TimelineProps extends PropsWithChildren {

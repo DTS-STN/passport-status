@@ -1,6 +1,7 @@
-import { PropsWithChildren } from 'react';
+import type { PropsWithChildren } from 'react';
 
-import Link, { LinkProps } from 'next/link';
+import type { LinkProps } from 'next/link';
+import Link from 'next/link';
 
 export type LinkButtonSize = 'xs' | 'sm' | 'md' | 'lg';
 

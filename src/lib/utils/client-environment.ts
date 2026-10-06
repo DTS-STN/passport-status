@@ -1,4 +1,4 @@
-import { ClientEnvironment } from '../../context/ClientEnvironmentContext';
+import type { ClientEnvironment } from '../../context/ClientEnvironmentContext';
 
 export const serializeClientEnvironment = (clientEnvironment: ClientEnvironment | undefined) =>
   JSON.stringify(clientEnvironment || {})

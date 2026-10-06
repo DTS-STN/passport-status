@@ -1,15 +1,17 @@
 import { useEffect } from 'react';
 
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { appWithTranslation } from 'next-i18next/pages';
-import { generateDefaultSeo } from 'next-seo/pages';
-import App, { AppContext, AppProps } from 'next/app';
+import type { AppContext, AppProps } from 'next/app';
+import App from 'next/app';
 import Head from 'next/head';
 import Script from 'next/script';
+import { appWithTranslation } from 'next-i18next/pages';
+import { generateDefaultSeo } from 'next-seo/pages';
 
 import nextI18NextConfig from '../../next-i18next.config.js';
-import { ClientEnvironment, ClientEnvironmentProvider } from '../context/ClientEnvironmentContext';
-import { AppWindow } from '../lib/types';
+import type { ClientEnvironment } from '../context/ClientEnvironmentContext';
+import { ClientEnvironmentProvider } from '../context/ClientEnvironmentContext';
+import type { AppWindow } from '../lib/types';
 import { lato, notoSans } from '../lib/utils/fonts';
 import { getNextSEOConfig } from '../next-seo.config';
 import '../styles/globals.css';

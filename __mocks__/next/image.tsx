@@ -1,5 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
-
 interface NextImageMockProps {
   alt?: string;
   height?: string | number;
@@ -8,6 +6,7 @@ interface NextImageMockProps {
 }
 
 const NextImageMock = ({ alt, height, src, width }: NextImageMockProps) => (
+  // biome-ignore lint/performance/noImgElement: mocked image
   <img alt={alt} height={height} src={src} width={width} />
 );
 

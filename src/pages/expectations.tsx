@@ -1,9 +1,10 @@
-import { MouseEventHandler, useCallback } from 'react';
+import type { MouseEventHandler } from 'react';
+import { useCallback } from 'react';
 
 import { setCookie } from 'cookies-next';
-import { GetServerSideProps } from 'next';
-import { Trans, useTranslation } from 'next-i18next/pages';
+import type { GetServerSideProps } from 'next';
 import Router from 'next/router';
+import { Trans, useTranslation } from 'next-i18next/pages';
 
 import ActionButton from '../components/ActionButton';
 import AlertBlock from '../components/AlertBlock';
@@ -17,10 +18,10 @@ import { getDCTermsTitle } from '../lib/utils/seo-utils';
 const Expectations = () => {
   const { t } = useTranslation(['expectations', 'common']);
 
-  const handleOnAgreeClick: MouseEventHandler<HTMLButtonElement> = useCallback((e) => {
+  const handleOnAgreeClick: MouseEventHandler<HTMLButtonElement> = useCallback(async (e) => {
     e.preventDefault();
-    setCookie('agreed-to-email-esrf-terms', 'true', { sameSite: true });
-    Router.push('/landing');
+    await setCookie('agreed-to-email-esrf-terms', 'true', { sameSite: true });
+    void Router.push('/landing');
   }, []);
 
   return (

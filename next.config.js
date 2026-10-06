@@ -43,7 +43,7 @@ const securityHeaders = [
 const nextConfig = {
   devIndicators: false,
   env: {},
-  generateBuildId: async () => {
+  generateBuildId: () => {
     return process.env.BUILD_ID ?? 'local';
   },
   reactStrictMode: true,
@@ -51,7 +51,7 @@ const nextConfig = {
     localeDetection: false,
     ...i18n,
   },
-  headers: async () => {
+  headers: () => {
     return [
       {
         source: '/:path*',

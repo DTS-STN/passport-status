@@ -1,7 +1,7 @@
-import { NextApiRequest, NextApiResponse } from 'next';
+import type { NextApiRequest, NextApiResponse } from 'next';
 
 import { mapToCheckStatusApiResponse } from '../../lib/mappers/checkStatusApiResponseMapper';
-import { CheckStatusApiRequestQuery, CheckStatusApiResponse, PassportStatusesSearchResult } from '../../lib/types';
+import type { CheckStatusApiRequestQuery, CheckStatusApiResponse, PassportStatusesSearchResult } from '../../lib/types';
 import { getLogger } from '../../logging/log-util';
 
 const logger = getLogger('check-status');

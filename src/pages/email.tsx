@@ -1,16 +1,19 @@
-import { MouseEventHandler, useCallback, useMemo, useState } from 'react';
+import type { MouseEventHandler } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 
 import { useFormik, validateYupSchema, yupToFormErrors } from 'formik';
-import { GetServerSideProps } from 'next';
-import { Trans, useTranslation } from 'next-i18next/pages';
+import type { GetServerSideProps } from 'next';
 import { useRouter } from 'next/router';
+import { Trans, useTranslation } from 'next-i18next/pages';
 import * as Yup from 'yup';
 
 import ActionButton from '../components/ActionButton';
 import AlertBlock from '../components/AlertBlock';
 import Collapse from '../components/Collapse';
-import DateSelectField, { DateSelectFieldOnChangeEvent } from '../components/DateSelectField';
-import ErrorSummary, { ErrorSummaryItem, getErrorSummaryItems, goToErrorSummary } from '../components/ErrorSummary';
+import type { DateSelectFieldOnChangeEvent } from '../components/DateSelectField';
+import DateSelectField from '../components/DateSelectField';
+import type { ErrorSummaryItem } from '../components/ErrorSummary';
+import ErrorSummary, { getErrorSummaryItems, goToErrorSummary } from '../components/ErrorSummary';
 import ExternalLink from '../components/ExternalLink';
 import IdleTimeout from '../components/IdleTimeout';
 import InputField from '../components/InputField';
@@ -18,7 +21,7 @@ import Layout from '../components/Layout';
 import LinkButton from '../components/LinkButton';
 import Modal from '../components/Modal';
 import NextSeo from '../components/NextSeo';
-import { EmailEsrfApiRequestBody } from '../lib/types';
+import type { EmailEsrfApiRequestBody } from '../lib/types';
 import useEmailEsrf from '../lib/useEmailEsrf';
 import { pageWithServerSideTranslations } from '../lib/utils/next-i18next-utils';
 import { getDCTermsTitle } from '../lib/utils/seo-utils';
@@ -99,7 +102,7 @@ const Email = () => {
 
   const handleOnDateOfBirthChange: DateSelectFieldOnChangeEvent = useCallback(
     (dateString) => {
-      setFormikFieldValue('dateOfBirth', dateString);
+      void setFormikFieldValue('dateOfBirth', dateString);
     },
     [setFormikFieldValue],
   );
@@ -109,7 +112,7 @@ const Email = () => {
   const handleOnModalClose = useCallback(() => setModalOpen(false), []);
 
   const handleOnModalYesButtonClick = useCallback(() => {
-    router.push('/landing');
+    void router.push('/landing');
   }, [router]);
 
   const handleOnNewFileRequest: MouseEventHandler<HTMLButtonElement> = useCallback(
@@ -205,7 +208,7 @@ const Email = () => {
               label={t('email.label')}
               onChange={handleFormikChange}
               value={formikValues.email}
-              // eslint-disable-next-line @typescript-eslint/no-explicit-any
+              // biome-ignore lint/suspicious/noExplicitAny: any usage
               errorMessage={formikErrors.email && t(formikErrors.email as any)}
               textRequired={t('common:required')}
               required
@@ -225,7 +228,7 @@ const Email = () => {
               onChange={handleFormikChange}
               value={formikValues.givenName}
               errorMessage={
-                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                // biome-ignore lint/suspicious/noExplicitAny: any usage
                 formikErrors.givenName && t(formikErrors.givenName as any)
               }
               textRequired={t('common:required')}
@@ -246,7 +249,7 @@ const Email = () => {
               onChange={handleFormikChange}
               value={formikValues.surname}
               errorMessage={
-                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                // biome-ignore lint/suspicious/noExplicitAny: any usage
                 formikErrors.surname && t(formikErrors.surname as any)
               }
               textRequired={t('common:required')}
@@ -259,7 +262,7 @@ const Email = () => {
               onChange={handleOnDateOfBirthChange}
               value={formikValues.dateOfBirth}
               errorMessage={
-                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                // biome-ignore lint/suspicious/noExplicitAny: any usage
                 formikErrors.dateOfBirth && t(formikErrors.dateOfBirth as any)
               }
               textRequired={t('common:required')}

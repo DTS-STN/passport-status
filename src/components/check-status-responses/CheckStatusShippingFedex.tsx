@@ -1,8 +1,8 @@
-import { MouseEventHandler } from 'react';
+import type { MouseEventHandler } from 'react';
 
 import { Trans, useTranslation } from 'next-i18next/pages';
 
-import { StatusDisplayData } from '../../lib/types';
+import type { StatusDisplayData } from '../../lib/types';
 import ActionButton from '../ActionButton';
 import AlertBlock from '../AlertBlock';
 import Collapse from '../Collapse';

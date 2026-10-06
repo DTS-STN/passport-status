@@ -1,6 +1,5 @@
 import '@testing-library/jest-dom';
 import { render, screen, waitFor } from '@testing-library/react';
-
 import { axe, toHaveNoViolations } from 'jest-axe';
 
 import ExampleImage from '../../src/components/ExampleImage';
