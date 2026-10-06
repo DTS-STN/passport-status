@@ -96,6 +96,9 @@ describe('responses', () => {
     cy.get('#btn-submit').click();
 
     cy.wait('@email-esrf').then((interception) => {
+      if (!interception.response) {
+        throw new Error('Expected email request to receive a response');
+      }
       cy.wrap(interception.response.statusCode).should('eq', 202);
       cy.wrap(interception.request.body.email).should('eq', email);
       cy.wrap(interception.request.body.givenName).should('eq', givenName);

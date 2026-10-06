@@ -1,6 +1,4 @@
-import type { Config } from 'jest';
-
-const config: Config = {
+const config = {
   modulePathIgnorePatterns: ['./cypress'],
   collectCoverageFrom: ['src/**/*.{js,jsx,ts,tsx}'],
   moduleNameMapper: {
@@ -26,17 +24,14 @@ const config: Config = {
           [
             'next/babel',
             {
-              'preset-react': { runtime: 'automatic' }, // ✅ enable modern JSX
+              'preset-react': { runtime: 'automatic' },
             },
           ],
         ],
       },
     ],
   },
-  transformIgnorePatterns: [
-    '/node_modules/(?!@faker-js/faker)', // Allow @faker-js/faker to be transpiled, v10 uses ESM
-    '^.+\\.module\\.(css|sass|scss)$',
-  ],
+  transformIgnorePatterns: ['/node_modules/(?!@faker-js/faker)', '^.+\\.module\\.(css|sass|scss)$'],
 };
 
 export default config;
