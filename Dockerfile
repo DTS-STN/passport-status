@@ -1,4 +1,4 @@
-ARG BASE_IMAGE=docker.io/node:26.10.0-trixie-slim
+ARG BASE_IMAGE=docker.io/node:24.21.0-trixie-slim
 FROM $BASE_IMAGE AS base
 
 # Install dependencies only when needed
