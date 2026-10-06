@@ -1,6 +1,6 @@
-import { PropsWithChildren } from 'react';
+import type { PropsWithChildren } from 'react';
 
-import { AlertType } from '../lib/types';
+import type { AlertType } from '../lib/types';
 
 export interface AlertSectionProps extends PropsWithChildren {
   type: AlertType;

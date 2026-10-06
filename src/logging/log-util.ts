@@ -1,4 +1,5 @@
-import pino, { Logger, stdTimeFunctions } from 'pino';
+import type { Logger } from 'pino';
+import pino, { stdTimeFunctions } from 'pino';
 
 import { logLevelData } from './log-level';
 

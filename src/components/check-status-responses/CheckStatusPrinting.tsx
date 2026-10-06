@@ -2,7 +2,7 @@ import { Trans, useTranslation } from 'next-i18next/pages';
 
 import { DeliveryMethodCode, ServiceLevelCode } from '../../lib/types';
 import { formatDateShort } from '../../lib/utils/dates';
-import { StatusResultProps } from '../../pages/status';
+import type { StatusResultProps } from '../../pages/status';
 import ActionButton from '../ActionButton';
 import AlertBlock from '../AlertBlock';
 import Collapse from '../Collapse';

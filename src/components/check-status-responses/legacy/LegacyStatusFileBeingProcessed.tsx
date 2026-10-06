@@ -1,4 +1,4 @@
-import { MouseEventHandler } from 'react';
+import type { MouseEventHandler } from 'react';
 
 import { Trans, useTranslation } from 'next-i18next/pages';
 

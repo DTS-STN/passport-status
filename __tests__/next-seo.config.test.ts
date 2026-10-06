@@ -1,14 +1,9 @@
 import '@testing-library/jest-dom';
 
-import { OpenGraphMedia } from 'next-seo/pages';
+import type { OpenGraphMedia } from 'next-seo/pages';
 
-import {
-  LanguageAlternate,
-  NextSEORouter,
-  getLanguageAlternates,
-  getNextSEOConfig,
-  getOpenGraphImages,
-} from '../src/next-seo.config';
+import type { LanguageAlternate, NextSEORouter } from '../src/next-seo.config';
+import { getLanguageAlternates, getNextSEOConfig, getOpenGraphImages } from '../src/next-seo.config';
 
 describe('getNextSEOConfig', () => {
   it('should call getDefaultConfig when router.locale is empty', () => {

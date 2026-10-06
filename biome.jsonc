@@ -1,0 +1,163 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.5.15/schema.json",
+  "vcs": { "enabled": true, "clientKind": "git", "useIgnoreFile": true },
+  "files": {
+    "includes": ["**", "!!public/*.svg"]
+  },
+  "css": {
+    "parser": {
+      "tailwindDirectives": true
+    }
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "preset": "recommended",
+      "correctness": {
+        "noUnusedVariables": "error",
+        "noUnusedFunctionParameters": "off",
+        "noGlobalDirnameFilename": "error",
+        "useExhaustiveDependencies": "warn"
+      },
+      "nursery": {
+        "noFloatingPromises": "error",
+        "useExhaustiveSwitchCases": "error"
+      },
+      "style": {
+        "useConsistentTypeDefinitions": "off",
+        "useExportType": "error",
+        "useImportType": {
+          "level": "error",
+          "options": {
+            "style": "separatedType"
+          }
+        },
+        "noParameterAssign": "error",
+        "noRestrictedImports": {
+          "level": "error",
+          "options": {
+            "paths": {
+              "react-router": {
+                "importNames": ["SessionData"],
+                "message": "Please use the SessionData import from 'express-session' instead."
+              }
+            }
+          }
+        },
+        // "useFilenamingConvention": "error", // TODO: Enable in future
+        "useAtIndex": "error"
+      },
+      "suspicious": {
+        "noArrayIndexKey": "warn",
+        "noEmptyBlockStatements": "off",
+        "useAwait": "error",
+        "noEmptySource": "error",
+        "noUnnecessaryConditions": "off",
+        "noUnknownAttribute": {
+          "level": "error",
+          "options": {
+            "ignore": ["global", "jsx", "property", "resource", "typeof", "vocab"]
+          }
+        }
+      },
+      "complexity": {
+        "noUselessUndefined": "error"
+      }
+    }
+  },
+  "formatter": {
+    "enabled": true,
+    "attributePosition": "auto",
+    "bracketSameLine": false,
+    "bracketSpacing": true,
+    "expand": "auto",
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineEnding": "lf",
+    "lineWidth": 128,
+    "useEditorconfig": false
+  },
+  "javascript": {
+    "formatter": {
+      "jsxQuoteStyle": "double",
+      "quoteProperties": "preserve",
+      "trailingCommas": "all",
+      "semicolons": "always",
+      "arrowParentheses": "always",
+      "quoteStyle": "single"
+    },
+    "parser": {
+      "unsafeParameterDecoratorsEnabled": true
+    }
+  },
+  "html": {
+    "formatter": {
+      "selfCloseVoidElements": "always"
+    }
+  },
+  "assist": {
+    "enabled": true,
+    "actions": {
+      "source": {
+        "organizeImports": {
+          "level": "on",
+          "options": {
+            "groups": [
+              ["react", "react-dom", "react-dom/**"],
+              ":BLANK_LINE:",
+              ["react-router", "react-router/**", "@react-router/**"],
+              ":BLANK_LINE:",
+              [":PACKAGE:", ":PACKAGE_WITH_PROTOCOL:", "!@gc-fwcs/**"],
+              ":BLANK_LINE:",
+              ["@gc-fwcs/**"],
+              ":BLANK_LINE:",
+              ":PATH:",
+              ":ALIAS:"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "overrides": [
+    {
+      // React Router catch-all route files use $ as a filename convention
+      "includes": ["**/$*.tsx", "**/$*.ts"],
+      "linter": {
+        "rules": {
+          "style": {
+            "useFilenamingConvention": "off"
+          }
+        }
+      }
+    },
+    {
+      // Express runtime bundle (built into build/server/server.js). These files must never
+      // statically import the React Router server-build modules (context / app.ts): a second
+      // import would duplicate the applicationContext instance at runtime and make context.get()
+      // throw "No value found for context". server-dev.ts loads app.ts via ssrLoadModule (a
+      // string), so it is intentionally not caught by this rule.
+      "includes": [
+        "**/app/.server/platform/express/server.ts",
+        "**/app/.server/platform/express/server-dev.ts",
+        "**/app/.server/platform/express/server-prod.ts",
+        "**/app/.server/platform/express/middleware/**"
+      ],
+      "linter": {
+        "rules": {
+          "style": {
+            "noRestrictedImports": {
+              "level": "error",
+              "options": {
+                "paths": {
+                  "~/.server/platform/context": "Belongs to the React Router server build. Importing it into the express runtime bundle duplicates applicationContext and breaks context.get(). Read the session/correlationId from getLoadContext in app.ts instead.",
+                  "~/.server/platform/express/app": "app.ts is the React Router SSR build entry. Do not statically import it from the express runtime bundle; server-dev.ts loads it via viteDevServer.ssrLoadModule and server-prod.ts via a dynamic import."
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

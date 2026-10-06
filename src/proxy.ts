@@ -1,4 +1,5 @@
-import { NextRequest, NextResponse } from 'next/server';
+import type { NextRequest } from 'next/server';
+import { NextResponse } from 'next/server';
 
 import { getLogger } from './logging/log-util';
 
@@ -6,7 +7,7 @@ import { getLogger } from './logging/log-util';
 const PUBLIC_FILE = /\.(.*)$/;
 const logger = getLogger('middleware');
 
-export async function proxy(req: NextRequest) {
+export function proxy(req: NextRequest) {
   const { cookies, nextUrl, url } = req;
   const { locale, pathname } = nextUrl;
 

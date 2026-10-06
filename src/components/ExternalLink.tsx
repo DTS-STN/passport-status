@@ -1,9 +1,10 @@
-import { AnchorHTMLAttributes, DetailedHTMLProps, PropsWithChildren } from 'react';
+import type { AnchorHTMLAttributes, DetailedHTMLProps, PropsWithChildren } from 'react';
 
 import { useTranslation } from 'next-i18next/pages';
 
 export interface ExternalLinkProps
-  extends DetailedHTMLProps<AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>, PropsWithChildren {
+  extends DetailedHTMLProps<AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>,
+    PropsWithChildren {
   href: string;
 }
 

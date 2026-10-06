@@ -1,10 +1,10 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
-
 import { axe, toHaveNoViolations } from 'jest-axe';
 
 import CheckStatusShippingCanadaPost from '../../../src/components/check-status-responses/CheckStatusShippingCanadaPost';
-import { DeliveryMethodCode, ServiceLevelCode, StatusDisplayData, TimelineEntryData } from '../../../src/lib/types';
+import type { StatusDisplayData, TimelineEntryData } from '../../../src/lib/types';
+import { DeliveryMethodCode, ServiceLevelCode } from '../../../src/lib/types';
 
 expect.extend(toHaveNoViolations);
 

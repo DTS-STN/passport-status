@@ -1,12 +1,12 @@
-import {
+import type {
   CheckStatusApiResponse,
   DeliveryMethodCode,
   PassportStatusesCertificateApplicationIdentification,
   PassportStatusesCertificateApplicationTimelineDate,
   PassportStatusesGetCertificateApplicationResponse,
   ServiceLevelCode,
-  TimelineReferenceDataName,
 } from '../types';
+import { TimelineReferenceDataName } from '../types';
 
 /**
  * Map passport status object returned by the API to the client

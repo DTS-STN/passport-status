@@ -3,7 +3,8 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { getDaysInMonth, isExists } from 'date-fns';
 import { useTranslation } from 'next-i18next/pages';
 
-import DateSelect, { DateSelectOnChangeEvent, DateSelectOption } from './DateSelect';
+import type { DateSelectOnChangeEvent, DateSelectOption } from './DateSelect';
+import DateSelect from './DateSelect';
 import FieldSetLegend from './FieldSetLegend';
 import InputErrorMessage from './InputErrorMessage';
 
@@ -76,13 +77,13 @@ const DateSelectField = ({
   const monthOptions = useMemo(() => {
     return [...Array(12).keys()].map<DateSelectOption>((i) => {
       const value = padZero(i + 1, 2);
-      return { label: t(`date-months.` + value), value };
+      return { label: t(`date-months.${value}`), value };
     });
   }, [t]);
 
   const dayOptions = useMemo(() => {
-    const year = parseInt(state.yearValue);
-    const month = parseInt(state.monthValue);
+    const year = parseInt(state.yearValue, 10);
+    const month = parseInt(state.monthValue, 10);
     const days = isExists(year, month - 1, 1) ? getDaysInMonth(new Date(year, month - 1)) : 31;
     return [...Array(days).keys()].map<DateSelectOption>((i) => {
       const value = padZero(i + 1, 2);
@@ -94,14 +95,15 @@ const DateSelectField = ({
     const newValue = event.target.value;
     setState((curState) => {
       const yearValue = type === 'year' ? newValue : curState.yearValue;
-      const yearNumber = parseInt(yearValue);
+      const yearNumber = parseInt(yearValue, 10);
 
       const monthValue = type === 'month' ? newValue : curState.monthValue;
-      const monthNumber = parseInt(monthValue);
+      const monthNumber = parseInt(monthValue, 10);
 
       // dayValue can be set if year or month is NaN OR if the year-month-day convert to an existing date
       const day = type === 'day' ? newValue : curState.dayValue;
-      const isDayExists = isNaN(yearNumber) || isNaN(monthNumber) ? true : isExists(yearNumber, monthNumber - 1, parseInt(day));
+      const isDayExists =
+        Number.isNaN(yearNumber) || Number.isNaN(monthNumber) ? true : isExists(yearNumber, monthNumber - 1, parseInt(day, 10));
       const dayValue = isDayExists ? day : '';
 
       const dateString = toDateStringOrEmpty(yearValue, monthValue, dayValue);
@@ -119,12 +121,12 @@ const DateSelectField = ({
   // Sync from the state to the upper component through onChange when necessary.
   const mountedRef = useRef(false);
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: intentional, we only want to trigger on state.changeCount
   useEffect(() => {
     if (!mountedRef.current) {
       return;
     }
     onChange(state.dateString);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [state.changeCount]);
 
   useEffect(() => {
@@ -134,13 +136,13 @@ const DateSelectField = ({
     };
   }, []);
 
-  // Sync from the passed value to the state when necessary.
+  // biome-ignore lint/correctness/useExhaustiveDependencies: intentional, we only want to trigger on state.changeCount
   useEffect(() => {
     if (state.dateString === value) {
       return;
     }
     const { year, month, day } = parseDateString(value);
-    // eslint-disable-next-line react-hooks/set-state-in-effect -- Keep the internal fields in sync with controlled prop updates.
+    // Keep the internal fields in sync with controlled prop updates.
     setState((curState) => ({
       yearValue: year,
       monthValue: month,
@@ -148,7 +150,6 @@ const DateSelectField = ({
       dateString: value,
       changeCount: curState.changeCount, // This method does not update `state.changeCount` so that `onChange` is not triggered.
     }));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [value]);
 
   return (
@@ -225,7 +226,7 @@ const parseDateString = (
   const month = date.getMonth() + 1;
   const day = date.getDate();
 
-  if (isNaN(year) || isNaN(month) || isNaN(day)) {
+  if (Number.isNaN(year) || Number.isNaN(month) || Number.isNaN(day)) {
     return { year: '', month: '', day: '' };
   }
 

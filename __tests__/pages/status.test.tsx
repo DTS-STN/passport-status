@@ -1,9 +1,9 @@
-import { PropsWithChildren } from 'react';
+import type { PropsWithChildren } from 'react';
 
 import '@testing-library/jest-dom';
-import { render, screen } from '@testing-library/react';
 
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { render, screen } from '@testing-library/react';
 import { axe, toHaveNoViolations } from 'jest-axe';
 
 import Status from '../../src/pages/status';

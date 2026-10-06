@@ -1,9 +1,9 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 import '@testing-library/jest-dom';
-import { render, screen, waitFor } from '@testing-library/react';
 
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { render, screen, waitFor } from '@testing-library/react';
 
 import AlertBlock from '../../src/components/AlertBlock';
 

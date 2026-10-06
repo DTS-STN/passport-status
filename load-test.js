@@ -13,7 +13,7 @@ export const options = {
 };
 
 export default function main() {
-  group('Next_Template', function () {
+  group('Next_Template', () => {
     http.get('https://passport-status-main.dev.dts-stn.com/', {
       headers: {
         'upgrade-insecure-requests': '1',

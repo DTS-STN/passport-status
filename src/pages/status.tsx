@@ -1,23 +1,17 @@
-import { ChangeEventHandler, MouseEventHandler, useCallback, useEffect, useMemo, useState } from 'react';
+import type { ChangeEventHandler, MouseEventHandler } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { useQueryClient } from '@tanstack/react-query';
 import { useFormik, validateYupSchema, yupToFormErrors } from 'formik';
-import { GetServerSideProps } from 'next';
-import { Trans, useTranslation } from 'next-i18next/pages';
+import type { GetServerSideProps } from 'next';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { Trans, useTranslation } from 'next-i18next/pages';
 import * as Yup from 'yup';
 
 import ActionButton from '../components/ActionButton';
 import AlertBlock from '../components/AlertBlock';
 import Collapse from '../components/Collapse';
-import DateSelectField, { DateSelectFieldOnChangeEvent } from '../components/DateSelectField';
-import ErrorSummary, { ErrorSummaryItem, getErrorSummaryItems, goToErrorSummary } from '../components/ErrorSummary';
-import IdleTimeout from '../components/IdleTimeout';
-import InputField from '../components/InputField';
-import Layout from '../components/Layout';
-import Modal from '../components/Modal';
-import NextSeo from '../components/NextSeo';
 import CheckStatusFileBeingProcessed from '../components/check-status-responses/CheckStatusFileBeingProcessed';
 import CheckStatusMissingInformation from '../components/check-status-responses/CheckStatusMissingInformation';
 import CheckStatusNoRecord from '../components/check-status-responses/CheckStatusNoRecord';
@@ -29,16 +23,18 @@ import CheckStatusShippingCanadaPost from '../components/check-status-responses/
 import CheckStatusShippingFedex from '../components/check-status-responses/CheckStatusShippingFedex';
 import LegacyCheckStatusFileBeingProcessed from '../components/check-status-responses/legacy/LegacyStatusFileBeingProcessed';
 import LegacyStatusPrinting from '../components/check-status-responses/legacy/LegacyStatusPrinting';
+import type { DateSelectFieldOnChangeEvent } from '../components/DateSelectField';
+import DateSelectField from '../components/DateSelectField';
+import type { ErrorSummaryItem } from '../components/ErrorSummary';
+import ErrorSummary, { getErrorSummaryItems, goToErrorSummary } from '../components/ErrorSummary';
+import IdleTimeout from '../components/IdleTimeout';
+import InputField from '../components/InputField';
+import Layout from '../components/Layout';
+import Modal from '../components/Modal';
+import NextSeo from '../components/NextSeo';
 import { removeCheckStatus } from '../lib/removeCheckStatus';
-import {
-  CheckStatusApiRequestQuery,
-  CheckStatusApiResponse,
-  DeliveryMethodCode,
-  ServiceLevelCode,
-  StatusCode,
-  StatusDisplayData,
-  TimelineEntryData,
-} from '../lib/types';
+import type { CheckStatusApiRequestQuery, CheckStatusApiResponse, StatusDisplayData, TimelineEntryData } from '../lib/types';
+import { DeliveryMethodCode, ServiceLevelCode, StatusCode } from '../lib/types';
 import { useCheckStatus } from '../lib/useCheckStatus';
 import { pageWithServerSideTranslations } from '../lib/utils/next-i18next-utils';
 import { getDCTermsTitle } from '../lib/utils/seo-utils';
@@ -138,7 +134,7 @@ const Status = () => {
   );
 
   const handleTryAgainClick: MouseEventHandler<HTMLButtonElement> = useCallback(
-    async (e) => {
+    (e) => {
       e.preventDefault();
       setFormikStatus(undefined);
       removeCheckStatus(queryClient);
@@ -149,14 +145,14 @@ const Status = () => {
 
   const handleOnESRFChange: ChangeEventHandler<HTMLInputElement> = useCallback(
     ({ target }) => {
-      setFormikFieldValue(target.name, target.value.replace(/[^a-z0-9]/gi, ''));
+      void setFormikFieldValue(target.name, target.value.replace(/[^a-z0-9]/gi, ''));
     },
     [setFormikFieldValue],
   );
 
   const handleOnDateOfBirthChange: DateSelectFieldOnChangeEvent = useCallback(
     (dateString) => {
-      setFormikFieldValue('dateOfBirth', dateString);
+      void setFormikFieldValue('dateOfBirth', dateString);
     },
     [setFormikFieldValue],
   );
@@ -166,7 +162,7 @@ const Status = () => {
   const handleOnModalClose = useCallback(() => setModalOpen(false), []);
 
   const handleOnModalYesButtonClick = useCallback(() => {
-    router.push('/landing');
+    void router.push('/landing');
   }, [router]);
 
   function getTitleHeader(checkStatusResponse: CheckStatusApiResponse | null | undefined): string {
@@ -385,7 +381,7 @@ const Status = () => {
                 label={t('esrf.label')}
                 onChange={handleOnESRFChange}
                 value={formikValues.esrf}
-                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                // biome-ignore lint/suspicious/noExplicitAny: any usage
                 errorMessage={formikErrors.esrf && t(formikErrors.esrf as any)}
                 textRequired={t('common:required')}
                 required
@@ -408,7 +404,7 @@ const Status = () => {
                 onChange={handleFormikChange}
                 value={formikValues.givenName}
                 errorMessage={
-                  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                  // biome-ignore lint/suspicious/noExplicitAny: any usage
                   formikErrors.givenName && t(formikErrors.givenName as any)
                 }
                 textRequired={t('common:required')}
@@ -431,7 +427,7 @@ const Status = () => {
                 onChange={handleFormikChange}
                 value={formikValues.surname}
                 errorMessage={
-                  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                  // biome-ignore lint/suspicious/noExplicitAny: any usage
                   formikErrors.surname && t(formikErrors.surname as any)
                 }
                 textRequired={t('common:required')}
@@ -446,7 +442,7 @@ const Status = () => {
                 onChange={handleOnDateOfBirthChange}
                 value={formikValues.dateOfBirth}
                 errorMessage={
-                  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                  // biome-ignore lint/suspicious/noExplicitAny: any usage
                   formikErrors.dateOfBirth && t(formikErrors.dateOfBirth as any)
                 }
                 textRequired={t('common:required')}

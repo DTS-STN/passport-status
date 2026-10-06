@@ -1,6 +1,6 @@
-import { NextApiRequest, NextApiResponse } from 'next';
+import type { NextApiRequest, NextApiResponse } from 'next';
 
-import { EmailEsrfApiRequestBody } from '../../lib/types';
+import type { EmailEsrfApiRequestBody } from '../../lib/types';
 import { getLogger } from '../../logging/log-util';
 
 const logger = getLogger('email-esrf');

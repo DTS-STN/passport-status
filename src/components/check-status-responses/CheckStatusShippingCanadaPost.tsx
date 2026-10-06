@@ -1,8 +1,8 @@
-import { MouseEventHandler } from 'react';
+import type { MouseEventHandler } from 'react';
 
 import { Trans, useTranslation } from 'next-i18next/pages';
 
-import { StatusDisplayData } from '../../lib/types';
+import type { StatusDisplayData } from '../../lib/types';
 import ActionButton from '../ActionButton';
 import AlertBlock from '../AlertBlock';
 import ExternalLink from '../ExternalLink';
@@ -51,24 +51,22 @@ export const CheckStatusShippingCanadaPost = ({
           </p>
           {!trackingNumber && <p>{t('shipped-canada-post.shipping-information.northern-remote')}</p>}
           {trackingNumber && (
-            <>
-              <p>
-                <Trans
-                  i18nKey={'status-check-tracking.can-track'}
-                  ns="status"
-                  components={{
-                    Link: (
-                      <ExternalLink
-                        data-gc-analytics-exempt={true}
-                        href={t('status-check-tracking.link.canada-post', {
-                          trackingNumber: encodeURIComponent(trackingNumber),
-                        })}
-                      />
-                    ),
-                  }}
-                />
-              </p>
-            </>
+            <p>
+              <Trans
+                i18nKey={'status-check-tracking.can-track'}
+                ns="status"
+                components={{
+                  Link: (
+                    <ExternalLink
+                      data-gc-analytics-exempt={true}
+                      href={t('status-check-tracking.link.canada-post', {
+                        trackingNumber: encodeURIComponent(trackingNumber),
+                      })}
+                    />
+                  ),
+                }}
+              />
+            </p>
           )}
           <p className="mt-4 mb-4">
             <strong>{t('shipped-canada-post.shipping-information.supporting-documents')}</strong>

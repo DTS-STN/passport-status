@@ -1,9 +1,8 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
-
 import { axe, toHaveNoViolations } from 'jest-axe';
 
-import { DateSelectProps } from '../../src/components/DateSelect';
+import type { DateSelectProps } from '../../src/components/DateSelect';
 import DateSelectField from '../../src/components/DateSelectField';
 
 expect.extend(toHaveNoViolations);

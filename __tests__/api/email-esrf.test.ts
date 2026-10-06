@@ -1,9 +1,10 @@
+import type { IncomingHttpHeaders } from 'node:http';
 import { faker } from '@faker-js/faker';
-import { IncomingHttpHeaders } from 'http';
-import { NextApiRequest, NextApiResponse } from 'next';
-import { createMocks, createRequest, createResponse } from 'node-mocks-http';
+import type { NextApiRequest, NextApiResponse } from 'next';
+import type { createRequest, createResponse } from 'node-mocks-http';
+import { createMocks } from 'node-mocks-http';
 
-import { EmailEsrfApiRequestBody } from '../../src/lib/types';
+import type { EmailEsrfApiRequestBody } from '../../src/lib/types';
 import handler from '../../src/pages/api/email-esrf';
 
 /**

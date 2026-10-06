@@ -48,7 +48,7 @@ const Footer = ({ dateModifiedText, footerHeader, footerLogo, footerNavHeader, l
       <DateModified text={dateModifiedText} />
       <div className="bg-gray-light pt-6 pb-8">
         <div className="container mx-auto px-4">
-          <div role="navigation" aria-labelledby="footerNav">
+          <nav aria-labelledby="footerNav">
             <h3 className="sr-only" id="footerNav">
               {footerNavHeader}
             </h3>
@@ -75,7 +75,7 @@ const Footer = ({ dateModifiedText, footerHeader, footerLogo, footerNavHeader, l
                 priority
               />
             </div>
-          </div>
+          </nav>
         </div>
       </div>
     </footer>

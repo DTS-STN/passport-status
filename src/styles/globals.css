@@ -1,10 +1,10 @@
 /* tailwind default */
-@import 'tailwindcss';
+@import "tailwindcss";
 
-@plugin '@tailwindcss/typography';
+@plugin "@tailwindcss/typography";
 
 @theme {
-  --font-display: var(--font-lato), 'Open Sans', sans-serif;
+  --font-display: var(--font-lato), "Open Sans", sans-serif;
   --font-body: var(--font-noto-sans), sans-serif;
 
   --border-width-6: 6px;
@@ -67,7 +67,7 @@
     border-color: var(--color-gray-200, currentColor);
   }
   button:not(:disabled),
-  [role='button']:not(:disabled) {
+  [role="button"]:not(:disabled) {
     cursor: pointer;
   }
 }
@@ -116,7 +116,7 @@
     @apply mb-8;
   }
   .h1::after {
-    content: '';
+    content: "";
     display: block;
     @apply pt-2;
     border-bottom: 0.05em solid #af3c43;
@@ -141,7 +141,7 @@
     @apply text-link-selected;
   }
 
-  main a[target='_blank']::after {
+  main a[target="_blank"]::after {
     content: url(/new-tab-icon.svg);
     display: inline-block;
     height: 1em;

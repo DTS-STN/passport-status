@@ -1,7 +1,8 @@
-import { UseMutationOptions, useMutation } from '@tanstack/react-query';
+import type { UseMutationOptions } from '@tanstack/react-query';
+import { useMutation } from '@tanstack/react-query';
 import { ApiError } from 'next/dist/server/api-utils';
 
-import { EmailEsrfApiRequestBody } from './types';
+import type { EmailEsrfApiRequestBody } from './types';
 
 const useEmailEsrf = (options?: Omit<UseMutationOptions<void, ApiError, EmailEsrfApiRequestBody>, 'mutationFn'>) => {
   return useMutation<void, ApiError, EmailEsrfApiRequestBody>({

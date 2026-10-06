@@ -1,7 +1,7 @@
-import { useTranslation } from 'next-i18next/pages';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { useTranslation } from 'next-i18next/pages';
 
 import { useClientEnvironment } from '../context/ClientEnvironmentContext';
 import ApplicationNameBar from './ApplicationNameBar';
@@ -26,7 +26,6 @@ const Header = ({ gocLink, skipToMainText }: HeaderProps) => {
   return (
     <>
       <nav
-        role="navigation"
         aria-labelledby="skipToMainContent"
         className="absolute -left-96 h-px w-px focus-within:top-4 focus-within:z-50 focus-within:flex focus-within:h-auto focus-within:w-screen focus-within:justify-center"
       >

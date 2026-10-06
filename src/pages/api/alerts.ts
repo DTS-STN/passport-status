@@ -1,6 +1,6 @@
-import { NextApiRequest, NextApiResponse } from 'next';
+import type { NextApiRequest, NextApiResponse } from 'next';
 
-import { Alert, AlertJsonResponse } from '../../lib/types';
+import type { Alert, AlertJsonResponse } from '../../lib/types';
 import { getLogger } from '../../logging/log-util';
 
 const logger = getLogger('get-alerts');

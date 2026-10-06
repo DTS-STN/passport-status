@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
-import { FormikErrors, FormikValues } from 'formik';
-import { Namespace, TFunction } from 'i18next';
+import type { FormikErrors, FormikValues } from 'formik';
+import type { Namespace, TFunction } from 'i18next';
 
 export interface ErrorSummaryItem {
   feildId: string;
@@ -26,7 +26,7 @@ export const getErrorSummaryItems = <T extends FormikValues>(
   return (
     Object.keys(formErrors)
       .filter((key) => !!formErrors[key])
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      // biome-ignore lint/suspicious/noExplicitAny: any usage
       .map((key) => getErrorSummaryItem(key, t(formErrors[key] as any)))
   );
 };

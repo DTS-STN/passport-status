@@ -1,7 +1,7 @@
 // @see: https://react.i18next.com/misc/testing
-import { ComponentType } from 'react';
+import type { ComponentType } from 'react';
 
-import { AppProps } from 'next/app';
+import type { AppProps } from 'next/app';
 
 export const appWithTranslation = <Props extends AppProps>(WrappedComponent: ComponentType<Props>) => WrappedComponent;
 

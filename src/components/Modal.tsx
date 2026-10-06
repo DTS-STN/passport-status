@@ -1,8 +1,10 @@
-import { PropsWithChildren, useEffect, useId, useRef } from 'react';
+import type { PropsWithChildren } from 'react';
+import { useEffect, useId, useRef } from 'react';
 
 import { FocusOn } from 'react-focus-on';
 
-import ActionButton, { ActionButtonProps } from './ActionButton';
+import type { ActionButtonProps } from './ActionButton';
+import ActionButton from './ActionButton';
 
 export interface ModalProps extends PropsWithChildren {
   actionButtons: ActionButtonProps[];

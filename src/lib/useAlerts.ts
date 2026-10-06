@@ -1,7 +1,8 @@
-import { UseQueryOptions, useQuery } from '@tanstack/react-query';
+import type { UseQueryOptions } from '@tanstack/react-query';
+import { useQuery } from '@tanstack/react-query';
 import { ApiError } from 'next/dist/server/api-utils';
 
-import { Alert, AlertApiRequestQuery } from './types';
+import type { Alert, AlertApiRequestQuery } from './types';
 
 export const fetchAlerts = async (alertQuery: AlertApiRequestQuery, init?: RequestInit): Promise<Alert[] | null> => {
   const query = new URLSearchParams({ ...alertQuery }).toString();

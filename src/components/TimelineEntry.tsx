@@ -1,6 +1,6 @@
-import { PropsWithChildren } from 'react';
+import type { PropsWithChildren } from 'react';
 
-import { TimelineEntryStatus, TimelinePosition } from '../lib/types';
+import type { TimelineEntryStatus, TimelinePosition } from '../lib/types';
 import TimelineEntryContent from './TimelineEntryContent';
 
 export interface TimelineEntryProps extends PropsWithChildren {

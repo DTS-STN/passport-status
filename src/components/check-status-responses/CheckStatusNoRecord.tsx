@@ -1,6 +1,6 @@
 import { Trans, useTranslation } from 'next-i18next/pages';
 
-import { NoStatusResultProps } from '../../pages/status';
+import type { NoStatusResultProps } from '../../pages/status';
 import ActionButton from '../ActionButton';
 import AlertBlock from '../AlertBlock';
 import ExternalLink from '../ExternalLink';
