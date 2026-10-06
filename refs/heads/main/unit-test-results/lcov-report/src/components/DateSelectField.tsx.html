@@ -302,7 +302,9 @@
 <a name='L237'></a><a href='#L237'>237</a>
 <a name='L238'></a><a href='#L238'>238</a>
 <a name='L239'></a><a href='#L239'>239</a>
-<a name='L240'></a><a href='#L240'>240</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L240'></a><a href='#L240'>240</a>
+<a name='L241'></a><a href='#L241'>241</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -405,6 +407,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -423,12 +426,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">8x</span>
@@ -446,7 +449,6 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -546,7 +548,8 @@
 import { getDaysInMonth, isExists } from 'date-fns';
 import { useTranslation } from 'next-i18next/pages';
 &nbsp;
-import DateSelect, { DateSelectOnChangeEvent, DateSelectOption } from './DateSelect';
+import type { DateSelectOnChangeEvent, DateSelectOption } from './DateSelect';
+import DateSelect from './DateSelect';
 import FieldSetLegend from './FieldSetLegend';
 import InputErrorMessage from './InputErrorMessage';
 &nbsp;
@@ -619,13 +622,13 @@ const DateSelectField = ({
   const monthOptions = useMemo(() =&gt; {
     return [...Array(12).keys()].map&lt;DateSelectOption&gt;((i) =&gt; {
       const value = padZero(i + 1, 2);
-      return { label: t(`date-months.` + value), value };
+      return { label: t(`date-months.${value}`), value };
     });
   }, [t]);
 &nbsp;
   const dayOptions = useMemo(() =&gt; {
-    const year = parseInt(state.yearValue);
-    const month = parseInt(state.monthValue);
+    const year = parseInt(state.yearValue, 10);
+    const month = parseInt(state.monthValue, 10);
     const days = isExists(year, month - 1, 1) ? <span class="branch-0 cbranch-no" title="branch not covered" >getDaysInMonth(new Date(year, month - 1)) </span>: 31;
     return [...Array(days).keys()].map&lt;DateSelectOption&gt;((i) =&gt; {
       const value = padZero(i + 1, 2);
@@ -637,14 +640,15 @@ const DateSelectField = ({
     const newValue = <span class="cstat-no" title="statement not covered" >event.target.value;</span>
 <span class="cstat-no" title="statement not covered" >    setState(<span class="fstat-no" title="function not covered" >(c</span>urState) =&gt; {</span>
       const yearValue = <span class="cstat-no" title="statement not covered" >type === 'year' ? newValue : curState.yearValue;</span>
-      const yearNumber = <span class="cstat-no" title="statement not covered" >parseInt(yearValue);</span>
+      const yearNumber = <span class="cstat-no" title="statement not covered" >parseInt(yearValue, 10);</span>
 &nbsp;
       const monthValue = <span class="cstat-no" title="statement not covered" >type === 'month' ? newValue : curState.monthValue;</span>
-      const monthNumber = <span class="cstat-no" title="statement not covered" >parseInt(monthValue);</span>
+      const monthNumber = <span class="cstat-no" title="statement not covered" >parseInt(monthValue, 10);</span>
 &nbsp;
       // dayValue can be set if year or month is NaN OR if the year-month-day convert to an existing date
       const day = <span class="cstat-no" title="statement not covered" >type === 'day' ? newValue : curState.dayValue;</span>
-      const isDayExists = <span class="cstat-no" title="statement not covered" >isNaN(yearNumber) || isNaN(monthNumber) ? true : isExists(yearNumber, monthNumber - 1, parseInt(day));</span>
+      const isDayExists =
+<span class="cstat-no" title="statement not covered" >        Number.isNaN(yearNumber) || Number.isNaN(monthNumber) ? true : isExists(yearNumber, monthNumber - 1, parseInt(day, 10));</span>
       const dayValue = <span class="cstat-no" title="statement not covered" >isDayExists ? day : '';</span>
 &nbsp;
       const dateString = <span class="cstat-no" title="statement not covered" >toDateStringOrEmpty(yearValue, monthValue, dayValue);</span>
@@ -662,12 +666,12 @@ const DateSelectField = ({
   // Sync from the state to the upper component through onChange when necessary.
   const mountedRef = useRef(false);
 &nbsp;
+  // biome-ignore lint/correctness/useExhaustiveDependencies: intentional, we only want to trigger on state.changeCount
   useEffect(() =&gt; {
     <span class="missing-if-branch" title="else path not taken" >E</span>if (!mountedRef.current) {
       return;
     }
 <span class="cstat-no" title="statement not covered" >    onChange(state.dateString);</span>
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [state.changeCount]);
 &nbsp;
   useEffect(() =&gt; {
@@ -677,13 +681,13 @@ const DateSelectField = ({
     };
   }, []);
 &nbsp;
-  // Sync from the passed value to the state when necessary.
+  // biome-ignore lint/correctness/useExhaustiveDependencies: intentional, we only want to trigger on state.changeCount
   useEffect(() =&gt; {
     if (state.dateString === value) {
       return;
     }
     const { year, month, day } = parseDateString(value);
-    // eslint-disable-next-line react-hooks/set-state-in-effect -- Keep the internal fields in sync with controlled prop updates.
+    // Keep the internal fields in sync with controlled prop updates.
     setState((curState) =&gt; ({
       yearValue: year,
       monthValue: month,
@@ -691,7 +695,6 @@ const DateSelectField = ({
       dateString: value,
       changeCount: curState.changeCount, // This method does not update `state.changeCount` so that `onChange` is not triggered.
     }));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [value]);
 &nbsp;
   return (
@@ -768,7 +771,7 @@ const parseDateString = (
   const month = date.getMonth() + 1;
   const day = date.getDate();
 &nbsp;
-  <span class="missing-if-branch" title="else path not taken" >E</span>if (isNaN(year) || <span class="branch-1 cbranch-no" title="branch not covered" >isNaN(month) </span>|| <span class="branch-2 cbranch-no" title="branch not covered" >isNaN(day))</span> {
+  <span class="missing-if-branch" title="else path not taken" >E</span>if (Number.isNaN(year) || <span class="branch-1 cbranch-no" title="branch not covered" >Number.isNaN(month) </span>|| <span class="branch-2 cbranch-no" title="branch not covered" >Number.isNaN(day))</span> {
     return { year: '', month: '', day: '' };
   }
 &nbsp;
@@ -787,7 +790,7 @@ export default DateSelectField;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-10-06T10:18:29.873Z
+                at 2026-10-06T13:07:51.138Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

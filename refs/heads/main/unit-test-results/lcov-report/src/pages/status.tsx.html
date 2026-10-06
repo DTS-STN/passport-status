@@ -562,15 +562,7 @@
 <a name='L497'></a><a href='#L497'>497</a>
 <a name='L498'></a><a href='#L498'>498</a>
 <a name='L499'></a><a href='#L499'>499</a>
-<a name='L500'></a><a href='#L500'>500</a>
-<a name='L501'></a><a href='#L501'>501</a>
-<a name='L502'></a><a href='#L502'>502</a>
-<a name='L503'></a><a href='#L503'>503</a>
-<a name='L504'></a><a href='#L504'>504</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L500'></a><a href='#L500'>500</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1069,26 +1061,20 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { ChangeEventHandler, MouseEventHandler, useCallback, useEffect, useMemo, useState } from 'react';
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import type { ChangeEventHandler, MouseEventHandler } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 &nbsp;
 import { useQueryClient } from '@tanstack/react-query';
 import { useFormik, validateYupSchema, yupToFormErrors } from 'formik';
-import { GetServerSideProps } from 'next';
-import { Trans, useTranslation } from 'next-i18next/pages';
+import type { GetServerSideProps } from 'next';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { Trans, useTranslation } from 'next-i18next/pages';
 import * as Yup from 'yup';
 &nbsp;
 import ActionButton from '../components/ActionButton';
 import AlertBlock from '../components/AlertBlock';
 import Collapse from '../components/Collapse';
-import DateSelectField, { DateSelectFieldOnChangeEvent } from '../components/DateSelectField';
-import ErrorSummary, { ErrorSummaryItem, getErrorSummaryItems, goToErrorSummary } from '../components/ErrorSummary';
-import IdleTimeout from '../components/IdleTimeout';
-import InputField from '../components/InputField';
-import Layout from '../components/Layout';
-import Modal from '../components/Modal';
-import NextSeo from '../components/NextSeo';
 import CheckStatusFileBeingProcessed from '../components/check-status-responses/CheckStatusFileBeingProcessed';
 import CheckStatusMissingInformation from '../components/check-status-responses/CheckStatusMissingInformation';
 import CheckStatusNoRecord from '../components/check-status-responses/CheckStatusNoRecord';
@@ -1100,16 +1086,18 @@ import CheckStatusShippingCanadaPost from '../components/check-status-responses/
 import CheckStatusShippingFedex from '../components/check-status-responses/CheckStatusShippingFedex';
 import LegacyCheckStatusFileBeingProcessed from '../components/check-status-responses/legacy/LegacyStatusFileBeingProcessed';
 import LegacyStatusPrinting from '../components/check-status-responses/legacy/LegacyStatusPrinting';
+import type { DateSelectFieldOnChangeEvent } from '../components/DateSelectField';
+import DateSelectField from '../components/DateSelectField';
+import type { ErrorSummaryItem } from '../components/ErrorSummary';
+import ErrorSummary, { getErrorSummaryItems, goToErrorSummary } from '../components/ErrorSummary';
+import IdleTimeout from '../components/IdleTimeout';
+import InputField from '../components/InputField';
+import Layout from '../components/Layout';
+import Modal from '../components/Modal';
+import NextSeo from '../components/NextSeo';
 import { removeCheckStatus } from '../lib/removeCheckStatus';
-import {
-  CheckStatusApiRequestQuery,
-  CheckStatusApiResponse,
-  DeliveryMethodCode,
-  ServiceLevelCode,
-  StatusCode,
-  StatusDisplayData,
-  TimelineEntryData,
-} from '../lib/types';
+import type { CheckStatusApiRequestQuery, CheckStatusApiResponse, StatusDisplayData, TimelineEntryData } from '../lib/types';
+import { DeliveryMethodCode, ServiceLevelCode, StatusCode } from '../lib/types';
 import { useCheckStatus } from '../lib/useCheckStatus';
 import { pageWithServerSideTranslations } from '../lib/utils/next-i18next-utils';
 import { getDCTermsTitle } from '../lib/utils/seo-utils';
@@ -1209,7 +1197,7 @@ const Status = () =&gt; {
   );
 &nbsp;
   const handleTryAgainClick: MouseEventHandler&lt;HTMLButtonElement&gt; = useCallback(
-<span class="fstat-no" title="function not covered" >    as</span>ync (e) =&gt; {
+<span class="fstat-no" title="function not covered" >    (e</span>) =&gt; {
 <span class="cstat-no" title="statement not covered" >      e.preventDefault();</span>
 <span class="cstat-no" title="statement not covered" >      setFormikStatus(undefined);</span>
 <span class="cstat-no" title="statement not covered" >      removeCheckStatus(queryClient);</span>
@@ -1220,14 +1208,14 @@ const Status = () =&gt; {
 &nbsp;
   const handleOnESRFChange: ChangeEventHandler&lt;HTMLInputElement&gt; = useCallback(
 <span class="fstat-no" title="function not covered" >    ({</span> target }) =&gt; {
-<span class="cstat-no" title="statement not covered" >      setFormikFieldValue(target.name, target.value.replace(/[^a-z0-9]/gi, ''));</span>
+<span class="cstat-no" title="statement not covered" >      void setFormikFieldValue(target.name, target.value.replace(/[^a-z0-9]/gi, ''));</span>
     },
     [setFormikFieldValue],
   );
 &nbsp;
   const handleOnDateOfBirthChange: DateSelectFieldOnChangeEvent = useCallback(
 <span class="fstat-no" title="function not covered" >    (d</span>ateString) =&gt; {
-<span class="cstat-no" title="statement not covered" >      setFormikFieldValue('dateOfBirth', dateString);</span>
+<span class="cstat-no" title="statement not covered" >      void setFormikFieldValue('dateOfBirth', dateString);</span>
     },
     [setFormikFieldValue],
   );
@@ -1237,7 +1225,7 @@ const Status = () =&gt; {
   const handleOnModalClose = useCallback(<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >setModalOpen(false),</span> []);
 &nbsp;
   const handleOnModalYesButtonClick = useCallback(<span class="fstat-no" title="function not covered" >()</span> =&gt; {
-<span class="cstat-no" title="statement not covered" >    router.push('/landing');</span>
+<span class="cstat-no" title="statement not covered" >    void router.push('/landing');</span>
   }, [router]);
 &nbsp;
   function getTitleHeader(checkStatusResponse: CheckStatusApiResponse | null | undefined): string {
@@ -1456,7 +1444,7 @@ const Status = () =&gt; {
                 label={t('esrf.label')}
                 onChange={handleOnESRFChange}
                 value={formikValues.esrf}
-                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                // biome-ignore lint/suspicious/noExplicitAny: any usage
                 errorMessage={formikErrors.esrf &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >t(formikErrors.esrf as any)}</span>
                 textRequired={t('common:required')}
                 required
@@ -1479,7 +1467,7 @@ const Status = () =&gt; {
                 onChange={handleFormikChange}
                 value={formikValues.givenName}
                 errorMessage={
-                  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                  // biome-ignore lint/suspicious/noExplicitAny: any usage
                   formikErrors.givenName &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >t(formikErrors.givenName as any)</span>
                 }
                 textRequired={t('common:required')}
@@ -1502,7 +1490,7 @@ const Status = () =&gt; {
                 onChange={handleFormikChange}
                 value={formikValues.surname}
                 errorMessage={
-                  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                  // biome-ignore lint/suspicious/noExplicitAny: any usage
                   formikErrors.surname &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >t(formikErrors.surname as any)</span>
                 }
                 textRequired={t('common:required')}
@@ -1517,7 +1505,7 @@ const Status = () =&gt; {
                 onChange={handleOnDateOfBirthChange}
                 value={formikValues.dateOfBirth}
                 errorMessage={
-                  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                  // biome-ignore lint/suspicious/noExplicitAny: any usage
                   formikErrors.dateOfBirth &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >t(formikErrors.dateOfBirth as any)</span>
                 }
                 textRequired={t('common:required')}
@@ -1579,7 +1567,7 @@ export default Status;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-10-06T10:18:29.873Z
+                at 2026-10-06T13:07:51.138Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
