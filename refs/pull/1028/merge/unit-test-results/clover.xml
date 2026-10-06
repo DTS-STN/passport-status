@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1791312348968" clover="3.2.0">
-  <project timestamp="1791312348969" name="All files">
-    <metrics statements="677" coveredstatements="453" conditionals="513" coveredconditionals="268" methods="182" coveredmethods="112" elements="1372" coveredelements="833" complexity="0" loc="677" ncloc="677" packages="13" files="73" classes="73"/>
+<coverage generated="1791313242817" clover="3.2.0">
+  <project timestamp="1791313242817" name="All files">
+    <metrics statements="678" coveredstatements="453" conditionals="513" coveredconditionals="268" methods="182" coveredmethods="112" elements="1373" coveredelements="833" complexity="0" loc="678" ncloc="678" packages="13" files="73" classes="73"/>
     <package name="src">
       <metrics statements="28" coveredstatements="14" conditionals="26" coveredconditionals="8" methods="7" coveredmethods="6"/>
       <file name="next-seo.config.ts" path="/home/runner/work/passport-status/passport-status/src/next-seo.config.ts">
@@ -838,34 +838,35 @@
       </file>
     </package>
     <package name="src.pages.api">
-      <metrics statements="85" coveredstatements="43" conditionals="57" coveredconditionals="32" methods="11" coveredmethods="5"/>
+      <metrics statements="86" coveredstatements="43" conditionals="57" coveredconditionals="32" methods="11" coveredmethods="5"/>
       <file name="alerts.ts" path="/home/runner/work/passport-status/passport-status/src/pages/api/alerts.ts">
-        <metrics statements="25" coveredstatements="0" conditionals="13" coveredconditionals="0" methods="6" coveredmethods="0"/>
-        <line num="6" count="0" type="stmt"/>
-        <line num="9" count="0" type="stmt"/>
-        <line num="10" count="0" type="cond" truecount="0" falsecount="2"/>
+        <metrics statements="26" coveredstatements="0" conditionals="13" coveredconditionals="0" methods="6" coveredmethods="0"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
         <line num="11" count="0" type="stmt"/>
-        <line num="12" count="0" type="stmt"/>
-        <line num="15" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="16" count="0" type="stmt"/>
-        <line num="19" count="0" type="stmt"/>
-        <line num="20" count="0" type="stmt"/>
-        <line num="23" count="0" type="stmt"/>
-        <line num="24" count="0" type="stmt"/>
+        <line num="12" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="17" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
         <line num="26" count="0" type="stmt"/>
         <line num="28" count="0" type="stmt"/>
-        <line num="36" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="37" count="0" type="stmt"/>
-        <line num="40" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="38" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="39" count="0" type="stmt"/>
         <line num="42" count="0" type="stmt"/>
-        <line num="43" count="0" type="cond" truecount="0" falsecount="3"/>
-        <line num="46" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="47" count="0" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="45" count="0" type="cond" truecount="0" falsecount="3"/>
         <line num="48" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="50" count="0" type="stmt"/>
-        <line num="57" count="0" type="stmt"/>
-        <line num="60" count="0" type="stmt"/>
-        <line num="61" count="0" type="stmt"/>
+        <line num="49" count="0" type="stmt"/>
+        <line num="50" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="52" count="0" type="stmt"/>
+        <line num="59" count="0" type="stmt"/>
+        <line num="62" count="0" type="stmt"/>
+        <line num="63" count="0" type="stmt"/>
       </file>
       <file name="check-status.ts" path="/home/runner/work/passport-status/passport-status/src/pages/api/check-status.ts">
         <metrics statements="33" coveredstatements="22" conditionals="22" coveredconditionals="13" methods="2" coveredmethods="2"/>
