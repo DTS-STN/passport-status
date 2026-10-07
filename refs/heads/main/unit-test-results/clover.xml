@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1791301572470" clover="3.2.0">
-  <project timestamp="1791301572470" name="All files">
-    <metrics statements="675" coveredstatements="453" conditionals="510" coveredconditionals="268" methods="182" coveredmethods="112" elements="1367" coveredelements="833" complexity="0" loc="675" ncloc="675" packages="13" files="73" classes="73"/>
+<coverage generated="1791391271042" clover="3.2.0">
+  <project timestamp="1791391271042" name="All files">
+    <metrics statements="679" coveredstatements="471" conditionals="512" coveredconditionals="275" methods="182" coveredmethods="116" elements="1373" coveredelements="862" complexity="0" loc="679" ncloc="679" packages="13" files="73" classes="73"/>
     <package name="src">
       <metrics statements="28" coveredstatements="14" conditionals="26" coveredconditionals="8" methods="7" coveredmethods="6"/>
       <file name="next-seo.config.ts" path="/home/runner/work/passport-status/passport-status/src/next-seo.config.ts">
@@ -619,17 +619,17 @@
       <metrics statements="8" coveredstatements="8" conditionals="9" coveredconditionals="8" methods="3" coveredmethods="3"/>
       <file name="log-level.ts" path="/home/runner/work/passport-status/passport-status/src/logging/log-level.ts">
         <metrics statements="5" coveredstatements="5" conditionals="6" coveredconditionals="6" methods="1" coveredmethods="1"/>
-        <line num="1" count="4" type="stmt"/>
-        <line num="2" count="8" type="cond" truecount="2" falsecount="0"/>
-        <line num="3" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="1" count="5" type="stmt"/>
+        <line num="2" count="9" type="cond" truecount="2" falsecount="0"/>
+        <line num="3" count="6" type="cond" truecount="2" falsecount="0"/>
         <line num="7" count="3" type="cond" truecount="2" falsecount="0"/>
-        <line num="10" count="4" type="stmt"/>
+        <line num="10" count="5" type="stmt"/>
       </file>
       <file name="log-util.ts" path="/home/runner/work/passport-status/passport-status/src/logging/log-util.ts">
         <metrics statements="3" coveredstatements="3" conditionals="3" coveredconditionals="2" methods="2" coveredmethods="2"/>
-        <line num="6" count="3" type="stmt"/>
-        <line num="9" count="3" type="cond" truecount="2" falsecount="1"/>
-        <line num="13" count="3" type="stmt"/>
+        <line num="6" count="4" type="stmt"/>
+        <line num="9" count="4" type="cond" truecount="2" falsecount="1"/>
+        <line num="13" count="4" type="stmt"/>
       </file>
     </package>
     <package name="src.pages">
@@ -838,32 +838,36 @@
       </file>
     </package>
     <package name="src.pages.api">
-      <metrics statements="83" coveredstatements="43" conditionals="54" coveredconditionals="32" methods="11" coveredmethods="5"/>
+      <metrics statements="87" coveredstatements="61" conditionals="56" coveredconditionals="39" methods="11" coveredmethods="9"/>
       <file name="alerts.ts" path="/home/runner/work/passport-status/passport-status/src/pages/api/alerts.ts">
-        <metrics statements="23" coveredstatements="0" conditionals="10" coveredconditionals="0" methods="6" coveredmethods="0"/>
-        <line num="6" count="0" type="stmt"/>
-        <line num="9" count="0" type="stmt"/>
-        <line num="10" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="11" count="0" type="stmt"/>
-        <line num="12" count="0" type="stmt"/>
-        <line num="15" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="16" count="0" type="stmt"/>
-        <line num="19" count="0" type="stmt"/>
-        <line num="20" count="0" type="stmt"/>
-        <line num="23" count="0" type="stmt"/>
-        <line num="24" count="0" type="stmt"/>
-        <line num="26" count="0" type="stmt"/>
-        <line num="28" count="0" type="stmt"/>
-        <line num="31" count="0" type="stmt"/>
-        <line num="33" count="0" type="stmt"/>
-        <line num="34" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="37" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="38" count="0" type="stmt"/>
-        <line num="39" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="41" count="0" type="stmt"/>
-        <line num="48" count="0" type="stmt"/>
-        <line num="51" count="0" type="stmt"/>
-        <line num="52" count="0" type="stmt"/>
+        <metrics statements="27" coveredstatements="18" conditionals="12" coveredconditionals="7" methods="6" coveredmethods="4"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="17" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="39" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="43" count="1" type="stmt"/>
+        <line num="45" count="1" type="stmt"/>
+        <line num="46" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="49" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="50" count="0" type="stmt"/>
+        <line num="51" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="53" count="1" type="stmt"/>
+        <line num="60" count="1" type="stmt"/>
+        <line num="63" count="0" type="stmt"/>
+        <line num="64" count="0" type="stmt"/>
       </file>
       <file name="check-status.ts" path="/home/runner/work/passport-status/passport-status/src/pages/api/check-status.ts">
         <metrics statements="33" coveredstatements="22" conditionals="22" coveredconditionals="13" methods="2" coveredmethods="2"/>
