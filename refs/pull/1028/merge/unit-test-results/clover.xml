@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1791377701060" clover="3.2.0">
-  <project timestamp="1791377701060" name="All files">
-    <metrics statements="679" coveredstatements="471" conditionals="513" coveredconditionals="274" methods="182" coveredmethods="116" elements="1374" coveredelements="861" complexity="0" loc="679" ncloc="679" packages="13" files="73" classes="73"/>
+<coverage generated="1791390936349" clover="3.2.0">
+  <project timestamp="1791390936349" name="All files">
+    <metrics statements="679" coveredstatements="471" conditionals="512" coveredconditionals="275" methods="182" coveredmethods="116" elements="1373" coveredelements="862" complexity="0" loc="679" ncloc="679" packages="13" files="73" classes="73"/>
     <package name="src">
       <metrics statements="28" coveredstatements="14" conditionals="26" coveredconditionals="8" methods="7" coveredmethods="6"/>
       <file name="next-seo.config.ts" path="/home/runner/work/passport-status/passport-status/src/next-seo.config.ts">
@@ -838,9 +838,9 @@
       </file>
     </package>
     <package name="src.pages.api">
-      <metrics statements="87" coveredstatements="61" conditionals="57" coveredconditionals="38" methods="11" coveredmethods="9"/>
+      <metrics statements="87" coveredstatements="61" conditionals="56" coveredconditionals="39" methods="11" coveredmethods="9"/>
       <file name="alerts.ts" path="/home/runner/work/passport-status/passport-status/src/pages/api/alerts.ts">
-        <metrics statements="27" coveredstatements="18" conditionals="13" coveredconditionals="6" methods="6" coveredmethods="4"/>
+        <metrics statements="27" coveredstatements="18" conditionals="12" coveredconditionals="7" methods="6" coveredmethods="4"/>
         <line num="6" count="1" type="stmt"/>
         <line num="7" count="1" type="stmt"/>
         <line num="8" count="1" type="stmt"/>
@@ -860,7 +860,7 @@
         <line num="40" count="0" type="stmt"/>
         <line num="43" count="1" type="stmt"/>
         <line num="45" count="1" type="stmt"/>
-        <line num="46" count="1" type="cond" truecount="1" falsecount="2"/>
+        <line num="46" count="1" type="cond" truecount="2" falsecount="0"/>
         <line num="49" count="1" type="cond" truecount="1" falsecount="1"/>
         <line num="50" count="0" type="stmt"/>
         <line num="51" count="1" type="cond" truecount="1" falsecount="1"/>

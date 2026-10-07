@@ -2061,14 +2061,13 @@ BRDA:17,1,1,1
 BRDA:39,2,0,0
 BRDA:39,2,1,1
 BRDA:46,3,0,1
-BRDA:46,3,1,0
-BRDA:46,3,2,0
+BRDA:46,3,1,1
 BRDA:49,4,0,0
 BRDA:49,4,1,1
 BRDA:51,5,0,1
 BRDA:51,5,1,0
-BRF:13
-BRH:6
+BRF:12
+BRH:7
 end_of_record
 TN:
 SF:src/pages/api/check-status.ts
