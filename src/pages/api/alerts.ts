@@ -4,6 +4,8 @@ import type { Alert, AlertJsonResponse } from '../../lib/types';
 import { getLogger } from '../../logging/log-util';
 
 const logger = getLogger('get-alerts');
+const alertRequestTimeoutMs = 15_000;
+const userAgent = `PassportStatus/3 Node.js/${process.version}`;
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<Alert[] | string>) {
   try {
@@ -26,9 +28,19 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
     const now = new Date();
 
     const alertJson = await fetch(process.env.ALERT_JSON_URI, {
-      headers: { 'Cache-Control': 'max-age=600' },
+      headers: {
+        'Cache-Control': 'max-age=600',
+        'User-Agent': userAgent,
+      },
+      signal: AbortSignal.timeout(alertRequestTimeoutMs),
     });
-    const alertData: AlertJsonResponse = await alertJson.json();
+
+    // Guard against network/server errors before attempting parsing
+    if (!alertJson.ok) {
+      throw new Error(`Failed to fetch JSON asset. Status: ${alertJson.status}`);
+    }
+
+    const alertData = (await alertJson.json()) as AlertJsonResponse;
 
     const validAlerts = alertData?.jsonAlerts.filter(
       (alert) => new Date(alert.validFrom) <= now && new Date(alert.validTo) >= now,
