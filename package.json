@@ -53,7 +53,7 @@
     "@testing-library/react": "16.3.3",
     "@types/jest": "30.0.0",
     "@types/jest-axe": "3.5.9",
-    "@types/node": "26.6.4",
+    "@types/node": "26.6.5",
     "@types/react": "19.3.0",
     "@types/react-dom": "19.3.0",
     "axe-core": "4.14.0",
@@ -73,7 +73,7 @@
     "node-mocks-http": "1.18.1",
     "pino-pretty": "13.2.0",
     "postcss": "8.5.29",
-    "start-server-and-test": "3.0.12",
+    "start-server-and-test": "3.0.13",
     "tailwindcss": "4.3.3",
     "typescript": "^7.0.2"
   }
