@@ -1,3 +1,11 @@
+# ⚠️ PROJECT MOVED
+
+**This repository is no longer actively maintained here.** 
+
+This project has been consolidated into a **monorepo** along with its sibling components. Future updates, issues, and pull requests are now being handled in the new repository.
+
+👉 **[Go to the New Monorepo Repository](https://github.com/STN-DTS/passport-application-status-checker)**
+
 # Passport Status
 
 An unauthenticated front end application to check the status of a users passport application.
